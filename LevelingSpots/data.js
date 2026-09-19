@@ -12,6 +12,10 @@ const SOURCES = {
   ,sinaTable: { name: "新浪游戏｜地图怪物与练功地点汇总", url: "https://games.sina.com.cn/zhqu/cross/lgdd.shtml" }
   ,deepGreen: { name: "新浪游戏｜深绿的山道调查", url: "https://games.sina.com.cn/z/cross/diaocha/shenlvshandao.shtml" }
   ,deepGreenRoute: { name: "17173｜2025深绿路线记录", url: "https://cg.17173.com/content/04162025/232056487.shtml" }
+  ,xpRule: { name: "魔力百科｜人物与魔物经验衰减规则", url: "https://old.molibaike.com/Article/Detail/94385037-cb3c-422b-a335-8d4985ec6bc9" }
+  ,xpTable: { name: "新浪游戏｜等级差经验百分比表", url: "https://games.sina.com.cn/zhqu/cross/dengji.shtml" }
+  ,midGameXp: { name: "魔力百科｜中后期练级点实测经验表", url: "https://old.molibaike.com/Article/Detail/5b459f85-f1ac-4c94-93b3-9553e115b6f5" }
+  ,xuanwu: { name: "魔力百科｜玄武之境与玄武之渊", url: "https://www.molibaike.com/Mission/Detail/30b6700b-3d91-4129-9875-3436f563b4bc?u=True" }
 };
 
 const PLACES = [
@@ -43,13 +47,14 @@ const PLACES = [
   {name:"南方丙丁火", aliases:"火洞 · 幻之地底遗迹", modes:["skill"], skill:[60,117], mobs:[55,55], monsters:"狠毒鸟人、地狱猎犬", count:"2～6", countStatus:"verified", crystal:"按怪物属性", notes:"需勇者的传承系列前置；遗迹内有普通护士，留狠毒鸟人可稳定烧非伤害技能。", source:"skill"},
   {name:"矿山小镇莫利亚门口", aliases:"矿山", modes:["skill"], skill:[40,117], mobs:[55,57], monsters:"哥布林", count:"1～3", countStatus:"verified", crystal:"按怪物属性", notes:"镇内有资深护士；进入会解散队伍，需要重新组队。", source:"skill"},
   {name:"兰国第五等勋章路线", aliases:"兰五", modes:["level"], player:[60,70], mobs:[67,69], monsters:"红色口臭鬼、鸟人", count:"待核验", countStatus:"pending", crystal:"水火", notes:"需完成兰国八、七、六等勋章任务。", source:"oldGuide"},
-  {name:"半山", aliases:"小岛半山", modes:["level"], player:[70,90], mobs:[72,74], monsters:"液态史莱姆、利牙、虎人、迷你蝙蝠", count:"待核验", countStatus:"pending", crystal:"纯火", notes:"需完成半山系列前置任务；西门外交800G前往小岛。", source:"oldGuide"},
+  {name:"半山", aliases:"小岛半山", modes:["level"], player:[68,90], access:"50多级可推进前置；能到不等于经验效率高", mobs:[72,74], monsters:"液态史莱姆、利牙、虎人、迷你蝙蝠", count:"待核验", countStatus:"pending", crystal:"纯火", notes:"实测表确认 Lv.50 已能取得人物经验；需完成半山系列前置任务。具体衰减由统一判断规则按当前人物等级计算。", source:"midGameXp"},
   {name:"砍狗", aliases:"蒂娜沉船遗迹路线", modes:["level"], player:[70,100], mobs:[68,75], monsters:"地狱妖犬、地狱猎犬", count:"待核验", countStatus:"pending", crystal:"纯风 / 纯水", notes:"需完成贡品、泰格利、海盗等任务并取得绿色三棱石。", source:"oldGuide"},
   {name:"兰一 / 艾一", aliases:"勋章一等路线", modes:["level"], player:[70,100], mobs:[75,75], monsters:"大地鼠、宝石鼠、恶梦鼠、火焰鼠", count:"待核验", countStatus:"pending", crystal:"任意属性", notes:"需完成对应勋章和追加任务，持有隶属的项链。", source:"oldGuide"},
   {name:"地下仓库（新）", aliases:"新仓库", modes:["skill"], skill:[1,147], mobs:[70,70], monsters:"看守（男）、看守（女）", count:"1～2", countStatus:"verified", crystal:"按怪物属性", notes:"法兰城大圣堂内，无需前置；清女看守，留男看守。金牛服无此点。", source:"skill"},
   {name:"隐秘的山路", aliases:"菲鲁瑟团探索路线", modes:["skill"], skill:[1,127], mobs:[60,60], monsters:"人魔草、穴熊", count:"待核验", countStatus:"pending", crystal:"按怪物属性", notes:"人魔草没魔后不动；穴熊会诸刃。", source:"skill"},
   {name:"柯村", aliases:"柯马特依村周边", modes:["level"], player:[77,110], mobs:[80,82], monsters:"烟雾、掘地虫", count:"待核验", countStatus:"pending", crystal:"纯地", notes:"需解放者称号及诺斯菲拉特相关任务。", source:"oldGuide"},
-  {name:"砍龙", aliases:"漆黑的荒野", modes:["level"], player:[82,110], mobs:[87,87], monsters:"大地翼龙、寒冰翼龙、火焰翼龙、烈风翼龙", count:"待核验", countStatus:"pending", crystal:"任意纯水晶", notes:"需深渊及白/黑意志系列前置；推荐完成白色路线。", source:"oldGuide"}
+  {name:"砍龙", aliases:"漆黑的荒野", modes:["level"], player:[82,110], mobs:[87,87], monsters:"大地翼龙、寒冰翼龙、火焰翼龙、烈风翼龙", count:"待核验", countStatus:"pending", crystal:"任意纯水晶", notes:"需深渊及白/黑意志系列前置；推荐完成白色路线。", source:"oldGuide"},
+  {name:"玄武之渊", aliases:"玄武 · 玄武练级点", modes:["level"], player:[82,120], access:"师范（3转）以上；通常约 Lv.100 后接替柯村", mobs:[87,94], monsters:"地龙蜥、火龙蜥、猎豹蜥蜴、蜥蜴斗士", count:"4～7", countStatus:"verified", crystal:"任意属性", notes:"20层随机迷宫。2024-04-17 更新后，普通遭遇由2～7改为4～7，资料页记载每场经验约为修改前1.25倍。高等级继续在此练，依赖的是基础经验与怪物数量，不代表仍处于100%等级差系数。", source:"xuanwu", featured:true}
 ];
 
 const ROUTES = {
@@ -88,4 +93,5 @@ const ROUTES = {
   "隐秘的山路": {difficulty:4, tasks:"菲鲁瑟团探索计划", route:"法兰 → 按《菲鲁瑟团探索计划》推进至隐秘山路。入口与可重入条件需按当前任务状态确认。", reliability:"medium", evidence:["skill"]},
   "柯村": {difficulty:5, tasks:"解放者＋诺斯菲拉特至少2项", route:"完成踏足诺斯菲拉特、重拾勇气的掘地族 → 哥拉尔西门外（218,432）传送雷克塔尔镇外 → 搭船前往柯马特依村。", reliability:"high", evidence:["oldGuide","currentGuide"]},
   "砍龙": {difficulty:5, tasks:"深渊＋消亡之地＋抉择＋意志路线", route:"完成深渊取得世界之心 → 完成消亡之地、抉择之刻 → 推进白/黑意志至漆黑荒野。", reliability:"high", evidence:["oldGuide","currentGuide"]}
+  ,"玄武之渊": {difficulty:5, tasks:"奇利的诱拐事件＋玄武的邀约称号＋师范（3转）", route:"法兰 → 杰诺瓦镇（48,69）找坎取坤签 → 莎莲娜岛击败丧尸并换月之锄头 → 进入12～16层奇怪坑道 → 击败迪次郎 → 地下水脉（45,55）交坤签 → 绿色传送石进入20层玄武之渊。每位练级角色都需坤签；玄武秘术卷轴可单人直飞。", reliability:"high", evidence:["xuanwu","currentGuide"]}
 };
