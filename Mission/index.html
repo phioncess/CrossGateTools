@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="魔力宝贝怀旧服任务检索与任务关系查看工具" />
+  <title>魔力宝贝怀旧服 · 任务检索</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="返回任务检索首页">
+        <span class="brand-mark" aria-hidden="true">任</span>
+        <span><b>魔力任务簿</b><small>怀旧服任务关系检索</small></span>
+      </a>
+      <span id="recordCount" class="record-count">资料载入中</span>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="pageTitle">
+        <div class="hero-copy">
+          <p class="eyebrow">QUEST INDEX</p>
+          <h1 id="pageTitle">任务之间，不该靠记忆跳转。</h1>
+          <p>输入任务名、俗称、系列或关键词；也可以展开列表直接选择。系列任务会显示前后链路，其他任务会列出可跳转的前置。</p>
+        </div>
+
+        <div class="finder">
+          <label for="questSearch">选择或搜索任务</label>
+          <div class="combo" id="questCombo">
+            <input id="questSearch" type="text" role="combobox" aria-autocomplete="list" aria-controls="questOptions" aria-expanded="false" placeholder="例如：半山2、亡者、砍狗、玄武……" autocomplete="off" />
+            <button id="comboToggle" class="combo-toggle" type="button" aria-label="展开全部任务" tabindex="-1"><span>全部任务</span><i aria-hidden="true">⌄</i></button>
+            <div id="questOptions" class="options" role="listbox" hidden></div>
+          </div>
+          <div class="finder-foot">
+            <span>支持模糊匹配、别名与拼音首字母</span>
+            <button id="clearSearch" class="text-button" type="button">清空</button>
+          </div>
+        </div>
+
+        <div id="quickLinks" class="quick-links" aria-label="快速入口"></div>
+      </section>
+
+      <section id="resultSection" class="result-section" aria-live="polite">
+        <div id="emptyState" class="empty-state">
+          <span class="empty-icon" aria-hidden="true">⌕</span>
+          <div><b>先选择一个任务</b><p>可输入名称，也可点击输入框右侧箭头浏览全部任务。</p></div>
+        </div>
+        <article id="questDetail" class="quest-detail" hidden></article>
+      </section>
+
+      <section class="notes" aria-labelledby="notesTitle">
+        <div>
+          <p class="eyebrow">DATA NOTES</p>
+          <h2 id="notesTitle">资料口径</h2>
+        </div>
+        <div class="note-grid">
+          <article><b>先做关系索引</b><p>首版优先解决“这是第几部、前后是什么、还缺哪些前置”，详细步骤仍跳转到原资料页。</p></article>
+          <article><b>区分主线与支线</b><p>系列编号不一定等于强制顺序。例如半山4为支线，半山5可由半山3直接前往。</p></article>
+          <article><b>只收怀旧服</b><p>任务存在多服务器版本时，只保留怀旧服的等级、血量、流程、奖励与打法；其他服务器数据不参与展示。</p></article>
+        </div>
+      </section>
+    </main>
+
+    <footer><span>魔力任务簿 · 本地离线工具</span><span>首版资料整理：2026-09-20</span></footer>
+  </div>
+  <script src="data.js"></script>
+  <script src="catalog.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
