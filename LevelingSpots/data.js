@@ -9,6 +9,9 @@ const SOURCES = {
   seabedRoute: { name: "17173｜2025海底与新海底路线", url: "https://cg.17173.com/content/04162025/231720930.shtml" },
   seabedInspect: { name: "新浪游戏｜索奇亚海底洞窟调查", url: "https://games.sina.com.cn/z/cross/diaocha/haididongku.shtml" },
   forumGuide: { name: "唯有魔力｜练级地点汇总", url: "https://www.pkml.cn/bbs/thread-165947-1-1.html" }
+  ,sinaTable: { name: "新浪游戏｜地图怪物与练功地点汇总", url: "https://games.sina.com.cn/zhqu/cross/lgdd.shtml" }
+  ,deepGreen: { name: "新浪游戏｜深绿的山道调查", url: "https://games.sina.com.cn/z/cross/diaocha/shenlvshandao.shtml" }
+  ,deepGreenRoute: { name: "17173｜2025深绿路线记录", url: "https://cg.17173.com/content/04162025/232056487.shtml" }
 };
 
 const PLACES = [

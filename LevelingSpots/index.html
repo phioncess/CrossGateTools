@@ -23,7 +23,7 @@
         <div class="query-copy">
           <p class="eyebrow">LEVEL ROUTE FINDER</p>
           <h1 id="query-title">你现在几级？</h1>
-          <p>输入人物等级，选择练级或技能，立即查看适合的地图、怪物与刷怪数量。</p>
+          <p>输入人物等级，可查练级、技能，或直接查看前后 5 级怪物分布。</p>
         </div>
 
         <form id="finderForm" class="finder" autocomplete="off">
@@ -37,12 +37,13 @@
 
           <fieldset>
             <legend>我要</legend>
-            <div class="mode-switch" role="radiogroup" aria-label="用途">
+            <div class="mode-switch three" role="radiogroup" aria-label="用途">
               <label><input type="radio" name="mode" value="level" checked /><span>练级</span></label>
               <label><input type="radio" name="mode" value="skill" /><span>技能</span></label>
+              <label><input type="radio" name="mode" value="browse" /><span>只查怪物 ±5级</span></label>
             </div>
           </fieldset>
-          <button class="primary-btn" type="submit">查看推荐地点 <span aria-hidden="true">→</span></button>
+          <button class="primary-btn" type="submit">开始查询 <span aria-hidden="true">→</span></button>
         </form>
 
         <div class="quick-levels" aria-label="快速选择等级">
@@ -74,7 +75,7 @@
       <section class="sources" aria-labelledby="sourcesTitle">
         <div class="section-heading compact"><div><p class="eyebrow">DATA NOTES</p><h2 id="sourcesTitle">资料口径与来源</h2></div></div>
         <div class="source-grid">
-          <article><b>可靠性分级</b><p>“高”表示任务页、地图调查或多份记录互相印证；“中”表示版本吻合但主要依赖单一整理；“低”表示跨版本、路线存疑或缺少独立复核。</p></article>
+          <article><b>资料库范围</b><p>练级推荐只是标签之一；城外区域、固定洞窟、随机迷宫和任务地图也会进入“只查怪物”结果。</p></article>
           <article><b>数量不做类推</b><p>只有来源明确写出每战数量才展示数字。旧海底的 1～8 已找到两处记录；新海底没有同等证据，保持“待核验”。</p></article>
           <article><b>旧资料如何使用</b><p>年份只代表发布时间，不代表真伪。固定地图与经典任务可参考旧资料；怀旧服新增地图、NPC和传送规则必须优先看版本说明与近期记录。</p></article>
         </div>
@@ -85,6 +86,7 @@
     <footer><span>魔力路线 · 本地离线工具</span><span>资料整理日期：2026-09-19</span></footer>
   </div>
   <script src="data.js"></script>
+  <script src="zones.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
