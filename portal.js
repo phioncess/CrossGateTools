@@ -71,7 +71,7 @@
     if (skill) careerParams.set('skill', skill);
     careerJump.href = `魔力职业/index.html#${careerParams}`;
     gearJump.href = `魔力装备档案/index.html#${new URLSearchParams({ profession: item.name, rank: String(rank) })}`;
-    trainingJump.href = `魔力服练级查询/index.html#${new URLSearchParams({ level: String(level), mode: 'skill' })}`;
+    trainingJump.href = `魔力服练级查询/index.html#${new URLSearchParams({ level: String(level), mode: 'level' })}`;
     [careerJump, gearJump, trainingJump].forEach(link => link.classList.remove('disabled'));
     note.textContent = `${item.name} · ${data.ranks[rank]}可学习 ${availableSkills(item, rank).length} 项技能${skill ? ` · 已选 ${skill}` : ''}`;
   }
