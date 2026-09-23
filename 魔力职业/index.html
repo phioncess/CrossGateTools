@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="魔力宝贝怀旧服职业、就职、三转技能与装备查询工具">
+  <title>魔力职业 · 怀旧服职业档案</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="魔力职业首页">
+      <span class="brand-mark">职</span>
+      <span><b>魔力职业</b><small>怀旧服职业档案</small></span>
+    </a>
+    <div class="scope"><span></span>只收录怀旧服 · 最高三转</div>
+  </header>
+
+  <main class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-head">
+        <label class="search-box">
+          <span>⌕</span>
+          <input id="careerSearch" type="search" placeholder="搜索职业" autocomplete="off">
+        </label>
+        <div id="groupFilters" class="group-filters" aria-label="职业分类"></div>
+      </div>
+      <div id="careerList" class="career-list"></div>
+      <div id="careerCount" class="career-count"></div>
+    </aside>
+
+    <section class="workspace">
+      <div id="emptyState" class="empty-state" hidden>没有找到匹配的职业</div>
+      <div id="careerView">
+        <div class="career-sticky">
+          <section class="hero-card">
+            <div>
+              <div class="eyebrow" id="careerGroup"></div>
+              <h1 id="careerName"></h1>
+              <div id="careerTitles" class="title-chain"></div>
+            </div>
+            <a id="sourceLink" class="source-button" target="_blank" rel="noreferrer">核对原始资料 ↗</a>
+          </section>
+
+          <nav id="rankTabs" class="rank-tabs" aria-label="职业阶段"></nav>
+        </div>
+
+        <div class="content-flow">
+          <section class="panel intro-panel">
+            <div class="panel-title"><div><span class="kicker">职业概览</span><h2>定位与评价</h2></div></div>
+            <div id="ratingGrid" class="rating-grid"></div>
+            <div id="careerDescription" class="description"></div>
+          </section>
+
+          <section class="panel route-panel">
+            <div class="panel-title"><div><span class="kicker">当前阶段路线</span><h2 id="routeHeading"></h2></div></div>
+            <div id="careerRoute" class="route"></div>
+          </section>
+
+          <section class="panel equipment-panel">
+            <div class="panel-title"><div><span class="kicker">装备资格</span><h2><span id="rankEquipName"></span>阶段装备上限</h2></div></div>
+            <p class="section-note">只显示当前阶段可以装备的类型；完全不能装备的项目已隐藏。</p>
+            <div id="equipmentList" class="equipment-list"></div>
+          </section>
+
+          <section class="panel skill-panel">
+            <div class="panel-title skill-title">
+              <div><span class="kicker">技能档案</span><h2><span id="rankSkillName"></span>可学习技能</h2></div>
+            </div>
+            <p class="section-note">先选择技能分类，再选择具体技能；固定资料区会显示当前阶段上限与学习方法。</p>
+            <div class="skill-picker">
+              <label><span>第一步 · 技能分类</span><select id="skillCategory" aria-label="技能分类"></select></label>
+              <label><span>第二步 · 具体技能</span><select id="skillSelect" aria-label="具体技能"></select></label>
+            </div>
+            <div id="skillSummary" class="summary-strip"></div>
+
+            <article id="skillDetail" class="skill-detail" aria-live="polite">
+              <div class="skill-detail-head">
+                <div><span class="kicker">当前技能资料</span><h3 id="skillDetailTitle"></h3></div>
+                <a id="skillDetailSource" class="source-button" target="_blank" rel="noreferrer">核对技能原始资料 ↗</a>
+              </div>
+              <div id="skillDetailMeta" class="skill-detail-meta"></div>
+              <div id="skillDetailMethod" class="skill-detail-method"></div>
+              <div id="skillDetailCaps" class="skill-detail-caps"></div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

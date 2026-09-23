@@ -1,0 +1,97 @@
+const SOURCES = {
+  oldGuide: { name: "魔力百科｜怀旧服练级指南", url: "https://old.molibaike.com/page/detail/eacab52f-d77a-414a-ae12-4afe1aa2647f" },
+  seabed: { name: "魔力百科｜海底洞窟（熊男&热砂）", url: "https://old.molibaike.com/Mission/Detail/fcb2113d-b477-40ab-8a65-6e60d392a9fc?u=True" },
+  flame: { name: "魔力百科｜炎之洞窟", url: "https://old.molibaike.com/Mission/Detail/e92e5b71-431e-4fcf-a7dc-090ff26ddd19?u=True" },
+  skill: { name: "17173｜怀旧服烧技能地点", url: "https://cg.17173.com/content/02222025/080905332.shtml" },
+  maps: { name: "魔力百科 Wiki｜各区域魔物调查", url: "https://www.molibaike.wiki/article/bd595a8e-6b0d-422a-95a9-f1455202c2ee" },
+  skyey: { name: "蔚蓝幻境｜练功攻略（仅作跨版本比对）", url: "https://cg.skyey.tw/other/05/02.html" },
+  currentGuide: { name: "17173｜2025怀旧服练级整理", url: "https://cg.17173.com/content/01152025/100910231.shtml" },
+  seabedRoute: { name: "17173｜2025海底与新海底路线", url: "https://cg.17173.com/content/04162025/231720930.shtml" },
+  seabedInspect: { name: "新浪游戏｜索奇亚海底洞窟调查", url: "https://games.sina.com.cn/z/cross/diaocha/haididongku.shtml" },
+  forumGuide: { name: "唯有魔力｜练级地点汇总", url: "https://www.pkml.cn/bbs/thread-165947-1-1.html" }
+  ,sinaTable: { name: "新浪游戏｜地图怪物与练功地点汇总", url: "https://games.sina.com.cn/zhqu/cross/lgdd.shtml" }
+  ,deepGreen: { name: "新浪游戏｜深绿的山道调查", url: "https://games.sina.com.cn/z/cross/diaocha/shenlvshandao.shtml" }
+  ,deepGreenRoute: { name: "17173｜2025深绿路线记录", url: "https://cg.17173.com/content/04162025/232056487.shtml" }
+  ,xpRule: { name: "魔力百科｜人物与魔物经验衰减规则", url: "https://old.molibaike.com/Article/Detail/94385037-cb3c-422b-a335-8d4985ec6bc9" }
+  ,xpTable: { name: "新浪游戏｜等级差经验百分比表", url: "https://games.sina.com.cn/zhqu/cross/dengji.shtml" }
+  ,midGameXp: { name: "魔力百科｜中后期练级点实测经验表", url: "https://old.molibaike.com/Article/Detail/5b459f85-f1ac-4c94-93b3-9553e115b6f5" }
+  ,xuanwu: { name: "魔力百科｜玄武之境与玄武之渊", url: "https://www.molibaike.com/Mission/Detail/30b6700b-3d91-4129-9875-3436f563b4bc?u=True" }
+};
+
+const PLACES = [
+  {name:"法兰城周边", aliases:"东/西门外", modes:["level"], player:[1,5], mobs:[1,5], monsters:"迷你蝙蝠、哥布林", count:"待核验", countStatus:"pending", crystal:"任意属性", notes:"单练不要离城太远；适合新角色熟悉战斗。未找到版本吻合且明确的每战数量记录。", source:"oldGuide"},
+  {name:"法兰城东门过桥", aliases:"过桥", modes:["level"], player:[5,10], mobs:[5,8], monsters:"树精、黄蜂、盗贼", count:"待核验", countStatus:"pending", crystal:"纯水 / 水火", notes:"传统低级练级点，回城补给方便。", source:"oldGuide"},
+  {name:"灵堂", aliases:"法兰城灵堂", modes:["level"], player:[10,20], mobs:[9,16], monsters:"幽灵、漂浮炸弹", count:"待核验", countStatus:"pending", crystal:"风地", notes:"清晨或黄昏时才可进入。", source:"oldGuide"},
+  {name:"哈巴鲁东边洞穴", aliases:"狗洞", modes:["level"], player:[10,20], mobs:[16,19], monsters:"僵尸、腐尸、地狱看门犬", count:"待核验", countStatus:"pending", crystal:"风地", notes:"位于亚留特村外。", source:"oldGuide"},
+  {name:"索奇亚海底洞窟", aliases:"旧海底 · 海底", modes:["level","skill"], player:[20,25], skill:[1,47], mobs:[18,20], monsters:"水龙蜥、蜥蜴战士", count:"1～8", countStatus:"verified", crystal:"风地", notes:"地下1层靠近出口，地下2层可能随机遇热砂。1～8来自早期地图调查，并与怀旧区练级汇总相互印证；任务战的2～3只不是普通遭遇数量。", source:"seabedInspect", featured:true},
+  {name:"维诺亚海底洞窟", aliases:"新海底", modes:["level","skill"], player:[24,30], skill:[1,59], mobs:[26,27], monsters:"水龙蜥、蜥蜴战士", count:"待核验", countStatus:"pending", crystal:"风地", notes:"已交叉确认怪物种类与Lv.26～27；目前未找到明确、版本吻合的普通遭遇数量，不能套用旧海底的1～8。", source:"seabedRoute", featured:true},
+  {name:"库鲁克斯岛雷山", aliases:"小雷 · 1000M以上", modes:["level"], player:[25,30], mobs:[29,32], monsters:"火焰啄木鸟、虎头蜂", count:"待核验", countStatus:"pending", crystal:"水火", notes:"哥拉尔镇外（331,361）进入；上楼梯1000M以上适合练级。", source:"oldGuide"},
+  {name:"内心世界外层", aliases:"内心外层", modes:["level"], player:[25,40], mobs:[32,39], monsters:"小石像怪、使魔", count:"待核验", countStatus:"pending", crystal:"地水", notes:"非弓、格、魔职业建议自行组队；准备料理、血瓶。", source:"oldGuide"},
+  {name:"路霸后", aliases:"路霸阿德基姆后方", modes:["level"], player:[30,40], mobs:[36,38], monsters:"星菇、妖草", count:"待核验", countStatus:"pending", crystal:"火风", notes:"队内需有人持有大地的结晶。", source:"oldGuide"},
+  {name:"雪山", aliases:"积雪的山路", modes:["level"], player:[40,50], mobs:[39,45], monsters:"丧尸、地狱妖犬", count:"待核验", countStatus:"pending", crystal:"地水", notes:"可装备黑暗戒指降低伤害；跨版本资料中的数量不再直接采用。", source:"oldGuide"},
+  {name:"坎那贝拉村门口", aliases:"坎村", modes:["level","skill"], player:[40,50], skill:[40,87], mobs:[40,42], monsters:"树精、翠绿菇", count:"1～6", countStatus:"verified", crystal:"水火", notes:"村内可补给；离村口太远会混入其他怪，翠绿菇会毒击。", source:"skill"},
+  {name:"西尔维村门口", aliases:"新村", modes:["level","skill"], player:[40,50], skill:[40,93], mobs:[41,45], monsters:"树精、妖花、异型蜂", count:"1～6", countStatus:"verified", crystal:"纯水 / 水火", notes:"塔东北河道旁较稳定遇树精；村内有资深护士，烧技能方便。", source:"skill"},
+  {name:"贡品之路", aliases:"贡品", modes:["level"], player:[40,50], mobs:[40,44], monsters:"海盗、死灵、血骷髅", count:"待核验", countStatus:"pending", crystal:"任意纯水晶", notes:"偏法师练级点；蒂娜传送石需45级。", source:"oldGuide"},
+  {name:"魔法大学地底湖", aliases:"大学地底湖", modes:["skill"], skill:[40,41], mobs:[17,19], monsters:"海蝙蝠、风龙蜥", count:"1～6", countStatus:"verified", crystal:"按怪物属性", notes:"魔法大学内（36,30）调查小坟墓；先清海蝙蝠，留风龙蜥。", source:"skill"},
+  {name:"杰诺瓦镇门口", aliases:"杰村门口", modes:["skill"], skill:[40,53], mobs:[23,25], monsters:"蔓陀罗草、火焰哥布林", count:"1～4", countStatus:"verified", crystal:"按怪物属性", notes:"村内有医院和商人；先清会魔法的蔓陀罗草，留火焰哥布林。", source:"skill"},
+  {name:"魔法大学门口", aliases:"大学门口", modes:["skill"], skill:[40,69], mobs:[31,33], monsters:"北极熊、烈风鸟人", count:"2～6", countStatus:"verified", crystal:"按怪物属性", notes:"有资深护士；物理系不优先，法系注意血量。", source:"skill"},
+  {name:"雷克塔尔镇外", aliases:"雷村外", modes:["level"], player:[45,50], mobs:[48,49], monsters:"地狱妖犬、猪鬼", count:"待核验", countStatus:"pending", crystal:"纯地", notes:"建议使用传送券；适合组队。", source:"oldGuide"},
+  {name:"炎之洞窟", aliases:"炎洞 · 炎1", modes:["level"], player:[45,50], mobs:[39,44], monsters:"火焰鼠、果冻史莱姆、迷你蝙蝠", count:"待核验", countStatus:"pending", crystal:"水火 / 纯水", notes:"45级可进入；跨版本资料中的数量不再直接采用。", source:"flame"},
+  {name:"诅咒迷宫31～40层", aliases:"诏三", modes:["level"], player:[44,55], mobs:[47,49], monsters:"迷你石像怪、宝贝炸弹", count:"待核验", countStatus:"pending", crystal:"水火", notes:"战斗系三转任务路线；需先击败3个BOSS取得圣诏之三。", source:"oldGuide"},
+  {name:"隐秘的通道", aliases:"奇利日常", modes:["skill"], skill:[30,103], mobs:[48,50], monsters:"黄蝎、史莱姆", count:"1～4", countStatus:"verified", crystal:"按怪物属性", notes:"奇利村训练模拟战管理大厅进入；先清史莱姆，留黄蝎。", source:"skill"},
+  {name:"迷样的地下室", aliases:"摩顿村地下室", modes:["skill"], skill:[40,67], mobs:[30,33], monsters:"史莱姆、果冻史莱姆", count:"2～7", countStatus:"verified", crystal:"按怪物属性", notes:"适合护卫、反击、圣盾、明镜等非伤害技能；留半血以上果冻史莱姆可使其不动。", source:"skill"},
+  {name:"地下仓库（旧）", aliases:"旧仓库", modes:["skill"], skill:[40,89], mobs:[41,41], monsters:"堕天使、液态史莱姆、布丁史莱姆", count:"2～6", countStatus:"verified", crystal:"按怪物属性", notes:"位于法兰城大圣堂内；清堕天使与布丁，留液态史莱姆。", source:"skill"},
+  {name:"冰树", aliases:"史莱姆的临时住所", modes:["level"], player:[50,60], mobs:[55,55], monsters:"冰冷树精", count:"待核验", countStatus:"pending", crystal:"纯地 / 地水", notes:"队长需持有手电筒；跨版本资料中的数量不再直接采用。", source:"oldGuide"},
+  {name:"水之洞窟", aliases:"水洞", modes:["level"], player:[54,70], mobs:[54,62], monsters:"水蓝鸟魔、水晶螃蟹、猫妖", count:"待核验", countStatus:"pending", crystal:"地风 / 纯风", notes:"60级才可进入；跨版本资料中的数量不再直接采用。", source:"oldGuide"},
+  {name:"巴洛斯岛", aliases:"牛场 · 打牛", modes:["level"], player:[60,70], mobs:[60,62], monsters:"米诺陶斯、火焰牛头怪", count:"待核验", countStatus:"pending", crystal:"纯风", notes:"需空间裂隙水晶或旧路线凭证；跨版本数量不再直接采用。", source:"currentGuide"},
+  {name:"南方丙丁火", aliases:"火洞 · 幻之地底遗迹", modes:["skill"], skill:[60,117], mobs:[55,55], monsters:"狠毒鸟人、地狱猎犬", count:"2～6", countStatus:"verified", crystal:"按怪物属性", notes:"需勇者的传承系列前置；遗迹内有普通护士，留狠毒鸟人可稳定烧非伤害技能。", source:"skill"},
+  {name:"矿山小镇莫利亚门口", aliases:"矿山", modes:["skill"], skill:[40,117], mobs:[55,57], monsters:"哥布林", count:"1～3", countStatus:"verified", crystal:"按怪物属性", notes:"镇内有资深护士；进入会解散队伍，需要重新组队。", source:"skill"},
+  {name:"兰国第五等勋章路线", aliases:"兰五", modes:["level"], player:[60,70], mobs:[67,69], monsters:"红色口臭鬼、鸟人", count:"待核验", countStatus:"pending", crystal:"水火", notes:"需完成兰国八、七、六等勋章任务。", source:"oldGuide"},
+  {name:"半山", aliases:"小岛半山", modes:["level"], player:[68,90], access:"50多级可推进前置；能到不等于经验效率高", mobs:[72,74], monsters:"液态史莱姆、利牙、虎人、迷你蝙蝠", count:"待核验", countStatus:"pending", crystal:"纯火", notes:"实测表确认 Lv.50 已能取得人物经验；需完成半山系列前置任务。具体衰减由统一判断规则按当前人物等级计算。", source:"midGameXp"},
+  {name:"砍狗", aliases:"蒂娜沉船遗迹路线", modes:["level"], player:[70,100], mobs:[68,75], monsters:"地狱妖犬、地狱猎犬", count:"待核验", countStatus:"pending", crystal:"纯风 / 纯水", notes:"需完成贡品、泰格利、海盗等任务并取得绿色三棱石。", source:"oldGuide"},
+  {name:"兰一 / 艾一", aliases:"勋章一等路线", modes:["level"], player:[70,100], mobs:[75,75], monsters:"大地鼠、宝石鼠、恶梦鼠、火焰鼠", count:"待核验", countStatus:"pending", crystal:"任意属性", notes:"需完成对应勋章和追加任务，持有隶属的项链。", source:"oldGuide"},
+  {name:"地下仓库（新）", aliases:"新仓库", modes:["skill"], skill:[1,147], mobs:[70,70], monsters:"看守（男）、看守（女）", count:"1～2", countStatus:"verified", crystal:"按怪物属性", notes:"法兰城大圣堂内，无需前置；清女看守，留男看守。金牛服无此点。", source:"skill"},
+  {name:"隐秘的山路", aliases:"菲鲁瑟团探索路线", modes:["skill"], skill:[1,127], mobs:[60,60], monsters:"人魔草、穴熊", count:"待核验", countStatus:"pending", crystal:"按怪物属性", notes:"人魔草没魔后不动；穴熊会诸刃。", source:"skill"},
+  {name:"柯村", aliases:"柯马特依村周边", modes:["level"], player:[77,110], mobs:[80,82], monsters:"烟雾、掘地虫", count:"待核验", countStatus:"pending", crystal:"纯地", notes:"需解放者称号及诺斯菲拉特相关任务。", source:"oldGuide"},
+  {name:"砍龙", aliases:"漆黑的荒野", modes:["level"], player:[82,110], mobs:[87,87], monsters:"大地翼龙、寒冰翼龙、火焰翼龙、烈风翼龙", count:"待核验", countStatus:"pending", crystal:"任意纯水晶", notes:"需深渊及白/黑意志系列前置；推荐完成白色路线。", source:"oldGuide"},
+  {name:"玄武之渊", aliases:"玄武 · 玄武练级点", modes:["level"], player:[82,120], access:"师范（3转）以上；通常约 Lv.100 后接替柯村", mobs:[87,94], monsters:"地龙蜥、火龙蜥、猎豹蜥蜴、蜥蜴斗士", count:"4～7", countStatus:"verified", crystal:"任意属性", notes:"20层随机迷宫。2024-04-17 更新后，普通遭遇由2～7改为4～7，资料页记载每场经验约为修改前1.25倍。高等级继续在此练，依赖的是基础经验与怪物数量，不代表仍处于100%等级差系数。", source:"xuanwu", featured:true}
+];
+
+const ROUTES = {
+  "法兰城周边": {difficulty:1, tasks:"无", route:"法兰城任一城门 → 芙蕾雅岛，靠近城门活动。", reliability:"high", evidence:["oldGuide","currentGuide"]},
+  "法兰城东门过桥": {difficulty:1, tasks:"无", route:"法兰城东门 → 沿主路向东 → 过桥后的芙蕾雅区域。", reliability:"high", evidence:["oldGuide","currentGuide"]},
+  "灵堂": {difficulty:1, tasks:"无；有时段限制", route:"法兰城 → 里谢里雅堡 → 召唤之间 → 回廊 → 灵堂；约清晨或黄昏开放。", reliability:"high", evidence:["oldGuide","currentGuide"]},
+  "哈巴鲁东边洞穴": {difficulty:2, tasks:"无；建议先开亚留特传送", route:"法兰启程之间 → 亚留特村（已开传）→ 出村前往村外洞穴；首次未开传时路程明显更长。", reliability:"medium", evidence:["oldGuide","currentGuide"]},
+  "索奇亚海底洞窟": {difficulty:2, tasks:"无；建议先开维诺亚传送", route:"法兰启程之间 → 维诺亚村 → 出村向东南 → 芙蕾雅岛（343,497）进入。优先在地下1层练级。", reliability:"high", evidence:["seabed","seabedRoute","seabedInspect","forumGuide"]},
+  "维诺亚海底洞窟": {difficulty:2, tasks:"无；建议先开维诺亚传送", route:"法兰启程之间 → 维诺亚村 → 出村往西南 → 芙蕾雅岛（299,538）进入。", reliability:"high", evidence:["flame","seabedRoute","currentGuide"]},
+  "库鲁克斯岛雷山": {difficulty:3, tasks:"需抵达哥拉尔；传送券更省事", route:"法兰 → 使用哥拉尔传送券或既有远程路线到哥拉尔 → 出镇至（331,361）→ 进入后上至1000M以上。", reliability:"medium", evidence:["oldGuide","currentGuide"]},
+  "内心世界外层": {difficulty:2, tasks:"需按内心任务进入", route:"法兰城西门附近组队 → 由持有进入条件的队长带队进入内心世界；具体入口随任务阶段核对。", reliability:"low", evidence:["oldGuide"]},
+  "路霸后": {difficulty:3, tasks:"至少1项：大地的结晶", route:"法兰 → 开启阿凯鲁法方向交通 → 前往路霸阿德基姆处 → 队内有人持大地的结晶后通过。", reliability:"medium", evidence:["oldGuide"]},
+  "雪山": {difficulty:3, tasks:"建议先开阿巴尼斯传送", route:"法兰启程之间 → 阿巴尼斯村（已开传）→ 出村向西 → 积雪的山路（84,193）。", reliability:"medium", evidence:["oldGuide","skyey"]},
+  "坎那贝拉村门口": {difficulty:2, tasks:"需开坎村传送", route:"法兰 → 阿凯鲁法村（168,108）的传送点 → 坎那贝拉村 → 出村门口附近活动。", reliability:"medium", evidence:["skill"]},
+  "西尔维村门口": {difficulty:3, tasks:"新村系列约3项", route:"完成新村前置 → 法兰启程之间下层传送至西尔维村 → 出村；烧技能优先走到瞭望塔东侧河道（359,191～195）。", reliability:"high", evidence:["skill","oldGuide"]},
+  "贡品之路": {difficulty:3, tasks:"贡品任务；蒂娜传送通常需45级", route:"法兰启程之间 → 蒂娜村（满足传送条件）→ 按《被夺走的贡品》任务路线进入。", reliability:"medium", evidence:["oldGuide"]},
+  "魔法大学地底湖": {difficulty:2, tasks:"需抵达魔法大学", route:"法兰 → 杰诺瓦/魔法大学路线 → 大学内部（36,30）调查小坟墓 → 地底湖。", reliability:"medium", evidence:["skill"]},
+  "杰诺瓦镇门口": {difficulty:2, tasks:"建议先开杰诺瓦传送", route:"法兰启程之间 → 杰诺瓦镇 → 出镇门口附近；补给后往返较短。", reliability:"medium", evidence:["skill"]},
+  "魔法大学门口": {difficulty:2, tasks:"需抵达魔法大学", route:"法兰 → 杰诺瓦方向 → 魔法大学 → 门外附近活动；校内有资深护士。", reliability:"medium", evidence:["skill"]},
+  "雷克塔尔镇外": {difficulty:3, tasks:"传送券或新大陆路线", route:"法兰 → 使用雷克塔尔镇传送券（单人）最省事 → 出镇组队；徒步路线较长。", reliability:"medium", evidence:["oldGuide","currentGuide"]},
+  "炎之洞窟": {difficulty:3, tasks:"人物45级；经新海底", route:"法兰启程之间 → 维诺亚村 → 芙蕾雅岛（299,538）→ 穿过维诺亚海底洞窟 → 前往炎洞入口。", reliability:"high", evidence:["flame","skyey"]},
+  "诅咒迷宫31～40层": {difficulty:4, tasks:"三转路线；至少3场首领战", route:"法兰 → 阿巴尼斯村 → 接诅咒迷宫任务 → 推进并击败前3个难关首领 → 持圣诏之三到31～40层。", reliability:"high", evidence:["oldGuide"]},
+  "隐秘的通道": {difficulty:2, tasks:"奇利日常入口", route:"法兰 → 奇利村 → 训练模拟战管理大厅（38,59）→ 与低级训练员（17,10）对话 → 黄色传送石。", reliability:"medium", evidence:["skill"]},
+  "迷样的地下室": {difficulty:3, tasks:"《穿越时空》相关", route:"法兰 → 按穿越时空路线抵达摩顿村 → 村长家 → 地下室。首次抵达较繁琐。", reliability:"medium", evidence:["skill"]},
+  "地下仓库（旧）": {difficulty:2, tasks:"大圣堂地下仓库任务", route:"法兰城内 → 大圣堂 → 按地下仓库任务路线进入；纪念羽毛可缩短回补路程。", reliability:"medium", evidence:["skill"]},
+  "冰树": {difficulty:4, tasks:"1项关键道具：手电筒", route:"先做不可思议之三取得手电筒 → 法兰远程前往达米达村 → 与小拓（28,43）对话 → 通过9层随机迷宫到底层。", reliability:"high", evidence:["oldGuide","currentGuide"]},
+  "水之洞窟": {difficulty:3, tasks:"人物60级", route:"法兰启程之间 → 维诺亚村 → 出村东南至（439,570）→ 与水精温蒂妮对话进入。", reliability:"medium", evidence:["oldGuide","skyey"]},
+  "巴洛斯岛": {difficulty:5, tasks:"二转、开启者及BBA等多项", route:"完成冰雪牢城、风鸣之塔等前置 → 取得空间裂隙水晶后直接使用；旧式水镜路线更长。", reliability:"high", evidence:["currentGuide","oldGuide"]},
+  "南方丙丁火": {difficulty:5, tasks:"勇者传承前2部＋第3部前段", route:"法兰 → 蒂娜村 → 夜晚推进《阿蒙的幻影》至取得线索卡片6 → 传送幻之地底遗迹。", reliability:"medium", evidence:["skill"]},
+  "矿山小镇莫利亚门口": {difficulty:4, tasks:"新大陆系列多项", route:"法兰 → 西尔维村 → 远古地下水脉 → 雷克亚克平原（268,46）→ 莫利亚；进镇会解散队伍。", reliability:"medium", evidence:["skill"]},
+  "兰国第五等勋章路线": {difficulty:5, tasks:"兰国八、七、六等勋章", route:"法兰 → 依次完成兰国8、7、6等勋章 → 进入第五等勋章任务区域练级。属于长前置路线。", reliability:"medium", evidence:["oldGuide"]},
+  "半山": {difficulty:5, tasks:"半山1、2、3、5，共4项", route:"完成彷徨的亡灵、亡者之镇、圣鸟之谜、小岛之谜 → 法兰西门外（398,168）交800G → 小岛（64,46）黄水晶 → 第一段随机迷宫到半山腰。", reliability:"high", evidence:["oldGuide","currentGuide"]},
+  "砍狗": {difficulty:5, tasks:"贡品＋泰格利＋海盗＋沉船前段", route:"完成3个前置任务 → 推进蒂娜沉船遗迹至取得绿色三棱石 → 依任务路线进入练级区。", reliability:"medium", evidence:["oldGuide"]},
+  "兰一 / 艾一": {difficulty:5, tasks:"兰国八至三＋3项追加", route:"完成兰国八至三等勋章及追加任务 → 同时持有隶属的项链 → 进入一等勋章相关区域。", reliability:"medium", evidence:["oldGuide"]},
+  "地下仓库（新）": {difficulty:1, tasks:"无；部分服务器没有", route:"法兰城大圣堂入口向西至（5,15）→ 房间楼梯（16,13）→ 地下仓库 → 楼梯（34,13）。", reliability:"medium", evidence:["skill"]},
+  "隐秘的山路": {difficulty:4, tasks:"菲鲁瑟团探索计划", route:"法兰 → 按《菲鲁瑟团探索计划》推进至隐秘山路。入口与可重入条件需按当前任务状态确认。", reliability:"medium", evidence:["skill"]},
+  "柯村": {difficulty:5, tasks:"解放者＋诺斯菲拉特至少2项", route:"完成踏足诺斯菲拉特、重拾勇气的掘地族 → 哥拉尔西门外（218,432）传送雷克塔尔镇外 → 搭船前往柯马特依村。", reliability:"high", evidence:["oldGuide","currentGuide"]},
+  "砍龙": {difficulty:5, tasks:"深渊＋消亡之地＋抉择＋意志路线", route:"完成深渊取得世界之心 → 完成消亡之地、抉择之刻 → 推进白/黑意志至漆黑荒野。", reliability:"high", evidence:["oldGuide","currentGuide"]}
+  ,"玄武之渊": {difficulty:5, tasks:"奇利的诱拐事件＋玄武的邀约称号＋师范（3转）", route:"法兰 → 杰诺瓦镇（48,69）找坎取坤签 → 莎莲娜岛击败丧尸并换月之锄头 → 进入12～16层奇怪坑道 → 击败迪次郎 → 地下水脉（45,55）交坤签 → 绿色传送石进入20层玄武之渊。每位练级角色都需坤签；玄武秘术卷轴可单人直飞。", reliability:"high", evidence:["xuanwu","currentGuide"]}
+};

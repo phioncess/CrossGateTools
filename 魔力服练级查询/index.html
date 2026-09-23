@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="魔力宝贝怀旧服练级与技能地点查询工具" />
+  <title>魔力宝贝怀旧服 · 练级地图查询</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101824'/%3E%3Cpath d='M12 39h40L44 22l-12-9-12 9z' fill='%2338d9c5'/%3E%3Ccircle cx='32' cy='34' r='8' fill='%23ffcf68'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="返回顶部">
+        <span class="brand-mark" aria-hidden="true">M</span>
+        <span><b>魔力路线</b><small>怀旧服路线查询</small></span>
+      </a>
+      <div class="top-meta"><span class="status-dot"></span><span id="recordCount">资料载入中</span></div>
+    </header>
+
+    <main id="top">
+      <section class="query-panel" aria-labelledby="query-title">
+        <div class="query-copy">
+          <p class="eyebrow">LEVEL ROUTE FINDER</p>
+          <h1 id="query-title">你现在几级？</h1>
+          <p>输入人物等级，可查练级、技能，或直接查看前后 5 级怪物分布。</p>
+        </div>
+
+        <form id="finderForm" class="finder" autocomplete="off">
+          <label for="levelInput">人物等级</label>
+          <div class="level-row">
+            <button type="button" class="step-btn" data-step="-1" aria-label="等级减一">−</button>
+            <div class="level-input-wrap"><span>Lv.</span><input id="levelInput" type="number" min="1" max="120" value="25" inputmode="numeric" aria-describedby="levelHint" /></div>
+            <button type="button" class="step-btn" data-step="1" aria-label="等级加一">＋</button>
+          </div>
+          <p id="levelHint" class="hint">怀旧服等级上限为 Lv.120；技能模式按技能经验门槛计算。</p>
+
+          <fieldset>
+            <legend>我要</legend>
+            <div class="mode-switch three" role="radiogroup" aria-label="用途">
+              <label><input type="radio" name="mode" value="level" checked /><span>练级</span></label>
+              <label><input type="radio" name="mode" value="skill" /><span>技能</span></label>
+              <label><input type="radio" name="mode" value="browse" /><span>只查怪物 ±5级</span></label>
+            </div>
+          </fieldset>
+          <button class="primary-btn" type="submit">开始查询 <span aria-hidden="true">→</span></button>
+        </form>
+
+        <div class="quick-levels" aria-label="快速选择等级">
+          <span>快速选择</span>
+          <button type="button" data-level="20">20</button><button type="button" data-level="25">25</button>
+          <button type="button" data-level="40">40</button><button type="button" data-level="60">60</button>
+          <button type="button" data-level="80">80</button><button type="button" data-level="100">100</button><button type="button" data-level="105">105</button><button type="button" data-level="120">120</button>
+        </div>
+      </section>
+
+      <section class="results-section" aria-live="polite" aria-labelledby="resultsTitle">
+        <div class="section-heading">
+          <div><p class="eyebrow">MATCHED MAPS</p><h2 id="resultsTitle">Lv.25 练级推荐</h2></div>
+          <div class="legend"><span><i class="verified"></i>多来源一致</span><span><i class="pending"></i>资料有限</span></div>
+        </div>
+        <div id="resultSummary" class="result-summary"></div>
+        <nav id="resultIndex" class="result-index" aria-label="练级地点快速索引" hidden></nav>
+        <div id="results" class="results-grid"></div>
+        <div id="emptyState" class="empty-state" hidden>
+          <b>当前资料里没有精确匹配</b>
+          <p>试试相邻等级，或切换“练级 / 技能”。资料仍在持续补全。</p>
+        </div>
+      </section>
+
+      <aside class="rule-card" id="skillRule">
+        <div class="rule-icon" aria-hidden="true">∑</div>
+        <div><h3>技能经验判定</h3><p>战斗中怪物平均等级需不低于 <code>⌊人物等级 ÷ 2 − 3⌋</code>。BOSS 不提供技能经验，遇到 Lv.1 怪时要重新留意平均等级。</p></div>
+      </aside>
+
+      <aside class="rule-card xp-rule" id="xpRule">
+        <div class="rule-icon" aria-hidden="true">%</div>
+        <div><h3>人物经验等级差规则</h3><p>实际结算使用单场全部怪物的平均等级。卡片把地点记录中的最低、代表平均、最高怪物等级分别代入等级差表，只用于比较衰减趋势；它不等于单场最终经验，也不能替代怪物数量、基础经验和清怪速度。</p></div>
+      </aside>
+
+      <section class="sources" aria-labelledby="sourcesTitle">
+        <div class="section-heading compact"><div><p class="eyebrow">DATA NOTES</p><h2 id="sourcesTitle">资料口径与来源</h2></div></div>
+        <div class="source-grid">
+          <article><b>资料库范围</b><p>练级推荐只是标签之一；城外区域、固定洞窟、随机迷宫和任务地图也会进入“只查怪物”结果。</p></article>
+          <article><b>数量不做类推</b><p>只有来源明确写出每战数量才展示数字。旧海底的 1～8 已找到两处记录；新海底没有同等证据，因此不显示数量项。</p></article>
+          <article><b>旧资料如何使用</b><p>年份只代表发布时间，不代表真伪。固定地图与经典任务可参考旧资料；怀旧服新增地图、NPC和传送规则必须优先看版本说明与近期记录。</p></article>
+          <article><b>系数不是最终经验</b><p>“能去”看任务与职业阶级；实际人物经验还取决于单场怪物平均等级、基础经验和数量。页面的三点系数仅用于观察等级差衰减。</p></article>
+        </div>
+        <div id="sourceLinks" class="source-links"></div>
+      </section>
+    </main>
+
+    <footer><span>魔力路线</span><span>资料整理日期：2026-09-19</span></footer>
+  </div>
+  <script src="data.js"></script>
+  <script src="zones.js"></script>
+  <script src="supplement.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

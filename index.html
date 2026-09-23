@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="魔力宝贝工具集合入口：职业、技能、任务、练级、宠物与装备资料。">
+  <title>魔力工具集 · 统一入口</title>
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="返回入口顶部"><span class="brand-mark">魔</span><span><b>魔力工具集</b><small>资料与计算入口</small></span></a>
+    <span class="new-tab-badge">工具均在新页签打开</span>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">CROSSGATE TOOLBOX</p>
+        <h1>先选角色，再直达资料。</h1>
+        <p>职业与技能直接取自“魔力职业”的资料库。选好后可带着条件打开职业技能档案，或把职业自动填入装备档案。</p>
+      </div>
+
+      <form class="jump-panel" id="jumpForm">
+        <div class="panel-heading"><span>快速定位</span><b id="dataStatus">正在读取职业资料…</b></div>
+        <label><span>职业</span><select id="careerSelect" disabled><option>读取中…</option></select></label>
+        <div class="field-row">
+          <label><span>职业阶段</span><select id="rankSelect" disabled></select></label>
+          <label><span>人物等级</span><input id="levelInput" type="number" min="1" max="120" value="120" inputmode="numeric"></label>
+        </div>
+        <label><span>技能</span><select id="skillSelect" disabled><option>请先选择职业</option></select></label>
+        <p class="selection-note" id="selectionNote">职业和技能名单不会在入口页重复维护。</p>
+        <div class="jump-actions">
+          <a id="careerJump" class="primary disabled" href="魔力职业/index.html" target="_blank" rel="noopener noreferrer">打开职业与技能档案 ↗</a>
+          <a id="gearJump" class="secondary disabled" href="魔力装备档案/index.html" target="_blank" rel="noopener noreferrer">按此职业打开装备档案 ↗</a>
+          <a id="trainingJump" class="text-action disabled" href="魔力服练级查询/index.html" target="_blank" rel="noopener noreferrer">按当前等级查烧技能地点 ↗</a>
+        </div>
+      </form>
+    </section>
+
+    <section class="tool-section" aria-labelledby="toolsTitle">
+      <div class="section-heading">
+        <div><p class="eyebrow">ALL TOOLS</p><h2 id="toolsTitle">全部工具</h2></div>
+        <p>每个工具可独立打开，原始资料链接保留在工具内部。</p>
+      </div>
+      <div class="tool-grid">
+        <a class="tool-card accent-green" href="魔力职业/index.html" target="_blank" rel="noopener noreferrer">
+          <span class="tool-icon">职</span><span class="tool-number">01</span>
+          <h3>魔力职业</h3><p>职业路线、阶段称号、技能上限、学习地点与装备资格。</p>
+          <small>数据：魔力职业/data.js · 魔力百科</small><b>打开工具 ↗</b>
+        </a>
+        <a class="tool-card accent-blue" href="魔力任务检索/index.html" target="_blank" rel="noopener noreferrer">
+          <span class="tool-icon">任</span><span class="tool-number">02</span>
+          <h3>魔力任务检索</h3><p>任务关系、流程、战斗、奖励和本地原图的组合检索。</p>
+          <small>数据：data.js / catalog.js / source-documents.js</small><b>打开工具 ↗</b>
+        </a>
+        <a class="tool-card accent-rust" href="魔力服练级查询/index.html" target="_blank" rel="noopener noreferrer">
+          <span class="tool-icon">练</span><span class="tool-number">03</span>
+          <h3>练级与技能地点</h3><p>按人物等级查询练级、烧技能地点与前后等级怪物分布。</p>
+          <small>数据：data.js / supplement.js / zones.js</small><b>打开工具 ↗</b>
+        </a>
+        <a class="tool-card accent-gold" href="魔力装备档案/index.html" target="_blank" rel="noopener noreferrer">
+          <span class="tool-icon">装</span><span class="tool-number">04</span>
+          <h3>魔力装备档案</h3><p>按职业、阶段与服别筛选装备，计算宝石与整套属性。</p>
+          <small>数据：内嵌装备库 · 魔力百科物品与职业资料</small><b>打开工具 ↗</b>
+        </a>
+        <a class="tool-card accent-violet" href="魔力档案馆/index.html" target="_blank" rel="noopener noreferrer">
+          <span class="tool-icon">宠</span><span class="tool-number">05</span>
+          <h3>魔力档案馆</h3><p>怀旧服宠物算档、成长候选与等级能力模拟。</p>
+          <small>数据：pet-data.js / reference-core.js</small><b>打开工具 ↗</b>
+        </a>
+      </div>
+    </section>
+
+    <section class="source-strip">
+      <div><span>资料原则</span><h2>所有结论都要能回到来源。</h2></div>
+      <p>入口只负责跳转与传值，不创建第二份游戏数据。具体数值以各工具的数据文件、原始链接和本地资料为准；证据不足的内容继续标记为待核验。</p>
+    </section>
+  </main>
+
+  <footer><span>魔力宝贝工具集</span><span id="careerCount">等待职业资料</span></footer>
+  <script src="魔力职业/data.js"></script>
+  <script src="portal.js"></script>
+</body>
+</html>
