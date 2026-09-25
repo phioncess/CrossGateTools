@@ -1379,9 +1379,9 @@ globalThis.PINYIN_INDEX = {
     "jingdianrenwu",
     "jing dian ren wu",
     "jdrw",
-    "huaijiufurenwu",
-    "huai jiu fu ren wu",
-    "hjfrw"
+    "tongyongrenwu",
+    "tong yong ren wu",
+    "tyrw"
   ],
   "catalog-7bddefe2-0b6a-420e-8fa5-a47d999ea961": [
     "andiantuanduitiaozhansai",
@@ -4371,9 +4371,9 @@ globalThis.PINYIN_INDEX = {
     "qizongzuixilie",
     "qi zong zui xi lie",
     "qzzxl",
-    "huaijiufurenwu",
-    "huai jiu fu ren wu",
-    "hjfrw"
+    "tongyongrenwu",
+    "tong yong ren wu",
+    "tyrw"
   ],
   "catalog-95c07f93-11a0-48f6-8035-5047f1165129": [
     "yuanzui",
@@ -5182,26 +5182,6 @@ globalThis.PINYIN_INDEX = {
     "tongyongrenwu",
     "tong yong ren wu",
     "tyrw"
-  ],
-  "catalog-14b727bb-fc3b-47ad-a091-95c584e4de6c": [
-    "zhongqiujieshangyuegongyuan",
-    "zhong qiu jie shang yue gong yuan",
-    "zqjsygy",
-    "tuziwangdehuluobo",
-    "tu zi wang de hu luo bo",
-    "tzwdhlb",
-    "huluobodakaqi",
-    "hu luo bo da ka qi",
-    "hlbdkq",
-    "yuebing",
-    "yue bing",
-    "yb",
-    "linshihuodong/renwu",
-    "lin shi huo dong / ren wu",
-    "lshd/rw",
-    "huaijiufurenwu",
-    "huai jiu fu ren wu",
-    "hjfrw"
   ],
   "catalog-fa0e6d2a-9eef-4a29-b945-d2e1a204934f": [
     "bugeitangguojiudaoluan/nixideguihun",
@@ -6147,6 +6127,29 @@ globalThis.PINYIN_INDEX = {
     "tongyongrenwu",
     "tong yong ren wu",
     "tyrw"
+  ],
+  "catalog-14b727bb-fc3b-47ad-a091-95c584e4de6c": [
+    "zhongqiujieshangyuegongyuan&meirilipinlingqu",
+    "zhong qiu jie shang yue gong yuan & mei ri li pin ling qu",
+    "zqjsygy&mrlplq",
+    "zhongqiujiehuodong",
+    "zhong qiu jie huo dong",
+    "zqjhd",
+    "tuziwangdehuluobo",
+    "tu zi wang de hu luo bo",
+    "tzwdhlb",
+    "huluobodakaqi",
+    "hu luo bo da ka qi",
+    "hlbdkq",
+    "yuebing",
+    "yue bing",
+    "yb",
+    "linshihuodong/renwu",
+    "lin shi huo dong / ren wu",
+    "lshd/rw",
+    "huaijiufurenwu",
+    "huai jiu fu ren wu",
+    "hjfrw"
   ],
   "catalog-a28a11b1-e7e4-4d25-aa8d-1972c607c5b2": [
     "mozhita",

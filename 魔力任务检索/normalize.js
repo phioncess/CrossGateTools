@@ -62,12 +62,8 @@
 
   function compactAcquisitionAction(value, itemName) {
     const text = String(value || '').replace(/\s+/g, ' ').trim();
-    if (text.length <= 240) return text;
-    const marker = `【${itemName}】`;
-    const markerAt = text.indexOf(marker);
-    const start = Math.max(0, markerAt - 95);
-    const end = Math.min(text.length, markerAt + marker.length + 125);
-    return `${start ? '…' : ''}${text.slice(start, end).trim()}${end < text.length ? '…' : ''}`;
+    // 数据源文字必须完整保留；不再为了卡片长度截断取得方式。
+    return text;
   }
 
   function logicalStepSegments(value) {
@@ -175,12 +171,16 @@
         if (fact && !/^路线[：:]?$/.test(fact) && activeNames.length && isAcquisitionItemFact(fact)) activeNames.forEach(name => detailByName.get(name).push(fact));
         return;
       }
+      if (isReferenceJunk(note) || /^(?:任务剧情|其它攻略)[：:]/.test(note)) {
+        activeNames = [];
+        return;
+      }
       if (/路线[：:]?$/.test(note) || /^【[^】]+】路线/.test(note)) {
         activeNames = [];
         return;
       }
       // 表头、版本标题和奖励分段会结束上一件物品的说明作用域；禁止把后续整张表挂到前一件道具下。
-      if (/^(?:名称.*(?:所需|备注)|奖品(?:说明|兑换)|旧版|第[一二三四五六七八九十]+次[：:]?|\d{4}(?:[-年]|版)|.*版本[：:]?)$/.test(note)) {
+      if (/^(?:名称.*(?:所需|备注)|奖品(?:说明|兑换)|旧版|第[一二三四五六七八九十]+次[：:]?|\d{4}(?:(?:[.\/-]\d{1,2}){1,2}(?:日)?更新[：:]?|[-年]|版)|.*版本[：:]?|[^：:]{1,24}[：:])$/.test(note)) {
         activeNames = [];
         return;
       }

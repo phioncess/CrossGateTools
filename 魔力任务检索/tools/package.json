@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:missions": "node build-mission-catalog.mjs && node build-structured-quests.mjs",
+    "build:data": "node build-structured-quests.mjs",
+    "build:careers": "node build-career-quests.mjs",
+    "build": "node build-integrations.mjs",
+    "verify": "node verify-integrations.mjs",
+    "verify:data": "node verify-structured-data.mjs",
+    "verify:dom": "node verify-dom.mjs"
+  },
+  "dependencies": {
+    "jsdom": "27.0.0",
+    "pinyin-pro": "3.27.0"
+  }
+}

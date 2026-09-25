@@ -163,7 +163,7 @@ function normalizeItemNames(value) {
 
 function formatTaskText(value) {
   // 本工具仅收录怀旧服资料：剥离"（怀旧服为Lv.59~65）"式多服对比标注
-  const normalized = normalizeItemNames(String(value)
+  const normalized = normalizeItemNames(String(value ?? '')
     .replace(/（怀旧服为/g, '（')
     .replace(/（在怀旧服是这样，其他未知）/g, '（实测如此，其他服未知）')
     .replace(/[（(]怀旧服[）)]/g, ''));
@@ -302,6 +302,7 @@ function organizeGuide(guide, lowerItemNames = [], structuredRewardData = null, 
     const normalizedNote = normalize(note);
     if (lowerItemNames.some(itemName => normalizedNote.includes(normalize(itemName)))) return true;
     return /^(?:名称.*(?:所需|备注)|奖品(?:说明|兑换)|旧版|第[一二三四五六七八九十]+次[：:]?|\d{4}(?:[-年]|版)|.*版本[：:]?)/.test(note)
+      || /(?:攻击|防御|敏捷|精神|回复|生命|魔力|必杀|反击|命中|闪躲|魔攻|抗魔)\s*[+-]\s*\d+/.test(note)
       || /(?:兑换奖励所需|奖品有所改变|最终奖品为)/.test(note);
   };
   const noteAlreadyRenderedBelow = note => {
@@ -315,7 +316,7 @@ function organizeGuide(guide, lowerItemNames = [], structuredRewardData = null, 
 
   guide.notes.forEach((note, noteIndex) => {
     const clean = cleanListMarker(note);
-    if (!clean || noteAlreadyRenderedBelow(clean) || noteBelongsToStructuredReward(clean) || noteBelongsToLowerItem(clean) || noteIsRewardOrDrop(clean) || noteIsBattleData(clean) || noteIsNarrative(clean)) {
+    if (!clean || noteAlreadyRenderedBelow(clean) || noteBelongsToStructuredReward(clean) || noteBelongsToLowerItem(clean) || noteIsRewardOrDrop(clean) || noteIsBattleData(clean)) {
       omitted.add(noteIndex);
       return;
     }
@@ -346,8 +347,6 @@ function organizeGuide(guide, lowerItemNames = [], structuredRewardData = null, 
     if (bestIndex >= 0 && bestScore >= 4) {
       steps[bestIndex].notices.push(clean);
       consumed.add(noteIndex);
-    } else if (!globalNotice(clean)) {
-      omitted.add(noteIndex);
     }
   });
   steps.forEach(step => {
@@ -419,15 +418,15 @@ function renderQuestSteps(questId, steps, trainingMarkers = []) {
   groups.push(current);
   steps.forEach(step => {
     const rawStep = step.text;
-    const routeMatch = rawStep.match(/^(【[^】]+】路线)[：:]?\s*\d+\s*[.．、]\s*(.*)$/);
-    const plainMatch = rawStep.match(/^\d+\s*[.．、]\s*(.*)$/);
+    const routeMatch = rawStep.match(/^(【[^】]+】路线)[：:]?\s*\d+(?:[*＊]{1,2})?\s*[.．、]\s*(.*)$/);
+    const plainMatch = rawStep.match(/^\d+(?:[*＊]{1,2})?\s*[.．、]\s*(.*)$/);
     const route = routeMatch ? routeMatch[1] : '';
     const text = routeMatch ? routeMatch[2] : (plainMatch ? plainMatch[1] : rawStep);
     if (route !== current.route && (route || current.items.length)) {
       current = {route, items:[]};
       groups.push(current);
     }
-    const stepNumber = Number((rawStep.match(/^(?:【[^】]+】路线[：:]?\s*)?(\d+)\s*[.．、]/) || [])[1]) || groups.reduce((total, group) => total + group.items.length, 0) + 1;
+    const stepNumber = Number((rawStep.match(/^(?:【[^】]+】路线[：:]?\s*)?(\d+)(?:[*＊]{1,2})?\s*[.．、]/) || [])[1]) || groups.reduce((total, group) => total + group.items.length, 0) + 1;
     current.items.push({text,notices:step.notices,stepNumber});
   });
   const groupHtml = groups.filter(group => group.items.length).map(group => `
@@ -447,6 +446,7 @@ function renderQuestNotes(notes) {
   let current = {route:'全局注意', items:[]};
   groups.push(current);
   notes.forEach(rawNote => {
+    rawNote = String(rawNote ?? '');
     const routeMatch = rawNote.match(/^【([^】]+)】路线[：:]?$/);
     if (routeMatch) {
       current = {route:`${routeMatch[1]}路线`, items:[]};
@@ -491,6 +491,28 @@ function renderArchiveItem(item, sourceText = '') {
   </article>`;
 }
 
+function renderRewardEquipmentArchive(archive) {
+  const entries = archive?.entries || [];
+  if (!entries.length) return '';
+  const sourceText = archive.sourceFile ? `属性来源：${archive.sourceFile}` : '属性来源：魔力装备档案';
+  if (entries.length > 1) {
+    return `<div class="reward-equipment-variants"><b>装备型号</b><div class="reward-equipment-variant-grid">${entries.map(entry => {
+      const stats = Object.entries(entry.stats || {}).map(([key, value]) => formatItemStat(key, value)).filter(Boolean);
+      return `<section class="reward-equipment-variant"><header><strong>${formatTaskText(`【${entry.name}】`)}</strong><span>Lv.${entry.level ?? '—'} · ${escapeHtml(entry.subtype || entry.category || '装备')}</span></header><div class="archive-stats">${stats.map(stat => `<span>${escapeHtml(stat)}</span>`).join('')}</div>${entry.detailNote ? `<p class="item-note">${escapeHtml(entry.detailNote)}</p>` : ''}</section>`;
+    }).join('')}</div><p class="item-source">${escapeHtml(sourceText)}</p></div>`;
+  }
+  const entry = entries[0];
+  const facts = [
+    entry.level != null ? `Lv.${entry.level}` : '',
+    entry.subtype || entry.category || '',
+    entry.hands != null ? `${entry.hands}手` : '',
+    ...Object.entries(entry.stats || {}).map(([key, value]) => formatItemStat(key, value)).filter(Boolean)
+  ].filter(Boolean);
+  return `${facts.length ? `<div class="archive-stats reward-attributes">${facts.map(fact => `<span>${escapeHtml(fact)}</span>`).join('')}</div>` : ''}
+    ${entry.detailNote ? `<p class="item-note">${escapeHtml(entry.detailNote)}</p>` : ''}
+    <p class="item-source">${escapeHtml(sourceText)}</p>`;
+}
+
 function usefulAcquisitionEvents(questId, rewardData) {
   if (globalThis.STRUCTURED_REWARD_GUIDES?.[questId]?.replaceGenericAcquisitions) return [];
   const keyItemNames = new Set((globalThis.KEY_ITEM_GUIDES?.[questId] || []).map(entry => normalize(entry.name)));
@@ -503,7 +525,8 @@ function usefulAcquisitionEvents(questId, rewardData) {
     ...event,
     items:(event.items || []).filter(item => {
       const name = normalize(item.name);
-      const hasIndependentFacts = Boolean(item.notes?.length);
+      const independentFacts = (item.notes || []).filter(note => !/^(?:为后续任务相关道具|任务剧情|BOSS打法|其它攻略)/.test(String(note).trim()));
+      const hasIndependentFacts = independentFacts.length > 0;
       // 纯流程关键道具已在上方步骤和“关键道具去向”展示；没有属性或独立用途时不在下方重复。
       if (keyItemNames.has(name) && !hasIndependentFacts) return false;
       return (item.role === 'reward' || hasIndependentFacts) && !coveredNames.has(name);
@@ -603,6 +626,7 @@ function renderRewardItems(rewardData, questId) {
 }
 
 function normalizeEnemyEntries(enemies) {
+  if ((enemies || []).every(enemy => enemy && typeof enemy === 'object')) return enemies;
   const joined = [];
   let pendingPrefix = '';
   for (const raw of enemies || []) {
@@ -667,6 +691,10 @@ function separateOrphanSkills(entries) {
   const enemies = [];
   const notes = [];
   for (const entry of entries) {
+    if (entry && typeof entry === 'object') {
+      enemies.push(entry);
+      continue;
+    }
     if (/^技能[:：]/.test(entry) || (/^[Ll][Vv]\.?\s*\d+\s*（/.test(entry) && !/(?:血量约|HP约|HP：|\d动|邪魔系|属性)/.test(entry))) {
       notes.push(entry.replace(/^技能[:：]\s*/, ''));
       continue;
@@ -682,7 +710,7 @@ function separateOrphanSkills(entries) {
 }
 
 function battleEnemyNotes(enemies) {
-  return (enemies || []).map(value => String(value || '').trim()).filter(value => /^（[^）]+）$/.test(value)).map(value => {
+  return (enemies || []).filter(value => typeof value === 'string').map(value => String(value || '').trim()).filter(value => /^（[^）]+）$/.test(value)).map(value => {
     const content = value.slice(1, -1).trim();
     return content.startsWith('皆为') ? `全体敌人：${content.slice(2)}` : content;
   });
@@ -724,6 +752,39 @@ function parseEnemyOverview(overview) {
 }
 
 function renderEnemy(enemy, extraSkills = '') {
+  if (enemy && typeof enemy === 'object') {
+    const formatRange = value => {
+      if (value == null) return '';
+      if (typeof value !== 'object') return String(value);
+      if (value.min == null) return '';
+      return `${value.min}${value.max != null && value.max !== value.min ? `～${value.max}` : ''}`;
+    };
+    const levelValue = enemy.level ?? enemy.levelRange ?? enemy.levelApprox;
+    const level = levelValue != null ? `Lv.${formatRange(levelValue)}` : '';
+    const actionCount = enemy.actionCount ?? enemy.actions;
+    const actions = actionCount != null && actionCount !== '' ? `${actionCount}动` : '';
+    const meta = [];
+    const count = formatRange(enemy.count);
+    if (count && count !== '1') meta.push(`数量 ${count}`);
+    const hpValue = enemy.hp ?? enemy.hpApprox ?? enemy.hpRaw;
+    const hp = formatRange(hpValue);
+    if (hp) meta.push(`血量${enemy.hpApprox != null || enemy.hp?.approximate ? '约' : ' '}${hp}`);
+    if (enemy.race) meta.push(enemy.race);
+    const elementNames = {all:'全',earth:'地',water:'水',fire:'火',wind:'风'};
+    const elementText = typeof enemy.elements === 'string'
+      ? enemy.elements
+      : Object.entries(enemy.elements || {}).map(([key,value]) => `${elementNames[key] || key}${value}`).join('／');
+    if (elementText) meta.push(`属性：${elementText}`);
+    const curseResistance = enemy.curseResistance ?? enemy.resistance;
+    if (curseResistance === true || curseResistance === 'resistant' || curseResistance === '抗咒') meta.push('抗咒');
+    if (curseResistance === false || curseResistance === 'not-resistant' || curseResistance === '不抗咒') meta.push('不抗咒');
+    const skills = [...new Set([...(enemy.skills || []), ...String(extraSkills || '').split(/[；;、，,]/)].map(item => String(item || '').trim()).filter(Boolean))];
+    return `<article class="enemy-card">
+      <header><b>${formatTaskText(enemy.name || '敌人资料')}</b>${level ? `<span class="enemy-level">${level}</span>` : ''}<span class="enemy-actions${actions ? '' : ' actions-none'}">${actions || '未记录'}</span></header>
+      ${meta.length ? `<div class="enemy-meta">${meta.map(item => `<span>${escapeHtml(item)}</span>`).join('')}</div>` : ''}
+      ${skills.length ? `<div class="enemy-skills"><strong>技能</strong><div>${skills.map(item => `<span>${escapeHtml(item)}</span>`).join('')}</div></div>` : '<div class="enemy-skills enemy-skills-none"><strong>技能</strong><span class="skills-none">资料未记录</span></div>'}
+    </article>`;
+  }
   // 源数据"（坐标）（名字）"前缀颠倒的情况：交换顺序让名字可被正常解析
   enemy = enemy.replace(/^（\s*([0-9]{1,3}[.，,][0-9]{1,3})\s*）\s*（([^）]+)）/, '（$2）（$1）');
   const skillMarker = enemy.match(/[；;，,]\s*技能[:：]/);
@@ -802,6 +863,7 @@ function renderEnemy(enemy, extraSkills = '') {
 }
 
 function enemyNameCore(enemy) {
+  if (enemy && typeof enemy === 'object') return String(enemy.name || '').trim();
   // 先剥掉技能段，防止"Lv.65小樱；技能：定点移动、逃跑"把技能词当名字
   let text = String(enemy || '').split(/技能[:：]/)[0];
   // "（坐标）（名字）"前缀颠倒：交换后直取括号名
@@ -819,6 +881,7 @@ function enemyNameCore(enemy) {
 function assignFightSkills(enemies, skillsValue) {
   const assigned = enemies.map(() => '');
   const extraNotes = [];
+  if (enemies.some(enemy => enemy && typeof enemy === 'object')) return {assignments: assigned, extraNotes};
   const skills = String(skillsValue || '').trim();
   if (!skills || !enemies.length) return {assignments: assigned, extraNotes};
   skills.split(/\s*[；;]\s*/).map(item => item.replace(/[。\s]+$/, '').trim()).filter(Boolean).forEach(segment => {
@@ -1001,6 +1064,262 @@ function switchDetailTab(tabName) {
   });
 }
 
+function structuredQuestRecord(questId) {
+  return globalThis.QUEST_DATA?.quests?.[questId] || null;
+}
+
+function structuredGuide(record, fallback) {
+  if (!record) return null;
+  const firstStep = record.flow.steps[0]?.text || '';
+  const rawStart = String(record.flow.start?.location || fallback.start || '').replace(/^(?:步骤\s*)?\d+[.、．]\s*/, '').trim();
+  const duplicateStart = rawStart.replace(/\s+/g, '') === firstStep.replace(/\s+/g, '');
+  const conciseStart = duplicateStart
+    ? rawStart.split(/[，,；;]/)[0].replace(/调查(?=\s*[（(]\d)/, '').trim()
+    : rawStart;
+  const globalNotes = [
+    ...(record.flow.notes || []).map(note => note.text),
+    ...(record.segments || []).filter(segment => segment.type === 'update-heading').map(segment => segment.text)
+  ];
+  return {
+    guide: {
+      start: conciseStart,
+      conditions: record.requirements.text || fallback.conditions || [],
+      steps: record.flow.steps.map(step => `${step.order}.${step.text}`),
+      notes: []
+    },
+    organized: {
+      steps: record.flow.steps.map(step => ({
+        text: `${step.order}.${step.text}`,
+        notices: (step.notes || []).map(note => note.text)
+      })),
+      notes: globalNotes
+    }
+  };
+}
+
+function structuredTextList(value) {
+  if (value == null) return [];
+  const values = Array.isArray(value) ? value : [value];
+  return values.map(item => typeof item === 'object' ? item?.text : item).map(item => String(item ?? '').trim()).filter(Boolean);
+}
+
+function structuredBossSections(record) {
+  if (!record) return [];
+  const result = [];
+  for (const version of Object.values(record.versions || {})) {
+    for (const tier of Object.values(version.tiers || {})) {
+      for (const battle of Object.values(tier.battles || {})) {
+        const relatedChanges = (version.changes || []).filter(change => change.targetBattleOrder === battle.order);
+        const rounds = Array.isArray(battle.rounds) && battle.rounds.length ? battle.rounds : [null];
+        const firstEnemyName = Object.values(battle.enemies || {})[0]?.name;
+        const baseTitle = battle.title || battle.name || firstEnemyName || (rounds[0] ? '连续战斗' : `战斗 ${battle.order ?? battle.id ?? ''}`.trim());
+        rounds.forEach((round, roundIndex) => result.push({
+          kind: version.key === 'common' ? '关键战斗' : version.label,
+          title: [tier.key === 'common' ? '' : tier.label, baseTitle, round ? `第${round.order ?? roundIndex + 1}场` : ''].filter(Boolean).join(' · '),
+          versionKey: version.key,
+          tierKey: tier.key,
+          order: round?.order ?? battle.order,
+          enemies: round ? (round.enemies || []) : Object.values(battle.enemies || {}),
+          skills: '',
+          strategy: structuredTextList(round?.strategy ?? round?.strategies ?? battle.strategy),
+          notes: [
+            ...relatedChanges.flatMap(change => [change.text, ...structuredTextList(change.details)]),
+            ...structuredTextList(battle.notes),
+            ...structuredTextList(round?.notes),
+            ...(round?.headerElements ? [`全体属性：${round.headerElements}`] : [])
+          ].filter(Boolean),
+          sourceLines: round?.sourceLines || battle.sourceLines || []
+        }));
+      }
+    }
+  }
+  return result.sort((a,b) => a.versionKey.localeCompare(b.versionKey, 'zh-CN') || String(a.tierKey).localeCompare(String(b.tierKey), 'zh-CN') || (a.order || 999) - (b.order || 999));
+}
+
+function renderStructuredVersionChanges(record) {
+  if (!record) return '';
+  const rows = [];
+  for (const version of Object.values(record.versions || {})) {
+    const battleOrders = new Set(Object.values(version.tiers || {}).flatMap(tier => Object.values(tier.battles || {}).map(battle => battle.order)));
+    for (const change of version.changes || []) {
+      if (change.targetBattleOrder && battleOrders.has(change.targetBattleOrder)) continue;
+      const changeText = String(change.text ?? '').trim();
+      const details = structuredTextList(change.details);
+      const body = [changeText, ...details].filter(Boolean);
+      if (!body.length) continue;
+      rows.push(`<span><b>${escapeHtml(version.label)}${change.targetBattleOrder ? ` · 第${change.targetBattleOrder}关调整` : '调整'}</b>：${body.map(item => formatTaskText(item)).join('；')}</span>`);
+    }
+  }
+  return rows.length ? `<div class="fight-facts version-change-list">${rows.join('')}</div>` : '';
+}
+
+function renderRewardKnowledge(rewardItem) {
+  const properties = rewardItem.properties || {};
+  const formatStats = stats => Object.entries(stats || {}).map(([name, value]) => `${name}${typeof value === 'number' && value >= 0 ? '+' : ''}${value}`).join('、');
+  const formatModifiers = modifiers => typeof modifiers === 'string'
+    ? modifiers
+    : Object.entries(modifiers || {}).map(([name, value]) => `${name}${typeof value === 'number' && value >= 0 ? '+' : ''}${value}`).join('、');
+  const rows = [
+    ['类别', properties.type],
+    ['等级', properties.level != null ? `Lv.${properties.level}` : ''],
+    ['用途', properties.use],
+    ['使用效果', properties.effect],
+    ['获得结果', properties.result],
+    ['结果说明', properties.petDescription || properties.description],
+    ['属性数值', formatStats(properties.stats)],
+    ['耐久', properties.durability],
+    ['修正', formatModifiers(properties.modifiers)],
+    ['技能经验', properties.skillExperience != null ? `+${properties.skillExperience}` : ''],
+    ['每组叠加', properties.stackLimit != null ? `${properties.stackLimit} 个` : ''],
+    ['交易', properties.tradeable === true ? '可交易' : properties.tradeable === false ? '不可交易' : ''],
+    ['型号说明', properties.variants],
+    ['版本说明', properties.availabilityNote || properties.change],
+    ['参考任务', properties.referenceQuest],
+    ['核验说明', properties.verificationNote]
+  ].filter(([, value]) => value !== '' && value != null);
+  const profile = properties.petProfile || properties.resultPetProfile;
+  if (profile) {
+    const baseStats = Array.isArray(profile.baseStats)
+      ? ['体', '攻', '防', '敏', '魔'].map((key, index) => `${key}${profile.baseStats[index]}`).join('／')
+      : Object.entries(profile.baseStats || {}).map(([key, value]) => `${key}${value}`).join('／');
+    const elements = typeof profile.elements === 'string'
+      ? profile.elements
+      : Object.entries(profile.elements || {}).map(([key, value]) => `${key}${value}`).join('／');
+    const modifiers = typeof profile.modifiers === 'string'
+      ? profile.modifiers
+      : Object.entries(profile.modifiers || {}).map(([key, value]) => `${key}+${value}`).join('／');
+    rows.push(
+      ['结果宠种族', profile.race],
+      ['属性', elements],
+      ['技能栏', profile.skillSlots != null ? `${profile.skillSlots} 格` : ''],
+      ['总档', profile.totalGrade != null ? `${profile.totalGrade}D${profile.gradeStatus ? `（${profile.gradeStatus}）` : ''}` : ''],
+      ['档位', baseStats],
+      ['修正', modifiers]
+    );
+  }
+  const optionHtml = (properties.options || []).length ? `<div class="reward-option-list"><b>分型资料</b>${properties.options.map(option => `<section><strong>${escapeHtml(option.name)}</strong><span>武器：${escapeHtml(option.weapon)}</span><span>防具：${escapeHtml(option.armor)}</span><span>饰品：${escapeHtml(option.accessory)}</span></section>`).join('')}</div>` : '';
+  const skillsHtml = (properties.skills || []).length ? `<div class="reward-skill-list"><b>可习得技能</b><p>${properties.skills.map(skill => `<span>${escapeHtml(skill)}</span>`).join('')}</p></div>` : '';
+  const references = (rewardItem.references || []).filter(reference => reference?.url && reference?.label);
+  const referencesHtml = references.length ? `<div class="reward-reference-list"><b>资料来源</b>${references.map(reference => `<a href="${escapeHtml(reference.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(reference.label)} ↗</a>`).join('')}</div>` : '';
+  return `${rows.filter(([, value]) => value !== '' && value != null).length ? `<dl class="reward-fact-list">${rows.filter(([, value]) => value !== '' && value != null).map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${formatTaskText(String(value))}</dd></div>`).join('')}</dl>` : ''}${optionHtml}${skillsHtml}${referencesHtml}`;
+}
+
+function renderVersionedRewards(record) {
+  if (!record) return '';
+  const useVersionAccordion = record.presentation?.rewardLayout === 'version-accordion';
+  const semanticEvents = (record.rewardEvents || [])
+    .map(rewardEvent => ({ ...rewardEvent, items: (rewardEvent.items || []).filter(rewardItem => rewardItem.role === 'valuable-result') }))
+    .filter(rewardEvent => rewardEvent.items.length);
+  const hasVersionedData = Object.keys(record.versions || {}).some(key => key !== 'common');
+  const hasPeriodicOffers = semanticEvents.some(event => event.items.some(item => item.purchase && item.resultPet));
+  if (!hasVersionedData && !hasPeriodicOffers) return '';
+  if (semanticEvents.length) {
+    const grouped = new Map();
+    for (const rewardEvent of semanticEvents) {
+      const groupKey = `${rewardEvent.version || 'common'}\u0000${rewardEvent.tier || 'common'}`;
+      if (!grouped.has(groupKey)) grouped.set(groupKey, []);
+      grouped.get(groupKey).push(rewardEvent);
+    }
+    const signedRange = value => {
+      if (value == null) return '';
+      if (typeof value === 'number') return `${value >= 0 ? '+' : ''}${value}`;
+      if (typeof value === 'object' && value.min != null && value.max != null) return `+${value.min}～+${value.max}`;
+      return String(value);
+    };
+    const groups = [];
+    for (const [groupKey, events] of grouped) {
+      const [versionKey, tierKey] = groupKey.split('\u0000');
+      const version = record.versions?.[versionKey];
+      const tier = version?.tiers?.[tierKey];
+      const periodicGroup = events.some(event => event.items.some(item => item.purchase && item.resultPet));
+      const title = periodicGroup ? '历次上架记录' : [versionKey === 'common' ? '通用资料' : (version?.label || versionKey), tierKey === 'common' ? '' : (tier?.label || tierKey)].filter(Boolean).join(' · ');
+      // 同名道具可能分别属于不同年份或档位的奖池；只能在当前版本与档位内去重。
+      const renderedItemNames = new Set();
+      let renderedItemCount = 0;
+      const cards = events.map(rewardEvent => {
+        const eventLabel = periodicGroup ? '周期上架' : rewardEvent.kind === 'battle-drop' ? '战斗掉落' : rewardEvent.kind === 'reward-pool' ? '随机奖池' : rewardEvent.kind === 'exchange-recipe' ? '兑换' : '明确记录';
+        const eventItems = (rewardEvent.items || []).filter(rewardItem => {
+          if (periodicGroup) return true;
+          if (renderedItemNames.has(rewardItem.name)) return false;
+          renderedItemNames.add(rewardItem.name);
+          return true;
+        });
+        if (!eventItems.length) return '';
+        renderedItemCount += eventItems.length;
+        const items = eventItems.map(rewardItem => {
+          if (rewardItem.purchase && rewardItem.resultPet) {
+            const purchase = rewardItem.purchase;
+            const resultPet = rewardItem.resultPet;
+            const offerMeta = [resultPet.race, resultPet.elements ? `属性 ${resultPet.elements}` : '', resultPet.skillSlots != null ? `技能栏 ${resultPet.skillSlots}` : '', resultPet.totalGrowth != null ? `总档 ${resultPet.totalGrowth}` : ''].filter(Boolean);
+            const price = purchase.unitPrice != null ? `${Number(purchase.unitPrice).toLocaleString('zh-CN')}G${purchase.parts ? '／张' : ''}` : '原攻略未列价格';
+            return `<section class="acquisition-item periodic-offer"><h4>${formatTaskText(`【${rewardItem.name}】`)}${rewardItem.date ? `<span>${escapeHtml(rewardItem.date)}</span>` : ''}</h4>
+              <p class="offer-purchase"><b>上架规格</b> ${escapeHtml([purchase.parts, price].filter(Boolean).join(' · '))}</p>
+              <p class="offer-result"><b>改造结果</b> ${formatTaskText(`【${resultPet.name}】`)}</p>
+              ${offerMeta.length ? `<div class="enemy-meta reward-attributes">${offerMeta.map(value => `<span>${escapeHtml(value)}</span>`).join('')}</div>` : ''}
+              ${Array.isArray(resultPet.growth) && resultPet.growth.length >= 5 ? `<p><b>档位</b> ${resultPet.growth.map(value => escapeHtml(String(value))).join(' / ')}</p>` : ''}
+              ${rewardItem.basePetRestriction ? `<p><b>底宠限制</b> ${escapeHtml(rewardItem.basePetRestriction)}</p>` : ''}
+              ${rewardItem.additionalFacts?.length ? `<ul>${rewardItem.additionalFacts.map(note => `<li>${formatTaskText(note)}</li>`).join('')}</ul>` : ''}
+            </section>`;
+          }
+          const properties = rewardItem.properties || {};
+          const equipmentArchiveHtml = renderRewardEquipmentArchive(rewardItem.equipmentArchive);
+          const knowledgeHtml = renderRewardKnowledge(rewardItem);
+          const attributes = [
+            properties.level != null ? `等级 ${properties.level}` : '',
+            properties.category ? `种类 ${properties.category}` : '',
+            properties.attack != null ? `攻击 ${signedRange(properties.attack)}` : '',
+            properties.defense != null ? `防御 ${signedRange(properties.defense)}` : '',
+            properties.recovery != null ? `回复 ${signedRange(properties.recovery)}` : '',
+            properties.durability != null ? `耐久${typeof properties.durability === 'object' ? `约 ${properties.durability.min}～${properties.durability.max}` : ` ${properties.durability}`}` : ''
+          ].filter(Boolean);
+          const variants = rewardItem.variants || [];
+          return `<section class="acquisition-item"><h4>${formatTaskText(`【${rewardItem.name}】`)}</h4>
+            ${rewardItem.quantity != null ? `<p><b>数量</b> ${escapeHtml(String(rewardItem.quantity))}</p>` : ''}
+            ${attributes.length ? `<div class="enemy-meta reward-attributes">${attributes.map(value => `<span>${escapeHtml(value)}</span>`).join('')}</div>` : ''}
+            ${knowledgeHtml}
+            ${equipmentArchiveHtml}
+            ${properties.title ? `<p class="versioned-reward-title"><b>称号效果</b> ${escapeHtml(properties.title)}</p>` : ''}
+            ${variants.length ? `<div class="versioned-reward-effects"><b>型号效果</b><ul>${variants.map(variant => typeof variant === 'string' ? `<li>${escapeHtml(variant)}</li>` : `<li><strong>${escapeHtml(variant.model)}</strong> ${escapeHtml(variant.effect?.skill || '')}：耗魔 ${variant.effect?.manaCostChangePercent ?? ''}%${variant.note ? `（${escapeHtml(variant.note)}）` : ''}</li>`).join('')}</ul></div>` : ''}
+          </section>`;
+        }).join('');
+        return `<article class="acquisition-event-card"><header><div><span>${eventLabel}</span><b>${eventItems.length} 项道具</b></div></header><div class="acquisition-item-grid">${items}</div></article>`;
+      }).filter(Boolean).join('');
+      if (useVersionAccordion) {
+        const open = groups.length === 0 ? ' open' : '';
+        groups.push(`<details class="reward-subsection reward-accordion"${open}><summary><h3>${escapeHtml(title)}</h3><span>${renderedItemCount} 项奖励</span></summary><div class="structured-reward-list">${cards}</div></details>`);
+      } else {
+        groups.push(`<section class="reward-subsection"><h3>${escapeHtml(title)}</h3><div class="structured-reward-list">${cards}</div></section>`);
+      }
+    }
+    return groups.join('');
+  }
+  const groups = [];
+  for (const version of Object.values(record.versions || {})) {
+    for (const tier of Object.values(version.tiers || {})) {
+      if (!(tier.rewards || []).length) continue;
+      const title = [version.key === 'common' ? '通用资料' : version.label, tier.key === 'common' ? '' : tier.label].filter(Boolean).join(' · ');
+      const cards = tier.rewards.map(reward => {
+        const attributes = reward.attributes || {};
+        const attributeLabels = [
+          attributes.level ? `等级 ${attributes.level}` : '',
+          attributes.category ? `种类 ${attributes.category}` : '',
+          attributes.attack ? `攻击 +${attributes.attack.min}～+${attributes.attack.max}` : '',
+          attributes.defense ? `防御 +${attributes.defense.min}～+${attributes.defense.max}` : '',
+          attributes.recovery ? `回复 +${attributes.recovery.min}～+${attributes.recovery.max}` : '',
+          attributes.durability ? `耐久约 ${attributes.durability.min}～${attributes.durability.max}` : ''
+        ].filter(Boolean);
+        return `<article class="acquisition-event-card"><header><div><span>${reward.kind === 'chance' ? '随机／概率' : reward.kind === 'exchange' ? '兑换' : '明确记录'}</span><b>${reward.items.map(item => `【${escapeHtml(item)}】`).join('、')}</b></div></header>
+          ${attributeLabels.length ? `<div class="enemy-meta reward-attributes">${attributeLabels.map(value => `<span>${escapeHtml(value)}</span>`).join('')}</div>` : ''}
+          ${reward.title ? `<p class="versioned-reward-title"><b>称号效果</b> ${escapeHtml(reward.title)}</p>` : ''}
+          ${reward.effects?.length ? `<div class="versioned-reward-effects"><b>型号效果</b><ul>${reward.effects.map(effect => `<li><strong>${escapeHtml(effect.variant)}</strong> ${escapeHtml(effect.skill)}：耗魔 -${effect.reductionPercent}%${effect.note ? `（${escapeHtml(effect.note)}）` : ''}</li>`).join('')}</ul></div>` : ''}
+          ${reward.details?.length ? `<div class="versioned-reward-text"><ul>${reward.details.map(detail => `<li>${formatTaskText(detail)}</li>`).join('')}</ul></div>` : ''}</article>`;
+      }).join('');
+      groups.push(`<section class="reward-subsection"><h3>${escapeHtml(title)}</h3><div class="structured-reward-list">${cards}</div></section>`);
+    }
+  }
+  return groups.join('');
+}
+
 function renderQuest(quest, updateHash = true) {
   selectedQuestId = quest.id;
   input.value = quest.name;
@@ -1014,7 +1333,14 @@ function renderQuest(quest, updateHash = true) {
   const seriesNext = requiredBy.filter(item => item.series === quest.series);
   const source = SOURCES[quest.source];
   const [reliabilityText, reliabilityClass] = quest.detailStatus === 'parsed' ? ['详情页已导入', ''] : reliability(quest.reliability);
-  const guide = QUEST_GUIDES[quest.id];
+  const sourceGuide = QUEST_GUIDES[quest.id];
+  const structuredRecord = structuredQuestRecord(quest.id);
+  // 只有完成逐行人工语义核验的记录才可成为正式渲染源；旧数据仅作为安全回退。
+  const structuredPresentationRecord = structuredRecord?.verification?.status === 'verified'
+    ? structuredRecord
+    : null;
+  const structuredGuideData = structuredGuide(structuredPresentationRecord, sourceGuide);
+  const guide = structuredGuideData?.guide || sourceGuide;
   const itemRewards = ITEM_REWARD_GUIDES[quest.id] || {equipmentRewards:[],specialRewards:[],combatDrops:[],titles:[]};
   const lowerAcquisitionEvents = usefulAcquisitionEvents(quest.id, itemRewards);
   const lowerItemNames = [
@@ -1022,18 +1348,29 @@ function renderQuest(quest, updateHash = true) {
     ...structuredRewardNames(quest.id)
   ];
   const lowerItemNotes = lowerAcquisitionEvents.flatMap(event => event.items.flatMap(item => item.notes || []));
-  const organizedGuide = organizeGuide(guide, lowerItemNames, globalThis.STRUCTURED_REWARD_GUIDES?.[quest.id] || null, lowerItemNotes);
+  const organizedGuide = structuredGuideData?.organized || organizeGuide(guide, lowerItemNames, globalThis.STRUCTURED_REWARD_GUIDES?.[quest.id] || null, lowerItemNotes);
   const keyItemsHtml = renderKeyItems(quest.id);
+  const structuredBosses = structuredBossSections(structuredPresentationRecord);
+  const structuredVersionChanges = renderStructuredVersionChanges(structuredPresentationRecord);
   const bossGuides = BOSS_GUIDES[quest.id] || [];
-  let bossSections = expandLabeledFights(buildBossSections(quest.id, bossGuides)).map(polishFightTitle);
+  let bossSections = structuredPresentationRecord
+    ? structuredBosses
+    : expandLabeledFights(buildBossSections(quest.id, bossGuides)).map(polishFightTitle);
   // 同名战斗用首个敌人名+等级消歧
   const titleCount = {};
   bossSections.forEach(f => { titleCount[f.title] = (titleCount[f.title] || 0) + 1; });
   bossSections = bossSections.map(f => {
     if (titleCount[f.title] <= 1) return f;
-    const firstEnemy = String((f.enemies || [])[0] || '');
+    const firstEnemy = (f.enemies || [])[0] || '';
     const core = enemyNameCore(firstEnemy);
-    const lv = (firstEnemy.match(/^[LlIi]?[Vv][.．]?\s*(\d+(?:\s*[~～-]\s*\d+)?)/) || [])[1];
+    const enemyLevel = firstEnemy && typeof firstEnemy === 'object'
+      ? (firstEnemy.level ?? firstEnemy.levelRange ?? firstEnemy.levelApprox)
+      : null;
+    const lv = enemyLevel != null
+      ? (typeof enemyLevel === 'object'
+          ? (enemyLevel.min == null ? '' : `${enemyLevel.min}${enemyLevel.max != null && enemyLevel.max !== enemyLevel.min ? `～${enemyLevel.max}` : ''}`)
+          : String(enemyLevel))
+      : (String(firstEnemy).match(/^[LlIi]?[Vv][.．]?\s*(\d+(?:\s*[~～-]\s*\d+)?)/) || [])[1];
     return {...f, title: `${f.title}（${core}${lv ? `·Lv.${lv}` : ''}）`};
   });
   const indexOnly = quest.detailStatus === 'index-only';
@@ -1044,13 +1381,14 @@ function renderQuest(quest, updateHash = true) {
     const orphanNotes = separated.notes;
     const {assignments: skillAssignments, extraNotes} = assignFightSkills(enemies, fight.skills);
     const stepRef = bossStepRef(fight._stepTitle || fight.title, organizedGuide.steps);
+    const fightFacts = [...battleEnemyNotes(fight.enemies), ...(fight.notes || []).map(note => escapeHtml(String(note)))];
     const strategyItems = [...(fight.strategy || []), ...proseNotes, ...extraNotes]
       .map(item => String(item ?? '').trim())
       .filter(item => item.replace(/<[^>]*>/g, '').replace(/&nbsp;/gi, ' ').trim());
     return `
     <article class="boss-fight">
       <div class="boss-heading"><span>${fight.kind}</span><h4>${formatTaskText(fight.title)}</h4>${stepRef ? `<em class="boss-step">${stepRef}</em>` : ''}</div>
-      ${battleEnemyNotes(fight.enemies).length ? `<div class="fight-facts">${battleEnemyNotes(fight.enemies).map(note => `<span>${note}</span>`).join('')}</div>` : ''}
+      ${fightFacts.length ? `<div class="fight-facts">${fightFacts.map(note => `<span>${note}</span>`).join('')}</div>` : ''}
       <div class="enemy-list">${enemies.map((enemy, enemyIndex) => renderEnemy(enemy, skillAssignments[enemyIndex])).join('')}</div>
       ${orphanNotes.length ? `<div class="fight-facts fight-notes">${orphanNotes.map(note => {
         const isScene = /随机迷宫|迷宫刷新时间|地图大小范围|宝箱数量|魔物为|内存在多个/.test(note);
@@ -1094,6 +1432,12 @@ function renderQuest(quest, updateHash = true) {
     const routeStep = routeInfo.stepsByTask?.[quest.name] ?? routeInfo.step;
     return routeStep ? [{step:routeStep,name:route.name,note:routeInfo.stepNote || routeInfo.checkpoint}] : [];
   });
+  const displaySummary = structuredPresentationRecord && /^必要条件[：:]/.test(quest.summary)
+    ? quest.summary.split(/[；;]/)
+      .map(part => part.trim())
+      .filter(part => part && !/^(?:必要条件[：:]|怀旧服临时任务|以下仅展示怀旧服路线与参数)/.test(part))
+      .join('；')
+    : quest.summary;
 
   detail.innerHTML = `
     <header class="detail-head">
@@ -1104,7 +1448,7 @@ function renderQuest(quest, updateHash = true) {
       </div>
       <div class="detail-badges"><span>${quest.type}</span><span>${quest.level}</span>${indexOnly ? '<span class="warn">关系已收录 · 详情待核验</span>' : ''}<span class="${reliabilityClass}">${reliabilityText}</span></div>
     </header>
-    <p class="summary">${formatTaskText(quest.summary)}</p>
+    ${displaySummary ? `<p class="summary">${formatTaskText(displaySummary)}</p>` : ''}
     ${chainHtml}
     ${relationHtml}
     ${trainingHtml ? `<div class="detail-tabs" role="tablist" aria-label="任务内容切换">
@@ -1125,11 +1469,14 @@ function renderQuest(quest, updateHash = true) {
     ${keyItemsHtml}
     <section class="boss-card">
       <div class="section-title"><span>BOSS 数据与打法</span><small>${bossSections.length ? bossSectionSummary(quest.id, bossSections) : (indexOnly ? '等待核验' : (quest.bossStatus === 'not-documented' ? '原攻略未单列' : '无首领战'))}</small></div>
+      ${structuredVersionChanges}
       <div class="boss-list">${bossHtml}</div>
     </section>
     <section class="rewards-card">
       <div class="section-title"><span>道具获取与战斗掉落</span><small>获得方式、掉落与成果统一汇总</small></div>
-      ${renderRewardItems(itemRewards, quest.id)}
+      ${globalThis.STRUCTURED_REWARD_GUIDES?.[quest.id]
+        ? renderRewardItems(itemRewards, quest.id)
+        : (renderVersionedRewards(structuredPresentationRecord) || renderRewardItems(itemRewards, quest.id))}
     </section>
     <section class="source-card"><div><b>核验来源</b><p>仅收录怀旧服资料；同一任务存在多服版本时，只采用怀旧服路线和参数。</p></div><a href="${source.url}" target="_blank" rel="noreferrer">${source.name} ↗</a></section>
     ${trainingHtml ? `</div></div><div data-detail-panel="training" hidden>${trainingHtml}</div>` : ''}`;
