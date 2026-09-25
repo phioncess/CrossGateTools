@@ -184,17 +184,37 @@ function parseAttributes(text) {
   return result;
 }
 
+function splitSkillListTopLevel(text, separators = new Set(['；', ';', '、', '，', ','])) {
+  const parts = [];
+  let current = '';
+  let depth = 0;
+  for (const character of String(text || '')) {
+    if (character === '(' || character === '（' || character === '[' || character === '【') depth += 1;
+    if (character === ')' || character === '）' || character === ']' || character === '】') depth = Math.max(0, depth - 1);
+    if (depth === 0 && separators.has(character)) {
+      const value = clean(current);
+      if (value) parts.push(value);
+      current = '';
+    } else {
+      current += character;
+    }
+  }
+  const value = clean(current);
+  if (value) parts.push(value);
+  return parts;
+}
+
 function parseEnemy(line, sourceLine) {
   const raw = clean(line).replace(/；；/g, '；');
   const compactTable = raw.match(/^([^\d]{1,24}?)(\d{3,6})(全\d+|(?:地|水|火|风)\d+(?:(?:地|水|火|风)\d+)*)(邪魔系|人形系|不死系|飞行系|野兽系|龙系|植物系|昆虫系|特殊系|金属系|精灵系)(不抗|抗)?$/);
-  const levelMatch = raw.match(/(?:[Ll][Vv]|[Vv])[.．]?\s*(\d+)(?:\s*[~～-]\s*(\d+))?/i);
+  const levelMatch = raw.match(/(?:等级\s*[：:]?\s*|[Ll][Vv]|[Vv])[.．]?\s*(\d+)(?:\s*[~～-]\s*(\d+))?/i);
   const hpMatch = raw.match(/(?:HP|血量)\s*(?:约|≈|[：:])?\s*(\d+)(?:\s*[~～-]\s*(\d+))?/i);
   const moveMatch = raw.match(/([一二两三四五六七八九十\d]+(?:\s*[~～-]\s*[一二两三四五六七八九十\d]+)?)\s*动/);
   const raceMatch = raw.match(/(邪魔系|人形系|不死系|飞行系|野兽系|龙系|植物系|昆虫系|特殊系|金属系|精灵系)/);
   const countMatch = raw.match(/[×xX*]\s*(\d+)/);
   const skillSplit = raw.split(/(?:[；;，,]\s*)?技能(?:[（(][^）)]*[）)])?[：:]/);
   const overview = skillSplit.shift() || raw;
-  const skills = unique(skillSplit.join('；').split(/[；;、，,]/).map(clean));
+  const skills = unique(splitSkillListTopLevel(skillSplit.join('；')));
   let name = overview
     .replace(/(?:[Ll][Vv]|[Vv])[.．]?\s*\d+(?:\s*[~～-]\s*\d+)?/ig, '')
     .replace(/(?:HP|血量)\s*(?:约|≈|[：:])?\s*\d+(?:\s*[~～-]\s*\d+)?/ig, '')

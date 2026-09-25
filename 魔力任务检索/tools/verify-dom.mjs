@@ -222,6 +222,12 @@ const courageBosses = window.document.querySelector('.boss-card')?.textContent |
 for (const expected of ['2024', '2026', '2021～2022', '恶即斩的克罗卡涅', 'Lv.105']) {
   if (!courageBosses.includes(expected)) throw new Error(`勇气max 结构化战斗区缺少：${expected}`);
 }
+if (courageBosses.includes('2阶 · ：树海四斗神加强版') || courageBosses.includes('BOSS战信息：（by：Level.1）（皆为2动；仅供参考）')) {
+  throw new Error('勇气max 仍把来源栏文字或错误前导标点显示成战斗标题');
+}
+for (const expected of ['2阶 · 树海四斗神加强版', '2阶 · 第4关 · 回来报仇的吉拉与四残影', '回来报仇的吉拉（连击）Lv.100 2动', '水之残影Lv.120 2动', '螳螂Lv.100～120 2动', '土之斗神Lv.99 2动']) {
+  if (!courageBosses.replace(/\s+/g, '').includes(expected.replace(/\s+/g, ''))) throw new Error(`勇气max 战斗资料缺少完整标题、等级或行动次数：${expected}`);
+}
 const courageRewards = window.document.querySelector('.rewards-card')?.textContent || '';
 for (const expected of ['2024', '2025', '2026', '1阶', '2阶']) {
   if (!courageRewards.includes(expected)) throw new Error(`勇气max 版本奖励区缺少：${expected}`);
@@ -309,6 +315,14 @@ for (const expected of [
 }
 
 const allQuestIds = search('').map(option => option.dataset.questId);
+const structuredValues = value => Array.isArray(value) ? value : Object.values(value || {});
+const renderedStructuredBattleCount = record => Object.values(record.versions || {}).reduce((versionTotal, version) => versionTotal + Object.values(version.tiers || {}).reduce((tierTotal, tier) => tierTotal + Object.values(tier.battles || {}).reduce((battleTotal, battle) => {
+  const randomBranches = structuredValues(battle.randomOneOf);
+  if (randomBranches.length) return battleTotal + randomBranches.filter(branch => structuredValues(Array.isArray(branch) ? branch : branch?.enemies).length).length;
+  const rounds = structuredValues(battle.rounds);
+  if (rounds.length) return battleTotal + rounds.filter(round => structuredValues(round?.enemies).length).length;
+  return battleTotal + (structuredValues(battle.enemies).length ? 1 : 0);
+}, 0), 0), 0);
 for (const questId of allQuestIds) {
   const option = search('').find(item => item.dataset.questId === questId);
   option?.click();
@@ -329,8 +343,19 @@ for (const questId of allQuestIds) {
   if (!renderedSteps.length) throw new Error(`任务没有流程步骤: ${title}`);
   if (renderedSteps.length !== structuredRecord.flow.steps.length) throw new Error(`结构化流程步骤数量不一致: ${title}`);
   if (window.document.querySelector('.guide-meta')?.textContent.includes('[object Object]')) throw new Error(`结构化起点未正确渲染: ${title}`);
-  const structuredBattleCount = Object.values(structuredRecord.versions || {}).reduce((versionTotal, version) => versionTotal + Object.values(version.tiers || {}).reduce((tierTotal, tier) => tierTotal + Object.values(tier.battles || {}).reduce((battleTotal, battle) => battleTotal + (Array.isArray(battle.rounds) && battle.rounds.length ? battle.rounds.length : 1), 0), 0), 0);
+  const structuredBattleCount = renderedStructuredBattleCount(structuredRecord);
   if (window.document.querySelectorAll('.boss-fight').length !== structuredBattleCount) throw new Error(`结构化战斗数量不一致: ${title}`);
+  for (const fight of window.document.querySelectorAll('.boss-fight')) {
+    if (!fight.querySelector('.enemy-card')) throw new Error(`页面生成了没有敌人资料的空战斗卡: ${title}`);
+    const fightTitle = fight.querySelector('.boss-heading h4')?.textContent.trim() || '';
+    if (/^(?:战斗\s+)?[a-z0-9]+(?:-[a-z0-9]+)+$/i.test(fightTitle) || /(?:^| · )[a-z0-9]+(?:-[a-z0-9]+)+(?:$| · )/i.test(fightTitle)) {
+      throw new Error(`页面泄漏内部战斗键: ${title} -> ${fightTitle}`);
+    }
+  }
+  const rawBattleCount = Object.values(structuredRecord.versions || {}).reduce((versionTotal, version) => versionTotal + Object.values(version.tiers || {}).reduce((tierTotal, tier) => tierTotal + Object.keys(tier.battles || {}).length, 0), 0);
+  if (rawBattleCount && !structuredBattleCount && !window.document.querySelector('.boss-card .no-boss')?.textContent.includes('原攻略未单列 BOSS 数据')) {
+    throw new Error(`无敌人参数的战斗没有显示统一资料说明: ${title}`);
+  }
   const acquisitionNames = [...window.document.querySelectorAll('.acquisition-item h4 .item-tag')].map(node => node.textContent.trim());
   for (const rewardGroup of window.document.querySelectorAll('.rewards-card .reward-subsection')) {
     if (rewardGroup.querySelector('.periodic-offer')) continue;

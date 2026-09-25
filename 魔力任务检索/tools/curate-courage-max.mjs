@@ -549,6 +549,53 @@ lorence.raw = `${lorence.raw}${quest.source.rawLines[255].text}`;
 lorence.skills = [...new Set([...(lorence.skills || []), '属性反转Lv10', '混乱魔法Lv10', '超强混乱魔法', '召唤帝国兵的亡灵（男）*2/（女）*2'])];
 delete lorenceBattle.enemies['enemy-2'];
 
+// 敌人技能中的逗号和分号可能只是括号内的条件说明，不能拆成多个技能。
+const mergeParenthesizedSkillFragments = skills => {
+  const merged = [];
+  let pending = '';
+  let depth = 0;
+  for (const fragment of skills || []) {
+    pending = pending ? `${pending}，${fragment}` : fragment;
+    depth += (fragment.match(/[（(]/g) || []).length;
+    depth -= (fragment.match(/[）)]/g) || []).length;
+    if (depth <= 0) {
+      merged.push(pending);
+      pending = '';
+      depth = 0;
+    }
+  }
+  if (pending) merged.push(pending);
+  return merged;
+};
+const normalizeEnemySkills = value => {
+  if (!value || typeof value !== 'object') return;
+  if (Array.isArray(value)) {
+    for (const entry of value) normalizeEnemySkills(entry);
+    return;
+  }
+  if (Array.isArray(value.skills)) value.skills = mergeParenthesizedSkillFragments(value.skills);
+  for (const nested of Object.values(value)) normalizeEnemySkills(nested);
+};
+normalizeEnemySkills(quest.versions);
+
+// 这些数值和共同条件在来源标题/备注中明确给出，需落实到每张敌人卡。
+const battle2024Tier2 = quest.versions['2024'].tiers['tier-2'].battles;
+battle2024Tier2['battle-2'].title = '树海四斗神加强版';
+for (const enemy of Object.values(battle2024Tier2['battle-2'].enemies)) enemy.actions = 2;
+for (const enemy of Object.values(battle2024Tier2['battle-3'].enemies)) {
+  enemy.level = { min: 100, max: 120 };
+  enemy.actions = 2;
+}
+for (const enemy of Object.values(quest.versions['2021-2022'].tiers['tier-1'].battles['battle-4'].enemies)) enemy.actions = 2;
+
+const battle2026Tier2 = quest.versions['2026'].tiers['tier-2'].battles['battle-4'];
+battle2026Tier2.title = '第4关 · 回来报仇的吉拉与四残影';
+for (const enemy of Object.values(battle2026Tier2.enemies)) {
+  const level = /吉拉/.test(enemy.name) ? 100 : 120;
+  enemy.level = { min: level, max: level };
+  enemy.actions = 2;
+}
+
 const battleRanges = {
   '2024:tier-2:battle-1': [...Array.from({ length: 7 }, (_, i) => 79 + i), 148, 149],
   '2024:tier-2:battle-2': [...Array.from({ length: 10 }, (_, i) => 86 + i), 150, 151, 152, 153],

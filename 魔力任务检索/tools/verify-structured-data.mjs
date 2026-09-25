@@ -148,11 +148,42 @@ if (!changes2026.some(change => change.targetBattleOrder === 5 && change.type ==
 const battle2026 = courage.versions['2026'].tiers['tier-2'].battles['battle-4'];
 const enemies2026 = Object.values(battle2026?.enemies || {});
 if (!battle2026 || enemies2026.length !== 6) fail('勇气max 2026第4关实际敌人应为2种吉拉资料加4种残影资料');
+if (battle2026.title !== '第4关 · 回来报仇的吉拉与四残影') fail('勇气max 2026第4关仍使用来源栏标题代替战斗标题');
 if (!battle2026.overview?.roster?.[0]?.alternatives?.length) fail('勇气max 2026第4关随机吉拉阵容概述缺失');
 if (enemies2026.some(enemy => /2种随机|出自《时空穿梭者》/.test(enemy.raw))) fail('勇气max 2026战斗概述仍被误判为敌人');
 for (const enemy of enemies2026) {
   if (enemy.verification?.status !== 'verified') fail(`勇气max 2026敌人未人工核验：${enemy.name}`);
+  const expectedLevel = /吉拉/.test(enemy.name) ? 100 : 120;
+  if (enemy.level?.min !== expectedLevel || enemy.level?.max !== expectedLevel || enemy.actions !== 2) {
+    fail(`勇气max 2026敌人等级或行动次数缺失：${enemy.name}`);
+  }
 }
+
+const courageBattle2024 = courage.versions['2024'].tiers['tier-2'].battles;
+if (courageBattle2024['battle-2'].title !== '树海四斗神加强版') fail('勇气max 2024树海四斗神标题仍带有错误前导标点');
+if (Object.values(courageBattle2024['battle-2'].enemies).some(enemy => enemy.actions !== 2)) fail('勇气max 2024树海四斗神未继承“皆为2动”');
+if (Object.values(courageBattle2024['battle-3'].enemies).some(enemy => enemy.level?.min !== 100 || enemy.level?.max !== 120 || enemy.actions !== 2)) {
+  fail('勇气max 2024百人道场敌人未继承“Lv.100～120随机、皆为2动”');
+}
+if (Object.values(courage.versions['2021-2022'].tiers['tier-1'].battles['battle-4'].enemies).some(enemy => enemy.actions !== 2)) {
+  fail('勇气max 2021～2022树海四斗神未继承“皆为2动”');
+}
+const unbalancedCourageSkills = [];
+const collectUnbalancedSkills = value => {
+  if (!value || typeof value !== 'object') return;
+  if (Array.isArray(value)) {
+    for (const entry of value) collectUnbalancedSkills(entry);
+    return;
+  }
+  if (Array.isArray(value.skills)) {
+    for (const skill of value.skills) {
+      if ((skill.match(/[（(]/g) || []).length !== (skill.match(/[）)]/g) || []).length) unbalancedCourageSkills.push(skill);
+    }
+  }
+  for (const nested of Object.values(value)) collectUnbalancedSkills(nested);
+};
+collectUnbalancedSkills(courage.versions);
+if (unbalancedCourageSkills.length) fail(`勇气max 技能条件被括号内标点拆断：${unbalancedCourageSkills.join('｜')}`);
 
 const rewardEventIds = new Set();
 const rewardItemIds = new Set();

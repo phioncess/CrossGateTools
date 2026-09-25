@@ -1103,6 +1103,25 @@ function structuredTextList(value) {
   return values.map(item => typeof item === 'object' ? item?.text : item).map(item => String(item ?? '').trim()).filter(Boolean);
 }
 
+function structuredValues(value) {
+  return Array.isArray(value) ? value : Object.values(value || {});
+}
+
+function structuredUndocumentedBattleCount(record) {
+  let count = 0;
+  for (const version of Object.values(record?.versions || {})) {
+    for (const tier of Object.values(version.tiers || {})) {
+      for (const battle of Object.values(tier.battles || {})) {
+        const directEnemies = structuredValues(battle.enemies);
+        const roundEnemies = structuredValues(battle.rounds).flatMap(round => structuredValues(round?.enemies));
+        const randomEnemies = structuredValues(battle.randomOneOf).flatMap(branch => structuredValues(Array.isArray(branch) ? branch : branch?.enemies));
+        if (!directEnemies.length && !roundEnemies.length && !randomEnemies.length) count += 1;
+      }
+    }
+  }
+  return count;
+}
+
 function structuredBossSections(record) {
   if (!record) return [];
   const result = [];
@@ -1110,26 +1129,68 @@ function structuredBossSections(record) {
     for (const tier of Object.values(version.tiers || {})) {
       for (const battle of Object.values(tier.battles || {})) {
         const relatedChanges = (version.changes || []).filter(change => change.targetBattleOrder === battle.order);
-        const rounds = Array.isArray(battle.rounds) && battle.rounds.length ? battle.rounds : [null];
-        const firstEnemyName = Object.values(battle.enemies || {})[0]?.name;
-        const baseTitle = battle.title || battle.name || firstEnemyName || (rounds[0] ? '连续战斗' : `战斗 ${battle.order ?? battle.id ?? ''}`.trim());
-        rounds.forEach((round, roundIndex) => result.push({
+        const commonNotes = [
+          ...relatedChanges.flatMap(change => [change.text, ...structuredTextList(change.details)]),
+          ...structuredTextList(battle.notes)
+        ].filter(Boolean);
+        const pushSection = ({ enemies, title, order, strategy, notes, sourceLines }) => {
+          const enemyEntries = structuredValues(enemies);
+          if (!enemyEntries.length) return;
+          result.push({
           kind: version.key === 'common' ? '关键战斗' : version.label,
-          title: [tier.key === 'common' ? '' : tier.label, baseTitle, round ? `第${round.order ?? roundIndex + 1}场` : ''].filter(Boolean).join(' · '),
+          title: [tier.key === 'common' ? '' : tier.label, title].filter(Boolean).join(' · '),
           versionKey: version.key,
           tierKey: tier.key,
-          order: round?.order ?? battle.order,
-          enemies: round ? (round.enemies || []) : Object.values(battle.enemies || {}),
+          order: order ?? battle.order,
+          enemies: enemyEntries,
           skills: '',
-          strategy: structuredTextList(round?.strategy ?? round?.strategies ?? battle.strategy),
-          notes: [
-            ...relatedChanges.flatMap(change => [change.text, ...structuredTextList(change.details)]),
-            ...structuredTextList(battle.notes),
-            ...structuredTextList(round?.notes),
-            ...(round?.headerElements ? [`全体属性：${round.headerElements}`] : [])
-          ].filter(Boolean),
-          sourceLines: round?.sourceLines || battle.sourceLines || []
-        }));
+          strategy: structuredTextList(strategy ?? battle.strategy),
+          notes: [...commonNotes, ...structuredTextList(notes)].filter(Boolean),
+          sourceLines: sourceLines || battle.sourceLines || []
+          });
+        };
+
+        const randomBranches = Object.entries(battle.randomOneOf || {});
+        if (randomBranches.length) {
+          randomBranches.forEach(([branchName, branch], branchIndex) => {
+            const branchData = Array.isArray(branch) ? { enemies: branch } : branch;
+            pushSection({
+              enemies: branchData.enemies,
+              title: [battle.title || battle.name, branchName].filter(Boolean).join(' · '),
+              order: battle.order ?? branchIndex + 1,
+              strategy: branchData.strategy ?? branchData.strategies,
+              notes: branchData.notes,
+              sourceLines: branchData.sourceLines
+            });
+          });
+          continue;
+        }
+
+        const rounds = structuredValues(battle.rounds);
+        if (rounds.length) {
+          const firstRoundEnemy = structuredValues(rounds[0]?.enemies)[0]?.name;
+          const baseTitle = battle.title || battle.name || firstRoundEnemy || '连续战斗';
+          rounds.forEach((round, roundIndex) => pushSection({
+            enemies: round.enemies,
+            title: `${baseTitle} · 第${round.order ?? roundIndex + 1}场`,
+            order: round.order ?? battle.order,
+            strategy: round.strategy ?? round.strategies,
+            notes: [...structuredTextList(round.notes), ...(round.headerElements ? [`全体属性：${round.headerElements}`] : [])],
+            sourceLines: round.sourceLines
+          }));
+          continue;
+        }
+
+        const enemies = structuredValues(battle.enemies);
+        const firstEnemyName = enemies[0]?.name;
+        pushSection({
+          enemies,
+          title: battle.title || battle.name || firstEnemyName || '关键战斗',
+          order: battle.order,
+          strategy: battle.strategy,
+          notes: [],
+          sourceLines: battle.sourceLines
+        });
       }
     }
   }
@@ -1351,6 +1412,7 @@ function renderQuest(quest, updateHash = true) {
   const organizedGuide = structuredGuideData?.organized || organizeGuide(guide, lowerItemNames, globalThis.STRUCTURED_REWARD_GUIDES?.[quest.id] || null, lowerItemNotes);
   const keyItemsHtml = renderKeyItems(quest.id);
   const structuredBosses = structuredBossSections(structuredPresentationRecord);
+  const undocumentedBattleCount = structuredUndocumentedBattleCount(structuredPresentationRecord);
   const structuredVersionChanges = renderStructuredVersionChanges(structuredPresentationRecord);
   const bossGuides = BOSS_GUIDES[quest.id] || [];
   let bossSections = structuredPresentationRecord
@@ -1399,9 +1461,12 @@ function renderQuest(quest, updateHash = true) {
     </article>`;
   }).join('') : indexOnly
       ? '<div class="no-boss"><b>BOSS 资料待核验</b><p>这里的空白不代表没有 BOSS；为避免混入其他服务器数值，尚未核验的数据不会冒充完整资料。</p></div>'
-      : quest.bossStatus === 'not-documented'
+      : undocumentedBattleCount || quest.bossStatus === 'not-documented'
         ? '<div class="no-boss"><b>原攻略未单列 BOSS 数据</b><p>页面不据此推断“没有 BOSS”；战斗触发点仍保留在任务步骤中。</p></div>'
         : '<div class="no-boss"><b>本任务无 BOSS 战</b><p>流程风险主要来自迷宫、时段或材料条件，详见上方任务步骤。</p></div>';
+  const partialBossNotice = bossSections.length && undocumentedBattleCount
+    ? `<div class="no-boss"><b>另有 ${undocumentedBattleCount} 处战斗未列敌人数据</b><p>对应触发点保留在任务步骤中；页面不以内部记录或推测数值生成空战斗卡。</p></div>`
+    : '';
   const chainHtml = series.length > 1 ? `
     <section class="chain-card">
       <div class="section-title"><span>系列关系链</span><small>${quest.stageLabel ? `当前 ${quest.stageLabel}` : (quest.order ? `第 ${quest.order} 项` : `第 ${index + 1} 项`)} · 已收录 ${series.length} 项</small></div>
@@ -1468,9 +1533,9 @@ function renderQuest(quest, updateHash = true) {
     </section>
     ${keyItemsHtml}
     <section class="boss-card">
-      <div class="section-title"><span>BOSS 数据与打法</span><small>${bossSections.length ? bossSectionSummary(quest.id, bossSections) : (indexOnly ? '等待核验' : (quest.bossStatus === 'not-documented' ? '原攻略未单列' : '无首领战'))}</small></div>
+      <div class="section-title"><span>BOSS 数据与打法</span><small>${bossSections.length ? bossSectionSummary(quest.id, bossSections) : (indexOnly ? '等待核验' : ((undocumentedBattleCount || quest.bossStatus === 'not-documented') ? '原攻略未单列' : '无首领战'))}</small></div>
       ${structuredVersionChanges}
-      <div class="boss-list">${bossHtml}</div>
+      <div class="boss-list">${bossHtml}${partialBossNotice}</div>
     </section>
     <section class="rewards-card">
       <div class="section-title"><span>道具获取与战斗掉落</span><small>获得方式、掉落与成果统一汇总</small></div>
