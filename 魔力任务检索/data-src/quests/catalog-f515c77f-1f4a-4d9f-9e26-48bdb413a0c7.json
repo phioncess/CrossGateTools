@@ -1,0 +1,844 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-f515c77f-1f4a-4d9f-9e26-48bdb413a0c7",
+  "name": "2024国庆节特别活动",
+  "aliases": [
+    "国庆休闲包",
+    "草莓史莱姆",
+    "复兴荣耀称号",
+    "金龙花之冠"
+  ],
+  "metadata": {
+    "category": "临时活动/任务",
+    "level": "40 级",
+    "availability": "closed",
+    "summary": "必要条件：怀旧服任务（已关闭）；怀旧服任务（已关闭）；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_f515c77f-1f4a-4d9f-9e26-48bdb413a0c7",
+    "url": "https://www.molibaike.com/Mission/Detail/f515c77f-1f4a-4d9f-9e26-48bdb413a0c7?u=True",
+    "localFiles": [],
+    "lineCount": 22,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.主要练级区的魔物有几率掉落【国庆休闲包】。"
+      },
+      {
+        "line": 2,
+        "text": "◆【国庆休闲包】：不可交易、丢地消失；可叠加（20）"
+      },
+      {
+        "line": 3,
+        "text": "◆已知可掉落的地点：坎村、雷村、新村往新城通道、新城、冰树、砍牛、半山、玄武"
+      },
+      {
+        "line": 4,
+        "text": "已知不可掉落的地点：新海底、小雷、内心、杰村、蒂娜、贡品、雪山、新村、米村、鲁村、柯村"
+      },
+      {
+        "line": 5,
+        "text": "2.双击【国庆休闲包】获得奖励，任务结束。"
+      },
+      {
+        "line": 6,
+        "text": "◆已知可获得奖励：可交易"
+      },
+      {
+        "line": 7,
+        "text": "（目前部分为以往奖励，有错误请反馈）"
+      },
+      {
+        "line": 8,
+        "text": "魔石"
+      },
+      {
+        "line": 9,
+        "text": "鼠王惊奇蛋"
+      },
+      {
+        "line": 10,
+        "text": "天梯赛积分"
+      },
+      {
+        "line": 11,
+        "text": "技能草"
+      },
+      {
+        "line": 12,
+        "text": "变身卡片包"
+      },
+      {
+        "line": 13,
+        "text": "打卡器"
+      },
+      {
+        "line": 14,
+        "text": "金龙花之冠"
+      },
+      {
+        "line": 15,
+        "text": "冰激凌"
+      },
+      {
+        "line": 16,
+        "text": "◆奖励明细："
+      },
+      {
+        "line": 17,
+        "text": "【金龙花之冠】：Lv.1，种类：头饰，耐久300；精神+10，回复+15，生命+75，魔力+49；"
+      },
+      {
+        "line": 18,
+        "text": "装备后，称号“复兴 荣耀”、有外显"
+      },
+      {
+        "line": 19,
+        "text": "【冰激凌】：Lv.10，种类：不明；"
+      },
+      {
+        "line": 20,
+        "text": "双击使用后获得：Lv.1宠物【草莓史莱姆】："
+      },
+      {
+        "line": 21,
+        "text": "【草莓史莱姆】：Lv.1，宠物"
+      },
+      {
+        "line": 22,
+        "text": "草莓史莱姆：特殊系，火7水3，技能栏9；体22 力7 防24 敏29 魔43，总档125."
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": []
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "主要练级区",
+      "sourceLines": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "在已确认可掉落的主要练级区击倒魔物，有几率获得【国庆休闲包】。已确认可掉落与不可掉落地点分别记录，不把未列地点推定为任一类。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "国庆休闲包",
+            "quantity": 1,
+            "acquisition": "random-monster-drop",
+            "properties": {
+              "tradeable": false,
+              "dropBehavior": "丢地消失",
+              "stackLimit": 20
+            },
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "双击并消耗【国庆休闲包】取得奖池奖励，活动流程结束。来源明确提示当前清单中部分沿用了往年奖励且可能有错误，因此仅按“来源列出的已知奖励”保存，不宣称完整或逐项已实测。",
+        "inputs": [
+          {
+            "item": "国庆休闲包",
+            "quantity": 1,
+            "action": "use",
+            "consumed": true,
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "国庆休闲包奖励",
+            "quantity": 1,
+            "acquisition": "source-listed-reward-pool",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [
+        {
+          "eventYear": 2024,
+          "event": "国庆节特别活动",
+          "sourceLines": [
+            1
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [
+            {
+              "id": "national-day-package-drop-areas",
+              "drop": "国庆休闲包",
+              "chance": "source-unspecified",
+              "confirmedDropLocations": [
+                "坎村",
+                "雷村",
+                "新村往新城通道",
+                "新城",
+                "冰树",
+                "砍牛",
+                "半山",
+                "玄武"
+              ],
+              "confirmedNoDropLocations": [
+                "新海底",
+                "小雷",
+                "内心",
+                "杰村",
+                "蒂娜",
+                "贡品",
+                "雪山",
+                "新村",
+                "米村",
+                "鲁村",
+                "柯村"
+              ],
+              "sourceLines": [
+                1,
+                3,
+                4
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          ],
+          "media": [],
+          "notes": [
+            {
+              "type": "source-reliability-warning",
+              "text": "部分奖励沿用往年资料，来源提示可能有错误。",
+              "sourceLines": [
+                7
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "国庆休闲包",
+        "quantity": 1,
+        "action": "use",
+        "consumed": true,
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "国庆休闲包",
+        "quantity": 1,
+        "acquisition": "random-monster-drop",
+        "properties": {
+          "tradeable": false,
+          "dropBehavior": "丢地消失",
+          "stackLimit": 20
+        },
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "国庆休闲包奖励",
+        "quantity": 1,
+        "acquisition": "source-listed-reward-pool",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.主要练级区的魔物有几率掉落【国庆休闲包】。",
+      "type": "drop-step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "◆【国庆休闲包】：不可交易、丢地消失；可叠加（20）",
+      "type": "item-detail",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆已知可掉落的地点：坎村、雷村、新村往新城通道、新城、冰树、砍牛、半山、玄武",
+      "type": "drop-location-list",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "已知不可掉落的地点：新海底、小雷、内心、杰村、蒂娜、贡品、雪山、新村、米村、鲁村、柯村",
+      "type": "no-drop-location-list",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "2.双击【国庆休闲包】获得奖励，任务结束。",
+      "type": "completion-step",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "◆已知可获得奖励：可交易",
+      "type": "reward-property",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "（目前部分为以往奖励，有错误请反馈）",
+      "type": "source-warning",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "魔石",
+      "type": "reward-row",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "鼠王惊奇蛋",
+      "type": "reward-row",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "天梯赛积分",
+      "type": "reward-row",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "技能草",
+      "type": "reward-row",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "变身卡片包",
+      "type": "reward-row",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 13,
+      "text": "打卡器",
+      "type": "reward-row",
+      "sourceLines": [
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 14,
+      "text": "金龙花之冠",
+      "type": "reward-row",
+      "sourceLines": [
+        14
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 15,
+      "text": "冰激凌",
+      "type": "reward-row",
+      "sourceLines": [
+        15
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 16,
+      "text": "◆奖励明细：",
+      "type": "reward-heading",
+      "sourceLines": [
+        16
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 17,
+      "text": "【金龙花之冠】：Lv.1，种类：头饰，耐久300；精神+10，回复+15，生命+75，魔力+49；",
+      "type": "equipment-detail",
+      "sourceLines": [
+        17
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 18,
+      "text": "装备后，称号“复兴 荣耀”、有外显",
+      "type": "equipment-effect",
+      "sourceLines": [
+        18
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 19,
+      "text": "【冰激凌】：Lv.10，种类：不明；",
+      "type": "item-detail",
+      "sourceLines": [
+        19
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 20,
+      "text": "双击使用后获得：Lv.1宠物【草莓史莱姆】：",
+      "type": "use-result",
+      "sourceLines": [
+        20
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 21,
+      "text": "【草莓史莱姆】：Lv.1，宠物",
+      "type": "pet-heading",
+      "sourceLines": [
+        21
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 22,
+      "text": "草莓史莱姆：特殊系，火7水3，技能栏9；体22 力7 防24 敏29 魔43，总档125.",
+      "type": "pet-detail",
+      "sourceLines": [
+        22
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        22
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "2024-national-day-package-pool",
+      "version": "common",
+      "tier": "common",
+      "kind": "reward-pool",
+      "items": [
+        {
+          "id": "magic-stone",
+          "name": "魔石",
+          "role": "valuable-result",
+          "sourceLines": [
+            8
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "mouse-king-surprise-egg",
+          "name": "鼠王惊奇蛋",
+          "role": "valuable-result",
+          "sourceLines": [
+            9
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "ladder-points",
+          "name": "天梯赛积分",
+          "role": "valuable-result",
+          "sourceLines": [
+            10
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "skill-herb",
+          "name": "技能草",
+          "role": "valuable-result",
+          "sourceLines": [
+            11
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "transformation-card-pack",
+          "name": "变身卡片包",
+          "role": "valuable-result",
+          "sourceLines": [
+            12
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "time-card-device",
+          "name": "打卡器",
+          "role": "valuable-result",
+          "sourceLines": [
+            13
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "golden-dragon-flower-crown",
+          "name": "金龙花之冠",
+          "role": "valuable-result",
+          "entityType": "equipment",
+          "properties": {
+            "level": 1,
+            "category": "头饰",
+            "durability": 300,
+            "spirit": 10,
+            "recovery": 15,
+            "hp": 75,
+            "mp": 49,
+            "equippedTitle": "复兴 荣耀",
+            "equippedAppearance": true
+          },
+          "sourceLines": [
+            14,
+            16,
+            17,
+            18
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "ice-cream",
+          "name": "冰激凌",
+          "role": "valuable-result",
+          "properties": {
+            "level": 10,
+            "category": "不明",
+            "useResult": {
+              "pet": "草莓史莱姆",
+              "level": 1
+            }
+          },
+          "pet": {
+            "name": "草莓史莱姆",
+            "race": "特殊系",
+            "elements": {
+              "火": 7,
+              "水": 3
+            },
+            "skillSlots": 9,
+            "growth": {
+              "体": 22,
+              "攻": 7,
+              "防": 24,
+              "敏": 29,
+              "魔": 43
+            },
+            "totalGrowth": 125
+          },
+          "sourceLines": [
+            15,
+            16,
+            19,
+            20,
+            21,
+            22
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-2",
+      "selection": "source-unspecified",
+      "tradeable": true,
+      "completeness": "source-listed-only",
+      "reliabilityWarning": "来源提示部分为以往奖励且可能有错误",
+      "sourceLines": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 57,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "临时活动/任务"
+  }
+}

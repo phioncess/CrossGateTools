@@ -1,0 +1,974 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-64ba16d3-e8f0-4e17-ba2d-e999e4ac7903",
+  "name": "幻境森林",
+  "aliases": [
+    "炼金5"
+  ],
+  "metadata": {
+    "category": "失落的炼金术系列",
+    "level": "70 级",
+    "availability": "available",
+    "summary": "必要条件：完成《拜访炼金术之馆》任务；持有【整理后的资料】；怀旧牧羊服任务；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_64ba16d3-e8f0-4e17-ba2d-e999e4ac7903",
+    "url": "https://www.molibaike.com/Mission/Detail/64ba16d3-e8f0-4e17-ba2d-e999e4ac7903?u=True",
+    "localFiles": [],
+    "lineCount": 14,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往炼金之馆2楼与大炼金师（66.27）对话，交出【整理后的资料】获得【接洽信】。"
+      },
+      {
+        "line": 2,
+        "text": "◆炼金之馆抵达方式参考《拜访炼金之馆》任务"
+      },
+      {
+        "line": 3,
+        "text": "2.前往魔法大学内部技术室（51.43）与管理官（28.9）对话，交出【接洽信】获得【魔法宝石】。"
+      },
+      {
+        "line": 4,
+        "text": "3.清晨或白天前往魔法大学（40.26）处与境界师对话，切换地图。通过（17.16）处黄色传送石进入境界隧道。"
+      },
+      {
+        "line": 5,
+        "text": "◆境界隧道为随机迷宫，约5层；魔物为Lv.65~69境界追猎者（地狱妖犬）、境界巡游者（漂浮炸弹）；击倒魔物随机获得【幻想碎片】"
+      },
+      {
+        "line": 6,
+        "text": "◆【幻想碎片】作用参考《最终净化》任务"
+      },
+      {
+        "line": 7,
+        "text": "4.通过随机迷宫抵达幻境森林，与幼生独角兽（31.144）对话，交出【魔法宝石】获得【独角碎片】并传送至魔法大学。"
+      },
+      {
+        "line": 8,
+        "text": "◆幻境森林为固定迷宫；魔物为Lv.66~70幼生独角兽、幻境树精（黄金树精）、幻境灵草（妖花）"
+      },
+      {
+        "line": 9,
+        "text": "◆幻境森林行走路线："
+      },
+      {
+        "line": 10,
+        "text": "5.返回炼金之馆2楼与炼金师（70.23）对话，交出【独角碎片】获得【证明信】、【境界宝石】、【参观票】*2，任务完结。"
+      },
+      {
+        "line": 11,
+        "text": "◆【证明信】为后续任务道具，勿丢弃"
+      },
+      {
+        "line": 12,
+        "text": "◆【境界宝石】为进入幻境森林所需道具，可丢弃"
+      },
+      {
+        "line": 13,
+        "text": "◆【参观票】作用参考《拜访炼金之馆》任务支线，可丢弃"
+      },
+      {
+        "line": 14,
+        "text": "◆任务剧情：参考《失落的炼金术系列任务剧情对话》"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": [
+      {
+        "type": "route",
+        "targetQuest": "拜访炼金之馆",
+        "purpose": "炼金之馆抵达方式",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "item-use",
+        "item": "幻想碎片",
+        "targetQuest": "最终净化",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "item-use",
+        "item": "参观票",
+        "targetQuest": "拜访炼金之馆",
+        "branch": true,
+        "sourceLines": [
+          13
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "story",
+        "target": "失落的炼金术系列任务剧情对话",
+        "sourceLines": [
+          14
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "held-item",
+        "item": "整理后的资料",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "time-window",
+        "value": "清晨或白天",
+        "appliesToStep": "step-3",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "炼金之馆2楼大炼金师（66.27）",
+      "sourceLines": [
+        1,
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "在炼金之馆2楼与大炼金师（66.27）对话，交出【整理后的资料】，获得【接洽信】。",
+        "inputs": [
+          {
+            "item": "整理后的资料",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "接洽信",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1,
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "前往魔法大学内部技术室与管理官（28.9）对话，交出【接洽信】，获得【魔法宝石】。",
+        "inputs": [
+          {
+            "item": "接洽信",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "魔法宝石",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "清晨或白天与魔法大学境界师（40.26）对话切换地图，从黄色传送石进入约5层的境界隧道；迷宫魔物会随机掉落【幻想碎片】。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "幻想碎片",
+            "quantity": 1,
+            "acquisition": "random-drop",
+            "optional": true,
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          4,
+          5,
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "通过境界隧道抵达幻境森林，与幼生独角兽（31.144）对话，交出【魔法宝石】，获得【独角碎片】并传送至魔法大学。",
+        "inputs": [
+          {
+            "item": "魔法宝石",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "独角碎片",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          7,
+          8,
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-5",
+        "order": 5,
+        "text": "返回炼金之馆2楼与炼金师（70.23）对话，交出【独角碎片】，同次获得【证明信】、【境界宝石】和2张【参观票】，任务完结。",
+        "inputs": [
+          {
+            "item": "独角碎片",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              10
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "证明信",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              10
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "境界宝石",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              10
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "参观票",
+            "quantity": 2,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              10
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [
+            {
+              "id": "boundary-tunnel",
+              "location": "境界隧道",
+              "maze": "随机迷宫",
+              "floorsApprox": 5,
+              "enemyLevel": {
+                "min": 65,
+                "max": 69
+              },
+              "enemies": [
+                "境界追猎者（地狱妖犬）",
+                "境界巡游者（漂浮炸弹）"
+              ],
+              "sourceLines": [
+                5
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            },
+            {
+              "id": "illusion-forest",
+              "location": "幻境森林",
+              "maze": "固定迷宫",
+              "enemyLevel": {
+                "min": 66,
+                "max": 70
+              },
+              "enemies": [
+                "幼生独角兽",
+                "幻境树精（黄金树精）",
+                "幻境灵草（妖花）"
+              ],
+              "sourceLines": [
+                8
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          ],
+          "media": [
+            {
+              "type": "route-map-caption",
+              "label": "幻境森林行走路线",
+              "asset": "source-unspecified",
+              "sourceLines": [
+                9
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          ],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "整理后的资料",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "接洽信",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "魔法宝石",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "独角碎片",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-5",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "接洽信",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "魔法宝石",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "幻想碎片",
+        "quantity": 1,
+        "acquisition": "random-drop",
+        "optional": true,
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "独角碎片",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "证明信",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-5",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "境界宝石",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-5",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "参观票",
+        "quantity": 2,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-5",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往炼金之馆2楼与大炼金师（66.27）对话，交出【整理后的资料】获得【接洽信】。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "◆炼金之馆抵达方式参考《拜访炼金之馆》任务",
+      "type": "reference",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "2.前往魔法大学内部技术室（51.43）与管理官（28.9）对话，交出【接洽信】获得【魔法宝石】。",
+      "type": "step",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "3.清晨或白天前往魔法大学（40.26）处与境界师对话，切换地图。通过（17.16）处黄色传送石进入境界隧道。",
+      "type": "timed-step",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "◆境界隧道为随机迷宫，约5层；魔物为Lv.65~69境界追猎者（地狱妖犬）、境界巡游者（漂浮炸弹）；击倒魔物随机获得【幻想碎片】",
+      "type": "encounter-area",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "◆【幻想碎片】作用参考《最终净化》任务",
+      "type": "item-reference",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "4.通过随机迷宫抵达幻境森林，与幼生独角兽（31.144）对话，交出【魔法宝石】获得【独角碎片】并传送至魔法大学。",
+      "type": "step",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "◆幻境森林为固定迷宫；魔物为Lv.66~70幼生独角兽、幻境树精（黄金树精）、幻境灵草（妖花）",
+      "type": "encounter-area",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "◆幻境森林行走路线：",
+      "type": "media-caption",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "5.返回炼金之馆2楼与炼金师（70.23）对话，交出【独角碎片】获得【证明信】、【境界宝石】、【参观票】*2，任务完结。",
+      "type": "completion-step",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "◆【证明信】为后续任务道具，勿丢弃",
+      "type": "item-use",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "◆【境界宝石】为进入幻境森林所需道具，可丢弃",
+      "type": "item-use",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 13,
+      "text": "◆【参观票】作用参考《拜访炼金之馆》任务支线，可丢弃",
+      "type": "item-use",
+      "sourceLines": [
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 14,
+      "text": "◆任务剧情：参考《失落的炼金术系列任务剧情对话》",
+      "type": "reference",
+      "sourceLines": [
+        14
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        14
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "fantasy-fragment-drop",
+      "version": "common",
+      "tier": "common",
+      "kind": "battle-drop",
+      "items": [
+        {
+          "id": "fantasy-fragment",
+          "name": "幻想碎片",
+          "role": "valuable-result",
+          "useInQuest": "最终净化",
+          "sourceLines": [
+            5,
+            6
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-3",
+      "optional": true,
+      "sourceLines": [
+        5,
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "id": "completion-items",
+      "version": "common",
+      "tier": "common",
+      "kind": "quest-completion",
+      "items": [
+        {
+          "id": "proof-letter",
+          "name": "证明信",
+          "role": "valuable-result",
+          "use": "后续任务道具",
+          "warning": "勿丢弃",
+          "sourceLines": [
+            10,
+            11
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "boundary-gem",
+          "name": "境界宝石",
+          "role": "valuable-result",
+          "use": "进入幻境森林",
+          "discardable": true,
+          "sourceLines": [
+            10,
+            12
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "visit-ticket",
+          "name": "参观票",
+          "role": "valuable-result",
+          "quantity": 2,
+          "useInQuest": "拜访炼金之馆支线",
+          "discardable": true,
+          "sourceLines": [
+            10,
+            13
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-5",
+      "sameAcquisitionEvent": true,
+      "sourceLines": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "失落的炼金术系列",
+    "order": 5,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "失落的炼金术系列"
+  },
+  "sourceSupplements": {
+    "areas": [
+      {
+        "id": "area-3-1",
+        "afterStep": 3,
+        "text": "◆境界隧道为随机迷宫，约5层；魔物为Lv.65~69境界追猎者（地狱妖犬）、境界巡游者（漂浮炸弹）；击倒魔物随机获得【幻想碎片】",
+        "sourceLines": [
+          5
+        ],
+        "sourceReference": "source-documents.js",
+        "verification": {
+          "status": "verified",
+          "method": "source-line-match"
+        }
+      },
+      {
+        "id": "area-4-2",
+        "afterStep": 4,
+        "text": "◆幻境森林为固定迷宫；魔物为Lv.66~70幼生独角兽、幻境树精（黄金树精）、幻境灵草（妖花）",
+        "sourceLines": [
+          8
+        ],
+        "sourceReference": "source-documents.js",
+        "verification": {
+          "status": "verified",
+          "method": "source-line-match"
+        }
+      }
+    ]
+  }
+}

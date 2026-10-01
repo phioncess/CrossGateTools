@@ -1,0 +1,791 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-2400f3a1-171b-49b3-89f0-c591d4db87df",
+  "name": "就职鉴定师",
+  "aliases": [
+    "鉴定师就职"
+  ],
+  "metadata": {
+    "category": "职业就职任务",
+    "level": "1 级",
+    "availability": "available",
+    "summary": "",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_2400f3a1-171b-49b3-89f0-c591d4db87df",
+    "url": "https://www.molibaike.com/Mission/Detail/2400f3a1-171b-49b3-89f0-c591d4db87df?u=True",
+    "localFiles": [],
+    "lineCount": 11,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往法兰城凯蒂夫人的店（196.78），与鉴定师马尔弗（13.9）对话，获得【钙矿】。"
+      },
+      {
+        "line": 2,
+        "text": "2.前往法兰城西门外国营第24坑道地下1楼（351.145）与矿工毕夫鲁（35.7）对话，交出【钙矿】获得【给山男的信？】。"
+      },
+      {
+        "line": 3,
+        "text": "3.前往法兰城东门外山男的家（509.153）与山男哈葛利特（9.3）对话，交出【给山男的信】获得【梦露草】。"
+      },
+      {
+        "line": 4,
+        "text": "4.返回国营第24坑道地下1楼（351.145）与矿工毕夫鲁（35.7）对话，交出【梦露草】获得【给葛利玛的信？】。"
+      },
+      {
+        "line": 5,
+        "text": "5.前往法兰城葛利玛的家（216.43）与矿工葛利玛（13.13）对话，交出【给葛利玛的信】获得【有关矿石成分的笔记】。"
+      },
+      {
+        "line": 6,
+        "text": "6.前往凯蒂夫人的店（196.78）与鉴定师马尔弗（13.9）对话，输入“钙”交出【有关矿石成分的笔记】获得【鉴定师推荐信】。"
+      },
+      {
+        "line": 7,
+        "text": "7.前往法兰城强哥杂货店（191.37），持有【鉴定师推荐信】与鉴定师巴姆可（12.9）对话即可就职鉴定师，任务完结。"
+      },
+      {
+        "line": 8,
+        "text": "◆学习技能鉴定："
+      },
+      {
+        "line": 9,
+        "text": "前往法兰城凯蒂夫人的店（196.78）与鉴定士达人恰拉（17.14）对话可学习技能鉴定，费用100G，所需的技能字段数量: 2栏"
+      },
+      {
+        "line": 10,
+        "text": "◆法兰城凯蒂夫人的店（196.78），凯蒂夫人（17.12）可以花费魔币鉴定物品。"
+      },
+      {
+        "line": 11,
+        "text": "NPC鉴定价格，参考《鉴定价格相关资料》。"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": [
+      {
+        "type": "price-reference",
+        "target": "鉴定价格相关资料",
+        "sourceLines": [
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "requirements": {
+    "conditions": []
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "法兰城凯蒂夫人的店（196.78）",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "与鉴定师马尔弗（13.9）对话，获得【钙矿】。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "钙矿",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "前往国营第24坑道地下1楼，与矿工毕夫鲁（35.7）对话，交出【钙矿】，获得【给山男的信？】。",
+        "inputs": [
+          {
+            "item": "钙矿",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "给山男的信？",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "前往山男的家与山男哈葛利特（9.3）对话，交出信，获得【梦露草】。",
+        "inputs": [
+          {
+            "item": "给山男的信？",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceNameInStep": "给山男的信",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "梦露草",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "返回国营第24坑道与矿工毕夫鲁对话，交出【梦露草】，获得【给葛利玛的信？】。",
+        "inputs": [
+          {
+            "item": "梦露草",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "给葛利玛的信？",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-5",
+        "order": 5,
+        "text": "前往葛利玛的家与矿工葛利玛（13.13）对话，交出信，获得【有关矿石成分的笔记】。",
+        "inputs": [
+          {
+            "item": "给葛利玛的信？",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceNameInStep": "给葛利玛的信",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "有关矿石成分的笔记",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-6",
+        "order": 6,
+        "text": "返回凯蒂夫人的店，与鉴定师马尔弗对话，输入“钙”，交出笔记，获得【鉴定师推荐信】。",
+        "inputs": [
+          {
+            "item": "有关矿石成分的笔记",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "鉴定师推荐信",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "commands": [
+          {
+            "text": "钙",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "source-action-review"
+            }
+          }
+        ]
+      },
+      {
+        "id": "step-7",
+        "order": 7,
+        "text": "前往强哥杂货店，持有【鉴定师推荐信】与鉴定师巴姆可（12.9）对话，就职鉴定师，任务完结。",
+        "inputs": [
+          {
+            "item": "鉴定师推荐信",
+            "quantity": 1,
+            "action": "hold",
+            "consumed": false,
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": [
+      {
+        "type": "npc-service",
+        "npc": "凯蒂夫人（17.12）",
+        "service": "付费鉴定物品",
+        "priceReference": "鉴定价格相关资料",
+        "sourceLines": [
+          10,
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "钙矿",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "给山男的信？",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceNameInStep": "给山男的信",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "梦露草",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "给葛利玛的信？",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceNameInStep": "给葛利玛的信",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-5",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "有关矿石成分的笔记",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-6",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "鉴定师推荐信",
+        "quantity": 1,
+        "action": "hold",
+        "consumed": false,
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-7",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "钙矿",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "给山男的信？",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "梦露草",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "给葛利玛的信？",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "有关矿石成分的笔记",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-5",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "鉴定师推荐信",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-6",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往法兰城凯蒂夫人的店（196.78），与鉴定师马尔弗（13.9）对话，获得【钙矿】。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2.前往法兰城西门外国营第24坑道地下1楼（351.145）与矿工毕夫鲁（35.7）对话，交出【钙矿】获得【给山男的信？】。",
+      "type": "step",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "3.前往法兰城东门外山男的家（509.153）与山男哈葛利特（9.3）对话，交出【给山男的信】获得【梦露草】。",
+      "type": "step",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "4.返回国营第24坑道地下1楼（351.145）与矿工毕夫鲁（35.7）对话，交出【梦露草】获得【给葛利玛的信？】。",
+      "type": "step",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "5.前往法兰城葛利玛的家（216.43）与矿工葛利玛（13.13）对话，交出【给葛利玛的信】获得【有关矿石成分的笔记】。",
+      "type": "step",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "6.前往凯蒂夫人的店（196.78）与鉴定师马尔弗（13.9）对话，输入“钙”交出【有关矿石成分的笔记】获得【鉴定师推荐信】。",
+      "type": "step",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "7.前往法兰城强哥杂货店（191.37），持有【鉴定师推荐信】与鉴定师巴姆可（12.9）对话即可就职鉴定师，任务完结。",
+      "type": "step",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "◆学习技能鉴定：",
+      "type": "skill-heading",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "前往法兰城凯蒂夫人的店（196.78）与鉴定士达人恰拉（17.14）对话可学习技能鉴定，费用100G，所需的技能字段数量: 2栏",
+      "type": "skill-learning",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "◆法兰城凯蒂夫人的店（196.78），凯蒂夫人（17.12）可以花费魔币鉴定物品。",
+      "type": "npc-service",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "NPC鉴定价格，参考《鉴定价格相关资料》。",
+      "type": "reference",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        11
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [],
+  "outcomes": {
+    "titles": [],
+    "careers": [
+      {
+        "career": "鉴定师",
+        "action": "employment",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "skills": [
+      {
+        "name": "鉴定",
+        "teacher": "凯蒂夫人的店鉴定士达人恰拉（17.14）",
+        "cost": {
+          "amount": 100,
+          "unit": "G"
+        },
+        "skillSlotCost": 2,
+        "sourceLines": [
+          8,
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 5,
+    "stageLabel": "",
+    "optional": false,
+    "type": "职业就职任务",
+    "sourceCategory": "职业就职任务"
+  }
+}

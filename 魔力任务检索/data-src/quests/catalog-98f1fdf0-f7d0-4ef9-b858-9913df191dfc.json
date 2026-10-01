@@ -1,0 +1,594 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-98f1fdf0-f7d0-4ef9-b858-9913df191dfc",
+  "name": "永久冻土",
+  "aliases": [
+    "龙族的纷争2",
+    "白之记忆",
+    "冻土"
+  ],
+  "metadata": {
+    "category": "龙族的纷争系列",
+    "level": "60 级",
+    "availability": "available",
+    "summary": "必要条件：持有【世界之心】",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_98f1fdf0-f7d0-4ef9-b858-9913df191dfc",
+    "url": "https://www.molibaike.com/Mission/Detail/98f1fdf0-f7d0-4ef9-b858-9913df191dfc?u=True",
+    "localFiles": [],
+    "lineCount": 14,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往雪山之顶，至（41.8）处进入永久的冻土地下。"
+      },
+      {
+        "line": 2,
+        "text": "◆雪山之顶抵达方式参考《积雪的山路》任务"
+      },
+      {
+        "line": 3,
+        "text": "2.与冰之人魔草（10.19）对话，选“是”通过栅栏。"
+      },
+      {
+        "line": 4,
+        "text": "◆持有【黑之记忆】、【白之记忆】、【黑之意志】、【白之意志】、【迷惑的意志】中任意一种道具无法通过栅栏"
+      },
+      {
+        "line": 5,
+        "text": "3.通过（21.8）处黄色传送石，抵达永久冻土。"
+      },
+      {
+        "line": 6,
+        "text": "◆永久冻土为随机迷宫，共36层"
+      },
+      {
+        "line": 7,
+        "text": "迷宫刷新时间：4小时（仅供参考），地图大小范围：40*40~60*60"
+      },
+      {
+        "line": 8,
+        "text": "宝箱数量：18"
+      },
+      {
+        "line": 9,
+        "text": "魔物为Lv55~63的水龙蜥、风龙蜥、蜥蜴战士、蜥蜴武士，最高遇敌数量7"
+      },
+      {
+        "line": 10,
+        "text": "4.通过随机迷宫进入白之祭坛，持有【世界之心】与龙的使者（24.29）对话，选“是”获得【白之记忆】并传送回召唤之间，任务完结。"
+      },
+      {
+        "line": 11,
+        "text": "◆若选“否”则不会获得道具，传送至雪山之顶，任务完结"
+      },
+      {
+        "line": 12,
+        "text": "◆【白之记忆】，用于《黑白龙城》任务。双击使用后传送到龙族祭坛，和上面的龙对话传送到询问之地，和下面的龙对话重新获得记忆并返回召唤之间（可用于特殊情况下返回法兰城用）"
+      },
+      {
+        "line": 13,
+        "text": "◆【世界之心】获得方式参考《深渊》任务"
+      },
+      {
+        "line": 14,
+        "text": "◆任务剧情：参考《龙族的纷争系列任务剧情对话》"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [
+      {
+        "item": "世界之心",
+        "sourceQuest": "深渊",
+        "sourceLines": [
+          13
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "references": [
+      {
+        "type": "route",
+        "targetQuest": "积雪的山路",
+        "purpose": "抵达雪山之顶",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "item-use",
+        "item": "白之记忆",
+        "targetQuest": "黑白龙城",
+        "sourceLines": [
+          12
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "story",
+        "target": "龙族的纷争系列任务剧情对话",
+        "sourceLines": [
+          14
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "inventory-absence-any",
+        "items": [
+          "黑之记忆",
+          "白之记忆",
+          "黑之意志",
+          "白之意志",
+          "迷惑的意志"
+        ],
+        "reason": "持有任意一种时无法通过栅栏",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "held-item",
+        "item": "世界之心",
+        "appliesToStep": "step-4",
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "雪山之顶（41.8）永久的冻土地下入口",
+      "sourceLines": [
+        1,
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "前往雪山之顶，从（41.8）进入永久的冻土地下。雪山之顶路线参考《积雪的山路》。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          1,
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "在未持有黑/白之记忆、黑/白之意志或迷惑的意志的情况下，与冰之人魔草（10.19）对话并选择“是”，通过栅栏。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          3,
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "通过黄色传送石（21.8）进入永久冻土36层随机迷宫。原文给出刷新时间、地图范围、宝箱和遇敌资料。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "通过迷宫进入白之祭坛，持有【世界之心】与龙的使者（24.29）对话：选择“是”获得【白之记忆】并传送回召唤之间；选择“否”不获得道具并传送至雪山之顶。两条选择均结束任务。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "白之记忆",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "condition": "选择“是”",
+            "requiresHeldItem": "世界之心",
+            "sourceLines": [
+              10
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [
+            {
+              "id": "permafrost",
+              "location": "永久冻土",
+              "maze": "随机迷宫",
+              "floors": 36,
+              "refreshHoursApprox": 4,
+              "mapSizeRange": [
+                "40×40",
+                "60×60"
+              ],
+              "chestCount": 18,
+              "enemyLevel": {
+                "min": 55,
+                "max": 63
+              },
+              "enemies": [
+                "水龙蜥",
+                "风龙蜥",
+                "蜥蜴战士",
+                "蜥蜴武士"
+              ],
+              "maxEnemyCount": 7,
+              "sourceLines": [
+                6,
+                7,
+                8,
+                9
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          ],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [],
+    "acquisitions": [
+      {
+        "item": "白之记忆",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "condition": "选择“是”",
+        "requiresHeldItem": "世界之心",
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往雪山之顶，至（41.8）处进入永久的冻土地下。",
+      "type": "route-step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "◆雪山之顶抵达方式参考《积雪的山路》任务",
+      "type": "reference",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "2.与冰之人魔草（10.19）对话，选“是”通过栅栏。",
+      "type": "gate-step",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆持有【黑之记忆】、【白之记忆】、【黑之意志】、【白之意志】、【迷惑的意志】中任意一种道具无法通过栅栏",
+      "type": "inventory-gate",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "3.通过（21.8）处黄色传送石，抵达永久冻土。",
+      "type": "maze-entry",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "◆永久冻土为随机迷宫，共36层",
+      "type": "maze-detail",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "迷宫刷新时间：4小时（仅供参考），地图大小范围：40*40~60*60",
+      "type": "maze-detail",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "宝箱数量：18",
+      "type": "maze-detail",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "魔物为Lv55~63的水龙蜥、风龙蜥、蜥蜴战士、蜥蜴武士，最高遇敌数量7",
+      "type": "encounter-area",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "4.通过随机迷宫进入白之祭坛，持有【世界之心】与龙的使者（24.29）对话，选“是”获得【白之记忆】并传送回召唤之间，任务完结。",
+      "type": "branch-completion",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "◆若选“否”则不会获得道具，传送至雪山之顶，任务完结",
+      "type": "branch-completion",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "◆【白之记忆】，用于《黑白龙城》任务。双击使用后传送到龙族祭坛，和上面的龙对话传送到询问之地，和下面的龙对话重新获得记忆并返回召唤之间（可用于特殊情况下返回法兰城用）",
+      "type": "item-use",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 13,
+      "text": "◆【世界之心】获得方式参考《深渊》任务",
+      "type": "item-source",
+      "sourceLines": [
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 14,
+      "text": "◆任务剧情：参考《龙族的纷争系列任务剧情对话》",
+      "type": "reference",
+      "sourceLines": [
+        14
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        14
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "white-memory-result",
+      "version": "common",
+      "tier": "common",
+      "kind": "quest-branch-reward",
+      "items": [
+        {
+          "id": "white-memory",
+          "name": "白之记忆",
+          "role": "valuable-result",
+          "condition": "与龙的使者对话选择“是”",
+          "useInQuest": "黑白龙城",
+          "useEffect": "双击传送到龙族祭坛；上方龙传送至询问之地，下方龙可重新给予记忆并送回召唤之间",
+          "specialUse": "特殊情况下返回法兰城",
+          "sourceLines": [
+            10,
+            12
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-4",
+      "branch": "yes",
+      "sourceLines": [
+        10,
+        11,
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "龙族的纷争系列",
+    "order": 2,
+    "stageLabel": "",
+    "optional": false,
+    "type": "通用任务",
+    "sourceCategory": "龙族的纷争系列"
+  },
+  "sourceSupplements": {
+    "areas": [
+      {
+        "id": "area-3-1",
+        "afterStep": 3,
+        "text": "魔物为Lv55~63的水龙蜥、风龙蜥、蜥蜴战士、蜥蜴武士，最高遇敌数量7",
+        "sourceLines": [
+          9
+        ],
+        "sourceReference": "source-documents.js",
+        "verification": {
+          "status": "verified",
+          "method": "source-line-match"
+        }
+      }
+    ]
+  }
+}

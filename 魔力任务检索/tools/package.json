@@ -2,13 +2,16 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build:missions": "node build-mission-catalog.mjs && node build-structured-quests.mjs",
+    "build:missions": "node build-structured-quests.mjs",
     "build:data": "node build-structured-quests.mjs",
-    "build:careers": "node build-career-quests.mjs",
+    "clean:item-server": "node remove-item-server-data.mjs",
     "build": "node build-integrations.mjs",
+    "audit:contract": "node audit-data-contract.mjs",
+    "audit:sources": "node audit-source-coverage.mjs",
     "verify": "node verify-integrations.mjs",
     "verify:data": "node verify-structured-data.mjs",
-    "verify:dom": "node verify-dom.mjs"
+    "verify:dom": "node verify-dom.mjs",
+    "audit:coordinates": "node audit-flow-coordinates.mjs"
   },
   "dependencies": {
     "jsdom": "27.0.0",

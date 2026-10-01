@@ -1,0 +1,369 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-20c4fb22-b84a-4d87-8297-108eef068186",
+  "name": "神秘联络员",
+  "aliases": [
+    "铜钥匙"
+  ],
+  "metadata": {
+    "category": "经典任务",
+    "level": "1 级",
+    "availability": "available",
+    "summary": "",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_20c4fb22-b84a-4d87-8297-108eef068186",
+    "url": "https://www.molibaike.com/Mission/Detail/20c4fb22-b84a-4d87-8297-108eef068186?u=True",
+    "localFiles": [],
+    "lineCount": 6,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往法兰城安其摩酒吧（102.131），通过（19.6）处进入酒吧里面。"
+      },
+      {
+        "line": 2,
+        "text": "2.通过（21.1）处进入客房"
+      },
+      {
+        "line": 3,
+        "text": "3.与联络员A（8.2）对话，输入“头目万岁”，选“是”交出100G获得【铜钥匙】*10，任务完结。"
+      },
+      {
+        "line": 4,
+        "text": "◆【铜钥匙】可开启随机迷宫出出现的普通宝箱"
+      },
+      {
+        "line": 5,
+        "text": "◆宝箱奖品参考《寶箱設定(參考)》《宝箱奖品资料》"
+      },
+      {
+        "line": 6,
+        "text": "◆任务剧情：参考《神秘联络员任务剧情对话》"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": [
+      {
+        "type": "reward-reference",
+        "targets": [
+          "寶箱設定(參考)",
+          "宝箱奖品资料"
+        ],
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "story",
+        "target": "神秘联络员任务剧情对话",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "requirements": {
+    "conditions": []
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "法兰城安其摩酒吧（102.131）",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "前往法兰城安其摩酒吧（102.131），从（19.6）进入酒吧里面。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "从（21.1）进入客房。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "与联络员A（8.2）对话，输入“头目万岁”，选择“是”并交出100G，获得10把【铜钥匙】，任务完结。",
+        "inputs": [
+          {
+            "item": "金币",
+            "quantity": 100,
+            "action": "hand-over",
+            "unit": "G",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "铜钥匙",
+            "quantity": 10,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "commands": [
+          {
+            "text": "头目万岁",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "source-action-review"
+            }
+          }
+        ]
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "notes": [],
+          "media": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "金币",
+        "quantity": 100,
+        "action": "hand-over",
+        "unit": "G",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "铜钥匙",
+        "quantity": 10,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往法兰城安其摩酒吧（102.131），通过（19.6）处进入酒吧里面。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2.通过（21.1）处进入客房",
+      "type": "step",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "3.与联络员A（8.2）对话，输入“头目万岁”，选“是”交出100G获得【铜钥匙】*10，任务完结。",
+      "type": "step",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆【铜钥匙】可开启随机迷宫出出现的普通宝箱",
+      "type": "reward-detail",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "◆宝箱奖品参考《寶箱設定(參考)》《宝箱奖品资料》",
+      "type": "reference",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "◆任务剧情：参考《神秘联络员任务剧情对话》",
+      "type": "reference",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        6
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "reward-copper-keys",
+      "version": "common",
+      "tier": "common",
+      "kind": "quest-completion",
+      "items": [
+        {
+          "id": "copper-key",
+          "name": "铜钥匙",
+          "role": "valuable-result",
+          "quantity": 10,
+          "properties": {
+            "use": "开启随机迷宫中出现的普通宝箱"
+          },
+          "sourceLines": [
+            3,
+            4
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-3",
+      "sourceLines": [
+        3,
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 49,
+    "stageLabel": "",
+    "optional": false,
+    "type": "通用任务",
+    "sourceCategory": "经典任务"
+  }
+}

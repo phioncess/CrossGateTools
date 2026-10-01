@@ -52,6 +52,22 @@
             <div id="careerDescription" class="description"></div>
           </section>
 
+          <section class="panel points-panel" id="pointsPanel">
+            <div class="panel-title"><div><span class="kicker">成长规划</span><h2>点数模拟</h2></div></div>
+            <div class="points-controls">
+              <label>人物等级<input id="pointLevel" type="number" min="1" max="120" step="1" value="1"></label>
+              <label>推荐方案<select id="pointProfile"></select></label>
+              <button id="pointApply" type="button">应用当前等级推荐</button>
+              <button id="pointClear" type="button">清空自定义点数</button>
+            </div>
+            <p id="pointNote" class="section-note"></p>
+            <p id="pointSummary" aria-live="polite"></p>
+            <div class="points-scroll"><table class="points-table"><thead><tr><th>能力</th><th>当前等级推荐</th><th>自定义点数</th></tr></thead><tbody id="pointRows"></tbody></table></div>
+            <p id="pointStatus" role="status"></p>
+            <details><summary>每一级的推荐与新增点数</summary><div class="points-scroll points-history"><table class="points-table"><thead><tr><th>等级</th><th>推荐累计（体 / 力 / 强 / 速 / 魔）</th><th>本级新增</th></tr></thead><tbody id="pointHistory"></tbody></table></div></details>
+            <div id="pointSources" class="points-sources"></div>
+          </section>
+
           <section class="panel route-panel">
             <div class="panel-title"><div><span class="kicker">当前阶段路线</span><h2 id="routeHeading"></h2></div></div>
             <div id="careerRoute" class="route"></div>
@@ -90,6 +106,8 @@
   </main>
 
   <script src="data.js"></script>
+  <script src="points-data.js"></script>
+  <script src="points-core.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

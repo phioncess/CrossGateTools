@@ -1,27 +1,103 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { loadQuestDatabase, projectDir } from './quest-database.mjs';
+import { validateQuestV3 } from './quest-schema-v3.mjs';
 
-const root = path.resolve(import.meta.dirname, '..');
-const data = JSON.parse(fs.readFileSync(path.join(root, 'data-src', 'quests.json'), 'utf8'));
+const data = loadQuestDatabase();
 const quests = Object.values(data.quests || {});
 const fail = message => { throw new Error(message); };
 
 if (data.schemaVersion !== 1) fail(`不支持的数据库容器版本：${data.schemaVersion}`);
 if (quests.length !== 319) fail(`任务数量应为 319，实际为 ${quests.length}`);
+const sourceCoveragePath = path.join(projectDir, 'source-coverage-report.json');
+if (!fs.existsSync(sourceCoveragePath)) fail('缺少原攻略正文覆盖审计报告 source-coverage-report.json');
+const sourceCoverage = JSON.parse(fs.readFileSync(sourceCoveragePath, 'utf8'));
+if (sourceCoverage.questsWithUnmatchedSourceParagraphs !== 0
+  || sourceCoverage.results?.some(result => result.unmatchedParagraphs?.length)) {
+  fail('原攻略正文覆盖审计仍存在未收录段落');
+}
 
 const questIds = new Set();
+const findItemServerRuntimePaths = quest => {
+  const paths = [];
+  const visit = (value, fieldPath) => {
+    if (typeof value === 'string') {
+      if (value.includes('道具服')) paths.push(fieldPath);
+      return;
+    }
+    if (Array.isArray(value)) {
+      value.forEach((entry, index) => visit(entry, `${fieldPath}[${index}]`));
+      return;
+    }
+    if (!value || typeof value !== 'object') return;
+    for (const [key, entry] of Object.entries(value)) {
+      const childPath = fieldPath ? `${fieldPath}.${key}` : key;
+      // 原始攻略及逐行分类保留来源原貌，只禁止页面消费的结构字段携带道具服资料。
+      if (childPath === 'source.rawLines' || childPath === 'segments') continue;
+      if (key.includes('道具服')) paths.push(childPath);
+      visit(entry, childPath);
+    }
+  };
+  visit(quest, '');
+  return paths;
+};
+
 for (const quest of quests) {
+  validateQuestV3(quest);
+  // 本次迁移任务的全部引用必须指向实际主步骤；旧库虚拟事件引用另行复核。
+  if (quest.id === 'catalog-12cc7fb2-f639-4a9b-8627-4b66ead3bf9d') {
+    const currentIds = new Set((quest.flow?.steps || []).map(step => step.id));
+    if (!currentIds.has(quest.flow?.start?.stepId)) fail(`${quest.name}：起点引用失效`);
+    for (const event of [...(quest.itemEvents?.inputs || []), ...(quest.itemEvents?.acquisitions || []), ...(quest.rewardEvents || [])]) {
+      if (event.step && !currentIds.has(event.step)) fail(`${quest.name}：道具事件引用失效 ${event.step}`);
+    }
+    for (const version of Object.values(quest.versions || {})) for (const tier of Object.values(version.tiers || {})) {
+      for (const entry of [...Object.values(tier.battles || {}), ...Object.values(tier.encounters || {})]) {
+        if (entry.triggerStep && !currentIds.has(entry.triggerStep)) fail(`${quest.name}：战斗/遭遇引用失效`);
+      }
+    }
+    for (const section of quest.flow.sections || []) {
+      if (!section.title || !section.operations?.length || !section.sourceLines?.length) fail('忍者辅助章节不完整');
+      for (const operation of section.operations) {
+        if (!operation.text || !operation.sourceLines?.length || operation.verification?.status !== 'verified') fail('忍者辅助操作缺少证据');
+      }
+    }
+  }
+
+  // 分支结构对v2/v3都适用，不能只让字段进入DOM而跳过语义边界。
+  for (const step of quest.flow?.steps || []) {
+    for (const group of step.branchGroups || []) {
+      if (!group.title || !Array.isArray(group.operations) || !group.operations.length) fail(`${quest.name}：分支缺少标题或操作`);
+      for (const entry of [group, ...group.operations]) {
+        if (!entry.sourceLines?.length || entry.verification?.status !== 'verified') fail(`${quest.name}：分支缺少核验证据`);
+        if (entry.sourceLines.some(line => !quest.source.rawLines.some(source => source.line === line))) fail(`${quest.name}：分支证据行无效`);
+      }
+      if (group.operations.some(operation => !operation.text)) fail(`${quest.name}：分支操作缺少正文`);
+    }
+  }
   if (!quest.id || questIds.has(quest.id)) fail(`任务 ID 缺失或重复：${quest.id || quest.name}`);
   questIds.add(quest.id);
   if (!quest.source?.key || (!quest.source?.url && !quest.source?.localFiles?.length)) fail(`任务缺少可回溯来源：${quest.name}`);
+  const itemServerRuntimePaths = findItemServerRuntimePaths(quest);
+  if (itemServerRuntimePaths.length) fail(`${quest.name}：展示数据仍含道具服资料 -> ${itemServerRuntimePaths.join('、')}`);
   if (quest.source.lineCount !== quest.source.rawLines.length) fail(`原文行数不一致：${quest.name}`);
   for (const sourceLine of quest.source.rawLines) {
     if (!Number.isInteger(sourceLine.line) || sourceLine.line < 1 || sourceLine.line > quest.source.lineCount) fail(`原文行号越界：${quest.name} -> ${sourceLine.line}`);
   }
+  const stepOrders = new Set((quest.flow?.steps || []).map(step => step.order));
+  const supplementIds = new Set();
+  for (const area of quest.sourceSupplements?.areas || []) {
+    const validPlacement = stepOrders.has(area.afterStep) || (area.afterStep == null && area.placement === 'after-flow');
+    if (!area.id || supplementIds.has(area.id)) fail(`${quest.name}：区域补充 ID 缺失或重复 ${area.id}`);
+    supplementIds.add(area.id);
+    if (!area.text || !validPlacement) fail(`${quest.name}：区域补充缺少正文或有效位置 ${area.id}`);
+    if (!area.sourceLines?.length && !area.sourceReference) fail(`${quest.name}：区域补充缺少来源证据 ${area.id}`);
+    if (area.verification?.status !== 'verified') fail(`${quest.name}：区域补充未核验 ${area.id}`);
+  }
 
   const battleIds = new Set();
   for (const [versionKey, version] of Object.entries(quest.versions || {})) {
-    if (versionKey !== 'common' && !/^(?:20\d{2}(?:-20\d{2})?|through-20\d{2}|怀旧服|道具服|其他服)$/.test(versionKey)) fail(`版本键不合规：${quest.name} -> ${versionKey}`);
+    if (versionKey !== 'common' && !/^(?:20\d{2}(?:-20\d{2})?|through-20\d{2}|怀旧服|其他服)$/.test(versionKey)) fail(`版本键不合规：${quest.name} -> ${versionKey}`);
     for (const tier of Object.values(version.tiers || {})) {
       for (const battle of Object.values(tier.battles || {})) {
         if (battleIds.has(battle.id)) fail(`战斗 ID 重复：${quest.name} -> ${battle.id}`);
@@ -34,6 +110,8 @@ for (const quest of quests) {
       }
     }
   }
+
+  if (quest.catalogBattles?.length || quest.catalogBattleEvidence?.length) fail(`${quest.name}：已核验数据仍含旧目录自动回填字段`);
 }
 
 const assertQuestEvidence = (quest, entity, label) => {
@@ -45,7 +123,7 @@ const assertQuestEvidence = (quest, entity, label) => {
 };
 
 for (const quest of quests.filter(entry => entry.verification?.status === 'verified')) {
-  if (quest.schemaVersion !== 2) fail(`${quest.name}：已核验任务没有使用语义数据模型`);
+  if (![2, 3].includes(quest.schemaVersion)) fail(`${quest.name}：已核验任务没有使用受支持的语义数据模型`);
   if (quest.verification?.method !== 'manual-semantic-review') fail(`${quest.name}：已核验状态不是来自逐条语义复核`);
   if (quest.legacy) fail(`${quest.name}：已核验任务仍保留旧批量派生数据`);
   if (quest.verification.reviewedSourceRanges?.length !== 1

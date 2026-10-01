@@ -1,0 +1,648 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-d1bc6091-cf3e-44d3-b0d3-2a98282fc693",
+  "name": "2023暑期特别活动",
+  "aliases": [
+    "处暑清爽袋",
+    "进化奥斯本"
+  ],
+  "metadata": {
+    "category": "临时活动/任务",
+    "level": "40 级",
+    "availability": "closed",
+    "summary": "必要条件：怀旧服任务（已关闭）；怀旧服任务（已关闭）；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_d1bc6091-cf3e-44d3-b0d3-2a98282fc693",
+    "url": "https://www.molibaike.com/Mission/Detail/d1bc6091-cf3e-44d3-b0d3-2a98282fc693?u=True",
+    "localFiles": [],
+    "lineCount": 14,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.各主要练级区的魔物将有几率掉落【处暑清爽袋】。"
+      },
+      {
+        "line": 2,
+        "text": "◆【处暑清爽袋】：不可交易、丢地消失；可叠加（20）"
+      },
+      {
+        "line": 3,
+        "text": "◆已知可掉落的地点：坎村、雷村、新村往新城通道、新城、冰树、砍牛、半山、玄武"
+      },
+      {
+        "line": 4,
+        "text": "◆已知不可掉落的地点：新海底、小雷、内心、杰村、蒂娜、贡品、雪山、新村、米村、鲁村、柯村"
+      },
+      {
+        "line": 5,
+        "text": "2.双击【处暑清爽袋】获得奖励，任务结束。"
+      },
+      {
+        "line": 6,
+        "text": "◆已知可获得奖励："
+      },
+      {
+        "line": 7,
+        "text": "魔石，约35%-40%"
+      },
+      {
+        "line": 8,
+        "text": "鼠王惊奇蛋，约16%-18%"
+      },
+      {
+        "line": 9,
+        "text": "天梯赛积分，约16%"
+      },
+      {
+        "line": 10,
+        "text": "技能草，约12%-13%"
+      },
+      {
+        "line": 11,
+        "text": "变身卡片包，约8%-10%"
+      },
+      {
+        "line": 12,
+        "text": "打卡器，约7%-8%"
+      },
+      {
+        "line": 13,
+        "text": "进化绿魔封印，约？？？"
+      },
+      {
+        "line": 14,
+        "text": "（新绿LY精华：Lv.1进化奥斯本）"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": []
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "各主要练级区",
+      "sourceLines": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "在各主要练级区击倒魔物，有几率获得【处暑清爽袋】。原文分别列出已知可掉落与不可掉落地点，未把未列地点推定为可掉落。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "处暑清爽袋",
+            "quantity": 1,
+            "acquisition": "random-drop",
+            "properties": {
+              "tradeable": false,
+              "dropBehavior": "丢地消失",
+              "stackLimit": 20
+            },
+            "knownDropLocations": [
+              "坎村",
+              "雷村",
+              "新村往新城通道",
+              "新城",
+              "冰树",
+              "砍牛",
+              "半山",
+              "玄武"
+            ],
+            "knownNoDropLocations": [
+              "新海底",
+              "小雷",
+              "内心",
+              "杰村",
+              "蒂娜",
+              "贡品",
+              "雪山",
+              "新村",
+              "米村",
+              "鲁村",
+              "柯村"
+            ],
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "双击【处暑清爽袋】，按原文所列近似概率随机获得奖励，任务结束。",
+        "inputs": [
+          {
+            "item": "处暑清爽袋",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "处暑清爽袋随机奖励",
+            "quantity": 1,
+            "acquisition": "random-pool",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "处暑清爽袋",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "处暑清爽袋",
+        "quantity": 1,
+        "acquisition": "random-drop",
+        "properties": {
+          "tradeable": false,
+          "dropBehavior": "丢地消失",
+          "stackLimit": 20
+        },
+        "knownDropLocations": [
+          "坎村",
+          "雷村",
+          "新村往新城通道",
+          "新城",
+          "冰树",
+          "砍牛",
+          "半山",
+          "玄武"
+        ],
+        "knownNoDropLocations": [
+          "新海底",
+          "小雷",
+          "内心",
+          "杰村",
+          "蒂娜",
+          "贡品",
+          "雪山",
+          "新村",
+          "米村",
+          "鲁村",
+          "柯村"
+        ],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "处暑清爽袋随机奖励",
+        "quantity": 1,
+        "acquisition": "random-pool",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.各主要练级区的魔物将有几率掉落【处暑清爽袋】。",
+      "type": "drop-step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "◆【处暑清爽袋】：不可交易、丢地消失；可叠加（20）",
+      "type": "item-detail",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆已知可掉落的地点：坎村、雷村、新村往新城通道、新城、冰树、砍牛、半山、玄武",
+      "type": "drop-location-list",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆已知不可掉落的地点：新海底、小雷、内心、杰村、蒂娜、贡品、雪山、新村、米村、鲁村、柯村",
+      "type": "no-drop-location-list",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "2.双击【处暑清爽袋】获得奖励，任务结束。",
+      "type": "open-random-reward",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "◆已知可获得奖励：",
+      "type": "reward-heading",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "魔石，约35%-40%",
+      "type": "reward-row",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "鼠王惊奇蛋，约16%-18%",
+      "type": "reward-row",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "天梯赛积分，约16%",
+      "type": "reward-row",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "技能草，约12%-13%",
+      "type": "reward-row",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "变身卡片包，约8%-10%",
+      "type": "reward-row",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "打卡器，约7%-8%",
+      "type": "reward-row",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 13,
+      "text": "进化绿魔封印，约？？？",
+      "type": "reward-row",
+      "sourceLines": [
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 14,
+      "text": "（新绿LY精华：Lv.1进化奥斯本）",
+      "type": "reward-note",
+      "sourceLines": [
+        14
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        14
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "summer-2023-bag-pool",
+      "version": "common",
+      "tier": "common",
+      "kind": "reward-pool",
+      "items": [
+        {
+          "id": "magic-stone",
+          "name": "魔石",
+          "role": "valuable-result",
+          "probabilityApprox": {
+            "minPercent": 35,
+            "maxPercent": 40
+          },
+          "sourceLines": [
+            7
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "mouse-king-surprise-egg",
+          "name": "鼠王惊奇蛋",
+          "role": "valuable-result",
+          "probabilityApprox": {
+            "minPercent": 16,
+            "maxPercent": 18
+          },
+          "sourceLines": [
+            8
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "ladder-points",
+          "name": "天梯赛积分",
+          "role": "valuable-result",
+          "entityType": "points",
+          "probabilityApprox": {
+            "percent": 16
+          },
+          "sourceLines": [
+            9
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "skill-herb",
+          "name": "技能草",
+          "role": "valuable-result",
+          "probabilityApprox": {
+            "minPercent": 12,
+            "maxPercent": 13
+          },
+          "sourceLines": [
+            10
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "transformation-card-pack",
+          "name": "变身卡片包",
+          "role": "valuable-result",
+          "probabilityApprox": {
+            "minPercent": 8,
+            "maxPercent": 10
+          },
+          "sourceLines": [
+            11
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "time-card-device",
+          "name": "打卡器",
+          "role": "valuable-result",
+          "probabilityApprox": {
+            "minPercent": 7,
+            "maxPercent": 8
+          },
+          "sourceLines": [
+            12
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "evolution-green-demon-seal",
+          "name": "进化绿魔封印",
+          "role": "valuable-result",
+          "probabilityApprox": "原文未知",
+          "sourceNote": "（新绿LY精华：Lv.1进化奥斯本）",
+          "sourceLines": [
+            13,
+            14
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-2",
+      "selection": "random",
+      "probabilitiesAreApproximate": true,
+      "sourceLines": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 49,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "临时活动/任务"
+  }
+}

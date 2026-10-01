@@ -1,0 +1,352 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-29bb47fe-7390-4213-9e61-05af44cc4f65",
+  "name": "情比金坚",
+  "aliases": [
+    "情戒",
+    "情比金坚戒指",
+    "被幸福包围的人",
+    "结婚戒指"
+  ],
+  "metadata": {
+    "category": "怀旧服其他自制任务",
+    "level": "1 级",
+    "availability": "available",
+    "summary": "必要条件：持有7日以上【结婚戒指】；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_29bb47fe-7390-4213-9e61-05af44cc4f65",
+    "url": "https://www.molibaike.com/Mission/Detail/29bb47fe-7390-4213-9e61-05af44cc4f65?u=True",
+    "localFiles": [],
+    "lineCount": 5,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往法兰城大圣堂旁与会场引导员（161.29）对话，选“是”进入庆典会场。"
+      },
+      {
+        "line": 2,
+        "text": "2.持有7日以上的【结婚戒指】与牧师（44.44）对话，交出【结婚戒指】获得【情比金坚戒】，任务完结。"
+      },
+      {
+        "line": 3,
+        "text": "◆【结婚戒指】获得方式参考《凤凰的羽毛》任务"
+      },
+      {
+        "line": 4,
+        "text": "◆【情比金坚戒】：Lv.1戒指、耐久100；抗石化+5、必杀+5、命中+5；可交易。"
+      },
+      {
+        "line": 5,
+        "text": "装备后获得称号“被幸福包围的人”。"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [
+      {
+        "item": "结婚戒指",
+        "sourceQuest": "凤凰的羽毛",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "references": []
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "held-item-age",
+        "item": "结婚戒指",
+        "minimumAgeDays": 7,
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "法兰城大圣堂旁会场引导员（161.29）",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "与法兰城大圣堂旁会场引导员（161.29）对话，选择“是”进入庆典会场。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "持有7日以上的【结婚戒指】与牧师（44.44）对话，交出戒指并获得【情比金坚戒】，任务完结。",
+        "inputs": [
+          {
+            "item": "结婚戒指",
+            "quantity": 1,
+            "action": "hand-over",
+            "minimumAgeDays": 7,
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "情比金坚戒",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "notes": [],
+          "media": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "结婚戒指",
+        "quantity": 1,
+        "action": "hand-over",
+        "minimumAgeDays": 7,
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "情比金坚戒",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往法兰城大圣堂旁与会场引导员（161.29）对话，选“是”进入庆典会场。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2.持有7日以上的【结婚戒指】与牧师（44.44）对话，交出【结婚戒指】获得【情比金坚戒】，任务完结。",
+      "type": "step",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆【结婚戒指】获得方式参考《凤凰的羽毛》任务",
+      "type": "item-source",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆【情比金坚戒】：Lv.1戒指、耐久100；抗石化+5、必杀+5、命中+5；可交易。",
+      "type": "reward-detail",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "装备后获得称号“被幸福包围的人”。",
+      "type": "reward-detail",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        5
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "reward-love-ring",
+      "version": "common",
+      "tier": "common",
+      "kind": "quest-completion",
+      "items": [
+        {
+          "id": "love-ring",
+          "name": "情比金坚戒",
+          "role": "valuable-result",
+          "entityType": "equipment",
+          "properties": {
+            "level": 1,
+            "category": "戒指",
+            "durability": 100,
+            "resistance": {
+              "石化": 5
+            },
+            "critical": 5,
+            "accuracy": 5,
+            "tradeable": true,
+            "equippedTitle": "被幸福包围的人"
+          },
+          "sourceLines": [
+            2,
+            4,
+            5
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-2",
+      "sourceLines": [
+        2,
+        4,
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [
+      {
+        "name": "被幸福包围的人",
+        "acquisition": "equip-item",
+        "item": "情比金坚戒",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "careers": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 37,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "怀旧服其他自制任务"
+  }
+}

@@ -1,0 +1,499 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-deebc7b2-2b3e-48f6-8f80-4bf96e1c8906",
+  "name": "暗黑骑士",
+  "aliases": [
+    "（怀旧服）暗黑骑士",
+    "学习吸血攻击",
+    "暗黑骑士之力"
+  ],
+  "metadata": {
+    "category": "怀旧服其他自制任务",
+    "level": "90 级",
+    "availability": "available",
+    "summary": "必要条件：职业为近卫骑士；拥有“死神”称号；怀旧服任务；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_deebc7b2-2b3e-48f6-8f80-4bf96e1c8906",
+    "url": "https://www.molibaike.com/Mission/Detail/deebc7b2-2b3e-48f6-8f80-4bf96e1c8906?u=True",
+    "localFiles": [],
+    "lineCount": 8,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往法兰城大圣堂（154.29）地下仓库，职业为近卫骑士且拥有“死神”称号与快被净化的黑魂（37.26）对话，选“是”获得【暗黑之枪】并传送至法兰城（193.191）处。"
+      },
+      {
+        "line": 2,
+        "text": "◆地下仓库走法：进入大圣堂至大圣堂的入口，至（5.14）进入通往地下楼梯的房间，通过（16.13）处楼梯进入地下仓库"
+      },
+      {
+        "line": 3,
+        "text": "◆“死神”称号获得方式参考《死与新生》任务"
+      },
+      {
+        "line": 4,
+        "text": "2.持有【暗黑之枪】与塞西尔.哈威（195.191）对话，选“是”交出【暗黑之枪】获得称号“暗黑骑士”并传送至？？？。"
+      },
+      {
+        "line": 5,
+        "text": "◆获得称号“暗黑骑士”后职业依然为骑士，装备/技能上限不变"
+      },
+      {
+        "line": 6,
+        "text": "◆“暗黑骑士”称号仅限近卫骑士拥有，若后续转职为其他职业，“暗黑骑士”称号同步失去。"
+      },
+      {
+        "line": 7,
+        "text": "◆离开？？？后，若想重新学习技能，可前往法兰城（193.191）处与塞西尔.哈威对话，可再次进入？？？"
+      },
+      {
+        "line": 8,
+        "text": "3.与克莱斯（24.22）对话，可交出10000G学习技能吸血攻击；与阿基斯（26.19）对话，可交出5000G学习技能暗黑骑士之力，任务完结。"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": [
+      {
+        "type": "title-source",
+        "title": "死神",
+        "sourceQuest": "死与新生",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "career",
+        "career": "近卫骑士",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "title",
+        "title": "死神",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "法兰城大圣堂地下仓库",
+      "sourceLines": [
+        1,
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "前往法兰城大圣堂地下仓库，与快被净化的黑魂（37.26）对话，选择“是”，获得【暗黑之枪】并传送至法兰城（193.191）。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "暗黑之枪",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [
+          {
+            "type": "route",
+            "text": "从大圣堂入口（5.14）进入通往地下楼梯的房间，再经（16.13）楼梯进入地下仓库。",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "sourceLines": [
+          1,
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "持有【暗黑之枪】与塞西尔.哈威（195.191）对话，选择“是”并交出枪，获得称号“暗黑骑士”后传送至？？？。",
+        "inputs": [
+          {
+            "item": "暗黑之枪",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [],
+        "notes": [
+          {
+            "text": "获得称号后职业仍为骑士，装备和技能上限不变。",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "text": "称号仅限近卫骑士持有；后续转为其他职业时同步失去。",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "sourceLines": [
+          4,
+          5,
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "在？？？内可分别向克莱斯和阿基斯付费学习技能。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [
+          {
+            "type": "reentry",
+            "text": "离开？？？后，可在法兰城（193.191）与塞西尔.哈威对话再次进入。",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "serviceOptions": [
+          {
+            "npc": "克莱斯（24.22）",
+            "cost": {
+              "amount": 10000,
+              "unit": "G"
+            },
+            "result": {
+              "type": "skill",
+              "name": "吸血攻击"
+            },
+            "sourceLines": [
+              8
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "npc": "阿基斯（26.19）",
+            "cost": {
+              "amount": 5000,
+              "unit": "G"
+            },
+            "result": {
+              "type": "skill",
+              "name": "暗黑骑士之力"
+            },
+            "sourceLines": [
+              8
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "sourceLines": [
+          7,
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "notes": [],
+          "media": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "暗黑之枪",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "暗黑之枪",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往法兰城大圣堂（154.29）地下仓库，职业为近卫骑士且拥有“死神”称号与快被净化的黑魂（37.26）对话，选“是”获得【暗黑之枪】并传送至法兰城（193.191）处。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "◆地下仓库走法：进入大圣堂至大圣堂的入口，至（5.14）进入通往地下楼梯的房间，通过（16.13）处楼梯进入地下仓库",
+      "type": "route",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆“死神”称号获得方式参考《死与新生》任务",
+      "type": "reference",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "2.持有【暗黑之枪】与塞西尔.哈威（195.191）对话，选“是”交出【暗黑之枪】获得称号“暗黑骑士”并传送至？？？。",
+      "type": "step",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "◆获得称号“暗黑骑士”后职业依然为骑士，装备/技能上限不变",
+      "type": "title-detail",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "◆“暗黑骑士”称号仅限近卫骑士拥有，若后续转职为其他职业，“暗黑骑士”称号同步失去。",
+      "type": "title-restriction",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "◆离开？？？后，若想重新学习技能，可前往法兰城（193.191）处与塞西尔.哈威对话，可再次进入？？？",
+      "type": "reentry-note",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "3.与克莱斯（24.22）对话，可交出10000G学习技能吸血攻击；与阿基斯（26.19）对话，可交出5000G学习技能暗黑骑士之力，任务完结。",
+      "type": "skill-learning",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        8
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [],
+  "outcomes": {
+    "titles": [
+      {
+        "name": "暗黑骑士",
+        "acquisition": "step-2",
+        "careerRestriction": "近卫骑士",
+        "lostOnCareerChange": true,
+        "sourceLines": [
+          4,
+          5,
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "careers": [],
+    "skills": [
+      {
+        "name": "吸血攻击",
+        "cost": {
+          "amount": 10000,
+          "unit": "G"
+        },
+        "sourceLines": [
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "name": "暗黑骑士之力",
+        "cost": {
+          "amount": 5000,
+          "unit": "G"
+        },
+        "sourceLines": [
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 4,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "怀旧服其他自制任务"
+  }
+}

@@ -1,0 +1,1002 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-3016c47b-fbbe-4547-90c0-500654bff634",
+  "name": "仲夏夜的狂想曲",
+  "aliases": [
+    "冰红茶",
+    "冰绿茶",
+    "山兔",
+    "暑期",
+    "仲夏夜"
+  ],
+  "metadata": {
+    "category": "临时活动/任务",
+    "level": "1 级",
+    "availability": "closed",
+    "summary": "怀旧服（已关闭）；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_3016c47b-fbbe-4547-90c0-500654bff634",
+    "url": "https://www.molibaike.com/Mission/Detail/3016c47b-fbbe-4547-90c0-500654bff634?u=True",
+    "localFiles": [],
+    "lineCount": 15,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往法兰城豪华屋（172.174），与 快要热化的山兔（16.6）对话，获得【宇治金时的情报】。"
+      },
+      {
+        "line": 2,
+        "text": "◆持有【宇治金时的情报】时，无法使用伊尔村、圣拉鲁卡村、亚留特村、维诺亚村的传送石。"
+      },
+      {
+        "line": 3,
+        "text": "2.材料收集："
+      },
+      {
+        "line": 4,
+        "text": "⑴红豆沙：伊尔村，旧金山酒吧与 冰店的柯登（13.11）对话，交出500金币，获得【红豆沙】"
+      },
+      {
+        "line": 5,
+        "text": "⑵糖浆：亚留特村，与阿甘（53.55）对话，交出500金币，获得【糖浆】"
+      },
+      {
+        "line": 6,
+        "text": "⑶抹茶：圣拉鲁卡村，赛杰利亚酒吧与酒店主人（16.8）对话，交出500金币，获得【抹茶】"
+      },
+      {
+        "line": 7,
+        "text": "3.材料收集完之后，前往维诺亚村，荷特尔咖喱店（49.58），与咖喱店的小露（12.7）对话，"
+      },
+      {
+        "line": 8,
+        "text": "交出【宇治金时的情报】、【红豆沙】、【糖浆】、【抹茶】获得【宇治金时】。"
+      },
+      {
+        "line": 9,
+        "text": "4.前往法兰城豪华屋（172.174），与 快要热化的山兔（16.6）对话，交出【宇治金时】，获得奖励。"
+      },
+      {
+        "line": 10,
+        "text": "◆当拥有【宇治金时】时，可直接交任务，【宇治金时】亦可在雪山获取，参考《积雪的山路》任务。"
+      },
+      {
+        "line": 11,
+        "text": "奖励："
+      },
+      {
+        "line": 12,
+        "text": "A.冰绿茶：Lv3，工作时间增加1小时，每组可叠加3个；可丢地、不可交易、可以摆摊。"
+      },
+      {
+        "line": 13,
+        "text": "B.冰红茶：Lv5，工作时间增加2小时，每组可叠加3个；可丢地、不可交易、可以摆摊。"
+      },
+      {
+        "line": 14,
+        "text": "C.胡萝卜香味的御守：Lv4，护身符，耐久200，防御+10，敏捷+10，生命+100，种族变成植物系；可以交易。"
+      },
+      {
+        "line": 15,
+        "text": "D.山兔的香囊：Lv4，项链，耐久200，防御+20，敏捷+20，精神+20；可以交易。"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [
+      {
+        "item": "宇治金时",
+        "alternateSourceQuest": "积雪的山路",
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "references": [
+      {
+        "type": "item-source",
+        "targetQuest": "积雪的山路",
+        "item": "宇治金时",
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "travel-restriction-while-held",
+        "item": "宇治金时的情报",
+        "disabledTeleportStones": [
+          "伊尔村",
+          "圣拉鲁卡村",
+          "亚留特村",
+          "维诺亚村"
+        ],
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "currency-total",
+        "amount": 1500,
+        "currency": "G",
+        "breakdown": [
+          {
+            "item": "红豆沙",
+            "amount": 500
+          },
+          {
+            "item": "糖浆",
+            "amount": 500
+          },
+          {
+            "item": "抹茶",
+            "amount": 500
+          }
+        ],
+        "unless": "已持有宇治金时",
+        "sourceLines": [
+          4,
+          5,
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "法兰城豪华屋快要热化的山兔（16.6）",
+      "sourceLines": [
+        1,
+        2,
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "在法兰城豪华屋与快要热化的山兔（16.6）对话，获得【宇治金时的情报】；持有情报期间无法使用四村传送石。若已经持有【宇治金时】，可直接前往交任务。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "宇治金时的情报",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1,
+          2,
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "收集三种材料：在伊尔村旧金山酒吧向冰店的柯登交出500G取得【红豆沙】；在亚留特村向阿甘交出500G取得【糖浆】；在圣拉鲁卡村赛杰利亚酒吧向酒店主人交出500G取得【抹茶】。",
+        "inputs": [
+          {
+            "item": "500G（红豆沙）",
+            "quantity": 1,
+            "action": "hand-over",
+            "entityType": "currency",
+            "amount": 500,
+            "currency": "G",
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "500G（糖浆）",
+            "quantity": 1,
+            "action": "hand-over",
+            "entityType": "currency",
+            "amount": 500,
+            "currency": "G",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "500G（抹茶）",
+            "quantity": 1,
+            "action": "hand-over",
+            "entityType": "currency",
+            "amount": 500,
+            "currency": "G",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "红豆沙",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "糖浆",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "抹茶",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "前往维诺亚村荷特尔咖喱店与小露（12.7）对话，交出情报、红豆沙、糖浆和抹茶，获得【宇治金时】。",
+        "inputs": [
+          {
+            "item": "宇治金时的情报",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              8
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "红豆沙",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              8
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "糖浆",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              8
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "抹茶",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              8
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "宇治金时",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              8
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          7,
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "返回法兰城豪华屋与快要热化的山兔对话，交出【宇治金时】，获得原文奖励清单中的奖励。原文未说明选择或随机规则。",
+        "inputs": [
+          {
+            "item": "宇治金时",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              9
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "仲夏夜奖励",
+            "quantity": 1,
+            "acquisition": "reward-pool",
+            "selection": "source-unspecified",
+            "sourceLines": [
+              9
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "500G（红豆沙）",
+        "quantity": 1,
+        "action": "hand-over",
+        "entityType": "currency",
+        "amount": 500,
+        "currency": "G",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "500G（糖浆）",
+        "quantity": 1,
+        "action": "hand-over",
+        "entityType": "currency",
+        "amount": 500,
+        "currency": "G",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "500G（抹茶）",
+        "quantity": 1,
+        "action": "hand-over",
+        "entityType": "currency",
+        "amount": 500,
+        "currency": "G",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "宇治金时的情报",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "红豆沙",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "糖浆",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "抹茶",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "宇治金时",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "宇治金时的情报",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "红豆沙",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "糖浆",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "抹茶",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "宇治金时",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "仲夏夜奖励",
+        "quantity": 1,
+        "acquisition": "reward-pool",
+        "selection": "source-unspecified",
+        "sourceLines": [
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往法兰城豪华屋（172.174），与 快要热化的山兔（16.6）对话，获得【宇治金时的情报】。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "◆持有【宇治金时的情报】时，无法使用伊尔村、圣拉鲁卡村、亚留特村、维诺亚村的传送石。",
+      "type": "travel-restriction",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "2.材料收集：",
+      "type": "collection-heading",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "⑴红豆沙：伊尔村，旧金山酒吧与 冰店的柯登（13.11）对话，交出500金币，获得【红豆沙】",
+      "type": "exchange-row",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "⑵糖浆：亚留特村，与阿甘（53.55）对话，交出500金币，获得【糖浆】",
+      "type": "exchange-row",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "⑶抹茶：圣拉鲁卡村，赛杰利亚酒吧与酒店主人（16.8）对话，交出500金币，获得【抹茶】",
+      "type": "exchange-row",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "3.材料收集完之后，前往维诺亚村，荷特尔咖喱店（49.58），与咖喱店的小露（12.7）对话，",
+      "type": "exchange-step",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "交出【宇治金时的情报】、【红豆沙】、【糖浆】、【抹茶】获得【宇治金时】。",
+      "type": "exchange-step-continuation",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "4.前往法兰城豪华屋（172.174），与 快要热化的山兔（16.6）对话，交出【宇治金时】，获得奖励。",
+      "type": "reward-step",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "◆当拥有【宇治金时】时，可直接交任务，【宇治金时】亦可在雪山获取，参考《积雪的山路》任务。",
+      "type": "alternate-source",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "奖励：",
+      "type": "reward-heading",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "A.冰绿茶：Lv3，工作时间增加1小时，每组可叠加3个；可丢地、不可交易、可以摆摊。",
+      "type": "reward-row",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 13,
+      "text": "B.冰红茶：Lv5，工作时间增加2小时，每组可叠加3个；可丢地、不可交易、可以摆摊。",
+      "type": "reward-row",
+      "sourceLines": [
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 14,
+      "text": "C.胡萝卜香味的御守：Lv4，护身符，耐久200，防御+10，敏捷+10，生命+100，种族变成植物系；可以交易。",
+      "type": "reward-row",
+      "sourceLines": [
+        14
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 15,
+      "text": "D.山兔的香囊：Lv4，项链，耐久200，防御+20，敏捷+20，精神+20；可以交易。",
+      "type": "reward-row",
+      "sourceLines": [
+        15
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        15
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "midsummer-reward-pool",
+      "version": "common",
+      "tier": "common",
+      "kind": "reward-pool",
+      "items": [
+        {
+          "id": "iced-green-tea",
+          "name": "冰绿茶",
+          "role": "valuable-result",
+          "properties": {
+            "level": 3,
+            "workTimeHours": 1,
+            "stackLimit": 3,
+            "canDrop": true,
+            "tradeable": false,
+            "stallable": true
+          },
+          "sourceLines": [
+            12
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "iced-black-tea",
+          "name": "冰红茶",
+          "role": "valuable-result",
+          "properties": {
+            "level": 5,
+            "workTimeHours": 2,
+            "stackLimit": 3,
+            "canDrop": true,
+            "tradeable": false,
+            "stallable": true
+          },
+          "sourceLines": [
+            13
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "carrot-amulet",
+          "name": "胡萝卜香味的御守",
+          "role": "valuable-result",
+          "entityType": "equipment",
+          "properties": {
+            "level": 4,
+            "category": "护身符",
+            "durability": 200,
+            "defense": 10,
+            "agility": 10,
+            "hp": 100,
+            "raceChange": "植物系",
+            "tradeable": true
+          },
+          "sourceLines": [
+            14
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "mountain-rabbit-sachet",
+          "name": "山兔的香囊",
+          "role": "valuable-result",
+          "entityType": "equipment",
+          "properties": {
+            "level": 4,
+            "category": "项链",
+            "durability": 200,
+            "defense": 20,
+            "agility": 20,
+            "spirit": 20,
+            "tradeable": true
+          },
+          "sourceLines": [
+            15
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-4",
+      "selection": "source-unspecified",
+      "sourceLines": [
+        9,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 44,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "临时活动/任务"
+  }
+}

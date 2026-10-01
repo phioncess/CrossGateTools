@@ -1,0 +1,341 @@
+{
+  "schemaVersion": 3,
+  "id": "catalog-f8bb9a27-dd62-488e-94ca-5ce5b09462d7",
+  "name": "来自异界的袭击",
+  "aliases": [],
+  "metadata": {
+    "category": "临时活动/任务",
+    "level": "1 级",
+    "availability": "closed",
+    "summary": "怀旧服任务（已关闭）；以下仅展示怀旧服路线与参数",
+    "repeatable": "不可"
+  },
+  "source": {
+    "key": "catalog_f8bb9a27-dd62-488e-94ca-5ce5b09462d7",
+    "url": "https://www.molibaike.com/Mission/Detail/f8bb9a27-dd62-488e-94ca-5ce5b09462d7?u=True",
+    "localFiles": [],
+    "lineCount": 5,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往法兰城与GM的全息影像（86.81）对话，选“是”传送至异界？。"
+      },
+      {
+        "line": 2,
+        "text": "2.与迪迪欧艾斯（21.16）对话，进入战斗。"
+      },
+      {
+        "line": 3,
+        "text": "◆战斗为十连战；每战魔物皆为Lv.1肉鸡"
+      },
+      {
+        "line": 4,
+        "text": "3.战斗胜利后，与受伤的管理员（19.17）对话，获得【时间水晶Lv.4】、称号“心胸广阔的人”，任务完结。"
+      },
+      {
+        "line": 5,
+        "text": "◆【时间水晶Lv.4】不可交易"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": []
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "法兰城GM的全息影像（86.81）",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "前往法兰城与GM的全息影像（86.81）对话，选择“是”传送至异界？。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "与迪迪欧艾斯（21.16）对话，进入十连战。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          2,
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "战斗胜利后与受伤的管理员（19.17）对话，获得【时间水晶Lv.4】和称号“心胸广阔的人”，任务完结。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "时间水晶Lv.4",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {
+            "battle-sequence-1": {
+              "id": "battle-sequence-1",
+              "order": 1,
+              "kind": "consecutive-battles",
+              "title": "十连战",
+              "triggerStep": "step-2",
+              "sequenceCount": 10,
+              "replenishment": "source-unspecified",
+              "overview": {
+                "text": "共十场连续战斗；每场魔物皆为Lv.1肉鸡。",
+                "sourceLines": [
+                  3
+                ],
+                "verification": {
+                  "status": "verified",
+                  "method": "manual-semantic-review"
+                }
+              },
+              "enemies": {
+                "enemy-1": {
+                  "id": "enemy-1",
+                  "name": "肉鸡",
+                  "level": {
+                    "min": 1,
+                    "max": 1
+                  },
+                  "count": null,
+                  "raw": "战斗为十连战；每战魔物皆为Lv.1肉鸡",
+                  "sourceLines": [
+                    3
+                  ],
+                  "verification": {
+                    "status": "verified",
+                    "method": "manual-semantic-review"
+                  }
+                }
+              },
+              "sourceLines": [
+                2,
+                3
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          },
+          "notes": [],
+          "media": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [],
+    "acquisitions": [
+      {
+        "item": "时间水晶Lv.4",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往法兰城与GM的全息影像（86.81）对话，选“是”传送至异界？。",
+      "kind": "flow",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2.与迪迪欧艾斯（21.16）对话，进入战斗。",
+      "kind": "battle",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆战斗为十连战；每战魔物皆为Lv.1肉鸡",
+      "kind": "battle",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "3.战斗胜利后，与受伤的管理员（19.17）对话，获得【时间水晶Lv.4】、称号“心胸广阔的人”，任务完结。",
+      "kind": "flow",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "◆【时间水晶Lv.4】不可交易",
+      "kind": "reward",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        5
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "reward-time-crystal-lv4",
+      "version": "common",
+      "tier": "common",
+      "kind": "quest-completion",
+      "items": [
+        {
+          "id": "time-crystal-lv4",
+          "name": "时间水晶Lv.4",
+          "role": "valuable-result",
+          "properties": {
+            "tradeable": false
+          },
+          "sourceLines": [
+            4,
+            5
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-3",
+      "sourceLines": [
+        4,
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [
+      {
+        "name": "心胸广阔的人",
+        "acquisition": "quest-completion",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "careers": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 10,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "临时活动/任务"
+  }
+}

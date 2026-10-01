@@ -1,0 +1,709 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-9b864ff3-b6e4-4749-9e9f-31afbe452308",
+  "name": "2009己丑年春节任务（怀旧版）",
+  "aliases": [
+    "魔力宝贝贺新春"
+  ],
+  "metadata": {
+    "category": "临时活动/任务",
+    "level": "1 级",
+    "availability": "closed",
+    "summary": "怀旧服任务（已关闭）；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_9b864ff3-b6e4-4749-9e9f-31afbe452308",
+    "url": "https://www.molibaike.com/Mission/Detail/9b864ff3-b6e4-4749-9e9f-31afbe452308?u=True",
+    "localFiles": [],
+    "lineCount": 9,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "击倒6个指定BOSS会有一定几率掉落一共7张新年福卡，每张卡上有一个字，7个字凑在一起就是“「魔」「力」「宝」「贝」「贺」「新」「春」”，玩家收集到一定数量后可以前往法兰城旅馆2楼与新年福卡兑奖员兑换奖品。"
+      },
+      {
+        "line": 2,
+        "text": "◆BOSS名单："
+      },
+      {
+        "line": 3,
+        "text": "露比（巫师袭击事件）、法尔肯（没落的村庄）、树精长老（树精长老的末日）、试作型牛鬼（捉迷藏的铁人）、改造僵尸（挑战僵尸王）、牛鬼（牛鬼任务）。"
+      },
+      {
+        "line": 4,
+        "text": "◆奖品："
+      },
+      {
+        "line": 5,
+        "text": "①.「魔」「力」「宝」「贝」「贺」「新」「春」各一张：随机一只1级水蓝鼠、杀人螳螂、巨人、虎头蜂"
+      },
+      {
+        "line": 6,
+        "text": "②.「魔」「力」「宝」「贝」+「新」「春」各一张：己丑年特制安全帽、耳环、手镯、护身符其中一个"
+      },
+      {
+        "line": 7,
+        "text": "③.「魔」「力」「宝」「贝」各一张+「贺」「新」「春」中的一张：随机宝石一颗"
+      },
+      {
+        "line": 8,
+        "text": "④.「魔」「力」「宝」「贝」各一张：随机“重来的种子”一颗"
+      },
+      {
+        "line": 9,
+        "text": "⑤.「魔」「力」「宝」「贝」中的三个字各一张：随机生命力回复药200一瓶、炒面一个、随机生产系采集品一组"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": []
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "六个指定BOSS的战斗地点",
+      "sourceLines": [
+        1,
+        2,
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "击倒指定BOSS，有一定几率取得七种新年福卡之一；七种卡分别为“魔、力、宝、贝、贺、新、春”。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "新年福卡（七字之一）",
+            "quantity": 1,
+            "acquisition": "chance",
+            "variants": [
+              "「魔」",
+              "「力」",
+              "「宝」",
+              "「贝」",
+              "「贺」",
+              "「新」",
+              "「春」"
+            ],
+            "sourceBosses": [
+              "露比（巫师袭击事件）",
+              "法尔肯（没落的村庄）",
+              "树精长老（树精长老的末日）",
+              "试作型牛鬼（捉迷藏的铁人）",
+              "改造僵尸（挑战僵尸王）",
+              "牛鬼（牛鬼任务）"
+            ],
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1,
+          2,
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "收集指定组合后，前往法兰城旅馆2楼与新年福卡兑奖员兑换相应奖励。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          1,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "notes": [],
+          "media": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [],
+    "acquisitions": [
+      {
+        "item": "新年福卡（七字之一）",
+        "quantity": 1,
+        "acquisition": "chance",
+        "variants": [
+          "「魔」",
+          "「力」",
+          "「宝」",
+          "「贝」",
+          "「贺」",
+          "「新」",
+          "「春」"
+        ],
+        "sourceBosses": [
+          "露比（巫师袭击事件）",
+          "法尔肯（没落的村庄）",
+          "树精长老（树精长老的末日）",
+          "试作型牛鬼（捉迷藏的铁人）",
+          "改造僵尸（挑战僵尸王）",
+          "牛鬼（牛鬼任务）"
+        ],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "击倒6个指定BOSS会有一定几率掉落一共7张新年福卡，每张卡上有一个字，7个字凑在一起就是“「魔」「力」「宝」「贝」「贺」「新」「春」”，玩家收集到一定数量后可以前往法兰城旅馆2楼与新年福卡兑奖员兑换奖品。",
+      "type": "collection-and-exchange-overview",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "◆BOSS名单：",
+      "type": "boss-heading",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "露比（巫师袭击事件）、法尔肯（没落的村庄）、树精长老（树精长老的末日）、试作型牛鬼（捉迷藏的铁人）、改造僵尸（挑战僵尸王）、牛鬼（牛鬼任务）。",
+      "type": "boss-list",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆奖品：",
+      "type": "reward-heading",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "①.「魔」「力」「宝」「贝」「贺」「新」「春」各一张：随机一只1级水蓝鼠、杀人螳螂、巨人、虎头蜂",
+      "type": "exchange-recipe",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "②.「魔」「力」「宝」「贝」+「新」「春」各一张：己丑年特制安全帽、耳环、手镯、护身符其中一个",
+      "type": "exchange-recipe",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "③.「魔」「力」「宝」「贝」各一张+「贺」「新」「春」中的一张：随机宝石一颗",
+      "type": "exchange-recipe",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "④.「魔」「力」「宝」「贝」各一张：随机“重来的种子”一颗",
+      "type": "exchange-recipe",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "⑤.「魔」「力」「宝」「贝」中的三个字各一张：随机生命力回复药200一瓶、炒面一个、随机生产系采集品一组",
+      "type": "exchange-recipe",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        9
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "exchange-all-seven-cards",
+      "version": "common",
+      "tier": "common",
+      "kind": "exchange-recipe",
+      "items": [
+        {
+          "id": "new-year-pet-1",
+          "name": "Lv.1水蓝鼠",
+          "role": "valuable-result",
+          "selection": "random-one",
+          "sourceLines": [
+            5
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "new-year-pet-2",
+          "name": "Lv.1杀人螳螂",
+          "role": "valuable-result",
+          "selection": "random-one",
+          "sourceLines": [
+            5
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "new-year-pet-3",
+          "name": "Lv.1巨人",
+          "role": "valuable-result",
+          "selection": "random-one",
+          "sourceLines": [
+            5
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "new-year-pet-4",
+          "name": "Lv.1虎头蜂",
+          "role": "valuable-result",
+          "selection": "random-one",
+          "sourceLines": [
+            5
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "inputs": [
+        {
+          "item": "「魔」",
+          "quantity": 1
+        },
+        {
+          "item": "「力」",
+          "quantity": 1
+        },
+        {
+          "item": "「宝」",
+          "quantity": 1
+        },
+        {
+          "item": "「贝」",
+          "quantity": 1
+        },
+        {
+          "item": "「贺」",
+          "quantity": 1
+        },
+        {
+          "item": "「新」",
+          "quantity": 1
+        },
+        {
+          "item": "「春」",
+          "quantity": 1
+        }
+      ],
+      "selection": "random-one",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "id": "exchange-six-cards",
+      "version": "common",
+      "tier": "common",
+      "kind": "exchange-recipe",
+      "items": [
+        {
+          "id": "new-year-equipment-1",
+          "name": "己丑年特制安全帽",
+          "role": "valuable-result",
+          "selection": "random-one",
+          "sourceLines": [
+            6
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "new-year-equipment-2",
+          "name": "己丑年特制耳环",
+          "role": "valuable-result",
+          "selection": "random-one",
+          "sourceLines": [
+            6
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "new-year-equipment-3",
+          "name": "己丑年特制手镯",
+          "role": "valuable-result",
+          "selection": "random-one",
+          "sourceLines": [
+            6
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "new-year-equipment-4",
+          "name": "己丑年特制护身符",
+          "role": "valuable-result",
+          "selection": "random-one",
+          "sourceLines": [
+            6
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "inputs": [
+        {
+          "item": "「魔」",
+          "quantity": 1
+        },
+        {
+          "item": "「力」",
+          "quantity": 1
+        },
+        {
+          "item": "「宝」",
+          "quantity": 1
+        },
+        {
+          "item": "「贝」",
+          "quantity": 1
+        },
+        {
+          "item": "「新」",
+          "quantity": 1
+        },
+        {
+          "item": "「春」",
+          "quantity": 1
+        }
+      ],
+      "selection": "random-one",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "id": "exchange-five-cards",
+      "version": "common",
+      "tier": "common",
+      "kind": "exchange-recipe",
+      "items": [
+        {
+          "id": "random-gem",
+          "name": "随机宝石",
+          "role": "valuable-result",
+          "quantity": 1,
+          "sourceLines": [
+            7
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "inputs": [
+        {
+          "group": "fixed",
+          "items": [
+            "「魔」",
+            "「力」",
+            "「宝」",
+            "「贝」"
+          ]
+        },
+        {
+          "group": "choose-one",
+          "items": [
+            "「贺」",
+            "「新」",
+            "「春」"
+          ]
+        }
+      ],
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "id": "exchange-four-cards",
+      "version": "common",
+      "tier": "common",
+      "kind": "exchange-recipe",
+      "items": [
+        {
+          "id": "random-rebirth-seed",
+          "name": "随机“重来的种子”",
+          "role": "valuable-result",
+          "quantity": 1,
+          "sourceLines": [
+            8
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "inputs": [
+        {
+          "item": "「魔」",
+          "quantity": 1
+        },
+        {
+          "item": "「力」",
+          "quantity": 1
+        },
+        {
+          "item": "「宝」",
+          "quantity": 1
+        },
+        {
+          "item": "「贝」",
+          "quantity": 1
+        }
+      ],
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "id": "exchange-three-cards",
+      "version": "common",
+      "tier": "common",
+      "kind": "exchange-recipe",
+      "items": [
+        {
+          "id": "new-year-supply-1",
+          "name": "生命力回复药200",
+          "role": "valuable-result",
+          "selection": "random-one",
+          "quantity": 1,
+          "unit": "瓶",
+          "sourceLines": [
+            9
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "new-year-supply-2",
+          "name": "炒面",
+          "role": "valuable-result",
+          "selection": "random-one",
+          "quantity": 1,
+          "unit": "个",
+          "sourceLines": [
+            9
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "new-year-supply-3",
+          "name": "随机生产系采集品",
+          "role": "valuable-result",
+          "selection": "random-one",
+          "quantity": 1,
+          "unit": "组",
+          "sourceLines": [
+            9
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "inputs": [
+        {
+          "group": "choose-three-distinct",
+          "items": [
+            "「魔」",
+            "「力」",
+            "「宝」",
+            "「贝」"
+          ]
+        }
+      ],
+      "selection": "random-one",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "exchangeRecipes": [
+    "exchange-all-seven-cards",
+    "exchange-six-cards",
+    "exchange-five-cards",
+    "exchange-four-cards",
+    "exchange-three-cards"
+  ],
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 78,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "临时活动/任务"
+  }
+}

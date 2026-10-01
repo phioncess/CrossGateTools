@@ -1,0 +1,503 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-56571dad-fbbb-4c50-b254-82738e5e185d",
+  "name": "剑术大师的试炼！奥义·连击习得",
+  "aliases": [
+    "学习奥义连击"
+  ],
+  "metadata": {
+    "category": "怀旧服其他自制任务",
+    "level": "70 级",
+    "availability": "available",
+    "summary": "必要条件：职业为剑士；等级不低于Lv.70；100000G或者10000G（拥有称号“被迷惑的人”）；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_56571dad-fbbb-4c50-b254-82738e5e185d",
+    "url": "https://www.molibaike.com/Mission/Detail/56571dad-fbbb-4c50-b254-82738e5e185d?u=True",
+    "localFiles": [],
+    "lineCount": 10,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往法兰城（160.173）处，等级不低于Lv.70剑士与镜中之影对话，交出99900G或者9900G魔币，传送至镜中世界。"
+      },
+      {
+        "line": 2,
+        "text": "◆拥有称号“被迷惑的人”，交出9900G魔币，否则交出99900G魔币；称号“被迷惑的人”获得方式参考《愚人之镜中世界》任务，不再开放"
+      },
+      {
+        "line": 3,
+        "text": "◆见习剑士，等级不低于Lv.70即可进入镜中世界；建议闪装、偷袭、血瓶，人跑宠防或二动逃跑"
+      },
+      {
+        "line": 4,
+        "text": "◆职业非剑士无法进入镜中世界"
+      },
+      {
+        "line": 5,
+        "text": "◆PK大赛期间，PK赛专用线10线没有NPC镜中之影"
+      },
+      {
+        "line": 6,
+        "text": "◆镜中世界为固定迷宫，魔物为Lv.98血腥之刃、杀龙之刃、火焰之刃、烈风之刃（1动）；数量：4~5；技能：连击；有必杀修正"
+      },
+      {
+        "line": 7,
+        "text": "◆镜中世界地图内可以接收宠物邮件"
+      },
+      {
+        "line": 8,
+        "text": "◆镜中世界行走路线地图："
+      },
+      {
+        "line": 9,
+        "text": "2.通过迷宫抵达镜中世界，与复古连击剑术大师（8.13）对话，可交出100G学习技能奥义·连击，任务完结。"
+      },
+      {
+        "line": 10,
+        "text": "◆限定剑士使用，转职后不可用。技能详见《奥义·连击》"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": [
+      {
+        "type": "title-source",
+        "title": "被迷惑的人",
+        "sourceQuest": "愚人之镜中世界",
+        "availability": "不再开放",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "skill-reference",
+        "target": "奥义·连击",
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "career-and-level",
+        "career": "剑士（含见习剑士）",
+        "minimumLevel": 70,
+        "sourceLines": [
+          1,
+          3,
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "line-availability",
+        "unavailableLine": 10,
+        "condition": "PK大赛期间",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "法兰城镜中之影（160.173）",
+      "sourceLines": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "等级不低于Lv.70的剑士与镜中之影对话，按是否拥有“被迷惑的人”称号支付魔币，传送至镜中世界。",
+        "inputs": [
+          {
+            "item": "魔币",
+            "quantity": null,
+            "action": "hand-over",
+            "amountByCondition": [
+              {
+                "condition": "拥有称号“被迷惑的人”",
+                "amount": 9900
+              },
+              {
+                "condition": "否则",
+                "amount": 99900
+              }
+            ],
+            "unit": "G",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "通过固定迷宫抵达镜中世界，与复古连击剑术大师（8.13）对话，交出100G学习【奥义·连击】，任务完结。",
+        "inputs": [
+          {
+            "item": "金币",
+            "quantity": 100,
+            "action": "hand-over",
+            "unit": "G",
+            "sourceLines": [
+              9
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": [
+      {
+        "text": "镜中世界地图内可以接收宠物邮件。",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [
+            {
+              "id": "encounter-mirror-world",
+              "location": "镜中世界固定迷宫",
+              "enemies": [
+                "血腥之刃",
+                "杀龙之刃",
+                "火焰之刃",
+                "烈风之刃"
+              ],
+              "level": 98,
+              "count": {
+                "min": 4,
+                "max": 5
+              },
+              "actions": 1,
+              "skills": [
+                "连击"
+              ],
+              "modifiers": [
+                "必杀修正"
+              ],
+              "sourceLines": [
+                6
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          ],
+          "media": [
+            {
+              "type": "route-map",
+              "text": "来源原文在此处标注镜中世界行走路线地图。",
+              "sourceLines": [
+                8
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          ],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "魔币",
+        "quantity": null,
+        "action": "hand-over",
+        "amountByCondition": [
+          {
+            "condition": "拥有称号“被迷惑的人”",
+            "amount": 9900
+          },
+          {
+            "condition": "否则",
+            "amount": 99900
+          }
+        ],
+        "unit": "G",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "金币",
+        "quantity": 100,
+        "action": "hand-over",
+        "unit": "G",
+        "sourceLines": [
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": []
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往法兰城（160.173）处，等级不低于Lv.70剑士与镜中之影对话，交出99900G或者9900G魔币，传送至镜中世界。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "◆拥有称号“被迷惑的人”，交出9900G魔币，否则交出99900G魔币；称号“被迷惑的人”获得方式参考《愚人之镜中世界》任务，不再开放",
+      "type": "fee-rule",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆见习剑士，等级不低于Lv.70即可进入镜中世界；建议闪装、偷袭、血瓶，人跑宠防或二动逃跑",
+      "type": "requirement-note",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆职业非剑士无法进入镜中世界",
+      "type": "requirement",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "◆PK大赛期间，PK赛专用线10线没有NPC镜中之影",
+      "type": "availability-note",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "◆镜中世界为固定迷宫，魔物为Lv.98血腥之刃、杀龙之刃、火焰之刃、烈风之刃（1动）；数量：4~5；技能：连击；有必杀修正",
+      "type": "encounter-area",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "◆镜中世界地图内可以接收宠物邮件",
+      "type": "map-rule",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "◆镜中世界行走路线地图：",
+      "type": "media",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "2.通过迷宫抵达镜中世界，与复古连击剑术大师（8.13）对话，可交出100G学习技能奥义·连击，任务完结。",
+      "type": "step",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "◆限定剑士使用，转职后不可用。技能详见《奥义·连击》",
+      "type": "skill-detail",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        10
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": [
+      {
+        "name": "奥义·连击",
+        "learningCost": {
+          "amount": 100,
+          "unit": "G"
+        },
+        "careerRestriction": "剑士",
+        "unusableAfterCareerChange": true,
+        "sourceLines": [
+          9,
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 47,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "怀旧服其他自制任务"
+  }
+}

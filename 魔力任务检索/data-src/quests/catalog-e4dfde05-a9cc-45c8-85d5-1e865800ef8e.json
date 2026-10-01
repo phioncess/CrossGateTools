@@ -1,0 +1,968 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-e4dfde05-a9cc-45c8-85d5-1e865800ef8e",
+  "name": "蔓延的邪恶",
+  "aliases": [
+    "炼金3"
+  ],
+  "metadata": {
+    "category": "失落的炼金术系列",
+    "level": "40 级",
+    "availability": "available",
+    "summary": "必要条件：完成《邪恶的祭司任务》；持有【初级探险队戒指】；怀旧牧羊服任务；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_e4dfde05-a9cc-45c8-85d5-1e865800ef8e",
+    "url": "https://www.molibaike.com/Mission/Detail/e4dfde05-a9cc-45c8-85d5-1e865800ef8e?u=True",
+    "localFiles": [],
+    "lineCount": 13,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往法兰城里谢里雅堡名人堂(52.61)与工程人员（11.9）对话至二楼。"
+      },
+      {
+        "line": 2,
+        "text": "2.前往二楼（36.49）处房间，持有【初级探险队戒指】与紧急联络官（43.89）对话，交出【初级探险队戒指】获得【战舰乘坐信】、【紧急联络信】。"
+      },
+      {
+        "line": 3,
+        "text": "◆【初级探险队戒指】获得方式参考《邪恶的祭祀》任务"
+      },
+      {
+        "line": 4,
+        "text": "3.前往伊尔村港湾管理处与战舰舰长（19.11）对话，传送至荒岛探险团营地。"
+      },
+      {
+        "line": 5,
+        "text": "4.前往隔离营房（57.40）与探险团医生（18.16）对话，交出【紧急联络信】获得【特殊样本】。"
+      },
+      {
+        "line": 6,
+        "text": "5.前往魔法大学内部与高级药剂师（31.46）对话，交出【特殊样本】获得【收集用容器】。"
+      },
+      {
+        "line": 7,
+        "text": "6.前往雪山之顶，夜晚调查月见草（15.16），交出【收集用容器】获得【盛满的容器】。"
+      },
+      {
+        "line": 8,
+        "text": "◆雪山之顶抵达方式参考《积雪的山路》任务"
+      },
+      {
+        "line": 9,
+        "text": "7.返回魔法大学内部与高级药剂师（31.46）对话，交出【盛满的容器】获得【分类样本】。"
+      },
+      {
+        "line": 10,
+        "text": "8.与匠师（29.47）对话，交出【分类样本】获得【申请信】。"
+      },
+      {
+        "line": 11,
+        "text": "9.返回法兰城里谢里雅堡2楼（不是名人堂）与管理官（57.81）对话，交出【申请信】获得【联络信】，任务完结。"
+      },
+      {
+        "line": 12,
+        "text": "◆【战舰乘坐信】、【联络信】为后续任务道具，不可丢弃"
+      },
+      {
+        "line": 13,
+        "text": "◆任务剧情：参考《失落的炼金术系列任务剧情对话》"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [
+      {
+        "item": "初级探险队戒指",
+        "sourceQuest": "邪恶的祭祀",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "references": [
+      {
+        "type": "route",
+        "targetQuest": "积雪的山路",
+        "destination": "雪山之顶",
+        "sourceLines": [
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "story",
+        "target": "失落的炼金术系列任务剧情对话",
+        "sourceLines": [
+          13
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "later-quest-items",
+        "items": [
+          "战舰乘坐信",
+          "联络信"
+        ],
+        "sourceLines": [
+          12
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "held-item",
+        "item": "初级探险队戒指",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "time-window",
+        "value": "夜晚",
+        "appliesToStep": "step-6",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "里谢里雅堡名人堂（52.61）",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "在名人堂与工程人员（11.9）对话前往二楼。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "在二楼（36.49）房间与紧急联络官（43.89）对话，交出【初级探险队戒指】，获得【战舰乘坐信】和【紧急联络信】。",
+        "inputs": [
+          {
+            "item": "初级探险队戒指",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "战舰乘坐信",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "紧急联络信",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          2,
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "前往伊尔村港湾管理处，与战舰舰长（19.11）对话，传送至荒岛探险团营地。",
+        "inputs": [
+          {
+            "item": "战舰乘坐信",
+            "quantity": 1,
+            "action": "hold",
+            "consumed": false,
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "前往隔离营房，与探险团医生（18.16）对话，交出【紧急联络信】，获得【特殊样本】。",
+        "inputs": [
+          {
+            "item": "紧急联络信",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "特殊样本",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-5",
+        "order": 5,
+        "text": "前往魔法大学，与高级药剂师（31.46）对话，交出【特殊样本】，获得【收集用容器】。",
+        "inputs": [
+          {
+            "item": "特殊样本",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "收集用容器",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-6",
+        "order": 6,
+        "text": "夜晚在雪山之顶调查月见草（15.16），交出【收集用容器】，获得【盛满的容器】。",
+        "inputs": [
+          {
+            "item": "收集用容器",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "盛满的容器",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          7,
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-7",
+        "order": 7,
+        "text": "返回魔法大学与高级药剂师对话，交出【盛满的容器】，获得【分类样本】。",
+        "inputs": [
+          {
+            "item": "盛满的容器",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              9
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "分类样本",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              9
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-8",
+        "order": 8,
+        "text": "与匠师（29.47）对话，交出【分类样本】，获得【申请信】。",
+        "inputs": [
+          {
+            "item": "分类样本",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              10
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "申请信",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              10
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-9",
+        "order": 9,
+        "text": "返回里谢里雅堡2楼（不是名人堂）与管理官（57.81）对话，交出【申请信】，获得【联络信】，任务完结。战舰乘坐信和联络信均为后续任务道具，不可丢弃。",
+        "inputs": [
+          {
+            "item": "申请信",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              11
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "联络信",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              11
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          11,
+          12
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "初级探险队戒指",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "战舰乘坐信",
+        "quantity": 1,
+        "action": "hold",
+        "consumed": false,
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "紧急联络信",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "特殊样本",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-5",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "收集用容器",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-6",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "盛满的容器",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-7",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "分类样本",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-8",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "申请信",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-9",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "战舰乘坐信",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "紧急联络信",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "特殊样本",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "收集用容器",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-5",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "盛满的容器",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-6",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "分类样本",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-7",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "申请信",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-8",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "联络信",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-9",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往法兰城里谢里雅堡名人堂(52.61)与工程人员（11.9）对话至二楼。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2.前往二楼（36.49）处房间，持有【初级探险队戒指】与紧急联络官（43.89）对话，交出【初级探险队戒指】获得【战舰乘坐信】、【紧急联络信】。",
+      "type": "step",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆【初级探险队戒指】获得方式参考《邪恶的祭祀》任务",
+      "type": "item-source",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "3.前往伊尔村港湾管理处与战舰舰长（19.11）对话，传送至荒岛探险团营地。",
+      "type": "step",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "4.前往隔离营房（57.40）与探险团医生（18.16）对话，交出【紧急联络信】获得【特殊样本】。",
+      "type": "step",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "5.前往魔法大学内部与高级药剂师（31.46）对话，交出【特殊样本】获得【收集用容器】。",
+      "type": "step",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "6.前往雪山之顶，夜晚调查月见草（15.16），交出【收集用容器】获得【盛满的容器】。",
+      "type": "step",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "◆雪山之顶抵达方式参考《积雪的山路》任务",
+      "type": "reference",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "7.返回魔法大学内部与高级药剂师（31.46）对话，交出【盛满的容器】获得【分类样本】。",
+      "type": "step",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "8.与匠师（29.47）对话，交出【分类样本】获得【申请信】。",
+      "type": "step",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "9.返回法兰城里谢里雅堡2楼（不是名人堂）与管理官（57.81）对话，交出【申请信】获得【联络信】，任务完结。",
+      "type": "step",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "◆【战舰乘坐信】、【联络信】为后续任务道具，不可丢弃",
+      "type": "key-item-destination",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 13,
+      "text": "◆任务剧情：参考《失落的炼金术系列任务剧情对话》",
+      "type": "reference",
+      "sourceLines": [
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        13
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "失落的炼金术系列",
+    "order": 3,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "失落的炼金术系列"
+  }
+}

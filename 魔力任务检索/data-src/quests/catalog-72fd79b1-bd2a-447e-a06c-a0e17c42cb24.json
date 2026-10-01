@@ -1,0 +1,400 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-72fd79b1-bd2a-447e-a06c-a0e17c42cb24",
+  "name": "隔世主人",
+  "aliases": [
+    "阿努比斯量产型"
+  ],
+  "metadata": {
+    "category": "怀旧服其他自制任务",
+    "level": "35 级",
+    "availability": "available",
+    "summary": "必要条件：持有【阿努比斯量产型】；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_72fd79b1-bd2a-447e-a06c-a0e17c42cb24",
+    "url": "https://www.molibaike.com/Mission/Detail/72fd79b1-bd2a-447e-a06c-a0e17c42cb24?u=True",
+    "localFiles": [],
+    "lineCount": 4,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.双击【阿努比斯量产型】获悉情报。（此步可省略）"
+      },
+      {
+        "line": 2,
+        "text": "◆【阿努比斯量产型】获得方式参考：《出来度假的狂战将军——深海区》任务"
+      },
+      {
+        "line": 3,
+        "text": "2.前往加纳村考古学者之家（60.50），持有【阿努比斯量产型】、【奥利哈钢条】*1与考古学家吉村（10.4）对话，选“是”交出【阿努比斯量产型】、【奥利哈钢条】*1获得Lv.1阿努比斯量产型、称号“隔世主人”，任务完结。"
+      },
+      {
+        "line": 4,
+        "text": "◆阿努比斯量产型：金属系、8技能栏、风20地80；40 36 27 13 10"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [
+      {
+        "item": "阿努比斯量产型",
+        "sourceQuest": "出来度假的狂战将军——深海区",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "references": []
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "held-item",
+        "item": "阿努比斯量产型",
+        "quantity": 1,
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "held-item",
+        "item": "奥利哈钢条",
+        "quantity": 1,
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "任意地点（双击阿努比斯量产型；此步可省略）",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "双击【阿努比斯量产型】获悉情报；此步可以省略。",
+        "inputs": [
+          {
+            "item": "阿努比斯量产型",
+            "quantity": 1,
+            "action": "use",
+            "consumed": false,
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "前往加纳村考古学者之家（60.50），与考古学家吉村（10.4）对话并选择“是”。",
+        "inputs": [
+          {
+            "item": "阿努比斯量产型",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "奥利哈钢条",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "Lv.1阿努比斯量产型",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "notes": [],
+          "media": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "阿努比斯量产型",
+        "quantity": 1,
+        "action": "use",
+        "consumed": false,
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "阿努比斯量产型",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "奥利哈钢条",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "Lv.1阿努比斯量产型",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.双击【阿努比斯量产型】获悉情报。（此步可省略）",
+      "type": "optional-step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "◆【阿努比斯量产型】获得方式参考：《出来度假的狂战将军——深海区》任务",
+      "type": "item-source",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "2.前往加纳村考古学者之家（60.50），持有【阿努比斯量产型】、【奥利哈钢条】*1与考古学家吉村（10.4）对话，选“是”交出【阿努比斯量产型】、【奥利哈钢条】*1获得Lv.1阿努比斯量产型、称号“隔世主人”，任务完结。",
+      "type": "step",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆阿努比斯量产型：金属系、8技能栏、风20地80；40 36 27 13 10",
+      "type": "reward-detail",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        4
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "reward-pet-anubis-mass-production",
+      "version": "common",
+      "tier": "common",
+      "kind": "quest-completion",
+      "items": [
+        {
+          "id": "pet-anubis-mass-production",
+          "name": "Lv.1阿努比斯量产型",
+          "role": "valuable-result",
+          "entityType": "pet",
+          "properties": {
+            "race": "金属系",
+            "skillSlots": 8,
+            "elements": {
+              "风": 20,
+              "地": 80
+            },
+            "baseStats": [
+              40,
+              36,
+              27,
+              13,
+              10
+            ]
+          },
+          "sourceLines": [
+            3,
+            4
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-2",
+      "sourceLines": [
+        3,
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [
+      {
+        "name": "隔世主人",
+        "acquisition": "quest-completion",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "careers": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 8,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "怀旧服其他自制任务"
+  }
+}

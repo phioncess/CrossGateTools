@@ -1,0 +1,628 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-81bfbcc2-e4f6-45ba-94ac-11f4ec5a45e0",
+  "name": "就职猎人",
+  "aliases": [
+    "传说的鹿皮",
+    "学习技能狩猎",
+    "猎人就职"
+  ],
+  "metadata": {
+    "category": "职业就职任务",
+    "level": "1 级",
+    "availability": "available",
+    "summary": "",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_81bfbcc2-e4f6-45ba-94ac-11f4ec5a45e0",
+    "url": "https://www.molibaike.com/Mission/Detail/81bfbcc2-e4f6-45ba-94ac-11f4ec5a45e0?u=True",
+    "localFiles": [],
+    "lineCount": 10,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往伊尔村，与猎人亚烈格尔（48.76）对话，习得技能狩猎体验。"
+      },
+      {
+        "line": 2,
+        "text": "◆学习技能狩猎体验无需费用，占技能栏3栏"
+      },
+      {
+        "line": 3,
+        "text": "2.出伊尔村，前往芙蕾雅岛（654.247）、（652.228）等多处，使用狩猎体验进行狩猎，可随机获得【传说的鹿皮】。"
+      },
+      {
+        "line": 4,
+        "text": "◆【传说的鹿皮】：不可交易、登出消失."
+      },
+      {
+        "line": 5,
+        "text": "◆芙蕾雅岛（654.247）此处几率高"
+      },
+      {
+        "line": 6,
+        "text": "3.步行（不要登出）返回伊尔村，持有【传说的鹿皮】与败家子葛达尔夫（49.77）对话，交出【传说的鹿皮】*1获得【猎人推荐信】。"
+      },
+      {
+        "line": 7,
+        "text": "4.前往伊尔村装备店（35.25）与猎人强提（13.16）对话即可就职猎人，任务完结。"
+      },
+      {
+        "line": 8,
+        "text": "◆学习技能狩猎："
+      },
+      {
+        "line": 9,
+        "text": "前往法兰城东城门外（486.199）附近，寻找猎人拉修（472~500.198~220）与之对话，费用为100G。"
+      },
+      {
+        "line": 10,
+        "text": "若无法寻找到猎人拉修，建议换线再进行寻找。"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": []
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "伊尔村猎人亚烈格尔（48.76）",
+      "sourceLines": [
+        1,
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "前往伊尔村，与猎人亚烈格尔（48.76）对话，免费学习技能“狩猎体验”；占用3个技能栏。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "狩猎体验",
+            "entityType": "skill",
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              1,
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "source-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1,
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "出伊尔村，前往芙蕾雅岛（654.247）或（652.228）等地点，使用技能“狩猎体验”进行狩猎，随机获得【传说的鹿皮】。",
+        "inputs": [
+          {
+            "item": "狩猎体验",
+            "entityType": "skill",
+            "action": "use",
+            "consumed": false,
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "source-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "传说的鹿皮",
+            "quantity": 1,
+            "acquisition": "random-gathering",
+            "properties": {
+              "tradeable": false,
+              "logoutBehavior": "消失"
+            },
+            "sourceLines": [
+              3,
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [
+          {
+            "text": "【传说的鹿皮】不可交易，登出后消失。取得后不要登出，步行返回伊尔村。",
+            "sourceLines": [
+              4,
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "source-semantic-review"
+            },
+            "type": "safety-warning"
+          },
+          {
+            "text": "资料标注（654.247）取得几率较高，未给出具体概率。",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "source-semantic-review"
+            },
+            "type": "info"
+          }
+        ],
+        "sourceLines": [
+          3,
+          4,
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "不要登出，步行返回伊尔村，与败家子葛达尔夫（49.77）对话，交出1张【传说的鹿皮】，获得【猎人推荐信】。",
+        "inputs": [
+          {
+            "item": "传说的鹿皮",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "猎人推荐信",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "前往伊尔村装备店（35.25），与店内猎人强提（13.16）对话，就职猎人，任务完成。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "猎人",
+            "entityType": "career",
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "source-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": [],
+    "sections": [
+      {
+        "title": "技能学习：正式技能“狩猎”",
+        "operations": [
+          {
+            "text": "前往法兰城东门外（486.199）附近，寻找猎人拉修；其活动范围为X=472～500、Y=198～220。",
+            "sourceLines": [
+              9
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "source-semantic-review"
+            }
+          },
+          {
+            "text": "与猎人拉修对话，支付100G学习技能“狩猎”。",
+            "sourceLines": [
+              9
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "source-semantic-review"
+            }
+          }
+        ],
+        "notes": [
+          {
+            "text": "若找不到猎人拉修，可换线后继续寻找。",
+            "sourceLines": [
+              10
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "source-semantic-review"
+            },
+            "type": "info"
+          }
+        ],
+        "sourceLines": [
+          8,
+          9,
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "source-semantic-review"
+        }
+      }
+    ]
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "狩猎体验",
+        "entityType": "skill",
+        "action": "use",
+        "consumed": false,
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "source-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "传说的鹿皮",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "狩猎体验",
+        "entityType": "skill",
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          1,
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "source-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "传说的鹿皮",
+        "quantity": 1,
+        "acquisition": "random-gathering",
+        "properties": {
+          "tradeable": false,
+          "logoutBehavior": "消失"
+        },
+        "sourceLines": [
+          3,
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "猎人推荐信",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "猎人",
+        "entityType": "career",
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "source-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往伊尔村，与猎人亚烈格尔（48.76）对话，习得技能狩猎体验。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "◆学习技能狩猎体验无需费用，占技能栏3栏",
+      "type": "skill-detail",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "2.出伊尔村，前往芙蕾雅岛（654.247）、（652.228）等多处，使用狩猎体验进行狩猎，可随机获得【传说的鹿皮】。",
+      "type": "collection-event",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆【传说的鹿皮】：不可交易、登出消失.",
+      "type": "item-detail",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "◆芙蕾雅岛（654.247）此处几率高",
+      "type": "probability-note",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "3.步行（不要登出）返回伊尔村，持有【传说的鹿皮】与败家子葛达尔夫（49.77）对话，交出【传说的鹿皮】*1获得【猎人推荐信】。",
+      "type": "step",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "4.前往伊尔村装备店（35.25）与猎人强提（13.16）对话即可就职猎人，任务完结。",
+      "type": "step",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "◆学习技能狩猎：",
+      "type": "skill-heading",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "前往法兰城东城门外（486.199）附近，寻找猎人拉修（472~500.198~220）与之对话，费用为100G。",
+      "type": "skill-learning",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "若无法寻找到猎人拉修，建议换线再进行寻找。",
+      "type": "skill-note",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        10
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [],
+  "outcomes": {
+    "titles": [],
+    "careers": [
+      {
+        "career": "猎人",
+        "action": "employment",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "skills": [
+      {
+        "name": "狩猎体验",
+        "cost": {
+          "amount": 0,
+          "unit": "G"
+        },
+        "skillSlotCost": 3,
+        "role": "quest-skill",
+        "sourceLines": [
+          1,
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "name": "狩猎",
+        "learningLocation": "法兰城东门外猎人拉修（472~500.198~220）",
+        "cost": {
+          "amount": 100,
+          "unit": "G"
+        },
+        "note": "找不到NPC时可换线寻找",
+        "sourceLines": [
+          8,
+          9,
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 8,
+    "stageLabel": "",
+    "optional": false,
+    "type": "职业就职任务",
+    "sourceCategory": "职业就职任务"
+  }
+}

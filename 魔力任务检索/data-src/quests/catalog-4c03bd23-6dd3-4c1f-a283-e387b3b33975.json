@@ -1,0 +1,661 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-4c03bd23-6dd3-4c1f-a283-e387b3b33975",
+  "name": "谁说女子不如男",
+  "aliases": [],
+  "metadata": {
+    "category": "临时活动/任务",
+    "level": "50 级",
+    "availability": "closed",
+    "summary": "怀旧服任务（已关闭）；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_4c03bd23-6dd3-4c1f-a283-e387b3b33975",
+    "url": "https://www.molibaike.com/Mission/Detail/4c03bd23-6dd3-4c1f-a283-e387b3b33975?u=True",
+    "localFiles": [],
+    "lineCount": 11,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往法兰城里谢里雅堡2楼谒见之间与漂亮的少女（12.5）对话，获得【参赛证明】。（此步骤无性别限制）"
+      },
+      {
+        "line": 2,
+        "text": "2.女性角色前往米内葛尔岛与女战士（562.340）对话进入半边天。"
+      },
+      {
+        "line": 3,
+        "text": "◆男性角色需与女性角色组队并由女性角色对话带领进入"
+      },
+      {
+        "line": 4,
+        "text": "◆半边天为随机迷宫，约9层；魔物为Lv.40~41强壮的妖狐、柔弱的水精、飞翔的鸟人"
+      },
+      {
+        "line": 5,
+        "text": "3.通过随机迷宫抵达迷宫底部与飞翼女酋长对话进入战斗。"
+      },
+      {
+        "line": 6,
+        "text": "◆BOSS：Lv.55飞翼女酋长；技能：超强风刃魔法、乾坤一掷"
+      },
+      {
+        "line": 7,
+        "text": "◆喽啰：Lv.50飞翼护卫*4"
+      },
+      {
+        "line": 8,
+        "text": "4.战斗胜利后与无名的公主骑士对话，交出【参赛证明】获得【比赛奖章】。"
+      },
+      {
+        "line": 9,
+        "text": "5.返回法兰城至里谢里雅堡2楼谒见之间与漂亮的少女（12.5）对话，交出【比赛奖章】随机获得【漂亮的鞋子】或【漂亮的长靴】，任务完结。"
+      },
+      {
+        "line": 10,
+        "text": "◆本任务1天只能参与1次"
+      },
+      {
+        "line": 11,
+        "text": "◆【漂亮的鞋子】、【漂亮的长靴】数值皆有浮动"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "entry-gender",
+        "rule": "女性可对话进入；男性需与女性组队并由女性带领进入",
+        "sourceLines": [
+          2,
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "daily-limit",
+        "count": 1,
+        "period": "day",
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "里谢里雅堡2楼谒见之间漂亮的少女（12.5）",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "与漂亮的少女（12.5）对话，获得【参赛证明】；领取无性别限制。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "参赛证明",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "前往米内葛尔岛，由女性角色与女战士（562.340）对话进入半边天；男性需由女性队友带领。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          2,
+          3,
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "通过随机迷宫到达底部，与飞翼女酋长对话进入战斗。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          5,
+          6,
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "战斗胜利后与无名的公主骑士对话，交出【参赛证明】，获得【比赛奖章】。",
+        "inputs": [
+          {
+            "item": "参赛证明",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              8
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "比赛奖章",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              8
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-5",
+        "order": 5,
+        "text": "返回谒见之间与漂亮的少女对话，交出【比赛奖章】，随机获得【漂亮的鞋子】或【漂亮的长靴】，任务完结。",
+        "inputs": [
+          {
+            "item": "比赛奖章",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              9
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "漂亮的鞋子或漂亮的长靴",
+            "quantity": 1,
+            "acquisition": "random-one",
+            "sourceLines": [
+              9
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          9,
+          10,
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {
+            "battle-1": {
+              "id": "battle-1",
+              "order": 1,
+              "kind": "boss-battle",
+              "title": "飞翼女酋长",
+              "triggerStep": "step-3",
+              "overview": {
+                "text": "与飞翼女酋长对话进入战斗。",
+                "sourceLines": [
+                  5
+                ],
+                "verification": {
+                  "status": "verified",
+                  "method": "manual-semantic-review"
+                }
+              },
+              "enemies": {
+                "enemy-1": {
+                  "id": "enemy-1",
+                  "name": "飞翼女酋长",
+                  "level": {
+                    "min": 55,
+                    "max": 55
+                  },
+                  "count": 1,
+                  "skills": [
+                    "超强风刃魔法",
+                    "乾坤一掷"
+                  ],
+                  "raw": "Lv.55飞翼女酋长；技能：超强风刃魔法、乾坤一掷",
+                  "sourceLines": [
+                    6
+                  ],
+                  "verification": {
+                    "status": "verified",
+                    "method": "manual-semantic-review"
+                  }
+                },
+                "enemy-2": {
+                  "id": "enemy-2",
+                  "name": "飞翼护卫",
+                  "level": {
+                    "min": 50,
+                    "max": 50
+                  },
+                  "count": 4,
+                  "raw": "Lv.50飞翼护卫*4",
+                  "sourceLines": [
+                    7
+                  ],
+                  "verification": {
+                    "status": "verified",
+                    "method": "manual-semantic-review"
+                  }
+                }
+              },
+              "sourceLines": [
+                5,
+                6,
+                7
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          },
+          "encounters": [
+            {
+              "id": "encounter-half-sky",
+              "location": "半边天随机迷宫",
+              "approximateFloors": 9,
+              "enemyLevel": {
+                "min": 40,
+                "max": 41
+              },
+              "enemies": [
+                "强壮的妖狐",
+                "柔弱的水精",
+                "飞翔的鸟人"
+              ],
+              "sourceLines": [
+                4
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          ],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "参赛证明",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "比赛奖章",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-5",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "参赛证明",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "比赛奖章",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "漂亮的鞋子或漂亮的长靴",
+        "quantity": 1,
+        "acquisition": "random-one",
+        "sourceLines": [
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-5",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往法兰城里谢里雅堡2楼谒见之间与漂亮的少女（12.5）对话，获得【参赛证明】。（此步骤无性别限制）",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2.女性角色前往米内葛尔岛与女战士（562.340）对话进入半边天。",
+      "type": "entry-rule",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆男性角色需与女性角色组队并由女性角色对话带领进入",
+      "type": "entry-rule",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆半边天为随机迷宫，约9层；魔物为Lv.40~41强壮的妖狐、柔弱的水精、飞翔的鸟人",
+      "type": "encounter-area",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "3.通过随机迷宫抵达迷宫底部与飞翼女酋长对话进入战斗。",
+      "type": "battle-trigger",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "◆BOSS：Lv.55飞翼女酋长；技能：超强风刃魔法、乾坤一掷",
+      "type": "enemy",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "◆喽啰：Lv.50飞翼护卫*4",
+      "type": "enemy",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "4.战斗胜利后与无名的公主骑士对话，交出【参赛证明】获得【比赛奖章】。",
+      "type": "step",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "5.返回法兰城至里谢里雅堡2楼谒见之间与漂亮的少女（12.5）对话，交出【比赛奖章】随机获得【漂亮的鞋子】或【漂亮的长靴】，任务完结。",
+      "type": "step",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "◆本任务1天只能参与1次",
+      "type": "daily-limit",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "◆【漂亮的鞋子】、【漂亮的长靴】数值皆有浮动",
+      "type": "reward-detail",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        11
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "reward-pretty-footwear",
+      "version": "common",
+      "tier": "common",
+      "kind": "reward-pool",
+      "items": [
+        {
+          "id": "pretty-shoes",
+          "name": "漂亮的鞋子",
+          "role": "valuable-result",
+          "entityType": "equipment",
+          "properties": {
+            "valuesFluctuate": true
+          },
+          "sourceLines": [
+            9,
+            11
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "pretty-boots",
+          "name": "漂亮的长靴",
+          "role": "valuable-result",
+          "entityType": "equipment",
+          "properties": {
+            "valuesFluctuate": true
+          },
+          "sourceLines": [
+            9,
+            11
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-5",
+      "selection": "random-one",
+      "sourceLines": [
+        9,
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 9,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "临时活动/任务"
+  }
+}

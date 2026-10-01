@@ -1,0 +1,532 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-429e0890-a308-47d8-aa7a-7d8a91b4454e",
+  "name": "商贸都市",
+  "aliases": [
+    "新村4",
+    "新城4",
+    "刷水蜘蛛前置"
+  ],
+  "metadata": {
+    "category": "新大陆（新村新城）系列",
+    "level": "40 级",
+    "availability": "available",
+    "summary": "必要条件：完成《遇难的渔夫》任务；怀旧牧羊/金牛服任务；以下仅展示怀旧服路线与参数",
+    "repeatable": "不可"
+  },
+  "source": {
+    "key": "catalog_429e0890-a308-47d8-aa7a-7d8a91b4454e",
+    "url": "https://www.molibaike.com/Mission/Detail/429e0890-a308-47d8-aa7a-7d8a91b4454e?u=True",
+    "localFiles": [],
+    "lineCount": 11,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往西尔维村旅馆2楼与联络官（44.16）对话，获得【联络信】。"
+      },
+      {
+        "line": 2,
+        "text": "◆本任务无需新村2获得的【冒险者徽章】，完成过新村1-3可直接做。"
+      },
+      {
+        "line": 3,
+        "text": "如果无法接任务而且已经可以使用新村传送石，说明已经完成本任务"
+      },
+      {
+        "line": 4,
+        "text": "2.出西尔维村，前往玛塔塔平原（304.95）处进入远古地下水脉。"
+      },
+      {
+        "line": 5,
+        "text": "3.通过（41.37）处楼梯抵达雷克亚克平原，前往（108.164）处抵达斯特隆海姆。"
+      },
+      {
+        "line": 6,
+        "text": "◆前往斯特隆海姆城行走路线："
+      },
+      {
+        "line": 7,
+        "text": "4.前往议事厅（34.34）与探险队队长（10.4）对话，交出【联络信】、【冒险者徽章】获得【先遣队徽章】，任务完结。"
+      },
+      {
+        "line": 8,
+        "text": "◆【冒险者徽章】为非必要条件，不携带亦可完成任务，但无法获得【先遣队徽章】"
+      },
+      {
+        "line": 9,
+        "text": "◆【先遣队徽章】为任务奖励，非后续任务必要道具，可丢弃。"
+      },
+      {
+        "line": 10,
+        "text": "【先遣队徽章】：Lv.4护身符、耐久100；敏捷+10、回复+10、必杀+5、命中10、生命50；不可交易、丢地消失"
+      },
+      {
+        "line": 11,
+        "text": "◆斯特隆海姆城地图："
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": []
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "西尔维村旅馆2楼联络官（44.16）",
+      "sourceLines": [
+        1,
+        2,
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "与联络官（44.16）对话，获得【联络信】。本任务不要求新村2的冒险者徽章；已可使用新村传送石却无法接任务时，表示任务已完成。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "联络信",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1,
+          2,
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "离开西尔维村，从玛塔塔平原（304.95）进入远古地下水脉。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "经（41.37）楼梯抵达雷克亚克平原，再前往（108.164）抵达斯特隆海姆。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          5,
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "前往议事厅与探险队队长（10.4）对话，交出【联络信】完成任务；若同时交出可选的【冒险者徽章】，获得【先遣队徽章】。",
+        "inputs": [
+          {
+            "item": "联络信",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "冒险者徽章",
+            "quantity": 1,
+            "action": "hand-over",
+            "optional": true,
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "先遣队徽章",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "conditionalOnInput": "冒险者徽章",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [
+            {
+              "type": "route-map",
+              "text": "前往斯特隆海姆城行走路线。",
+              "sourceLines": [
+                6
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            },
+            {
+              "type": "map",
+              "text": "斯特隆海姆城地图。",
+              "sourceLines": [
+                11
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          ],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "联络信",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "冒险者徽章",
+        "quantity": 1,
+        "action": "hand-over",
+        "optional": true,
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "联络信",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "先遣队徽章",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "conditionalOnInput": "冒险者徽章",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往西尔维村旅馆2楼与联络官（44.16）对话，获得【联络信】。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "◆本任务无需新村2获得的【冒险者徽章】，完成过新村1-3可直接做。",
+      "type": "clarification",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "如果无法接任务而且已经可以使用新村传送石，说明已经完成本任务",
+      "type": "completion-detection",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "2.出西尔维村，前往玛塔塔平原（304.95）处进入远古地下水脉。",
+      "type": "step",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "3.通过（41.37）处楼梯抵达雷克亚克平原，前往（108.164）处抵达斯特隆海姆。",
+      "type": "step",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "◆前往斯特隆海姆城行走路线：",
+      "type": "media",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "4.前往议事厅（34.34）与探险队队长（10.4）对话，交出【联络信】、【冒险者徽章】获得【先遣队徽章】，任务完结。",
+      "type": "step",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "◆【冒险者徽章】为非必要条件，不携带亦可完成任务，但无法获得【先遣队徽章】",
+      "type": "optional-input-rule",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "◆【先遣队徽章】为任务奖励，非后续任务必要道具，可丢弃。",
+      "type": "reward-role",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "【先遣队徽章】：Lv.4护身符、耐久100；敏捷+10、回复+10、必杀+5、命中10、生命50；不可交易、丢地消失",
+      "type": "reward-detail",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "◆斯特隆海姆城地图：",
+      "type": "media",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        11
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "reward-expedition-medal",
+      "version": "common",
+      "tier": "common",
+      "kind": "conditional-quest-reward",
+      "items": [
+        {
+          "id": "expedition-medal",
+          "name": "先遣队徽章",
+          "role": "valuable-result",
+          "entityType": "equipment",
+          "properties": {
+            "level": 4,
+            "category": "护身符",
+            "durability": 100,
+            "agility": 10,
+            "recovery": 10,
+            "critical": 5,
+            "accuracy": 10,
+            "life": 50,
+            "tradeable": false,
+            "dropBehavior": "丢地消失",
+            "requiredForLaterQuest": false
+          },
+          "sourceLines": [
+            7,
+            9,
+            10
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-4",
+      "condition": "交出冒险者徽章",
+      "sourceLines": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "新大陆（新村新城）系列",
+    "order": 4,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "新大陆（新村新城）系列"
+  }
+}

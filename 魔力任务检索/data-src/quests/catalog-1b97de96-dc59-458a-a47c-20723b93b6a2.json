@@ -1,0 +1,989 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-1b97de96-dc59-458a-a47c-20723b93b6a2",
+  "name": "寒冬礼包",
+  "aliases": [
+    "黑UD"
+  ],
+  "metadata": {
+    "category": "临时活动/任务",
+    "level": "1 级",
+    "availability": "closed",
+    "summary": "怀旧服活动（已关闭）；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_1b97de96-dc59-458a-a47c-20723b93b6a2",
+    "url": "https://www.molibaike.com/Mission/Detail/1b97de96-dc59-458a-a47c-20723b93b6a2?u=True",
+    "localFiles": [],
+    "lineCount": 21,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "前往亚诺曼城与寒冬礼包贩售员（131.131）对话，交出1000G购买【寒冬礼包】。双击【寒冬礼包】获得奖品。"
+      },
+      {
+        "line": 2,
+        "text": "◆【寒冬礼包】可一次性购买多个，不可堆叠；在2线、3线购买时注意与NPC重合的摆摊玩家，勿购买错误（推荐在其他线路购买礼包）"
+      },
+      {
+        "line": 3,
+        "text": "◆【寒冬礼包】奖品： （黑色为第一批奖品，红色为维护后补充的奖品）"
+      },
+      {
+        "line": 4,
+        "text": "名称备注"
+      },
+      {
+        "line": 5,
+        "text": "魔石维护后该奖品已取消"
+      },
+      {
+        "line": 6,
+        "text": "鼠王惊奇蛋——"
+      },
+      {
+        "line": 7,
+        "text": "完全修理券——"
+      },
+      {
+        "line": 8,
+        "text": "技能学习证——"
+      },
+      {
+        "line": 9,
+        "text": "神奇的药草随机增加技能经验200点"
+      },
+      {
+        "line": 10,
+        "text": "传送石优惠券持有该物品时，使用法兰王国、苏国、艾尔巴尼亚王国传送石无需费用"
+      },
+      {
+        "line": 11,
+        "text": "可交易可摆摊、不限使用次数"
+      },
+      {
+        "line": 12,
+        "text": "再生灵药使用后可重新分配人物点数"
+      },
+      {
+        "line": 13,
+        "text": "各村落传送票阿凯鲁法村、哥拉尔城、雷克塔尔镇、流星山丘"
+      },
+      {
+        "line": 14,
+        "text": "小护士使用后回复4000点生命力"
+      },
+      {
+        "line": 15,
+        "text": "各种材料誓言之证、魔族的水晶、"
+      },
+      {
+        "line": 16,
+        "text": "鬼灵设计图改造后为仇恨之灵；火8风2；不死系；7技能栏；18 12 20 29 41"
+      },
+      {
+        "line": 17,
+        "text": "水果蝙蝠设计图改造后为改造水果蝙蝠；风8地2；飞行系；9技能栏；23 41 20 25 11"
+      },
+      {
+        "line": 18,
+        "text": "大地翼龙设计图改造后为改造大地翼龙；风5地5；龙系；9技能栏；34 43 19 16 8"
+      },
+      {
+        "line": 19,
+        "text": "血腥之刃重铸图改造后为杀意之刃；风6地4；金属系；9技能栏；33 45 20 13 9"
+      },
+      {
+        "line": 20,
+        "text": "钢铁剑士之剑双击后获得钢铁剑士；风7地3；金属系；10技能栏；38 46 16 17 8"
+      },
+      {
+        "line": 21,
+        "text": "钢铁制裁者之剑双击后获得钢铁制裁者；水7火3；金属系；10技能栏；28 10 20 24 43"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "currency",
+        "amount": 1000,
+        "currency": "G",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "亚诺曼城寒冬礼包贩售员（131.131）",
+      "sourceLines": [
+        1,
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "与亚诺曼城寒冬礼包贩售员（131.131）对话，交出1000G购买【寒冬礼包】。可一次买多个，但礼包不可堆叠；2、3线需防范重合摊位。",
+        "inputs": [
+          {
+            "item": "1000G",
+            "quantity": 1,
+            "action": "hand-over",
+            "entityType": "currency",
+            "amount": 1000,
+            "currency": "G",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "寒冬礼包",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1,
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "双击【寒冬礼包】，从奖品池获得奖品。原文区分首批与维护后补充奖品，但纯文本未保留颜色映射；魔石已明确于维护后取消。",
+        "inputs": [
+          {
+            "item": "寒冬礼包",
+            "quantity": 1,
+            "action": "use",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "寒冬礼包奖品",
+            "quantity": 1,
+            "acquisition": "reward-pool",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [
+        {
+          "change": "维护后奖池调整",
+          "knownRemovedItem": "魔石",
+          "colorMappingLostInPlainText": true,
+          "sourceLines": [
+            3,
+            5
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "1000G",
+        "quantity": 1,
+        "action": "hand-over",
+        "entityType": "currency",
+        "amount": 1000,
+        "currency": "G",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "寒冬礼包",
+        "quantity": 1,
+        "action": "use",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "寒冬礼包",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "寒冬礼包奖品",
+        "quantity": 1,
+        "acquisition": "reward-pool",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "前往亚诺曼城与寒冬礼包贩售员（131.131）对话，交出1000G购买【寒冬礼包】。双击【寒冬礼包】获得奖品。",
+      "type": "purchase-and-open",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "◆【寒冬礼包】可一次性购买多个，不可堆叠；在2线、3线购买时注意与NPC重合的摆摊玩家，勿购买错误（推荐在其他线路购买礼包）",
+      "type": "purchase-warning",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆【寒冬礼包】奖品： （黑色为第一批奖品，红色为维护后补充的奖品）",
+      "type": "version-heading",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "名称备注",
+      "type": "table-heading",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "魔石维护后该奖品已取消",
+      "type": "reward-row",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "鼠王惊奇蛋——",
+      "type": "reward-row",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "完全修理券——",
+      "type": "reward-row",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "技能学习证——",
+      "type": "reward-row",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "神奇的药草随机增加技能经验200点",
+      "type": "reward-row",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "传送石优惠券持有该物品时，使用法兰王国、苏国、艾尔巴尼亚王国传送石无需费用",
+      "type": "reward-row",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "可交易可摆摊、不限使用次数",
+      "type": "reward-continuation",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "再生灵药使用后可重新分配人物点数",
+      "type": "reward-row",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 13,
+      "text": "各村落传送票阿凯鲁法村、哥拉尔城、雷克塔尔镇、流星山丘",
+      "type": "reward-row",
+      "sourceLines": [
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 14,
+      "text": "小护士使用后回复4000点生命力",
+      "type": "reward-row",
+      "sourceLines": [
+        14
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 15,
+      "text": "各种材料誓言之证、魔族的水晶、",
+      "type": "reward-row",
+      "sourceLines": [
+        15
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 16,
+      "text": "鬼灵设计图改造后为仇恨之灵；火8风2；不死系；7技能栏；18 12 20 29 41",
+      "type": "reward-row",
+      "sourceLines": [
+        16
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 17,
+      "text": "水果蝙蝠设计图改造后为改造水果蝙蝠；风8地2；飞行系；9技能栏；23 41 20 25 11",
+      "type": "reward-row",
+      "sourceLines": [
+        17
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 18,
+      "text": "大地翼龙设计图改造后为改造大地翼龙；风5地5；龙系；9技能栏；34 43 19 16 8",
+      "type": "reward-row",
+      "sourceLines": [
+        18
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 19,
+      "text": "血腥之刃重铸图改造后为杀意之刃；风6地4；金属系；9技能栏；33 45 20 13 9",
+      "type": "reward-row",
+      "sourceLines": [
+        19
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 20,
+      "text": "钢铁剑士之剑双击后获得钢铁剑士；风7地3；金属系；10技能栏；38 46 16 17 8",
+      "type": "reward-row",
+      "sourceLines": [
+        20
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 21,
+      "text": "钢铁制裁者之剑双击后获得钢铁制裁者；水7火3；金属系；10技能栏；28 10 20 24 43",
+      "type": "reward-row",
+      "sourceLines": [
+        21
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        21
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "winter-gift-pool",
+      "version": "common",
+      "tier": "common",
+      "kind": "reward-pool",
+      "items": [
+        {
+          "id": "magic-stone-cancelled",
+          "name": "魔石",
+          "role": "valuable-result",
+          "availability": "维护后已取消",
+          "active": false,
+          "sourceLines": [
+            5
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "mouse-king-surprise-egg",
+          "name": "鼠王惊奇蛋",
+          "role": "valuable-result",
+          "sourceLines": [
+            6
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "complete-repair-ticket",
+          "name": "完全修理券",
+          "role": "valuable-result",
+          "sourceLines": [
+            7
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "skill-learning-certificate",
+          "name": "技能学习证",
+          "role": "valuable-result",
+          "sourceLines": [
+            8
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "magical-herb",
+          "name": "神奇的药草",
+          "role": "valuable-result",
+          "properties": {
+            "skillExperience": "随机增加200"
+          },
+          "sourceLines": [
+            9
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "teleport-discount-ticket",
+          "name": "传送石优惠券",
+          "role": "valuable-result",
+          "properties": {
+            "effect": "法兰王国、苏国、艾尔巴尼亚王国传送石免费",
+            "tradeable": true,
+            "stallable": true,
+            "useLimit": "不限次数"
+          },
+          "sourceLines": [
+            10,
+            11
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "regeneration-elixir",
+          "name": "再生灵药",
+          "role": "valuable-result",
+          "properties": {
+            "useEffect": "重新分配人物点数"
+          },
+          "sourceLines": [
+            12
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "village-tickets",
+          "name": "各村落传送票",
+          "role": "valuable-result",
+          "variants": [
+            "阿凯鲁法村",
+            "哥拉尔城",
+            "雷克塔尔镇",
+            "流星山丘"
+          ],
+          "sourceLines": [
+            13
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "little-nurse",
+          "name": "小护士",
+          "role": "valuable-result",
+          "properties": {
+            "hpRecovery": 4000
+          },
+          "sourceLines": [
+            14
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "materials",
+          "name": "各种材料",
+          "role": "valuable-result",
+          "listedItems": [
+            "誓言之证",
+            "魔族的水晶"
+          ],
+          "sourceLines": [
+            15
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "ghost-design",
+          "name": "鬼灵设计图",
+          "role": "valuable-result",
+          "resultPet": {
+            "name": "仇恨之灵",
+            "elements": {
+              "火": 8,
+              "风": 2
+            },
+            "race": "不死系",
+            "skillSlots": 7,
+            "growth": [
+              18,
+              12,
+              20,
+              29,
+              41
+            ]
+          },
+          "sourceLines": [
+            16
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "fruit-bat-design",
+          "name": "水果蝙蝠设计图",
+          "role": "valuable-result",
+          "resultPet": {
+            "name": "改造水果蝙蝠",
+            "elements": {
+              "风": 8,
+              "地": 2
+            },
+            "race": "飞行系",
+            "skillSlots": 9,
+            "growth": [
+              23,
+              41,
+              20,
+              25,
+              11
+            ]
+          },
+          "sourceLines": [
+            17
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "earth-winged-dragon-design",
+          "name": "大地翼龙设计图",
+          "role": "valuable-result",
+          "resultPet": {
+            "name": "改造大地翼龙",
+            "elements": {
+              "风": 5,
+              "地": 5
+            },
+            "race": "龙系",
+            "skillSlots": 9,
+            "growth": [
+              34,
+              43,
+              19,
+              16,
+              8
+            ]
+          },
+          "sourceLines": [
+            18
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "bloody-blade-reforge",
+          "name": "血腥之刃重铸图",
+          "role": "valuable-result",
+          "resultPet": {
+            "name": "杀意之刃",
+            "elements": {
+              "风": 6,
+              "地": 4
+            },
+            "race": "金属系",
+            "skillSlots": 9,
+            "growth": [
+              33,
+              45,
+              20,
+              13,
+              9
+            ]
+          },
+          "sourceLines": [
+            19
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "steel-swordsman-sword",
+          "name": "钢铁剑士之剑",
+          "role": "valuable-result",
+          "useResult": {
+            "pet": "钢铁剑士"
+          },
+          "pet": {
+            "elements": {
+              "风": 7,
+              "地": 3
+            },
+            "race": "金属系",
+            "skillSlots": 10,
+            "growth": [
+              38,
+              46,
+              16,
+              17,
+              8
+            ]
+          },
+          "sourceLines": [
+            20
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "steel-punisher-sword",
+          "name": "钢铁制裁者之剑",
+          "role": "valuable-result",
+          "useResult": {
+            "pet": "钢铁制裁者"
+          },
+          "pet": {
+            "elements": {
+              "水": 7,
+              "火": 3
+            },
+            "race": "金属系",
+            "skillSlots": 10,
+            "growth": [
+              28,
+              10,
+              20,
+              24,
+              43
+            ]
+          },
+          "sourceLines": [
+            21
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-2",
+      "selection": "source-unspecified",
+      "versionBoundaryNote": "颜色映射在纯文本中丢失",
+      "sourceLines": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 59,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "临时活动/任务"
+  }
+}

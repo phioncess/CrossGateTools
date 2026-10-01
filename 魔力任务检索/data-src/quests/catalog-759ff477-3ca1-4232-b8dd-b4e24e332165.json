@@ -1,0 +1,730 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-759ff477-3ca1-4232-b8dd-b4e24e332165",
+  "name": "希望之光",
+  "aliases": [
+    "邪灵水晶",
+    "珍稀图鉴包",
+    "北风戒指",
+    "祭祀树枝"
+  ],
+  "metadata": {
+    "category": "怀旧服其他自制任务",
+    "level": "1 级",
+    "availability": "available",
+    "summary": "以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_759ff477-3ca1-4232-b8dd-b4e24e332165",
+    "url": "https://www.molibaike.com/Mission/Detail/759ff477-3ca1-4232-b8dd-b4e24e332165?u=True",
+    "localFiles": [],
+    "lineCount": 14,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往法兰城大圣堂（154.29），向北进入礼拜堂（14.7）。"
+      },
+      {
+        "line": 2,
+        "text": "2.与魔法师波可斯（20.19）对话，用一定数量的【邪灵水晶】兑换【奖品】，任务完结。"
+      },
+      {
+        "line": 3,
+        "text": "◆在大部分地图击杀魔物后会随机掉落【邪灵水晶】，击杀部分BOSS一定掉落"
+      },
+      {
+        "line": 4,
+        "text": "◆不包括德威特岛、杰诺姆岛、玛塔塔平原区域等非日方制作的地图的魔物"
+      },
+      {
+        "line": 5,
+        "text": "◆【奖品】："
+      },
+      {
+        "line": 6,
+        "text": "数量奖品明细"
+      },
+      {
+        "line": 7,
+        "text": "50珍稀图鉴包图鉴：火焰舞者、黄金树精、棉球、山飞甲、烈风翼龙、翼龙、僧侣僵尸（暗黑僧侣）"
+      },
+      {
+        "line": 8,
+        "text": "150祭祀树枝双击后进入战斗，随机遭遇：Lv.1液态史莱姆、穴熊、异型蜂、红帽哥布林、蜥蜴斗士、星菇、强盾、人魔草注：野外迷宫内使用随机遭遇高等级魔物"
+      },
+      {
+        "line": 9,
+        "text": "300蜥蜴斗士改造包蜥蜴斗士设计图（A~E）任意1张"
+      },
+      {
+        "line": 10,
+        "text": "350东风戒指Lv.8戒指、耐久250；生命+50；超强混乱魔法耗魔减少20%"
+      },
+      {
+        "line": 11,
+        "text": "南风戒指Lv.8戒指、耐久250；生命+50；超强昏睡魔法耗魔减少20%"
+      },
+      {
+        "line": 12,
+        "text": "西风戒指Lv.8戒指、耐久250；生命+50；超强遗忘魔法耗魔减少20%"
+      },
+      {
+        "line": 13,
+        "text": "北风戒指Lv.8戒指、耐久250；生命+50；超强恢复魔法耗魔减少20%"
+      },
+      {
+        "line": 14,
+        "text": "999被净化的诅咒结晶Lv.1恶魔吓人箱"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [
+      {
+        "item": "邪灵水晶",
+        "randomDrop": "大部分地图魔物",
+        "guaranteedDrop": "部分BOSS",
+        "excludedAreas": [
+          "德威特岛",
+          "杰诺姆岛",
+          "玛塔塔平原区域等非日方制作地图"
+        ],
+        "sourceLines": [
+          3,
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "references": []
+  },
+  "requirements": {
+    "conditions": []
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "法兰城大圣堂礼拜堂",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "前往法兰城大圣堂（154.29），向北进入礼拜堂（14.7）。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "通过大部分地图魔物随机掉落或部分BOSS必掉获得【邪灵水晶】；非日方制作地图区域不在掉落范围。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "邪灵水晶",
+            "quantity": 1,
+            "acquisition": "monster-drop",
+            "randomFromMostMonsters": true,
+            "guaranteedFromSomeBosses": true,
+            "excludedAreas": [
+              "德威特岛",
+              "杰诺姆岛",
+              "玛塔塔平原区域等非日方制作地图"
+            ],
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          3,
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "与魔法师波可斯（20.19）对话，按兑换表交出一定数量的【邪灵水晶】，获得所选奖品，任务完结。",
+        "inputs": [
+          {
+            "item": "邪灵水晶",
+            "quantity": "按所选兑换项",
+            "action": "hand-over",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "所选兑换奖品",
+            "quantity": 1,
+            "acquisition": "exchange-recipe",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          2,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "邪灵水晶",
+        "quantity": "按所选兑换项",
+        "action": "hand-over",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "邪灵水晶",
+        "quantity": 1,
+        "acquisition": "monster-drop",
+        "randomFromMostMonsters": true,
+        "guaranteedFromSomeBosses": true,
+        "excludedAreas": [
+          "德威特岛",
+          "杰诺姆岛",
+          "玛塔塔平原区域等非日方制作地图"
+        ],
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "所选兑换奖品",
+        "quantity": 1,
+        "acquisition": "exchange-recipe",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往法兰城大圣堂（154.29），向北进入礼拜堂（14.7）。",
+      "type": "route-step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2.与魔法师波可斯（20.19）对话，用一定数量的【邪灵水晶】兑换【奖品】，任务完结。",
+      "type": "exchange-step",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆在大部分地图击杀魔物后会随机掉落【邪灵水晶】，击杀部分BOSS一定掉落",
+      "type": "drop-source",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆不包括德威特岛、杰诺姆岛、玛塔塔平原区域等非日方制作的地图的魔物",
+      "type": "drop-exclusion",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "◆【奖品】：",
+      "type": "reward-heading",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "数量奖品明细",
+      "type": "table-heading",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "50珍稀图鉴包图鉴：火焰舞者、黄金树精、棉球、山飞甲、烈风翼龙、翼龙、僧侣僵尸（暗黑僧侣）",
+      "type": "exchange-row",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "150祭祀树枝双击后进入战斗，随机遭遇：Lv.1液态史莱姆、穴熊、异型蜂、红帽哥布林、蜥蜴斗士、星菇、强盾、人魔草注：野外迷宫内使用随机遭遇高等级魔物",
+      "type": "exchange-row",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "300蜥蜴斗士改造包蜥蜴斗士设计图（A~E）任意1张",
+      "type": "exchange-row",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "350东风戒指Lv.8戒指、耐久250；生命+50；超强混乱魔法耗魔减少20%",
+      "type": "exchange-row",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "南风戒指Lv.8戒指、耐久250；生命+50；超强昏睡魔法耗魔减少20%",
+      "type": "exchange-row",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "西风戒指Lv.8戒指、耐久250；生命+50；超强遗忘魔法耗魔减少20%",
+      "type": "exchange-row",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 13,
+      "text": "北风戒指Lv.8戒指、耐久250；生命+50；超强恢复魔法耗魔减少20%",
+      "type": "exchange-row",
+      "sourceLines": [
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 14,
+      "text": "999被净化的诅咒结晶Lv.1恶魔吓人箱",
+      "type": "exchange-row",
+      "sourceLines": [
+        14
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        14
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "hope-light-exchanges",
+      "version": "common",
+      "tier": "common",
+      "kind": "exchange-recipe",
+      "items": [
+        {
+          "id": "rare-card-pack",
+          "name": "珍稀图鉴包",
+          "role": "valuable-result",
+          "cost": {
+            "item": "邪灵水晶",
+            "quantity": 50
+          },
+          "listedCards": [
+            "火焰舞者",
+            "黄金树精",
+            "棉球",
+            "山飞甲",
+            "烈风翼龙",
+            "翼龙",
+            "僧侣僵尸（暗黑僧侣）"
+          ],
+          "selection": "source-unspecified",
+          "sourceLines": [
+            7
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "ritual-branch",
+          "name": "祭祀树枝",
+          "role": "valuable-result",
+          "cost": {
+            "item": "邪灵水晶",
+            "quantity": 150
+          },
+          "useEffect": "双击进入战斗",
+          "randomEncounter": {
+            "normalUse": {
+              "level": 1,
+              "enemies": [
+                "液态史莱姆",
+                "穴熊",
+                "异型蜂",
+                "红帽哥布林",
+                "蜥蜴斗士",
+                "星菇",
+                "强盾",
+                "人魔草"
+              ]
+            },
+            "wildMaze": "随机遭遇高等级魔物"
+          },
+          "sourceLines": [
+            8
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "lizard-fighter-mod-pack",
+          "name": "蜥蜴斗士改造包",
+          "role": "valuable-result",
+          "cost": {
+            "item": "邪灵水晶",
+            "quantity": 300
+          },
+          "contains": "蜥蜴斗士设计图（A~E）任意1张",
+          "sourceLines": [
+            9
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "wind-ring-1",
+          "name": "东风戒指",
+          "role": "valuable-result",
+          "cost": {
+            "item": "邪灵水晶",
+            "quantity": 350
+          },
+          "entityType": "equipment",
+          "properties": {
+            "level": 8,
+            "category": "戒指",
+            "durability": 250,
+            "hp": 50,
+            "mpReduction": {
+              "skill": "超强混乱魔法",
+              "percent": 20
+            }
+          },
+          "sourceLines": [
+            10
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "wind-ring-2",
+          "name": "南风戒指",
+          "role": "valuable-result",
+          "cost": {
+            "item": "邪灵水晶",
+            "quantity": 350
+          },
+          "entityType": "equipment",
+          "properties": {
+            "level": 8,
+            "category": "戒指",
+            "durability": 250,
+            "hp": 50,
+            "mpReduction": {
+              "skill": "超强昏睡魔法",
+              "percent": 20
+            }
+          },
+          "sourceLines": [
+            11
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "wind-ring-3",
+          "name": "西风戒指",
+          "role": "valuable-result",
+          "cost": {
+            "item": "邪灵水晶",
+            "quantity": 350
+          },
+          "entityType": "equipment",
+          "properties": {
+            "level": 8,
+            "category": "戒指",
+            "durability": 250,
+            "hp": 50,
+            "mpReduction": {
+              "skill": "超强遗忘魔法",
+              "percent": 20
+            }
+          },
+          "sourceLines": [
+            12
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "wind-ring-4",
+          "name": "北风戒指",
+          "role": "valuable-result",
+          "cost": {
+            "item": "邪灵水晶",
+            "quantity": 350
+          },
+          "entityType": "equipment",
+          "properties": {
+            "level": 8,
+            "category": "戒指",
+            "durability": 250,
+            "hp": 50,
+            "mpReduction": {
+              "skill": "超强恢复魔法",
+              "percent": 20
+            }
+          },
+          "sourceLines": [
+            13
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "purified-curse-crystal",
+          "name": "被净化的诅咒结晶",
+          "role": "valuable-result",
+          "cost": {
+            "item": "邪灵水晶",
+            "quantity": 999
+          },
+          "containsPet": {
+            "name": "恶魔吓人箱",
+            "level": 1
+          },
+          "sourceLines": [
+            14
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-3",
+      "sourceLines": [
+        2,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 42,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "怀旧服其他自制任务"
+  }
+}

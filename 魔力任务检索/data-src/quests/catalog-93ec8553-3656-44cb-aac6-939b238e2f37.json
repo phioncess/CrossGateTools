@@ -1,0 +1,858 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-93ec8553-3656-44cb-aac6-939b238e2f37",
+  "name": "就职矿工",
+  "aliases": [
+    "矿工就职"
+  ],
+  "metadata": {
+    "category": "职业就职任务",
+    "level": "1 级",
+    "availability": "available",
+    "summary": "",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_93ec8553-3656-44cb-aac6-939b238e2f37",
+    "url": "https://www.molibaike.com/Mission/Detail/93ec8553-3656-44cb-aac6-939b238e2f37?u=True",
+    "localFiles": [],
+    "lineCount": 13,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往圣拉鲁卡村赛谢利亚酒吧（39.70）与募集矿工的洛伊（16.10）习得技能挖矿体验后，"
+      },
+      {
+        "line": 2,
+        "text": "前往法兰城西门外国营第24坑道（351.145）地下1楼，在任意位置使用挖矿体验，挖掘【铜】（铜矿，非铜条）20个。"
+      },
+      {
+        "line": 3,
+        "text": "◆已持有【铜】*20时，此步可跳过"
+      },
+      {
+        "line": 4,
+        "text": "◆学习挖掘体验无需费用，游民亦可习得，占技能栏3格"
+      },
+      {
+        "line": 5,
+        "text": "◆时道服：【铜】可以在艾夏岛-武器工房（144.120）负一层购买到，50G/个。"
+      },
+      {
+        "line": 6,
+        "text": "2.前往法兰城毕夫鲁之家（206.37），持有【铜】*20与那尔薇（8.3）对话，选“是”获得【便当？】。"
+      },
+      {
+        "line": 7,
+        "text": "3.返回国营第24号矿坑道（351.145）地下一楼与矿工毕夫鲁（35.7）对话，选“是”交出【便当？】获得【矿石？】、【有关矿石的纸条】。"
+      },
+      {
+        "line": 8,
+        "text": "4.前往法兰城凯蒂夫人店（196.78）与鉴定师马尔弗（13.9）对话，选“是”交出【矿石？】、【有关矿石的纸条】获得【给那尔薇的信】。"
+      },
+      {
+        "line": 9,
+        "text": "5.前往毕夫鲁之家（206.37）与那尔薇（8.3）对话，选“是”交出【给那尔薇的信】获得【饮料？】。"
+      },
+      {
+        "line": 10,
+        "text": "6.前往国营第24矿坑道地下一楼与矿工毕夫鲁（35.7）对话，选“是”交出【饮料？】获得【矿工推荐信】。"
+      },
+      {
+        "line": 11,
+        "text": "7.前往圣拉鲁卡村村长的家（49.81）2楼与矿工吉拉瓦特（8.4）对话即可就职矿工，任务完结。"
+      },
+      {
+        "line": 12,
+        "text": "◆前往法兰城基尔的家（200.132）与传说的矿工基尔对话可学习技能挖掘，费用100G"
+      },
+      {
+        "line": 13,
+        "text": "◆【矿山钥匙】，国营24坑道地下3楼必要物品，获得方法参考《矿工的安全帽》"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [
+      {
+        "item": "矿山钥匙",
+        "sourceQuest": "矿工的安全帽",
+        "use": "国营24坑道地下3楼必要物品",
+        "sourceLines": [
+          13
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "references": []
+  },
+  "requirements": {
+    "conditions": []
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "圣拉鲁卡村赛谢利亚酒吧募集矿工的洛伊（16.10）",
+      "sourceLines": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "向募集矿工的洛伊学习免费技能【挖矿体验】，再到国营第24坑道地下1楼挖掘20个【铜】；已有20个铜时可跳过采集。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "铜",
+            "quantity": 20,
+            "acquisition": "mining",
+            "alternateSource": {
+              "server": "时道服",
+              "location": "艾夏岛武器工房负一层",
+              "unitPrice": {
+                "amount": 50,
+                "unit": "G"
+              }
+            },
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "持有20个【铜】与毕夫鲁之家那尔薇（8.3）对话，获得【便当？】；原文未说明铜是否交出。",
+        "inputs": [
+          {
+            "item": "铜",
+            "quantity": 20,
+            "action": "hold",
+            "consumed": "source-unspecified",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "便当？",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "与矿工毕夫鲁（35.7）对话，交出【便当？】，获得【矿石？】和【有关矿石的纸条】。",
+        "inputs": [
+          {
+            "item": "便当？",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "矿石？",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "有关矿石的纸条",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "与鉴定师马尔弗（13.9）对话，交出【矿石？】和纸条，获得【给那尔薇的信】。",
+        "inputs": [
+          {
+            "item": "矿石？",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              8
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "有关矿石的纸条",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              8
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "给那尔薇的信",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              8
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-5",
+        "order": 5,
+        "text": "与那尔薇对话，交出【给那尔薇的信】，获得【饮料？】。",
+        "inputs": [
+          {
+            "item": "给那尔薇的信",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              9
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "饮料？",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              9
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-6",
+        "order": 6,
+        "text": "与矿工毕夫鲁对话，交出【饮料？】，获得【矿工推荐信】。",
+        "inputs": [
+          {
+            "item": "饮料？",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              10
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "矿工推荐信",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              10
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-7",
+        "order": 7,
+        "text": "前往圣拉鲁卡村村长家2楼与矿工吉拉瓦特（8.4）对话，就职矿工，任务完结。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "铜",
+        "quantity": 20,
+        "action": "hold",
+        "consumed": "source-unspecified",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "便当？",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "矿石？",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "有关矿石的纸条",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "给那尔薇的信",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-5",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "饮料？",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-6",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "铜",
+        "quantity": 20,
+        "acquisition": "mining",
+        "alternateSource": {
+          "server": "时道服",
+          "location": "艾夏岛武器工房负一层",
+          "unitPrice": {
+            "amount": 50,
+            "unit": "G"
+          }
+        },
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "便当？",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "矿石？",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "有关矿石的纸条",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "给那尔薇的信",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "饮料？",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-5",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "矿工推荐信",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-6",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往圣拉鲁卡村赛谢利亚酒吧（39.70）与募集矿工的洛伊（16.10）习得技能挖矿体验后，",
+      "type": "skill-and-step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "前往法兰城西门外国营第24坑道（351.145）地下1楼，在任意位置使用挖矿体验，挖掘【铜】（铜矿，非铜条）20个。",
+      "type": "collection-event",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆已持有【铜】*20时，此步可跳过",
+      "type": "skip-rule",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆学习挖掘体验无需费用，游民亦可习得，占技能栏3格",
+      "type": "skill-detail",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "◆时道服：【铜】可以在艾夏岛-武器工房（144.120）负一层购买到，50G/个。",
+      "type": "alternate-source",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "2.前往法兰城毕夫鲁之家（206.37），持有【铜】*20与那尔薇（8.3）对话，选“是”获得【便当？】。",
+      "type": "step",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "3.返回国营第24号矿坑道（351.145）地下一楼与矿工毕夫鲁（35.7）对话，选“是”交出【便当？】获得【矿石？】、【有关矿石的纸条】。",
+      "type": "step",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "4.前往法兰城凯蒂夫人店（196.78）与鉴定师马尔弗（13.9）对话，选“是”交出【矿石？】、【有关矿石的纸条】获得【给那尔薇的信】。",
+      "type": "step",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "5.前往毕夫鲁之家（206.37）与那尔薇（8.3）对话，选“是”交出【给那尔薇的信】获得【饮料？】。",
+      "type": "step",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "6.前往国营第24矿坑道地下一楼与矿工毕夫鲁（35.7）对话，选“是”交出【饮料？】获得【矿工推荐信】。",
+      "type": "step",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "7.前往圣拉鲁卡村村长的家（49.81）2楼与矿工吉拉瓦特（8.4）对话即可就职矿工，任务完结。",
+      "type": "step",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "◆前往法兰城基尔的家（200.132）与传说的矿工基尔对话可学习技能挖掘，费用100G",
+      "type": "skill-learning",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 13,
+      "text": "◆【矿山钥匙】，国营24坑道地下3楼必要物品，获得方法参考《矿工的安全帽》",
+      "type": "item-source",
+      "sourceLines": [
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        13
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [],
+  "outcomes": {
+    "titles": [],
+    "careers": [
+      {
+        "career": "矿工",
+        "action": "employment",
+        "sourceLines": [
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "skills": [
+      {
+        "name": "挖矿体验",
+        "cost": {
+          "amount": 0,
+          "unit": "G"
+        },
+        "skillSlotCost": 3,
+        "availableTo": "游民亦可学习",
+        "sourceLines": [
+          1,
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "name": "挖掘",
+        "teacher": "法兰城基尔的家传说的矿工基尔",
+        "cost": {
+          "amount": 100,
+          "unit": "G"
+        },
+        "sourceLines": [
+          12
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 2,
+    "stageLabel": "",
+    "optional": false,
+    "type": "职业就职任务",
+    "sourceCategory": "职业就职任务"
+  }
+}

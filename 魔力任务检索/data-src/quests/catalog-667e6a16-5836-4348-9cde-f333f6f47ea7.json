@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-667e6a16-5836-4348-9cde-f333f6f47ea7",
+  "name": "就职传教士",
+  "aliases": [
+    "传教士就职"
+  ],
+  "metadata": {
+    "category": "职业就职任务",
+    "level": "1 级",
+    "availability": "available",
+    "summary": "以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_667e6a16-5836-4348-9cde-f333f6f47ea7",
+    "url": "https://www.molibaike.com/Mission/Detail/667e6a16-5836-4348-9cde-f333f6f47ea7?u=True",
+    "localFiles": [],
+    "lineCount": 11,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往法兰城（154.29）进入大圣堂的入口，通过（14.7）处抵达礼拜堂。"
+      },
+      {
+        "line": 2,
+        "text": "2.前往（23.0）处抵达大圣堂里面。"
+      },
+      {
+        "line": 3,
+        "text": "3.与作相性测验的托特（16.11）对话，所有选项皆选“是”获得【僧侣适性检查合格证】。"
+      },
+      {
+        "line": 4,
+        "text": "4.持有【僧侣适性检查合格证】与大僧侣拉马隆（17.9）即可就职传教士，任务完结。"
+      },
+      {
+        "line": 5,
+        "text": "◆仅限传教士职业，与僧侣特雷因（14.6）对话，选“是”传送至大圣堂里面；"
+      },
+      {
+        "line": 6,
+        "text": "与僧侣法马斯（14.10）对话，可交出100G学习技能补血魔法；"
+      },
+      {
+        "line": 7,
+        "text": "与僧侣菲欧雷（19.12）对话，可交出100G学习技能强力补血魔法"
+      },
+      {
+        "line": 8,
+        "text": "◆其他技能学习："
+      },
+      {
+        "line": 9,
+        "text": "超强补血魔法习得技能方法参考任务《挑战神兽》，限制1转传教；"
+      },
+      {
+        "line": 10,
+        "text": "气绝回复学习地点位于亚留特村的神官理贾（42.72），不限职业"
+      },
+      {
+        "line": 11,
+        "text": "◆怀旧服：不限定职业可以使用【技能学习证】，习得教4种得意技，参考《怀旧服【技能学习证】详情》一文"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": [
+      {
+        "type": "skill-source",
+        "skill": "超强补血魔法",
+        "sourceQuest": "挑战神兽",
+        "sourceLines": [
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "server-skill-reference",
+        "target": "怀旧服【技能学习证】详情",
+        "sourceLines": [
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "requirements": {
+    "conditions": []
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "法兰城大圣堂礼拜堂",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "从法兰城（154.29）进入大圣堂入口，经（14.7）抵达礼拜堂。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "从礼拜堂（23.0）进入大圣堂里面。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "与作相性测验的托特（16.11）对话，所有选项均选择“是”，获得【僧侣适性检查合格证】。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "僧侣适性检查合格证",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "持有【僧侣适性检查合格证】与大僧侣拉马隆（17.9）对话，就职传教士，任务完结。",
+        "inputs": [
+          {
+            "item": "僧侣适性检查合格证",
+            "quantity": 1,
+            "action": "hold",
+            "consumed": false,
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "僧侣适性检查合格证",
+        "quantity": 1,
+        "action": "hold",
+        "consumed": false,
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "僧侣适性检查合格证",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往法兰城（154.29）进入大圣堂的入口，通过（14.7）处抵达礼拜堂。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2.前往（23.0）处抵达大圣堂里面。",
+      "type": "step",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "3.与作相性测验的托特（16.11）对话，所有选项皆选“是”获得【僧侣适性检查合格证】。",
+      "type": "step",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "4.持有【僧侣适性检查合格证】与大僧侣拉马隆（17.9）即可就职传教士，任务完结。",
+      "type": "step",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "◆仅限传教士职业，与僧侣特雷因（14.6）对话，选“是”传送至大圣堂里面；",
+      "type": "skill-access",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "与僧侣法马斯（14.10）对话，可交出100G学习技能补血魔法；",
+      "type": "skill-learning",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "与僧侣菲欧雷（19.12）对话，可交出100G学习技能强力补血魔法",
+      "type": "skill-learning",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "◆其他技能学习：",
+      "type": "skill-heading",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "超强补血魔法习得技能方法参考任务《挑战神兽》，限制1转传教；",
+      "type": "skill-reference",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "气绝回复学习地点位于亚留特村的神官理贾（42.72），不限职业",
+      "type": "skill-learning",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "◆怀旧服：不限定职业可以使用【技能学习证】，习得教4种得意技，参考《怀旧服【技能学习证】详情》一文",
+      "type": "server-rule",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        11
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [],
+  "outcomes": {
+    "titles": [],
+    "careers": [
+      {
+        "career": "传教士",
+        "action": "employment",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "skills": [
+      {
+        "name": "补血魔法",
+        "careerRestriction": "传教士",
+        "accessNpc": "僧侣特雷因（14.6）",
+        "teacher": "僧侣法马斯（14.10）",
+        "cost": {
+          "amount": 100,
+          "unit": "G"
+        },
+        "sourceLines": [
+          5,
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "name": "强力补血魔法",
+        "careerRestriction": "传教士",
+        "accessNpc": "僧侣特雷因（14.6）",
+        "teacher": "僧侣菲欧雷（19.12）",
+        "cost": {
+          "amount": 100,
+          "unit": "G"
+        },
+        "sourceLines": [
+          5,
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "name": "超强补血魔法",
+        "minimumCareerRank": "1转传教",
+        "sourceQuest": "挑战神兽",
+        "sourceLines": [
+          8,
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "name": "气绝回复",
+        "careerRestriction": null,
+        "teacher": "亚留特村神官理贾（42.72）",
+        "sourceLines": [
+          8,
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "names": "传教士4种得意技",
+        "server": "怀旧服",
+        "acquisition": "技能学习证",
+        "careerRestriction": null,
+        "sourceLines": [
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 3,
+    "stageLabel": "",
+    "optional": false,
+    "type": "职业就职任务",
+    "sourceCategory": "职业就职任务"
+  }
+}

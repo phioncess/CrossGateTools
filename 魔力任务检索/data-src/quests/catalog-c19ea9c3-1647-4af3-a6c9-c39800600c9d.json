@@ -1,0 +1,670 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-c19ea9c3-1647-4af3-a6c9-c39800600c9d",
+  "name": "被掳走的大使",
+  "aliases": [
+    "2019端午节"
+  ],
+  "metadata": {
+    "category": "临时活动/任务",
+    "level": "0 级",
+    "availability": "closed",
+    "summary": "必要条件：夜晚；怀旧服活动（已关闭）；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_c19ea9c3-1647-4af3-a6c9-c39800600c9d",
+    "url": "https://www.molibaike.com/Mission/Detail/c19ea9c3-1647-4af3-a6c9-c39800600c9d?u=True",
+    "localFiles": [],
+    "lineCount": 9,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1、前往法兰城东医院附近的阿蒙旁，与法兰消息员对话，得到特使被掳走的信息。（可跳过）"
+      },
+      {
+        "line": 2,
+        "text": "2、夜晚，前往牛洞的宝物库（需先完成部分《牛鬼讨伐》任务才能进入），与受伤的特使（23,10）对话，获得【新鲜的粽子】。"
+      },
+      {
+        "line": 3,
+        "text": "◆【新鲜的粽子】，不可丢地，不可交易，不可宠邮。"
+      },
+      {
+        "line": 4,
+        "text": "3、携带【新鲜的粽子】与牛鬼对话进入战斗，胜利后传出洞窟。"
+      },
+      {
+        "line": 5,
+        "text": "◆理论上可以跳过第3步。战斗胜利获得【牛鬼杀】"
+      },
+      {
+        "line": 6,
+        "text": "4、前往阿凯鲁法村与卡洛尔（60,173）对话，交出【新鲜的粽子】获得称号“神灵庇佑的人”、【迷你龙舟】,任务完结。"
+      },
+      {
+        "line": 7,
+        "text": "◆推荐使用【阿凯鲁法村传送券】，整队传送。"
+      },
+      {
+        "line": 8,
+        "text": "◆物品栏拥有【迷你龙舟】时不能完成第4步。"
+      },
+      {
+        "line": 9,
+        "text": "◆【迷你龙舟】：Lv.6护身符、耐久200；攻击+15、敏捷+15、必杀+5、闪躲+5、生命+50、魔力+50；气功弹耗魔减少15%；可交易、可丢地、可宠邮。"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [
+      {
+        "quest": "牛鬼讨伐",
+        "relation": "partial-progress-required-for-access",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "time-window",
+        "value": "夜晚",
+        "appliesToStep": "step-2",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "quest-progress",
+        "quest": "牛鬼讨伐",
+        "extent": "完成可进入牛洞宝物库所需的部分进度",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "inventory-absence",
+        "item": "迷你龙舟",
+        "appliesToStep": "step-4",
+        "sourceLines": [
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "法兰城东医院附近阿蒙旁的法兰消息员",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "与法兰消息员对话，得知特使被掳走的信息；此步可以跳过。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "夜晚前往牛洞宝物库，与受伤的特使（23,10）对话，获得【新鲜的粽子】。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "新鲜的粽子",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "properties": {
+              "dropBehavior": "不可丢地",
+              "tradeable": false,
+              "petMailable": false
+            },
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          2,
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "携带【新鲜的粽子】与牛鬼对话，可进入战斗；此步理论上可以跳过，胜利后获得【牛鬼杀】并传出洞窟。",
+        "inputs": [
+          {
+            "item": "新鲜的粽子",
+            "quantity": 1,
+            "action": "hold",
+            "consumed": false,
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "牛鬼杀",
+            "quantity": 1,
+            "acquisition": "battle-victory",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "optional": true,
+        "sourceLines": [
+          4,
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "前往阿凯鲁法村与卡洛尔（60,173）对话，交出【新鲜的粽子】，获得称号“神灵庇佑的人”和【迷你龙舟】，任务完结。",
+        "inputs": [
+          {
+            "item": "新鲜的粽子",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "迷你龙舟",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [
+          {
+            "type": "route",
+            "text": "推荐使用阿凯鲁法村传送券整队传送。",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "type": "blocking-condition",
+            "text": "物品栏已有迷你龙舟时不能完成此步。",
+            "sourceLines": [
+              8
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "sourceLines": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {
+            "battle-1": {
+              "id": "battle-1",
+              "order": 1,
+              "kind": "optional-boss-battle",
+              "title": "牛鬼",
+              "triggerStep": "step-3",
+              "overview": {
+                "text": "携带新鲜的粽子与牛鬼对话可进入战斗；来源说明理论上可跳过。",
+                "sourceLines": [
+                  4,
+                  5
+                ],
+                "verification": {
+                  "status": "verified",
+                  "method": "manual-semantic-review"
+                }
+              },
+              "enemies": {
+                "enemy-1": {
+                  "id": "enemy-1",
+                  "name": "牛鬼",
+                  "level": null,
+                  "hp": null,
+                  "count": 1,
+                  "raw": "携带【新鲜的粽子】与牛鬼对话进入战斗",
+                  "sourceLines": [
+                    4
+                  ],
+                  "verification": {
+                    "status": "verified",
+                    "method": "manual-semantic-review"
+                  }
+                }
+              },
+              "sourceLines": [
+                4,
+                5
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          },
+          "encounters": [],
+          "notes": [],
+          "media": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "新鲜的粽子",
+        "quantity": 1,
+        "action": "hold",
+        "consumed": false,
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "新鲜的粽子",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "新鲜的粽子",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "properties": {
+          "dropBehavior": "不可丢地",
+          "tradeable": false,
+          "petMailable": false
+        },
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "牛鬼杀",
+        "quantity": 1,
+        "acquisition": "battle-victory",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "迷你龙舟",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1、前往法兰城东医院附近的阿蒙旁，与法兰消息员对话，得到特使被掳走的信息。（可跳过）",
+      "type": "optional-step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2、夜晚，前往牛洞的宝物库（需先完成部分《牛鬼讨伐》任务才能进入），与受伤的特使（23,10）对话，获得【新鲜的粽子】。",
+      "type": "step-and-requirement",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆【新鲜的粽子】，不可丢地，不可交易，不可宠邮。",
+      "type": "item-detail",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "3、携带【新鲜的粽子】与牛鬼对话进入战斗，胜利后传出洞窟。",
+      "type": "optional-battle-trigger",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "◆理论上可以跳过第3步。战斗胜利获得【牛鬼杀】",
+      "type": "battle-reward",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "4、前往阿凯鲁法村与卡洛尔（60,173）对话，交出【新鲜的粽子】获得称号“神灵庇佑的人”、【迷你龙舟】,任务完结。",
+      "type": "step",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "◆推荐使用【阿凯鲁法村传送券】，整队传送。",
+      "type": "route",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "◆物品栏拥有【迷你龙舟】时不能完成第4步。",
+      "type": "blocking-condition",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "◆【迷你龙舟】：Lv.6护身符、耐久200；攻击+15、敏捷+15、必杀+5、闪躲+5、生命+50、魔力+50；气功弹耗魔减少15%；可交易、可丢地、可宠邮。",
+      "type": "reward-detail",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        9
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "reward-oni-slayer",
+      "version": "common",
+      "tier": "common",
+      "kind": "battle-drop",
+      "items": [
+        {
+          "id": "oni-slayer",
+          "name": "牛鬼杀",
+          "role": "valuable-result",
+          "sourceLines": [
+            5
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-3",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "id": "reward-mini-dragon-boat",
+      "version": "common",
+      "tier": "common",
+      "kind": "quest-completion",
+      "items": [
+        {
+          "id": "mini-dragon-boat",
+          "name": "迷你龙舟",
+          "role": "valuable-result",
+          "entityType": "equipment",
+          "properties": {
+            "level": 6,
+            "category": "护身符",
+            "durability": 200,
+            "attack": 15,
+            "agility": 15,
+            "critical": 5,
+            "evasion": 5,
+            "life": 50,
+            "magic": 50,
+            "effects": [
+              {
+                "skill": "气功弹",
+                "manaCostChangePercent": -15
+              }
+            ],
+            "tradeable": true,
+            "droppable": true,
+            "petMailable": true
+          },
+          "sourceLines": [
+            6,
+            9
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-4",
+      "sourceLines": [
+        6,
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [
+      {
+        "name": "神灵庇佑的人",
+        "acquisition": "quest-completion",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "careers": [],
+    "skills": []
+  },
+  "exchangeRecipes": [],
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 32,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "临时活动/任务"
+  }
+}

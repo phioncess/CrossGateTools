@@ -12,6 +12,76 @@
   const career = () => data.professions.find(item => item.id === state.careerId) || data.professions[0];
   const normalize = value => String(value || '').toLowerCase().replace(/[\s（）()·]/g, '');
   const rankTitle = (item, index) => (item.titles[index] || ranks[index]).replace(/\s+/g, '');
+  const pointData = window.CAREER_POINTS_DATA, pointCore = window.CAREER_POINTS_CORE;
+  const pointRules = pointData.rules;
+  const levelParam = Number(launchParams.get('level'));
+  const pointState = { level: Number.isInteger(levelParam) && levelParam >= 1 && levelParam <= 120 ? levelParam : 1, profile: launchParams.get('build') || '', custom: null, key: '' };
+  function writeHash() {
+    const params = new URLSearchParams({ career: state.careerId, rank: state.rank, level: pointState.level });
+    if (state.selectedSkill) params.set('skill', state.selectedSkill);
+    if (pointState.profile) params.set('build', pointState.profile);
+    if (pointState.custom) params.set('points', pointState.custom.join(','));
+    history.replaceState(null, '', `#${params}`);
+  }
+  function pointProfiles() { return pointData.profiles.filter(entry => entry.career === career().name); }
+  function pointRecommendation() {
+    const profile = pointProfiles().find(entry => entry.mode === pointState.profile);
+    return profile ? pointCore.recommend(pointState.level, profile.target, pointRules) : null;
+  }
+  function renderPoints() {
+    const profiles = pointProfiles();
+    if (!profiles.some(entry => entry.mode === pointState.profile)) pointState.profile = profiles[0]?.mode || '';
+    const key = `${state.careerId}:${pointState.profile}`;
+    const recommendation = pointRecommendation();
+    if (pointState.key !== key) {
+      const saved = (launchParams.get('points') || '').split(',').map(Number);
+      const budget = pointCore.total(pointState.level, pointRules), cap = Math.floor(budget / 2);
+      const valid = !pointState.key && launchParams.has('points') && saved.length === 5 && saved.every(n => Number.isInteger(n) && n >= 0 && n <= cap) && saved.reduce((a,b) => a+b,0) <= budget;
+      pointState.custom = valid ? saved : [...(recommendation || [0,0,0,0,0])];
+      pointState.key = key;
+    }
+    $('pointLevel').value = pointState.level;
+    $('pointProfile').innerHTML = profiles.length ? profiles.map(entry => `<option ${entry.mode === pointState.profile ? 'selected' : ''}>${esc(entry.mode)}</option>`).join('') : '<option value="">此职业推荐待核验 · 可自定义</option>';
+    $('pointProfile').disabled = !profiles.length;
+    $('pointApply').disabled = !recommendation;
+    $('pointNote').textContent = `${pointData.scope}。${pointData.note}${profiles.length ? '' : ' 此职业暂无已核验的推荐方案。'}`;
+    const budget = pointCore.total(pointState.level, pointRules), cap = Math.floor(budget / 2);
+    $('pointSummary').textContent = `Lv.${pointState.level} · 可分配 ${budget} 点 · 单项上限 ${cap} 点`;
+    $('pointRows').innerHTML = pointData.attributes.map((name,i) => `<tr><th scope="row">${name}</th><td>${recommendation ? recommendation[i] : '待核验'}</td><td><input type="number" min="0" max="${cap}" step="1" value="${pointState.custom[i]}" data-point="${i}" aria-label="自定义${name}点数"></td></tr>`).join('');
+    $('pointRows').querySelectorAll('input').forEach(input => input.addEventListener('change', () => {
+      const index = Number(input.dataset.point), others = pointState.custom.reduce((sum,n,i) => sum + (i === index ? 0 : n),0);
+      const raw = Number(input.value), next = Number.isFinite(raw) ? Math.max(0, Math.min(Math.floor(raw), cap, budget - others)) : pointState.custom[index];
+      pointState.custom[index] = next;
+      input.value = next;
+      updatePointStatus(); writeHash();
+    }));
+    let previous = [0,0,0,0,0];
+    const profile = profiles.find(entry => entry.mode === pointState.profile);
+    $('pointHistory').innerHTML = profile ? Array.from({length: pointState.level}, (_,i) => {
+      const current = pointCore.recommend(i+1, profile.target, pointRules), delta = current.map((n,j) => n - previous[j]); previous = current;
+      return `<tr><th>${i+1}</th><td>${current.join(' / ')}</td><td>${delta.join(' / ')}</td></tr>`;
+    }).join('') : '<tr><td colspan="3">该职业逐级推荐待核验，可使用上方自定义模拟。</td></tr>';
+    $('pointSources').innerHTML = pointData.sources.map(source => `<a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title)} ↗</a>`).join('') + (profile ? `<a href="文档记录/${encodeURIComponent(profile.image)}" target="_blank" rel="noopener noreferrer">查看本地推荐原图 ↗</a>` : '');
+    updatePointStatus();
+  }
+  function updatePointStatus() {
+    const used = pointState.custom.reduce((a,b) => a+b,0), remaining = pointCore.total(pointState.level, pointRules) - used;
+    $('pointStatus').textContent = `自定义已分配 ${used} 点，剩余 ${remaining} 点。修改等级将应用该等级推荐；无推荐职业保留可用点数，超出部分按体、力、强、速、魔顺序保留。`;
+  }
+  $('pointLevel').addEventListener('change', event => {
+    const raw = Number(event.target.value);
+    pointState.level = Number.isFinite(raw) ? Math.max(1, Math.min(120, Math.floor(raw))) : pointState.level;
+    const recommended = pointRecommendation();
+    if (recommended) pointState.custom = recommended;
+    else {
+      let left = pointCore.total(pointState.level, pointRules);
+      pointState.custom = pointState.custom.map(n => { const value = Math.min(n, Math.floor(pointCore.total(pointState.level, pointRules)/2),left); left -= value; return value; });
+    }
+    renderPoints(); writeHash();
+  });
+  $('pointProfile').addEventListener('change', event => { pointState.profile = event.target.value; renderPoints(); writeHash(); });
+  $('pointApply').addEventListener('click', () => { pointState.custom = pointRecommendation(); renderPoints(); writeHash(); });
+  $('pointClear').addEventListener('click', () => { pointState.custom = [0,0,0,0,0]; renderPoints(); writeHash(); });
 
   function renderFilters() {
     const groups = ['全部', ...new Set(data.professions.map(item => item.group))];
@@ -36,14 +106,14 @@
     state.careerId = id;
     state.skillCategory = '';
     state.selectedSkill = '';
-    history.replaceState(null, '', `#${id}`);
     renderSidebar();
     renderCareer();
+    writeHash();
   }
 
   function renderRanks(item) {
     $('rankTabs').innerHTML = ranks.map((rank, index) => `<button class="rank-tab ${index === state.rank ? 'active' : ''}" data-rank="${index}">${rank}<span>${esc(rankTitle(item, index))}</span></button>`).join('');
-    $('rankTabs').querySelectorAll('button').forEach(button => button.addEventListener('click', () => { state.rank = Number(button.dataset.rank); renderCareer(); }));
+    $('rankTabs').querySelectorAll('button').forEach(button => button.addEventListener('click', () => { state.rank = Number(button.dataset.rank); renderCareer(); writeHash(); }));
   }
 
   function renderRating(item) {
@@ -127,12 +197,12 @@
     $('careerGroup').textContent = `${item.group} · 怀旧服`;
     $('careerTitles').innerHTML = item.titles.map((title, index) => `<span>${ranks[index]} · ${esc(title.replace(/\s+/g, ''))}</span>`).join('');
     $('sourceLink').href = item.url;
-    renderRanks(item); renderRating(item); renderDescription(item); renderRoute(item); renderEquipment(item); renderSkills(item);
+    renderRanks(item); renderRating(item); renderDescription(item); renderRoute(item); renderEquipment(item); renderSkills(item); renderPoints();
   }
 
   $('careerSearch').addEventListener('input', event => { state.careerQuery = event.target.value; renderSidebar(); });
-  $('skillCategory').addEventListener('change', event => { state.skillCategory = event.target.value; state.selectedSkill = ''; renderSkills(career()); });
-  $('skillSelect').addEventListener('change', event => showSkill(event.target.value));
+  $('skillCategory').addEventListener('change', event => { state.skillCategory = event.target.value; state.selectedSkill = ''; renderSkills(career()); writeHash(); });
+  $('skillSelect').addEventListener('change', event => { showSkill(event.target.value); writeHash(); });
   if (!data.professions.some(item => item.id === state.careerId)) state.careerId = data.professions[0]?.id;
   const launchCareer = career();
   const launchSkill = launchCareer?.skills.find(skill => normalize(skill.name) === normalize(requestedSkill) && skill.caps[state.rank] > 0);

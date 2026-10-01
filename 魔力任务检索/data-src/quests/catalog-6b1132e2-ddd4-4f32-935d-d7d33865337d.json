@@ -1,0 +1,708 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-6b1132e2-ddd4-4f32-935d-d7d33865337d",
+  "name": "法尔尼亚环岛游",
+  "aliases": [],
+  "metadata": {
+    "category": "怀旧服其他自制任务",
+    "level": "20 级",
+    "availability": "available",
+    "summary": "怀旧金牛服/双子服任务；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_6b1132e2-ddd4-4f32-935d-d7d33865337d",
+    "url": "https://www.molibaike.com/Mission/Detail/6b1132e2-ddd4-4f32-935d-d7d33865337d?u=True",
+    "localFiles": [],
+    "lineCount": 18,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往法兰城与环岛活动咨询员（76.83）对话，获得【环岛证明】。"
+      },
+      {
+        "line": 2,
+        "text": "2.持有【环岛证明】依次按顺序前往指定地点。"
+      },
+      {
+        "line": 3,
+        "text": "◆路线："
+      },
+      {
+        "line": 4,
+        "text": "地点位置"
+      },
+      {
+        "line": 5,
+        "text": "灵堂（11.11）"
+      },
+      {
+        "line": 6,
+        "text": "试炼之洞窟大厅（27.27）"
+      },
+      {
+        "line": 7,
+        "text": "圣拉鲁卡村外芙蕾雅岛（158.196）"
+      },
+      {
+        "line": 8,
+        "text": "伊尔村外芙蕾雅岛（575.237）"
+      },
+      {
+        "line": 9,
+        "text": "哈巴路东北洞穴底下2楼（18.13"
+      },
+      {
+        "line": 10,
+        "text": "亚留特村外芙蕾雅岛（618.69）"
+      },
+      {
+        "line": 11,
+        "text": "维诺亚洞窟底下2楼（44.33）"
+      },
+      {
+        "line": 12,
+        "text": "维诺亚村外芙蕾雅岛（340.465）"
+      },
+      {
+        "line": 13,
+        "text": "索奇亚海底洞窟（7.35）"
+      },
+      {
+        "line": 14,
+        "text": "乌克兰村（63.16"
+      },
+      {
+        "line": 15,
+        "text": "3.抵达乌克兰村（63.16）处与环岛活动NPC对话获得【奖品】，任务完结。"
+      },
+      {
+        "line": 16,
+        "text": "◆【奖品】：（随机获得）"
+      },
+      {
+        "line": 17,
+        "text": "白钥匙黑钥匙影子变身卡海盗变身卡猫眼石碎片"
+      },
+      {
+        "line": 18,
+        "text": "鼠王惊奇蛋*2面包*3誓言之证安全帽火焰之魂（材料）"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "ordered-route",
+        "mustFollowOrder": true,
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "法兰城环岛活动咨询员（76.83）",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "与法兰城环岛活动咨询员（76.83）对话，获得【环岛证明】。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "环岛证明",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "持有【环岛证明】，严格按原文顺序经过10个检查地点：灵堂、试炼之洞窟大厅、圣拉鲁卡村外、伊尔村外、哈巴鲁东北洞穴地下2楼、亚留特村外、维诺亚洞窟地下2楼、维诺亚村外、索奇亚海底洞窟、乌克兰村。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "route": [
+          {
+            "order": 1,
+            "location": "灵堂",
+            "coordinate": "11.11"
+          },
+          {
+            "order": 2,
+            "location": "试炼之洞窟大厅",
+            "coordinate": "27.27"
+          },
+          {
+            "order": 3,
+            "location": "圣拉鲁卡村外芙蕾雅岛",
+            "coordinate": "158.196"
+          },
+          {
+            "order": 4,
+            "location": "伊尔村外芙蕾雅岛",
+            "coordinate": "575.237"
+          },
+          {
+            "order": 5,
+            "location": "哈巴鲁东北洞穴地下2楼",
+            "coordinate": "18.13"
+          },
+          {
+            "order": 6,
+            "location": "亚留特村外芙蕾雅岛",
+            "coordinate": "618.69"
+          },
+          {
+            "order": 7,
+            "location": "维诺亚洞窟地下2楼",
+            "coordinate": "44.33"
+          },
+          {
+            "order": 8,
+            "location": "维诺亚村外芙蕾雅岛",
+            "coordinate": "340.465"
+          },
+          {
+            "order": 9,
+            "location": "索奇亚海底洞窟",
+            "coordinate": "7.35"
+          },
+          {
+            "order": 10,
+            "location": "乌克兰村",
+            "coordinate": "63.16"
+          }
+        ],
+        "sourceLines": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "抵达乌克兰村（63.16）后与环岛活动NPC对话，从奖品池随机获得一项奖品，任务完结。原文未写明是否交出环岛证明。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "环岛游随机奖品",
+            "quantity": 1,
+            "acquisition": "random-pool",
+            "sourceLines": [
+              15
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          15,
+          16,
+          17,
+          18
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [],
+    "acquisitions": [
+      {
+        "item": "环岛证明",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "环岛游随机奖品",
+        "quantity": 1,
+        "acquisition": "random-pool",
+        "sourceLines": [
+          15
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往法兰城与环岛活动咨询员（76.83）对话，获得【环岛证明】。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2.持有【环岛证明】依次按顺序前往指定地点。",
+      "type": "route-requirement",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆路线：",
+      "type": "route-heading",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "地点位置",
+      "type": "table-heading",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "灵堂（11.11）",
+      "type": "route-row",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "试炼之洞窟大厅（27.27）",
+      "type": "route-row",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "圣拉鲁卡村外芙蕾雅岛（158.196）",
+      "type": "route-row",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "伊尔村外芙蕾雅岛（575.237）",
+      "type": "route-row",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "哈巴路东北洞穴底下2楼（18.13",
+      "type": "route-row",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "亚留特村外芙蕾雅岛（618.69）",
+      "type": "route-row",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "维诺亚洞窟底下2楼（44.33）",
+      "type": "route-row",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "维诺亚村外芙蕾雅岛（340.465）",
+      "type": "route-row",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 13,
+      "text": "索奇亚海底洞窟（7.35）",
+      "type": "route-row",
+      "sourceLines": [
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 14,
+      "text": "乌克兰村（63.16",
+      "type": "route-row",
+      "sourceLines": [
+        14
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 15,
+      "text": "3.抵达乌克兰村（63.16）处与环岛活动NPC对话获得【奖品】，任务完结。",
+      "type": "completion-step",
+      "sourceLines": [
+        15
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 16,
+      "text": "◆【奖品】：（随机获得）",
+      "type": "reward-heading",
+      "sourceLines": [
+        16
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 17,
+      "text": "白钥匙黑钥匙影子变身卡海盗变身卡猫眼石碎片",
+      "type": "reward-list",
+      "sourceLines": [
+        17
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 18,
+      "text": "鼠王惊奇蛋*2面包*3誓言之证安全帽火焰之魂（材料）",
+      "type": "reward-list",
+      "sourceLines": [
+        18
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        18
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "island-tour-prize-pool",
+      "version": "common",
+      "tier": "common",
+      "kind": "reward-pool",
+      "items": [
+        {
+          "id": "white-key",
+          "name": "白钥匙",
+          "role": "valuable-result",
+          "sourceLines": [
+            17
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "black-key",
+          "name": "黑钥匙",
+          "role": "valuable-result",
+          "sourceLines": [
+            17
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "shadow-transformation-card",
+          "name": "影子变身卡",
+          "role": "valuable-result",
+          "sourceLines": [
+            17
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "pirate-transformation-card",
+          "name": "海盗变身卡",
+          "role": "valuable-result",
+          "sourceLines": [
+            17
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "cat-eye-fragment",
+          "name": "猫眼石碎片",
+          "role": "valuable-result",
+          "sourceLines": [
+            17
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "mouse-king-surprise-eggs",
+          "name": "鼠王惊奇蛋",
+          "role": "valuable-result",
+          "quantity": 2,
+          "sourceLines": [
+            18
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "bread",
+          "name": "面包",
+          "role": "valuable-result",
+          "quantity": 3,
+          "sourceLines": [
+            18
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "oath-proof",
+          "name": "誓言之证",
+          "role": "valuable-result",
+          "sourceLines": [
+            18
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "safety-helmet",
+          "name": "安全帽",
+          "role": "valuable-result",
+          "sourceLines": [
+            18
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "flame-soul",
+          "name": "火焰之魂",
+          "role": "material",
+          "sourceLabel": "材料",
+          "sourceLines": [
+            18
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-3",
+      "selection": "random-one",
+      "sourceLines": [
+        15,
+        16,
+        17,
+        18
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 2,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "怀旧服其他自制任务"
+  }
+}

@@ -1,0 +1,396 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-cf145d14-888d-4016-97f3-4d7d85338bb8",
+  "name": "吹横笛的名师",
+  "aliases": [
+    "夏贝特之笛"
+  ],
+  "metadata": {
+    "category": "经典任务",
+    "level": "40 级",
+    "availability": "available",
+    "summary": "",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_cf145d14-888d-4016-97f3-4d7d85338bb8",
+    "url": "https://www.molibaike.com/Mission/Detail/cf145d14-888d-4016-97f3-4d7d85338bb8?u=True",
+    "localFiles": [],
+    "lineCount": 5,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.夜晚，前往魔法大学内部音乐室（76.30）与幽灵（24.10）对话，切换地图。"
+      },
+      {
+        "line": 2,
+        "text": "2.与米德瓦（24.10）对话，获得【调音器】。"
+      },
+      {
+        "line": 3,
+        "text": "3.清晨白天黄昏，返回魔法大学内部音乐室（76.30）与夏贝特老师（24.10）对话，交出【调音器】获得【夏贝特之笛】，任务完结。"
+      },
+      {
+        "line": 4,
+        "text": "◆【夏贝特之笛】：Lv1乐器；防御+2；耐久200；装备后获得称号“吹横笛的名师”；可以交易"
+      },
+      {
+        "line": 5,
+        "text": "◆任务剧情：参考《吹横笛的名师任务剧情对话》"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": [
+      {
+        "type": "story",
+        "target": "吹横笛的名师任务剧情对话",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "time-window",
+        "value": "夜晚",
+        "appliesToStep": "step-1",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "time-window",
+        "value": "清晨、白天或黄昏",
+        "appliesToStep": "step-3",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "夜晚的魔法大学内部音乐室（76.30）",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "夜晚前往魔法大学内部音乐室（76.30），与幽灵（24.10）对话切换地图。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "与米德瓦（24.10）对话，获得【调音器】。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "调音器",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "在清晨、白天或黄昏返回音乐室，与夏贝特老师（24.10）对话，交出【调音器】，获得【夏贝特之笛】，任务完结。",
+        "inputs": [
+          {
+            "item": "调音器",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "夏贝特之笛",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "notes": [],
+          "media": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "调音器",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "调音器",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "夏贝特之笛",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.夜晚，前往魔法大学内部音乐室（76.30）与幽灵（24.10）对话，切换地图。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2.与米德瓦（24.10）对话，获得【调音器】。",
+      "type": "step",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "3.清晨白天黄昏，返回魔法大学内部音乐室（76.30）与夏贝特老师（24.10）对话，交出【调音器】获得【夏贝特之笛】，任务完结。",
+      "type": "step",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆【夏贝特之笛】：Lv1乐器；防御+2；耐久200；装备后获得称号“吹横笛的名师”；可以交易",
+      "type": "reward-detail",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "◆任务剧情：参考《吹横笛的名师任务剧情对话》",
+      "type": "reference",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        5
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "reward-shabet-flute",
+      "version": "common",
+      "tier": "common",
+      "kind": "quest-completion",
+      "items": [
+        {
+          "id": "shabet-flute",
+          "name": "夏贝特之笛",
+          "role": "valuable-result",
+          "entityType": "equipment",
+          "properties": {
+            "level": 1,
+            "category": "乐器",
+            "defense": 2,
+            "durability": 200,
+            "tradeable": true,
+            "equippedTitle": "吹横笛的名师"
+          },
+          "sourceLines": [
+            3,
+            4
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-3",
+      "sourceLines": [
+        3,
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [
+      {
+        "name": "吹横笛的名师",
+        "acquisition": "equip-item",
+        "item": "夏贝特之笛",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "careers": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 53,
+    "stageLabel": "",
+    "optional": false,
+    "type": "通用任务",
+    "sourceCategory": "经典任务"
+  }
+}

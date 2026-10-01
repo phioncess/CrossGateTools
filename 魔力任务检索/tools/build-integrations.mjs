@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
 import { createRequire } from 'node:module';
+import { loadQuestDatabase } from './quest-database.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const levelingRoot = path.resolve(root, '..', '魔力服练级查询');
@@ -17,10 +18,14 @@ function evaluate(files, expose) {
   return context.__RESULT__;
 }
 
-const quests = evaluate(
-  ['data.js', 'catalog.js', 'career-quests.js', 'enhancements.js'].map(file => path.join(root, file)),
-  'QUESTS.map(({id,name,aliases,series,sourceCategory,type}) => ({id,name,aliases,series,sourceCategory,type}))'
-);
+const quests = Object.values(loadQuestDatabase().quests).map(record => ({
+  id: record.id,
+  name: record.name,
+  aliases: record.aliases || [],
+  series: record.presentation?.series || '',
+  sourceCategory: record.presentation?.sourceCategory || record.metadata?.category || '',
+  type: record.presentation?.type || record.metadata?.category || '任务'
+}));
 
 const places = evaluate(
   ['data.js', 'zones.js', 'supplement.js'].map(file => path.join(levelingRoot, file)),

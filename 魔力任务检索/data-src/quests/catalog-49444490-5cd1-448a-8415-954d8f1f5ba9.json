@@ -1,0 +1,699 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-49444490-5cd1-448a-8415-954d8f1f5ba9",
+  "name": "毕安札的送礼",
+  "aliases": [
+    "挚爱的誓言",
+    "阿比安吉"
+  ],
+  "metadata": {
+    "category": "经典任务",
+    "level": "10 级",
+    "availability": "available",
+    "summary": "必要条件：清晨或黄昏；等级不低于Lv.10",
+    "repeatable": "不可"
+  },
+  "source": {
+    "key": "catalog_49444490-5cd1-448a-8415-954d8f1f5ba9",
+    "url": "https://www.molibaike.com/Mission/Detail/49444490-5cd1-448a-8415-954d8f1f5ba9?u=True",
+    "localFiles": [],
+    "lineCount": 16,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往法兰城毕安札的家（132.132）与罗珊娜（12.7）对话，选2次“是”获知暗号为“阿比安吉”。（此步可跳过）"
+      },
+      {
+        "line": 2,
+        "text": "2.前往里谢里雅堡，通过（47.85）处楼梯抵达召唤之间。"
+      },
+      {
+        "line": 3,
+        "text": "3.通过（27.8）处门抵达回廊。"
+      },
+      {
+        "line": 4,
+        "text": "4.根据回廊内黄色箭头提示，通过（23.19）处楼梯抵达灵堂。"
+      },
+      {
+        "line": 5,
+        "text": "5.清晨或黄昏时与士兵伊岱鲁（9.8）对话，选“是”传送至封印之间。"
+      },
+      {
+        "line": 6,
+        "text": "6.通过（15.18）处黄色传送石，进入城内的地下迷宫。"
+      },
+      {
+        "line": 7,
+        "text": "◆城内的地下迷宫为随机迷宫，随机8~10层"
+      },
+      {
+        "line": 8,
+        "text": "迷宫刷新时间：2小时（仅供参考），地图大小范围：40*40~60*60"
+      },
+      {
+        "line": 9,
+        "text": "宝箱数量：4"
+      },
+      {
+        "line": 10,
+        "text": "魔物为Lv.9~16幽灵、漂浮炸弹，最高遇敌数量5"
+      },
+      {
+        "line": 11,
+        "text": "7.寻找迷宫内随机出现的士兵毕安扎并与之对话，输入“阿比安吉”选“是”获得【誓言的念珠】。"
+      },
+      {
+        "line": 12,
+        "text": "◆【誓言的念珠】不可重复领取，勿丢弃"
+      },
+      {
+        "line": 13,
+        "text": "8.返回法兰城毕安札的家与罗珊娜对话，选“是”交出【誓言的念珠】获得【祈祷的耳饰】，任务完结。"
+      },
+      {
+        "line": 14,
+        "text": "◆【祈祷的耳饰】：LV.1耳环、耐久280~350；生命+25~35；可以交易"
+      },
+      {
+        "line": 15,
+        "text": "◆任务剧情：参考《毕安札的送礼任务剧情对话》"
+      },
+      {
+        "line": 16,
+        "text": "◆本任务的后续任务为《毕安札的使命》"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": [
+      {
+        "type": "story",
+        "target": "毕安札的送礼任务剧情对话",
+        "sourceLines": [
+          15
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "sequel",
+        "targetQuest": "毕安札的使命",
+        "sourceLines": [
+          16
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "time-window",
+        "value": [
+          "清晨",
+          "黄昏"
+        ],
+        "appliesToStep": "step-5",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "password",
+        "value": "阿比安吉",
+        "appliesToStep": "step-7",
+        "sourceLines": [
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "法兰城毕安札的家罗珊娜（12.7）",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "可选：在毕安札的家与罗珊娜（12.7）对话，两次选择“是”，获知暗号“阿比安吉”；已知暗号可跳过。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "进入里谢里雅堡，经（47.85）楼梯抵达召唤之间。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "通过召唤之间（27.8）的门抵达回廊。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "按回廊黄色箭头提示，经（23.19）楼梯抵达灵堂。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-5",
+        "order": 5,
+        "text": "清晨或黄昏与士兵伊岱鲁（9.8）对话，选择“是”，传送至封印之间。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-6",
+        "order": 6,
+        "text": "通过封印之间黄色传送石（15.18），进入8~10层的城内地下随机迷宫。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-7",
+        "order": 7,
+        "text": "寻找迷宫内随机出现的士兵毕安扎，输入暗号“阿比安吉”并选择“是”，获得【誓言的念珠】；不可重复领取，勿丢弃。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "誓言的念珠",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              11
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          11,
+          12
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-8",
+        "order": 8,
+        "text": "返回毕安札的家与罗珊娜对话，选择“是”，交出【誓言的念珠】，获得【祈祷的耳饰】，任务完结。",
+        "inputs": [
+          {
+            "item": "誓言的念珠",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              13
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "祈祷的耳饰",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              13
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          13,
+          14,
+          15,
+          16
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [
+            {
+              "id": "castle-underground",
+              "location": "城内的地下迷宫",
+              "maze": "随机迷宫",
+              "floors": {
+                "min": 8,
+                "max": 10
+              },
+              "refreshHoursApprox": 2,
+              "mapSizeRange": [
+                "40×40",
+                "60×60"
+              ],
+              "chestCount": 4,
+              "enemyLevel": {
+                "min": 9,
+                "max": 16
+              },
+              "enemies": [
+                "幽灵",
+                "漂浮炸弹"
+              ],
+              "maxEnemyCount": 5,
+              "sourceLines": [
+                7,
+                8,
+                9,
+                10
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          ],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "誓言的念珠",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          13
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-8",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "誓言的念珠",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-7",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "祈祷的耳饰",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          13
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-8",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往法兰城毕安札的家（132.132）与罗珊娜（12.7）对话，选2次“是”获知暗号为“阿比安吉”。（此步可跳过）",
+      "type": "optional-password",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2.前往里谢里雅堡，通过（47.85）处楼梯抵达召唤之间。",
+      "type": "route-step",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "3.通过（27.8）处门抵达回廊。",
+      "type": "route-step",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "4.根据回廊内黄色箭头提示，通过（23.19）处楼梯抵达灵堂。",
+      "type": "route-step",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "5.清晨或黄昏时与士兵伊岱鲁（9.8）对话，选“是”传送至封印之间。",
+      "type": "timed-step",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "6.通过（15.18）处黄色传送石，进入城内的地下迷宫。",
+      "type": "maze-entry",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "◆城内的地下迷宫为随机迷宫，随机8~10层",
+      "type": "maze-detail",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "迷宫刷新时间：2小时（仅供参考），地图大小范围：40*40~60*60",
+      "type": "maze-detail",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "宝箱数量：4",
+      "type": "maze-detail",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "魔物为Lv.9~16幽灵、漂浮炸弹，最高遇敌数量5",
+      "type": "encounter-area",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "7.寻找迷宫内随机出现的士兵毕安扎并与之对话，输入“阿比安吉”选“是”获得【誓言的念珠】。",
+      "type": "step",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "◆【誓言的念珠】不可重复领取，勿丢弃",
+      "type": "item-warning",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 13,
+      "text": "8.返回法兰城毕安札的家与罗珊娜对话，选“是”交出【誓言的念珠】获得【祈祷的耳饰】，任务完结。",
+      "type": "completion-step",
+      "sourceLines": [
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 14,
+      "text": "◆【祈祷的耳饰】：LV.1耳环、耐久280~350；生命+25~35；可以交易",
+      "type": "reward-detail",
+      "sourceLines": [
+        14
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 15,
+      "text": "◆任务剧情：参考《毕安札的送礼任务剧情对话》",
+      "type": "reference",
+      "sourceLines": [
+        15
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 16,
+      "text": "◆本任务的后续任务为《毕安札的使命》",
+      "type": "sequel",
+      "sourceLines": [
+        16
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        16
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "prayer-earring",
+      "version": "common",
+      "tier": "common",
+      "kind": "quest-completion",
+      "items": [
+        {
+          "id": "prayer-earring",
+          "name": "祈祷的耳饰",
+          "role": "valuable-result",
+          "entityType": "equipment",
+          "properties": {
+            "level": 1,
+            "category": "耳环",
+            "durability": {
+              "min": 280,
+              "max": 350
+            },
+            "hp": {
+              "min": 25,
+              "max": 35
+            },
+            "tradeable": true
+          },
+          "sourceLines": [
+            13,
+            14
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-8",
+      "sourceLines": [
+        13,
+        14
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 57,
+    "stageLabel": "",
+    "optional": false,
+    "type": "通用任务",
+    "sourceCategory": "经典任务"
+  }
+}

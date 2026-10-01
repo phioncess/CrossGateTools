@@ -1,0 +1,668 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-3bd6ff97-73be-41c6-8ecf-03f7ec18e09a",
+  "name": "法兰王国的暗流",
+  "aliases": [
+    "暗流1"
+  ],
+  "metadata": {
+    "category": "法兰王国的暗流系列",
+    "level": "40 级",
+    "availability": "available",
+    "summary": "必要条件：拥有“开启者”称号；怀旧服任务；以下仅展示怀旧服路线与参数",
+    "repeatable": "不可"
+  },
+  "source": {
+    "key": "catalog_3bd6ff97-73be-41c6-8ecf-03f7ec18e09a",
+    "url": "https://www.molibaike.com/Mission/Detail/3bd6ff97-73be-41c6-8ecf-03f7ec18e09a?u=True",
+    "localFiles": [],
+    "lineCount": 12,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往法兰城里谢里雅堡2楼与王室安全顾问（52.23）对话，选“是”获得【协查通告】。"
+      },
+      {
+        "line": 2,
+        "text": "2.前往乌克兰村村长的家门口，调查木桶（70.31），输入“驱雾”了解情报。"
+      },
+      {
+        "line": 3,
+        "text": "◆乌克兰到达方法见《就职忍者》任务"
+      },
+      {
+        "line": 4,
+        "text": "3.前往维诺亚村，调查村内近出口处的大树（66.45），输入“驱雾”了解情报。"
+      },
+      {
+        "line": 5,
+        "text": "4.出维诺亚村，前往芙蕾雅岛（299.538）处进入维诺亚海底洞窟。"
+      },
+      {
+        "line": 6,
+        "text": "◆维诺亚海底洞窟为固定地图，共3层；魔物为Lv26~27水龙蜥、蜥蜴战士"
+      },
+      {
+        "line": 7,
+        "text": "5.通过维诺亚海底洞窟，与偷懒的山贼（250.490）对话进入战斗。"
+      },
+      {
+        "line": 8,
+        "text": "◆Lv40偷懒的山贼，血量约2500；技能：攻击、防御、气功弹、诸刃"
+      },
+      {
+        "line": 9,
+        "text": "6.战斗胜利后与偷懒的山贼对话，变更场景。"
+      },
+      {
+        "line": 10,
+        "text": "7.与法兰禁卫队长（17.27）对话，交出【协查通告】获得【犯人的口供】。"
+      },
+      {
+        "line": 11,
+        "text": "8.返回法兰城里谢里雅堡2楼与王室安全顾问（52.23）对话，交出【犯人的口供】，任务完结。"
+      },
+      {
+        "line": 12,
+        "text": "◆任务剧情：参考《法兰王国的暗流系列任务剧情对话》"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": [
+      {
+        "type": "route",
+        "targetQuest": "就职忍者",
+        "destination": "乌克兰村",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "story",
+        "target": "法兰王国的暗流系列任务剧情对话",
+        "sourceLines": [
+          12
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "requirements": {
+    "conditions": []
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "里谢里雅堡2楼王室安全顾问（52.23）",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "与王室安全顾问（52.23）对话，选择“是”，获得【协查通告】。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "协查通告",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "前往乌克兰村村长家门口，调查木桶（70.31）并输入“驱雾”了解情报。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          2,
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "commands": [
+          {
+            "text": "驱雾",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "source-action-review"
+            }
+          }
+        ]
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "前往维诺亚村，调查出口附近大树（66.45）并输入“驱雾”了解情报。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "commands": [
+          {
+            "text": "驱雾",
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "source-action-review"
+            }
+          }
+        ]
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "从芙蕾雅岛（299.538）进入维诺亚海底洞窟并通过固定地图。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          5,
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-5",
+        "order": 5,
+        "text": "通过洞窟后与偷懒的山贼（250.490）对话进入战斗。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          7,
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-6",
+        "order": 6,
+        "text": "战斗胜利后再次与偷懒的山贼对话，变更场景。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-7",
+        "order": 7,
+        "text": "与法兰禁卫队长（17.27）对话，交出【协查通告】，获得【犯人的口供】。",
+        "inputs": [
+          {
+            "item": "协查通告",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              10
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "犯人的口供",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              10
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-8",
+        "order": 8,
+        "text": "返回与王室安全顾问对话，交出【犯人的口供】，任务完结。",
+        "inputs": [
+          {
+            "item": "犯人的口供",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              11
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {
+            "battle-1": {
+              "id": "battle-1",
+              "order": 1,
+              "kind": "boss-battle",
+              "title": "偷懒的山贼",
+              "triggerStep": "step-5",
+              "overview": {
+                "text": "与偷懒的山贼（250.490）对话进入战斗。",
+                "sourceLines": [
+                  7
+                ],
+                "verification": {
+                  "status": "verified",
+                  "method": "manual-semantic-review"
+                }
+              },
+              "enemies": {
+                "enemy-1": {
+                  "id": "enemy-1",
+                  "name": "偷懒的山贼",
+                  "level": {
+                    "min": 40,
+                    "max": 40
+                  },
+                  "hp": {
+                    "min": 2500,
+                    "max": 2500,
+                    "approximate": true
+                  },
+                  "count": 1,
+                  "skills": [
+                    "攻击",
+                    "防御",
+                    "气功弹",
+                    "诸刃"
+                  ],
+                  "raw": "Lv40偷懒的山贼，血量约2500；技能：攻击、防御、气功弹、诸刃",
+                  "sourceLines": [
+                    8
+                  ],
+                  "verification": {
+                    "status": "verified",
+                    "method": "manual-semantic-review"
+                  }
+                }
+              },
+              "sourceLines": [
+                7,
+                8
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          },
+          "encounters": [
+            {
+              "id": "encounter-vinoy-undersea",
+              "location": "维诺亚海底洞窟固定地图",
+              "floors": 3,
+              "enemyLevel": {
+                "min": 26,
+                "max": 27
+              },
+              "enemies": [
+                "水龙蜥",
+                "蜥蜴战士"
+              ],
+              "sourceLines": [
+                6
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          ],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "协查通告",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-7",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "犯人的口供",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-8",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "协查通告",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "犯人的口供",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-7",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往法兰城里谢里雅堡2楼与王室安全顾问（52.23）对话，选“是”获得【协查通告】。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2.前往乌克兰村村长的家门口，调查木桶（70.31），输入“驱雾”了解情报。",
+      "type": "step",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆乌克兰到达方法见《就职忍者》任务",
+      "type": "reference",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "3.前往维诺亚村，调查村内近出口处的大树（66.45），输入“驱雾”了解情报。",
+      "type": "step",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "4.出维诺亚村，前往芙蕾雅岛（299.538）处进入维诺亚海底洞窟。",
+      "type": "step",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "◆维诺亚海底洞窟为固定地图，共3层；魔物为Lv26~27水龙蜥、蜥蜴战士",
+      "type": "encounter-area",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "5.通过维诺亚海底洞窟，与偷懒的山贼（250.490）对话进入战斗。",
+      "type": "battle-trigger",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "◆Lv40偷懒的山贼，血量约2500；技能：攻击、防御、气功弹、诸刃",
+      "type": "enemy",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "6.战斗胜利后与偷懒的山贼对话，变更场景。",
+      "type": "step",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "7.与法兰禁卫队长（17.27）对话，交出【协查通告】获得【犯人的口供】。",
+      "type": "step",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "8.返回法兰城里谢里雅堡2楼与王室安全顾问（52.23）对话，交出【犯人的口供】，任务完结。",
+      "type": "step",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "◆任务剧情：参考《法兰王国的暗流系列任务剧情对话》",
+      "type": "reference",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        12
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "法兰王国的暗流系列",
+    "order": 1,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "法兰王国的暗流系列"
+  },
+  "sourceSupplements": {
+    "areas": [
+      {
+        "id": "area-4-1",
+        "afterStep": 4,
+        "text": "◆维诺亚海底洞窟为固定地图，共3层；魔物为Lv26~27水龙蜥、蜥蜴战士",
+        "sourceLines": [
+          6
+        ],
+        "sourceReference": "source-documents.js",
+        "verification": {
+          "status": "verified",
+          "method": "source-line-match"
+        }
+      }
+    ]
+  }
+}

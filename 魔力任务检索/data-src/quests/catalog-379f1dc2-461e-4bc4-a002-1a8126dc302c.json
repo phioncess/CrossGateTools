@@ -1,0 +1,435 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-379f1dc2-461e-4bc4-a002-1a8126dc302c",
+  "name": "就职士兵",
+  "aliases": [
+    "入伍的测试",
+    "士兵就职"
+  ],
+  "metadata": {
+    "category": "职业就职任务",
+    "level": "1 级",
+    "availability": "available",
+    "summary": "",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_379f1dc2-461e-4bc4-a002-1a8126dc302c",
+    "url": "https://www.molibaike.com/Mission/Detail/379f1dc2-461e-4bc4-a002-1a8126dc302c?u=True",
+    "localFiles": [],
+    "lineCount": 6,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往法兰城（156.102）处，与士兵长欧里对话了解任务。（可跳过）"
+      },
+      {
+        "line": 2,
+        "text": "2. 在芙蕾雅（472.316）、（440.304）附近等多个区域击倒哥布林或红帽哥布林随机获得【绿头盔】*10或【红头盔】*1。"
+      },
+      {
+        "line": 3,
+        "text": "◆哥布林之家内的哥布林不会掉落相关【绿头盔】、【红头盔】"
+      },
+      {
+        "line": 4,
+        "text": "◆【绿头盔】、【红头盔】：不可交易"
+      },
+      {
+        "line": 5,
+        "text": "3.前往法兰城（156.102）处，持有【绿头盔】*10或【红头盔】*1与士兵长欧里对话，交出【绿头盔】*10或【红头盔】*1获得【士兵推荐信】。"
+      },
+      {
+        "line": 6,
+        "text": "4.前往法兰城里谢里雅堡1楼与近卫士兵长（81.22）对话即可就职士兵，任务完结。"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": []
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "法兰城士兵长欧里（156.102）",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "与法兰城士兵长欧里（156.102）对话了解任务；此步可以跳过。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "在芙蕾雅（472.316）、（440.304）附近等区域击倒哥布林或红帽哥布林，随机取得10个【绿头盔】或1个【红头盔】。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "绿头盔",
+            "quantity": 10,
+            "acquisition": "random-drop",
+            "alternativeGroup": "helmet-requirement",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "红头盔",
+            "quantity": 1,
+            "acquisition": "random-drop",
+            "alternativeGroup": "helmet-requirement",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [
+          {
+            "text": "哥布林之家内的哥布林不会掉落相关头盔。",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "text": "绿头盔和红头盔均不可交易。",
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "sourceLines": [
+          2,
+          3,
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "返回与士兵长欧里对话，交出10个【绿头盔】或1个【红头盔】，获得【士兵推荐信】。",
+        "inputs": [
+          {
+            "item": "绿头盔",
+            "quantity": 10,
+            "action": "hand-over",
+            "alternativeGroup": "helmet-requirement",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "红头盔",
+            "quantity": 1,
+            "action": "hand-over",
+            "alternativeGroup": "helmet-requirement",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "士兵推荐信",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "前往里谢里雅堡1楼与近卫士兵长（81.22）对话，就职士兵，任务完结。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "notes": [],
+          "media": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "绿头盔",
+        "quantity": 10,
+        "action": "hand-over",
+        "alternativeGroup": "helmet-requirement",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "红头盔",
+        "quantity": 1,
+        "action": "hand-over",
+        "alternativeGroup": "helmet-requirement",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "绿头盔",
+        "quantity": 10,
+        "acquisition": "random-drop",
+        "alternativeGroup": "helmet-requirement",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "红头盔",
+        "quantity": 1,
+        "acquisition": "random-drop",
+        "alternativeGroup": "helmet-requirement",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "士兵推荐信",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往法兰城（156.102）处，与士兵长欧里对话了解任务。（可跳过）",
+      "type": "optional-step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2. 在芙蕾雅（472.316）、（440.304）附近等多个区域击倒哥布林或红帽哥布林随机获得【绿头盔】*10或【红头盔】*1。",
+      "type": "step",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆哥布林之家内的哥布林不会掉落相关【绿头盔】、【红头盔】",
+      "type": "step-note",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆【绿头盔】、【红头盔】：不可交易",
+      "type": "item-detail",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "3.前往法兰城（156.102）处，持有【绿头盔】*10或【红头盔】*1与士兵长欧里对话，交出【绿头盔】*10或【红头盔】*1获得【士兵推荐信】。",
+      "type": "step",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "4.前往法兰城里谢里雅堡1楼与近卫士兵长（81.22）对话即可就职士兵，任务完结。",
+      "type": "step",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        6
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [],
+  "outcomes": {
+    "titles": [],
+    "careers": [
+      {
+        "career": "士兵",
+        "action": "employment",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 16,
+    "stageLabel": "",
+    "optional": false,
+    "type": "职业就职任务",
+    "sourceCategory": "职业就职任务"
+  }
+}

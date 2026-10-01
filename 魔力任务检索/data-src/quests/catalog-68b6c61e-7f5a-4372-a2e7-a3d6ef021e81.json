@@ -1,0 +1,824 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-68b6c61e-7f5a-4372-a2e7-a3d6ef021e81",
+  "name": "要塞中的恶梦",
+  "aliases": [
+    "改恶梦"
+  ],
+  "metadata": {
+    "category": "临时活动/任务",
+    "level": "50 级",
+    "availability": "closed",
+    "summary": "怀旧服任务（已关闭）；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_68b6c61e-7f5a-4372-a2e7-a3d6ef021e81",
+    "url": "https://www.molibaike.com/Mission/Detail/68b6c61e-7f5a-4372-a2e7-a3d6ef021e81?u=True",
+    "localFiles": [],
+    "lineCount": 14,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往伊尔村外与工具搜寻者（692.339）对话，获得【崭新的矿工锄】。"
+      },
+      {
+        "line": 2,
+        "text": "2.前往法兰城南门外与募集者（441.304）对话，进入待开垦的地道。"
+      },
+      {
+        "line": 3,
+        "text": "3.与苦工（6.5）对话，交出【崭新的矿工锄】获得【坏掉的矿工锄】。"
+      },
+      {
+        "line": 4,
+        "text": "4.与做恶梦的设计师（40.32）对话，选“是”传送至圣拉鲁卡村。"
+      },
+      {
+        "line": 5,
+        "text": "5.与如花（42.35）对话，交出500G获得【“究极盗梦”术】。"
+      },
+      {
+        "line": 6,
+        "text": "6.至圣拉鲁卡村（45.35）处传送至被开垦的地道，与做恶梦的设计师对话，交出【“究极盗梦”术】，传送至梦境之要塞。"
+      },
+      {
+        "line": 7,
+        "text": "◆需从如花背后行走至该处，若登出则任务失败"
+      },
+      {
+        "line": 8,
+        "text": "◆梦境之要塞行走路线："
+      },
+      {
+        "line": 9,
+        "text": "7.通过迷宫后与恶梦鼠王（387.67）对话，进入战斗。"
+      },
+      {
+        "line": 10,
+        "text": "◆BOSS：Lv.75恶梦鼠王，血量约6000；技能：攻击、防御、气功弹、圣盾、超强昏睡魔法"
+      },
+      {
+        "line": 11,
+        "text": "◆喽啰：Lv.70恶梦鼠*2，血量约1000；技能：攻击、防御、气功弹、圣盾、强力昏睡魔法"
+      },
+      {
+        "line": 12,
+        "text": "8.战斗胜利后与设计师（9.32）对话，获得【设计图？】、称号“恶梦终结者”，任务完结。"
+      },
+      {
+        "line": 13,
+        "text": "◆双击【坏掉的矿工锄】可开启打卡时间并随机变为哥布林类造型"
+      },
+      {
+        "line": 14,
+        "text": "◆【设计图？】鉴定后获得【恶梦鼠设计图ABCDE】任意一张"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "currency",
+        "amount": 500,
+        "currency": "G",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "route-and-session",
+        "rule": "需从如花背后行走至传送点；登出则任务失败",
+        "appliesToStep": "step-6",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "伊尔村外工具搜寻者（692.339）",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "前往伊尔村外与工具搜寻者（692.339）对话，获得【崭新的矿工锄】。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "崭新的矿工锄",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "前往法兰城南门外与募集者（441.304）对话，进入待开垦的地道。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "与苦工（6.5）对话，交出【崭新的矿工锄】，获得【坏掉的矿工锄】。该矿工锄可开启打卡时间并随机变为哥布林类造型。",
+        "inputs": [
+          {
+            "item": "崭新的矿工锄",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "坏掉的矿工锄",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          3,
+          13
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "与做恶梦的设计师（40.32）对话，选择“是”，传送至圣拉鲁卡村。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-5",
+        "order": 5,
+        "text": "与如花（42.35）对话，交出500G，获得【“究极盗梦”术】。",
+        "inputs": [
+          {
+            "item": "500G",
+            "quantity": 1,
+            "action": "hand-over",
+            "entityType": "currency",
+            "amount": 500,
+            "currency": "G",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "“究极盗梦”术",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-6",
+        "order": 6,
+        "text": "从如花背后走至圣拉鲁卡村（45.35）传送到被开垦的地道，与设计师对话，交出【“究极盗梦”术】，传送至梦境之要塞；中途登出会失败。",
+        "inputs": [
+          {
+            "item": "“究极盗梦”术",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          6,
+          7,
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-7",
+        "order": 7,
+        "text": "通过迷宫后与恶梦鼠王（387.67）对话，进入战斗。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          9,
+          10,
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-8",
+        "order": 8,
+        "text": "战斗胜利后与设计师（9.32）对话，获得未鉴定的【设计图？】和称号“恶梦终结者”，任务完结；设计图鉴定后为恶梦鼠设计图A~E任意一张。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "设计图？",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              12
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          12,
+          14
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {
+            "nightmare-mouse-king": {
+              "id": "nightmare-mouse-king",
+              "trigger": "与恶梦鼠王对话",
+              "enemies": [
+                {
+                  "name": "恶梦鼠王",
+                  "raw": "BOSS：Lv.75恶梦鼠王，血量约6000；技能：攻击、防御、气功弹、圣盾、超强昏睡魔法",
+                  "role": "boss",
+                  "level": 75,
+                  "hpApprox": 6000,
+                  "skills": [
+                    "攻击",
+                    "防御",
+                    "气功弹",
+                    "圣盾",
+                    "超强昏睡魔法"
+                  ],
+                  "sourceLines": [
+                    10
+                  ],
+                  "verification": {
+                    "status": "verified",
+                    "method": "manual-semantic-review"
+                  }
+                },
+                {
+                  "name": "恶梦鼠",
+                  "raw": "喽啰：Lv.70恶梦鼠*2，血量约1000；技能：攻击、防御、气功弹、圣盾、强力昏睡魔法",
+                  "role": "minion",
+                  "level": 70,
+                  "count": 2,
+                  "hpApprox": 1000,
+                  "skills": [
+                    "攻击",
+                    "防御",
+                    "气功弹",
+                    "圣盾",
+                    "强力昏睡魔法"
+                  ],
+                  "sourceLines": [
+                    11
+                  ],
+                  "verification": {
+                    "status": "verified",
+                    "method": "manual-semantic-review"
+                  }
+                }
+              ],
+              "sourceLines": [
+                9,
+                10,
+                11
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          },
+          "encounters": [],
+          "media": [
+            {
+              "type": "route-map-caption",
+              "label": "梦境之要塞行走路线",
+              "asset": "source-unspecified",
+              "sourceLines": [
+                8
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          ],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "崭新的矿工锄",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "500G",
+        "quantity": 1,
+        "action": "hand-over",
+        "entityType": "currency",
+        "amount": 500,
+        "currency": "G",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-5",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "“究极盗梦”术",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-6",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "崭新的矿工锄",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "坏掉的矿工锄",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "“究极盗梦”术",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-5",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "设计图？",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          12
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-8",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往伊尔村外与工具搜寻者（692.339）对话，获得【崭新的矿工锄】。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2.前往法兰城南门外与募集者（441.304）对话，进入待开垦的地道。",
+      "type": "step",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "3.与苦工（6.5）对话，交出【崭新的矿工锄】获得【坏掉的矿工锄】。",
+      "type": "step",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "4.与做恶梦的设计师（40.32）对话，选“是”传送至圣拉鲁卡村。",
+      "type": "step",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "5.与如花（42.35）对话，交出500G获得【“究极盗梦”术】。",
+      "type": "exchange-step",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "6.至圣拉鲁卡村（45.35）处传送至被开垦的地道，与做恶梦的设计师对话，交出【“究极盗梦”术】，传送至梦境之要塞。",
+      "type": "transfer-step",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "◆需从如花背后行走至该处，若登出则任务失败",
+      "type": "failure-gate",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "◆梦境之要塞行走路线：",
+      "type": "media-caption",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "7.通过迷宫后与恶梦鼠王（387.67）对话，进入战斗。",
+      "type": "battle-step",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "◆BOSS：Lv.75恶梦鼠王，血量约6000；技能：攻击、防御、气功弹、圣盾、超强昏睡魔法",
+      "type": "battle-enemy",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "◆喽啰：Lv.70恶梦鼠*2，血量约1000；技能：攻击、防御、气功弹、圣盾、强力昏睡魔法",
+      "type": "battle-enemy",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "8.战斗胜利后与设计师（9.32）对话，获得【设计图？】、称号“恶梦终结者”，任务完结。",
+      "type": "completion-step",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 13,
+      "text": "◆双击【坏掉的矿工锄】可开启打卡时间并随机变为哥布林类造型",
+      "type": "item-use",
+      "sourceLines": [
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 14,
+      "text": "◆【设计图？】鉴定后获得【恶梦鼠设计图ABCDE】任意一张",
+      "type": "item-appraisal",
+      "sourceLines": [
+        14
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        14
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "broken-pickaxe-result",
+      "version": "common",
+      "tier": "common",
+      "kind": "quest-tool",
+      "items": [
+        {
+          "id": "broken-mining-pick",
+          "name": "坏掉的矿工锄",
+          "role": "valuable-result",
+          "properties": {
+            "useEffect": "开启打卡时间并随机变为哥布林类造型"
+          },
+          "sourceLines": [
+            3,
+            13
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-3",
+      "sourceLines": [
+        3,
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "id": "nightmare-design-reward",
+      "version": "common",
+      "tier": "common",
+      "kind": "quest-completion",
+      "items": [
+        {
+          "id": "unidentified-nightmare-design",
+          "name": "设计图？",
+          "role": "valuable-result",
+          "appraisalResult": "恶梦鼠设计图A~E任意一张",
+          "sourceLines": [
+            12,
+            14
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-8",
+      "sourceLines": [
+        12,
+        14
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [
+      {
+        "name": "恶梦终结者",
+        "sourceLines": [
+          12
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 52,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "临时活动/任务"
+  }
+}

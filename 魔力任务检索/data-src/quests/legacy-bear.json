@@ -1,0 +1,397 @@
+{
+  "schemaVersion": 3,
+  "id": "legacy-bear",
+  "name": "杀熊者欧兹那克",
+  "aliases": [
+    "熊男",
+    "欧兹那克的戒指",
+    "杀熊者"
+  ],
+  "metadata": {
+    "category": "经典任务",
+    "level": "Lv.30 建议",
+    "availability": "available",
+    "summary": "在哈巴鲁东边洞穴击败杀熊者欧兹那克，取得通过海底路线所需的戒指。",
+    "repeatable": null
+  },
+  "source": {
+    "key": "legacyBear",
+    "url": "https://www.molibaike.com/mission/Detail/d97bc4eb-155e-47cc-ae1c-2f5f8fe56741?u=True",
+    "localFiles": [],
+    "lineCount": 6,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "无任务型前置"
+      },
+      {
+        "line": 2,
+        "text": "进入哈巴鲁东边洞穴并前往地下2楼。"
+      },
+      {
+        "line": 3,
+        "text": "与杀熊者欧兹那克（17,17）对话进入战斗。"
+      },
+      {
+        "line": 4,
+        "text": "胜利后队伍随机1人获得【欧兹那克的戒指】。"
+      },
+      {
+        "line": 5,
+        "text": "可由队长持戒指调查（9,9）处床，进入小房间阅读日记。"
+      },
+      {
+        "line": 6,
+        "text": "游民和生产系可向矿工尤达彭交500G传送到熊男后方。"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": []
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "哈巴鲁东边洞穴地下2楼",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "进入哈巴鲁东边洞穴并前往地下2楼。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "与杀熊者欧兹那克（17,17）对话进入战斗。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "战斗胜利后，队伍中随机1人获得【欧兹那克的戒指】。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "欧兹那克的戒指",
+            "quantity": 1,
+            "acquisition": "random-party-member",
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "队长持有戒指时可调查（9,9）处床，进入小房间阅读日记。",
+        "inputs": [
+          {
+            "item": "欧兹那克的戒指",
+            "quantity": 1,
+            "action": "hold",
+            "consumed": false,
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": [
+      {
+        "type": "alternate-route",
+        "text": "游民和生产系可向矿工尤达彭交500G传送到熊男后方。",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {
+            "battle-1": {
+              "id": "battle-1",
+              "order": 1,
+              "kind": "boss-battle",
+              "title": "杀熊者欧兹那克",
+              "triggerStep": "step-2",
+              "overview": {
+                "text": "与杀熊者欧兹那克对话进入战斗。",
+                "sourceLines": [
+                  3
+                ],
+                "verification": {
+                  "status": "verified",
+                  "method": "manual-semantic-review"
+                }
+              },
+              "enemies": {
+                "enemy-1": {
+                  "id": "enemy-1",
+                  "name": "杀熊者欧兹那克",
+                  "level": null,
+                  "hp": null,
+                  "count": 1,
+                  "raw": "与杀熊者欧兹那克（17,17）对话进入战斗。",
+                  "sourceLines": [
+                    3
+                  ],
+                  "verification": {
+                    "status": "verified",
+                    "method": "manual-semantic-review"
+                  }
+                }
+              },
+              "sourceLines": [
+                3
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          },
+          "notes": [],
+          "media": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "欧兹那克的戒指",
+        "quantity": 1,
+        "action": "hold",
+        "consumed": false,
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "欧兹那克的戒指",
+        "quantity": 1,
+        "acquisition": "random-party-member",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "无任务型前置",
+      "kind": "requirement",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "进入哈巴鲁东边洞穴并前往地下2楼。",
+      "kind": "flow",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "与杀熊者欧兹那克（17,17）对话进入战斗。",
+      "kind": "battle",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "胜利后队伍随机1人获得【欧兹那克的戒指】。",
+      "kind": "reward",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "可由队长持戒指调查（9,9）处床，进入小房间阅读日记。",
+      "kind": "flow",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "游民和生产系可向矿工尤达彭交500G传送到熊男后方。",
+      "kind": "flow",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        6
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "reward-oznak-ring",
+      "version": "common",
+      "tier": "common",
+      "kind": "battle-reward",
+      "items": [
+        {
+          "id": "oznak-ring",
+          "name": "欧兹那克的戒指",
+          "role": "valuable-result",
+          "acquisition": "random-party-member",
+          "sourceLines": [
+            4
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-3",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": []
+  },
+  "presentation": {
+    "initials": "xoznk",
+    "series": "",
+    "order": null,
+    "stageLabel": "",
+    "optional": false,
+    "type": "经典任务",
+    "sourceCategory": "经典任务"
+  }
+}

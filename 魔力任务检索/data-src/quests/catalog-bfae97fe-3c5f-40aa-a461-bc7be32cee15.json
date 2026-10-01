@@ -1,0 +1,747 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-bfae97fe-3c5f-40aa-a461-bc7be32cee15",
+  "name": "红魔礼包",
+  "aliases": [
+    "红里雍"
+  ],
+  "metadata": {
+    "category": "临时活动/任务",
+    "level": "1 级",
+    "availability": "closed",
+    "summary": "怀旧服活动（已关闭）；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_bfae97fe-3c5f-40aa-a461-bc7be32cee15",
+    "url": "https://www.molibaike.com/Mission/Detail/bfae97fe-3c5f-40aa-a461-bc7be32cee15?u=True",
+    "localFiles": [],
+    "lineCount": 14,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往亚诺曼城与红魔礼包贩售员（131.131）对话，交出1000G购买【红魔礼包】。"
+      },
+      {
+        "line": 2,
+        "text": "◆在2、3线购买【蓝魔礼包】时谨防与NPC位置重叠的“骗子”摊位"
+      },
+      {
+        "line": 3,
+        "text": "2.双击【红魔礼包】随机获得【奖品】，任务完结。"
+      },
+      {
+        "line": 4,
+        "text": "◆【奖品】明细："
+      },
+      {
+        "line": 5,
+        "text": "宠物类奖品（随机获得）备注"
+      },
+      {
+        "line": 6,
+        "text": "红魔乔卡之卵天之纹章红魔乔卡；10技能栏、飞行系火100；34 44 15 22 10"
+      },
+      {
+        "line": 7,
+        "text": "无之纹章红魔乔卡；10技能栏、飞行系水20火80；25 8 28 20 44"
+      },
+      {
+        "line": 8,
+        "text": "迷你龙设计图（A~E）天真的迷你龙；9技能栏、龙系地30水70；36 40 20 18 11"
+      },
+      {
+        "line": 9,
+        "text": "人魔草设计图（A~E）极冰之人魔草；9技能栏、植物系水90火10；20 12 24 25 44"
+      },
+      {
+        "line": 10,
+        "text": "其他奖品（随机获得）"
+      },
+      {
+        "line": 11,
+        "text": "鼠王惊奇蛋鼠王还原券"
+      },
+      {
+        "line": 12,
+        "text": "技能学习证魔石"
+      },
+      {
+        "line": 13,
+        "text": "哥拉尔镇/阿凯鲁法村/雷克塔尔镇传送券传送石优待券"
+      },
+      {
+        "line": 14,
+        "text": "神奇的药草（200技能经验）Lv.9各色宝石"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "currency",
+        "amount": 1000,
+        "currency": "G",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "亚诺曼城礼包贩售员（131.131）",
+      "sourceLines": [
+        1,
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "前往亚诺曼城与红魔礼包贩售员（131.131）对话，交出1000G购买【红魔礼包】；原文提醒2、3线需防范与NPC重叠的骗子摊位。",
+        "inputs": [
+          {
+            "item": "1000G",
+            "quantity": 1,
+            "action": "hand-over",
+            "entityType": "currency",
+            "amount": 1000,
+            "currency": "G",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "红魔礼包",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1,
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "双击【红魔礼包】，从原文奖品池随机获得奖品，任务完结。",
+        "inputs": [
+          {
+            "item": "红魔礼包",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "红魔礼包随机奖品",
+            "quantity": 1,
+            "acquisition": "random-pool",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "1000G",
+        "quantity": 1,
+        "action": "hand-over",
+        "entityType": "currency",
+        "amount": 1000,
+        "currency": "G",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "红魔礼包",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "红魔礼包",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "红魔礼包随机奖品",
+        "quantity": 1,
+        "acquisition": "random-pool",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往亚诺曼城与红魔礼包贩售员（131.131）对话，交出1000G购买【红魔礼包】。",
+      "type": "purchase-step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "◆在2、3线购买【蓝魔礼包】时谨防与NPC位置重叠的“骗子”摊位",
+      "type": "fraud-warning",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "2.双击【红魔礼包】随机获得【奖品】，任务完结。",
+      "type": "open-random-reward",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆【奖品】明细：",
+      "type": "reward-heading",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "宠物类奖品（随机获得）备注",
+      "type": "table-heading",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "红魔乔卡之卵天之纹章红魔乔卡；10技能栏、飞行系火100；34 44 15 22 10",
+      "type": "reward-row",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "无之纹章红魔乔卡；10技能栏、飞行系水20火80；25 8 28 20 44",
+      "type": "reward-row-continuation",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "迷你龙设计图（A~E）天真的迷你龙；9技能栏、龙系地30水70；36 40 20 18 11",
+      "type": "reward-row",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "人魔草设计图（A~E）极冰之人魔草；9技能栏、植物系水90火10；20 12 24 25 44",
+      "type": "reward-row",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "其他奖品（随机获得）",
+      "type": "table-heading",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "鼠王惊奇蛋鼠王还原券",
+      "type": "reward-row",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "技能学习证魔石",
+      "type": "reward-row",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 13,
+      "text": "哥拉尔镇/阿凯鲁法村/雷克塔尔镇传送券传送石优待券",
+      "type": "reward-row",
+      "sourceLines": [
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 14,
+      "text": "神奇的药草（200技能经验）Lv.9各色宝石",
+      "type": "reward-row",
+      "sourceLines": [
+        14
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        14
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "红魔-gift-pool",
+      "version": "common",
+      "tier": "common",
+      "kind": "reward-pool",
+      "items": [
+        {
+          "id": "red-demon-joka-egg",
+          "name": "红魔乔卡之卵",
+          "role": "valuable-result",
+          "entityType": "pet-egg",
+          "possiblePets": [
+            {
+              "name": "天之纹章红魔乔卡",
+              "skillSlots": 10,
+              "race": "飞行系",
+              "elements": {
+                "火": 100
+              },
+              "growth": [
+                34,
+                44,
+                15,
+                22,
+                10
+              ]
+            },
+            {
+              "name": "无之纹章红魔乔卡",
+              "skillSlots": 10,
+              "race": "飞行系",
+              "elements": {
+                "水": 20,
+                "火": 80
+              },
+              "growth": [
+                25,
+                8,
+                28,
+                20,
+                44
+              ]
+            }
+          ],
+          "sourceLines": [
+            6,
+            7
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "mini-dragon-design-set",
+          "name": "迷你龙设计图（A~E）",
+          "role": "valuable-result",
+          "entityType": "design-set",
+          "resultPet": {
+            "name": "天真的迷你龙",
+            "skillSlots": 9,
+            "race": "龙系",
+            "elements": {
+              "地": 30,
+              "水": 70
+            },
+            "growth": [
+              36,
+              40,
+              20,
+              18,
+              11
+            ]
+          },
+          "sourceLines": [
+            8
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "human-demon-grass-design-set",
+          "name": "人魔草设计图（A~E）",
+          "role": "valuable-result",
+          "entityType": "design-set",
+          "resultPet": {
+            "name": "极冰之人魔草",
+            "skillSlots": 9,
+            "race": "植物系",
+            "elements": {
+              "水": 90,
+              "火": 10
+            },
+            "growth": [
+              20,
+              12,
+              24,
+              25,
+              44
+            ]
+          },
+          "sourceLines": [
+            9
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "mouse-king-surprise-egg",
+          "name": "鼠王惊奇蛋",
+          "role": "valuable-result",
+          "sourceLines": [
+            11
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "mouse-king-restoration-ticket",
+          "name": "鼠王还原券",
+          "role": "valuable-result",
+          "sourceLines": [
+            11
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "skill-learning-certificate",
+          "name": "技能学习证",
+          "role": "valuable-result",
+          "sourceLines": [
+            12
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "magic-stone",
+          "name": "魔石",
+          "role": "valuable-result",
+          "sourceLines": [
+            12
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "town-teleport-ticket",
+          "name": "哥拉尔镇/阿凯鲁法村/雷克塔尔镇传送券",
+          "role": "valuable-result",
+          "variants": [
+            "哥拉尔镇传送券",
+            "阿凯鲁法村传送券",
+            "雷克塔尔镇传送券"
+          ],
+          "sourceLines": [
+            13
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "teleport-stone-discount-ticket",
+          "name": "传送石优待券",
+          "role": "valuable-result",
+          "sourceLines": [
+            13
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "magical-herb",
+          "name": "神奇的药草",
+          "role": "valuable-result",
+          "properties": {
+            "skillExperience": 200
+          },
+          "sourceLines": [
+            14
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "level-9-gem",
+          "name": "Lv.9各色宝石",
+          "role": "valuable-result",
+          "variants": "各色",
+          "sourceLines": [
+            14
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-2",
+      "selection": "random",
+      "sourceTableBoundary": {
+        "petRows": [
+          5,
+          9
+        ],
+        "otherRows": [
+          10,
+          14
+        ]
+      },
+      "warningSourceText": "原文第2行将所购礼包写成“蓝魔礼包”，按原文保留为疑似笔误，不据此改写购买对象",
+      "sourceLines": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 61,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "临时活动/任务"
+  }
+}

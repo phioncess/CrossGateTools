@@ -1,0 +1,957 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-d8f0ab18-4d66-4811-a296-b92b9c1f3b99",
+  "name": "图谋",
+  "aliases": [
+    "暗流3"
+  ],
+  "metadata": {
+    "category": "法兰王国的暗流系列",
+    "level": "40 级",
+    "availability": "available",
+    "summary": "必要条件：完成《暗流涌动》任务；怀旧服任务；以下仅展示怀旧服路线与参数",
+    "repeatable": "不可"
+  },
+  "source": {
+    "key": "catalog_d8f0ab18-4d66-4811-a296-b92b9c1f3b99",
+    "url": "https://www.molibaike.com/Mission/Detail/d8f0ab18-4d66-4811-a296-b92b9c1f3b99?u=True",
+    "localFiles": [],
+    "lineCount": 13,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往维诺亚村外东边山背后（381.483）处，黄昏或夜晚时与接头人对话，选“否”、“是”获得【给梅兹的联络信】。"
+      },
+      {
+        "line": 2,
+        "text": "◆持有【蔓陀罗草的血】时无法接本任务，需丢弃后方可重接"
+      },
+      {
+        "line": 3,
+        "text": "2.前往乌克兰村村长的家（69.28）族长的家地下室与梅兹（11.11）对话，交出【给梅兹的联络信】获得【需求材料清单】。"
+      },
+      {
+        "line": 4,
+        "text": "◆抵达乌克兰村的方法参考《就职忍者》任务"
+      },
+      {
+        "line": 5,
+        "text": "3.前往法兰城里谢里雅堡2楼与王室安全顾问（52.23）对话，交出【需求材料清单】获得【附加批注的材料清单】。"
+      },
+      {
+        "line": 6,
+        "text": "4.前往圣拉鲁卡村医院（37.50）与药剂师辛德（11.13）对话，交出【附加批注的材料清单】获得【辛德的回执信】。"
+      },
+      {
+        "line": 7,
+        "text": "5.返回法兰城里谢里雅堡2楼与王室安全顾问（52.23）对话，交出【辛德的回执信】获得【逆香花】。"
+      },
+      {
+        "line": 8,
+        "text": "6.前往杰诺瓦镇外，击倒蔓陀罗草后随机获得【蔓陀罗草的血】。"
+      },
+      {
+        "line": 9,
+        "text": "◆【蔓陀罗草的血】不可交易"
+      },
+      {
+        "line": 10,
+        "text": "7.前往乌克兰村村长的家（69.28）族长的家地下室与梅兹（11.11）对话，交出【蔓陀罗草的血】、【逆香花】获得【“杀人”用的毒】。"
+      },
+      {
+        "line": 11,
+        "text": "8.前往维诺亚东边山背后（381.483）处，黄昏或夜晚时与接头人对话，交出【“杀人”用的毒】获得【奇怪的护身符】，任务完结。"
+      },
+      {
+        "line": 12,
+        "text": "◆【奇怪的护身符】：Lv.3护身符、耐久150；攻击+26、防御-28、敏捷+5、抗昏睡+10、闪躲-2、魅力-5；不可交易、存银行"
+      },
+      {
+        "line": 13,
+        "text": "◆任务剧情：参考《法兰王国的暗流系列任务剧情对话》"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": [
+      {
+        "type": "route",
+        "targetQuest": "就职忍者",
+        "destination": "乌克兰村",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "story",
+        "target": "法兰王国的暗流系列任务剧情对话",
+        "sourceLines": [
+          13
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "time-window",
+        "value": "黄昏或夜晚",
+        "appliesToSteps": [
+          "step-1",
+          "step-8"
+        ],
+        "sourceLines": [
+          1,
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "inventory-absence",
+        "item": "蔓陀罗草的血",
+        "appliesToStep": "step-1",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "维诺亚村外东边山背后接头人（381.483）",
+      "sourceLines": [
+        1,
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "黄昏或夜晚与接头人对话，依次选择“否”“是”，获得【给梅兹的联络信】。持有蔓陀罗草的血时无法接取。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "给梅兹的联络信",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1,
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "前往乌克兰村族长家地下室与梅兹（11.11）对话，交出联络信，获得【需求材料清单】。",
+        "inputs": [
+          {
+            "item": "给梅兹的联络信",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "需求材料清单",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          3,
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "与王室安全顾问（52.23）对话，交出清单，获得【附加批注的材料清单】。",
+        "inputs": [
+          {
+            "item": "需求材料清单",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "附加批注的材料清单",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "与圣拉鲁卡村医院药剂师辛德（11.13）对话，交出附加清单，获得【辛德的回执信】。",
+        "inputs": [
+          {
+            "item": "附加批注的材料清单",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "辛德的回执信",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-5",
+        "order": 5,
+        "text": "返回与王室安全顾问对话，交出回执信，获得【逆香花】。",
+        "inputs": [
+          {
+            "item": "辛德的回执信",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "逆香花",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-6",
+        "order": 6,
+        "text": "前往杰诺瓦镇外击倒蔓陀罗草，随机取得【蔓陀罗草的血】；该物品不可交易。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "蔓陀罗草的血",
+            "quantity": 1,
+            "acquisition": "random-drop",
+            "properties": {
+              "tradeable": false
+            },
+            "sourceLines": [
+              8
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          8,
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-7",
+        "order": 7,
+        "text": "返回梅兹处，交出【蔓陀罗草的血】和【逆香花】，获得【“杀人”用的毒】。",
+        "inputs": [
+          {
+            "item": "蔓陀罗草的血",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              10
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "逆香花",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              10
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "“杀人”用的毒",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              10
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-8",
+        "order": 8,
+        "text": "黄昏或夜晚返回接头人处，交出【“杀人”用的毒】，获得【奇怪的护身符】，任务完结。",
+        "inputs": [
+          {
+            "item": "“杀人”用的毒",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              11
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "奇怪的护身符",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              11
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          11,
+          12
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "给梅兹的联络信",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "需求材料清单",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "附加批注的材料清单",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "辛德的回执信",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-5",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "蔓陀罗草的血",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-7",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "逆香花",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-7",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "“杀人”用的毒",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-8",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "给梅兹的联络信",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "需求材料清单",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "附加批注的材料清单",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "辛德的回执信",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "逆香花",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-5",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "蔓陀罗草的血",
+        "quantity": 1,
+        "acquisition": "random-drop",
+        "properties": {
+          "tradeable": false
+        },
+        "sourceLines": [
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-6",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "“杀人”用的毒",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-7",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "奇怪的护身符",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-8",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往维诺亚村外东边山背后（381.483）处，黄昏或夜晚时与接头人对话，选“否”、“是”获得【给梅兹的联络信】。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "◆持有【蔓陀罗草的血】时无法接本任务，需丢弃后方可重接",
+      "type": "gate",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "2.前往乌克兰村村长的家（69.28）族长的家地下室与梅兹（11.11）对话，交出【给梅兹的联络信】获得【需求材料清单】。",
+      "type": "step",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆抵达乌克兰村的方法参考《就职忍者》任务",
+      "type": "reference",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "3.前往法兰城里谢里雅堡2楼与王室安全顾问（52.23）对话，交出【需求材料清单】获得【附加批注的材料清单】。",
+      "type": "step",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "4.前往圣拉鲁卡村医院（37.50）与药剂师辛德（11.13）对话，交出【附加批注的材料清单】获得【辛德的回执信】。",
+      "type": "step",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "5.返回法兰城里谢里雅堡2楼与王室安全顾问（52.23）对话，交出【辛德的回执信】获得【逆香花】。",
+      "type": "step",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "6.前往杰诺瓦镇外，击倒蔓陀罗草后随机获得【蔓陀罗草的血】。",
+      "type": "collection-event",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "◆【蔓陀罗草的血】不可交易",
+      "type": "item-detail",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "7.前往乌克兰村村长的家（69.28）族长的家地下室与梅兹（11.11）对话，交出【蔓陀罗草的血】、【逆香花】获得【“杀人”用的毒】。",
+      "type": "step",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "8.前往维诺亚东边山背后（381.483）处，黄昏或夜晚时与接头人对话，交出【“杀人”用的毒】获得【奇怪的护身符】，任务完结。",
+      "type": "step",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "◆【奇怪的护身符】：Lv.3护身符、耐久150；攻击+26、防御-28、敏捷+5、抗昏睡+10、闪躲-2、魅力-5；不可交易、存银行",
+      "type": "reward-detail",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 13,
+      "text": "◆任务剧情：参考《法兰王国的暗流系列任务剧情对话》",
+      "type": "reference",
+      "sourceLines": [
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        13
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "reward-strange-amulet",
+      "version": "common",
+      "tier": "common",
+      "kind": "quest-completion",
+      "items": [
+        {
+          "id": "strange-amulet",
+          "name": "奇怪的护身符",
+          "role": "valuable-result",
+          "entityType": "equipment",
+          "properties": {
+            "level": 3,
+            "category": "护身符",
+            "durability": 150,
+            "attack": 26,
+            "defense": -28,
+            "agility": 5,
+            "resistance": {
+              "昏睡": 10
+            },
+            "evasion": -2,
+            "charm": -5,
+            "tradeable": false,
+            "bankable": true
+          },
+          "sourceLines": [
+            11,
+            12
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-8",
+      "sourceLines": [
+        11,
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "法兰王国的暗流系列",
+    "order": 3,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "法兰王国的暗流系列"
+  }
+}

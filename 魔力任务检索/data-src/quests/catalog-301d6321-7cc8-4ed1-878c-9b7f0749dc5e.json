@@ -1,0 +1,711 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-301d6321-7cc8-4ed1-878c-9b7f0749dc5e",
+  "name": "就职厨师",
+  "aliases": [
+    "厨师就职"
+  ],
+  "metadata": {
+    "category": "职业就职任务",
+    "level": "1 级",
+    "availability": "available",
+    "summary": "",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_301d6321-7cc8-4ed1-878c-9b7f0749dc5e",
+    "url": "https://www.molibaike.com/Mission/Detail/301d6321-7cc8-4ed1-878c-9b7f0749dc5e?u=True",
+    "localFiles": [],
+    "lineCount": 9,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往法兰城里谢里雅堡1楼厨房（103.21）与料理长米其巴（8.6）对话，选“是”获得【水果蕃茄】。"
+      },
+      {
+        "line": 2,
+        "text": "2.前往伊尔村巴侬的家（42.72）与伊尔村的祭司（9.6）对话，选“是”交出【水果蕃茄】获得【匆忙写下的信】。"
+      },
+      {
+        "line": 3,
+        "text": "3.前往法兰城竞技场（123.161）与新嫁娘艾莉佳（51.13）对话，交出【匆忙写下的信】获得【流行的项链】。"
+      },
+      {
+        "line": 4,
+        "text": "◆【回忆的项链】可替代【流行的项链】；获得方式参考《就职武器/防具修理工》任务"
+      },
+      {
+        "line": 5,
+        "text": "4.前往法兰城科特利亚酒吧（219.136）与服务生春美（17.12）对话，交出【流行的项链】获得【自豪的食谱】。"
+      },
+      {
+        "line": 6,
+        "text": "5.与酒吧的主人（22.13）对话，交出【自豪的食谱】获得【厨师推荐信】。"
+      },
+      {
+        "line": 7,
+        "text": "6.前往伊尔村旧金山酒吧（32.65），持有【厨师推荐信】与厨师印普德（15.4）对话即可就职厨师，任务完结。"
+      },
+      {
+        "line": 8,
+        "text": "◆前往法兰城里谢里雅堡1楼厨房（104.21）与见习厨师特歇（12.6）对话可学习技能料理，费用100G"
+      },
+      {
+        "line": 9,
+        "text": "◆任务剧情：参考《就职厨师任务剧情对话》"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [
+      {
+        "item": "回忆的项链",
+        "sourceQuest": "就职武器/防具修理工",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "references": [
+      {
+        "type": "story",
+        "target": "就职厨师任务剧情对话",
+        "sourceLines": [
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "requirements": {
+    "conditions": []
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "里谢里雅堡1楼厨房（103.21）",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "与料理长米其巴（8.6）对话，选择“是”，获得【水果蕃茄】。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "水果蕃茄",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "前往伊尔村巴侬的家，与伊尔村的祭司（9.6）对话，交出【水果蕃茄】，获得【匆忙写下的信】。",
+        "inputs": [
+          {
+            "item": "水果蕃茄",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "匆忙写下的信",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "前往法兰城竞技场与新嫁娘艾莉佳（51.13）对话，交出【匆忙写下的信】，获得【流行的项链】。",
+        "inputs": [
+          {
+            "item": "匆忙写下的信",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "流行的项链",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [
+          {
+            "text": "回忆的项链可替代流行的项链。",
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "sourceLines": [
+          3,
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "前往科特利亚酒吧与服务生春美（17.12）对话，交出【流行的项链】或【回忆的项链】，获得【自豪的食谱】。",
+        "inputs": [
+          {
+            "item": "流行的项链",
+            "quantity": 1,
+            "action": "hand-over",
+            "alternativeGroup": "necklace",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "回忆的项链",
+            "quantity": 1,
+            "action": "hand-over",
+            "alternativeGroup": "necklace",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "自豪的食谱",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-5",
+        "order": 5,
+        "text": "与酒吧的主人（22.13）对话，交出【自豪的食谱】，获得【厨师推荐信】。",
+        "inputs": [
+          {
+            "item": "自豪的食谱",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "厨师推荐信",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-6",
+        "order": 6,
+        "text": "前往伊尔村旧金山酒吧，持有【厨师推荐信】与厨师印普德（15.4）对话，就职厨师，任务完结。",
+        "inputs": [
+          {
+            "item": "厨师推荐信",
+            "quantity": 1,
+            "action": "hold",
+            "consumed": false,
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "水果蕃茄",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "匆忙写下的信",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "流行的项链",
+        "quantity": 1,
+        "action": "hand-over",
+        "alternativeGroup": "necklace",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "回忆的项链",
+        "quantity": 1,
+        "action": "hand-over",
+        "alternativeGroup": "necklace",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "自豪的食谱",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-5",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "厨师推荐信",
+        "quantity": 1,
+        "action": "hold",
+        "consumed": false,
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-6",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "水果蕃茄",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "匆忙写下的信",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "流行的项链",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "自豪的食谱",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "厨师推荐信",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-5",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往法兰城里谢里雅堡1楼厨房（103.21）与料理长米其巴（8.6）对话，选“是”获得【水果蕃茄】。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2.前往伊尔村巴侬的家（42.72）与伊尔村的祭司（9.6）对话，选“是”交出【水果蕃茄】获得【匆忙写下的信】。",
+      "type": "step",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "3.前往法兰城竞技场（123.161）与新嫁娘艾莉佳（51.13）对话，交出【匆忙写下的信】获得【流行的项链】。",
+      "type": "step",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆【回忆的项链】可替代【流行的项链】；获得方式参考《就职武器/防具修理工》任务",
+      "type": "alternative-item-source",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "4.前往法兰城科特利亚酒吧（219.136）与服务生春美（17.12）对话，交出【流行的项链】获得【自豪的食谱】。",
+      "type": "step",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "5.与酒吧的主人（22.13）对话，交出【自豪的食谱】获得【厨师推荐信】。",
+      "type": "step",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "6.前往伊尔村旧金山酒吧（32.65），持有【厨师推荐信】与厨师印普德（15.4）对话即可就职厨师，任务完结。",
+      "type": "step",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "◆前往法兰城里谢里雅堡1楼厨房（104.21）与见习厨师特歇（12.6）对话可学习技能料理，费用100G",
+      "type": "skill-learning",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "◆任务剧情：参考《就职厨师任务剧情对话》",
+      "type": "reference",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        9
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [],
+  "outcomes": {
+    "titles": [],
+    "careers": [
+      {
+        "career": "厨师",
+        "action": "employment",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "skills": [
+      {
+        "name": "料理",
+        "learningLocation": "里谢里雅堡1楼厨房（104.21）见习厨师特歇（12.6）",
+        "cost": {
+          "amount": 100,
+          "unit": "G"
+        },
+        "optional": true,
+        "sourceLines": [
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 6,
+    "stageLabel": "",
+    "optional": false,
+    "type": "职业就职任务",
+    "sourceCategory": "职业就职任务"
+  }
+}

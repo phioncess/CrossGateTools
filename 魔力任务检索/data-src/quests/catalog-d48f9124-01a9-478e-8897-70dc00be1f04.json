@@ -1,0 +1,484 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-d48f9124-01a9-478e-8897-70dc00be1f04",
+  "name": "爱情仪式",
+  "aliases": [],
+  "metadata": {
+    "category": "临时活动/任务",
+    "level": "30 级",
+    "availability": "closed",
+    "summary": "怀旧服任务（已关闭）；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_d48f9124-01a9-478e-8897-70dc00be1f04",
+    "url": "https://www.molibaike.com/Mission/Detail/d48f9124-01a9-478e-8897-70dc00be1f04?u=True",
+    "localFiles": [],
+    "lineCount": 8,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.与法兰城情人节活动专员（233.126）对话。"
+      },
+      {
+        "line": 2,
+        "text": "2.持有【流星耳环】时，前往法兰城庆典会场与情人节活动专员（35.25）对话，交出【流星耳环】获得【爱的证明（男）】或【爱的证明（女）】。"
+      },
+      {
+        "line": 3,
+        "text": "◆【流星耳环】获得方式参考《流星山丘》任务"
+      },
+      {
+        "line": 4,
+        "text": "◆男性角色获得【爱的证明（男）】；女性角色获得【爱的证明（女）】"
+      },
+      {
+        "line": 5,
+        "text": "◆【爱的证明（男）/（女）】可交易"
+      },
+      {
+        "line": 6,
+        "text": "3.男性角色持有【爱的证明（女）】、女性角色持有【爱的证明（男）】时，与法兰城庆典会场情人节活动专员对话，交出【爱的证明（男）/（女）】获得称号“她的男神”或“他的女神”、【爱情之力】，任务完结。"
+      },
+      {
+        "line": 7,
+        "text": "◆男性角色获得称号“她的男神”；女性角色获得称号“他的女神”"
+      },
+      {
+        "line": 8,
+        "text": "◆在物品栏内存有多个【流星耳环】，可一次性兑换多个【爱的证明（男）/（女）】"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [
+      {
+        "item": "流星耳环",
+        "sourceQuest": "流星山丘",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "references": []
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "held-item",
+        "item": "流星耳环",
+        "quantity": 1,
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "cross-gender-proof",
+        "text": "男性角色持有爱的证明（女）；女性角色持有爱的证明（男）。",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "法兰城情人节活动专员（233.126）",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "与法兰城情人节活动专员（233.126）对话。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "持有【流星耳环】时，在庆典会场与活动专员（35.25）对话，交出耳环，按角色性别获得对应【爱的证明】。",
+        "inputs": [
+          {
+            "item": "流星耳环",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "爱的证明（男）/（女）",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "variantByCharacterGender": {
+              "男": "爱的证明（男）",
+              "女": "爱的证明（女）"
+            },
+            "tradeable": true,
+            "repeatableForEachHeldInput": true,
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          2,
+          4,
+          5,
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "持有异性版本的【爱的证明】与庆典会场活动专员对话，交出证明，获得对应称号和【爱情之力】，任务完结。",
+        "inputs": [
+          {
+            "item": "爱的证明（男）/（女）",
+            "quantity": 1,
+            "action": "hand-over",
+            "requiredOppositeGenderVariant": true,
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "爱情之力",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          6,
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "notes": [],
+          "media": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "流星耳环",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "爱的证明（男）/（女）",
+        "quantity": 1,
+        "action": "hand-over",
+        "requiredOppositeGenderVariant": true,
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "爱的证明（男）/（女）",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "variantByCharacterGender": {
+          "男": "爱的证明（男）",
+          "女": "爱的证明（女）"
+        },
+        "tradeable": true,
+        "repeatableForEachHeldInput": true,
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "爱情之力",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.与法兰城情人节活动专员（233.126）对话。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2.持有【流星耳环】时，前往法兰城庆典会场与情人节活动专员（35.25）对话，交出【流星耳环】获得【爱的证明（男）】或【爱的证明（女）】。",
+      "type": "step",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆【流星耳环】获得方式参考《流星山丘》任务",
+      "type": "item-source",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆男性角色获得【爱的证明（男）】；女性角色获得【爱的证明（女）】",
+      "type": "variant-rule",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "◆【爱的证明（男）/（女）】可交易",
+      "type": "item-detail",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "3.男性角色持有【爱的证明（女）】、女性角色持有【爱的证明（男）】时，与法兰城庆典会场情人节活动专员对话，交出【爱的证明（男）/（女）】获得称号“她的男神”或“他的女神”、【爱情之力】，任务完结。",
+      "type": "step",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "◆男性角色获得称号“她的男神”；女性角色获得称号“他的女神”",
+      "type": "title-detail",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "◆在物品栏内存有多个【流星耳环】，可一次性兑换多个【爱的证明（男）/（女）】",
+      "type": "repeatability-note",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        8
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "reward-power-of-love",
+      "version": "common",
+      "tier": "common",
+      "kind": "quest-completion",
+      "items": [
+        {
+          "id": "power-of-love",
+          "name": "爱情之力",
+          "role": "valuable-result",
+          "properties": {
+            "sourceDoesNotDescribeEffect": true
+          },
+          "sourceLines": [
+            6
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-3",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [
+      {
+        "variants": {
+          "男": "她的男神",
+          "女": "他的女神"
+        },
+        "acquisition": "quest-completion",
+        "sourceLines": [
+          6,
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 4,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "临时活动/任务"
+  }
+}

@@ -1,0 +1,814 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-a3a2c96f-ecbc-40d9-b6ed-b45e2f551f48",
+  "name": "魔法大学圣诞礼物",
+  "aliases": [
+    "2021圣诞节任务"
+  ],
+  "metadata": {
+    "category": "临时活动/任务",
+    "level": "0 级",
+    "availability": "closed",
+    "summary": "必要条件：持有任意纯属性的水晶；怀旧服（关闭）；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_a3a2c96f-ecbc-40d9-b6ed-b45e2f551f48",
+    "url": "https://www.molibaike.com/Mission/Detail/a3a2c96f-ecbc-40d9-b6ed-b45e2f551f48?u=True",
+    "localFiles": [],
+    "lineCount": 14,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往魔法大学与节日特派员（89.87）对话，选“是”交出一个【纯属性水晶】获得【圣诞袜】。"
+      },
+      {
+        "line": 2,
+        "text": "◆身上装备上的纯水晶有可能被收走；【纯属性水晶】不要求耐久度，初始水晶不可用"
+      },
+      {
+        "line": 3,
+        "text": "2.调查圣诞树，选“是”交出【圣诞袜】获得【圣诞铃铛】。"
+      },
+      {
+        "line": 4,
+        "text": "3.等待23小时后调查圣诞树，交出【圣诞铃铛】获得【装有礼物的圣诞袜】。"
+      },
+      {
+        "line": 5,
+        "text": "4.双击【装有礼物的圣诞袜】获得奖品，任务完结。"
+      },
+      {
+        "line": 6,
+        "text": "◆奖品明细："
+      },
+      {
+        "line": 7,
+        "text": "名称使用效果备注"
+      },
+      {
+        "line": 8,
+        "text": "各种波波打卡器造型变更为波波并开启工作时间可交易、堆叠"
+      },
+      {
+        "line": 9,
+        "text": "特级布斯特药草技能经验增加+200不可交易、丢地消失"
+      },
+      {
+        "line": 10,
+        "text": "姜饼魔+100可交易、堆叠"
+      },
+      {
+        "line": 11,
+        "text": "圣诞香槟血+1000可交易、堆叠、战斗不可用"
+      },
+      {
+        "line": 12,
+        "text": "圣诞鼠王娃娃等级3、护身符；攻击+11、防御+15、敏捷+11、精神+10、回复+14、数据浮动可交易"
+      },
+      {
+        "line": 13,
+        "text": "华丽的圣诞帽等级1、头饰；无属性可交易"
+      },
+      {
+        "line": 14,
+        "text": "各种波波的精华各种波波可交易"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "held-item",
+        "item": "纯属性水晶",
+        "quantity": 1,
+        "constraints": {
+          "initialCrystalAllowed": false,
+          "durabilityRequirement": "none",
+          "equippedCrystalMayBeTaken": true
+        },
+        "sourceLines": [
+          1,
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "wait-duration",
+        "durationHours": 23,
+        "appliesToStep": "step-3",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "魔法大学节日特派员（89.87）",
+      "sourceLines": [
+        1,
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "与节日特派员（89.87）对话并选择“是”，交出一个非初始【纯属性水晶】，获得【圣诞袜】；水晶不限耐久，装备中的纯水晶也可能被收走。",
+        "inputs": [
+          {
+            "item": "纯属性水晶",
+            "quantity": 1,
+            "action": "hand-over",
+            "constraints": {
+              "initialCrystalAllowed": false,
+              "durabilityRequirement": "none",
+              "equippedMayBeTaken": true
+            },
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "圣诞袜",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1,
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "调查圣诞树并选择“是”，交出【圣诞袜】，获得【圣诞铃铛】。",
+        "inputs": [
+          {
+            "item": "圣诞袜",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "圣诞铃铛",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "等待23小时后调查圣诞树，交出【圣诞铃铛】，获得【装有礼物的圣诞袜】。",
+        "inputs": [
+          {
+            "item": "圣诞铃铛",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "装有礼物的圣诞袜",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "双击【装有礼物的圣诞袜】，从原文奖品池获得奖品，任务完结。",
+        "inputs": [
+          {
+            "item": "装有礼物的圣诞袜",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "圣诞礼物奖品",
+            "quantity": 1,
+            "acquisition": "reward-pool",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "纯属性水晶",
+        "quantity": 1,
+        "action": "hand-over",
+        "constraints": {
+          "initialCrystalAllowed": false,
+          "durabilityRequirement": "none",
+          "equippedMayBeTaken": true
+        },
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "圣诞袜",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "圣诞铃铛",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "装有礼物的圣诞袜",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "圣诞袜",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "圣诞铃铛",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "装有礼物的圣诞袜",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "圣诞礼物奖品",
+        "quantity": 1,
+        "acquisition": "reward-pool",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往魔法大学与节日特派员（89.87）对话，选“是”交出一个【纯属性水晶】获得【圣诞袜】。",
+      "type": "exchange-step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "◆身上装备上的纯水晶有可能被收走；【纯属性水晶】不要求耐久度，初始水晶不可用",
+      "type": "input-warning",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "2.调查圣诞树，选“是”交出【圣诞袜】获得【圣诞铃铛】。",
+      "type": "exchange-step",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "3.等待23小时后调查圣诞树，交出【圣诞铃铛】获得【装有礼物的圣诞袜】。",
+      "type": "wait-step",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "4.双击【装有礼物的圣诞袜】获得奖品，任务完结。",
+      "type": "open-reward",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "◆奖品明细：",
+      "type": "reward-heading",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "名称使用效果备注",
+      "type": "table-heading",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "各种波波打卡器造型变更为波波并开启工作时间可交易、堆叠",
+      "type": "reward-row",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "特级布斯特药草技能经验增加+200不可交易、丢地消失",
+      "type": "reward-row",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "姜饼魔+100可交易、堆叠",
+      "type": "reward-row",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "圣诞香槟血+1000可交易、堆叠、战斗不可用",
+      "type": "reward-row",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "圣诞鼠王娃娃等级3、护身符；攻击+11、防御+15、敏捷+11、精神+10、回复+14、数据浮动可交易",
+      "type": "reward-row",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 13,
+      "text": "华丽的圣诞帽等级1、头饰；无属性可交易",
+      "type": "reward-row",
+      "sourceLines": [
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 14,
+      "text": "各种波波的精华各种波波可交易",
+      "type": "reward-row",
+      "sourceLines": [
+        14
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        14
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "christmas-gift-pool",
+      "version": "common",
+      "tier": "common",
+      "kind": "reward-pool",
+      "items": [
+        {
+          "id": "various-bobo-time-card",
+          "name": "各种波波打卡器",
+          "role": "valuable-result",
+          "properties": {
+            "useEffect": "造型变更为波波并开启工作时间",
+            "tradeable": true,
+            "stackable": true
+          },
+          "sourceLines": [
+            8
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "special-booster-herb",
+          "name": "特级布斯特药草",
+          "role": "valuable-result",
+          "properties": {
+            "skillExperience": 200,
+            "tradeable": false,
+            "dropBehavior": "丢地消失"
+          },
+          "sourceLines": [
+            9
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "gingerbread",
+          "name": "姜饼",
+          "role": "valuable-result",
+          "properties": {
+            "mpRecovery": 100,
+            "tradeable": true,
+            "stackable": true
+          },
+          "sourceLines": [
+            10
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "christmas-champagne",
+          "name": "圣诞香槟",
+          "role": "valuable-result",
+          "properties": {
+            "hpRecovery": 1000,
+            "tradeable": true,
+            "stackable": true,
+            "battleUsable": false
+          },
+          "sourceLines": [
+            11
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "christmas-mouse-king-doll",
+          "name": "圣诞鼠王娃娃",
+          "role": "valuable-result",
+          "entityType": "equipment",
+          "properties": {
+            "level": 3,
+            "category": "护身符",
+            "attack": 11,
+            "defense": 15,
+            "agility": 11,
+            "spirit": 10,
+            "recovery": 14,
+            "dataVariance": true,
+            "tradeable": true
+          },
+          "sourceLines": [
+            12
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "gorgeous-christmas-hat",
+          "name": "华丽的圣诞帽",
+          "role": "valuable-result",
+          "entityType": "equipment",
+          "properties": {
+            "level": 1,
+            "category": "头饰",
+            "attributes": "无",
+            "tradeable": true
+          },
+          "sourceLines": [
+            13
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "various-bobo-essence",
+          "name": "各种波波的精华",
+          "role": "valuable-result",
+          "sourceEffectText": "各种波波",
+          "properties": {
+            "tradeable": true
+          },
+          "sourceLines": [
+            14
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-4",
+      "selection": "source-unspecified",
+      "sourceLines": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 36,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "临时活动/任务"
+  }
+}

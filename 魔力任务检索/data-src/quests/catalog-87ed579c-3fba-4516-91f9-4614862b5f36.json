@@ -1,0 +1,401 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-87ed579c-3fba-4516-91f9-4614862b5f36",
+  "name": "龙之穴",
+  "aliases": [
+    "八卦系列5",
+    "青龙3",
+    "青龙的邀约"
+  ],
+  "metadata": {
+    "category": "怀旧服其他自制任务",
+    "level": "85 级",
+    "availability": "available",
+    "summary": "必要条件：完成《闪现的“恶”龙》任务；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_87ed579c-3fba-4516-91f9-4614862b5f36",
+    "url": "https://www.molibaike.com/Mission/Detail/87ed579c-3fba-4516-91f9-4614862b5f36?u=True",
+    "localFiles": [],
+    "lineCount": 7,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往雪山之顶，至（41.8）处进入永久冻土，与“离”（10.21）对话，进入永久冻土地下。"
+      },
+      {
+        "line": 2,
+        "text": "※无需世界之心，需要有“来自【震】的挑战” 称号，是和鸡对话，不是人魔草。"
+      },
+      {
+        "line": 3,
+        "text": "2.通过 21.8 传送石迷宫进入青龙居所。"
+      },
+      {
+        "line": 4,
+        "text": "◆永久冻土 迷宫总36层，55-63级 水龙蜥、蜥蜴战士、风龙蜥、蜥蜴武士"
+      },
+      {
+        "line": 5,
+        "text": "3.通过永久冻土，进入 青龙居所，与青龙护卫（24.22）对话进入战斗"
+      },
+      {
+        "line": 6,
+        "text": "◆青龙护卫：数量1-2；LV.90；HP 22000；属性：全30；技能：混乱攻击E1，吸血攻击（500血），诛刃V、战栗袭心LV.10、圣盾、混乱魔法。"
+      },
+      {
+        "line": 7,
+        "text": "4.战斗胜利之后，与 震（24.22）对话，得到称号“青龙的邀约”，任务结束。"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": [
+      {
+        "type": "clarification",
+        "text": "不需要世界之心；入口应与“离”对话，来源特别说明是“鸡”，不是人魔草。",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "title",
+        "title": "来自【震】的挑战",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "雪山之顶（41.8）永久冻土入口",
+      "sourceLines": [
+        1,
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "前往雪山之顶，从（41.8）进入永久冻土，与“离”（10.21）对话进入永久冻土地下。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          1,
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "通过（21.8）传送石迷宫，进入青龙居所。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          3,
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "通过永久冻土后，在青龙居所与青龙护卫（24.22）对话进入战斗。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          5,
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "战斗胜利后与震（24.22）对话，获得称号“青龙的邀约”，任务结束。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {
+            "battle-1": {
+              "id": "battle-1",
+              "order": 1,
+              "kind": "boss-battle",
+              "title": "青龙护卫",
+              "triggerStep": "step-3",
+              "overview": {
+                "text": "与青龙护卫（24.22）对话进入战斗。",
+                "sourceLines": [
+                  5
+                ],
+                "verification": {
+                  "status": "verified",
+                  "method": "manual-semantic-review"
+                }
+              },
+              "enemies": {
+                "enemy-1": {
+                  "id": "enemy-1",
+                  "name": "青龙护卫",
+                  "count": {
+                    "min": 1,
+                    "max": 2
+                  },
+                  "level": {
+                    "min": 90,
+                    "max": 90
+                  },
+                  "hp": {
+                    "min": 22000,
+                    "max": 22000,
+                    "approximate": false
+                  },
+                  "elements": {
+                    "地": 30,
+                    "水": 30,
+                    "火": 30,
+                    "风": 30
+                  },
+                  "skills": [
+                    "混乱攻击E1",
+                    "吸血攻击（500血）",
+                    "诛刃V",
+                    "战栗袭心LV.10",
+                    "圣盾",
+                    "混乱魔法"
+                  ],
+                  "raw": "青龙护卫：数量1-2；LV.90；HP 22000；属性：全30；技能：混乱攻击E1，吸血攻击（500血），诛刃V、战栗袭心LV.10、圣盾、混乱魔法。",
+                  "sourceLines": [
+                    6
+                  ],
+                  "verification": {
+                    "status": "verified",
+                    "method": "manual-semantic-review"
+                  }
+                }
+              },
+              "sourceLines": [
+                5,
+                6
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          },
+          "encounters": [
+            {
+              "id": "encounter-permafrost",
+              "location": "永久冻土随机迷宫",
+              "floors": 36,
+              "enemyLevel": {
+                "min": 55,
+                "max": 63
+              },
+              "enemies": [
+                "水龙蜥",
+                "蜥蜴战士",
+                "风龙蜥",
+                "蜥蜴武士"
+              ],
+              "sourceLines": [
+                4
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          ],
+          "notes": [],
+          "media": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [],
+    "acquisitions": []
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往雪山之顶，至（41.8）处进入永久冻土，与“离”（10.21）对话，进入永久冻土地下。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "※无需世界之心，需要有“来自【震】的挑战” 称号，是和鸡对话，不是人魔草。",
+      "type": "requirement-and-clarification",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "2.通过 21.8 传送石迷宫进入青龙居所。",
+      "type": "step",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆永久冻土 迷宫总36层，55-63级 水龙蜥、蜥蜴战士、风龙蜥、蜥蜴武士",
+      "type": "encounter-area",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "3.通过永久冻土，进入 青龙居所，与青龙护卫（24.22）对话进入战斗",
+      "type": "battle-trigger",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "◆青龙护卫：数量1-2；LV.90；HP 22000；属性：全30；技能：混乱攻击E1，吸血攻击（500血），诛刃V、战栗袭心LV.10、圣盾、混乱魔法。",
+      "type": "enemy",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "4.战斗胜利之后，与 震（24.22）对话，得到称号“青龙的邀约”，任务结束。",
+      "type": "step",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        7
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [],
+  "outcomes": {
+    "titles": [
+      {
+        "name": "青龙的邀约",
+        "acquisition": "quest-completion",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 13,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "怀旧服其他自制任务"
+  }
+}

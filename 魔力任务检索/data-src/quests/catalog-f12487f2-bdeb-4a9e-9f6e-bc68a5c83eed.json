@@ -1,0 +1,776 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-f12487f2-bdeb-4a9e-9f6e-bc68a5c83eed",
+  "name": "咖哩任务",
+  "aliases": [
+    "生产系1转"
+  ],
+  "metadata": {
+    "category": "职业晋阶任务",
+    "level": "20 级",
+    "availability": "available",
+    "summary": "必要条件：生产系（不含护士/医生）",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_f12487f2-bdeb-4a9e-9f6e-bc68a5c83eed",
+    "url": "https://www.molibaike.com/Mission/Detail/f12487f2-bdeb-4a9e-9f6e-bc68a5c83eed?u=True",
+    "localFiles": [],
+    "lineCount": 20,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往维诺亚村荷特尔咖哩店（49.58）与村姑诗特（11.6）对话，获得【料理？】。"
+      },
+      {
+        "line": 2,
+        "text": "◆持有本任务相关【道具】时，不可以使用目的地的村落传送石，可以登出。"
+      },
+      {
+        "line": 3,
+        "text": "◆本任务获得的未鉴定【道具】无需鉴定，鉴定后也可交出。"
+      },
+      {
+        "line": 4,
+        "text": "◇维诺亚村到达方法：参考本文末尾小贴士"
+      },
+      {
+        "line": 5,
+        "text": "2.前往伊尔村旧金山酒吧（32.65）与服务生霍特（14.12）对话，交出【料理？】获得【点心？】。"
+      },
+      {
+        "line": 6,
+        "text": "3.前往圣拉鲁卡村食品店（50.64）与新娘莎瓦（16.9）对话，交出【点心？】获得【点心？】。"
+      },
+      {
+        "line": 7,
+        "text": "4.返回维诺亚村荷特尔咖哩店与村姑诗特对话，交出【点心？】，任务完结。"
+      },
+      {
+        "line": 8,
+        "text": "◆生产系通过完成《树精长老的末日》任务，亦可获得一转晋阶资格"
+      },
+      {
+        "line": 9,
+        "text": "◆转职后需要重新完成晋阶任务方可进阶（1~4转，5转只需要1次）；"
+      },
+      {
+        "line": 10,
+        "text": "小贴士："
+      },
+      {
+        "line": 11,
+        "text": "维诺亚村到达方法："
+      },
+      {
+        "line": 12,
+        "text": "1.法兰城出南门/东门，前往芙蕾雅（472.315），与矿工潘丹对话，选“是”进入维诺亚洞穴。"
+      },
+      {
+        "line": 13,
+        "text": "◆进入维诺亚洞窟的要求："
+      },
+      {
+        "line": 14,
+        "text": "⒈Lv.20的生产系、战斗系、游民，可以直接进入。"
+      },
+      {
+        "line": 15,
+        "text": "⒉不足Lv.20的生产系职业（护士、医生除外）："
+      },
+      {
+        "line": 16,
+        "text": "⑴制造类职业需携带本职业3级物品；"
+      },
+      {
+        "line": 17,
+        "text": "⑵采集类职业材料需为20个；"
+      },
+      {
+        "line": 18,
+        "text": "⑶服务类职业需本职业技能达到3级。"
+      },
+      {
+        "line": 19,
+        "text": "2.维诺亚洞穴走法：地下1楼（20.59）→地下2楼（24.81）→地下3楼（26.64），到达出口。"
+      },
+      {
+        "line": 20,
+        "text": "3.向西南走，走到芙蕾雅（330.480）即到达维诺亚村。"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": [
+      {
+        "type": "alternate-qualification",
+        "targetQuest": "树精长老的末日",
+        "scope": "生产系一转晋阶资格",
+        "sourceLines": [
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "travel-restriction-while-held",
+        "items": "本任务相关道具",
+        "disabled": "目的地村落传送石",
+        "logoutAllowed": true,
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "route-entry",
+        "location": "维诺亚洞穴",
+        "alternatives": [
+          {
+            "condition": "等级不低于20",
+            "careers": [
+              "生产系",
+              "战斗系",
+              "游民"
+            ]
+          },
+          {
+            "condition": "等级不足20的生产系（护士、医生除外）",
+            "subconditions": [
+              {
+                "careerType": "制造类",
+                "heldItem": "本职业3级物品"
+              },
+              {
+                "careerType": "采集类",
+                "heldMaterials": 20
+              },
+              {
+                "careerType": "服务类",
+                "skillLevel": 3
+              }
+            ]
+          }
+        ],
+        "sourceLines": [
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "维诺亚村荷特尔咖哩店村姑诗特（11.6）",
+      "sourceLines": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "前往维诺亚村荷特尔咖哩店与村姑诗特（11.6）对话，获得未鉴定【料理？】。任务相关道具持有期间不能使用目的地村落传送石，但可登出；未鉴定道具无需鉴定，鉴定后也可交付。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "料理？",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "appraisal": "optional",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "前往伊尔村旧金山酒吧与服务生霍特（14.12）对话，交出【料理？】，获得第一份【点心？】。",
+        "inputs": [
+          {
+            "item": "料理？",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "点心？",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "variant": "伊尔村取得",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "前往圣拉鲁卡村食品店与新娘莎瓦（16.9）对话，交出伊尔村取得的【点心？】，获得另一份同名【点心？】。",
+        "inputs": [
+          {
+            "item": "点心？",
+            "quantity": 1,
+            "action": "hand-over",
+            "variant": "伊尔村取得",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "点心？",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "variant": "圣拉鲁卡村取得",
+            "allowsSameNameExchange": true,
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "返回维诺亚村荷特尔咖哩店与村姑诗特对话，交出圣拉鲁卡村取得的【点心？】，任务完结并取得该任务对应的晋阶资格。",
+        "inputs": [
+          {
+            "item": "点心？",
+            "quantity": 1,
+            "action": "hand-over",
+            "variant": "圣拉鲁卡村取得",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          7,
+          8,
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-5",
+        "order": 5,
+        "text": "维诺亚村路线：从法兰城南门或东门前往芙蕾雅（472.315），按等级/职业条件经矿工潘丹进入维诺亚洞穴；依次经过地下1楼（20.59）、地下2楼（24.81）、地下3楼（26.64）到出口，再向西南至芙蕾雅（330.480）进入维诺亚村。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "料理？",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "点心？",
+        "quantity": 1,
+        "action": "hand-over",
+        "variant": "伊尔村取得",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "点心？",
+        "quantity": 1,
+        "action": "hand-over",
+        "variant": "圣拉鲁卡村取得",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "料理？",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "appraisal": "optional",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "点心？",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "variant": "伊尔村取得",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "点心？",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "variant": "圣拉鲁卡村取得",
+        "allowsSameNameExchange": true,
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往维诺亚村荷特尔咖哩店（49.58）与村姑诗特（11.6）对话，获得【料理？】。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "◆持有本任务相关【道具】时，不可以使用目的地的村落传送石，可以登出。",
+      "type": "travel-restriction",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆本任务获得的未鉴定【道具】无需鉴定，鉴定后也可交出。",
+      "type": "appraisal-rule",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◇维诺亚村到达方法：参考本文末尾小贴士",
+      "type": "route-reference",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "2.前往伊尔村旧金山酒吧（32.65）与服务生霍特（14.12）对话，交出【料理？】获得【点心？】。",
+      "type": "exchange-step",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "3.前往圣拉鲁卡村食品店（50.64）与新娘莎瓦（16.9）对话，交出【点心？】获得【点心？】。",
+      "type": "same-name-exchange",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "4.返回维诺亚村荷特尔咖哩店与村姑诗特对话，交出【点心？】，任务完结。",
+      "type": "completion-step",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "◆生产系通过完成《树精长老的末日》任务，亦可获得一转晋阶资格",
+      "type": "alternate-qualification",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "◆转职后需要重新完成晋阶任务方可进阶（1~4转，5转只需要1次）；",
+      "type": "career-rule",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "小贴士：",
+      "type": "tips-heading",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "维诺亚村到达方法：",
+      "type": "route-heading",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "1.法兰城出南门/东门，前往芙蕾雅（472.315），与矿工潘丹对话，选“是”进入维诺亚洞穴。",
+      "type": "route-step",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 13,
+      "text": "◆进入维诺亚洞窟的要求：",
+      "type": "gate-heading",
+      "sourceLines": [
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 14,
+      "text": "⒈Lv.20的生产系、战斗系、游民，可以直接进入。",
+      "type": "route-gate",
+      "sourceLines": [
+        14
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 15,
+      "text": "⒉不足Lv.20的生产系职业（护士、医生除外）：",
+      "type": "route-gate",
+      "sourceLines": [
+        15
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 16,
+      "text": "⑴制造类职业需携带本职业3级物品；",
+      "type": "route-gate",
+      "sourceLines": [
+        16
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 17,
+      "text": "⑵采集类职业材料需为20个；",
+      "type": "route-gate",
+      "sourceLines": [
+        17
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 18,
+      "text": "⑶服务类职业需本职业技能达到3级。",
+      "type": "route-gate",
+      "sourceLines": [
+        18
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 19,
+      "text": "2.维诺亚洞穴走法：地下1楼（20.59）→地下2楼（24.81）→地下3楼（26.64），到达出口。",
+      "type": "route-step",
+      "sourceLines": [
+        19
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 20,
+      "text": "3.向西南走，走到芙蕾雅（330.480）即到达维诺亚村。",
+      "type": "route-step",
+      "sourceLines": [
+        20
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        20
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [],
+  "outcomes": {
+    "titles": [],
+    "careers": [
+      {
+        "type": "advancement-qualification",
+        "scope": "原文仅明确生产系可用《树精长老的末日》替代获得一转资格",
+        "repeatRule": "转职后需重新完成晋阶任务方可进阶1~4转；5转只需1次",
+        "sourceLines": [
+          8,
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 1,
+    "stageLabel": "",
+    "optional": false,
+    "type": "通用任务",
+    "sourceCategory": "职业晋阶任务"
+  }
+}

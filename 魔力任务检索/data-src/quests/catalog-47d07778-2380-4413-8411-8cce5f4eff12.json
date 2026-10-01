@@ -1,0 +1,866 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-47d07778-2380-4413-8411-8cce5f4eff12",
+  "name": "卡赛迪博士宠物研究计划",
+  "aliases": [
+    "魔法黑猫",
+    "明镜徽章",
+    "耀阳花",
+    "虚弱的猫妖"
+  ],
+  "metadata": {
+    "category": "怀旧服其他自制任务",
+    "level": "55 级",
+    "availability": "closed",
+    "summary": "双子服未开放；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_47d07778-2380-4413-8411-8cce5f4eff12",
+    "url": "https://www.molibaike.com/Mission/Detail/47d07778-2380-4413-8411-8cce5f4eff12?u=True",
+    "localFiles": [],
+    "lineCount": 11,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往法兰城废弃的仓库（192.178），通过（35.21）处楼梯抵达卡赛迪宠物研究所。"
+      },
+      {
+        "line": 2,
+        "text": "2.与研究员（26.24）对话，选“是”交出5000G购买1只Lv.1虚弱的猫妖。"
+      },
+      {
+        "line": 3,
+        "text": "◆若宠物栏中已有任意等级虚弱的猫妖、强壮的猫妖、进化的猫妖，则需全部丢地后再购买"
+      },
+      {
+        "line": 4,
+        "text": "◆双子服务器，未开放此任务，与研究员无法对话"
+      },
+      {
+        "line": 5,
+        "text": "3.将虚弱的猫妖练到Lv.20，返回卡赛迪宠物研究所与研究员对话，选“是”交出Lv.20虚弱的猫妖、10000G，获得Lv.20强壮的猫妖。"
+      },
+      {
+        "line": 6,
+        "text": "◆若选“否”则交出Lv.20虚弱的猫妖，随机获得【神奇的药草】、【魔族的水晶】、【誓言之证】、【黑钥匙】、【白钥匙】中任意一种"
+      },
+      {
+        "line": 7,
+        "text": "4.将强壮的猫妖练到Lv.40，返回卡赛迪宠物研究所与研究员对话，选“是”交出Lv.40强壮的猫妖、15000G，获得Lv.40进化的猫妖。"
+      },
+      {
+        "line": 8,
+        "text": "◆若选“否”则交出Lv.40强壮的猫妖，随机获得【翻腾的海洋之心】、【燃烧的火焰之魂】、【璀璨的精灵石臂环】、【武圣的臂环】、【耀阳花精华】中任意一种"
+      },
+      {
+        "line": 9,
+        "text": "5.将进化的猫妖练到Lv.60，返回卡赛迪宠物研究所与研究员对话，交出Lv.60进化的猫妖，获得【魔法黑猫的精华】或【卡赛迪表彰徽章】，任务完结。"
+      },
+      {
+        "line": 10,
+        "text": "◆【卡赛迪表彰徽章】：Lv.9护身符、耐久180；攻击+25、精神+5、回复+10、抗毒/昏睡/石化/酒醉/混乱/遗忘+10、必杀+12、命中+15、闪躲+10、抗魔+30；明镜止水耗魔减少50%"
+      },
+      {
+        "line": 11,
+        "text": "◆双击【魔法黑猫的精华】获得Lv.1魔法黑猫"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "pet-slot-absence",
+        "pets": [
+          "虚弱的猫妖",
+          "强壮的猫妖",
+          "进化的猫妖"
+        ],
+        "appliesToStep": "step-2",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "server-availability",
+        "server": "双子服务器",
+        "available": false,
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "法兰城废弃的仓库（192.178）卡赛迪宠物研究所",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "从法兰城废弃的仓库（192.178）经（35.21）楼梯进入卡赛迪宠物研究所。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "与研究员（26.24）对话，选择“是”并交出5000G，购买1只Lv.1虚弱的猫妖。",
+        "inputs": [
+          {
+            "item": "金币",
+            "quantity": 5000,
+            "action": "hand-over",
+            "unit": "G",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "Lv.1虚弱的猫妖",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "entityType": "pet",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          2,
+          3,
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "将虚弱的猫妖练到Lv.20后与研究员对话：选择“是”交出猫妖和10000G，获得Lv.20强壮的猫妖；选择“否”交出猫妖并随机获得一种材料。",
+        "inputs": [
+          {
+            "item": "Lv.20虚弱的猫妖",
+            "quantity": 1,
+            "action": "hand-over",
+            "entityType": "pet",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [],
+        "notes": [],
+        "choices": [
+          {
+            "value": "是",
+            "additionalInput": {
+              "item": "金币",
+              "quantity": 10000,
+              "unit": "G"
+            },
+            "output": "Lv.20强壮的猫妖",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "value": "否",
+            "rewardEvent": "reward-weak-cat-exit-pool",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "sourceLines": [
+          5,
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "将强壮的猫妖练到Lv.40后与研究员对话：选择“是”交出猫妖和15000G，获得Lv.40进化的猫妖；选择“否”交出猫妖并随机获得一种材料。",
+        "inputs": [
+          {
+            "item": "Lv.40强壮的猫妖",
+            "quantity": 1,
+            "action": "hand-over",
+            "entityType": "pet",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [],
+        "notes": [],
+        "choices": [
+          {
+            "value": "是",
+            "additionalInput": {
+              "item": "金币",
+              "quantity": 15000,
+              "unit": "G"
+            },
+            "output": "Lv.40进化的猫妖",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "value": "否",
+            "rewardEvent": "reward-strong-cat-exit-pool",
+            "sourceLines": [
+              8
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "sourceLines": [
+          7,
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-5",
+        "order": 5,
+        "text": "将进化的猫妖练到Lv.60后交给研究员，获得【魔法黑猫的精华】或【卡赛迪表彰徽章】，任务完结。",
+        "inputs": [
+          {
+            "item": "Lv.60进化的猫妖",
+            "quantity": 1,
+            "action": "hand-over",
+            "entityType": "pet",
+            "sourceLines": [
+              9
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "魔法黑猫的精华或卡赛迪表彰徽章",
+            "quantity": 1,
+            "acquisition": "one-of-two",
+            "sourceLines": [
+              9
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          9,
+          10,
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "金币",
+        "quantity": 5000,
+        "action": "hand-over",
+        "unit": "G",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "Lv.20虚弱的猫妖",
+        "quantity": 1,
+        "action": "hand-over",
+        "entityType": "pet",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "Lv.40强壮的猫妖",
+        "quantity": 1,
+        "action": "hand-over",
+        "entityType": "pet",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "Lv.60进化的猫妖",
+        "quantity": 1,
+        "action": "hand-over",
+        "entityType": "pet",
+        "sourceLines": [
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-5",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "Lv.1虚弱的猫妖",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "entityType": "pet",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "魔法黑猫的精华或卡赛迪表彰徽章",
+        "quantity": 1,
+        "acquisition": "one-of-two",
+        "sourceLines": [
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-5",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往法兰城废弃的仓库（192.178），通过（35.21）处楼梯抵达卡赛迪宠物研究所。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2.与研究员（26.24）对话，选“是”交出5000G购买1只Lv.1虚弱的猫妖。",
+      "type": "purchase",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆若宠物栏中已有任意等级虚弱的猫妖、强壮的猫妖、进化的猫妖，则需全部丢地后再购买",
+      "type": "blocking-condition",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆双子服务器，未开放此任务，与研究员无法对话",
+      "type": "server-rule",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "3.将虚弱的猫妖练到Lv.20，返回卡赛迪宠物研究所与研究员对话，选“是”交出Lv.20虚弱的猫妖、10000G，获得Lv.20强壮的猫妖。",
+      "type": "choice-step",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "◆若选“否”则交出Lv.20虚弱的猫妖，随机获得【神奇的药草】、【魔族的水晶】、【誓言之证】、【黑钥匙】、【白钥匙】中任意一种",
+      "type": "choice-reward",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "4.将强壮的猫妖练到Lv.40，返回卡赛迪宠物研究所与研究员对话，选“是”交出Lv.40强壮的猫妖、15000G，获得Lv.40进化的猫妖。",
+      "type": "choice-step",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "◆若选“否”则交出Lv.40强壮的猫妖，随机获得【翻腾的海洋之心】、【燃烧的火焰之魂】、【璀璨的精灵石臂环】、【武圣的臂环】、【耀阳花精华】中任意一种",
+      "type": "choice-reward",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "5.将进化的猫妖练到Lv.60，返回卡赛迪宠物研究所与研究员对话，交出Lv.60进化的猫妖，获得【魔法黑猫的精华】或【卡赛迪表彰徽章】，任务完结。",
+      "type": "step",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "◆【卡赛迪表彰徽章】：Lv.9护身符、耐久180；攻击+25、精神+5、回复+10、抗毒/昏睡/石化/酒醉/混乱/遗忘+10、必杀+12、命中+15、闪躲+10、抗魔+30；明镜止水耗魔减少50%",
+      "type": "reward-detail",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "◆双击【魔法黑猫的精华】获得Lv.1魔法黑猫",
+      "type": "reward-detail",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        11
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "reward-weak-cat-exit-pool",
+      "version": "common",
+      "tier": "common",
+      "kind": "reward-pool",
+      "items": [
+        {
+          "id": "weak-cat-exit-1",
+          "name": "神奇的药草",
+          "role": "valuable-result",
+          "selection": "random-one",
+          "sourceLines": [
+            6
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "weak-cat-exit-2",
+          "name": "魔族的水晶",
+          "role": "valuable-result",
+          "selection": "random-one",
+          "sourceLines": [
+            6
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "weak-cat-exit-3",
+          "name": "誓言之证",
+          "role": "valuable-result",
+          "selection": "random-one",
+          "sourceLines": [
+            6
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "weak-cat-exit-4",
+          "name": "黑钥匙",
+          "role": "valuable-result",
+          "selection": "random-one",
+          "sourceLines": [
+            6
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "weak-cat-exit-5",
+          "name": "白钥匙",
+          "role": "valuable-result",
+          "selection": "random-one",
+          "sourceLines": [
+            6
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-3",
+      "choice": "否",
+      "selection": "random-one",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "id": "reward-strong-cat-exit-pool",
+      "version": "common",
+      "tier": "common",
+      "kind": "reward-pool",
+      "items": [
+        {
+          "id": "strong-cat-exit-1",
+          "name": "翻腾的海洋之心",
+          "role": "valuable-result",
+          "selection": "random-one",
+          "sourceLines": [
+            8
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "strong-cat-exit-2",
+          "name": "燃烧的火焰之魂",
+          "role": "valuable-result",
+          "selection": "random-one",
+          "sourceLines": [
+            8
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "strong-cat-exit-3",
+          "name": "璀璨的精灵石臂环",
+          "role": "valuable-result",
+          "selection": "random-one",
+          "sourceLines": [
+            8
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "strong-cat-exit-4",
+          "name": "武圣的臂环",
+          "role": "valuable-result",
+          "selection": "random-one",
+          "sourceLines": [
+            8
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "strong-cat-exit-5",
+          "name": "耀阳花精华",
+          "role": "valuable-result",
+          "selection": "random-one",
+          "sourceLines": [
+            8
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-4",
+      "choice": "否",
+      "selection": "random-one",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "id": "reward-cassidy-final",
+      "version": "common",
+      "tier": "common",
+      "kind": "reward-pool",
+      "items": [
+        {
+          "id": "magic-black-cat-essence",
+          "name": "魔法黑猫的精华",
+          "role": "valuable-result",
+          "properties": {
+            "use": "双击获得Lv.1魔法黑猫"
+          },
+          "sourceLines": [
+            9,
+            11
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "cassidy-medal",
+          "name": "卡赛迪表彰徽章",
+          "role": "valuable-result",
+          "entityType": "equipment",
+          "properties": {
+            "level": 9,
+            "category": "护身符",
+            "durability": 180,
+            "attack": 25,
+            "spirit": 5,
+            "recovery": 10,
+            "resistance": {
+              "毒": 10,
+              "昏睡": 10,
+              "石化": 10,
+              "酒醉": 10,
+              "混乱": 10,
+              "遗忘": 10
+            },
+            "critical": 12,
+            "accuracy": 15,
+            "evasion": 10,
+            "magicResistance": 30,
+            "effects": [
+              {
+                "skill": "明镜止水",
+                "manaCostChangePercent": -50
+              }
+            ]
+          },
+          "sourceLines": [
+            9,
+            10
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-5",
+      "selection": "one-of-two",
+      "sourceLines": [
+        9,
+        10,
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 34,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "怀旧服其他自制任务"
+  }
+}

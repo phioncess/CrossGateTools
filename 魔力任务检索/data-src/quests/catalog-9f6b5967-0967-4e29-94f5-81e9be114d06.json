@@ -1,0 +1,722 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-9f6b5967-0967-4e29-94f5-81e9be114d06",
+  "name": "鸡年大吉礼包",
+  "aliases": [
+    "天使之翼",
+    "白里雍"
+  ],
+  "metadata": {
+    "category": "临时活动/任务",
+    "level": "1 级",
+    "availability": "closed",
+    "summary": "怀旧服活动（已关闭）；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_9f6b5967-0967-4e29-94f5-81e9be114d06",
+    "url": "https://www.molibaike.com/Mission/Detail/9f6b5967-0967-4e29-94f5-81e9be114d06?u=True",
+    "localFiles": [],
+    "lineCount": 13,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往亚诺曼城与新春礼包贩售员（131.131）对话，交出1000G购买【鸡年大吉礼包】。"
+      },
+      {
+        "line": 2,
+        "text": "◆在2、3线购买【鸡年大吉礼包】时谨防与NPC位置重叠的“骗子”摊位"
+      },
+      {
+        "line": 3,
+        "text": "2.双击【鸡年大吉礼包】随机获得【奖品】，任务完结。"
+      },
+      {
+        "line": 4,
+        "text": "◆【奖品】明细："
+      },
+      {
+        "line": 5,
+        "text": "宠物类奖品（随机获得）备注"
+      },
+      {
+        "line": 6,
+        "text": "翼之卵天使之翼；10技能栏、飞行系风100；39 44 16 19 7"
+      },
+      {
+        "line": 7,
+        "text": "猪鬼设计图（A~E）钢铁猪鬼；8技能栏；金属系水80火20；41 39 14 16 15"
+      },
+      {
+        "line": 8,
+        "text": "布丁史莱姆设计图（A~E）布丁；9技能栏；特殊系火30风70；25 16 24 16 44"
+      },
+      {
+        "line": 9,
+        "text": "其他奖品（随机获得）"
+      },
+      {
+        "line": 10,
+        "text": "传送石优待券鼠王还原券"
+      },
+      {
+        "line": 11,
+        "text": "鼠王惊奇蛋魔石"
+      },
+      {
+        "line": 12,
+        "text": "技能学习证Lv.9各色宝石"
+      },
+      {
+        "line": 13,
+        "text": "哥拉尔镇/阿凯鲁法村/雷克塔尔镇传送券神奇的药草（200技能经验）"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": []
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "亚诺曼城新春礼包贩售员（131.131）",
+      "sourceLines": [
+        1,
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "向新春礼包贩售员交出1000G，购买【鸡年大吉礼包】；在2、3线注意骗子摊位。",
+        "inputs": [
+          {
+            "item": "金币",
+            "quantity": 1000,
+            "action": "hand-over",
+            "unit": "G",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "鸡年大吉礼包",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1,
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "双击礼包，随机获得一种奖品，任务完结。",
+        "inputs": [
+          {
+            "item": "鸡年大吉礼包",
+            "quantity": 1,
+            "action": "use",
+            "consumed": true,
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "随机奖品",
+            "quantity": 1,
+            "acquisition": "random-one",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "金币",
+        "quantity": 1000,
+        "action": "hand-over",
+        "unit": "G",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "鸡年大吉礼包",
+        "quantity": 1,
+        "action": "use",
+        "consumed": true,
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "鸡年大吉礼包",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "随机奖品",
+        "quantity": 1,
+        "acquisition": "random-one",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往亚诺曼城与新春礼包贩售员（131.131）对话，交出1000G购买【鸡年大吉礼包】。",
+      "type": "purchase",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "◆在2、3线购买【鸡年大吉礼包】时谨防与NPC位置重叠的“骗子”摊位",
+      "type": "safety-warning",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "2.双击【鸡年大吉礼包】随机获得【奖品】，任务完结。",
+      "type": "open-container",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆【奖品】明细：",
+      "type": "reward-heading",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "宠物类奖品（随机获得）备注",
+      "type": "reward-category",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "翼之卵天使之翼；10技能栏、飞行系风100；39 44 16 19 7",
+      "type": "reward-row",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "猪鬼设计图（A~E）钢铁猪鬼；8技能栏；金属系水80火20；41 39 14 16 15",
+      "type": "reward-row",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "布丁史莱姆设计图（A~E）布丁；9技能栏；特殊系火30风70；25 16 24 16 44",
+      "type": "reward-row",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "其他奖品（随机获得）",
+      "type": "reward-category",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "传送石优待券鼠王还原券",
+      "type": "reward-list",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "鼠王惊奇蛋魔石",
+      "type": "reward-list",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "技能学习证Lv.9各色宝石",
+      "type": "reward-list",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 13,
+      "text": "哥拉尔镇/阿凯鲁法村/雷克塔尔镇传送券神奇的药草（200技能经验）",
+      "type": "reward-list",
+      "sourceLines": [
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        13
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "rooster-gift-pool",
+      "version": "common",
+      "tier": "common",
+      "kind": "reward-pool",
+      "items": [
+        {
+          "id": "rooster-wing-egg",
+          "name": "翼之卵",
+          "role": "valuable-result",
+          "properties": {
+            "resultPet": {
+              "name": "天使之翼",
+              "skillSlots": 10,
+              "race": "飞行系",
+              "elements": {
+                "风": 100
+              },
+              "baseStats": [
+                39,
+                44,
+                16,
+                19,
+                7
+              ]
+            }
+          },
+          "sourceLines": [
+            6
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "rooster-pig-ogre-plan",
+          "name": "猪鬼设计图A—E",
+          "role": "valuable-result",
+          "entityType": "item-series",
+          "variants": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "properties": {
+            "resultPet": {
+              "name": "钢铁猪鬼",
+              "skillSlots": 8,
+              "race": "金属系",
+              "elements": {
+                "水": 80,
+                "火": 20
+              },
+              "baseStats": [
+                41,
+                39,
+                14,
+                16,
+                15
+              ]
+            }
+          },
+          "sourceLines": [
+            7
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "rooster-pudding-plan",
+          "name": "布丁史莱姆设计图A—E",
+          "role": "valuable-result",
+          "entityType": "item-series",
+          "variants": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "properties": {
+            "resultPet": {
+              "name": "布丁",
+              "skillSlots": 9,
+              "race": "特殊系",
+              "elements": {
+                "火": 30,
+                "风": 70
+              },
+              "baseStats": [
+                25,
+                16,
+                24,
+                16,
+                44
+              ]
+            }
+          },
+          "sourceLines": [
+            8
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "rooster-teleport-discount",
+          "name": "传送石优待券",
+          "role": "valuable-result",
+          "sourceLines": [
+            10
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "rooster-mouse-restore",
+          "name": "鼠王还原券",
+          "role": "valuable-result",
+          "sourceLines": [
+            10
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "rooster-mouse-egg",
+          "name": "鼠王惊奇蛋",
+          "role": "valuable-result",
+          "sourceLines": [
+            11
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "rooster-magic-stone",
+          "name": "魔石",
+          "role": "valuable-result",
+          "sourceLines": [
+            11
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "rooster-skill-certificate",
+          "name": "技能学习证",
+          "role": "valuable-result",
+          "sourceLines": [
+            12
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "rooster-gem9",
+          "name": "Lv.9各色宝石",
+          "role": "valuable-result",
+          "entityType": "item-group",
+          "sourceLines": [
+            12
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "rooster-ticket-1",
+          "name": "哥拉尔镇传送券",
+          "role": "valuable-result",
+          "sourceLines": [
+            13
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "rooster-ticket-2",
+          "name": "阿凯鲁法村传送券",
+          "role": "valuable-result",
+          "sourceLines": [
+            13
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "rooster-ticket-3",
+          "name": "雷克塔尔镇传送券",
+          "role": "valuable-result",
+          "sourceLines": [
+            13
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "rooster-magic-herb",
+          "name": "神奇的药草",
+          "role": "valuable-result",
+          "properties": {
+            "skillExperience": 200
+          },
+          "sourceLines": [
+            13
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-2",
+      "selection": "random-one",
+      "sourceLines": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 91,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "临时活动/任务"
+  }
+}

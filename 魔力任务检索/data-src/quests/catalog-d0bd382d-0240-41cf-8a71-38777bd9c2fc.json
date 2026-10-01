@@ -1,0 +1,1283 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-d0bd382d-0240-41cf-8a71-38777bd9c2fc",
+  "name": "伊尔村的古井",
+  "aliases": [
+    "盗贼讨伐者"
+  ],
+  "metadata": {
+    "category": "怀旧服其他自制任务",
+    "level": "30 级",
+    "availability": "available",
+    "summary": "以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_d0bd382d-0240-41cf-8a71-38777bd9c2fc",
+    "url": "https://www.molibaike.com/Mission/Detail/d0bd382d-0240-41cf-8a71-38777bd9c2fc?u=True",
+    "localFiles": [],
+    "lineCount": 21,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往伊尔村村长的家（47.83）与雇佣工梅露（22.17）对话，获得【情报书1】。"
+      },
+      {
+        "line": 2,
+        "text": "◆与雇佣工梅露对话时需解散队伍"
+      },
+      {
+        "line": 3,
+        "text": "2.出村长的家，调查绳子？（46.81），获得【情报书2】。"
+      },
+      {
+        "line": 4,
+        "text": "◆调查绳子？需解散队伍"
+      },
+      {
+        "line": 5,
+        "text": "3.返回村长的家与雇佣工梅露对话，获得【情报书3】。"
+      },
+      {
+        "line": 6,
+        "text": "◆与雇佣工梅露对话时需解散队伍"
+      },
+      {
+        "line": 7,
+        "text": "4.出村长的家，夜晚在井（49.47）的附近寻找随机出现的巡逻员玛摩鲁并与之对话，交出【情报书1】、【情报书2】、【情报书3】获得【完整的情报书】。"
+      },
+      {
+        "line": 8,
+        "text": "5.调查井（49.47），选“是”进入井下。通过（14.12）处楼梯进入井中密道。"
+      },
+      {
+        "line": 9,
+        "text": "◆井中密道为随机迷宫，约12~14层；魔物为Lv.11~14山贼、盗贼"
+      },
+      {
+        "line": 10,
+        "text": "6.通过随机迷宫抵达井底，与盗贼头目希夫（20.19）对话，进入战斗。"
+      },
+      {
+        "line": 11,
+        "text": "◆与盗贼头目希夫对话进入战斗时全队清除任务道具，故不可用逃跑战术重新触发战斗"
+      },
+      {
+        "line": 12,
+        "text": "◆战斗信息："
+      },
+      {
+        "line": 13,
+        "text": "Lv.30盗贼头目希夫，血量约1500；技能：攻击、防御、属性反转、明镜止水、乾坤一掷、崩击、吸血攻击"
+      },
+      {
+        "line": 14,
+        "text": "Lv.30山贼*4，血量约700"
+      },
+      {
+        "line": 15,
+        "text": "Lv.30盗贼*5，血量约700"
+      },
+      {
+        "line": 16,
+        "text": "7.战斗胜利后随机获得【盗贼的护身符】、【盗贼的戒指】、【盗贼的项链】，通过（25.22）处楼梯传送至伊尔村。"
+      },
+      {
+        "line": 17,
+        "text": "◆【盗贼的护身符】：Lv.1护身符、耐久138；攻击+1；不可交易"
+      },
+      {
+        "line": 18,
+        "text": "◆【盗贼的戒指】：Lv.1戒指、耐久117；防御+1；不可交易"
+      },
+      {
+        "line": 19,
+        "text": "◆【盗贼项链】：Lv.1项链、耐久128；敏捷-1；不可交易"
+      },
+      {
+        "line": 20,
+        "text": "8.前往法兰城米克尔工房（100.61），持有【盗贼的护身符】、【盗贼的戒指】、【盗贼的项链】与锻铸师卡基亚（14.5）对话，选“是”交出【盗贼的护身符】、【盗贼的戒指】、【盗贼的项链】获得【盗贼的手环】、称号“盗贼讨伐者”，任务完结。"
+      },
+      {
+        "line": 21,
+        "text": "◆【盗贼的手环】：Lv.1手环、耐久116；攻击+9、防御+7、敏捷+6；数值浮动；不可交易，不可寄存、丢地消失、可以宠邮"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "solo",
+        "appliesToSteps": [
+          "step-1",
+          "step-2",
+          "step-3"
+        ],
+        "sourceLines": [
+          2,
+          4,
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "time-window",
+        "value": "夜晚",
+        "appliesToStep": "step-4",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "伊尔村村长的家雇佣工梅露（22.17）",
+      "sourceLines": [
+        1,
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "解散队伍后与雇佣工梅露（22.17）对话，获得【情报书1】。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "情报书1",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1,
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "解散队伍后调查村长家外绳子？（46.81），获得【情报书2】。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "情报书2",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          3,
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "解散队伍后返回与梅露对话，获得【情报书3】。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "情报书3",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          5,
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "夜晚在井（49.47）附近寻找随机出现的巡逻员玛摩鲁，交出三本情报书，获得【完整的情报书】。",
+        "inputs": [
+          {
+            "item": "情报书1",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "情报书2",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "情报书3",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "完整的情报书",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-5",
+        "order": 5,
+        "text": "调查井（49.47）选择“是”进入井下，从楼梯（14.12）进入约12~14层井中密道随机迷宫。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          8,
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-6",
+        "order": 6,
+        "text": "通过迷宫抵达井底，与盗贼头目希夫（20.19）对话进入战斗。开战时全队任务道具会被清除，不能逃跑后重新触发。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-7",
+        "order": 7,
+        "text": "战斗胜利后随机获得盗贼护身符、戒指、项链中的物品，再经楼梯（25.22）传送至伊尔村。原文未明确单次获得数量，后续要求三件齐全。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "盗贼的护身符",
+            "quantity": 1,
+            "acquisition": "random-battle-reward",
+            "sourceLines": [
+              16
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "盗贼的戒指",
+            "quantity": 1,
+            "acquisition": "random-battle-reward",
+            "sourceLines": [
+              16
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "盗贼的项链",
+            "quantity": 1,
+            "acquisition": "random-battle-reward",
+            "sourceLines": [
+              16
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          16,
+          17,
+          18,
+          19
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-8",
+        "order": 8,
+        "text": "集齐三件盗贼饰品后，在米克尔工房与锻铸师卡基亚（14.5）对话，选择“是”，交出三件饰品，获得【盗贼的手环】及称号“盗贼讨伐者”，任务完结。",
+        "inputs": [
+          {
+            "item": "盗贼的护身符",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              20
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "盗贼的戒指",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              20
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "盗贼的项链",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              20
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "盗贼的手环",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              20
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          20,
+          21
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {
+            "thief-chief-shiv": {
+              "id": "thief-chief-shiv",
+              "trigger": "与盗贼头目希夫对话",
+              "startEffect": "全队清除任务道具",
+              "retryByEscape": false,
+              "enemies": [
+                {
+                  "name": "盗贼头目希夫",
+                  "raw": "Lv.30盗贼头目希夫，血量约1500；技能：攻击、防御、属性反转、明镜止水、乾坤一掷、崩击、吸血攻击",
+                  "role": "boss",
+                  "level": 30,
+                  "hpApprox": 1500,
+                  "skills": [
+                    "攻击",
+                    "防御",
+                    "属性反转",
+                    "明镜止水",
+                    "乾坤一掷",
+                    "崩击",
+                    "吸血攻击"
+                  ],
+                  "sourceLines": [
+                    13
+                  ],
+                  "verification": {
+                    "status": "verified",
+                    "method": "manual-semantic-review"
+                  },
+                  "hp": {
+                    "min": 1500,
+                    "max": 1500,
+                    "approximate": true
+                  },
+                  "actions": null,
+                  "count": 1,
+                  "race": null,
+                  "resistance": null,
+                  "elements": {},
+                  "catalogEvidenceKeys": [
+                    "盗贼头目希夫|30-30"
+                  ],
+                  "catalogSourceLines": [
+                    12,
+                    13
+                  ],
+                  "position": null,
+                  "modifiers": null,
+                  "poisonResistance": null
+                },
+                {
+                  "name": "山贼",
+                  "raw": "Lv.30山贼*4，血量约700",
+                  "role": "minion",
+                  "level": 30,
+                  "count": 4,
+                  "hpApprox": 700,
+                  "sourceLines": [
+                    14
+                  ],
+                  "verification": {
+                    "status": "verified",
+                    "method": "manual-semantic-review"
+                  },
+                  "hp": {
+                    "min": 700,
+                    "max": 700,
+                    "approximate": true
+                  },
+                  "actions": null,
+                  "race": null,
+                  "resistance": null,
+                  "elements": {},
+                  "skills": [],
+                  "catalogEvidenceKeys": [
+                    "山贼|30-30"
+                  ],
+                  "catalogSourceLines": [
+                    12,
+                    14
+                  ],
+                  "position": null,
+                  "modifiers": null,
+                  "poisonResistance": null
+                },
+                {
+                  "name": "盗贼",
+                  "raw": "Lv.30盗贼*5，血量约700",
+                  "role": "minion",
+                  "level": 30,
+                  "count": 5,
+                  "hpApprox": 700,
+                  "sourceLines": [
+                    15
+                  ],
+                  "verification": {
+                    "status": "verified",
+                    "method": "manual-semantic-review"
+                  },
+                  "hp": {
+                    "min": 700,
+                    "max": 700,
+                    "approximate": true
+                  },
+                  "actions": null,
+                  "race": null,
+                  "resistance": null,
+                  "elements": {},
+                  "skills": [],
+                  "catalogEvidenceKeys": [
+                    "盗贼|30-30"
+                  ],
+                  "catalogSourceLines": [
+                    12,
+                    15
+                  ],
+                  "position": null,
+                  "modifiers": null,
+                  "poisonResistance": null
+                }
+              ],
+              "sourceLines": [
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          },
+          "encounters": [
+            {
+              "id": "well-secret-path",
+              "location": "井中密道",
+              "maze": "随机迷宫",
+              "floorsApprox": {
+                "min": 12,
+                "max": 14
+              },
+              "enemyLevel": {
+                "min": 11,
+                "max": 14
+              },
+              "enemies": [
+                "山贼",
+                "盗贼"
+              ],
+              "sourceLines": [
+                9
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          ],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "情报书1",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "情报书2",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "情报书3",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "盗贼的护身符",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          20
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-8",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "盗贼的戒指",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          20
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-8",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "盗贼的项链",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          20
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-8",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "情报书1",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "情报书2",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "情报书3",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "完整的情报书",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "盗贼的护身符",
+        "quantity": 1,
+        "acquisition": "random-battle-reward",
+        "sourceLines": [
+          16
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-7",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "盗贼的戒指",
+        "quantity": 1,
+        "acquisition": "random-battle-reward",
+        "sourceLines": [
+          16
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-7",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "盗贼的项链",
+        "quantity": 1,
+        "acquisition": "random-battle-reward",
+        "sourceLines": [
+          16
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-7",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "盗贼的手环",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          20
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-8",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往伊尔村村长的家（47.83）与雇佣工梅露（22.17）对话，获得【情报书1】。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "◆与雇佣工梅露对话时需解散队伍",
+      "type": "solo-gate",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "2.出村长的家，调查绳子？（46.81），获得【情报书2】。",
+      "type": "step",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆调查绳子？需解散队伍",
+      "type": "solo-gate",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "3.返回村长的家与雇佣工梅露对话，获得【情报书3】。",
+      "type": "step",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "◆与雇佣工梅露对话时需解散队伍",
+      "type": "solo-gate",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "4.出村长的家，夜晚在井（49.47）的附近寻找随机出现的巡逻员玛摩鲁并与之对话，交出【情报书1】、【情报书2】、【情报书3】获得【完整的情报书】。",
+      "type": "timed-exchange",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "5.调查井（49.47），选“是”进入井下。通过（14.12）处楼梯进入井中密道。",
+      "type": "maze-entry",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "◆井中密道为随机迷宫，约12~14层；魔物为Lv.11~14山贼、盗贼",
+      "type": "encounter-area",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "6.通过随机迷宫抵达井底，与盗贼头目希夫（20.19）对话，进入战斗。",
+      "type": "battle-step",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "◆与盗贼头目希夫对话进入战斗时全队清除任务道具，故不可用逃跑战术重新触发战斗",
+      "type": "battle-mechanic",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "◆战斗信息：",
+      "type": "battle-heading",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 13,
+      "text": "Lv.30盗贼头目希夫，血量约1500；技能：攻击、防御、属性反转、明镜止水、乾坤一掷、崩击、吸血攻击",
+      "type": "battle-enemy",
+      "sourceLines": [
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 14,
+      "text": "Lv.30山贼*4，血量约700",
+      "type": "battle-enemy",
+      "sourceLines": [
+        14
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 15,
+      "text": "Lv.30盗贼*5，血量约700",
+      "type": "battle-enemy",
+      "sourceLines": [
+        15
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 16,
+      "text": "7.战斗胜利后随机获得【盗贼的护身符】、【盗贼的戒指】、【盗贼的项链】，通过（25.22）处楼梯传送至伊尔村。",
+      "type": "battle-reward",
+      "sourceLines": [
+        16
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 17,
+      "text": "◆【盗贼的护身符】：Lv.1护身符、耐久138；攻击+1；不可交易",
+      "type": "reward-detail",
+      "sourceLines": [
+        17
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 18,
+      "text": "◆【盗贼的戒指】：Lv.1戒指、耐久117；防御+1；不可交易",
+      "type": "reward-detail",
+      "sourceLines": [
+        18
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 19,
+      "text": "◆【盗贼项链】：Lv.1项链、耐久128；敏捷-1；不可交易",
+      "type": "reward-detail",
+      "sourceLines": [
+        19
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 20,
+      "text": "8.前往法兰城米克尔工房（100.61），持有【盗贼的护身符】、【盗贼的戒指】、【盗贼的项链】与锻铸师卡基亚（14.5）对话，选“是”交出【盗贼的护身符】、【盗贼的戒指】、【盗贼的项链】获得【盗贼的手环】、称号“盗贼讨伐者”，任务完结。",
+      "type": "completion-step",
+      "sourceLines": [
+        20
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 21,
+      "text": "◆【盗贼的手环】：Lv.1手环、耐久116；攻击+9、防御+7、敏捷+6；数值浮动；不可交易，不可寄存、丢地消失、可以宠邮",
+      "type": "reward-detail",
+      "sourceLines": [
+        21
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        21
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "thief-accessory-drops",
+      "version": "common",
+      "tier": "common",
+      "kind": "battle-drop",
+      "items": [
+        {
+          "id": "thief-amulet",
+          "name": "盗贼的护身符",
+          "role": "valuable-result",
+          "entityType": "equipment",
+          "properties": {
+            "level": 1,
+            "category": "护身符",
+            "durability": 138,
+            "attack": 1,
+            "tradeable": false
+          },
+          "sourceLines": [
+            16,
+            17
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "thief-ring",
+          "name": "盗贼的戒指",
+          "role": "valuable-result",
+          "entityType": "equipment",
+          "properties": {
+            "level": 1,
+            "category": "戒指",
+            "durability": 117,
+            "defense": 1,
+            "tradeable": false
+          },
+          "sourceLines": [
+            16,
+            18
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "thief-necklace",
+          "name": "盗贼的项链",
+          "role": "valuable-result",
+          "entityType": "equipment",
+          "properties": {
+            "level": 1,
+            "category": "项链",
+            "durability": 128,
+            "agility": -1,
+            "tradeable": false
+          },
+          "sourceLines": [
+            16,
+            19
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-7",
+      "selection": "random-source-unspecified-count",
+      "sourceLines": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "id": "thief-bracelet",
+      "version": "common",
+      "tier": "common",
+      "kind": "quest-completion",
+      "items": [
+        {
+          "id": "thief-bracelet",
+          "name": "盗贼的手环",
+          "role": "valuable-result",
+          "entityType": "equipment",
+          "properties": {
+            "level": 1,
+            "category": "手环",
+            "durability": 116,
+            "attack": 9,
+            "defense": 7,
+            "agility": 6,
+            "dataVariance": true,
+            "tradeable": false,
+            "bankable": false,
+            "dropBehavior": "丢地消失",
+            "petMail": true
+          },
+          "sourceLines": [
+            20,
+            21
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-8",
+      "sourceLines": [
+        20,
+        21
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [
+      {
+        "name": "盗贼讨伐者",
+        "sourceLines": [
+          20
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 19,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "怀旧服其他自制任务"
+  }
+}

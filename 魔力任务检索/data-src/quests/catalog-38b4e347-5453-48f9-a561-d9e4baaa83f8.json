@@ -1,0 +1,646 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-38b4e347-5453-48f9-a561-d9e4baaa83f8",
+  "name": "流浪的宝石商人",
+  "aliases": [
+    "打卡器"
+  ],
+  "metadata": {
+    "category": "怀旧服其他自制任务",
+    "level": "1 级",
+    "availability": "available",
+    "summary": "以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_38b4e347-5453-48f9-a561-d9e4baaa83f8",
+    "url": "https://www.molibaike.com/Mission/Detail/38b4e347-5453-48f9-a561-d9e4baaa83f8?u=True",
+    "localFiles": [],
+    "lineCount": 12,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往法兰城凯蒂夫人的店门口与流浪的宝石商人（194.72）对话，进入宝石商人的宝库。"
+      },
+      {
+        "line": 2,
+        "text": "2.调查宝石回收器A型或宝石回收器B型，交出对应的Lv.8各色【宝石】（除紫水晶、骑士宝石外）获得【A型/B型凭证】"
+      },
+      {
+        "line": 3,
+        "text": "3.调查A型凭证兑换机、B型凭证兑换机，持有一定数量的【A型/B型凭证】兑换【奖品】，任务完结。"
+      },
+      {
+        "line": 4,
+        "text": "◆A型回收：【石榴石】、【黄宝石】、【蓝宝石】；B型回收：【绿宝石】、【冒险宝石】"
+      },
+      {
+        "line": 5,
+        "text": "◆兑换明细：（比例均为1:1）"
+      },
+      {
+        "line": 6,
+        "text": "名称所需数量（A型/B型凭证）作用"
+      },
+      {
+        "line": 7,
+        "text": "打卡器10/5开启或关闭工作时间"
+      },
+      {
+        "line": 8,
+        "text": "兔子王的胡萝卜15/7造型临时变更为围巾兔开启或关闭工作时间"
+      },
+      {
+        "line": 9,
+        "text": "李贝留斯啤酒20/15造型临时变更为李贝留斯"
+      },
+      {
+        "line": 10,
+        "text": "巴洛斯啤酒20/15造型临时变更为巴洛斯"
+      },
+      {
+        "line": 11,
+        "text": "阿卡斯啤酒20/15造型临时变更为阿卡斯"
+      },
+      {
+        "line": 12,
+        "text": "佛利波罗啤酒20/15造型临时变更为佛利波罗"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": []
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "法兰城凯蒂夫人的店门口流浪的宝石商人（194.72）",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "与流浪的宝石商人（194.72）对话，进入宝石商人的宝库。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "向A型或B型宝石回收器交出对应的Lv.8宝石，按1:1获得对应凭证。A型接受石榴石、黄宝石、蓝宝石；B型接受绿宝石、冒险宝石；紫水晶和骑士宝石不接受。",
+        "inputs": [
+          {
+            "item": "Lv.8宝石",
+            "quantity": 1,
+            "action": "hand-over",
+            "acceptedByMachine": {
+              "A型": [
+                "石榴石",
+                "黄宝石",
+                "蓝宝石"
+              ],
+              "B型": [
+                "绿宝石",
+                "冒险宝石"
+              ]
+            },
+            "excluded": [
+              "紫水晶",
+              "骑士宝石"
+            ],
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "A型/B型凭证",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "conversionRatio": "1:1",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          2,
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "使用A型或B型凭证兑换机，按兑换表消耗对应数量的凭证取得奖品，任务完结。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "Lv.8宝石",
+        "quantity": 1,
+        "action": "hand-over",
+        "acceptedByMachine": {
+          "A型": [
+            "石榴石",
+            "黄宝石",
+            "蓝宝石"
+          ],
+          "B型": [
+            "绿宝石",
+            "冒险宝石"
+          ]
+        },
+        "excluded": [
+          "紫水晶",
+          "骑士宝石"
+        ],
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "A型/B型凭证",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "conversionRatio": "1:1",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往法兰城凯蒂夫人的店门口与流浪的宝石商人（194.72）对话，进入宝石商人的宝库。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2.调查宝石回收器A型或宝石回收器B型，交出对应的Lv.8各色【宝石】（除紫水晶、骑士宝石外）获得【A型/B型凭证】",
+      "type": "conversion",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "3.调查A型凭证兑换机、B型凭证兑换机，持有一定数量的【A型/B型凭证】兑换【奖品】，任务完结。",
+      "type": "exchange-step",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆A型回收：【石榴石】、【黄宝石】、【蓝宝石】；B型回收：【绿宝石】、【冒险宝石】",
+      "type": "conversion-mapping",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "◆兑换明细：（比例均为1:1）",
+      "type": "exchange-heading",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "名称所需数量（A型/B型凭证）作用",
+      "type": "table-header",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "打卡器10/5开启或关闭工作时间",
+      "type": "exchange-recipe",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "兔子王的胡萝卜15/7造型临时变更为围巾兔开启或关闭工作时间",
+      "type": "exchange-recipe",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "李贝留斯啤酒20/15造型临时变更为李贝留斯",
+      "type": "exchange-recipe",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "巴洛斯啤酒20/15造型临时变更为巴洛斯",
+      "type": "exchange-recipe",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "阿卡斯啤酒20/15造型临时变更为阿卡斯",
+      "type": "exchange-recipe",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "佛利波罗啤酒20/15造型临时变更为佛利波罗",
+      "type": "exchange-recipe",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        12
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "gem-exchange-clock",
+      "version": "common",
+      "tier": "common",
+      "kind": "exchange-recipe",
+      "items": [
+        {
+          "id": "gem-clock",
+          "name": "打卡器",
+          "role": "valuable-result",
+          "properties": {
+            "use": "开启或关闭工作时间"
+          },
+          "sourceLines": [
+            7
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "inputs": {
+        "A型凭证": 10,
+        "B型凭证": 5
+      },
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "id": "gem-exchange-carrot",
+      "version": "common",
+      "tier": "common",
+      "kind": "exchange-recipe",
+      "items": [
+        {
+          "id": "rabbit-king-carrot",
+          "name": "兔子王的胡萝卜",
+          "role": "valuable-result",
+          "properties": {
+            "use": "造型临时变更为围巾兔，并开启或关闭工作时间"
+          },
+          "sourceLines": [
+            8
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "inputs": {
+        "A型凭证": 15,
+        "B型凭证": 7
+      },
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "id": "gem-exchange-liberius-beer",
+      "version": "common",
+      "tier": "common",
+      "kind": "exchange-recipe",
+      "items": [
+        {
+          "id": "liberius-beer",
+          "name": "李贝留斯啤酒",
+          "role": "valuable-result",
+          "properties": {
+            "use": "造型临时变更为李贝留斯"
+          },
+          "sourceLines": [
+            9
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "inputs": {
+        "A型凭证": 20,
+        "B型凭证": 15
+      },
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "id": "gem-exchange-baros-beer",
+      "version": "common",
+      "tier": "common",
+      "kind": "exchange-recipe",
+      "items": [
+        {
+          "id": "baros-beer",
+          "name": "巴洛斯啤酒",
+          "role": "valuable-result",
+          "properties": {
+            "use": "造型临时变更为巴洛斯"
+          },
+          "sourceLines": [
+            10
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "inputs": {
+        "A型凭证": 20,
+        "B型凭证": 15
+      },
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "id": "gem-exchange-akasi-beer",
+      "version": "common",
+      "tier": "common",
+      "kind": "exchange-recipe",
+      "items": [
+        {
+          "id": "akasi-beer",
+          "name": "阿卡斯啤酒",
+          "role": "valuable-result",
+          "properties": {
+            "use": "造型临时变更为阿卡斯"
+          },
+          "sourceLines": [
+            11
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "inputs": {
+        "A型凭证": 20,
+        "B型凭证": 15
+      },
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "id": "gem-exchange-fliboro-beer",
+      "version": "common",
+      "tier": "common",
+      "kind": "exchange-recipe",
+      "items": [
+        {
+          "id": "fliboro-beer",
+          "name": "佛利波罗啤酒",
+          "role": "valuable-result",
+          "properties": {
+            "use": "造型临时变更为佛利波罗"
+          },
+          "sourceLines": [
+            12
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "inputs": {
+        "A型凭证": 20,
+        "B型凭证": 15
+      },
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "exchangeRecipes": [
+    "gem-exchange-clock",
+    "gem-exchange-carrot",
+    "gem-exchange-liberius-beer",
+    "gem-exchange-baros-beer",
+    "gem-exchange-akasi-beer",
+    "gem-exchange-fliboro-beer"
+  ],
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 18,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "怀旧服其他自制任务"
+  }
+}

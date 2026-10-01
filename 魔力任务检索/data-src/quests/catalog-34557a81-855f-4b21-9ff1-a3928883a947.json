@@ -1,0 +1,630 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-34557a81-855f-4b21-9ff1-a3928883a947",
+  "name": "金秋大乐透",
+  "aliases": [
+    "原罪之魔"
+  ],
+  "metadata": {
+    "category": "临时活动/任务",
+    "level": "1 级",
+    "availability": "closed",
+    "summary": "怀旧服活动（已关闭）；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_34557a81-855f-4b21-9ff1-a3928883a947",
+    "url": "https://www.molibaike.com/Mission/Detail/34557a81-855f-4b21-9ff1-a3928883a947?u=True",
+    "localFiles": [],
+    "lineCount": 11,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往亚诺曼城与金秋礼盒贩售员（137.137）对话，可交出800G购买【金秋大乐透礼包】。"
+      },
+      {
+        "line": 2,
+        "text": "2.双击【金秋大乐透礼包】可随机获得【奖品】，活动完结。"
+      },
+      {
+        "line": 3,
+        "text": "◆在2、3线购买【金秋大乐透礼包】时谨防与NPC位置重叠的“骗子”摊位"
+      },
+      {
+        "line": 4,
+        "text": "◆【奖品】明细："
+      },
+      {
+        "line": 5,
+        "text": "宠物类"
+      },
+      {
+        "line": 6,
+        "text": "原罪之魔精华招财猫精华"
+      },
+      {
+        "line": 7,
+        "text": "围巾兔精华圣诞精灵精华"
+      },
+      {
+        "line": 8,
+        "text": "其他奖品"
+      },
+      {
+        "line": 9,
+        "text": "Lv.8各色宝石哥拉尔镇/阿凯鲁法村/雷克塔尔镇/流星山丘传送券"
+      },
+      {
+        "line": 10,
+        "text": "鼠王惊奇蛋阿尔卡迪亚古钱"
+      },
+      {
+        "line": 11,
+        "text": "超神药草（500技能经验）技能学习证（双子服无此奖品）"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": []
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "亚诺曼城金秋礼盒贩售员（137.137）",
+      "sourceLines": [
+        1,
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "与金秋礼盒贩售员（137.137）对话，交出800G购买【金秋大乐透礼包】。",
+        "inputs": [
+          {
+            "item": "金币",
+            "quantity": 800,
+            "action": "hand-over",
+            "unit": "G",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "金秋大乐透礼包",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [
+          {
+            "type": "safety-warning",
+            "text": "在2、3线购买时注意与NPC重叠的骗子摊位。",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "sourceLines": [
+          1,
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "双击【金秋大乐透礼包】，随机获得一种奖品，活动完结。",
+        "inputs": [
+          {
+            "item": "金秋大乐透礼包",
+            "quantity": 1,
+            "action": "use",
+            "consumed": true,
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "随机奖品",
+            "quantity": 1,
+            "acquisition": "random-one",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          2,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "金币",
+        "quantity": 800,
+        "action": "hand-over",
+        "unit": "G",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "金秋大乐透礼包",
+        "quantity": 1,
+        "action": "use",
+        "consumed": true,
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "金秋大乐透礼包",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "随机奖品",
+        "quantity": 1,
+        "acquisition": "random-one",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往亚诺曼城与金秋礼盒贩售员（137.137）对话，可交出800G购买【金秋大乐透礼包】。",
+      "type": "purchase",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2.双击【金秋大乐透礼包】可随机获得【奖品】，活动完结。",
+      "type": "open-container",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆在2、3线购买【金秋大乐透礼包】时谨防与NPC位置重叠的“骗子”摊位",
+      "type": "safety-warning",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆【奖品】明细：",
+      "type": "reward-heading",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "宠物类",
+      "type": "reward-category",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "原罪之魔精华招财猫精华",
+      "type": "reward-list",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "围巾兔精华圣诞精灵精华",
+      "type": "reward-list",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "其他奖品",
+      "type": "reward-category",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "Lv.8各色宝石哥拉尔镇/阿凯鲁法村/雷克塔尔镇/流星山丘传送券",
+      "type": "reward-list",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "鼠王惊奇蛋阿尔卡迪亚古钱",
+      "type": "reward-list",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "超神药草（500技能经验）技能学习证（双子服无此奖品）",
+      "type": "reward-list",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        11
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "reward-autumn-lottery-pool",
+      "version": "common",
+      "tier": "common",
+      "kind": "reward-pool",
+      "items": [
+        {
+          "id": "autumn-lottery-original-sin",
+          "name": "原罪之魔精华",
+          "role": "valuable-result",
+          "sourceLines": [
+            6
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "autumn-lottery-fortune-cat",
+          "name": "招财猫精华",
+          "role": "valuable-result",
+          "sourceLines": [
+            6
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "autumn-lottery-scarf-rabbit",
+          "name": "围巾兔精华",
+          "role": "valuable-result",
+          "sourceLines": [
+            7
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "autumn-lottery-christmas-elf",
+          "name": "圣诞精灵精华",
+          "role": "valuable-result",
+          "sourceLines": [
+            7
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "autumn-lottery-gem8",
+          "name": "Lv.8各色宝石",
+          "role": "valuable-result",
+          "sourceLines": [
+            9
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "autumn-lottery-ticket-1",
+          "name": "哥拉尔镇传送券",
+          "role": "valuable-result",
+          "sourceLines": [
+            9
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "autumn-lottery-ticket-2",
+          "name": "阿凯鲁法村传送券",
+          "role": "valuable-result",
+          "sourceLines": [
+            9
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "autumn-lottery-ticket-3",
+          "name": "雷克塔尔镇传送券",
+          "role": "valuable-result",
+          "sourceLines": [
+            9
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "autumn-lottery-ticket-4",
+          "name": "流星山丘传送券",
+          "role": "valuable-result",
+          "sourceLines": [
+            9
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "autumn-lottery-mouse-egg",
+          "name": "鼠王惊奇蛋",
+          "role": "valuable-result",
+          "sourceLines": [
+            10
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "autumn-lottery-coin",
+          "name": "阿尔卡迪亚古钱",
+          "role": "valuable-result",
+          "sourceLines": [
+            10
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "autumn-lottery-super-herb",
+          "name": "超神药草",
+          "role": "valuable-result",
+          "properties": {
+            "skillExperience": 500
+          },
+          "sourceLines": [
+            11
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "autumn-lottery-skill-certificate",
+          "name": "技能学习证",
+          "role": "valuable-result",
+          "serverAvailability": {
+            "双子服": false
+          },
+          "sourceLines": [
+            11
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-2",
+      "selection": "random-one",
+      "sourceLines": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 102,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "临时活动/任务"
+  }
+}

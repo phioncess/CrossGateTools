@@ -1,0 +1,451 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-2850124b-3e59-44f5-ab50-59d14ee1a3b5",
+  "name": "永恒的白马王子",
+  "aliases": [
+    "带着星光的手环"
+  ],
+  "metadata": {
+    "category": "经典任务",
+    "level": "40 级",
+    "availability": "available",
+    "summary": "必要条件：限定男性角色；夜晚；时长/怀旧服任务；以下仅展示怀旧服路线与参数",
+    "repeatable": "不可"
+  },
+  "source": {
+    "key": "catalog_2850124b-3e59-44f5-ab50-59d14ee1a3b5",
+    "url": "https://www.molibaike.com/Mission/Detail/2850124b-3e59-44f5-ab50-59d14ee1a3b5?u=True",
+    "localFiles": [],
+    "lineCount": 6,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往亚诺曼城爱情之树广场，夜晚，与少女蒂克铃（77.103）对话，获得【寻找白马王子的请求】。"
+      },
+      {
+        "line": 2,
+        "text": "2.前往克里特大教堂右边与小孩罗林普（204.66）对话，交出1个【面包】获得【白马棒棒糖】。"
+      },
+      {
+        "line": 3,
+        "text": "3.返回与少女蒂克铃（77.103）对话，交出【白马棒棒糖】获得【手环？】，任务完结。"
+      },
+      {
+        "line": 4,
+        "text": "◆【手环？】丢地消失，鉴定后为【带着星光的手环】，不可交易、存银行"
+      },
+      {
+        "line": 5,
+        "text": "【带着星光的手环】：Lv.1，手环，耐久10；魅力+1；"
+      },
+      {
+        "line": 6,
+        "text": "装备后，获得称号“永恒的白马王子”"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "time-window",
+        "value": "夜晚",
+        "appliesToStep": "step-1",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "夜晚的亚诺曼城爱情之树广场",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "夜晚前往亚诺曼城爱情之树广场，与少女蒂克铃（77.103）对话，获得【寻找白马王子的请求】。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "寻找白马王子的请求",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "前往克里特大教堂右边与小孩罗林普（204.66）对话，交出1个【面包】，获得【白马棒棒糖】。",
+        "inputs": [
+          {
+            "item": "面包",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "白马棒棒糖",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "返回与少女蒂克铃对话，交出【白马棒棒糖】，获得【手环？】，任务完结。",
+        "inputs": [
+          {
+            "item": "白马棒棒糖",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "手环？",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "notes": [],
+          "media": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "面包",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "白马棒棒糖",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "寻找白马王子的请求",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "白马棒棒糖",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "手环？",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往亚诺曼城爱情之树广场，夜晚，与少女蒂克铃（77.103）对话，获得【寻找白马王子的请求】。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2.前往克里特大教堂右边与小孩罗林普（204.66）对话，交出1个【面包】获得【白马棒棒糖】。",
+      "type": "step",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "3.返回与少女蒂克铃（77.103）对话，交出【白马棒棒糖】获得【手环？】，任务完结。",
+      "type": "step",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆【手环？】丢地消失，鉴定后为【带着星光的手环】，不可交易、存银行",
+      "type": "reward-detail",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "【带着星光的手环】：Lv.1，手环，耐久10；魅力+1；",
+      "type": "reward-detail",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "装备后，获得称号“永恒的白马王子”",
+      "type": "reward-detail",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        6
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "reward-starlight-bracelet",
+      "version": "common",
+      "tier": "common",
+      "kind": "quest-completion",
+      "items": [
+        {
+          "id": "starlight-bracelet",
+          "name": "手环？",
+          "role": "valuable-result",
+          "entityType": "equipment",
+          "identifiedName": "带着星光的手环",
+          "properties": {
+            "level": 1,
+            "category": "手环",
+            "durability": 10,
+            "charm": 1,
+            "dropBehavior": "丢地消失",
+            "tradeable": false,
+            "bankable": false,
+            "equippedTitle": "永恒的白马王子"
+          },
+          "sourceLines": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-3",
+      "sourceLines": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [
+      {
+        "name": "永恒的白马王子",
+        "acquisition": "equip-item",
+        "item": "带着星光的手环",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "careers": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 11,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "经典任务"
+  }
+}

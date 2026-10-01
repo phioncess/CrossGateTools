@@ -1,0 +1,754 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-91ded1eb-84a1-4b15-9762-8bbbae8a34cc",
+  "name": "圣诞节的礼物",
+  "aliases": [
+    "2016圣诞节任务"
+  ],
+  "metadata": {
+    "category": "临时活动/任务",
+    "level": "1 级",
+    "availability": "closed",
+    "summary": "怀旧牧羊/双子服活动（已关闭）；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_91ded1eb-84a1-4b15-9762-8bbbae8a34cc",
+    "url": "https://www.molibaike.com/Mission/Detail/91ded1eb-84a1-4b15-9762-8bbbae8a34cc?u=True",
+    "localFiles": [],
+    "lineCount": 11,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往法兰城里谢里雅堡与见习裁缝师（43.83）对话，选“是”交出300G获得【圣诞袜】。"
+      },
+      {
+        "line": 2,
+        "text": "2.调查圣诞树（41.78），选“是”交出【圣诞袜】获得【圣诞铃铛】。"
+      },
+      {
+        "line": 3,
+        "text": "◆每名角色物品栏内只可有1个【圣诞袜】，持有【圣诞铃铛】时亦不可购买【圣诞袜】。"
+      },
+      {
+        "line": 4,
+        "text": "3.等待23小时后调查圣诞树，交出【圣诞铃铛】获得【装满礼物的圣诞袜】。"
+      },
+      {
+        "line": 5,
+        "text": "4.双击【装满礼物的圣诞袜】获得奖品，任务完结。"
+      },
+      {
+        "line": 6,
+        "text": "◆奖品明细："
+      },
+      {
+        "line": 7,
+        "text": "名称使用效果备注"
+      },
+      {
+        "line": 8,
+        "text": "爱丝波波打卡器造型变更为爱丝波波并开启工作时间可交易、堆叠"
+      },
+      {
+        "line": 9,
+        "text": "特级布斯特药草技能经验增加+200不可交易、丢地消失"
+      },
+      {
+        "line": 10,
+        "text": "哥拉尔镇/阿凯鲁法村/雷克塔尔镇/流星山丘传送券传送到对应的村落可交易、堆叠"
+      },
+      {
+        "line": 11,
+        "text": "爱丝波波的精华获得1只Lv.1爱丝波波特殊系、10技能栏地50风50；35 35 20 18 12"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "inventory-limit",
+        "item": "圣诞袜",
+        "maximum": 1,
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "inventory-absence",
+        "item": "圣诞铃铛",
+        "appliesToStep": "step-1",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "里谢里雅堡见习裁缝师（43.83）",
+      "sourceLines": [
+        1,
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "与见习裁缝师（43.83）对话，交出300G，获得【圣诞袜】。",
+        "inputs": [
+          {
+            "item": "金币",
+            "quantity": 300,
+            "action": "hand-over",
+            "unit": "G",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "圣诞袜",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1,
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "调查圣诞树（41.78），选择“是”，交出【圣诞袜】，获得【圣诞铃铛】。",
+        "inputs": [
+          {
+            "item": "圣诞袜",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "圣诞铃铛",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "等待23小时后调查圣诞树，交出【圣诞铃铛】，获得【装满礼物的圣诞袜】。",
+        "inputs": [
+          {
+            "item": "圣诞铃铛",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "装满礼物的圣诞袜",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "waitAfterPreviousStep": {
+          "hours": 23
+        },
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "双击【装满礼物的圣诞袜】，随机获得一种奖品，任务完结。",
+        "inputs": [
+          {
+            "item": "装满礼物的圣诞袜",
+            "quantity": 1,
+            "action": "use",
+            "consumed": true,
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "随机奖品",
+            "quantity": 1,
+            "acquisition": "random-one",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "金币",
+        "quantity": 300,
+        "action": "hand-over",
+        "unit": "G",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "圣诞袜",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "圣诞铃铛",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "装满礼物的圣诞袜",
+        "quantity": 1,
+        "action": "use",
+        "consumed": true,
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "圣诞袜",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "圣诞铃铛",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "装满礼物的圣诞袜",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "随机奖品",
+        "quantity": 1,
+        "acquisition": "random-one",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往法兰城里谢里雅堡与见习裁缝师（43.83）对话，选“是”交出300G获得【圣诞袜】。",
+      "type": "purchase",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2.调查圣诞树（41.78），选“是”交出【圣诞袜】获得【圣诞铃铛】。",
+      "type": "step",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆每名角色物品栏内只可有1个【圣诞袜】，持有【圣诞铃铛】时亦不可购买【圣诞袜】。",
+      "type": "inventory-rule",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "3.等待23小时后调查圣诞树，交出【圣诞铃铛】获得【装满礼物的圣诞袜】。",
+      "type": "delayed-step",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "4.双击【装满礼物的圣诞袜】获得奖品，任务完结。",
+      "type": "open-container",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "◆奖品明细：",
+      "type": "reward-heading",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "名称使用效果备注",
+      "type": "table-header",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "爱丝波波打卡器造型变更为爱丝波波并开启工作时间可交易、堆叠",
+      "type": "reward-row",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "特级布斯特药草技能经验增加+200不可交易、丢地消失",
+      "type": "reward-row",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "哥拉尔镇/阿凯鲁法村/雷克塔尔镇/流星山丘传送券传送到对应的村落可交易、堆叠",
+      "type": "reward-row",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "爱丝波波的精华获得1只Lv.1爱丝波波特殊系、10技能栏地50风50；35 35 20 18 12",
+      "type": "reward-row",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        11
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "catalog-91ded1eb-84a1-4b15-9762-8bbbae8a34cc-reward-pool",
+      "version": "common",
+      "tier": "common",
+      "kind": "reward-pool",
+      "items": [
+        {
+          "id": "catalog-91ded1eb-84a1-4b15-9762-8bbbae8a34cc-clock",
+          "name": "爱丝波波打卡器",
+          "role": "valuable-result",
+          "properties": {
+            "use": "造型变更为爱丝波波并开启工作时间",
+            "tradeable": true,
+            "stackable": true
+          },
+          "sourceLines": [
+            8
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "catalog-91ded1eb-84a1-4b15-9762-8bbbae8a34cc-herb",
+          "name": "特级布斯特药草",
+          "role": "valuable-result",
+          "properties": {
+            "skillExperience": 200,
+            "tradeable": false,
+            "dropBehavior": "丢地消失"
+          },
+          "sourceLines": [
+            9
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "catalog-91ded1eb-84a1-4b15-9762-8bbbae8a34cc-ticket-1",
+          "name": "哥拉尔镇传送券",
+          "role": "valuable-result",
+          "properties": {
+            "destination": "哥拉尔镇",
+            "tradeable": true,
+            "stackable": true
+          },
+          "sourceLines": [
+            10
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "catalog-91ded1eb-84a1-4b15-9762-8bbbae8a34cc-ticket-2",
+          "name": "阿凯鲁法村传送券",
+          "role": "valuable-result",
+          "properties": {
+            "destination": "阿凯鲁法村",
+            "tradeable": true,
+            "stackable": true
+          },
+          "sourceLines": [
+            10
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "catalog-91ded1eb-84a1-4b15-9762-8bbbae8a34cc-ticket-3",
+          "name": "雷克塔尔镇传送券",
+          "role": "valuable-result",
+          "properties": {
+            "destination": "雷克塔尔镇",
+            "tradeable": true,
+            "stackable": true
+          },
+          "sourceLines": [
+            10
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "catalog-91ded1eb-84a1-4b15-9762-8bbbae8a34cc-ticket-4",
+          "name": "流星山丘传送券",
+          "role": "valuable-result",
+          "properties": {
+            "destination": "流星山丘",
+            "tradeable": true,
+            "stackable": true
+          },
+          "sourceLines": [
+            10
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "catalog-91ded1eb-84a1-4b15-9762-8bbbae8a34cc-essence",
+          "name": "爱丝波波的精华",
+          "role": "valuable-result",
+          "properties": {
+            "use": "获得1只Lv.1爱丝波波",
+            "petProfile": {
+              "race": "特殊系",
+              "skillSlots": 10,
+              "elements": {
+                "地": 50,
+                "风": 50
+              },
+              "baseStats": [
+                35,
+                35,
+                20,
+                18,
+                12
+              ]
+            }
+          },
+          "sourceLines": [
+            11
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-4",
+      "selection": "random-one",
+      "sourceLines": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 24,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "临时活动/任务"
+  }
+}

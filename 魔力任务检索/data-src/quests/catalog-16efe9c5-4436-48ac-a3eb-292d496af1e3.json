@@ -1,0 +1,586 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-16efe9c5-4436-48ac-a3eb-292d496af1e3",
+  "name": "毕安札的使命",
+  "aliases": [
+    "阿比安吉",
+    "无尽思念"
+  ],
+  "metadata": {
+    "category": "怀旧服其他自制任务",
+    "level": "10 级",
+    "availability": "available",
+    "summary": "必要条件：清晨或黄昏；等级不低于Lv.10；完成《毕安札的送礼》任务；以下仅展示怀旧服路线与参数",
+    "repeatable": "不可"
+  },
+  "source": {
+    "key": "catalog_16efe9c5-4436-48ac-a3eb-292d496af1e3",
+    "url": "https://www.molibaike.com/Mission/Detail/16efe9c5-4436-48ac-a3eb-292d496af1e3?u=True",
+    "localFiles": [],
+    "lineCount": 11,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往法兰城毕安札的家（132.132）与罗珊娜（12.7）对话。（此步可跳过）"
+      },
+      {
+        "line": 2,
+        "text": "2.前往城内的地下迷宫，寻找随机出现的毕安札并与之对话，输入“罗珊娜很想你”进入战斗。"
+      },
+      {
+        "line": 3,
+        "text": "◆注意：此处“珊”容易打错成“姗”"
+      },
+      {
+        "line": 4,
+        "text": "◆城内的地下迷宫抵达方式参考《毕安扎的送礼》任务"
+      },
+      {
+        "line": 5,
+        "text": "◆城内的地下迷宫为随机迷宫，约11层；魔物为Lv.9~16幽灵、漂浮炸弹"
+      },
+      {
+        "line": 6,
+        "text": "◆战斗为五连战；魔物为Lv.15~18幽灵、漂浮炸弹*1~6"
+      },
+      {
+        "line": 7,
+        "text": "3.战斗胜利后传送至毕安札的家，与毕安札（11.7）对话，获得【无尽思念】、称号“阿比安吉”，任务完结。"
+      },
+      {
+        "line": 8,
+        "text": "◆若离开毕安札的家则传送回法兰城，任务中断，需重新解"
+      },
+      {
+        "line": 9,
+        "text": "◆若未完成《毕安札的送礼》任务，此处无法与毕安札对话、获得【奖品】"
+      },
+      {
+        "line": 10,
+        "text": "◆【无尽思念】：Lv.3项链、耐久350；攻击+10、防御+8、敏捷+5、遗忘+20、必杀/命中+5、魔攻+8；装备后提升幸运值；可以交易/寄存/丢地"
+      },
+      {
+        "line": 11,
+        "text": "◆《【怀旧服】狂战腕轮、星光鞋、无尽思念，幸运值测试》测得【无尽思念】：+幸运1"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [
+      {
+        "quest": "毕安札的送礼",
+        "relation": "required-for-final-dialogue-and-reward",
+        "sourceLines": [
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "itemSources": [],
+    "references": [
+      {
+        "type": "route",
+        "targetQuest": "毕安扎的送礼",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "test-reference",
+        "target": "【怀旧服】狂战腕轮、星光鞋、无尽思念，幸运值测试",
+        "sourceLines": [
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "completed-quest",
+        "quest": "毕安札的送礼",
+        "sourceLines": [
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "法兰城毕安札的家（132.132）",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "前往毕安札的家与罗珊娜（12.7）对话；此步可以跳过。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "进入城内地下随机迷宫，找到随机出现的毕安札并输入“罗珊娜很想你”，进入五连战。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "commands": [
+          {
+            "text": "罗珊娜很想你",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "source-action-review"
+            }
+          }
+        ]
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "战斗胜利后传送至毕安札的家，与毕安札（11.7）对话，获得【无尽思念】和称号“阿比安吉”，任务完结。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "无尽思念",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [
+          {
+            "type": "failure-condition",
+            "text": "离开毕安札的家会传送回法兰城，任务中断并需重做。",
+            "sourceLines": [
+              8
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "sourceLines": [
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {
+            "battle-sequence-1": {
+              "id": "battle-sequence-1",
+              "order": 1,
+              "kind": "consecutive-battles",
+              "title": "毕安札五连战",
+              "triggerStep": "step-2",
+              "sequenceCount": 5,
+              "overview": {
+                "text": "输入准确口令“罗珊娜很想你”进入五连战。",
+                "sourceLines": [
+                  2,
+                  3,
+                  6
+                ],
+                "verification": {
+                  "status": "verified",
+                  "method": "manual-semantic-review"
+                }
+              },
+              "enemies": {
+                "enemy-1": {
+                  "id": "enemy-1",
+                  "name": "幽灵",
+                  "level": {
+                    "min": 15,
+                    "max": 18
+                  },
+                  "count": {
+                    "min": 1,
+                    "max": 6
+                  },
+                  "raw": "五连战；魔物为Lv.15~18幽灵、漂浮炸弹*1~6",
+                  "sourceLines": [
+                    6
+                  ],
+                  "verification": {
+                    "status": "verified",
+                    "method": "manual-semantic-review"
+                  }
+                },
+                "enemy-2": {
+                  "id": "enemy-2",
+                  "name": "漂浮炸弹",
+                  "level": {
+                    "min": 15,
+                    "max": 18
+                  },
+                  "count": {
+                    "min": 1,
+                    "max": 6
+                  },
+                  "raw": "五连战；魔物为Lv.15~18幽灵、漂浮炸弹*1~6",
+                  "sourceLines": [
+                    6
+                  ],
+                  "verification": {
+                    "status": "verified",
+                    "method": "manual-semantic-review"
+                  }
+                }
+              },
+              "sourceLines": [
+                2,
+                3,
+                6
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          },
+          "encounters": [
+            {
+              "id": "encounter-city-underground",
+              "location": "城内的地下迷宫",
+              "randomMaze": true,
+              "approximateFloors": 11,
+              "enemies": [
+                "幽灵",
+                "漂浮炸弹"
+              ],
+              "level": {
+                "min": 9,
+                "max": 16
+              },
+              "sourceLines": [
+                5
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          ],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [],
+    "acquisitions": [
+      {
+        "item": "无尽思念",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往法兰城毕安札的家（132.132）与罗珊娜（12.7）对话。（此步可跳过）",
+      "type": "optional-step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2.前往城内的地下迷宫，寻找随机出现的毕安札并与之对话，输入“罗珊娜很想你”进入战斗。",
+      "type": "battle-trigger",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆注意：此处“珊”容易打错成“姗”",
+      "type": "password-note",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆城内的地下迷宫抵达方式参考《毕安扎的送礼》任务",
+      "type": "reference",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "◆城内的地下迷宫为随机迷宫，约11层；魔物为Lv.9~16幽灵、漂浮炸弹",
+      "type": "encounter-area",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "◆战斗为五连战；魔物为Lv.15~18幽灵、漂浮炸弹*1~6",
+      "type": "battle-overview",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "3.战斗胜利后传送至毕安札的家，与毕安札（11.7）对话，获得【无尽思念】、称号“阿比安吉”，任务完结。",
+      "type": "step",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "◆若离开毕安札的家则传送回法兰城，任务中断，需重新解",
+      "type": "failure-condition",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "◆若未完成《毕安札的送礼》任务，此处无法与毕安札对话、获得【奖品】",
+      "type": "prerequisite",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "◆【无尽思念】：Lv.3项链、耐久350；攻击+10、防御+8、敏捷+5、遗忘+20、必杀/命中+5、魔攻+8；装备后提升幸运值；可以交易/寄存/丢地",
+      "type": "reward-detail",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "◆《【怀旧服】狂战腕轮、星光鞋、无尽思念，幸运值测试》测得【无尽思念】：+幸运1",
+      "type": "test-evidence",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        11
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "reward-endless-longing",
+      "version": "common",
+      "tier": "common",
+      "kind": "quest-completion",
+      "items": [
+        {
+          "id": "endless-longing",
+          "name": "无尽思念",
+          "role": "valuable-result",
+          "entityType": "equipment",
+          "properties": {
+            "level": 3,
+            "category": "项链",
+            "durability": 350,
+            "attack": 10,
+            "defense": 8,
+            "agility": 5,
+            "resistance": {
+              "遗忘": 20
+            },
+            "critical": 5,
+            "accuracy": 5,
+            "magicAttack": 8,
+            "luck": 1,
+            "luckEvidence": "来源引用的实测资料",
+            "tradeable": true,
+            "bankable": true,
+            "droppable": true
+          },
+          "sourceLines": [
+            7,
+            10,
+            11
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-3",
+      "sourceLines": [
+        7,
+        10,
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [
+      {
+        "name": "阿比安吉",
+        "acquisition": "quest-completion",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 7,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "怀旧服其他自制任务"
+  }
+}

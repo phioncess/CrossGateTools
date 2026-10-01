@@ -1,0 +1,466 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-3368793f-3777-4950-baf2-e555e682b203",
+  "name": "前往东岛",
+  "aliases": [
+    "雷欧娜村传送"
+  ],
+  "metadata": {
+    "category": "经典任务",
+    "level": "40 级",
+    "availability": "available",
+    "summary": "必要条件：王宫或以上阶段士兵带队；时长/怀旧服任务；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_3368793f-3777-4950-baf2-e555e682b203",
+    "url": "https://www.molibaike.com/Mission/Detail/3368793f-3777-4950-baf2-e555e682b203?u=True",
+    "localFiles": [],
+    "lineCount": 10,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往尼维尔海村战备物资运输站（29.70）与士兵梅莒派对话。（此步可跳过）"
+      },
+      {
+        "line": 2,
+        "text": "2.前往克瑞村酒吧（86.63），职业为王宫或以上阶段士兵与军官史卜力（16.4）对话，获得【军官手谕】。"
+      },
+      {
+        "line": 3,
+        "text": "◆【军官手谕】：不可丢地、交易、存银行、宠邮；登出消失"
+      },
+      {
+        "line": 4,
+        "text": "◆持有【希望水晶】时，无法获得【军官手谕】"
+      },
+      {
+        "line": 5,
+        "text": "3.白天，返回尼维尔海村，持有【军官手谕】与押船官梵吉尔（37.75）对话，全队传送上船。"
+      },
+      {
+        "line": 6,
+        "text": "4.与押船官梵吉尔（19.15）对话下船抵达雷欧娜村，任务完结。"
+      },
+      {
+        "line": 7,
+        "text": "◆【军官手谕】可反复使用，直至登出为止"
+      },
+      {
+        "line": 8,
+        "text": "◆雷欧娜村传送石需要战斗系50级或者生产系3转25级才可使用"
+      },
+      {
+        "line": 9,
+        "text": "◆亚诺曼城传送交通管理中心，位于尤金尼亚堡内（73.54）"
+      },
+      {
+        "line": 10,
+        "text": "◆亚诺曼城传送交通管理中心示意图："
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "career-rank",
+        "career": "士兵",
+        "minimumRank": "王宫",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "inventory-absence",
+        "item": "希望水晶",
+        "appliesToStep": "step-2",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "time-window",
+        "value": "白天",
+        "appliesToStep": "step-3",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "尼维尔海村战备物资运输站（29.70）",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "与士兵梅莒派对话；此步可以跳过。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "王宫或以上阶段士兵前往克瑞村酒吧，与军官史卜力（16.4）对话，获得【军官手谕】。持有希望水晶时无法获得。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "军官手谕",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "properties": {
+              "droppable": false,
+              "tradeable": false,
+              "bankable": false,
+              "petMailable": false,
+              "logoutBehavior": "消失"
+            },
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          2,
+          3,
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "白天返回尼维尔海村，持有【军官手谕】与押船官梵吉尔（37.75）对话，全队传送上船。手谕不会消耗，可反复使用直至登出。",
+        "inputs": [
+          {
+            "item": "军官手谕",
+            "quantity": 1,
+            "action": "hold",
+            "consumed": false,
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          5,
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "与船上的押船官梵吉尔（19.15）对话下船，抵达雷欧娜村，任务完结。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": [
+      {
+        "type": "teleporter-condition",
+        "text": "雷欧娜村传送石要求战斗系50级，或生产系3转25级。",
+        "sourceLines": [
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "location",
+        "text": "亚诺曼城传送交通管理中心位于尤金尼亚堡内（73.54）。",
+        "sourceLines": [
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [
+            {
+              "type": "map",
+              "text": "亚诺曼城传送交通管理中心示意图。",
+              "sourceLines": [
+                10
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          ],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "军官手谕",
+        "quantity": 1,
+        "action": "hold",
+        "consumed": false,
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "军官手谕",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "properties": {
+          "droppable": false,
+          "tradeable": false,
+          "bankable": false,
+          "petMailable": false,
+          "logoutBehavior": "消失"
+        },
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往尼维尔海村战备物资运输站（29.70）与士兵梅莒派对话。（此步可跳过）",
+      "type": "optional-step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2.前往克瑞村酒吧（86.63），职业为王宫或以上阶段士兵与军官史卜力（16.4）对话，获得【军官手谕】。",
+      "type": "step",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆【军官手谕】：不可丢地、交易、存银行、宠邮；登出消失",
+      "type": "item-detail",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆持有【希望水晶】时，无法获得【军官手谕】",
+      "type": "blocking-condition",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "3.白天，返回尼维尔海村，持有【军官手谕】与押船官梵吉尔（37.75）对话，全队传送上船。",
+      "type": "step",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "4.与押船官梵吉尔（19.15）对话下船抵达雷欧娜村，任务完结。",
+      "type": "step",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "◆【军官手谕】可反复使用，直至登出为止",
+      "type": "item-use",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "◆雷欧娜村传送石需要战斗系50级或者生产系3转25级才可使用",
+      "type": "teleporter-condition",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "◆亚诺曼城传送交通管理中心，位于尤金尼亚堡内（73.54）",
+      "type": "location-note",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "◆亚诺曼城传送交通管理中心示意图：",
+      "type": "media",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        10
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 28,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "经典任务"
+  }
+}

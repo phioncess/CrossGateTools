@@ -1,0 +1,862 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-7f01b5cf-335d-48d9-b91f-c68d52315ad8",
+  "name": "祖传秘方",
+  "aliases": [],
+  "metadata": {
+    "category": "临时活动/任务",
+    "level": "1 级",
+    "availability": "closed",
+    "summary": "怀旧服任务（已关闭）；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_7f01b5cf-335d-48d9-b91f-c68d52315ad8",
+    "url": "https://www.molibaike.com/Mission/Detail/7f01b5cf-335d-48d9-b91f-c68d52315ad8?u=True",
+    "localFiles": [],
+    "lineCount": 11,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往法兰城安其摩酒吧（102.131）与大师兄豆豆（15.16）对话，选“是”交出50G获得【秘方1】。"
+      },
+      {
+        "line": 2,
+        "text": "◆【秘方】获得无顺序要求，可不按步骤1~3顺序完成"
+      },
+      {
+        "line": 3,
+        "text": "2.前往法兰城（152.165）处与二师姐妮妮对话，选“是”交出50G获得【秘方2】。"
+      },
+      {
+        "line": 4,
+        "text": "◆法兰城（152.165）处位于南门喷泉附近"
+      },
+      {
+        "line": 5,
+        "text": "3.前往法兰城（214.48）处与三师弟小丸子对话，选“是”交出50G获得【秘方3】。"
+      },
+      {
+        "line": 6,
+        "text": "◆法兰城（214.48）处位于城东拿潘食品店外"
+      },
+      {
+        "line": 7,
+        "text": "4.前往法兰城（148.129）处与旅行商团老师对话，选“是”交出200G、【秘方1】、【秘方2】、【秘方3】获得【智者徽章】、【神奇包袱】、称号“冤大头”，任务完结。"
+      },
+      {
+        "line": 8,
+        "text": "◆双击【神奇包袱】获得【中号神奇包袱】；双击【中号神奇包袱】获得【小号神奇包袱】◆双击【小号神奇包袱】可随机获得【神奇的香草】、【神奇药水】、【超级神奇药水】"
+      },
+      {
+        "line": 9,
+        "text": "◆【神奇的香草】使用后可随机增加50点技能经验；【神奇药水】使用后可回复约15点生命值（无冷却时间）；【超级神奇药水】使用后可回复约70点魔力值（无冷却时间）"
+      },
+      {
+        "line": 10,
+        "text": "◆本任务解完一次后，可直接与旅行商团老师对话购买【小号神奇包袱】，无需再完成前置步骤"
+      },
+      {
+        "line": 11,
+        "text": "◆“冤大头”称号在获得后若更换装备，登出服务器会消失，再与阿蒙对话后可再次获得（推测为BUG）"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": []
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "法兰城三名秘方持有人（顺序不限）",
+      "sourceLines": [
+        1,
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "向大师兄豆豆（15.16）交出50G，获得【秘方1】。",
+        "inputs": [
+          {
+            "item": "金币",
+            "quantity": 50,
+            "action": "hand-over",
+            "unit": "G",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "秘方1",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sequenceOrderRequired": false,
+        "sourceLines": [
+          1,
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "向南门喷泉附近的二师姐妮妮（152.165）交出50G，获得【秘方2】。",
+        "inputs": [
+          {
+            "item": "金币",
+            "quantity": 50,
+            "action": "hand-over",
+            "unit": "G",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "秘方2",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sequenceOrderRequired": false,
+        "sourceLines": [
+          3,
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "向拿潘食品店外的三师弟小丸子（214.48）交出50G，获得【秘方3】。",
+        "inputs": [
+          {
+            "item": "金币",
+            "quantity": 50,
+            "action": "hand-over",
+            "unit": "G",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "秘方3",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sequenceOrderRequired": false,
+        "sourceLines": [
+          5,
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "向旅行商团老师（148.129）交出200G和三份秘方，获得【智者徽章】、【神奇包袱】及称号“冤大头”，任务完结。",
+        "inputs": [
+          {
+            "item": "金币",
+            "quantity": 200,
+            "action": "hand-over",
+            "unit": "G",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "秘方1",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "秘方2",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "秘方3",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "智者徽章",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "神奇包袱",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          7,
+          8,
+          9,
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-5",
+        "order": 5,
+        "text": "完成任务一次后，可直接向旅行商团老师购买【小号神奇包袱】，无需再次收集秘方；来源未列购买价格。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "小号神奇包袱",
+            "quantity": 1,
+            "acquisition": "purchase-price-unspecified",
+            "sourceLines": [
+              10
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "optional": true,
+        "repeatable": true,
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "金币",
+        "quantity": 50,
+        "action": "hand-over",
+        "unit": "G",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "金币",
+        "quantity": 50,
+        "action": "hand-over",
+        "unit": "G",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "金币",
+        "quantity": 50,
+        "action": "hand-over",
+        "unit": "G",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "金币",
+        "quantity": 200,
+        "action": "hand-over",
+        "unit": "G",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "秘方1",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "秘方2",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "秘方3",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "秘方1",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "秘方2",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "秘方3",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "智者徽章",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "神奇包袱",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "小号神奇包袱",
+        "quantity": 1,
+        "acquisition": "purchase-price-unspecified",
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-5",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往法兰城安其摩酒吧（102.131）与大师兄豆豆（15.16）对话，选“是”交出50G获得【秘方1】。",
+      "type": "purchase",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "◆【秘方】获得无顺序要求，可不按步骤1~3顺序完成",
+      "type": "order-rule",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "2.前往法兰城（152.165）处与二师姐妮妮对话，选“是”交出50G获得【秘方2】。",
+      "type": "purchase",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆法兰城（152.165）处位于南门喷泉附近",
+      "type": "location-note",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "3.前往法兰城（214.48）处与三师弟小丸子对话，选“是”交出50G获得【秘方3】。",
+      "type": "purchase",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "◆法兰城（214.48）处位于城东拿潘食品店外",
+      "type": "location-note",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "4.前往法兰城（148.129）处与旅行商团老师对话，选“是”交出200G、【秘方1】、【秘方2】、【秘方3】获得【智者徽章】、【神奇包袱】、称号“冤大头”，任务完结。",
+      "type": "step",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "◆双击【神奇包袱】获得【中号神奇包袱】；双击【中号神奇包袱】获得【小号神奇包袱】◆双击【小号神奇包袱】可随机获得【神奇的香草】、【神奇药水】、【超级神奇药水】",
+      "type": "item-lifecycle",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "◆【神奇的香草】使用后可随机增加50点技能经验；【神奇药水】使用后可回复约15点生命值（无冷却时间）；【超级神奇药水】使用后可回复约70点魔力值（无冷却时间）",
+      "type": "reward-detail",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "◆本任务解完一次后，可直接与旅行商团老师对话购买【小号神奇包袱】，无需再完成前置步骤",
+      "type": "repeat-purchase",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "◆“冤大头”称号在获得后若更换装备，登出服务器会消失，再与阿蒙对话后可再次获得（推测为BUG）",
+      "type": "title-issue",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        11
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "reward-secret-recipe-completion",
+      "version": "common",
+      "tier": "common",
+      "kind": "quest-completion",
+      "items": [
+        {
+          "id": "wise-medal",
+          "name": "智者徽章",
+          "role": "valuable-result",
+          "sourceLines": [
+            7
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "magic-bundle",
+          "name": "神奇包袱",
+          "role": "valuable-result",
+          "properties": {
+            "transformationChain": [
+              "双击获得中号神奇包袱",
+              "双击中号神奇包袱获得小号神奇包袱",
+              "双击小号神奇包袱随机获得一种奖品"
+            ]
+          },
+          "sourceLines": [
+            7,
+            8
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-4",
+      "sourceLines": [
+        7,
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "id": "reward-small-magic-bag-pool",
+      "version": "common",
+      "tier": "common",
+      "kind": "reward-pool",
+      "items": [
+        {
+          "id": "magic-herb",
+          "name": "神奇的香草",
+          "role": "valuable-result",
+          "properties": {
+            "use": "随机增加50点技能经验"
+          },
+          "sourceLines": [
+            8,
+            9
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "magic-potion",
+          "name": "神奇药水",
+          "role": "valuable-result",
+          "properties": {
+            "lifeRecovery": 15,
+            "approximate": true,
+            "cooldown": false
+          },
+          "sourceLines": [
+            8,
+            9
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "super-magic-potion",
+          "name": "超级神奇药水",
+          "role": "valuable-result",
+          "properties": {
+            "magicRecovery": 70,
+            "approximate": true,
+            "cooldown": false
+          },
+          "sourceLines": [
+            8,
+            9
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "selection": "random-one",
+      "openedFrom": "小号神奇包袱",
+      "sourceLines": [
+        8,
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [
+      {
+        "name": "冤大头",
+        "acquisition": "quest-completion",
+        "issue": "更换装备后登出会消失；与阿蒙对话可再次获得；来源推测为BUG",
+        "sourceLines": [
+          7,
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 8,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "临时活动/任务"
+  }
+}

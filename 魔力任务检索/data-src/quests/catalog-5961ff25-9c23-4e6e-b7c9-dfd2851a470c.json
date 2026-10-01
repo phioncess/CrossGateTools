@@ -1,0 +1,698 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-5961ff25-9c23-4e6e-b7c9-dfd2851a470c",
+  "name": "寻找雷兹",
+  "aliases": [
+    "雷兹打猎用的弓"
+  ],
+  "metadata": {
+    "category": "经典任务",
+    "level": "15 级",
+    "availability": "available",
+    "summary": "",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_5961ff25-9c23-4e6e-b7c9-dfd2851a470c",
+    "url": "https://www.molibaike.com/Mission/Detail/5961ff25-9c23-4e6e-b7c9-dfd2851a470c?u=True",
+    "localFiles": [],
+    "lineCount": 12,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往伊尔村医院（52.39）与猎人柯萨裘（21.11）对话，选“是”获得【雷兹的肖像画】。"
+      },
+      {
+        "line": 2,
+        "text": "2.前往亚留特村与猎人雷兹（47.47）对话，进行选择"
+      },
+      {
+        "line": 3,
+        "text": "①选“是”交出【雷兹的肖像画】获得【雷兹的信】、【弓？】。"
+      },
+      {
+        "line": 4,
+        "text": "◆【弓？】鉴定后为【雷兹打猎用的弓】。"
+      },
+      {
+        "line": 5,
+        "text": "【雷兹打猎用的弓】：Lv.1弓、耐久100；攻击+1；不可交易。"
+      },
+      {
+        "line": 6,
+        "text": "备注：華姬：【雷兹打猎用的弓】，对[采集]技能无效，大概是参数设置有误《采集設定(參考) 》。"
+      },
+      {
+        "line": 7,
+        "text": "②若选“否”则交出【雷兹的肖像画】，任务完结。"
+      },
+      {
+        "line": 8,
+        "text": "◆【雷兹的肖像画】、【雷兹的信】：不可交易。"
+      },
+      {
+        "line": 9,
+        "text": "3.返回伊尔村医院与猎人柯萨裘（21.11）对话，选“是”交出【雷兹的信】、【弓？】获得【旅行干粮】，任务完结。"
+      },
+      {
+        "line": 10,
+        "text": "◆【旅行干粮】：v.1料理；使用后回复15点魔力；不可交易、可丢地、存银行"
+      },
+      {
+        "line": 11,
+        "text": "◆持有【旅行干粮】时不可重解本任务"
+      },
+      {
+        "line": 12,
+        "text": "◆任务剧情：参考《寻找雷兹任务剧情对话》"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": [
+      {
+        "type": "known-issue-reference",
+        "target": "采集設定(參考)",
+        "item": "雷兹打猎用的弓",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "story",
+        "target": "寻找雷兹任务剧情对话",
+        "sourceLines": [
+          12
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "inventory-absence",
+        "item": "旅行干粮",
+        "reason": "持有时不可重解",
+        "sourceLines": [
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "伊尔村医院猎人柯萨裘（21.11）",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "与猎人柯萨裘（21.11）对话，选择“是”，获得【雷兹的肖像画】。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "雷兹的肖像画",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "properties": {
+              "tradeable": false
+            },
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "与亚留特村猎人雷兹（47.47）对话：选择“是”交出肖像画，获得【雷兹的信】和【弓？】并继续；选择“否”交出肖像画后任务直接结束。",
+        "inputs": [
+          {
+            "item": "雷兹的肖像画",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "雷兹的信",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "condition": "choice=yes",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "弓？",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "condition": "choice=yes",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "choices": [
+          {
+            "value": "是",
+            "outputs": [
+              "雷兹的信",
+              "弓？"
+            ],
+            "continues": true,
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "value": "否",
+            "outputs": [],
+            "endsQuest": true,
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "sourceLines": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "返回伊尔村医院与柯萨裘对话，交出【雷兹的信】和【弓？】，获得【旅行干粮】，任务完结。",
+        "inputs": [
+          {
+            "item": "雷兹的信",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              9
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "弓？",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              9
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "旅行干粮",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              9
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          9,
+          10,
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "雷兹的肖像画",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "雷兹的信",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "弓？",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "雷兹的肖像画",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "properties": {
+          "tradeable": false
+        },
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "雷兹的信",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "condition": "choice=yes",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "弓？",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "condition": "choice=yes",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "旅行干粮",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往伊尔村医院（52.39）与猎人柯萨裘（21.11）对话，选“是”获得【雷兹的肖像画】。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2.前往亚留特村与猎人雷兹（47.47）对话，进行选择",
+      "type": "choice-step",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "①选“是”交出【雷兹的肖像画】获得【雷兹的信】、【弓？】。",
+      "type": "choice-branch",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆【弓？】鉴定后为【雷兹打猎用的弓】。",
+      "type": "reward-detail",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "【雷兹打猎用的弓】：Lv.1弓、耐久100；攻击+1；不可交易。",
+      "type": "reward-detail",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "备注：華姬：【雷兹打猎用的弓】，对[采集]技能无效，大概是参数设置有误《采集設定(參考) 》。",
+      "type": "known-issue",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "②若选“否”则交出【雷兹的肖像画】，任务完结。",
+      "type": "choice-branch",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "◆【雷兹的肖像画】、【雷兹的信】：不可交易。",
+      "type": "item-detail",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "3.返回伊尔村医院与猎人柯萨裘（21.11）对话，选“是”交出【雷兹的信】、【弓？】获得【旅行干粮】，任务完结。",
+      "type": "step",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "◆【旅行干粮】：v.1料理；使用后回复15点魔力；不可交易、可丢地、存银行",
+      "type": "reward-detail",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "◆持有【旅行干粮】时不可重解本任务",
+      "type": "gate",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "◆任务剧情：参考《寻找雷兹任务剧情对话》",
+      "type": "reference",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        12
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "reward-rez-bow",
+      "version": "common",
+      "tier": "common",
+      "kind": "branch-reward",
+      "items": [
+        {
+          "id": "rez-hunting-bow",
+          "name": "弓？",
+          "role": "valuable-result",
+          "entityType": "equipment",
+          "identifiedName": "雷兹打猎用的弓",
+          "properties": {
+            "level": 1,
+            "category": "弓",
+            "durability": 100,
+            "attack": 1,
+            "tradeable": false,
+            "knownIssue": "对采集技能无效；来源备注推测为参数设置错误"
+          },
+          "sourceLines": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-2",
+      "choice": "是",
+      "sourceLines": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "id": "reward-travel-rations",
+      "version": "common",
+      "tier": "common",
+      "kind": "quest-completion",
+      "items": [
+        {
+          "id": "travel-rations",
+          "name": "旅行干粮",
+          "role": "valuable-result",
+          "properties": {
+            "level": 1,
+            "category": "料理",
+            "magicRecovery": 15,
+            "tradeable": false,
+            "droppable": true,
+            "bankable": true
+          },
+          "sourceLines": [
+            9,
+            10
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-3",
+      "sourceLines": [
+        9,
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 30,
+    "stageLabel": "",
+    "optional": false,
+    "type": "通用任务",
+    "sourceCategory": "经典任务"
+  }
+}

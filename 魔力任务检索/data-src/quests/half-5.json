@@ -1,0 +1,633 @@
+{
+  "schemaVersion": 2,
+  "id": "half-5",
+  "name": "小岛之谜",
+  "aliases": [
+    "半山5",
+    "背叛者",
+    "小岛之迷",
+    "hs5"
+  ],
+  "metadata": {
+    "category": "系列主线",
+    "level": "Lv.50+",
+    "availability": "available",
+    "summary": "半山练级的关键前置。完成半山1、2、3、5后，可用“背叛者”称号从法兰西门外传送小岛。",
+    "repeatable": null
+  },
+  "source": {
+    "key": "catalog_90f40746-7dff-480b-9998-f2e464f41d91",
+    "url": "https://www.molibaike.com/Mission/Detail/90f40746-7dff-480b-9998-f2e464f41d91?u=True",
+    "localFiles": [],
+    "lineCount": 12,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "完成《圣鸟之谜》任务"
+      },
+      {
+        "line": 2,
+        "text": "拥有“保守秘密的人”称号"
+      },
+      {
+        "line": 3,
+        "text": "1.前往法兰城里谢里雅堡2楼图书馆（0.74）与阿斯提亚祭司（27.15）对话，获得【阿斯提亚锥形水晶】。"
+      },
+      {
+        "line": 4,
+        "text": "2.双击【阿斯提亚锥形水晶】传送至小岛，前往（64.45）处通过黄色传送石进入通往山顶的路。"
+      },
+      {
+        "line": 5,
+        "text": "3.通过随机迷宫进入圣鸟之巢，与圣鸟的子嗣（14.11）对话进入圣山之巅。"
+      },
+      {
+        "line": 6,
+        "text": "4.与阿鲁卡那斯（23.22）对话，交出【阿斯提亚锥形水晶】获得称号“背叛者”并传送回法兰城，任务完结。"
+      },
+      {
+        "line": 7,
+        "text": "◆已经完成过本任务拥有“背叛者”称号时，不可解本任务，无法获得【阿斯提亚锥形水晶】，会获得半山6《地狱的回响》的任务道具【锄头】"
+      },
+      {
+        "line": 8,
+        "text": "◆通往山顶的路为随机迷宫，共19层；魔物为Lv.9~15狂奔鸟、托罗帝鸟、火焰啄木鸟、岩地跑者，数量固定为1"
+      },
+      {
+        "line": 9,
+        "text": "◆本任务的半山腰不会遇敌"
+      },
+      {
+        "line": 10,
+        "text": "◆任务完成后可前往法兰城西门外与阿鲁卡（398.168）对话，交出800G传送至小岛"
+      },
+      {
+        "line": 11,
+        "text": "◆拥有称号“死神”时，亦可传送至小岛"
+      },
+      {
+        "line": 12,
+        "text": "◆任务剧情：参考《半山系列任务剧情对话》"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [
+      {
+        "quest": "圣鸟之谜",
+        "relation": "required",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "itemSources": [],
+    "references": [
+      {
+        "type": "next-quest-item",
+        "quest": "地狱的回响",
+        "item": "锄头",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "story",
+        "target": "半山系列任务剧情对话",
+        "sourceLines": [
+          12
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "completed-quest",
+        "quest": "圣鸟之谜",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "title",
+        "title": "保守秘密的人",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "title-absence",
+        "title": "背叛者",
+        "reason": "已有该称号时不能重解本任务",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "里谢里雅堡2楼图书馆阿斯提亚祭司（27.15）",
+      "sourceLines": [
+        3,
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "与阿斯提亚祭司（27.15）对话，获得【阿斯提亚锥形水晶】。若已有“背叛者”称号则不能重解，并改为获得半山6任务道具【锄头】。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "阿斯提亚锥形水晶",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "condition": "没有“背叛者”称号",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "锄头",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "condition": "已有“背叛者”称号",
+            "belongsToQuest": "地狱的回响",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          3,
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "双击【阿斯提亚锥形水晶】传送至小岛，从（64.45）黄色传送石进入通往山顶的路。",
+        "inputs": [
+          {
+            "item": "阿斯提亚锥形水晶",
+            "quantity": 1,
+            "action": "use",
+            "consumed": false,
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "通过随机迷宫进入圣鸟之巢，与圣鸟的子嗣（14.11）对话进入圣山之巅。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          5,
+          8,
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "与阿鲁卡那斯（23.22）对话，交出【阿斯提亚锥形水晶】，获得称号“背叛者”并传送回法兰城，任务完结。",
+        "inputs": [
+          {
+            "item": "阿斯提亚锥形水晶",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": [
+      {
+        "type": "post-completion-transport",
+        "npc": "法兰城西门外阿鲁卡（398.168）",
+        "cost": {
+          "amount": 800,
+          "unit": "G"
+        },
+        "destination": "小岛",
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "alternate-transport-condition",
+        "title": "死神",
+        "destination": "小岛",
+        "sourceLines": [
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [
+            {
+              "id": "encounter-mountain-road",
+              "location": "通往山顶的路随机迷宫",
+              "floors": 19,
+              "enemyLevel": {
+                "min": 9,
+                "max": 15
+              },
+              "enemies": [
+                "狂奔鸟",
+                "托罗帝鸟",
+                "火焰啄木鸟",
+                "岩地跑者"
+              ],
+              "fixedEnemyCount": 1,
+              "halfMountainEncounter": false,
+              "sourceLines": [
+                8,
+                9
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          ],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "阿斯提亚锥形水晶",
+        "quantity": 1,
+        "action": "use",
+        "consumed": false,
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "阿斯提亚锥形水晶",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "阿斯提亚锥形水晶",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "condition": "没有“背叛者”称号",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "锄头",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "condition": "已有“背叛者”称号",
+        "belongsToQuest": "地狱的回响",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "完成《圣鸟之谜》任务",
+      "type": "prerequisite",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "拥有“保守秘密的人”称号",
+      "type": "requirement",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "1.前往法兰城里谢里雅堡2楼图书馆（0.74）与阿斯提亚祭司（27.15）对话，获得【阿斯提亚锥形水晶】。",
+      "type": "step",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "2.双击【阿斯提亚锥形水晶】传送至小岛，前往（64.45）处通过黄色传送石进入通往山顶的路。",
+      "type": "step",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "3.通过随机迷宫进入圣鸟之巢，与圣鸟的子嗣（14.11）对话进入圣山之巅。",
+      "type": "step",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "4.与阿鲁卡那斯（23.22）对话，交出【阿斯提亚锥形水晶】获得称号“背叛者”并传送回法兰城，任务完结。",
+      "type": "step",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "◆已经完成过本任务拥有“背叛者”称号时，不可解本任务，无法获得【阿斯提亚锥形水晶】，会获得半山6《地狱的回响》的任务道具【锄头】",
+      "type": "gate-and-alternate-output",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "◆通往山顶的路为随机迷宫，共19层；魔物为Lv.9~15狂奔鸟、托罗帝鸟、火焰啄木鸟、岩地跑者，数量固定为1",
+      "type": "encounter-area",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "◆本任务的半山腰不会遇敌",
+      "type": "encounter-rule",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "◆任务完成后可前往法兰城西门外与阿鲁卡（398.168）对话，交出800G传送至小岛",
+      "type": "post-completion-service",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "◆拥有称号“死神”时，亦可传送至小岛",
+      "type": "alternate-condition",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "◆任务剧情：参考《半山系列任务剧情对话》",
+      "type": "reference",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        12
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [],
+  "outcomes": {
+    "titles": [
+      {
+        "name": "背叛者",
+        "acquisition": "quest-completion",
+        "sourceLines": [
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "careers": [],
+    "skills": []
+  },
+  "exchangeRecipes": [],
+  "presentation": {
+    "initials": "xdzm",
+    "series": "半山系列",
+    "order": 5,
+    "stageLabel": "",
+    "optional": false,
+    "type": "系列主线",
+    "sourceCategory": "系列主线"
+  },
+  "sourceSupplements": {
+    "areas": [
+      {
+        "id": "area-2-1",
+        "afterStep": 2,
+        "text": "◆通往山顶的路为随机迷宫，共19层；魔物为Lv.9~15狂奔鸟、托罗帝鸟、火焰啄木鸟、岩地跑者，数量固定为1",
+        "sourceLines": [
+          8
+        ],
+        "sourceReference": "source-documents.js",
+        "verification": {
+          "status": "verified",
+          "method": "source-line-match"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,393 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-5c1a30f3-3194-4e39-a84c-478aecd8386f",
+  "name": "劳动节奖章",
+  "aliases": [
+    "劳动节奖章"
+  ],
+  "metadata": {
+    "category": "临时活动/任务",
+    "level": "0 级",
+    "availability": "closed",
+    "summary": "必要条件：怀旧临时任务（已关闭）；怀旧临时任务（已关闭）；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_5c1a30f3-3194-4e39-a84c-478aecd8386f",
+    "url": "https://www.molibaike.com/Mission/Detail/5c1a30f3-3194-4e39-a84c-478aecd8386f?u=True",
+    "localFiles": [],
+    "lineCount": 7,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.里谢里雅堡 1楼（75.24）劳动节专员，收集300个【劳动节小奖牌】后交出兑换【劳动节奖章】，任务完结。"
+      },
+      {
+        "line": 2,
+        "text": "◆【劳动节小奖牌】：掉落位置：凡是之前掉邪灵水晶的地方，可以交易。"
+      },
+      {
+        "line": 3,
+        "text": "◆【劳动节奖章】："
+      },
+      {
+        "line": 4,
+        "text": "Lv.5、护身符，耐久200；"
+      },
+      {
+        "line": 5,
+        "text": "攻击50-55，敏捷25-30，精神15-20，必杀12-15，命中17-20，魔力160-180，魔攻 20-25；"
+      },
+      {
+        "line": 6,
+        "text": "数值波动；可以交易。"
+      },
+      {
+        "line": 7,
+        "text": "奖励兑换延后至5月26日关闭。"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [
+      {
+        "item": "劳动节小奖牌",
+        "sourceDescription": "此前会掉落邪灵水晶的地点",
+        "tradeable": true,
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "references": []
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "held-item",
+        "item": "劳动节小奖牌",
+        "quantity": 300,
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "里谢里雅堡1楼劳动节专员（75.24）",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "在里谢里雅堡1楼（75.24）向劳动节专员交出300个【劳动节小奖牌】，兑换【劳动节奖章】，任务完结。",
+        "inputs": [
+          {
+            "item": "劳动节小奖牌",
+            "quantity": 300,
+            "action": "hand-over",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "劳动节奖章",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": [
+      {
+        "type": "availability-note",
+        "text": "奖励兑换延后至5月26日关闭；来源未标明年份。",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "notes": [],
+          "media": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "劳动节小奖牌",
+        "quantity": 300,
+        "action": "hand-over",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "劳动节奖章",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.里谢里雅堡 1楼（75.24）劳动节专员，收集300个【劳动节小奖牌】后交出兑换【劳动节奖章】，任务完结。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "◆【劳动节小奖牌】：掉落位置：凡是之前掉邪灵水晶的地方，可以交易。",
+      "type": "item-source",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆【劳动节奖章】：",
+      "type": "reward-heading",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "Lv.5、护身符，耐久200；",
+      "type": "reward-detail",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "攻击50-55，敏捷25-30，精神15-20，必杀12-15，命中17-20，魔力160-180，魔攻 20-25；",
+      "type": "reward-detail",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "数值波动；可以交易。",
+      "type": "reward-detail",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "奖励兑换延后至5月26日关闭。",
+      "type": "availability-note",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        7
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "reward-labor-day-medal",
+      "version": "common",
+      "tier": "common",
+      "kind": "exchange",
+      "items": [
+        {
+          "id": "labor-day-medal",
+          "name": "劳动节奖章",
+          "role": "valuable-result",
+          "entityType": "equipment",
+          "properties": {
+            "level": 5,
+            "category": "护身符",
+            "durability": 200,
+            "attack": {
+              "min": 50,
+              "max": 55
+            },
+            "agility": {
+              "min": 25,
+              "max": 30
+            },
+            "spirit": {
+              "min": 15,
+              "max": 20
+            },
+            "critical": {
+              "min": 12,
+              "max": 15
+            },
+            "accuracy": {
+              "min": 17,
+              "max": 20
+            },
+            "magic": {
+              "min": 160,
+              "max": 180
+            },
+            "magicAttack": {
+              "min": 20,
+              "max": 25
+            },
+            "valuesFluctuate": true,
+            "tradeable": true
+          },
+          "sourceLines": [
+            1,
+            3,
+            4,
+            5,
+            6
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-1",
+      "sourceLines": [
+        1,
+        3,
+        4,
+        5,
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 72,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "临时活动/任务"
+  }
+}

@@ -1,0 +1,790 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-85ef2b94-ddb6-44f1-baae-14cb08cbdd27",
+  "name": "白金礼包",
+  "aliases": [
+    "黑露比"
+  ],
+  "metadata": {
+    "category": "临时活动/任务",
+    "level": "1 级",
+    "availability": "closed",
+    "summary": "怀旧服活动（关闭）；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_85ef2b94-ddb6-44f1-baae-14cb08cbdd27",
+    "url": "https://www.molibaike.com/Mission/Detail/85ef2b94-ddb6-44f1-baae-14cb08cbdd27?u=True",
+    "localFiles": [],
+    "lineCount": 13,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往亚诺曼城与白金礼包贩售员（131.131）对话，交出2000G购买【白金礼包】。"
+      },
+      {
+        "line": 2,
+        "text": "◆在2、3线购买【白金礼包】时谨防与NPC位置重叠的“骗子”摊位"
+      },
+      {
+        "line": 3,
+        "text": "2.双击【白金礼包】随机获得【奖品】，任务完结。"
+      },
+      {
+        "line": 4,
+        "text": "◆【奖品】明细："
+      },
+      {
+        "line": 5,
+        "text": "宠物类奖品（随机获得）备注"
+      },
+      {
+        "line": 6,
+        "text": "“不明物”灵魂容器（黑色露比形象）；10技能栏、人形系；4种：风100；25 6 31 17 46地100；26 7 33 12 47水100；27 5 32 16 45火100；24 8 30 15 48"
+      },
+      {
+        "line": 7,
+        "text": "食尸鬼设计图（A~E）暴食鬼；9技能栏；不死系火70风30；39 40 15 16 15"
+      },
+      {
+        "line": 8,
+        "text": "红帽哥布林设计图（A~E）哥布林队长；8技能栏；人形系水100；35 40 20 20 10"
+      },
+      {
+        "line": 9,
+        "text": "其他奖品（随机获得）"
+      },
+      {
+        "line": 10,
+        "text": "传送石优待券鼠王还原券"
+      },
+      {
+        "line": 11,
+        "text": "阿尔卡迪亚古钱魔石（2种）"
+      },
+      {
+        "line": 12,
+        "text": "技能学习证Lv.9 宝石（8种）"
+      },
+      {
+        "line": 13,
+        "text": "哥拉尔镇/阿凯鲁法村/雷克塔尔镇传送券神奇的药草（200技能经验）"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": []
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "亚诺曼城白金礼包贩售员（131.131）",
+      "sourceLines": [
+        1,
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "向白金礼包贩售员交出2000G，购买【白金礼包】；在2、3线注意与NPC重叠的骗子摊位。",
+        "inputs": [
+          {
+            "item": "金币",
+            "quantity": 2000,
+            "action": "hand-over",
+            "unit": "G",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "白金礼包",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1,
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "双击【白金礼包】，随机获得一种奖品，任务完结。",
+        "inputs": [
+          {
+            "item": "白金礼包",
+            "quantity": 1,
+            "action": "use",
+            "consumed": true,
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "随机奖品",
+            "quantity": 1,
+            "acquisition": "random-one",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "金币",
+        "quantity": 2000,
+        "action": "hand-over",
+        "unit": "G",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "白金礼包",
+        "quantity": 1,
+        "action": "use",
+        "consumed": true,
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "白金礼包",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "随机奖品",
+        "quantity": 1,
+        "acquisition": "random-one",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往亚诺曼城与白金礼包贩售员（131.131）对话，交出2000G购买【白金礼包】。",
+      "type": "purchase",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "◆在2、3线购买【白金礼包】时谨防与NPC位置重叠的“骗子”摊位",
+      "type": "safety-warning",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "2.双击【白金礼包】随机获得【奖品】，任务完结。",
+      "type": "open-container",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆【奖品】明细：",
+      "type": "reward-heading",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "宠物类奖品（随机获得）备注",
+      "type": "reward-category",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "“不明物”灵魂容器（黑色露比形象）；10技能栏、人形系；4种：风100；25 6 31 17 46地100；26 7 33 12 47水100；27 5 32 16 45火100；24 8 30 15 48",
+      "type": "reward-row",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "食尸鬼设计图（A~E）暴食鬼；9技能栏；不死系火70风30；39 40 15 16 15",
+      "type": "reward-row",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "红帽哥布林设计图（A~E）哥布林队长；8技能栏；人形系水100；35 40 20 20 10",
+      "type": "reward-row",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "其他奖品（随机获得）",
+      "type": "reward-category",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "传送石优待券鼠王还原券",
+      "type": "reward-list",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "阿尔卡迪亚古钱魔石（2种）",
+      "type": "reward-list",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "技能学习证Lv.9 宝石（8种）",
+      "type": "reward-list",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 13,
+      "text": "哥拉尔镇/阿凯鲁法村/雷克塔尔镇传送券神奇的药草（200技能经验）",
+      "type": "reward-list",
+      "sourceLines": [
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        13
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "platinum-gift-pool",
+      "version": "common",
+      "tier": "common",
+      "kind": "reward-pool",
+      "items": [
+        {
+          "id": "platinum-soul-container",
+          "name": "“不明物”灵魂容器",
+          "role": "valuable-result",
+          "entityType": "pet-container",
+          "properties": {
+            "appearance": "黑色露比形象",
+            "resultRace": "人形系",
+            "skillSlots": 10
+          },
+          "variants": [
+            {
+              "elements": {
+                "风": 100
+              },
+              "baseStats": [
+                25,
+                6,
+                31,
+                17,
+                46
+              ],
+              "sourceLines": [
+                6
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            },
+            {
+              "elements": {
+                "地": 100
+              },
+              "baseStats": [
+                26,
+                7,
+                33,
+                12,
+                47
+              ],
+              "sourceLines": [
+                6
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            },
+            {
+              "elements": {
+                "水": 100
+              },
+              "baseStats": [
+                27,
+                5,
+                32,
+                16,
+                45
+              ],
+              "sourceLines": [
+                6
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            },
+            {
+              "elements": {
+                "火": 100
+              },
+              "baseStats": [
+                24,
+                8,
+                30,
+                15,
+                48
+              ],
+              "sourceLines": [
+                6
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          ],
+          "sourceLines": [
+            6
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "platinum-ghoul-plan",
+          "name": "食尸鬼设计图A—E",
+          "role": "valuable-result",
+          "entityType": "item-series",
+          "variants": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "properties": {
+            "resultPet": {
+              "name": "暴食鬼",
+              "skillSlots": 9,
+              "race": "不死系",
+              "elements": {
+                "火": 70,
+                "风": 30
+              },
+              "baseStats": [
+                39,
+                40,
+                15,
+                16,
+                15
+              ]
+            }
+          },
+          "sourceLines": [
+            7
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "platinum-goblin-plan",
+          "name": "红帽哥布林设计图A—E",
+          "role": "valuable-result",
+          "entityType": "item-series",
+          "variants": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "properties": {
+            "resultPet": {
+              "name": "哥布林队长",
+              "skillSlots": 8,
+              "race": "人形系",
+              "elements": {
+                "水": 100
+              },
+              "baseStats": [
+                35,
+                40,
+                20,
+                20,
+                10
+              ]
+            }
+          },
+          "sourceLines": [
+            8
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "platinum-teleport-discount",
+          "name": "传送石优待券",
+          "role": "valuable-result",
+          "sourceLines": [
+            10
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "platinum-mouse-restore",
+          "name": "鼠王还原券",
+          "role": "valuable-result",
+          "sourceLines": [
+            10
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "platinum-ancient-coin",
+          "name": "阿尔卡迪亚古钱",
+          "role": "valuable-result",
+          "sourceLines": [
+            11
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "platinum-magic-stone",
+          "name": "魔石（2种）",
+          "role": "valuable-result",
+          "entityType": "item-group",
+          "variantCount": 2,
+          "sourceLines": [
+            11
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "platinum-skill-certificate",
+          "name": "技能学习证",
+          "role": "valuable-result",
+          "sourceLines": [
+            12
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "platinum-gem9",
+          "name": "Lv.9宝石（8种）",
+          "role": "valuable-result",
+          "entityType": "item-group",
+          "variantCount": 8,
+          "sourceLines": [
+            12
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "platinum-ticket-1",
+          "name": "哥拉尔镇传送券",
+          "role": "valuable-result",
+          "sourceLines": [
+            13
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "platinum-ticket-2",
+          "name": "阿凯鲁法村传送券",
+          "role": "valuable-result",
+          "sourceLines": [
+            13
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "platinum-ticket-3",
+          "name": "雷克塔尔镇传送券",
+          "role": "valuable-result",
+          "sourceLines": [
+            13
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "platinum-magic-herb",
+          "name": "神奇的药草",
+          "role": "valuable-result",
+          "properties": {
+            "skillExperience": 200
+          },
+          "sourceLines": [
+            13
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-2",
+      "selection": "random-one",
+      "sourceLines": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 60,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "临时活动/任务"
+  }
+}

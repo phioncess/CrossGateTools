@@ -6,21 +6,26 @@ const root = path.resolve(import.meta.dirname, '..');
 const context = { console };
 context.globalThis = context;
 vm.createContext(context);
-for (const file of ['data.js', 'catalog.js', 'career-quests.js', 'enhancements.js', 'generated-integrations.js', 'normalize.js', 'structured-rewards.js']) {
+for (const file of ['quest-data.js', 'training-routes.js', 'generated-integrations.js', 'structured-integrations.js']) {
   vm.runInContext(fs.readFileSync(path.join(root, file), 'utf8'), context, { filename: file });
 }
-vm.runInContext('globalThis.__QUESTS__ = QUESTS; globalThis.__ROUTES__ = TRAINING_ROUTES; globalThis.__GUIDES__ = QUEST_GUIDES; globalThis.__REWARDS__ = REWARD_GUIDES;', context);
-
-const quests = context.__QUESTS__;
-const routes = context.__ROUTES__;
-const guides = context.__GUIDES__;
-const rewards = context.__REWARDS__;
+const structuredRecords = Object.values(context.QUEST_DATA?.quests || {});
+const quests = structuredRecords.map(record => ({
+  id:record.id,
+  name:record.name,
+  aliases:record.aliases || [],
+  series:record.presentation?.series || '',
+  sourceCategory:record.presentation?.sourceCategory || record.metadata?.category || '',
+  type:record.presentation?.type || record.metadata?.category || '任务',
+  sourceUrl:record.source?.url || '',
+  flow:record.flow
+}));
+const routes = context.TRAINING_ROUTES;
 const routeIndex = context.TRAINING_ROUTE_INDEX;
 const pinyinIndex = context.PINYIN_INDEX;
 const entryTasksByRoute = context.TRAINING_ENTRY_TASKS;
 const routeDetails = context.TRAINING_ROUTE_DETAILS;
 const keyItemGuides = context.KEY_ITEM_GUIDES || {};
-const structuredRewards = context.STRUCTURED_REWARD_GUIDES || {};
 const normalize = value => String(value || '').toLowerCase().replace(/[\s·・—_\-（）()《》【】\[\]\/]/g, '');
 
 const questByName = new Map(quests.map(quest => [quest.name, quest]));
@@ -29,25 +34,32 @@ const misclassifiedSeries = quests.filter(quest => categoryOnlySeries.has(quest.
 if (misclassifiedSeries.length) {
   throw new Error(`任务分类被误作系列关系: ${misclassifiedSeries.slice(0, 12).map(quest => quest.name).join(', ')}`);
 }
-for (const quest of quests) {
-  const acquisitions = rewards[quest.id]?.acquisitions || [];
-  const eventKey = event => event.action
-    ? `action:${event.action.replace(/\s+/g, '')}`
-    : `details:${(event.items || []).map(item => item.name).sort().join('|')}`;
-  const duplicateActions = acquisitions.filter((event, index) => acquisitions.findIndex(candidate => eventKey(candidate) === eventKey(event)) !== index);
-  if (duplicateActions.length) throw new Error(`道具获得事件重复: ${quest.name}`);
-  if (acquisitions.some(event => {
-    const invalidDetails = !event.action && (event.stepNumber || event.label !== '属性 / 用途' || event.items?.some(item => !item.notes?.length));
-    return invalidDetails || !event.items?.length || event.items.some(item => !item.name || !['task','reward'].includes(item.role));
-  })) {
-    throw new Error(`道具获得事件结构不完整: ${quest.name}`);
+for (const record of structuredRecords) {
+  const stepIds = new Set((record.flow?.steps || []).map(step => step.id));
+  const acquisitions = record.itemEvents?.acquisitions || [];
+  const inputs = record.itemEvents?.inputs || [];
+  if (acquisitions.some(event => !event.item || !event.step || !stepIds.has(event.step))) {
+    throw new Error(`结构化获得事件缺少道具或有效步骤: ${record.name}`);
   }
-  if (acquisitions.some(event => event.items.some(item => /^(?:奖品|奖励|物品|道具)$/.test(item.name) && !item.unresolved))) {
-    throw new Error(`原攻略未列明的泛称奖品没有标记待核验: ${quest.name}`);
+  if (inputs.some(event => !event.item || !event.step || !stepIds.has(event.step))) {
+    throw new Error(`结构化输入事件缺少道具或有效步骤: ${record.name}`);
   }
-  const steps = guides[quest.id]?.steps || [];
-  if (steps.some(step => /(?:获得|取得|得到|领取|掉落|鉴定后为)[^。；]{0,80}【[^】]+】/.test(step)) && !acquisitions.length) {
-    throw new Error(`任务步骤存在道具输出但未生成获得事件: ${quest.name}`);
+  for (const step of record.flow?.steps || []) {
+    for (const output of step.outputs || []) {
+      if (!acquisitions.some(event => event.step === step.id && event.item === output.item)) {
+        throw new Error(`步骤输出未进入结构化获得事件: ${record.name} / ${step.id} / ${output.item}`);
+      }
+    }
+    for (const input of step.inputs || []) {
+      if (!inputs.some(event => event.step === step.id && event.item === input.item)) {
+        throw new Error(`步骤输入未进入结构化输入事件: ${record.name} / ${step.id} / ${input.item}`);
+      }
+    }
+  }
+  for (const rewardEvent of record.rewardEvents || []) {
+    const allowsNoItems = rewardEvent.kind === 'probability-table' && rewardEvent.oddsPercent && Object.keys(rewardEvent.oddsPercent).length;
+    if (!rewardEvent.id || !rewardEvent.kind || (!(rewardEvent.items || []).length && !allowsNoItems)) throw new Error(`结构化奖励事件不完整: ${record.name}`);
+    if (rewardEvent.items.some(item => !item.name || !item.role)) throw new Error(`结构化奖励物品字段不完整: ${record.name}`);
   }
 }
 for (const [questId, entries] of Object.entries(keyItemGuides)) {
@@ -56,27 +68,6 @@ for (const [questId, entries] of Object.entries(keyItemGuides)) {
     if (!entry.name || (!entry.questUses?.length && !entry.trainingUses?.length)) throw new Error(`关键道具去向不完整: ${questId}`);
     if ((entry.questUses || []).some(use => !quests.some(quest => quest.id === use.questId))) throw new Error(`关键道具后续任务不存在: ${entry.name}`);
   }
-}
-for (const [questId, data] of Object.entries(structuredRewards)) {
-  if (!quests.some(quest => quest.id === questId)) throw new Error(`结构化奖励对应任务不存在: ${questId}`);
-  if (!data.replaceGenericAcquisitions) throw new Error(`结构化奖励未禁止通用段落卡回退: ${questId}`);
-  if (!(data.acquisitionEvents || []).length || !(data.itemDetails || []).length) throw new Error(`结构化奖励缺少获得事件或物品资料: ${questId}`);
-  for (const event of data.acquisitionEvents) {
-    if (!event.source || !event.certainty || !(event.rewards || []).length) throw new Error(`获得事件字段不完整: ${questId}`);
-    if (event.rewards.some(reward => !reward.name || !reward.quantity)) throw new Error(`获得事件缺少道具名或数量: ${questId}`);
-  }
-  const detailNames = data.itemDetails.map(item => item.name);
-  if (new Set(detailNames).size !== detailNames.length) throw new Error(`物品资料重复: ${questId}`);
-  if (data.itemDetails.some(item => !item.kind || !item.sources?.length || !item.facts?.length)) throw new Error(`物品资料字段不完整: ${questId}`);
-  if ((data.exchanges || []).some(item => !item.cost || !item.name || !item.result)) throw new Error(`兑换表字段不完整: ${questId}`);
-  if ((data.versions || []).some(version => !version.name || !version.facts?.length)) throw new Error(`版本差异字段不完整: ${questId}`);
-}
-const dimensionalId = questByName.get('异次元试验场')?.id;
-const dimensionalPoints = rewards[dimensionalId]?.acquisitions
-  ?.flatMap(event => event.items || [])
-  .find(item => item.name === '积分卡');
-if (!structuredRewards[dimensionalId]?.replaceGenericAcquisitions && (dimensionalPoints?.notes || []).some(note => /全视之眼|旧版异次元试验场|第一次|第二次/.test(note))) {
-  throw new Error('通用解析仍将其他道具属性或版本段落挂在积分卡下');
 }
 const dragonQuest = questByName.get('魔龙德拉贡');
 const dragonTrainingKeys = (keyItemGuides[dragonQuest?.id] || [])
@@ -92,16 +83,16 @@ vm.runInContext(fs.readFileSync(path.resolve(root, '..', '魔力职业', 'data.j
 const employmentLinks = careerContext.window.CAREER_DATA.professions.flatMap(profession =>
   (profession.employment?.links || []).map(link => ({ profession: profession.name, label: link.label, id: sourceId(link.url) }))
 );
-const questSourceIds = new Set(quests.map(quest => quest.sourceId || sourceId(quest.sourceUrl) || sourceId(context.SOURCES?.[quest.source]?.url)).filter(Boolean));
+const questSourceIds = new Set(quests.map(quest => sourceId(quest.sourceUrl)).filter(Boolean));
 const missingEmployment = employmentLinks.filter(link => !questSourceIds.has(link.id));
 if (missingEmployment.length) {
   throw new Error(`职业就职任务未入库: ${missingEmployment.map(link => `${link.profession} -> ${link.label}`).join(', ')}`);
 }
 const fighterEmployment = questByName.get('就职格斗士');
-if (!fighterEmployment?.aliases?.includes('狮子洞') || guides[fighterEmployment.id]?.steps?.length < 7) {
+if (!fighterEmployment?.aliases?.includes('狮子洞') || fighterEmployment.flow?.steps?.length < 7) {
   throw new Error('就职格斗士任务缺少狮子洞别名或完整主流程');
 }
-const undocumented = quests.filter(quest => quest.detailStatus === 'index-only' || !guides[quest.id]?.steps?.length);
+const undocumented = quests.filter(quest => !quest.flow?.steps?.length);
 if (undocumented.length) throw new Error(`仍有空壳任务页: ${undocumented.map(quest => quest.name).join(', ')}`);
 for (const fakeName of ['沉默的诺利', '盲目的艾汀', '失忆的杜瓦', '牛场物语']) {
   if (questByName.has(fakeName)) throw new Error(`俗称或 NPC 被错误建立为正式任务: ${fakeName}`);
@@ -122,8 +113,8 @@ for (const route of routeIndex) {
     const quest = questByName.get(taskName);
     if (!quest) throw new Error(`练级关联任务未入库: ${taskName}`);
     const routeStep = details.stepsByTask?.[taskName] ?? details.step;
-    if (routeStep && guides[quest.id].steps.length < routeStep) {
-      throw new Error(`练级入口超出任务步骤: ${route.name} -> ${taskName} 第${routeStep}步，正文仅${guides[quest.id].steps.length}步`);
+    if (routeStep && quest.flow.steps.length < routeStep) {
+      throw new Error(`练级入口超出任务步骤: ${route.name} -> ${taskName} 第${routeStep}步，正文仅${quest.flow.steps.length}步`);
     }
     const list = (routes[taskName] ||= []);
     const incomingNames = [route.name, ...(route.aliases || [])].map(normalize).filter(Boolean);
@@ -178,6 +169,11 @@ for (const [query, expected] of cases) {
 const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 if (html.includes('id="quickLinks"')) throw new Error('快捷标签区域仍存在');
 if (!html.includes('generated-integrations.js')) throw new Error('未加载生成索引');
+if (!html.includes('structured-integrations.js')) throw new Error('未加载结构化跨任务关系生成器');
+for (const legacyFile of ['runtime-data.js', 'data.js', 'catalog.js', 'career-quests.js', 'enhancements.js', 'normalize.js', 'reward-catalog.js', 'structured-rewards.js']) {
+  const scriptSources = [...html.matchAll(/<script[^>]+src=["']([^"']+)["']/gi)].map(match => match[1].replace(/[?#].*$/, '').replace(/\\/g, '/').split('/').pop());
+  if (scriptSources.includes(legacyFile)) throw new Error(`运行时仍加载旧任务事实文件: ${legacyFile}`);
+}
 
 const tribute = routeDetails['贡品之路'];
 if (tribute.step !== 5 || tribute.quick === true || !tribute.firstTime.includes('海盗水晶')) {

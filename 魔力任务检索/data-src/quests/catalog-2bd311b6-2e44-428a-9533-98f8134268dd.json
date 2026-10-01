@@ -1,0 +1,649 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-2bd311b6-2e44-428a-9533-98f8134268dd",
+  "name": "实验室春季除虫",
+  "aliases": [
+    "春季的害虫"
+  ],
+  "metadata": {
+    "category": "临时活动/任务",
+    "level": "1 级",
+    "availability": "closed",
+    "summary": "必要条件：采集系技能达到Lv5；怀旧服任务（已关闭）；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_2bd311b6-2e44-428a-9533-98f8134268dd",
+    "url": "https://www.molibaike.com/Mission/Detail/2bd311b6-2e44-428a-9533-98f8134268dd?u=True",
+    "localFiles": [],
+    "lineCount": 12,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往法兰城与工作招募者（93.62）对话，选“是”进入研究所。"
+      },
+      {
+        "line": 2,
+        "text": "2.拥有Lv.5采集技能的职业在三处对应的地块处可采集到【土块】或【春季的害虫】。"
+      },
+      {
+        "line": 3,
+        "text": "◆【土块】：20个/组，暂无用处、丢地消失"
+      },
+      {
+        "line": 4,
+        "text": "◆【春季的害虫】：999个/组，不可交易"
+      },
+      {
+        "line": 5,
+        "text": "3.持有一定数量的【春季的害虫】与工作奖励兑换员（75.41）对话，兑换【奖品】，任务完结。"
+      },
+      {
+        "line": 6,
+        "text": "◆【奖品】：（可以交易）"
+      },
+      {
+        "line": 7,
+        "text": "名称害虫数量备注"
+      },
+      {
+        "line": 8,
+        "text": "奇怪的草药20技能经验+100"
+      },
+      {
+        "line": 9,
+        "text": "坏掉的矿工锄20造型变更为随机哥布林并开启工作时间"
+      },
+      {
+        "line": 10,
+        "text": "十全十美安全帽40可抵挡受伤10次"
+      },
+      {
+        "line": 11,
+        "text": "妖草设计图A~E，任选其一80贝拉多娜草：125D（血25 功12 防 29 敏17 魔42）；植物系，地80水20，技能栏8"
+      },
+      {
+        "line": 12,
+        "text": "大地牛头怪碎片99拥有30个碎片时可双击获得一个大地牛头怪精华"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "gathering-skill-level",
+        "minimumLevel": 5,
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "法兰城工作招募者（93.62）",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "与工作招募者（93.62）对话，选择“是”，进入研究所。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "拥有Lv.5采集技能的职业在三处对应地块采集，可取得【土块】或【春季的害虫】。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "土块",
+            "quantity": 1,
+            "acquisition": "gathering",
+            "properties": {
+              "stackSize": 20,
+              "use": "暂无用处",
+              "dropBehavior": "丢地消失"
+            },
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "春季的害虫",
+            "quantity": 1,
+            "acquisition": "gathering",
+            "properties": {
+              "stackSize": 999,
+              "tradeable": false
+            },
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          2,
+          3,
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "持有相应数量的【春季的害虫】与工作奖励兑换员（75.41）对话，按兑换表取得奖品，任务完结。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [],
+    "acquisitions": [
+      {
+        "item": "土块",
+        "quantity": 1,
+        "acquisition": "gathering",
+        "properties": {
+          "stackSize": 20,
+          "use": "暂无用处",
+          "dropBehavior": "丢地消失"
+        },
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "春季的害虫",
+        "quantity": 1,
+        "acquisition": "gathering",
+        "properties": {
+          "stackSize": 999,
+          "tradeable": false
+        },
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往法兰城与工作招募者（93.62）对话，选“是”进入研究所。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2.拥有Lv.5采集技能的职业在三处对应的地块处可采集到【土块】或【春季的害虫】。",
+      "type": "collection-event",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆【土块】：20个/组，暂无用处、丢地消失",
+      "type": "item-detail",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆【春季的害虫】：999个/组，不可交易",
+      "type": "item-detail",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "3.持有一定数量的【春季的害虫】与工作奖励兑换员（75.41）对话，兑换【奖品】，任务完结。",
+      "type": "exchange-step",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "◆【奖品】：（可以交易）",
+      "type": "reward-rule",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "名称害虫数量备注",
+      "type": "table-header",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "奇怪的草药20技能经验+100",
+      "type": "exchange-recipe",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "坏掉的矿工锄20造型变更为随机哥布林并开启工作时间",
+      "type": "exchange-recipe",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "十全十美安全帽40可抵挡受伤10次",
+      "type": "exchange-recipe",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "妖草设计图A~E，任选其一80贝拉多娜草：125D（血25 功12 防 29 敏17 魔42）；植物系，地80水20，技能栏8",
+      "type": "exchange-recipe",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "大地牛头怪碎片99拥有30个碎片时可双击获得一个大地牛头怪精华",
+      "type": "exchange-recipe",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        12
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "bug-exchange-herb",
+      "version": "common",
+      "tier": "common",
+      "kind": "exchange-recipe",
+      "items": [
+        {
+          "id": "strange-herb",
+          "name": "奇怪的草药",
+          "role": "valuable-result",
+          "properties": {
+            "skillExperience": 100,
+            "tradeable": true
+          },
+          "sourceLines": [
+            8
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "inputs": [
+        {
+          "item": "春季的害虫",
+          "quantity": 20
+        }
+      ],
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "id": "bug-exchange-pickaxe",
+      "version": "common",
+      "tier": "common",
+      "kind": "exchange-recipe",
+      "items": [
+        {
+          "id": "broken-miner-pickaxe",
+          "name": "坏掉的矿工锄",
+          "role": "valuable-result",
+          "properties": {
+            "use": "造型变更为随机哥布林并开启工作时间",
+            "tradeable": true
+          },
+          "sourceLines": [
+            9
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "inputs": [
+        {
+          "item": "春季的害虫",
+          "quantity": 20
+        }
+      ],
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "id": "bug-exchange-helmet",
+      "version": "common",
+      "tier": "common",
+      "kind": "exchange-recipe",
+      "items": [
+        {
+          "id": "perfect-safety-helmet",
+          "name": "十全十美安全帽",
+          "role": "valuable-result",
+          "properties": {
+            "effect": "可抵挡受伤10次",
+            "tradeable": true
+          },
+          "sourceLines": [
+            10
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "inputs": [
+        {
+          "item": "春季的害虫",
+          "quantity": 40
+        }
+      ],
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "id": "bug-exchange-demon-grass-plan",
+      "version": "common",
+      "tier": "common",
+      "kind": "exchange-recipe",
+      "items": [
+        {
+          "id": "demon-grass-plan-series",
+          "name": "妖草设计图A—E",
+          "role": "valuable-result",
+          "entityType": "item-series",
+          "variants": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "selection": "choose-one",
+          "properties": {
+            "tradeable": true,
+            "resultPet": {
+              "name": "贝拉多娜草",
+              "totalGrade": 125,
+              "baseStats": {
+                "血": 25,
+                "攻": 12,
+                "防": 29,
+                "敏": 17,
+                "魔": 42
+              },
+              "race": "植物系",
+              "elements": {
+                "地": 80,
+                "水": 20
+              },
+              "skillSlots": 8
+            }
+          },
+          "sourceLines": [
+            11
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "inputs": [
+        {
+          "item": "春季的害虫",
+          "quantity": 80
+        }
+      ],
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "id": "bug-exchange-earth-minotaur-fragment",
+      "version": "common",
+      "tier": "common",
+      "kind": "exchange-recipe",
+      "items": [
+        {
+          "id": "earth-minotaur-fragment",
+          "name": "大地牛头怪碎片",
+          "role": "valuable-result",
+          "properties": {
+            "tradeable": true,
+            "combineRequirement": 30,
+            "combineResult": "大地牛头怪精华"
+          },
+          "sourceLines": [
+            12
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "inputs": [
+        {
+          "item": "春季的害虫",
+          "quantity": 99
+        }
+      ],
+      "outputQuantity": "source-unspecified",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "exchangeRecipes": [
+    "bug-exchange-herb",
+    "bug-exchange-pickaxe",
+    "bug-exchange-helmet",
+    "bug-exchange-demon-grass-plan",
+    "bug-exchange-earth-minotaur-fragment"
+  ],
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 50,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "临时活动/任务"
+  }
+}

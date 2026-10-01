@@ -1,0 +1,774 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-ed6ab0e3-b714-4324-80c3-c5a188871337",
+  "name": "化装舞会的邀请",
+  "aliases": [
+    "鬼舞者"
+  ],
+  "metadata": {
+    "category": "临时活动/任务",
+    "level": "70 级",
+    "availability": "closed",
+    "summary": "必要条件：队伍中一人持有【南瓜头】；怀旧服任务（已关闭）；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_ed6ab0e3-b714-4324-80c3-c5a188871337",
+    "url": "https://www.molibaike.com/Mission/Detail/ed6ab0e3-b714-4324-80c3-c5a188871337?u=True",
+    "localFiles": [],
+    "lineCount": 16,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往法兰城，队伍中持有【南瓜头】的队员与改邪归正的巫师（72.131）对话，获得【化装舞会邀请函】。"
+      },
+      {
+        "line": 2,
+        "text": "◆【化装舞会邀请函】仅需队伍中一人获得即可，不需要装备"
+      },
+      {
+        "line": 3,
+        "text": "◆【南瓜头】获得方式来自于多个临时任务"
+      },
+      {
+        "line": 4,
+        "text": "2.前往圣拉鲁卡村（36.100），队伍中持有【化装舞会邀请函】的队员与舞会工作人员？对话，交出【化装舞会邀请函】后全队进入栅栏，通过黄色传送石进入墓地山路。"
+      },
+      {
+        "line": 5,
+        "text": "◆墓地山路为随机迷宫，10-15层；魔物为Lv.39~49幽灵、亡灵"
+      },
+      {
+        "line": 6,
+        "text": "3.通过随机迷宫抵达墓地与巫师的爸爸（32.8）对话，进入战斗。"
+      },
+      {
+        "line": 7,
+        "text": "◆BOSS：Lv.74巫师的爸爸，血量约15000；不抗咒；技能：攻击、防御、乾坤一掷、连击、超强风刃魔法、超强混乱魔法"
+      },
+      {
+        "line": 8,
+        "text": "◆如果卡战斗请回到人物登入界面更新档案到最新"
+      },
+      {
+        "line": 9,
+        "text": "4.战斗胜利后与巫师的爸爸（32.8）对话，获得【奖品】、称号“鬼舞者”并传送回法兰城，任务完结。"
+      },
+      {
+        "line": 10,
+        "text": "◆【奖品】明细：（随机获得）"
+      },
+      {
+        "line": 11,
+        "text": "名称作用"
+      },
+      {
+        "line": 12,
+        "text": "『真的』万圣节糖果可以交易；回复约300点魔力，每组可叠加3个"
+      },
+      {
+        "line": 13,
+        "text": "南瓜头可以交易；Lv.4头饰、耐久100；防御+4~6、精神+4~6、闪躲+5~7、生命+100、魔力+100、魅力+5；数值浮动"
+      },
+      {
+        "line": 14,
+        "text": "南瓜怪变身打卡器可交易，双击变为南瓜收割/汲魂者造型并打卡"
+      },
+      {
+        "line": 15,
+        "text": "南瓜收割者的精华可交易，双击获得Lv.1南瓜收割者"
+      },
+      {
+        "line": 16,
+        "text": "南瓜汲魂者的精华可交易，双击获得Lv.1南瓜汲魂者"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [
+      {
+        "item": "南瓜头",
+        "source": "多个临时任务",
+        "specificQuest": "source-unspecified",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "references": []
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "party-member-held-item",
+        "item": "南瓜头",
+        "minimumMembers": 1,
+        "appliesToStep": "step-1",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "party-shared-item",
+        "item": "化装舞会邀请函",
+        "quantityNeededPerParty": 1,
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "party-member-held-item",
+        "item": "化装舞会邀请函",
+        "minimumMembers": 1,
+        "appliesToStep": "step-2",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "法兰城改邪归正的巫师（72.131）",
+      "sourceLines": [
+        1,
+        2,
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "队伍中至少一名持有【南瓜头】的队员与改邪归正的巫师（72.131）对话，获得【化装舞会邀请函】；全队只需一份且不必装备。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "化装舞会邀请函",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "recipient": "持有南瓜头并对话的队员",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1,
+          2,
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "前往圣拉鲁卡村（36.100），由队伍中持邀请函的队员与舞会工作人员？对话，交出邀请函，全队进入栅栏并通过黄色传送石进入10~15层墓地山路随机迷宫。",
+        "inputs": [
+          {
+            "item": "化装舞会邀请函",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          4,
+          5
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "通过迷宫抵达墓地，与巫师的爸爸（32.8）对话，进入战斗；若卡战斗，原文建议返回人物登入界面更新档案。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          6,
+          7,
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "战斗胜利后再次与巫师的爸爸对话，随机获得一项奖品、称号“鬼舞者”，并传送回法兰城，任务完结。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "化装舞会随机奖品",
+            "quantity": 1,
+            "acquisition": "random-pool",
+            "sourceLines": [
+              9
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {
+            "wizard-father": {
+              "id": "wizard-father",
+              "trigger": "与巫师的爸爸对话",
+              "troubleshooting": "卡战斗时返回人物登入界面更新档案到最新",
+              "enemies": [
+                {
+                  "name": "巫师的爸爸",
+                  "raw": "BOSS：Lv.74巫师的爸爸，血量约15000；不抗咒；技能：攻击、防御、乾坤一掷、连击、超强风刃魔法、超强混乱魔法",
+                  "role": "boss",
+                  "level": 74,
+                  "hpApprox": 15000,
+                  "ailmentResistance": "不抗咒",
+                  "skills": [
+                    "攻击",
+                    "防御",
+                    "乾坤一掷",
+                    "连击",
+                    "超强风刃魔法",
+                    "超强混乱魔法"
+                  ],
+                  "sourceLines": [
+                    7
+                  ],
+                  "verification": {
+                    "status": "verified",
+                    "method": "manual-semantic-review"
+                  }
+                }
+              ],
+              "sourceLines": [
+                6,
+                7,
+                8
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          },
+          "encounters": [
+            {
+              "id": "cemetery-mountain-road",
+              "location": "墓地山路",
+              "maze": "随机迷宫",
+              "floors": {
+                "min": 10,
+                "max": 15
+              },
+              "enemyLevel": {
+                "min": 39,
+                "max": 49
+              },
+              "enemies": [
+                "幽灵",
+                "亡灵"
+              ],
+              "sourceLines": [
+                5
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          ],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "化装舞会邀请函",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "化装舞会邀请函",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "recipient": "持有南瓜头并对话的队员",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "化装舞会随机奖品",
+        "quantity": 1,
+        "acquisition": "random-pool",
+        "sourceLines": [
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往法兰城，队伍中持有【南瓜头】的队员与改邪归正的巫师（72.131）对话，获得【化装舞会邀请函】。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "◆【化装舞会邀请函】仅需队伍中一人获得即可，不需要装备",
+      "type": "party-rule",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆【南瓜头】获得方式来自于多个临时任务",
+      "type": "item-source",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "2.前往圣拉鲁卡村（36.100），队伍中持有【化装舞会邀请函】的队员与舞会工作人员？对话，交出【化装舞会邀请函】后全队进入栅栏，通过黄色传送石进入墓地山路。",
+      "type": "maze-entry",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "◆墓地山路为随机迷宫，10-15层；魔物为Lv.39~49幽灵、亡灵",
+      "type": "encounter-area",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "3.通过随机迷宫抵达墓地与巫师的爸爸（32.8）对话，进入战斗。",
+      "type": "battle-step",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "◆BOSS：Lv.74巫师的爸爸，血量约15000；不抗咒；技能：攻击、防御、乾坤一掷、连击、超强风刃魔法、超强混乱魔法",
+      "type": "battle-enemy",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "◆如果卡战斗请回到人物登入界面更新档案到最新",
+      "type": "troubleshooting",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "4.战斗胜利后与巫师的爸爸（32.8）对话，获得【奖品】、称号“鬼舞者”并传送回法兰城，任务完结。",
+      "type": "completion-step",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "◆【奖品】明细：（随机获得）",
+      "type": "reward-heading",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "名称作用",
+      "type": "table-heading",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "『真的』万圣节糖果可以交易；回复约300点魔力，每组可叠加3个",
+      "type": "reward-row",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 13,
+      "text": "南瓜头可以交易；Lv.4头饰、耐久100；防御+4~6、精神+4~6、闪躲+5~7、生命+100、魔力+100、魅力+5；数值浮动",
+      "type": "reward-row",
+      "sourceLines": [
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 14,
+      "text": "南瓜怪变身打卡器可交易，双击变为南瓜收割/汲魂者造型并打卡",
+      "type": "reward-row",
+      "sourceLines": [
+        14
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 15,
+      "text": "南瓜收割者的精华可交易，双击获得Lv.1南瓜收割者",
+      "type": "reward-row",
+      "sourceLines": [
+        15
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 16,
+      "text": "南瓜汲魂者的精华可交易，双击获得Lv.1南瓜汲魂者",
+      "type": "reward-row",
+      "sourceLines": [
+        16
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        16
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "masquerade-random-reward",
+      "version": "common",
+      "tier": "common",
+      "kind": "reward-pool",
+      "items": [
+        {
+          "id": "real-halloween-candy",
+          "name": "『真的』万圣节糖果",
+          "role": "valuable-result",
+          "properties": {
+            "tradeable": true,
+            "mpRecoveryApprox": 300,
+            "stackLimit": 3
+          },
+          "sourceLines": [
+            12
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "pumpkin-head",
+          "name": "南瓜头",
+          "role": "valuable-result",
+          "entityType": "equipment",
+          "properties": {
+            "tradeable": true,
+            "level": 4,
+            "category": "头饰",
+            "durability": 100,
+            "defense": {
+              "min": 4,
+              "max": 6
+            },
+            "spirit": {
+              "min": 4,
+              "max": 6
+            },
+            "evasion": {
+              "min": 5,
+              "max": 7
+            },
+            "hp": 100,
+            "mp": 100,
+            "charm": 5,
+            "dataVariance": true
+          },
+          "sourceLines": [
+            13
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "pumpkin-transform-timer",
+          "name": "南瓜怪变身打卡器",
+          "role": "valuable-result",
+          "properties": {
+            "tradeable": true,
+            "useEffect": "变为南瓜收割者或南瓜汲魂者造型并打卡"
+          },
+          "sourceLines": [
+            14
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "pumpkin-reaper-essence",
+          "name": "南瓜收割者的精华",
+          "role": "valuable-result",
+          "properties": {
+            "tradeable": true,
+            "useResult": {
+              "pet": "南瓜收割者",
+              "level": 1
+            }
+          },
+          "sourceLines": [
+            15
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "pumpkin-soul-reaper-essence",
+          "name": "南瓜汲魂者的精华",
+          "role": "valuable-result",
+          "properties": {
+            "tradeable": true,
+            "useResult": {
+              "pet": "南瓜汲魂者",
+              "level": 1
+            }
+          },
+          "sourceLines": [
+            16
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-4",
+      "selection": "random",
+      "sourceLines": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [
+      {
+        "name": "鬼舞者",
+        "sourceLines": [
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 56,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "临时活动/任务"
+  }
+}

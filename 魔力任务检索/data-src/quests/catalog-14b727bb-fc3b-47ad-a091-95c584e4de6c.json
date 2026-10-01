@@ -1,0 +1,768 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-14b727bb-fc3b-47ad-a091-95c584e4de6c",
+  "name": "中秋节赏月公园&每日礼品领取",
+  "aliases": [
+    "中秋节活动",
+    "兔子王的胡萝卜",
+    "胡萝卜打卡器",
+    "月饼"
+  ],
+  "metadata": {
+    "category": "临时活动/任务",
+    "level": "20 级",
+    "availability": "closed",
+    "summary": "必要条件：怀旧服任务（9月23日（星期三）停机维护之后）；怀旧服任务（已关闭）；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_14b727bb-fc3b-47ad-a091-95c584e4de6c",
+    "url": "https://www.molibaike.com/Mission/Detail/14b727bb-fc3b-47ad-a091-95c584e4de6c?u=True",
+    "localFiles": [],
+    "lineCount": 17,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "中秋节活动《中秋节赏月公园》"
+      },
+      {
+        "line": 2,
+        "text": "【兔子王的胡萝卜】路线："
+      },
+      {
+        "line": 3,
+        "text": "1.前往亚诺曼城（191.158）处与赏月公园负责人对话，选2次“是”传送至中秋节赏月公园。"
+      },
+      {
+        "line": 4,
+        "text": "2.与兔子王（105.24）对话，选“是”交出200G获得【兔子王的胡萝卜】并传送出中秋节赏月公园，任务完结。"
+      },
+      {
+        "line": 5,
+        "text": "◆【兔子王的胡萝卜】："
+      },
+      {
+        "line": 6,
+        "text": "双击，选“是”人物造型变为围巾兔并打卡，"
+      },
+      {
+        "line": 7,
+        "text": "选“否”人物保持原样并打卡，"
+      },
+      {
+        "line": 8,
+        "text": "选“取消”则人物保持原因并不打卡。"
+      },
+      {
+        "line": 9,
+        "text": "不可叠加、可交易。"
+      },
+      {
+        "line": 10,
+        "text": "中秋节活动《每日礼品领取》"
+      },
+      {
+        "line": 11,
+        "text": "【月饼】路线："
+      },
+      {
+        "line": 12,
+        "text": "1.前往法兰城（95.83）处与中秋节工作员对话，选“是”获得【巧克力月饼】、【蛋黄月饼】、【新口味五仁月饼】，任务完结。"
+      },
+      {
+        "line": 13,
+        "text": "◆等级低于Lv.20无法领取【月饼】；"
+      },
+      {
+        "line": 14,
+        "text": "◆【月饼】每日只可领取1次，0点重置；【月饼】不可交易、丢地消失"
+      },
+      {
+        "line": 15,
+        "text": "◆【巧克力月饼】：使用后恢复生命值250点"
+      },
+      {
+        "line": 16,
+        "text": "◆【蛋黄月饼】：使用后恢复魔法值200点"
+      },
+      {
+        "line": 17,
+        "text": "◆【新口味五仁月饼】：使用后随机增加技能经验值200点"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "currency",
+        "amount": 200,
+        "currency": "G",
+        "appliesToStep": "step-2",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "minimum-level",
+        "level": 20,
+        "appliesToStep": "step-3",
+        "sourceLines": [
+          13
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "daily-limit",
+        "limit": 1,
+        "reset": "每日0点",
+        "appliesToStep": "step-3",
+        "sourceLines": [
+          14
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "亚诺曼城赏月公园负责人（191.158）",
+      "alternateStarts": [
+        {
+          "stepId": "step-3",
+          "location": "法兰城中秋节工作员（95.83）"
+        }
+      ],
+      "sourceLines": [
+        1,
+        2,
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "“兔子王的胡萝卜”路线：与亚诺曼城赏月公园负责人（191.158）对话，两次选择“是”，传送至中秋节赏月公园。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          1,
+          2,
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "与兔子王（105.24）对话，选择“是”，交出200G，获得【兔子王的胡萝卜】并传送出公园，该路线完结。",
+        "inputs": [
+          {
+            "item": "200G",
+            "quantity": 1,
+            "action": "hand-over",
+            "entityType": "currency",
+            "amount": 200,
+            "currency": "G",
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "兔子王的胡萝卜",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "独立的“月饼”路线：等级不低于20时，与法兰城中秋节工作员（95.83）对话并选择“是”，同次获得巧克力、蛋黄、新口味五仁月饼各1；每日仅领一次，0点重置。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "巧克力月饼",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              12
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "蛋黄月饼",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              12
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "新口味五仁月饼",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              12
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": [
+      {
+        "note": "原文包含两条互相独立的中秋活动路线，不构成前后置关系。",
+        "sourceLines": [
+          1,
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "200G",
+        "quantity": 1,
+        "action": "hand-over",
+        "entityType": "currency",
+        "amount": 200,
+        "currency": "G",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "兔子王的胡萝卜",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "巧克力月饼",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          12
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "蛋黄月饼",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          12
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "新口味五仁月饼",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          12
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-3",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "中秋节活动《中秋节赏月公园》",
+      "type": "activity-heading",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "【兔子王的胡萝卜】路线：",
+      "type": "route-heading",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "1.前往亚诺曼城（191.158）处与赏月公园负责人对话，选2次“是”传送至中秋节赏月公园。",
+      "type": "route-step",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "2.与兔子王（105.24）对话，选“是”交出200G获得【兔子王的胡萝卜】并传送出中秋节赏月公园，任务完结。",
+      "type": "exchange-step",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "◆【兔子王的胡萝卜】：",
+      "type": "item-heading",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "双击，选“是”人物造型变为围巾兔并打卡，",
+      "type": "use-choice",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "选“否”人物保持原样并打卡，",
+      "type": "use-choice",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "选“取消”则人物保持原因并不打卡。",
+      "type": "use-choice",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "不可叠加、可交易。",
+      "type": "item-detail",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "中秋节活动《每日礼品领取》",
+      "type": "activity-heading",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "【月饼】路线：",
+      "type": "route-heading",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "1.前往法兰城（95.83）处与中秋节工作员对话，选“是”获得【巧克力月饼】、【蛋黄月饼】、【新口味五仁月饼】，任务完结。",
+      "type": "daily-reward-step",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 13,
+      "text": "◆等级低于Lv.20无法领取【月饼】；",
+      "type": "level-gate",
+      "sourceLines": [
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 14,
+      "text": "◆【月饼】每日只可领取1次，0点重置；【月饼】不可交易、丢地消失",
+      "type": "daily-limit",
+      "sourceLines": [
+        14
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 15,
+      "text": "◆【巧克力月饼】：使用后恢复生命值250点",
+      "type": "item-effect",
+      "sourceLines": [
+        15
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 16,
+      "text": "◆【蛋黄月饼】：使用后恢复魔法值200点",
+      "type": "item-effect",
+      "sourceLines": [
+        16
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 17,
+      "text": "◆【新口味五仁月饼】：使用后随机增加技能经验值200点",
+      "type": "item-effect",
+      "sourceLines": [
+        17
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        17
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "rabbit-king-carrot",
+      "version": "common",
+      "tier": "common",
+      "kind": "route-reward",
+      "items": [
+        {
+          "id": "rabbit-king-carrot",
+          "name": "兔子王的胡萝卜",
+          "role": "valuable-result",
+          "properties": {
+            "stackable": false,
+            "tradeable": true,
+            "useChoices": {
+              "是": "变为围巾兔造型并打卡",
+              "否": "保持原样并打卡",
+              "取消": "保持原样且不打卡"
+            }
+          },
+          "sourceLines": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-2",
+      "sourceLines": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "id": "daily-mooncakes",
+      "version": "common",
+      "tier": "common",
+      "kind": "daily-reward",
+      "items": [
+        {
+          "id": "chocolate-mooncake",
+          "name": "巧克力月饼",
+          "role": "valuable-result",
+          "properties": {
+            "tradeable": false,
+            "dropBehavior": "丢地消失",
+            "hpRecovery": 250
+          },
+          "sourceLines": [
+            12,
+            14,
+            15
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "egg-yolk-mooncake",
+          "name": "蛋黄月饼",
+          "role": "valuable-result",
+          "properties": {
+            "tradeable": false,
+            "dropBehavior": "丢地消失",
+            "mpRecovery": 200
+          },
+          "sourceLines": [
+            12,
+            14,
+            16
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "new-five-kernel-mooncake",
+          "name": "新口味五仁月饼",
+          "role": "valuable-result",
+          "properties": {
+            "tradeable": false,
+            "dropBehavior": "丢地消失",
+            "skillExperienceIncrease": {
+              "amount": 200,
+              "skill": "随机"
+            }
+          },
+          "sourceLines": [
+            12,
+            14,
+            17
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-3",
+      "frequency": "daily",
+      "reset": "00:00",
+      "sameAcquisitionEvent": true,
+      "sourceLines": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 105,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "临时活动/任务"
+  }
+}

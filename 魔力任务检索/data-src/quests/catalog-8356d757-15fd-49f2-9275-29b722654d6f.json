@@ -1,0 +1,839 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-8356d757-15fd-49f2-9275-29b722654d6f",
+  "name": "雾风礼包",
+  "aliases": [
+    "黄UD",
+    "黄王"
+  ],
+  "metadata": {
+    "category": "临时活动/任务",
+    "level": "1 级",
+    "availability": "closed",
+    "summary": "怀旧服活动（已关闭）；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_8356d757-15fd-49f2-9275-29b722654d6f",
+    "url": "https://www.molibaike.com/Mission/Detail/8356d757-15fd-49f2-9275-29b722654d6f?u=True",
+    "localFiles": [],
+    "lineCount": 18,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往亚诺曼城与雾风礼包贩售员（131.131）对话，交出1000G购买【雾风礼包】。"
+      },
+      {
+        "line": 2,
+        "text": "◆在2、3线购买【雾风礼包】时谨防与NPC位置重叠的“骗子”摊位"
+      },
+      {
+        "line": 3,
+        "text": "2.双击【雾风礼包】随机获得【奖品】，任务完结。"
+      },
+      {
+        "line": 4,
+        "text": "◆【奖品】明细："
+      },
+      {
+        "line": 5,
+        "text": "宠物类奖品（随机获得）备注"
+      },
+      {
+        "line": 6,
+        "text": "雾风的精华金属系；10技能栏；火2风8；25 13 22 24 41"
+      },
+      {
+        "line": 7,
+        "text": "利牙设计图改造后为“舔食者”；不死系；9技能栏；火2风8；35 42 16 17 10"
+      },
+      {
+        "line": 8,
+        "text": "武装骷髅设计图改造后为“不屈之骨”；不死系；9技能栏；地8水2；18 15 32 13 42"
+      },
+      {
+        "line": 9,
+        "text": "黑暗鸟人设计图改造后为“漆黑之羽”；人形系；9技能栏；地6风4；21 11 16 31 41"
+      },
+      {
+        "line": 10,
+        "text": "果冻史莱姆设计图改造后为“变异果冻史莱姆”；特殊系；9技能栏；水3火7；40 37 17 17 9"
+      },
+      {
+        "line": 11,
+        "text": "其他奖品（随机获得）"
+      },
+      {
+        "line": 12,
+        "text": "魔石（368G）"
+      },
+      {
+        "line": 13,
+        "text": "鼠王惊奇蛋"
+      },
+      {
+        "line": 14,
+        "text": "完全修理券"
+      },
+      {
+        "line": 15,
+        "text": "技能学习证"
+      },
+      {
+        "line": 16,
+        "text": "Lv.9各色宝石"
+      },
+      {
+        "line": 17,
+        "text": "神奇的药草（200技能经验）"
+      },
+      {
+        "line": 18,
+        "text": "传送石优待券（免费使用传送石）"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "currency",
+        "amount": 1000,
+        "currency": "G",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "亚诺曼城雾风礼包贩售员（131.131）",
+      "sourceLines": [
+        1,
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "与亚诺曼城雾风礼包贩售员（131.131）对话，交出1000G购买【雾风礼包】；2、3线需防范与NPC重叠的骗子摊位。",
+        "inputs": [
+          {
+            "item": "1000G",
+            "quantity": 1,
+            "action": "hand-over",
+            "entityType": "currency",
+            "amount": 1000,
+            "currency": "G",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "雾风礼包",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1,
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "双击【雾风礼包】，从原文奖品池随机获得一项奖品，任务完结。",
+        "inputs": [
+          {
+            "item": "雾风礼包",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "雾风礼包随机奖品",
+            "quantity": 1,
+            "acquisition": "random-pool",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "1000G",
+        "quantity": 1,
+        "action": "hand-over",
+        "entityType": "currency",
+        "amount": 1000,
+        "currency": "G",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "雾风礼包",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "雾风礼包",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "雾风礼包随机奖品",
+        "quantity": 1,
+        "acquisition": "random-pool",
+        "sourceLines": [
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往亚诺曼城与雾风礼包贩售员（131.131）对话，交出1000G购买【雾风礼包】。",
+      "type": "purchase-step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "◆在2、3线购买【雾风礼包】时谨防与NPC位置重叠的“骗子”摊位",
+      "type": "fraud-warning",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "2.双击【雾风礼包】随机获得【奖品】，任务完结。",
+      "type": "open-random-reward",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "◆【奖品】明细：",
+      "type": "reward-heading",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "宠物类奖品（随机获得）备注",
+      "type": "table-heading",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "雾风的精华金属系；10技能栏；火2风8；25 13 22 24 41",
+      "type": "reward-row",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "利牙设计图改造后为“舔食者”；不死系；9技能栏；火2风8；35 42 16 17 10",
+      "type": "reward-row",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "武装骷髅设计图改造后为“不屈之骨”；不死系；9技能栏；地8水2；18 15 32 13 42",
+      "type": "reward-row",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "黑暗鸟人设计图改造后为“漆黑之羽”；人形系；9技能栏；地6风4；21 11 16 31 41",
+      "type": "reward-row",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "果冻史莱姆设计图改造后为“变异果冻史莱姆”；特殊系；9技能栏；水3火7；40 37 17 17 9",
+      "type": "reward-row",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "其他奖品（随机获得）",
+      "type": "table-heading",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "魔石（368G）",
+      "type": "reward-row",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 13,
+      "text": "鼠王惊奇蛋",
+      "type": "reward-row",
+      "sourceLines": [
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 14,
+      "text": "完全修理券",
+      "type": "reward-row",
+      "sourceLines": [
+        14
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 15,
+      "text": "技能学习证",
+      "type": "reward-row",
+      "sourceLines": [
+        15
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 16,
+      "text": "Lv.9各色宝石",
+      "type": "reward-row",
+      "sourceLines": [
+        16
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 17,
+      "text": "神奇的药草（200技能经验）",
+      "type": "reward-row",
+      "sourceLines": [
+        17
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 18,
+      "text": "传送石优待券（免费使用传送石）",
+      "type": "reward-row",
+      "sourceLines": [
+        18
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        18
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "mist-wind-gift-pool",
+      "version": "common",
+      "tier": "common",
+      "kind": "reward-pool",
+      "items": [
+        {
+          "id": "mist-wind-essence",
+          "name": "雾风的精华",
+          "role": "valuable-result",
+          "entityType": "pet-essence",
+          "resultPet": {
+            "name": "雾风",
+            "race": "金属系",
+            "skillSlots": 10,
+            "elements": {
+              "火": 2,
+              "风": 8
+            },
+            "growth": [
+              25,
+              13,
+              22,
+              24,
+              41
+            ]
+          },
+          "sourceLines": [
+            6
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "fang-design",
+          "name": "利牙设计图",
+          "role": "valuable-result",
+          "entityType": "design",
+          "resultPet": {
+            "name": "舔食者",
+            "race": "不死系",
+            "skillSlots": 9,
+            "elements": {
+              "火": 2,
+              "风": 8
+            },
+            "growth": [
+              35,
+              42,
+              16,
+              17,
+              10
+            ]
+          },
+          "sourceLines": [
+            7
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "armed-skeleton-design",
+          "name": "武装骷髅设计图",
+          "role": "valuable-result",
+          "entityType": "design",
+          "resultPet": {
+            "name": "不屈之骨",
+            "race": "不死系",
+            "skillSlots": 9,
+            "elements": {
+              "地": 8,
+              "水": 2
+            },
+            "growth": [
+              18,
+              15,
+              32,
+              13,
+              42
+            ]
+          },
+          "sourceLines": [
+            8
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "dark-birdman-design",
+          "name": "黑暗鸟人设计图",
+          "role": "valuable-result",
+          "entityType": "design",
+          "resultPet": {
+            "name": "漆黑之羽",
+            "race": "人形系",
+            "skillSlots": 9,
+            "elements": {
+              "地": 6,
+              "风": 4
+            },
+            "growth": [
+              21,
+              11,
+              16,
+              31,
+              41
+            ]
+          },
+          "sourceLines": [
+            9
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "jelly-slime-design",
+          "name": "果冻史莱姆设计图",
+          "role": "valuable-result",
+          "entityType": "design",
+          "resultPet": {
+            "name": "变异果冻史莱姆",
+            "race": "特殊系",
+            "skillSlots": 9,
+            "elements": {
+              "水": 3,
+              "火": 7
+            },
+            "growth": [
+              40,
+              37,
+              17,
+              17,
+              9
+            ]
+          },
+          "sourceLines": [
+            10
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "magic-stone",
+          "name": "魔石",
+          "role": "valuable-result",
+          "properties": {
+            "shopPrice": 368,
+            "currency": "G"
+          },
+          "sourceLines": [
+            12
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "mouse-king-surprise-egg",
+          "name": "鼠王惊奇蛋",
+          "role": "valuable-result",
+          "sourceLines": [
+            13
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "complete-repair-ticket",
+          "name": "完全修理券",
+          "role": "valuable-result",
+          "sourceLines": [
+            14
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "skill-learning-certificate",
+          "name": "技能学习证",
+          "role": "valuable-result",
+          "sourceLines": [
+            15
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "level-9-gem",
+          "name": "Lv.9各色宝石",
+          "role": "valuable-result",
+          "variant": "各色",
+          "sourceLines": [
+            16
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "magical-herb",
+          "name": "神奇的药草",
+          "role": "valuable-result",
+          "properties": {
+            "skillExperience": 200
+          },
+          "sourceLines": [
+            17
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "teleport-discount-ticket",
+          "name": "传送石优待券",
+          "role": "valuable-result",
+          "properties": {
+            "effect": "免费使用传送石"
+          },
+          "sourceLines": [
+            18
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-2",
+      "selection": "random",
+      "sourceLines": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 64,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "临时活动/任务"
+  }
+}

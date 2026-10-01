@@ -1,0 +1,721 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-a7e081f6-36e3-46fa-abfc-064cecbf7ec5",
+  "name": "圣诞老人的小淘气们",
+  "aliases": [
+    "2019圣诞节任务",
+    "山梦",
+    "雪玲"
+  ],
+  "metadata": {
+    "category": "临时活动/任务",
+    "level": "0 级",
+    "availability": "closed",
+    "summary": "必要条件：清晨、黄昏或夜晚；零点后任务刷新次数；怀旧服任务（已关闭）；以下仅展示怀旧服路线与参数",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_a7e081f6-36e3-46fa-abfc-064cecbf7ec5",
+    "url": "https://www.molibaike.com/Mission/Detail/a7e081f6-36e3-46fa-abfc-064cecbf7ec5?u=True",
+    "localFiles": [],
+    "lineCount": 15,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.前往魔法大学1楼（77.58），右键点击进入宿舍内，与（35.7）附近的NPC对话领取【库房钥匙】。"
+      },
+      {
+        "line": 2,
+        "text": "2.清晨、黄昏或夜晚时，重新进入宿舍，右键点击（41.14）处的门，交出【库房钥匙】进入到宿舍楼后，向北边走找到楼梯，进入到宿舍屋顶花园。"
+      },
+      {
+        "line": 3,
+        "text": "◆迷宫为固定地图；迷宫魔物：Lv.45雪儿波波（血量约800）&斯诺波波 （血量约1000）"
+      },
+      {
+        "line": 4,
+        "text": "3.通过迷宫后，与（44.11）附近的圣诞波波对话并战斗。"
+      },
+      {
+        "line": 5,
+        "text": "◆战斗信息："
+      },
+      {
+        "line": 6,
+        "text": "LV.75圣诞波波， HP.6500；技能：气功弹、经验偷取、超强昏睡魔法、圣盾"
+      },
+      {
+        "line": 7,
+        "text": "LV.60斯诺波波， HP.1200，随机数量"
+      },
+      {
+        "line": 8,
+        "text": "4. 战斗胜利后，与圣诞老人对话，获取奖励"
+      },
+      {
+        "line": 9,
+        "text": "◆奖励:【山梦幻彩形象卡】（即染色卡）、【雪玲幻彩形象卡】（即染色卡）、【山梦精华】、【雪玲精华】"
+      },
+      {
+        "line": 10,
+        "text": "◆【幻彩形象卡】（即染色卡）使用办法："
+      },
+      {
+        "line": 11,
+        "text": "*只能变色对应名字的宠物"
+      },
+      {
+        "line": 12,
+        "text": "*将你想变色的宠物放在宠物栏首位"
+      },
+      {
+        "line": 13,
+        "text": "*打开物品栏，双击形象卡，即可完成随机变色"
+      },
+      {
+        "line": 14,
+        "text": "*形象卡一张仅可使用一次，使用后消失"
+      },
+      {
+        "line": 15,
+        "text": "*变色永久保留，若想更改颜色可以使用新的变色形象卡"
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "time-window",
+        "value": [
+          "清晨",
+          "黄昏",
+          "夜晚"
+        ],
+        "appliesToStep": "step-2",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "魔法大学1楼宿舍入口（77.58）",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "在魔法大学1楼（77.58）右键进入宿舍，与（35.7）附近NPC对话，领取【库房钥匙】。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "库房钥匙",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "清晨、黄昏或夜晚重新进入宿舍，右键点击（41.14）的门，交出【库房钥匙】，进入宿舍楼后前往屋顶花园固定迷宫。",
+        "inputs": [
+          {
+            "item": "库房钥匙",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          2,
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "通过迷宫后与圣诞波波（44.11附近）对话，进入战斗。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "战斗胜利后与圣诞老人对话，从原文所列四种奖励中获取奖励。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "圣诞老人奖励",
+            "quantity": 1,
+            "acquisition": "reward-pool",
+            "sourceLines": [
+              8
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {
+            "christmas-bobo": {
+              "id": "christmas-bobo",
+              "trigger": "与圣诞波波对话",
+              "enemies": [
+                {
+                  "name": "圣诞波波",
+                  "raw": "LV.75圣诞波波， HP.6500；技能：气功弹、经验偷取、超强昏睡魔法、圣盾",
+                  "role": "boss",
+                  "level": 75,
+                  "hp": 6500,
+                  "skills": [
+                    "气功弹",
+                    "经验偷取",
+                    "超强昏睡魔法",
+                    "圣盾"
+                  ],
+                  "sourceLines": [
+                    6
+                  ],
+                  "verification": {
+                    "status": "verified",
+                    "method": "manual-semantic-review"
+                  },
+                  "actions": null,
+                  "count": 1,
+                  "race": null,
+                  "resistance": null,
+                  "elements": {},
+                  "catalogEvidenceKeys": [
+                    "圣诞波波|75-75"
+                  ],
+                  "catalogSourceLines": [
+                    5,
+                    6
+                  ],
+                  "position": null,
+                  "modifiers": null,
+                  "poisonResistance": null
+                },
+                {
+                  "name": "斯诺波波",
+                  "raw": "LV.60斯诺波波， HP.1200，随机数量",
+                  "role": "minion",
+                  "level": 60,
+                  "hp": 1200,
+                  "count": "随机",
+                  "sourceLines": [
+                    7
+                  ],
+                  "verification": {
+                    "status": "verified",
+                    "method": "manual-semantic-review"
+                  },
+                  "actions": null,
+                  "race": null,
+                  "resistance": null,
+                  "elements": {},
+                  "skills": [],
+                  "catalogEvidenceKeys": [
+                    "斯诺波波|60-60"
+                  ],
+                  "catalogSourceLines": [
+                    5,
+                    7
+                  ],
+                  "position": null,
+                  "modifiers": null,
+                  "poisonResistance": null
+                }
+              ],
+              "sourceLines": [
+                4,
+                5,
+                6,
+                7
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          },
+          "encounters": [
+            {
+              "id": "dormitory-rooftop",
+              "location": "宿舍屋顶花园",
+              "maze": "固定地图",
+              "enemies": [
+                {
+                  "name": "雪儿波波",
+                  "level": 45,
+                  "hpApprox": 800
+                },
+                {
+                  "name": "斯诺波波",
+                  "level": 45,
+                  "hpApprox": 1000
+                }
+              ],
+              "sourceLines": [
+                3
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          ],
+          "media": [],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "库房钥匙",
+        "quantity": 1,
+        "action": "hand-over",
+        "sourceLines": [
+          2
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-2",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "库房钥匙",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "圣诞老人奖励",
+        "quantity": 1,
+        "acquisition": "reward-pool",
+        "sourceLines": [
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.前往魔法大学1楼（77.58），右键点击进入宿舍内，与（35.7）附近的NPC对话领取【库房钥匙】。",
+      "type": "step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "2.清晨、黄昏或夜晚时，重新进入宿舍，右键点击（41.14）处的门，交出【库房钥匙】进入到宿舍楼后，向北边走找到楼梯，进入到宿舍屋顶花园。",
+      "type": "timed-gate-step",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆迷宫为固定地图；迷宫魔物：Lv.45雪儿波波（血量约800）&斯诺波波 （血量约1000）",
+      "type": "encounter-area",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "3.通过迷宫后，与（44.11）附近的圣诞波波对话并战斗。",
+      "type": "battle-step",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "◆战斗信息：",
+      "type": "battle-heading",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "LV.75圣诞波波， HP.6500；技能：气功弹、经验偷取、超强昏睡魔法、圣盾",
+      "type": "battle-enemy",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "LV.60斯诺波波， HP.1200，随机数量",
+      "type": "battle-enemy",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "4. 战斗胜利后，与圣诞老人对话，获取奖励",
+      "type": "reward-step",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "◆奖励:【山梦幻彩形象卡】（即染色卡）、【雪玲幻彩形象卡】（即染色卡）、【山梦精华】、【雪玲精华】",
+      "type": "reward-list",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "◆【幻彩形象卡】（即染色卡）使用办法：",
+      "type": "usage-heading",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "*只能变色对应名字的宠物",
+      "type": "usage-rule",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "*将你想变色的宠物放在宠物栏首位",
+      "type": "usage-rule",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 13,
+      "text": "*打开物品栏，双击形象卡，即可完成随机变色",
+      "type": "usage-rule",
+      "sourceLines": [
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 14,
+      "text": "*形象卡一张仅可使用一次，使用后消失",
+      "type": "usage-rule",
+      "sourceLines": [
+        14
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 15,
+      "text": "*变色永久保留，若想更改颜色可以使用新的变色形象卡",
+      "type": "usage-rule",
+      "sourceLines": [
+        15
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        15
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "christmas-bobo-reward-pool",
+      "version": "common",
+      "tier": "common",
+      "kind": "reward-pool",
+      "items": [
+        {
+          "id": "shan-meng-color-card",
+          "name": "山梦幻彩形象卡",
+          "role": "valuable-result",
+          "entityType": "pet-color-card",
+          "properties": {
+            "applicablePet": "山梦",
+            "usage": "将对应宠物放在宠物栏首位后双击，随机变色",
+            "consumable": true,
+            "colorChangePermanent": true,
+            "recolorableWithAnotherCard": true
+          },
+          "sourceLines": [
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "xue-ling-color-card",
+          "name": "雪玲幻彩形象卡",
+          "role": "valuable-result",
+          "entityType": "pet-color-card",
+          "properties": {
+            "applicablePet": "雪玲",
+            "usage": "将对应宠物放在宠物栏首位后双击，随机变色",
+            "consumable": true,
+            "colorChangePermanent": true,
+            "recolorableWithAnotherCard": true
+          },
+          "sourceLines": [
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "shan-meng-essence",
+          "name": "山梦精华",
+          "role": "valuable-result",
+          "sourceLines": [
+            9
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        },
+        {
+          "id": "xue-ling-essence",
+          "name": "雪玲精华",
+          "role": "valuable-result",
+          "sourceLines": [
+            9
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-4",
+      "selection": "source-unspecified",
+      "sourceLines": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 33,
+    "stageLabel": "",
+    "optional": false,
+    "type": "怀旧服任务",
+    "sourceCategory": "临时活动/任务"
+  }
+}

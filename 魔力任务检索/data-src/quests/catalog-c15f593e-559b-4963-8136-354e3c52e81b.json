@@ -1,0 +1,675 @@
+{
+  "schemaVersion": 2,
+  "id": "catalog-c15f593e-559b-4963-8136-354e3c52e81b",
+  "name": "相遇流星山丘",
+  "aliases": [
+    "2019版相遇流星山丘"
+  ],
+  "metadata": {
+    "category": "临时活动/任务",
+    "level": "20 级",
+    "availability": "closed",
+    "summary": "必要条件：3服临时任务（关闭中）；3服临时任务（关闭中）",
+    "repeatable": "可重做"
+  },
+  "source": {
+    "key": "catalog_c15f593e-559b-4963-8136-354e3c52e81b",
+    "url": "https://www.molibaike.com/Mission/Detail/c15f593e-559b-4963-8136-354e3c52e81b?u=True",
+    "localFiles": [],
+    "lineCount": 13,
+    "rawLines": [
+      {
+        "line": 1,
+        "text": "1.与法兰城（233.126）的七夕活动专员对话，女角色获得【炽热之链】传送至梦境之流星山丘，男角色获得【紫水晶之链】传送至流星山丘（不是奇利那个）。"
+      },
+      {
+        "line": 2,
+        "text": "◆【紫水晶之链】、【炽热之链】可交易、可以宠邮"
+      },
+      {
+        "line": 3,
+        "text": "◆男角色持有【炽热之链】、女角色持有【紫水晶之链】对话会被收走"
+      },
+      {
+        "line": 4,
+        "text": "2.由100→200→300公尺→前往梦境流星山丘山顶，可以组队。"
+      },
+      {
+        "line": 5,
+        "text": "◆女号路线-梦境之流星山丘，魔物：Lv.18~21梦魇（水50火50）、恶梦鼠（水100）"
+      },
+      {
+        "line": 6,
+        "text": "男号路线-流星山丘，魔物：无"
+      },
+      {
+        "line": 7,
+        "text": "3.抵达梦境流星山丘顶交换【紫水晶之链】、【炽热之链】，"
+      },
+      {
+        "line": 8,
+        "text": "再去七夕活动老人（37.25）交出后，获得称号“永恒的流星”（2020/2025版未知原因缺少称号）、【新星之链】，任务完结。"
+      },
+      {
+        "line": 9,
+        "text": "◆【新星之链】："
+      },
+      {
+        "line": 10,
+        "text": "Lv.8项链、耐久300；攻击+20、防御+12、敏捷+8、必杀+10、命中+10、闪躲+8、生命+70、魔力+70；"
+      },
+      {
+        "line": 11,
+        "text": "不可交易、不可存银行、丢地消失"
+      },
+      {
+        "line": 12,
+        "text": "行走线路：（by Level.1）"
+      },
+      {
+        "line": 13,
+        "text": "刷子线路："
+      }
+    ]
+  },
+  "relations": {
+    "prerequisites": [],
+    "itemSources": [],
+    "references": []
+  },
+  "requirements": {
+    "conditions": [
+      {
+        "type": "paired-character-roles",
+        "roles": [
+          "男性角色",
+          "女性角色"
+        ],
+        "reason": "两条性别路线分别取得不同项链，并在山顶交换后交付对方项链",
+        "sourceLines": [
+          1,
+          3,
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ]
+  },
+  "flow": {
+    "start": {
+      "stepId": "step-1",
+      "location": "法兰城七夕活动专员（233.126）",
+      "sourceLines": [
+        1,
+        2,
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    "steps": [
+      {
+        "id": "step-1",
+        "order": 1,
+        "text": "与法兰城七夕活动专员（233.126）对话：女性角色获得【炽热之链】并传送至梦境之流星山丘；男性角色获得【紫水晶之链】并传送至流星山丘。两种项链可交易、可宠邮；男性持有炽热之链或女性持有紫水晶之链再与活动专员对话时会被收走。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "炽热之链",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "characterRole": "女性角色",
+            "transportTo": "梦境之流星山丘",
+            "properties": {
+              "tradeable": true,
+              "petMail": true
+            },
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          },
+          {
+            "item": "紫水晶之链",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "characterRole": "男性角色",
+            "transportTo": "流星山丘",
+            "properties": {
+              "tradeable": true,
+              "petMail": true
+            },
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          1,
+          2,
+          3
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-2",
+        "order": 2,
+        "text": "依次经过100、200、300公尺抵达各自路线的流星山丘山顶；可以组队。女性路线有Lv.18~21梦魇与恶梦鼠，男性路线无魔物。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "sourceLines": [
+          4,
+          5,
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-3",
+        "order": 3,
+        "text": "在梦境流星山丘顶由男女角色交换【紫水晶之链】与【炽热之链】。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "interaction": "player-to-player-exchange",
+        "sourceLines": [
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      },
+      {
+        "id": "step-4",
+        "order": 4,
+        "text": "前往七夕活动老人（37.25），男性交出【炽热之链】、女性交出【紫水晶之链】，获得【新星之链】；非2020/2025版另获得称号“永恒的流星”，任务完结。",
+        "inputs": [
+          {
+            "item": "对方路线项链",
+            "quantity": 1,
+            "action": "hand-over",
+            "alternativesByRole": {
+              "男性角色": "炽热之链",
+              "女性角色": "紫水晶之链"
+            },
+            "sourceLines": [
+              8
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "新星之链",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              8
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "notes": []
+  },
+  "versions": {
+    "common": {
+      "key": "common",
+      "label": "通用",
+      "changes": [],
+      "tiers": {
+        "common": {
+          "key": "common",
+          "label": "通用",
+          "order": 0,
+          "battles": {},
+          "encounters": [
+            {
+              "id": "dream-meteor-hill",
+              "routeRole": "女性角色",
+              "location": "梦境之流星山丘",
+              "enemyLevel": {
+                "min": 18,
+                "max": 21
+              },
+              "enemies": [
+                {
+                  "name": "梦魇",
+                  "attributes": "水50火50"
+                },
+                {
+                  "name": "恶梦鼠",
+                  "attributes": "水100"
+                }
+              ],
+              "sourceLines": [
+                5
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            },
+            {
+              "id": "meteor-hill",
+              "routeRole": "男性角色",
+              "location": "流星山丘",
+              "enemies": [],
+              "sourceLines": [
+                6
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          ],
+          "media": [
+            {
+              "type": "route-map-caption",
+              "label": "行走线路",
+              "credit": "Level.1",
+              "asset": "source-unspecified",
+              "sourceLines": [
+                12
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            },
+            {
+              "type": "route-map-caption",
+              "label": "刷子线路",
+              "asset": "source-unspecified",
+              "sourceLines": [
+                13
+              ],
+              "verification": {
+                "status": "verified",
+                "method": "manual-semantic-review"
+              }
+            }
+          ],
+          "notes": []
+        }
+      }
+    }
+  },
+  "itemEvents": {
+    "inputs": [
+      {
+        "item": "对方路线项链",
+        "quantity": 1,
+        "action": "hand-over",
+        "alternativesByRole": {
+          "男性角色": "炽热之链",
+          "女性角色": "紫水晶之链"
+        },
+        "sourceLines": [
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      }
+    ],
+    "acquisitions": [
+      {
+        "item": "炽热之链",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "characterRole": "女性角色",
+        "transportTo": "梦境之流星山丘",
+        "properties": {
+          "tradeable": true,
+          "petMail": true
+        },
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "紫水晶之链",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "characterRole": "男性角色",
+        "transportTo": "流星山丘",
+        "properties": {
+          "tradeable": true,
+          "petMail": true
+        },
+        "sourceLines": [
+          1
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-1",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "新星之链",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        },
+        "step": "step-4",
+        "version": "common",
+        "tier": "common"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "line": 1,
+      "text": "1.与法兰城（233.126）的七夕活动专员对话，女角色获得【炽热之链】传送至梦境之流星山丘，男角色获得【紫水晶之链】传送至流星山丘（不是奇利那个）。",
+      "type": "role-branch-step",
+      "sourceLines": [
+        1
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 2,
+      "text": "◆【紫水晶之链】、【炽热之链】可交易、可以宠邮",
+      "type": "item-detail",
+      "sourceLines": [
+        2
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 3,
+      "text": "◆男角色持有【炽热之链】、女角色持有【紫水晶之链】对话会被收走",
+      "type": "item-removal-condition",
+      "sourceLines": [
+        3
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 4,
+      "text": "2.由100→200→300公尺→前往梦境流星山丘山顶，可以组队。",
+      "type": "route-step",
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 5,
+      "text": "◆女号路线-梦境之流星山丘，魔物：Lv.18~21梦魇（水50火50）、恶梦鼠（水100）",
+      "type": "encounter-route",
+      "sourceLines": [
+        5
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 6,
+      "text": "男号路线-流星山丘，魔物：无",
+      "type": "encounter-route",
+      "sourceLines": [
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 7,
+      "text": "3.抵达梦境流星山丘顶交换【紫水晶之链】、【炽热之链】，",
+      "type": "player-exchange",
+      "sourceLines": [
+        7
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 8,
+      "text": "再去七夕活动老人（37.25）交出后，获得称号“永恒的流星”（2020/2025版未知原因缺少称号）、【新星之链】，任务完结。",
+      "type": "completion-step",
+      "sourceLines": [
+        8
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 9,
+      "text": "◆【新星之链】：",
+      "type": "item-heading",
+      "sourceLines": [
+        9
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 10,
+      "text": "Lv.8项链、耐久300；攻击+20、防御+12、敏捷+8、必杀+10、命中+10、闪躲+8、生命+70、魔力+70；",
+      "type": "item-detail",
+      "sourceLines": [
+        10
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 11,
+      "text": "不可交易、不可存银行、丢地消失",
+      "type": "item-detail",
+      "sourceLines": [
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 12,
+      "text": "行走线路：（by Level.1）",
+      "type": "media-caption",
+      "sourceLines": [
+        12
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    },
+    {
+      "line": 13,
+      "text": "刷子线路：",
+      "type": "media-caption",
+      "sourceLines": [
+        13
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "verification": {
+    "status": "verified",
+    "method": "manual-semantic-review",
+    "reviewedSourceRanges": [
+      [
+        1,
+        13
+      ]
+    ],
+    "note": "全部原文行已逐条核验。"
+  },
+  "rewardEvents": [
+    {
+      "id": "reward-new-star-necklace",
+      "version": "common",
+      "tier": "common",
+      "kind": "quest-completion",
+      "items": [
+        {
+          "id": "new-star-necklace",
+          "name": "新星之链",
+          "role": "valuable-result",
+          "entityType": "equipment",
+          "properties": {
+            "level": 8,
+            "category": "项链",
+            "durability": 300,
+            "attack": 20,
+            "defense": 12,
+            "agility": 8,
+            "critical": 10,
+            "accuracy": 10,
+            "evasion": 8,
+            "hp": 70,
+            "mp": 70,
+            "tradeable": false,
+            "bankable": false,
+            "dropBehavior": "丢地消失"
+          },
+          "sourceLines": [
+            8,
+            9,
+            10,
+            11
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          }
+        }
+      ],
+      "step": "step-4",
+      "sourceLines": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-semantic-review"
+      }
+    }
+  ],
+  "outcomes": {
+    "titles": [
+      {
+        "name": "永恒的流星",
+        "permanent": "source-unspecified",
+        "availability": {
+          "excludedVersions": [
+            2020,
+            2025
+          ],
+          "note": "原文称2020/2025版未知原因缺少称号"
+        },
+        "sourceLines": [
+          8
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-semantic-review"
+        }
+      }
+    ],
+    "careers": [],
+    "skills": []
+  },
+  "presentation": {
+    "initials": "",
+    "series": "",
+    "order": 31,
+    "stageLabel": "",
+    "optional": false,
+    "type": "通用任务",
+    "sourceCategory": "临时活动/任务"
+  }
+}
