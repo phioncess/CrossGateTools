@@ -747,6 +747,8 @@ for (const questId of allQuestIds) {
       }
     }
     const eventNodes = [...window.document.querySelectorAll('[data-fact-event]')].filter(node => node.dataset.factEvent === event.id);
+    if (eventNodes.some(node => node.closest('.acquisition-item'))) throw new Error(`共同事件规则仍复制到道具卡: ${title} / ${event.id}`);
+    for (const fact of event.presentationFacts || []) if (eventNodes.filter(node => node.dataset.factKey === fact.key).length > 1) throw new Error(`共同事件规则重复展示: ${title} / ${event.id}.${fact.key}`);
     for (const fact of event.presentationFacts || []) {
       if (!event.items.some(item => item.role === 'valuable-result')) continue;
       // A fact identical to the primary source may share its existing event header;

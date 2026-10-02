@@ -343,7 +343,6 @@ function renderAlternateRewardFacts(primary, sources) {
     const alternate = {...source.item.commonProperties, ...source.item.properties, ...source.item.appraisedProperties};
     const facts = (source.item.allPropertyFacts || []).filter(row => JSON.stringify(alternate[row.key]) !== JSON.stringify(properties[row.key]));
     facts.push(...(source.item.presentationItemFacts || []).filter(row => JSON.stringify(source.item[row.key]) !== JSON.stringify(primary[row.key])));
-    facts.push(...(source.event?.presentationFacts || []).filter(row => !(primarySource?.event?.presentationFacts || []).some(primaryRow => primaryRow.key === row.key && primaryRow.text === row.text)).map(row => ({...row,sourceEventId:source.event.id})));
     const context = ['quantity','use','useEffect','firstClearOnly','unidentifiedName','identifiedName'].filter(key => source.item[key] != null && JSON.stringify(source.item[key]) !== JSON.stringify(primary[key]));
     const contextLabels = {quantity:'数量',use:'用途',useEffect:'使用效果',firstClearOnly:'仅首通取得',unidentifiedName:'未鉴定名称',identifiedName:'鉴定后名称'};
     context.forEach(key => facts.push({key,label:contextLabels[key],text:structuredValueText(source.item[key])}));
@@ -1029,6 +1028,10 @@ function renderVersionedRewards(record) {
           sourceItemsByName.set(item.name, sources);
         }));
       }
+      const mergedEventFacts = periodicGroup ? '' : events.filter(event => event.items.length && event.items.every(item => primaryItemByName.get(item.name) !== item)).map(event => {
+        if (!(event.presentationFacts || []).length) return '';
+        return `<section class="reward-shared-source"><h4>${escapeHtml(eventLabelFor(event))}：共同取得规则</h4><p>适用物品：${event.items.map(item => formatTaskText(`【${item.name}】`)).join('、')}</p>${renderPresentationFacts(event.presentationFacts.map(row => ({...row,sourceEventId:event.id})))}</section>`;
+      }).join('');
       let renderedItemCount = 0;
       const cards = events.map(rewardEvent => {
         const eventLabel = eventLabelFor(rewardEvent);
@@ -1199,9 +1202,9 @@ function renderVersionedRewards(record) {
       }).filter(Boolean).join('');
       if (useVersionAccordion) {
         const open = groups.length === 0 ? ' open' : '';
-        groups.push(`<details class="reward-subsection reward-accordion"${open}><summary><h3>${escapeHtml(title)}</h3><span>${renderedItemCount} 项奖励</span></summary><div class="structured-reward-list">${cards}</div></details>`);
+        groups.push(`<details class="reward-subsection reward-accordion"${open}><summary><h3>${escapeHtml(title)}</h3><span>${renderedItemCount} 项奖励</span></summary><div class="structured-reward-list">${mergedEventFacts}${cards}</div></details>`);
       } else {
-        groups.push(`<section class="reward-subsection"><h3>${escapeHtml(title)}</h3><div class="structured-reward-list">${cards}</div></section>`);
+        groups.push(`<section class="reward-subsection"><h3>${escapeHtml(title)}</h3><div class="structured-reward-list">${mergedEventFacts}${cards}</div></section>`);
       }
     }
     return groups.join('');
