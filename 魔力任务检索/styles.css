@@ -256,3 +256,11 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var
 .alias-disclosure summary{min-height:44px;padding:8px 10px;color:var(--mint2);font-size:18px;line-height:1.5;cursor:pointer;border:1px solid var(--line);border-radius:10px;width:fit-content;max-width:100%;overflow-wrap:anywhere}
 .alias-disclosure summary:focus-visible{outline:2px solid var(--mint);outline-offset:3px}
 .alias-disclosure .aliases{margin:10px 0 0;line-height:1.7;overflow-wrap:anywhere}
+/* Narrow two-column fact tables become one complete item per row. */
+@media(max-width:760px){
+ .semantic-table,.semantic-table tbody,.semantic-table tbody tr,.semantic-table tbody th,.semantic-table tbody td{display:block;width:100%;min-width:0}
+ .semantic-table thead{display:none}
+ .semantic-table tbody tr{border-bottom:1px solid var(--line)}
+ .semantic-table tbody th,.fact-sections .semantic-table tbody th{min-width:0;border:0;padding:10px 0 4px;color:var(--mint2)}
+ .semantic-table tbody td,.fact-sections .semantic-table tbody td{border:0;padding:0 0 12px;overflow-wrap:anywhere}
+}
