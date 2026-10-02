@@ -770,7 +770,7 @@ for (const questId of allQuestIds) {
 results = search('王宫食堂'); results[0]?.click();
 const kitchenText = window.document.querySelector('#questDetail').textContent;
 const cookingRows = [...window.document.querySelectorAll('[data-step-field="inputs"] tbody tr')];
-for (const [dish,time] of [['蛋包饭','1～2分钟'],['亲子丼','1～3分钟'],['寿喜锅','10～15分钟'],['魅惑的哈密瓜面包','2～7分钟'],['醋饭寿司','5～7分钟'],['鳖料理','1～2分钟'],['鱼翅汤','2～3分钟']]) {
+for (const [dish,time] of [['蛋包饭','1～2'],['亲子丼','1～3'],['寿喜锅','10～15'],['魅惑的哈密瓜面包','2～7'],['醋饭寿司','5～7'],['鳖料理','1～2'],['鱼翅汤','2～3']]) {
   if (!cookingRows.some(row => row.querySelector('th')?.textContent === dish && row.querySelector('td')?.textContent === time)) throw new Error(`王宫食堂料理时间归属错误: ${dish}`);
 }
 if (kitchenText.includes('failure') || ![...window.document.querySelectorAll('.step-route > h4')].some(title => title.textContent === '不合格厨师路线')) throw new Error('王宫食堂失败路线标题错误');

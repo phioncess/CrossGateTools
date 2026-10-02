@@ -404,7 +404,7 @@ const collectionLabels = {
 export function stepSourceSections(step,quest) {
   const result = [];
   const timedInputs = (step.inputs || []).filter(input => input.ageMinutes && input.item);
-  if (timedInputs.length) result.push({key:'inputs',title:'制作后经过时间（分钟）',rows:timedInputs.map(input => ({label:input.item,text:`${input.ageMinutes.min}～${input.ageMinutes.max}分钟`}))});
+  if (timedInputs.length) result.push({key:'inputs',title:'制作后经过时间（分钟）',columns:['料理','时间（分钟）'],rows:timedInputs.map(input => ({label:input.item,text:`${input.ageMinutes.min}～${input.ageMinutes.max}`}))});
   for (const [key,title] of Object.entries(stepCollectionTitles)) {
     const value = step[key];
     if (value == null) continue;

@@ -330,7 +330,7 @@ function renderStepSourceSections(sections) {
   return (sections || []).map(section => {
     const body = section.kind === 'rounds'
       ? (section.rounds || []).map(round => `<section class="step-battle-round"><h4>第${escapeHtml(round.order)}场</h4><div class="enemy-grid">${structuredValues(round.enemies).map(enemy => renderEnemy(enemy)).join('')}</div></section>`).join('')
-      : `<div class="semantic-table-scroll"><table class="semantic-table"><thead><tr><th>${section.key === 'quizBank' ? '问题' : '项目'}</th><th>${section.key === 'quizBank' ? '答案' : '资料与规则'}</th></tr></thead><tbody>${(section.rows || []).map(row => `<tr><th scope="row">${formatTaskText(row.label)}</th><td>${formatTaskText(row.text)}</td></tr>`).join('')}</tbody></table></div>`;
+      : `<div class="semantic-table-scroll"><table class="semantic-table"><thead><tr><th>${escapeHtml(section.columns?.[0] || (section.key === 'quizBank' ? '问题' : '项目'))}</th><th>${escapeHtml(section.columns?.[1] || (section.key === 'quizBank' ? '答案' : '资料与规则'))}</th></tr></thead><tbody>${(section.rows || []).map(row => `<tr><th scope="row">${formatTaskText(row.label)}</th><td>${formatTaskText(row.text)}</td></tr>`).join('')}</tbody></table></div>`;
     return `<section class="step-data-section" data-step-field="${escapeHtml(section.key)}"><h4>${escapeHtml(section.title)}</h4>${body}</section>`;
   }).join('');
 }
