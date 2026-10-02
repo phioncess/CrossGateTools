@@ -739,6 +739,10 @@ for (const questId of allQuestIds) {
       for (const fact of [...(item.presentationFacts || []),...(item.presentationItemFacts || [])]) {
         const nodes = ownedCards.flatMap(card => [...card.querySelectorAll('[data-fact-key]')]);
         if (!nodes.some(node => node.dataset.factKey === fact.key && node.textContent.includes(fact.text))) throw new Error(`道具结构字段漏显或归属错误: ${title} / ${event.id} / ${item.name}.${fact.key}`);
+        for (const section of fact.sections || []) {
+          const sectionNodes = ownedCards.flatMap(card => [...card.querySelectorAll(`[data-step-field="${section.key}"]`)]);
+          for (const row of section.rows || []) if (!sectionNodes.some(node => [...node.querySelectorAll('tbody tr')].some(tr => tr.querySelector('th')?.textContent === row.label && tr.querySelector('td')?.textContent === row.text))) throw new Error(`配方分组遗漏或归属错误: ${title} / ${item.name}.${section.key}.${row.label}`);
+        }
         if (fact.questId && !ownedCards.some(card => card.querySelector(`[data-quest-id="${fact.questId}"]`))) throw new Error(`道具用途任务跳转缺失: ${title} / ${item.name}`);
       }
     }
@@ -780,6 +784,9 @@ if (seasoningCards.length !== 1 || !seasoningCards[0].textContent.includes('额�
 if (kitchenText.includes('step-2-or-tomato')) throw new Error('王宫食堂失效引用泄漏');
 results = search('娜蕾希亚的邀请'); results[0]?.click();
 const memoryCard = window.document.querySelector('[data-reward-name="被支配的记忆"]');
+if (memoryCard?.querySelector('[data-fact-key="reusable"]')?.textContent !== '可重复使用') throw new Error('可重复使用规则仍显示布尔字段');
+const recipeCard = window.document.querySelector('[data-reward-name="头目帽子的制法"]');
+if (recipeCard?.querySelectorAll('[data-step-field="recipe-materials"] tbody tr').length !== 4 || !recipeCard?.querySelector('[data-step-field="recipe-result"]')?.textContent.includes('头目帽子')) throw new Error('头目帽子配方材料/成品分组错误');
 if (!memoryCard || !memoryCard.textContent.includes('传送至头目的房间前') || !memoryCard.textContent.includes('不可交易')) throw new Error('可重复传送道具未保留用途和规则');
 const memoryKey = window.document.querySelector('.key-items-card');
 if (!memoryKey?.textContent.includes('被支配的记忆') || !memoryKey.textContent.includes('重复任务路线') || !memoryKey.textContent.includes('完成后')) throw new Error('被支配的记忆重复路线未进入关键道具去向');

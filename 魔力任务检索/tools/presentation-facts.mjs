@@ -96,7 +96,7 @@ export function rewardPropertyFacts(item) {
   const properties = {...item.commonProperties, ...item.properties, ...item.appraisedProperties};
   return Object.entries(properties).filter(([key]) => !rewardBaseFields.has(key) && !evidenceKeys.has(key)).map(([key, value]) => {
     if (!labels[key]) throw new Error(`未定义奖励属性展示: ${key}`);
-    return {key, label:labels[key], text:factText(value)};
+    return {key, label:key === 'reusable' && value === true ? '' : labels[key], text:key === 'reusable' && value === true ? labels[key] : factText(value)};
   }).filter(row => row.text);
 }
 
@@ -105,7 +105,7 @@ export function allRewardPropertyFacts(item) {
   return Object.entries(properties).filter(([key]) => !evidenceKeys.has(key)).map(([key, value]) => {
     const label = labels[key] || baseLabels[key];
     if (!label) throw new Error(`未定义奖励属性展示: ${key}`);
-    return {key,label,text:factText(value, {...nestedLabels, weapon:'武器', armor:'防具', accessory:'饰品'})};
+    return {key,label:key === 'reusable' && value === true ? '' : label,text:key === 'reusable' && value === true ? label : factText(value, {...nestedLabels, weapon:'武器', armor:'防具', accessory:'饰品'})};
   }).filter(row => row.text);
 }
 
@@ -335,6 +335,13 @@ export function rewardItemFacts(item, quest) {
   const rows = [];
   for (const [key,value] of Object.entries(item)) {
     if (itemHandledKeys.has(key)) continue;
+    if (key === 'recipe' && Array.isArray(value?.materials) && value.result && typeof value.result === 'object') {
+      rows.push({key,label:'配方',text:`${value.result.name || item.name}制作配方`,sections:[
+        {key:'recipe-materials',title:'制作材料',columns:['材料','数量'],rows:value.materials.map(material => ({label:material.item,text:String(material.quantity)}))},
+        {key:'recipe-result',title:'制作成品',columns:['属性','数值与效果'],rows:Object.entries(value.result).filter(([field]) => !evidenceKeys.has(field)).map(([field,result]) => ({label:itemNestedLabels[field] || field,text:factText(result,itemNestedLabels)}))},
+      ]});
+      continue;
+    }
     if (item.purchase && key === 'resultPet') continue;
     if (!itemFactLabels[key]) throw new Error(`未定义奖励物品字段展示: ${key}`);
     const keyedFields = new Set(['versionEffects','effectsByUse','pre2023IncrementTable','serverVariants','serverAvailability','serverEffects','serverNotes','serverRules','titleEffects','featuredByVersion','equippedTitles','perPartProbability','perItemProbability']);
