@@ -238,4 +238,13 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var
   .reward-accordion>.structured-reward-list{padding:8px}
   .acquisition-event-card{padding:12px}
   .acquisition-item,.reward-equipment-variant{padding:10px}
+  /* 17-09: primary item names must not compete with the trade-rule column. */
+  .compact-rewards>.acquisition-item{grid-template-columns:minmax(0,1fr)}
+  .compact-rewards>.acquisition-item>.reward-rule{grid-column:1;grid-row:auto}
+  .compact-rewards>.acquisition-item>.reward-attributes{grid-row:auto}
+  /* 17-10/17-11/17-12: allow narrow content to wrap instead of forcing grid widths. */
+  .step-content{overflow-wrap:anywhere}
+  .boss-list{grid-template-columns:minmax(0,1fr)}
+  .boss-fight{min-width:0}
+  .source-images figcaption{flex-wrap:wrap}
 }
