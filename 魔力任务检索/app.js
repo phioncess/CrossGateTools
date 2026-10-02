@@ -642,7 +642,7 @@ const ENCOUNTER_RENDERED_FIELDS = new Set([
   'level','levelRange','enemyLevel','enemyLevelApprox','count','enemyCount','skills','enemySkills'
 ]);
 const BATTLE_RENDERED_FIELDS = new Set([
-  'id','key','heading','headings','title','name','enemies','rounds','randomOneOf','consecutiveBattles','strategy','strategyNotes','notes','sourceLines','verification','order','triggerStep'
+  'id','key','heading','headings','overview','title','name','enemies','rounds','randomOneOf','consecutiveBattles','strategy','strategyNotes','notes','sourceLines','verification','order','triggerStep'
 ]);
 const BATTLE_PART_RENDERED_FIELDS = new Set([
   'id','title','name','enemies','strategy','strategies','notes','sourceLines','verification','order','triggerStep','headerElements'
@@ -1244,6 +1244,7 @@ function renderQuest(quest, updateHash = true) {
     <article class="boss-fight">
       <div class="boss-heading"><span>${fight.kind}</span><h4>${formatTaskText(fight.title)}</h4>${stepRef ? `<em class="boss-step">${stepRef}</em>` : ''}</div>
       ${fight.sourceDetails?.heading ? `<p class="battle-origin">${formatTaskText(fight.sourceDetails.heading)}</p>` : ''}
+      ${fight.sourceDetails?.overview?.text ? `<p class="battle-origin">${formatTaskText(fight.sourceDetails.overview.text)}</p>` : ''}
       ${fightFacts.length ? `<div class="battle-notes"><b>战斗说明</b><ul>${fightFacts.map(note => `<li>${formatTaskText(note)}</li>`).join('')}</ul></div>` : ''}
       ${(fight.sourceDetailGroups || [{source:fight.sourceDetails, renderedFields:fight.renderedSourceFields}]).map(group => renderStructuredFields(group.source, group.renderedFields, '区域／战斗补充资料')).join('')}
       <div class="enemy-list">${fight.enemies.map(renderEnemy).join('')}</div>

@@ -173,7 +173,7 @@ export function stepPresentationFacts(step, quest) {
     if (key === 'optional' && step.optional === true && step.branch) continue;
     let text = factText(step[key], stepNestedLabels);
     if (key === 'condition' && /^level>=\d+$/.test(text)) text = `等级不低于${text.slice(7)}`;
-    rows.push({key,label,text});
+    rows.push({key,label:typeof step[key] === 'boolean' && step[key] === true ? '' : label,text:typeof step[key] === 'boolean' && step[key] === true ? label : text});
   }
   const rewardRefs = [...(step.rewardEventRefs || []), ...[step.rewardEventRef,step.rewardPool].filter(Boolean)];
   // Reward references connect this step to the acquisition section; do not repeat its entire item pool here.
