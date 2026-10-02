@@ -816,6 +816,11 @@ for (const [name,required] of [
   const option=search(name).find(node=>node.textContent.includes(name));option?.click();
   const text=window.document.querySelector('#questDetail').textContent;
   for(const value of required)if(!text.includes(value))throw Error(`第19轮资料回归遗漏 ${name}: ${value}`);
+  if(name==='就职武器/防具类制造师'){
+    const aliases=window.document.querySelector('.alias-disclosure');
+    if(!aliases||aliases.open||!aliases.textContent.includes('铸剑工就职'))throw Error('长别名未默认折叠或丢失搜索名称');
+    if(!text.includes('法兰城冒险者旅馆路线入口'))throw Error('制造师地点缺少行动上下文');
+  }
 }
 results=search('勇气max');results[0]?.click();
 const courageRecord=Object.values(window.QUEST_DATA.quests).find(q=>q.name==='勇气max');

@@ -1290,7 +1290,9 @@ function renderQuest(quest, updateHash = true) {
       <div>
         <p class="eyebrow">${quest.series || quest.sourceCategory || quest.type || '独立任务'}</p>
         <h2>${quest.name}</h2>
-        <p class="aliases">${quest.aliases.join(' · ')}</p>
+        ${quest.aliases.length > 4
+          ? `<details class="alias-disclosure"><summary>别名与搜索词（${quest.aliases.length}）</summary><p class="aliases">${quest.aliases.map(escapeHtml).join(' · ')}</p></details>`
+          : quest.aliases.length ? `<p class="aliases">${quest.aliases.map(escapeHtml).join(' · ')}</p>` : ''}
       </div>
       <div class="detail-badges"><span>${quest.type}</span><span>${quest.level}</span><span>来源资料已整理</span></div>
     </header>
