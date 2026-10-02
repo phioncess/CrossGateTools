@@ -323,7 +323,7 @@ function renderPresentationFacts(facts, displayedLabels = []) {
     seen.add(signature);
     return true;
   });
-  return rows.length ? `\n<dl class="reward-fact-list semantic-facts">${rows.map(row => `<div data-fact-key="${escapeHtml(row.key)}"${row.sourceEventId ? ` data-fact-event="${escapeHtml(row.sourceEventId)}"` : ''}><dt>${escapeHtml(row.label)}</dt><dd>${formatTaskText(row.text)}${renderStepSourceSections(row.sections)}${row.questId ? relationButton(row.questId, '查看任务') : ''}</dd></div>`).join('\n')}</dl>\n` : '';
+  return rows.length ? `\n<dl class="reward-fact-list semantic-facts">${rows.map(row => `<div data-fact-key="${escapeHtml(row.key)}"${row.sourceEventId ? ` data-fact-event="${escapeHtml(row.sourceEventId)}"` : ''}><dt>${escapeHtml(row.label)}</dt><dd>${formatTaskText(row.text)}${row.sections?.length ? `<div class="fact-sections">${renderStepSourceSections(row.sections)}</div>` : ''}${row.questId ? relationButton(row.questId, '查看任务') : ''}</dd></div>`).join('\n')}</dl>\n` : '';
 }
 
 function renderStepSourceSections(sections) {

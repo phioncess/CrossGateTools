@@ -208,3 +208,9 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var
 .semantic-facts>div:has(dt:empty){display:block}
 
 .acquisition-item-grid:not(.compact-rewards)>.acquisition-item:only-child{column-span:all;width:100%}
+/* 15-03: structured recipe groups need the full fact row. */
+.semantic-facts>div:has(.fact-sections){display:block;flex:0 0 100%;width:100%;min-width:0}
+.semantic-facts>div:has(.fact-sections)>dt{margin-bottom:6px}
+.semantic-facts>div:has(.fact-sections)>dd{width:100%;min-width:0}
+.fact-sections{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;min-width:0}
+@media(max-width:760px){.fact-sections{grid-template-columns:1fr;gap:0}.fact-sections .semantic-table th:first-child{min-width:100px}.fact-sections .semantic-table th,.fact-sections .semantic-table td{padding:10px 8px}}
