@@ -800,6 +800,23 @@
         "version": "common",
         "tier": "common"
       }
+    ],
+    "uses": [
+      {
+        "item": "被支配的记忆",
+        "step": "ranger-branch",
+        "purpose": "repeat-route",
+        "route": "头目的房间前",
+        "text": "保留【被支配的记忆】；任务完成后双击仍可传送至头目的房间前，并与NPC对话进入战斗。",
+        "sourceLines": [
+          9,
+          26
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "source-semantic-review-20261002"
+        }
+      }
     ]
   },
   "segments": [
@@ -1284,6 +1301,45 @@
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
+      }
+    },
+    {
+      "id": "controlled-memory",
+      "version": "common",
+      "tier": "common",
+      "kind": "quest-branch-reward",
+      "step": "ranger-branch",
+      "condition": "游侠职业",
+      "items": [
+        {
+          "id": "controlled-memory",
+          "name": "被支配的记忆",
+          "role": "valuable-result",
+          "properties": {
+            "reusable": true,
+            "tradeable": false,
+            "useEffect": "双击传送至头目的房间前"
+          },
+          "futureUses": "任务完成后保留，仍可双击传送并与NPC对话进入战斗",
+          "sourceLines": [
+            8,
+            9,
+            26
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "source-semantic-review-20261002"
+          }
+        }
+      ],
+      "sourceLines": [
+        8,
+        9,
+        26
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "source-semantic-review-20261002"
       }
     }
   ],

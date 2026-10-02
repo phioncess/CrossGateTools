@@ -145,3 +145,29 @@ body{font-size:17px}.brand small,.record-count,.finder-foot,.chain-hint,.none-no
 .compact-rewards>.acquisition-item>.reward-attributes{grid-column:1 / -1;grid-row:2}
 .compact-rewards>.acquisition-item>.reward-fact-list,.compact-rewards>.acquisition-item>p:not(.reward-rule),.compact-rewards>.acquisition-item>.reward-reference-list{grid-column:1 / -1}
 }
+
+/* Explicit business tables and source differences; keep readable on small screens. */
+.semantic-facts { margin: 10px 0; }
+.semantic-facts dt { font-size: 18px; }
+.semantic-facts dd { font-size: 16px; line-height: 1.65; overflow-wrap: anywhere; }
+.step-content > .semantic-facts > div {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2px;
+  padding: 7px 12px;
+  border-left: 2px solid var(--line);
+  background: var(--panel);
+}
+.step-content > .semantic-facts dt { line-height: 1.65; overflow-wrap: anywhere; }
+.step-data-section { margin: 16px 0; min-width: 0; }
+.step-data-section > h4 { font-size: 18px; margin: 0 0 8px; }
+.semantic-table-scroll { max-width: 100%; overflow-x: auto; }
+.semantic-table { width: 100%; border-collapse: collapse; }
+.semantic-table th, .semantic-table td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; line-height: 1.65; }
+.semantic-table th { font-size: 18px; font-weight: 500; }
+.semantic-table td { font-size: 16px; overflow-wrap: anywhere; }
+.semantic-table th:first-child { min-width: 130px; }
+.reward-source-variant { margin: 10px 0; padding-left: 12px; border-left: 2px solid var(--gold); }
+.reward-source-variant > b { font-size: 18px; }
+.compact-rewards > .acquisition-item > .reward-source-variant { grid-column: 2 / -1; }
+@media(max-width:760px) { .compact-rewards > .acquisition-item > .reward-source-variant { grid-column: 1 / -1; } }
+.semantic-facts .relation-link { margin-top: 8px; max-width: 100%; }

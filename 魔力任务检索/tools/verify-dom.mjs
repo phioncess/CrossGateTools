@@ -153,6 +153,18 @@ for (const text of ['魔龙德拉贡', 'Lv.80', '17000', '大地之怒', '合击
 for (const text of ['艾斯潘头饰', '攻击 +8～+10', '分离的恋人']) {
   if (!dragonRewardText.includes(text)) throw new Error(`魔龙奖励区缺少来源文字: ${text}`);
 }
+const dragonRecord = window.QUEST_DATA.quests['catalog-071a62df-299d-49ec-be9e-b6390e768bc9'];
+if (dragonRecord.flow.steps.length !== 14 || dragonRecord.flow.steps[6].id !== 'sealed-cave' || dragonRecord.flow.steps[11].id !== 'return-reward') {
+  throw new Error('魔龙主线未恢复原攻略12步或练级入口步骤错位');
+}
+for (const text of ['11.14','31.9','36.12','10.7','12.11','195.176','20.22','68.41','72.77','15.11','34.21','72.76','64.40','9.13','56.13','103.102','51.46','64.47','66.41','94.48','22.8','物品栏或银行','第9步','2026.05.23','从第1步重接','纪念羽毛','村落传送券']) {
+  if (!dragonGuideText.includes(text)) throw new Error(`魔龙路线事实遗漏: ${text}`);
+}
+for (const text of ['艾斯潘之石','碎裂的艾斯潘之石','攻击+10%','耐久-20%','注销时消失','不可交易','手机','收不到讯号','可爱水手服','假发','500G','200G']) {
+  if (!dragonRewardText.includes(text)) throw new Error(`魔龙有价值道具事实遗漏: ${text}`);
+}
+const dragonSkills = dragonRecord.versions.common.tiers.common.battles.dragon.enemies[0].skills;
+if (dragonSkills.filter(skill => skill.startsWith('连击')).length !== 1) throw new Error('魔龙连击技能重复');
 
 results = search('白之意志');
 const rememberedQuest = results.find(option => option.textContent.includes('白之意志、黑之意志'));
@@ -566,9 +578,20 @@ for (const questId of allQuestIds) {
   const renderedSteps = [...window.document.querySelectorAll('.quest-steps > li')];
   if (!renderedSteps.length) throw new Error(`任务没有流程步骤: ${title}`);
   if (renderedSteps.length !== structuredRecord.flow.steps.length) throw new Error(`结构化流程步骤数量不一致: ${title}`);
-  const coreStepFields = new Set(['id','order','text','route','branch','notes','inputs','outputs','choices','quiz','commands','operations','branchGroups','afterOperations','battleRef','battleRefs','allowsIntermediateOutputThenInput','sourceLines','verification']);
+  const coreStepFields = new Set(['id','order','text','route','branch','notes','inputs','outputs','choices','quiz','commands','operations','branchGroups','afterOperations','battleRef','battleRefs','allowsIntermediateOutputThenInput','sourceLines','verification','presentationFacts','presentationInteractions','presentationSections','equipmentRefs','duplicateSourceLines']);
   structuredRecord.flow.steps.forEach((step, stepIndex) => {
-    const renderedSupplementFields = new Set([...renderedSteps[stepIndex].querySelectorAll('[data-source-field]')].map(node => node.dataset.sourceField));
+    const renderedSupplementFields = new Set([...renderedSteps[stepIndex].querySelectorAll('[data-source-field], [data-fact-key], [data-step-field]')].map(node => node.dataset.sourceField || node.dataset.factKey || node.dataset.stepField));
+    if (renderedSteps[stepIndex].querySelector('[data-fact-key^="inputs-"], [data-fact-key^="outputs-"]')) throw new Error(`流程重复展开输入输出元数据: ${title} -> ${step.id}`);
+    for (const fact of step.presentationFacts || []) {
+      const factNode = [...renderedSteps[stepIndex].querySelectorAll('[data-fact-key]')].find(node => node.dataset.factKey === fact.key);
+      if (!factNode?.textContent.includes(fact.text)) throw new Error(`步骤语义字段未完整展示: ${title} -> ${step.id}.${fact.key}`);
+    }
+    if (renderedSupplementFields.has('rewardEventRefs')) ['rewardEventRef','rewardPool'].forEach(key => renderedSupplementFields.add(key));
+    for (const section of step.presentationSections || []) {
+      const node = [...renderedSteps[stepIndex].querySelectorAll('[data-step-field]')].find(node => node.dataset.stepField === section.key);
+      if (!node) throw new Error(`流程独立资料未展示: ${title} -> ${step.id}.${section.key}`);
+      for (const row of section.rows || []) if (!node.textContent.includes(row.label) || !node.textContent.includes(row.text)) throw new Error(`流程表格资料遗漏: ${title} -> ${step.id}.${section.key}`);
+    }
     const actionLabels = [...renderedSteps[stepIndex].querySelectorAll('.step-actions .step-item-action')].map(node => node.textContent);
     if (Boolean(step.commands?.length) !== actionLabels.includes('输入文字')) throw new Error(`输入文字标签与数据不一致: ${title} / ${step.id}`);
     const operations = [...renderedSteps[stepIndex].querySelectorAll('.step-operations > li')];
@@ -694,6 +717,28 @@ for (const questId of allQuestIds) {
     throw new Error(`奖励区生成空白列表项: ${title}`);
   }
   const renderedRewardNames = new Set([...window.document.querySelectorAll('.rewards-card .acquisition-item h4')].map(node => node.textContent.replace(/[【】]/g, '').trim()));
+  const rewardCardsWithScope = [...window.document.querySelectorAll('.rewards-card .acquisition-item[data-reward-name]')];
+  for (const event of structuredRecord.rewardEvents || []) {
+    const cards = rewardCardsWithScope.filter(card => card.dataset.rewardVersion === (event.version || 'common') && card.dataset.rewardTier === (event.tier || 'common'));
+    for (const item of event.items.filter(item => item.role === 'valuable-result')) {
+      const ownedCards = cards.filter(card => card.dataset.rewardName === item.name);
+      for (const fact of [...(item.presentationFacts || []),...(item.presentationItemFacts || [])]) {
+        const nodes = ownedCards.flatMap(card => [...card.querySelectorAll('[data-fact-key]')]);
+        if (!nodes.some(node => node.dataset.factKey === fact.key && node.textContent.includes(fact.text))) throw new Error(`道具结构字段漏显或归属错误: ${title} / ${event.id} / ${item.name}.${fact.key}`);
+        if (fact.questId && !ownedCards.some(card => card.querySelector(`[data-quest-id="${fact.questId}"]`))) throw new Error(`道具用途任务跳转缺失: ${title} / ${item.name}`);
+      }
+    }
+    const eventNodes = [...window.document.querySelectorAll('[data-fact-event]')].filter(node => node.dataset.factEvent === event.id);
+    for (const fact of event.presentationFacts || []) {
+      if (!event.items.some(item => item.role === 'valuable-result')) continue;
+      // A fact identical to the primary source may share its existing event header;
+      // a differing fact must remain marked with its own event evidence.
+      if (!eventNodes.some(node => node.dataset.factKey === fact.key && node.textContent.includes(fact.text))) {
+        const sameFact = cards.some(card => card.closest('.reward-subsection')?.textContent.includes(fact.text));
+        if (!sameFact) throw new Error(`获得事件条件遗漏: ${title} / ${event.id}.${fact.key}`);
+      }
+    }
+  }
   for (const rewardItem of (structuredRecord.rewardEvents || []).flatMap(event => event.items || []).filter(item => item.role === 'valuable-result' && !(item.purchase && item.resultPet))) {
     const resolvedName = rewardItem.displayName || rewardItem.identifiedName || rewardItem.appraisalResult || rewardItem.identifiedAs || rewardItem.name;
     if (typeof resolvedName === 'string' && !renderedRewardNames.has(resolvedName)) {
@@ -707,6 +752,19 @@ for (const questId of allQuestIds) {
     }
   }
 }
+
+results = search('王宫食堂'); results[0]?.click();
+const kitchenText = window.document.querySelector('#questDetail').textContent;
+for (const text of ['（111.148）','（72.104）','制作后经过时间（分钟）','蛋包饭','1～2','10～15','料理技能耗魔减少（%）','10']) if (!kitchenText.includes(text)) throw new Error(`王宫食堂结构事实遗漏: ${text}`);
+const seasoningCards = [...window.document.querySelectorAll('[data-reward-name="味精"]')];
+if (seasoningCards.length !== 1 || !seasoningCards[0].textContent.includes('额外回复10点魔力')) throw new Error('味精多来源合并遗漏独立用途或生成重复卡');
+if (kitchenText.includes('step-2-or-tomato')) throw new Error('王宫食堂失效引用泄漏');
+results = search('娜蕾希亚的邀请'); results[0]?.click();
+const memoryCard = window.document.querySelector('[data-reward-name="被支配的记忆"]');
+if (!memoryCard || !memoryCard.textContent.includes('传送至头目的房间前') || !memoryCard.textContent.includes('不可交易')) throw new Error('可重复传送道具未保留用途和规则');
+const memoryKey = window.document.querySelector('.key-items-card');
+if (!memoryKey?.textContent.includes('被支配的记忆') || !memoryKey.textContent.includes('重复任务路线') || !memoryKey.textContent.includes('完成后')) throw new Error('被支配的记忆重复路线未进入关键道具去向');
+if (window.document.querySelector('.detail-badges').textContent.includes('已核验')) throw new Error('页面仍用整理标记声称资料已通过实际验收');
 
 if (genericSupplementFields.size) {
   throw new Error(`页面仍使用无语义“补充信息”标签：${[...genericSupplementFields].map(([field, title]) => `${field}（${title}）`).join('、')}`);

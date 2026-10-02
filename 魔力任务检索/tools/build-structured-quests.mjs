@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { loadQuestDatabase, projectDir, questRecordsDir } from './quest-database.mjs';
 import { validateQuestV3 } from './quest-schema-v3.mjs';
+import { compilePresentationFacts } from './presentation-facts.mjs';
 
 const outputPath = path.join(projectDir, 'quest-data.js');
 const reportPath = path.join(projectDir, 'structured-data-report.json');
@@ -90,12 +91,16 @@ if (report.errors.length) {
   throw new Error(`结构化数据发布失败：${report.errors.length} 个任务存在错误。旧任务文件不会参与恢复。`);
 }
 
-writeText(outputPath, `// 自动生成：唯一权威来源为 data-src/database.json 与 data-src/quests/*.json。\nglobalThis.QUEST_DATA = ${JSON.stringify(database)};\n`);
+const presentationCoverage = compilePresentationFacts(database);
+report.presentationCoverage = presentationCoverage;
+writeText(reportPath, `${JSON.stringify(report, null, 2)}\n`);
+writeText(outputPath, `// 自动生成：唯一权威来源为 data-src/database.json 与 data-src/quests/*.json；展示字段由 tools/presentation-facts.mjs 显式编译。\nglobalThis.QUEST_DATA = ${JSON.stringify(database)};\n`);
 console.log(JSON.stringify({
   mode: 'publish-structured-data-only',
   sourcePath: questRecordsDir,
   outputPath,
   reportPath,
   legacyRecovery: false,
+  presentationCoverage,
   ...report
 }, null, 2));

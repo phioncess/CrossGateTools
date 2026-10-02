@@ -298,7 +298,7 @@
       {
         "id": "step-1",
         "order": 1,
-        "text": "前往法兰城王宫食堂与培里·贝肯（15.7）对话。",
+        "text": "前往法兰城王宫食堂（111.148）与培里·贝肯（15.7）对话。",
         "inputs": [],
         "outputs": [],
         "notes": [],
@@ -453,7 +453,27 @@
             }
           }
         ],
-        "notes": [],
+        "notes": [
+          {
+            "text": "制作后经过时间（分钟）：蛋包饭1～2、亲子丼1～3、寿喜锅10～15、魅惑的哈密瓜面包2～7、醋饭寿司5～7、鳖料理1～2、鱼翅汤2～3；任选符合时间的一种交付。",
+            "type": "note",
+            "sourceLines": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          }
+        ],
         "inputSelection": "one-of",
         "sourceLines": [
           2,
@@ -668,7 +688,7 @@
       {
         "id": "failed-chef",
         "order": 8,
-        "text": "不合格厨师路线：超过规定时间交料理、交出制作超过一天的面包，或交出NPC购买的糖果，均可获得称号“不合格厨师”。糖果来源为法兰城陶欧食品店塔妮雅（18.7）。",
+        "text": "不合格厨师路线：超过规定时间交料理、交出制作超过一天的面包，或交出NPC购买的糖果，均可获得称号“不合格厨师”。糖果来源为法兰城陶欧食品店（72.104）塔妮雅（18.7）。",
         "inputs": [
           {
             "item": "超时料理或超一天面包或NPC糖果",
@@ -1400,7 +1420,6 @@
           },
           "sourceLines": [
             2,
-            18,
             19,
             20
           ],
@@ -1410,10 +1429,9 @@
           }
         }
       ],
-      "step": "step-2-or-tomato",
+      "step": "step-2",
       "sourceLines": [
         2,
-        18,
         19,
         20
       ],
@@ -1503,6 +1521,52 @@
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
+      }
+    },
+    {
+      "id": "umami-seasoning-tomato",
+      "version": "common",
+      "tier": "common",
+      "kind": "exchange-recipe",
+      "step": "tomato-exchange",
+      "items": [
+        {
+          "id": "umami-seasoning-tomato",
+          "name": "味精",
+          "role": "valuable-result",
+          "properties": {
+            "tradeable": false,
+            "cookingEffect": "加入任意料理后，使用时额外回复10点魔力"
+          },
+          "sourceLines": [
+            18,
+            19,
+            20
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-semantic-review"
+          },
+          "cost": {
+            "item": "番茄",
+            "quantity": 1
+          }
+        }
+      ],
+      "inputs": [
+        {
+          "item": "番茄",
+          "quantity": 1
+        }
+      ],
+      "sourceLines": [
+        18,
+        19,
+        20
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "source-semantic-review-20261002"
       }
     }
   ],

@@ -541,8 +541,38 @@
       {
         "id": "map-fragments",
         "order": 1,
-        "text": "由符合女性形象条件的队员向裘尼依次选“否、是”，取得【两块地图碎片】；男性可按原文所列装扮或带队方式满足。",
-        "inputs": [],
+        "text": "前往亚诺曼城比利啤酒屋（196.129），队伍中一女性角色与水手裘尼（17.8）对话，依次选“否”、“是”，获得【两块地图碎片】。",
+        "inputs": [
+          {
+            "item": "G",
+            "quantity": 500,
+            "currency": true,
+            "action": "hand-over",
+            "condition": "仅购买可爱水手服时支付",
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          },
+          {
+            "item": "G",
+            "quantity": 200,
+            "currency": true,
+            "action": "hand-over",
+            "condition": "仅购买假发时支付",
+            "sourceLines": [
+              5,
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          }
+        ],
         "outputs": [
           {
             "item": "两块地图碎片",
@@ -555,9 +585,92 @@
               "status": "verified",
               "method": "manual-semantic-review"
             }
+          },
+          {
+            "item": "可爱水手服",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "role": "valuable-result",
+            "condition": "可选购买，需支付500G",
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          },
+          {
+            "item": "假发",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "role": "valuable-result",
+            "condition": "可选购买，需支付200G",
+            "sourceLines": [
+              5,
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
           }
         ],
-        "notes": [],
+        "notes": [
+          {
+            "text": "男性角色需在啤酒屋外向COSPLAY商人（193.132）购买并装备【可爱水手服】（500G）或【假发】（200G）。",
+            "type": "note",
+            "sourceLines": [
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          },
+          {
+            "text": "全男性忍者队可新建女性角色，分2次带队完成第2、3步后再组队；也可用《神秘豪宅》支线【蝴蝶结】（怀旧/时长服），或【露比限时变身卡】（怀旧服）。时长服四转及以上忍者可装备衣服/帽子。",
+            "type": "note",
+            "sourceLines": [
+              8,
+              9,
+              10,
+              11,
+              13
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          },
+          {
+            "text": "【露比限时变身卡】由法兰城冒险者旅馆一楼NPC（23.7）出售，50000G，7天内不限次数使用，不可交易、不可重复购买。",
+            "type": "note",
+            "sourceLines": [
+              12
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          },
+          {
+            "text": "选“是”并交出相关道具可注销任务；持有【艾斯潘之石】【碎裂的艾斯潘之石】【艾斯潘头饰】与裘尼对话时，这些道具会被收走。",
+            "type": "warning",
+            "sourceLines": [
+              7,
+              14
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          }
+        ],
         "sourceLines": [
           1,
           2,
@@ -576,13 +689,13 @@
         ],
         "verification": {
           "status": "verified",
-          "method": "manual-semantic-review"
+          "method": "manual-source-fact-review"
         }
       },
       {
         "id": "research-center",
         "order": 2,
-        "text": "队伍一人持地图碎片与研究员传入SE研究中心，再持碎片调查大地图，全队挑战研究员。",
+        "text": "进入SE研究中心支部，调查大地图挑战研究员。",
         "inputs": [
           {
             "item": "两块地图碎片",
@@ -601,7 +714,6 @@
         ],
         "outputs": [],
         "notes": [],
-        "battleRef": "researcher",
         "sourceLines": [
           15,
           16,
@@ -610,13 +722,36 @@
         ],
         "verification": {
           "status": "verified",
-          "method": "manual-semantic-review"
-        }
+          "method": "manual-source-fact-review"
+        },
+        "operations": [
+          {
+            "text": "队伍中一人持有【两块地图碎片】与研究员（11.14）对话，全队传送至SE研究中心支部。",
+            "sourceLines": [
+              15
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          },
+          {
+            "text": "队伍中一人持有【两块地图碎片】调查大地图（31.9）进入战斗。",
+            "sourceLines": [
+              16
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          }
+        ],
+        "battleRef": "researcher"
       },
       {
         "id": "remaining-map",
         "order": 3,
-        "text": "战后由一人交出两块地图碎片切换场景；随后每名队员各自调查大地图取得【剩下的地图块】，再由门返回酒吧。该物可让下次练级直接从第4步开始。",
+        "text": "战后交出碎片切换场景，每名队员取得【剩下的地图块】，返回比利啤酒屋。",
         "inputs": [
           {
             "item": "两块地图碎片",
@@ -646,7 +781,19 @@
             }
           }
         ],
-        "notes": [],
+        "notes": [
+          {
+            "text": "练级用【剩下的地图块】不要丢；下次练级可直接从第4步开始。",
+            "type": "warning",
+            "sourceLines": [
+              21
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          }
+        ],
         "sourceLines": [
           19,
           20,
@@ -654,13 +801,35 @@
         ],
         "verification": {
           "status": "verified",
-          "method": "manual-semantic-review"
-        }
+          "method": "manual-source-fact-review"
+        },
+        "operations": [
+          {
+            "text": "战斗胜利后调查大地图（31.9），队伍中一人交出【两块地图碎片】，全队变更场景。",
+            "sourceLines": [
+              19
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          },
+          {
+            "text": "队伍每名队员再次调查大地图（31.9），获得【剩下的地图块】。调查研究室的门（36.12）传送至比利啤酒屋。",
+            "sourceLines": [
+              20
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          }
+        ]
       },
       {
         "id": "beer-ticket",
         "order": 4,
-        "text": "付100G买啤酒；持剩下地图块向阿帕交啤酒换证明，再反复猜拳直至胜利取得船票。持艾斯潘头饰时不能完成。",
+        "text": "与酒保（10.7）对话，交出100G购买【啤酒】。",
         "inputs": [
           {
             "item": "G",
@@ -669,18 +838,6 @@
             "currency": true,
             "sourceLines": [
               22
-            ],
-            "verification": {
-              "status": "verified",
-              "method": "manual-semantic-review"
-            }
-          },
-          {
-            "item": "啤酒",
-            "quantity": 1,
-            "action": "hand-over",
-            "sourceLines": [
-              23
             ],
             "verification": {
               "status": "verified",
@@ -700,7 +857,49 @@
               "status": "verified",
               "method": "manual-semantic-review"
             }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          22
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-source-fact-review"
+        }
+      },
+      {
+        "id": "appa-ticket",
+        "order": 5,
+        "text": "持【剩下的地图块】向水手阿帕（12.11）交【啤酒】取得证明，再猜拳赢得【船票】。",
+        "inputs": [
+          {
+            "item": "剩下的地图块",
+            "quantity": 1,
+            "action": "hold",
+            "consumed": false,
+            "sourceLines": [
+              23
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
           },
+          {
+            "item": "啤酒",
+            "quantity": 1,
+            "action": "hand-over",
+            "sourceLines": [
+              23
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "outputs": [
           {
             "item": "阿帕的证明",
             "quantity": 1,
@@ -726,23 +925,55 @@
             }
           }
         ],
-        "notes": [],
-        "allowsIntermediateOutputThenInput": true,
+        "notes": [
+          {
+            "text": "持有【艾斯潘头饰】无法完成这一步。",
+            "type": "warning",
+            "sourceLines": [
+              25
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          }
+        ],
         "sourceLines": [
-          22,
           23,
           24,
           25
         ],
         "verification": {
           "status": "verified",
-          "method": "manual-semantic-review"
-        }
+          "method": "manual-source-fact-review"
+        },
+        "operations": [
+          {
+            "text": "持有【剩下的地图块】与水手阿帕（12.11）对话，交出【啤酒】获得【阿帕的证明】。",
+            "sourceLines": [
+              23
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          },
+          {
+            "text": "再与水手阿帕对话进行猜拳，输入“剪刀”、“石头”或“布”，若胜利获得【船票】，若失败需重复本步骤直至胜利为止。",
+            "sourceLines": [
+              24
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          }
+        ]
       },
       {
         "id": "sail",
-        "order": 5,
-        "text": "向船长交船票取得票根并上铁艾泥号，等待4至9分钟后凭票根到白湾沙滩；丢票根会被送死之岛，超时回亚诺曼。",
+        "order": 6,
+        "text": "乘铁艾泥号前往白湾沙滩。",
         "inputs": [
           {
             "item": "船票",
@@ -771,7 +1002,41 @@
             }
           }
         ],
-        "notes": [],
+        "notes": [
+          {
+            "text": "◆在铁艾泥号上若丢弃【票根】，与卡诺斯船长对话会传送至死之岛，任务中断",
+            "type": "warning",
+            "sourceLines": [
+              28
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          },
+          {
+            "text": "◆若物品栏或银行内有【艾斯潘的头饰】或【碎裂的艾斯潘之石】，与卡诺斯船长对话无反应",
+            "type": "warning",
+            "sourceLines": [
+              29
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          },
+          {
+            "text": "◆若超过时间则会被送回亚诺曼城",
+            "type": "warning",
+            "sourceLines": [
+              30
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          }
+        ],
         "sourceLines": [
           26,
           27,
@@ -781,16 +1046,76 @@
         ],
         "verification": {
           "status": "verified",
-          "method": "manual-semantic-review"
-        }
+          "method": "manual-source-fact-review"
+        },
+        "operations": [
+          {
+            "text": "前往亚诺曼城（195.176）处与卡诺斯船长对话，交出【船票】获得【票根】并传送至铁艾泥号。",
+            "sourceLines": [
+              26
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          },
+          {
+            "text": "等待4~9分钟后与卡诺斯船长（20.22）对话传送至白湾沙滩。",
+            "sourceLines": [
+              27
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          }
+        ]
       },
       {
         "id": "sealed-cave",
-        "order": 6,
-        "text": "经热带密林，在洞窟门输入“艾斯潘蓝沙”全队进入传送间，再进约8层沉封之窟；密语可直接输入，无需完成支线。由无阻断状态的队员调查门。",
+        "order": 7,
+        "text": "经热带密林进入沉封之窟（练级入口）。",
         "inputs": [],
         "outputs": [],
-        "notes": [],
+        "notes": [
+          {
+            "text": "直接输入“艾斯潘蓝沙”即可进入，无须先做密语支线。",
+            "type": "note",
+            "sourceLines": [
+              34
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          },
+          {
+            "text": "调查大门的队员若持【艾斯潘之石】或【艾斯潘头饰】，或已完成主线第9步但未全部完结，将无法进入；换没有以上情况的队员调查。",
+            "type": "warning",
+            "sourceLines": [
+              35,
+              36,
+              37,
+              38
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          },
+          {
+            "text": "沉封之窟为随机迷宫，约8层，2小时刷新；Lv.28～39哥布林×3、烈风哥布林×3，经验正常，可练级。",
+            "type": "note",
+            "sourceLines": [
+              39,
+              40
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          }
+        ],
         "sourceLines": [
           31,
           32,
@@ -805,8 +1130,40 @@
         ],
         "verification": {
           "status": "verified",
-          "method": "manual-semantic-review"
+          "method": "manual-source-fact-review"
         },
+        "operations": [
+          {
+            "text": "前往白湾沙滩上方（68.41）处进入热带密林。",
+            "sourceLines": [
+              31
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          },
+          {
+            "text": "往南走至（72.77）处，队伍中一人调查奇怪洞窟大门，输入“艾斯潘蓝沙”全队进入传送间。",
+            "sourceLines": [
+              32
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          },
+          {
+            "text": "通过传送间（15.11）黄色水晶进入沉封之窟。",
+            "sourceLines": [
+              33
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          }
+        ],
         "commands": [
           {
             "text": "艾斯潘蓝沙",
@@ -822,12 +1179,11 @@
       },
       {
         "id": "dragon",
-        "order": 7,
-        "text": "到虐杀之间挑战魔龙德拉贡。",
+        "order": 8,
+        "text": "通过随机迷宫抵达虐杀之间，与魔龙德拉贡（34.21）对话进入战斗。",
         "inputs": [],
         "outputs": [],
         "notes": [],
-        "battleRef": "dragon",
         "sourceLines": [
           41,
           42,
@@ -837,13 +1193,43 @@
         ],
         "verification": {
           "status": "verified",
-          "method": "manual-semantic-review"
-        }
+          "method": "manual-source-fact-review"
+        },
+        "battleRef": "dragon"
       },
       {
         "id": "espan-stone",
-        "order": 8,
-        "text": "胜利后调查置石座取得不可交易的【艾斯潘之石】；在巴比塔顶祭台交石，换取注销消失的【碎裂的艾斯潘之石】。",
+        "order": 9,
+        "text": "战斗胜利后传送至悠静之间，调查置石座获得【艾斯潘之石】，传送至热带密林（72.76）。",
+        "inputs": [],
+        "outputs": [
+          {
+            "item": "艾斯潘之石",
+            "quantity": 1,
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              46
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-semantic-review"
+            }
+          }
+        ],
+        "notes": [],
+        "sourceLines": [
+          46,
+          47
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-source-fact-review"
+        }
+      },
+      {
+        "id": "cracked-stone",
+        "order": 10,
+        "text": "经热带密林进入巴比塔，到塔顶祭坛换取【碎裂的艾斯潘之石】。",
         "inputs": [
           {
             "item": "艾斯潘之石",
@@ -860,18 +1246,6 @@
         ],
         "outputs": [
           {
-            "item": "艾斯潘之石",
-            "quantity": 1,
-            "acquisition": "guaranteed",
-            "sourceLines": [
-              46
-            ],
-            "verification": {
-              "status": "verified",
-              "method": "manual-semantic-review"
-            }
-          },
-          {
             "item": "碎裂的艾斯潘之石",
             "quantity": 1,
             "acquisition": "guaranteed",
@@ -885,22 +1259,70 @@
           }
         ],
         "notes": [],
-        "allowsIntermediateOutputThenInput": true,
         "sourceLines": [
-          46,
-          47,
           48,
-          49
+          49,
+          60
         ],
         "verification": {
           "status": "verified",
-          "method": "manual-semantic-review"
+          "method": "manual-source-fact-review"
+        },
+        "operations": [
+          {
+            "text": "热带密林（56.13）进入巴比塔，按西（103.102）→南→西→南→西→南至塔顶。",
+            "sourceLines": [
+              60
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          },
+          {
+            "text": "返回巴比塔塔顶祭坛调查祭台(64.40，也就是地图最上面那个娃娃旁边)，交出【艾斯潘之石】获得【碎裂的艾斯潘之石】。",
+            "sourceLines": [
+              48
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          }
+        ]
+      },
+      {
+        "id": "return-city",
+        "order": 11,
+        "text": "在30分钟内返回白湾沙滩与卡诺斯船长对话传送回亚诺曼城。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [
+          {
+            "text": "◆怀旧服此步可使用【纪念羽毛】飞回法兰城再前往亚诺曼城，或使用【村落传送券】传送至相应村落并坐船返回法兰城再前往亚诺曼城",
+            "type": "note",
+            "sourceLines": [
+              51
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          }
+        ],
+        "sourceLines": [
+          50,
+          51
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-source-fact-review"
         }
       },
       {
         "id": "return-reward",
-        "order": 9,
-        "text": "30分钟内回白湾沙滩乘船返亚诺曼，再在酒吧向流浪者交碎石取得【艾斯潘头饰】。",
+        "order": 12,
+        "text": "返回比利啤酒屋（196.129）与流浪的人（9.13）对话，交出【碎裂的艾斯潘之石】获得【艾斯潘头饰】，任务完结。",
         "inputs": [
           {
             "item": "碎裂的艾斯潘之石",
@@ -929,10 +1351,22 @@
             }
           }
         ],
-        "notes": [],
+        "notes": [
+          {
+            "text": "重刷头饰（2026.05.23更新）：取得头饰后丢弃【剩下的地图块】，回比利啤酒屋（196.129），由女性角色向裘尼（17.8）对话，询问放弃小岛时选“是”，再从第1步重接。直接带地图块重刷会无法进入沉封之窟；此规则不同于保留地图块反复练级。",
+            "type": "warning",
+            "sourceLines": [
+              55,
+              56,
+              57
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          }
+        ],
         "sourceLines": [
-          50,
-          51,
           52,
           53,
           54,
@@ -942,13 +1376,13 @@
         ],
         "verification": {
           "status": "verified",
-          "method": "manual-semantic-review"
+          "method": "manual-source-fact-review"
         }
       },
       {
         "id": "password-sidequest",
-        "order": 10,
-        "text": "密语支线：主线登船后进入巴比塔，穿过固定地图到祭坛击败海盗，向船长取得不可交易/不可宠邮的会议记录；双击得知密语“艾斯潘蓝沙”。",
+        "order": 13,
+        "text": "可选密语支线：接主线第6步到白湾沙滩后，走巴比塔路线取得密语。",
         "inputs": [],
         "outputs": [
           {
@@ -964,9 +1398,42 @@
             }
           }
         ],
-        "notes": [],
-        "optional": true,
-        "battleRef": "pirate",
+        "notes": [
+          {
+            "text": "◆热带密林为固定地图；魔物：Lv.23~26恶魔螃蟹、黄金螃蟹、水晶螃蟹*3~6",
+            "type": "note",
+            "sourceLines": [
+              61
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          },
+          {
+            "text": "◆巴比塔为固定地图；塔外魔物：Lv.37~39水龙蜥、火龙蜥，数量4~5；\n塔内魔物：Lv.60~64地精、水精或火精、风精；固定两只，2动，可暗杀；怀旧服经验减半",
+            "type": "note",
+            "sourceLines": [
+              62,
+              63
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          },
+          {
+            "text": "◆【神秘研究会第五十三次会议记录】右键虽未显示不可交易，但实际上不能交易或宠邮",
+            "type": "note",
+            "sourceLines": [
+              69
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          }
+        ],
         "sourceLines": [
           58,
           59,
@@ -983,13 +1450,58 @@
         ],
         "verification": {
           "status": "verified",
-          "method": "manual-semantic-review"
-        }
+          "method": "manual-source-fact-review"
+        },
+        "branch": "密语支线（可选；主线第6步后）",
+        "optional": true,
+        "operations": [
+          {
+            "text": "前往白湾沙滩上方（68.41）处进入热带密林，往左进入巴比塔（56.13），按西（103.102）→南→西→南→西→南的顺序至塔顶。",
+            "sourceLines": [
+              60
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          },
+          {
+            "text": "通过祷告之门（51.46）进入祭坛，与研究员（64.47）对话进入战斗。",
+            "sourceLines": [
+              64
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          },
+          {
+            "text": "战斗胜利后与卡诺斯船长（66.41）对话，获得【神秘研究会第五十三次会议记录】。",
+            "sourceLines": [
+              67
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          },
+          {
+            "text": "双击【神秘研究会第五十三次会议记录】，得到开启奇怪洞窟的密语“艾斯潘蓝沙”。",
+            "sourceLines": [
+              68
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          }
+        ],
+        "battleRef": "pirate"
       },
       {
         "id": "phone-sidequest",
-        "order": 11,
-        "text": "手机支线：主线登船后在神秘小屋书柜取得奇怪的药，回酒吧向库德输入“药...”，交药取得【手机】。",
+        "order": 14,
+        "text": "可选手机支线：接主线第6步到白湾沙滩后，取得药并兑换【手机】。",
         "inputs": [
           {
             "item": "奇怪的药",
@@ -1031,8 +1543,6 @@
           }
         ],
         "notes": [],
-        "optional": true,
-        "allowsIntermediateOutputThenInput": true,
         "sourceLines": [
           70,
           71,
@@ -1043,8 +1553,42 @@
         ],
         "verification": {
           "status": "verified",
-          "method": "manual-semantic-review"
+          "method": "manual-source-fact-review"
         },
+        "branch": "手机支线（可选；主线第6步后）",
+        "optional": true,
+        "operations": [
+          {
+            "text": "前往白湾沙滩上方（68.41）处进入热带密林，沿右边道路往上走进入神秘小屋（94.48）。",
+            "sourceLines": [
+              72
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          },
+          {
+            "text": "调查书柜（22.8）获得【奇怪的药】。",
+            "sourceLines": [
+              73
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          },
+          {
+            "text": "持有【奇怪的药】与亚诺曼城比利啤酒屋（196.129）水手库德对话，输入“药...”交出【奇怪的药】获得【手机】。",
+            "sourceLines": [
+              74
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-fact-review"
+            }
+          }
+        ],
         "commands": [
           {
             "text": "药...",
@@ -1056,7 +1600,8 @@
               "method": "source-action-review"
             }
           }
-        ]
+        ],
+        "allowsIntermediateOutputThenInput": true
       }
     ],
     "notes": []
@@ -1127,7 +1672,8 @@
               "verification": {
                 "status": "verified",
                 "method": "manual-semantic-review"
-              }
+              },
+              "triggerStep": "research-center"
             },
             "dragon": {
               "id": "dragon",
@@ -1142,7 +1688,6 @@
                   "skills": [
                     "攻击",
                     "圣盾",
-                    "连击（被战栗后）",
                     "乾坤一掷",
                     "气功弹",
                     "火焰魔法",
@@ -1192,7 +1737,8 @@
               "verification": {
                 "status": "verified",
                 "method": "manual-semantic-review"
-              }
+              },
+              "triggerStep": "dragon"
             },
             "pirate": {
               "id": "pirate",
@@ -1244,7 +1790,8 @@
               "verification": {
                 "status": "verified",
                 "method": "manual-semantic-review"
-              }
+              },
+              "triggerStep": "password-sidequest"
             }
           },
           "encounters": [
@@ -1408,6 +1955,22 @@
         "tier": "common"
       },
       {
+        "item": "剩下的地图块",
+        "quantity": 1,
+        "action": "hold",
+        "consumed": false,
+        "sourceLines": [
+          23
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-source-fact-review"
+        },
+        "step": "appa-ticket",
+        "version": "common",
+        "tier": "common"
+      },
+      {
         "item": "啤酒",
         "quantity": 1,
         "action": "hand-over",
@@ -1418,7 +1981,7 @@
           "status": "verified",
           "method": "manual-semantic-review"
         },
-        "step": "beer-ticket",
+        "step": "appa-ticket",
         "version": "common",
         "tier": "common"
       },
@@ -1448,7 +2011,7 @@
           "status": "verified",
           "method": "manual-semantic-review"
         },
-        "step": "espan-stone",
+        "step": "cracked-stone",
         "version": "common",
         "tier": "common"
       },
@@ -1479,6 +2042,41 @@
           "method": "manual-semantic-review"
         },
         "step": "phone-sidequest",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "G",
+        "quantity": 500,
+        "currency": true,
+        "action": "hand-over",
+        "condition": "仅购买可爱水手服时支付",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-source-fact-review"
+        },
+        "step": "map-fragments",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "G",
+        "quantity": 200,
+        "currency": true,
+        "action": "hand-over",
+        "condition": "仅购买假发时支付",
+        "sourceLines": [
+          5,
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-source-fact-review"
+        },
+        "step": "map-fragments",
         "version": "common",
         "tier": "common"
       }
@@ -1497,7 +2095,8 @@
         },
         "step": "map-fragments",
         "version": "common",
-        "tier": "common"
+        "tier": "common",
+        "role": "process-only"
       },
       {
         "item": "剩下的地图块",
@@ -1513,7 +2112,8 @@
         },
         "step": "remaining-map",
         "version": "common",
-        "tier": "common"
+        "tier": "common",
+        "role": "process-only"
       },
       {
         "item": "啤酒",
@@ -1528,7 +2128,8 @@
         },
         "step": "beer-ticket",
         "version": "common",
-        "tier": "common"
+        "tier": "common",
+        "role": "process-only"
       },
       {
         "item": "阿帕的证明",
@@ -1541,9 +2142,10 @@
           "status": "verified",
           "method": "manual-semantic-review"
         },
-        "step": "beer-ticket",
+        "step": "appa-ticket",
         "version": "common",
-        "tier": "common"
+        "tier": "common",
+        "role": "process-only"
       },
       {
         "item": "船票",
@@ -1556,9 +2158,10 @@
           "status": "verified",
           "method": "manual-semantic-review"
         },
-        "step": "beer-ticket",
+        "step": "appa-ticket",
         "version": "common",
-        "tier": "common"
+        "tier": "common",
+        "role": "process-only"
       },
       {
         "item": "票根",
@@ -1573,7 +2176,8 @@
         },
         "step": "sail",
         "version": "common",
-        "tier": "common"
+        "tier": "common",
+        "role": "process-only"
       },
       {
         "item": "艾斯潘之石",
@@ -1588,7 +2192,8 @@
         },
         "step": "espan-stone",
         "version": "common",
-        "tier": "common"
+        "tier": "common",
+        "role": "valuable-result"
       },
       {
         "item": "碎裂的艾斯潘之石",
@@ -1601,9 +2206,10 @@
           "status": "verified",
           "method": "manual-semantic-review"
         },
-        "step": "espan-stone",
+        "step": "cracked-stone",
         "version": "common",
-        "tier": "common"
+        "tier": "common",
+        "role": "valuable-result"
       },
       {
         "item": "艾斯潘头饰",
@@ -1618,7 +2224,8 @@
         },
         "step": "return-reward",
         "version": "common",
-        "tier": "common"
+        "tier": "common",
+        "role": "valuable-result"
       },
       {
         "item": "神秘研究会第五十三次会议记录",
@@ -1633,7 +2240,8 @@
         },
         "step": "password-sidequest",
         "version": "common",
-        "tier": "common"
+        "tier": "common",
+        "role": "process-only"
       },
       {
         "item": "奇怪的药",
@@ -1648,7 +2256,8 @@
         },
         "step": "phone-sidequest",
         "version": "common",
-        "tier": "common"
+        "tier": "common",
+        "role": "process-only"
       },
       {
         "item": "手机",
@@ -1662,6 +2271,42 @@
           "method": "manual-semantic-review"
         },
         "step": "phone-sidequest",
+        "version": "common",
+        "tier": "common",
+        "role": "valuable-result"
+      },
+      {
+        "item": "可爱水手服",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "role": "valuable-result",
+        "condition": "可选购买，需支付500G",
+        "sourceLines": [
+          4
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-source-fact-review"
+        },
+        "step": "map-fragments",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "假发",
+        "quantity": 1,
+        "acquisition": "guaranteed",
+        "role": "valuable-result",
+        "condition": "可选购买，需支付200G",
+        "sourceLines": [
+          5,
+          6
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-source-fact-review"
+        },
+        "step": "map-fragments",
         "version": "common",
         "tier": "common"
       }
@@ -2578,7 +3223,7 @@
         75
       ]
     ],
-    "note": "全部原文行已逐条核验。"
+    "note": "2026-10-02逐条对照原攻略75行，恢复12步主线与两条可选支线、坐标及限制；保留原攻略重复假发及命名差异，不推测补值。"
   },
   "rewardEvents": [
     {
@@ -2631,7 +3276,9 @@
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "step": "return-reward",
+      "acquisition": "guaranteed"
     },
     {
       "id": "phone-reward",
@@ -2667,6 +3314,165 @@
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
+      },
+      "step": "phone-sidequest",
+      "acquisition": "guaranteed"
+    },
+    {
+      "id": "espan-stone-reward",
+      "step": "espan-stone",
+      "version": "common",
+      "tier": "common",
+      "kind": "flow-acquisition",
+      "acquisition": "guaranteed",
+      "items": [
+        {
+          "id": "espan-stone",
+          "name": "艾斯潘之石",
+          "role": "valuable-result",
+          "entityType": "gem",
+          "properties": {
+            "level": 1,
+            "category": "宝石",
+            "effect": "合成/镶嵌于武器或防具：攻击+10%、耐久-20%",
+            "tradeable": false
+          },
+          "sourceLines": [
+            46,
+            47
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-source-fact-review"
+          }
+        }
+      ],
+      "sourceLines": [
+        46,
+        47
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-source-fact-review"
+      }
+    },
+    {
+      "id": "cracked-stone-reward",
+      "step": "cracked-stone",
+      "version": "common",
+      "tier": "common",
+      "kind": "flow-acquisition",
+      "acquisition": "guaranteed",
+      "items": [
+        {
+          "id": "cracked-stone",
+          "name": "碎裂的艾斯潘之石",
+          "role": "valuable-result",
+          "entityType": "gem",
+          "properties": {
+            "level": 1,
+            "category": "宝石",
+            "effect": "合成/镶嵌于武器或防具：攻击+10%、耐久-20%",
+            "tradeable": false,
+            "use": "用于主线第12步兑换艾斯潘头饰；注销时消失"
+          },
+          "sourceLines": [
+            48,
+            49
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-source-fact-review"
+          }
+        }
+      ],
+      "sourceLines": [
+        48,
+        49
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-source-fact-review"
+      }
+    },
+    {
+      "id": "purchase-sailor-clothes",
+      "step": "map-fragments",
+      "version": "common",
+      "tier": "common",
+      "kind": "purchase",
+      "acquisition": "guaranteed",
+      "condition": "向比利啤酒屋外COSPLAY商人（193.132）分别购买；非任务赠送。原攻略假发重复列出，不推测第三种物品。",
+      "items": [
+        {
+          "id": "sailor-clothes",
+          "name": "可爱水手服",
+          "role": "valuable-result",
+          "entityType": "equipment",
+          "properties": {
+            "level": 1,
+            "category": "衣服",
+            "durability": 100,
+            "defense": 10,
+            "priceG": 500,
+            "use": "在COSPLAY商人（193.132）处花500G购买，男性装备后可向裘尼接任务"
+          },
+          "sourceLines": [
+            4
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-source-fact-review"
+          }
+        }
+      ],
+      "sourceLines": [
+        4
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-source-fact-review"
+      }
+    },
+    {
+      "id": "purchase-wig",
+      "step": "map-fragments",
+      "version": "common",
+      "tier": "common",
+      "kind": "purchase",
+      "acquisition": "guaranteed",
+      "condition": "向比利啤酒屋外COSPLAY商人（193.132）分别购买；非任务赠送。原攻略假发重复列出，不推测第三种物品。",
+      "items": [
+        {
+          "id": "wig",
+          "name": "假发",
+          "role": "valuable-result",
+          "entityType": "equipment",
+          "properties": {
+            "level": 1,
+            "category": "帽子",
+            "durability": 100,
+            "defense": 5,
+            "priceG": 200,
+            "use": "在COSPLAY商人（193.132）处花200G购买，男性装备后可向裘尼接任务"
+          },
+          "sourceLines": [
+            5,
+            6
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-source-fact-review"
+          }
+        }
+      ],
+      "sourceLines": [
+        5,
+        6
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-source-fact-review"
       }
     }
   ],

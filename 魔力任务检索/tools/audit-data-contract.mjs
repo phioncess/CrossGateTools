@@ -1,8 +1,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { loadQuestDatabase, projectDir } from './quest-database.mjs';
+import { compilePresentationFacts } from './presentation-facts.mjs';
 
 const database = loadQuestDatabase();
+const presentationCoverage = compilePresentationFacts(database);
 const quests = Object.values(database.quests || {});
 const reportPath = path.join(projectDir, 'data-contract-report.json');
 const appSource = fs.readFileSync(path.join(projectDir, 'app.js'), 'utf8');
@@ -15,6 +17,7 @@ const allowedQuestKeys = new Set([
 ]);
 const renderedStepKeys = new Set([
   'id', 'order', 'text', 'route', 'branch', 'notes', 'inputs', 'outputs', 'choices', 'quiz', 'commands', 'operations', 'branchGroups', 'afterOperations', 'battleRef', 'battleRefs', 'allowsIntermediateOutputThenInput', 'sourceLines', 'verification'
+  ,'presentationFacts','presentationInteractions','presentationSections','equipmentRefs','duplicateSourceLines'
 ]);
 
 const unknownQuestKeys = new Map();
@@ -37,7 +40,9 @@ for (const quest of quests) {
   const questExtensions = new Set();
   for (const step of quest.flow?.steps || []) {
     stepCount += 1;
-    const extensions = Object.keys(step).filter(key => !renderedStepKeys.has(key));
+    const semanticKeys = new Set([...(step.presentationFacts || []).map(row => row.key),...(step.presentationSections || []).map(section => section.key)]);
+    if (semanticKeys.has('rewardEventRefs')) ['rewardEventRef','rewardPool'].forEach(key => semanticKeys.add(key));
+    const extensions = Object.keys(step).filter(key => !renderedStepKeys.has(key) && !semanticKeys.has(key));
     if (extensions.length) stepsWithExtensions += 1;
     for (const key of extensions) {
       increment(stepExtensionCounts, key);
@@ -77,6 +82,7 @@ const report = {
     unknownTopLevelFields: sortedCounts(unknownQuestKeys)
   },
   flowShape: {
+    presentationCoverage,
     stepCount,
     stepsWithRendererUnhandledFields: stepFallbackEnabled ? 0 : stepsWithExtensions,
     rendererUnhandledFieldCount: stepFallbackEnabled ? 0 : stepExtensionCounts.size,

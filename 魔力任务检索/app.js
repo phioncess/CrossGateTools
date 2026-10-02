@@ -155,6 +155,7 @@ function renderKeyItems(questId) {
     <div class="key-item-list">${entries.map(entry => `<article class="key-item-card">
       <header><h3>${formatTaskText(`【${entry.name}】`)}</h3><span>${entry.stepNumber ? `流程第 ${entry.stepNumber} 步取得` : '本任务取得'}</span></header>
       ${entry.trainingUses.length ? `<div class="key-use-block training"><b>重复练级路线</b>${entry.trainingUses.map(use => `<div><strong>${escapeHtml(use.routeName)}</strong><p>${formatTaskText(use.text)}</p></div>`).join('')}</div>` : ''}
+      ${(entry.repeatUses || []).length ? `<div class="key-use-block"><b>重复任务路线</b>${entry.repeatUses.map(use => `<div><strong>${escapeHtml(use.routeName)}</strong><p>${formatTaskText(use.text)}</p></div>`).join('')}</div>` : ''}
       ${entry.questUses.length ? `<div class="key-use-block downstream"><b>后续任务使用</b><div class="key-quest-links">${entry.questUses.map(use => relationButton(use.questId, '需要此道具')).join('')}</div>${entry.questUses.map(use => `<p><strong>${escapeHtml(use.questName)}：</strong>${formatTaskText(use.text)}</p>`).join('')}</div>` : ''}
     </article>`).join('')}</div>
   </section>`;
@@ -302,7 +303,7 @@ function renderQuestSteps(questId, steps, trainingMarkers = []) {
       ${group.route ? `<h4>${group.route}</h4>` : ''}
       <ol class="quest-steps">${group.items.map(item => {
         const markers = trainingMarkers.filter(marker => Number(marker.step) === Number(item.order));
-        return `<li class="${markers.length ? 'training-entry-step' : ''}"><div class="step-content"><div class="step-actions">${item.actions.map(label => `<em class="step-item-action ${stepActionClass(label)}">${label}</em>`).join('')}</div><span>${formatTaskText(item.text)}</span>${renderStepOperations(item.sourceDetails?.operations)}${renderStepBranches(item.sourceDetails?.branchGroups)}${markers.map(marker => `<aside class="training-step-marker"><b>练级入口：${formatTaskText(marker.name)}</b><span>${formatTaskText(marker.note || '做到这一步即可进入练级，后续任务可暂停。')}</span></aside>`).join('')}${renderStepNotices(item.notices)}${renderStepChoices(questId, item.sourceDetails?.choices)}${renderStepQuiz(item.sourceDetails?.quiz)}${renderStepOperations(item.sourceDetails?.afterOperations)}${renderStructuredFields(item.sourceDetails, STEP_RENDERED_FIELDS)}${renderSourceSupplements(questId, item.order, seenSources)}</div></li>`;
+        return `<li class="${markers.length ? 'training-entry-step' : ''}"><div class="step-content"><div class="step-actions">${item.actions.map(label => `<em class="step-item-action ${stepActionClass(label)}">${label}</em>`).join('')}</div><span>${formatTaskText(item.text)}</span>${renderStepOperations(item.sourceDetails?.operations)}${renderStepBranches(item.sourceDetails?.branchGroups)}${markers.map(marker => `<aside class="training-step-marker"><b>练级入口：${formatTaskText(marker.name)}</b><span>${formatTaskText(marker.note || '做到这一步即可进入练级，后续任务可暂停。')}</span></aside>`).join('')}${renderStepNotices(item.notices)}${renderStepChoices(questId, item.sourceDetails?.choices)}${renderStepQuiz(item.sourceDetails?.quiz)}${renderStepOperations(item.sourceDetails?.afterOperations)}${renderPresentationFacts(item.sourceDetails?.presentationFacts)}${renderStepSourceSections(item.sourceDetails?.presentationSections)}${renderSourceSupplements(questId, item.order, seenSources)}</div></li>`;
       }).join('')}</ol>
     </section>`).join('');
   const remaining = renderSourceSupplements(questId, null, seenSources, true);
@@ -312,6 +313,46 @@ function renderQuestSteps(questId, steps, trainingMarkers = []) {
 function renderQuestNotes(notes) {
   const warningTypes = new Set(['known-bug','source-bug-caveat','disposable-after-completion']);
   return `<section class="note-group"><h4>全局注意</h4><div class="note-items">${notes.map(note => `<p class="${warningTypes.has(note.type) ? 'warning' : ''}">${formatTaskText(note.text)}</p>`).join('')}</div></section>`;
+}
+
+function renderPresentationFacts(facts, displayedLabels = []) {
+  const seen = new Set();
+  const rows = (facts || []).filter(row => {
+    const signature = `${row.label}\u0000${row.text}`;
+    if (!row.text || displayedLabels.includes(row.label) || seen.has(signature)) return false;
+    seen.add(signature);
+    return true;
+  });
+  return rows.length ? `\n<dl class="reward-fact-list semantic-facts">${rows.map(row => `<div data-fact-key="${escapeHtml(row.key)}"${row.sourceEventId ? ` data-fact-event="${escapeHtml(row.sourceEventId)}"` : ''}><dt>${escapeHtml(row.label)}</dt><dd>${formatTaskText(row.text)}${row.questId ? relationButton(row.questId, '查看任务') : ''}</dd></div>`).join('\n')}</dl>\n` : '';
+}
+
+function renderStepSourceSections(sections) {
+  return (sections || []).map(section => {
+    const body = section.kind === 'rounds'
+      ? (section.rounds || []).map(round => `<section class="step-battle-round"><h4>第${escapeHtml(round.order)}场</h4><div class="enemy-grid">${structuredValues(round.enemies).map(enemy => renderEnemy(enemy)).join('')}</div></section>`).join('')
+      : `<div class="semantic-table-scroll"><table class="semantic-table"><thead><tr><th>${section.key === 'quizBank' ? '问题' : '项目'}</th><th>${section.key === 'quizBank' ? '答案' : '资料与规则'}</th></tr></thead><tbody>${(section.rows || []).map(row => `<tr><th scope="row">${formatTaskText(row.label)}</th><td>${formatTaskText(row.text)}</td></tr>`).join('')}</tbody></table></div>`;
+    return `<section class="step-data-section" data-step-field="${escapeHtml(section.key)}"><h4>${escapeHtml(section.title)}</h4>${body}</section>`;
+  }).join('');
+}
+
+function renderAlternateRewardFacts(primary, sources) {
+  const properties = {...primary.commonProperties, ...primary.properties, ...primary.appraisedProperties};
+  const primarySource = (sources || []).find(source => source.item === primary);
+  const unique = new Set();
+  return (sources || []).filter(source => source.item !== primary).map(source => {
+    const alternate = {...source.item.commonProperties, ...source.item.properties, ...source.item.appraisedProperties};
+    const facts = (source.item.allPropertyFacts || []).filter(row => JSON.stringify(alternate[row.key]) !== JSON.stringify(properties[row.key]));
+    facts.push(...(source.item.presentationItemFacts || []).filter(row => JSON.stringify(source.item[row.key]) !== JSON.stringify(primary[row.key])));
+    facts.push(...(source.event?.presentationFacts || []).filter(row => !(primarySource?.event?.presentationFacts || []).some(primaryRow => primaryRow.key === row.key && primaryRow.text === row.text)).map(row => ({...row,sourceEventId:source.event.id})));
+    const context = ['quantity','use','useEffect','firstClearOnly','unidentifiedName','identifiedName'].filter(key => source.item[key] != null && JSON.stringify(source.item[key]) !== JSON.stringify(primary[key]));
+    const contextLabels = {quantity:'数量',use:'用途',useEffect:'使用效果',firstClearOnly:'仅首通取得',unidentifiedName:'未鉴定名称',identifiedName:'鉴定后名称'};
+    context.forEach(key => facts.push({key,label:contextLabels[key],text:structuredValueText(source.item[key])}));
+    if (!facts.length) return '';
+    const signature = JSON.stringify(facts);
+    if (unique.has(signature)) return '';
+    unique.add(signature);
+    return `<section class="reward-source-variant"><b>${escapeHtml(source.label)}的资料差异</b>${renderPresentationFacts(facts)}</section>`;
+  }).join('');
 }
 
 const ITEM_STAT_LABELS = {
@@ -450,11 +491,15 @@ function structuredStepActions(step) {
   const labels = [];
   const inputs = (step.inputs || []).filter(item => item.entityType !== 'skill');
   if ((step.inputs || []).some(item => item.entityType === 'skill' && item.action === 'use')) labels.push('使用技能');
-  const requireActions = new Set(['hold', 'carry', 'require', 'possess', 'hold-title', 'proof-of-progress', 'wait-completion']);
-  const useActions = new Set(['use', 'equip', 'equip-one-of', 'open', 'appraise', 'inspect', 'hatch', 'double-click-use', 'identify-and-use']);
-  if (inputs.some(item => requireActions.has(item.action) || item.consumed === false)) labels.push('道具要求');
+  const requireActions = new Set(['hold', 'hold-one-of', 'carry', 'require', 'possess', 'present', 'hold-title', 'proof-of-progress', 'wait-completion']);
+  const useActions = new Set(['use', 'use-and-consume', 'equip', 'equip-one-of', 'open', 'appraise', 'inspect', 'hatch', 'double-click-use', 'identify-and-use', 'reduce-durability']);
+  const discardActions = new Set(['discard','discard-if-held','drop-before-dialogue']);
+  const removalActions = new Set(['system-remove','removed-on-entry','remove','remove-title']);
+  if (inputs.some(item => requireActions.has(item.action) || item.consumed === false && !useActions.has(item.action))) labels.push('道具要求');
   if (inputs.some(item => useActions.has(item.action))) labels.push('使用道具');
-  if (inputs.some(item => !requireActions.has(item.action) && !useActions.has(item.action) && item.consumed !== false)) labels.push('消耗道具');
+  if (inputs.some(item => discardActions.has(item.action))) labels.push('丢弃道具');
+  if (inputs.some(item => removalActions.has(item.action))) labels.push('收走道具');
+  if (inputs.some(item => !requireActions.has(item.action) && !discardActions.has(item.action) && !removalActions.has(item.action) && (!useActions.has(item.action) || item.consumed === true || item.action === 'use-and-consume') && item.consumed !== false)) labels.push('消耗道具');
   if ((step.outputs || []).some(item => !['skill','career'].includes(item.entityType))) labels.push('取得道具');
   if ((step.outputs || []).some(item => item.entityType === 'skill')) labels.push('学习技能');
   if ((step.outputs || []).some(item => item.entityType === 'career')) labels.push('就职');
@@ -842,25 +887,27 @@ function renderRewardKnowledge(rewardItem, displayedLabels = []) {
     if (typeof value === 'object') return value.text || value.name || '';
     return '';
   };
-  const formatStats = stats => Object.entries(stats || {}).map(([name, value]) => `${name}${typeof value === 'number' && value >= 0 ? '+' : ''}${value}`).join('、');
+  const formatStats = stats => Object.entries(stats || {}).map(([name, value]) => `${name}${typeof value === 'number' && value >= 0 ? '+' : ''}${formatRange(value)}`).join('、');
   const formatRange = value => value && typeof value === 'object' && value.min != null
     ? `${value.min}${value.max != null && value.max !== value.min ? `～${value.max}` : ''}`
     : value;
   const formatModifiers = modifiers => typeof modifiers === 'string'
     ? modifiers
-    : Object.entries(modifiers || {}).map(([name, value]) => `${name}${typeof value === 'number' && value >= 0 ? '+' : ''}${value}`).join('、');
-  const useEffect = knowledgeValue(properties.effect)
-    || (properties.hpRecovery != null ? `使用后恢复生命值${properties.hpRecovery}点` : '')
-    || (properties.mpRecovery != null ? `使用后恢复魔法值${properties.mpRecovery}点` : '')
-    || (properties.skillExperienceIncrease?.amount != null
+    : Object.entries(modifiers || {}).map(([name, value]) => `${name}${typeof value === 'number' && value >= 0 ? '+' : ''}${formatRange(value)}`).join('、');
+  const propertyText = key => (rewardItem.allPropertyFacts || []).find(row => row.key === key)?.text || knowledgeValue(properties[key]);
+  const useEffect = propertyText('effect') || [
+    typeof properties.hpRecovery === 'number' ? `使用后恢复生命值${properties.hpRecovery}点` : '',
+    typeof properties.mpRecovery === 'number' ? `使用后恢复魔法值${properties.mpRecovery}点` : '',
+    properties.skillExperienceIncrease?.amount != null
       ? `使用后${properties.skillExperienceIncrease.skill === '随机' ? '随机增加' : '增加'}技能经验值${properties.skillExperienceIncrease.amount}点`
-      : '');
+      : ''
+  ].filter(Boolean).join('；');
   const rows = [
     ['类别', knowledgeValue(properties.type)],
     ['等级', properties.level != null ? `Lv.${properties.level}` : ''],
     ['用途', knowledgeValue(properties.use)],
     ['使用效果', useEffect],
-    ['获得结果', knowledgeValue(properties.result)],
+    ['获得结果', propertyText('result')],
     ['结果说明', knowledgeValue(properties.petDescription || properties.description)],
     ['属性数值', formatStats(properties.stats)],
     ['耐久', formatRange(properties.durability)],
@@ -870,9 +917,9 @@ function renderRewardKnowledge(rewardItem, displayedLabels = []) {
     ['交易', properties.tradeable === true ? '可交易' : properties.tradeable === false ? '不可交易' : ''],
     ['型号说明', knowledgeValue(properties.variants)],
     ['版本说明', knowledgeValue(properties.availabilityNote || properties.change)],
-    ['装备称号', knowledgeValue(properties.equippedTitle)],
+    ['装备称号', propertyText('equippedTitle')],
     ['种族变化', raceChangeText],
-    ['技能效果', skillEffectText],
+    ['技能效果', skillEffectText || propertyText('skillEffect')],
     ['装备限制', knowledgeValue(properties.equipRestriction)],
     ['参考任务', knowledgeValue(properties.referenceQuest)],
     ['核验说明', knowledgeValue(properties.verificationNote)]
@@ -901,7 +948,7 @@ function renderRewardKnowledge(rewardItem, displayedLabels = []) {
   const skillsHtml = (properties.skills || []).length ? `<div class="reward-skill-list"><b>可习得技能</b><p>${properties.skills.map(skill => `<span>${escapeHtml(skill)}</span>`).join('')}</p></div>` : '';
   const references = (rewardItem.references || []).filter(reference => reference?.url && reference?.label);
   const referencesHtml = references.length ? `<div class="reward-reference-list"><b>资料来源</b>${references.map(reference => `<a href="${escapeHtml(reference.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(reference.label)} ↗</a>`).join('')}</div>` : '';
-  return `${rows.filter(([, value]) => value !== '' && value != null).length ? `<dl class="reward-fact-list">${rows.filter(([, value]) => value !== '' && value != null).map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${formatTaskText(String(value))}</dd></div>`).join('')}</dl>` : ''}${optionHtml}${skillsHtml}${referencesHtml}`;
+  return `${rows.filter(([, value]) => value !== '' && value != null).length ? `<dl class="reward-fact-list">${rows.filter(([, value]) => value !== '' && value != null).map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${formatTaskText(String(value))}</dd></div>`).join('')}</dl>` : ''}${renderPresentationFacts(rewardItem.presentationFacts, displayedLabels)}${optionHtml}${skillsHtml}${referencesHtml}`;
 }
 
 function renderVersionedRewards(record) {
@@ -957,6 +1004,7 @@ function renderVersionedRewards(record) {
       // 再把其他来源合并到该卡片，避免同名去重时反而丢掉兑换属性。
       const primaryItemByName = new Map();
       const sourceLabelsByName = new Map();
+      const sourceItemsByName = new Map();
       if (!periodicGroup) {
         const itemScore = item => Object.keys(item.properties || {}).length * 2
           + Object.keys(item).length
@@ -974,6 +1022,9 @@ function renderVersionedRewards(record) {
               : eventLabelFor(rewardEvent);
           if (!labels.includes(sourceLabel)) labels.push(sourceLabel);
           sourceLabelsByName.set(item.name, labels);
+          const sources = sourceItemsByName.get(item.name) || [];
+          sources.push({label:sourceLabel,item,event:rewardEvent});
+          sourceItemsByName.set(item.name, sources);
         }));
       }
       let renderedItemCount = 0;
@@ -1003,13 +1054,14 @@ function renderVersionedRewards(record) {
             const resultPet = rewardItem.resultPet;
             const offerMeta = [resultPet.race, resultPet.elements ? `属性 ${resultPet.elements}` : '', resultPet.skillSlots != null ? `技能栏 ${resultPet.skillSlots}` : '', resultPet.totalGrowth != null ? `总档 ${resultPet.totalGrowth}` : ''].filter(Boolean);
             const price = purchase.unitPrice != null ? `${Number(purchase.unitPrice).toLocaleString('zh-CN')}G${purchase.parts ? '／张' : ''}` : '原攻略未列价格';
-            return `<section class="acquisition-item periodic-offer"><h4>${formatTaskText(`【${rewardItem.name}】`)}${rewardItem.date ? `<span>${escapeHtml(rewardItem.date)}</span>` : ''}</h4>
+            return `<section class="acquisition-item periodic-offer" data-reward-name="${escapeHtml(rewardItem.name)}" data-reward-version="${escapeHtml(versionKey)}" data-reward-tier="${escapeHtml(tierKey)}"><h4>${formatTaskText(`【${rewardItem.name}】`)}${rewardItem.date ? `<span>${escapeHtml(rewardItem.date)}</span>` : ''}</h4>
               <p class="offer-purchase"><b>上架规格</b> ${escapeHtml([purchase.parts, price].filter(Boolean).join(' · '))}</p>
               <p class="offer-result"><b>改造结果</b> ${formatTaskText(`【${resultPet.name}】`)}</p>
               ${offerMeta.length ? `<div class="enemy-meta reward-attributes">${offerMeta.map(value => `<span>${escapeHtml(value)}</span>`).join('')}</div>` : ''}
               ${Array.isArray(resultPet.growth) && resultPet.growth.length >= 5 ? `<p><b>档位</b> ${resultPet.growth.map(value => escapeHtml(String(value))).join(' / ')}</p>` : ''}
               ${rewardItem.basePetRestriction ? `<p><b>底宠限制</b> ${escapeHtml(rewardItem.basePetRestriction)}</p>` : ''}
               ${rewardItem.additionalFacts?.length ? `<ul>${rewardItem.additionalFacts.map(note => `<li>${formatTaskText(note)}</li>`).join('')}</ul>` : ''}
+              ${renderPresentationFacts(rewardItem.presentationFacts)}${renderPresentationFacts(rewardItem.presentationItemFacts)}
             </section>`;
           }
           const properties = {...(rewardItem.commonProperties || {}), ...(rewardItem.properties || {}), ...(rewardItem.appraisedProperties || {})};
@@ -1090,7 +1142,7 @@ function renderVersionedRewards(record) {
           const displayName = typeof resolvedName === 'string' ? resolvedName : rewardItem.name;
           const unidentifiedName = rewardItem.unidentifiedName
             || (displayName !== rewardItem.name && /[?？]/.test(rewardItem.name) ? rewardItem.name : '');
-          return `<section class="acquisition-item"><h4>${formatTaskText(`【${displayName}】`)}</h4>
+          return `<section class="acquisition-item" data-reward-name="${escapeHtml(rewardItem.name)}" data-reward-version="${escapeHtml(versionKey)}" data-reward-tier="${escapeHtml(tierKey)}"><h4>${formatTaskText(`【${displayName}】`)}</h4>
             ${costHtml}
             ${rewardItem.quantity != null ? `<p><b>数量</b> ${escapeHtml(plainRange(rewardItem.quantity))}</p>` : ''}
             ${resultHtml}
@@ -1102,6 +1154,8 @@ function renderVersionedRewards(record) {
             ${rules.length ? `<p class="reward-rule">${rules.map(rule => escapeHtml(rule)).join(' · ')}</p>` : ''}
             ${rewardItem.addedAt || rewardItem.valuesStatus ? `<p class="reward-rule">${[rewardItem.addedAt ? `${rewardItem.addedAt} 新增` : '', rewardItem.valuesStatus || ''].filter(Boolean).map(value => escapeHtml(value)).join(' · ')}</p>` : ''}
             ${knowledgeHtml}
+            ${renderPresentationFacts(rewardItem.presentationItemFacts)}
+            ${renderAlternateRewardFacts(rewardItem, sourceItemsByName.get(rewardItem.name))}
             ${equipmentArchiveHtml}
             ${properties.title ? `<p class="versioned-reward-title"><b>称号效果</b> ${escapeHtml(properties.title)}</p>` : ''}
             ${variants.length ? `<div class="versioned-reward-effects"><b>型号效果</b><ul>${variants.map(variant => {
@@ -1139,7 +1193,7 @@ function renderVersionedRewards(record) {
             }).join('')}</ul></div>` : ''}
           </section>`;
         }).join('');
-        return `<article class="acquisition-event-card"><header><div><span>${eventLabel}</span><b>${eventCountLabelFor(rewardEvent, eventItems.length)}</b></div></header>${extraSourcesHtml}<div class="acquisition-item-grid${compactItems ? ' compact-rewards' : ''}">${items}</div></article>`;
+        return `<article class="acquisition-event-card"><header><div><span>${eventLabel}</span><b>${eventCountLabelFor(rewardEvent, rewardEvent.items.length)}</b></div></header>${renderPresentationFacts((rewardEvent.presentationFacts || []).map(row => ({...row,sourceEventId:rewardEvent.id})))}${extraSourcesHtml}<div class="acquisition-item-grid${compactItems ? ' compact-rewards' : ''}">${items}</div></article>`;
       }).filter(Boolean).join('');
       if (useVersionAccordion) {
         const open = groups.length === 0 ? ' open' : '';
@@ -1230,7 +1284,7 @@ function renderQuest(quest, updateHash = true) {
         <h2>${quest.name}</h2>
         <p class="aliases">${quest.aliases.join(' · ')}</p>
       </div>
-      <div class="detail-badges"><span>${quest.type}</span><span>${quest.level}</span><span class="good">结构化资料已核验</span></div>
+      <div class="detail-badges"><span>${quest.type}</span><span>${quest.level}</span><span>来源资料已整理</span></div>
     </header>
     ${quest.summary ? `<p class="summary">${formatTaskText(quest.summary)}</p>` : ''}
     ${chainHtml}

@@ -22,6 +22,7 @@
         stepId: event.step,
         stepNumber: stepOrder(record, event.step),
         trainingUses: [],
+        repeatUses: [],
         questUses: []
       };
       entries.push(entry);
@@ -45,6 +46,12 @@
   }
 
   // 后续任务用到的道具仅采用结构化 itemSources 关系；不按同名文本猜测。
+  for (const record of records) for (const use of record.itemEvents?.uses || []) {
+    if (use.purpose !== 'repeat-route' || !use.item || !use.text) continue;
+    const entry = ensureGuide(record, use.item, use.step);
+    if (entry) entry.repeatUses.push({questId:record.id,routeName:use.route || '重复路线',text:use.text});
+  }
+
   for (const targetQuest of records) {
     for (const relation of targetQuest.relations?.itemSources || []) {
       if (!relation?.item || !relation?.sourceQuest) continue;

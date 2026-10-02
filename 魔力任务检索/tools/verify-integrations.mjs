@@ -65,7 +65,8 @@ for (const record of structuredRecords) {
 for (const [questId, entries] of Object.entries(keyItemGuides)) {
   if (!quests.some(quest => quest.id === questId)) throw new Error(`关键道具来源任务不存在: ${questId}`);
   for (const entry of entries) {
-    if (!entry.name || (!entry.questUses?.length && !entry.trainingUses?.length)) throw new Error(`关键道具去向不完整: ${questId}`);
+    if (!entry.name || (!entry.questUses?.length && !entry.trainingUses?.length && !entry.repeatUses?.length)) throw new Error(`关键道具去向不完整: ${questId}`);
+    if ((entry.repeatUses || []).some(use => !quests.some(quest => quest.id === use.questId))) throw new Error(`关键道具重复任务不存在: ${entry.name}`);
     if ((entry.questUses || []).some(use => !quests.some(quest => quest.id === use.questId))) throw new Error(`关键道具后续任务不存在: ${entry.name}`);
   }
 }
