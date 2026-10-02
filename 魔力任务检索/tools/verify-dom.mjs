@@ -552,6 +552,7 @@ for (const questId of allQuestIds) {
   option?.click();
   const detailText = window.document.querySelector('#questDetail')?.textContent || '';
   const title = window.document.querySelector('.detail-head h2')?.textContent || questId;
+  if (window.document.querySelector('.summary')?.textContent.includes('怀旧服任务（已关闭）；怀旧服任务（已关闭）')) throw new Error(`活动摘要重复关闭状态: ${title}`);
   const structuredRecord = window.QUEST_DATA?.quests?.[questId];
   if (structuredRecord?.verification?.status !== 'verified') throw new Error(`任务没有使用已核验结构化记录: ${title}`);
   if (/完整任务流程尚待核验|请先查看“练级路线”|关系已收录 · 详情待核验/.test(detailText)) throw new Error(`任务仍显示空壳页: ${title}`);
