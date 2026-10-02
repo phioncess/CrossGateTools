@@ -345,7 +345,7 @@ export function rewardItemFacts(item, quest) {
     if (item.purchase && key === 'resultPet') continue;
     if (!itemFactLabels[key]) throw new Error(`未定义奖励物品字段展示: ${key}`);
     const keyedFields = new Set(['versionEffects','effectsByUse','pre2023IncrementTable','serverVariants','serverAvailability','serverEffects','serverNotes','serverRules','titleEffects','featuredByVersion','equippedTitles','perPartProbability','perItemProbability']);
-    const dictionary = keyedFields.has(key) && value && typeof value === 'object' && !Array.isArray(value)
+    const dictionary = key === 'probabilityApprox' ? {...itemNestedLabels,percent:'概率（%）'} : keyedFields.has(key) && value && typeof value === 'object' && !Array.isArray(value)
       ? {...itemNestedLabels,...Object.fromEntries(Object.keys(value).map(entry => [entry,itemNestedLabels[entry] || entry]))} : itemNestedLabels;
     let text = factText(value,dictionary);
     if (key === 'acquisition') text = acquisitionLabels[value] || text;

@@ -793,6 +793,9 @@ if (!memoryCard || !memoryCard.textContent.includes('传送至头目的房间前
 const memoryKey = window.document.querySelector('.key-items-card');
 if (!memoryKey?.textContent.includes('被支配的记忆') || !memoryKey.textContent.includes('重复任务路线') || !memoryKey.textContent.includes('完成后')) throw new Error('被支配的记忆重复路线未进入关键道具去向');
 if (window.document.querySelector('.detail-badges').textContent.includes('已核验')) throw new Error('页面仍用整理标记声称资料已通过实际验收');
+results = search('2023暑期特别活动'); results[0]?.click();
+const summerPointsProbability = window.document.querySelector('[data-reward-name="天梯赛积分"] [data-fact-key="probabilityApprox"]')?.textContent;
+if (!summerPointsProbability?.includes('概率（%）：16') || summerPointsProbability.includes('减少比例')) throw new Error('2023暑期奖励概率误标为减少比例或遗漏16%');
 
 if (genericSupplementFields.size) {
   throw new Error(`页面仍使用无语义“补充信息”标签：${[...genericSupplementFields].map(([field, title]) => `${field}（${title}）`).join('、')}`);
