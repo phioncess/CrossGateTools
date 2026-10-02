@@ -769,6 +769,11 @@ for (const questId of allQuestIds) {
 
 results = search('王宫食堂'); results[0]?.click();
 const kitchenText = window.document.querySelector('#questDetail').textContent;
+const cookingRows = [...window.document.querySelectorAll('[data-step-field="inputs"] tbody tr')];
+for (const [dish,time] of [['蛋包饭','1～2分钟'],['亲子丼','1～3分钟'],['寿喜锅','10～15分钟'],['魅惑的哈密瓜面包','2～7分钟'],['醋饭寿司','5～7分钟'],['鳖料理','1～2分钟'],['鱼翅汤','2～3分钟']]) {
+  if (!cookingRows.some(row => row.querySelector('th')?.textContent === dish && row.querySelector('td')?.textContent === time)) throw new Error(`王宫食堂料理时间归属错误: ${dish}`);
+}
+if (kitchenText.includes('failure') || ![...window.document.querySelectorAll('.step-route > h4')].some(title => title.textContent === '不合格厨师路线')) throw new Error('王宫食堂失败路线标题错误');
 for (const text of ['（111.148）','（72.104）','制作后经过时间（分钟）','蛋包饭','1～2','10～15','料理技能耗魔减少（%）','10']) if (!kitchenText.includes(text)) throw new Error(`王宫食堂结构事实遗漏: ${text}`);
 const seasoningCards = [...window.document.querySelectorAll('[data-reward-name="味精"]')];
 if (seasoningCards.length !== 1 || !seasoningCards[0].textContent.includes('额外回复10点魔力')) throw new Error('味精多来源合并遗漏独立用途或生成重复卡');
