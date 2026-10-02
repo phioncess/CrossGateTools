@@ -345,7 +345,7 @@ globalThis.SOURCE_DOCUMENTS = {
       {
         "afterStep": 5,
         "src": "assets/quests/catalog-0da03345-ae0b-49e2-af05-1be22616d39d/05-33b315a1bb.jpg",
-        "caption": "=======================",
+        "caption": "开启者 原攻略图片 5",
         "sourceUrl": "https://www.molibaike.com/Attachment/Download?path=202309%2F17%2F30a5eb5a-fdb5-4257-9880-b3dfc4facce3.jpg"
       },
       {

@@ -220,3 +220,15 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var
 /* 16-02/16-03: single enemy width and primary name readability. */
 .enemy-list>.enemy-card:only-child{grid-column:1 / -1}
 .enemy-card header b{font-size:18px}
+/* 17-01: long series names wrap without reducing the primary text size. */
+.chain-node b{white-space:normal;overflow-wrap:anywhere}
+/* 17-04: prevent implicit grid tracks from exceeding the reward container. */
+.reward-accordion>.structured-reward-list{grid-template-columns:minmax(0,1fr)}
+.acquisition-event-card{min-width:0}
+@media(max-width:760px){
+  /* 17-02: long labels keep the value readable on narrow screens. */
+  .reward-fact-list>div,.compact-rewards .reward-fact-list>div{display:grid;grid-template-columns:minmax(0,1fr);gap:3px;min-width:0;max-width:100%}
+  .reward-fact-list dt,.reward-fact-list dd{min-width:0;max-width:100%}
+  .acquisition-item-grid{grid-template-columns:minmax(0,1fr)}
+  .reward-accordion .acquisition-item-grid:not(.compact-rewards){columns:auto}
+}
