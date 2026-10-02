@@ -160,9 +160,15 @@ if (dragonRecord.flow.steps.length !== 14 || dragonRecord.flow.steps[6].id !== '
 for (const text of ['11.14','31.9','36.12','10.7','12.11','195.176','20.22','68.41','72.77','15.11','34.21','72.76','64.40','9.13','56.13','103.102','51.46','64.47','66.41','94.48','22.8','物品栏或银行','第9步','2026.05.23','从第1步重接','纪念羽毛','村落传送券']) {
   if (!dragonGuideText.includes(text)) throw new Error(`魔龙路线事实遗漏: ${text}`);
 }
-for (const text of ['艾斯潘之石','碎裂的艾斯潘之石','攻击+10%','耐久-20%','注销时消失','不可交易','手机','收不到讯号','可爱水手服','假发','500G','200G']) {
+for (const text of ['艾斯潘之石','碎裂的艾斯潘之石','攻击+10%','耐久-20%','注销时消失','不可交易','手机','收不到讯号','可爱水手服','假发']) {
   if (!dragonRewardText.includes(text)) throw new Error(`魔龙有价值道具事实遗漏: ${text}`);
 }
+for (const [name, price] of [['可爱水手服','500'],['假发','200']]) {
+  const card = [...window.document.querySelectorAll('.acquisition-item')].find(card => card.querySelector('h4')?.textContent.includes(name));
+  if (!card || ![...card.querySelectorAll('.reward-fact-list>div')].some(row => row.querySelector('dt')?.textContent === '价格（G）' && row.querySelector('dd')?.textContent.trim() === price)) throw new Error(`魔龙购买价格遗漏或归属错误: ${name}`);
+}
+if (window.document.querySelectorAll('.step-route').length !== 3 || dragonGuideText.includes('此步可选')) throw new Error('魔龙支线未分组或仍重复可选元数据');
+if (dragonRewardText.includes('不推测第三种物品')) throw new Error('魔龙奖励区泄漏整理过程');
 const dragonSkills = dragonRecord.versions.common.tiers.common.battles.dragon.enemies[0].skills;
 if (dragonSkills.filter(skill => skill.startsWith('连击')).length !== 1) throw new Error('魔龙连击技能重复');
 
@@ -576,11 +582,17 @@ for (const questId of allQuestIds) {
     throw new Error(`流程泄漏内部引用或校验开关: ${title}`);
   }
   const renderedSteps = [...window.document.querySelectorAll('.quest-steps > li')];
+  if (window.document.querySelector('.boss-fight [data-source-field="key"], .boss-fight [data-source-field="heading"], .boss-fight [data-source-field="headings"]')) throw new Error(`战斗包装字段泄漏: ${title}`);
+  if ([...window.document.querySelectorAll('.guide-meta>div')].some(card => !card.querySelector('b') && !card.querySelector('li'))) throw new Error(`流程空条件卡: ${title}`);
   if (!renderedSteps.length) throw new Error(`任务没有流程步骤: ${title}`);
   if (renderedSteps.length !== structuredRecord.flow.steps.length) throw new Error(`结构化流程步骤数量不一致: ${title}`);
   const coreStepFields = new Set(['id','order','text','route','branch','notes','inputs','outputs','choices','quiz','commands','operations','branchGroups','afterOperations','battleRef','battleRefs','allowsIntermediateOutputThenInput','sourceLines','verification','presentationFacts','presentationInteractions','presentationSections','equipmentRefs','duplicateSourceLines']);
   structuredRecord.flow.steps.forEach((step, stepIndex) => {
     const renderedSupplementFields = new Set([...renderedSteps[stepIndex].querySelectorAll('[data-source-field], [data-fact-key], [data-step-field]')].map(node => node.dataset.sourceField || node.dataset.factKey || node.dataset.stepField));
+    if (step.optional === true && step.branch) {
+      if (renderedSteps[stepIndex].closest('.step-route')?.querySelector('h4')?.textContent !== step.branch) throw new Error(`可选支线分组标题遗漏: ${title}/${step.id}`);
+      renderedSupplementFields.add('optional');
+    }
     if (renderedSteps[stepIndex].querySelector('[data-fact-key^="inputs-"], [data-fact-key^="outputs-"]')) throw new Error(`流程重复展开输入输出元数据: ${title} -> ${step.id}`);
     for (const fact of step.presentationFacts || []) {
       const factNode = [...renderedSteps[stepIndex].querySelectorAll('[data-fact-key]')].find(node => node.dataset.factKey === fact.key);

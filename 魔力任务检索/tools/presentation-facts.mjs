@@ -136,6 +136,7 @@ export function compilePresentationFacts(database) {
       step.presentationSections = stepSourceSections(step,quest);
       stats.stepSections += step.presentationSections.length;
       const fields = new Set([...coreStepFields,...step.presentationFacts.map(row => row.key),...step.presentationSections.map(section => section.key)]);
+      if (step.optional === true && step.branch) fields.add('optional');
       if (fields.has('rewardEventRefs')) ['rewardEventRef','rewardPool'].forEach(key => fields.add(key));
       const missing = Object.keys(step).filter(key => !fields.has(key));
       if (missing.length) throw new Error(`${quest.name}/${step.id} 未定义流程字段展示：${missing.join('、')}`);
@@ -169,6 +170,7 @@ export function stepPresentationFacts(step, quest) {
   const rows = [];
   for (const [key, label] of Object.entries(stepLabels)) {
     if (step[key] == null || step[key] === '') continue;
+    if (key === 'optional' && step.optional === true && step.branch) continue;
     let text = factText(step[key], stepNestedLabels);
     if (key === 'condition' && /^level>=\d+$/.test(text)) text = `等级不低于${text.slice(7)}`;
     rows.push({key,label,text});

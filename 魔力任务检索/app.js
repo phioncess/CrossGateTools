@@ -291,7 +291,7 @@ function renderQuestSteps(questId, steps, trainingMarkers = []) {
   let current = {route:'', items:[]};
   groups.push(current);
   steps.forEach(step => {
-    const route = step.route || '';
+    const route = step.route || step.branch || '';
     if (route !== current.route && (route || current.items.length)) {
       current = {route, items:[]};
       groups.push(current);
@@ -642,7 +642,7 @@ const ENCOUNTER_RENDERED_FIELDS = new Set([
   'level','levelRange','enemyLevel','enemyLevelApprox','count','enemyCount','skills','enemySkills'
 ]);
 const BATTLE_RENDERED_FIELDS = new Set([
-  'id','title','name','enemies','rounds','randomOneOf','consecutiveBattles','strategy','strategyNotes','notes','sourceLines','verification','order','triggerStep'
+  'id','key','heading','headings','title','name','enemies','rounds','randomOneOf','consecutiveBattles','strategy','strategyNotes','notes','sourceLines','verification','order','triggerStep'
 ]);
 const BATTLE_PART_RENDERED_FIELDS = new Set([
   'id','title','name','enemies','strategy','strategies','notes','sourceLines','verification','order','triggerStep','headerElements'
@@ -989,7 +989,9 @@ function renderVersionedRewards(record) {
       const periodicGroup = events.some(event => event.items.some(item => item.purchase && item.resultPet));
       const title = periodicGroup ? '历次上架记录' : [versionKey === 'common' ? '通用资料' : (version?.label || versionKey), tierKey === 'common' ? '' : (tier?.label || tierKey)].filter(Boolean).join(' · ');
       const eventLabelFor = rewardEvent => {
-        const stepNumber = (record.flow?.steps || []).find(step => step.id === rewardEvent.step)?.order;
+        const sourceStep = (record.flow?.steps || []).find(step => step.id === rewardEvent.step);
+        const stepNumber = sourceStep?.order;
+        if (sourceStep?.branch) return sourceStep.branch;
         if (stepNumber != null) return `流程第 ${stepNumber} 步`;
         return periodicGroup ? '周期上架' : rewardEvent.kind === 'battle-drop' ? '战斗掉落' : rewardEvent.kind === 'reward-pool' ? '随机奖池' : rewardEvent.kind === 'exchange-recipe' ? '兑换' : '明确记录';
       };
@@ -1241,7 +1243,8 @@ function renderQuest(quest, updateHash = true) {
     return `
     <article class="boss-fight">
       <div class="boss-heading"><span>${fight.kind}</span><h4>${formatTaskText(fight.title)}</h4>${stepRef ? `<em class="boss-step">${stepRef}</em>` : ''}</div>
-      ${fightFacts.length ? `<div class="fight-facts">${fightFacts.map(note => `<span>${formatTaskText(note)}</span>`).join('')}</div>` : ''}
+      ${fight.sourceDetails?.heading ? `<p class="battle-origin">${formatTaskText(fight.sourceDetails.heading)}</p>` : ''}
+      ${fightFacts.length ? `<div class="battle-notes"><b>战斗说明</b><ul>${fightFacts.map(note => `<li>${formatTaskText(note)}</li>`).join('')}</ul></div>` : ''}
       ${(fight.sourceDetailGroups || [{source:fight.sourceDetails, renderedFields:fight.renderedSourceFields}]).map(group => renderStructuredFields(group.source, group.renderedFields, '区域／战斗补充资料')).join('')}
       <div class="enemy-list">${fight.enemies.map(renderEnemy).join('')}</div>
       ${strategyItems.length ? `<div class="strategy"><b>打法建议</b><ol>${strategyItems.map(item => `<li>${formatTaskText(item)}</li>`).join('')}</ol></div>` : ''}
@@ -1249,11 +1252,11 @@ function renderQuest(quest, updateHash = true) {
   }).join('');
   const chainHtml = series.length > 1 ? `
     <section class="chain-card">
-      <div class="section-title"><span>系列关系链</span><small>${quest.stageLabel ? `当前 ${quest.stageLabel}` : (quest.order ? `第 ${quest.order} 项` : `第 ${index + 1} 项`)} · 已收录 ${series.length} 项</small></div>
-      <div class="chain-track">${series.map(item => `<button type="button" data-quest-id="${item.id}" class="chain-node ${item.id === quest.id ? 'current' : ''} ${item.optional ? 'optional' : ''}" title="${item.optional ? '支线／可选' : item.name}"><span>${item.stageLabel || item.order}</span><b>${item.name}</b><small>${item.prerequisites.length ? `前置 ${item.prerequisites.length} 项` : '链条起点'}</small></button>`).join('')}</div>
+      <div class="section-title"><span>系列任务</span><small>${quest.stageLabel ? `当前 ${quest.stageLabel}` : (quest.order ? `第 ${quest.order} 项` : `第 ${index + 1} 项`)} · 已收录 ${series.length} 项</small></div>
+      <div class="chain-track">${series.map(item => `<button type="button" data-quest-id="${item.id}" class="chain-node ${item.id === quest.id ? 'current' : ''} ${item.optional ? 'optional' : ''}" title="${item.optional ? '支线／可选' : item.name}"><span>${item.stageLabel || item.order}</span><b>${item.name}</b><small>${item.prerequisites.length ? `前置 ${item.prerequisites.length} 项` : '未记录直接前置'}</small></button>`).join('')}</div>
       <div class="chain-neighbors">
-        <div class="chain-direction"><b>直接前置</b><div class="chain-relation-list">${seriesPrevious.length ? seriesPrevious.map(item => relationButton(item.id, '← 前置')).join('') : '<div class="chain-edge">已是本链起点</div>'}</div></div>
-        <div class="chain-direction"><b>直接后续</b><div class="chain-relation-list">${seriesNext.length ? seriesNext.map(item => relationButton(item.id, '后续 →')).join('') : '<div class="chain-edge">已是本链末尾</div>'}</div></div>
+        <div class="chain-direction"><b>直接前置</b><div class="chain-relation-list">${seriesPrevious.length ? seriesPrevious.map(item => relationButton(item.id, '← 前置')).join('') : '<div class="chain-edge">未记录本系列直接前置</div>'}</div></div>
+        <div class="chain-direction"><b>直接后续</b><div class="chain-relation-list">${seriesNext.length ? seriesNext.map(item => relationButton(item.id, '后续 →')).join('') : '<div class="chain-edge">未记录本系列直接后续</div>'}</div></div>
       </div>
       <p class="chain-hint">关系线严格依据任务前置生成；同阶段任务可能并行，编号相邻不代表互为前置。虚线节点表示支线或材料任务。</p>
     </section>` : '';
@@ -1288,7 +1291,7 @@ function renderQuest(quest, updateHash = true) {
     </header>
     ${quest.summary ? `<p class="summary">${formatTaskText(quest.summary)}</p>` : ''}
     ${chainHtml}
-    ${relationHtml}
+    ${otherPrerequisites.length || otherDownstream.length ? relationHtml : ''}
     ${trainingHtml ? `<div class="detail-tabs" role="tablist" aria-label="任务内容切换">
       <button type="button" class="active" role="tab" aria-selected="true" data-detail-tab="task">完整任务流程</button>
       <button type="button" role="tab" aria-selected="false" data-detail-tab="training">练级路线</button>
@@ -1298,7 +1301,7 @@ function renderQuest(quest, updateHash = true) {
       <div class="guide-layout">
         <div class="guide-meta">
           <div><span>起点</span><b>${formatTaskText(guide.start)}</b></div>
-          <div><span>条件</span><ul>${guide.conditions.map(item => `<li>${formatTaskText(item)}</li>`).join('')}</ul></div>
+          ${guide.conditions.length ? `<div><span>条件</span><ul>${guide.conditions.map(item => `<li>${formatTaskText(item)}</li>`).join('')}</ul></div>` : ''}
         </div>
         ${renderQuestSteps(quest.id, guide.steps, trainingMarkers)}
       </div>
