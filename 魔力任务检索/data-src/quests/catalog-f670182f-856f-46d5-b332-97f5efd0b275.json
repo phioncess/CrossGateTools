@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-f670182f-856f-46d5-b332-97f5efd0b275",
   "name": "坠落的星辰",
   "aliases": [
@@ -394,98 +394,246 @@
     {
       "line": 1,
       "text": "1.前往法兰城与天文狂热者（114.95）对话，选“是”。（此步可跳过）",
-      "type": "optional-step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "2.矿工、猎人、樵夫分别前往海贼的矿山、海贼的岛屿、海贼的森林，使用不低于Lv.5本职技能可获得【星辰的碎片】。",
-      "type": "collection-event",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "◆海贼的矿山、海贼的岛屿、海贼的森林抵达方式参考《海贼的宝地》任务",
-      "type": "reference",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "◆【星辰的碎片】不可交易、丢地消失",
-      "type": "item-detail",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.notes.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "3.集齐20个【星辰的碎片】返回法兰城与天文狂热者对话，交出【星辰的碎片】*20获得【星光波动鞋】，任务完结。",
-      "type": "step",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "◆【星光波动鞋】：Lv.2鞋、耐久300；魔力+300、幸运值提高；装备后与管理称号的NPC对话，获得称号“舞动的星光”；不可交易、丢地消失",
-      "type": "reward-detail",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "◆持有【星光波动鞋】与天文狂热者对话，交出【星辰的碎片】*20获得【十全十美安全帽】",
-      "type": "optional-exchange",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "◆【十全十美安全帽】：Lv.1头盔、耐久200；可抵挡受伤",
-      "type": "reward-detail",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     }
   ],
   "verification": {

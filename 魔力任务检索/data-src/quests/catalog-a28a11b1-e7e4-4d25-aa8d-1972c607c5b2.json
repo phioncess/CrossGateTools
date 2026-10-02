@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-a28a11b1-e7e4-4d25-aa8d-1972c607c5b2",
   "name": "魔之塔",
   "aliases": [
@@ -1885,614 +1885,1544 @@
     {
       "line": 1,
       "text": "1.前往法兰城，在非组队状态下与魔塔报名圣诞老人（231.83）对话，输入“祝你健康”选“是”传送至？？？。",
-      "type": "solo-password-entry",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.commands.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆？？？为固定迷宫，共12层；魔物种类较多，魔物等级随楼梯提升而提高；无补给点",
-      "type": "dungeon-detail",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "2.挑战每层BOSS，胜利后进入下一层。",
-      "type": "battle-progression",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "◆第一至第十层战斗信息：",
-      "type": "battle-table-heading",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "楼层BOSS喽啰",
-      "type": "table-columns",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "1Lv.49阴影 HP.1400Lv.45~50哥布林*",
-      "type": "floor-battle",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-1.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-1.enemies.1"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "2Lv.51牛鬼 HP.2500Lv.45~50腐尸*5",
-      "type": "floor-battle",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-2.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-2.enemies.1"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "3Lv.58暗影 HP.1800Lv.56~58血腥之刃",
-      "type": "floor-battle",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-3.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-3.enemies.1"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "4Lv.61杀熊者欧兹那克 HP.2500Lv.70~75穴熊*9",
-      "type": "floor-battle",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-4.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-4.enemies.1"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "5Lv.66幻影 HP.2000Lv.67蜥蜴战士*6",
-      "type": "floor-battle",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-5.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-5.enemies.1"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "6Lv.75热砂的欧兹尼克 HP.4500Lv.71~75地龙蜥*3、水龙蜥*2",
-      "type": "floor-battle",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-6.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-6.enemies.1"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "7Lv.80哥布林枪手 HP.2500Lv.75~79红帽哥布林*5",
-      "type": "floor-battle",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-7.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-7.enemies.1"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "8Lv.85法尔肯 HP.7500Lv.81~85鬼灵*5",
-      "type": "floor-battle",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-8.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-8.enemies.1"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "9Lv.85牛鬼 HP.4000Lv.85~89僵尸*5",
-      "type": "floor-battle",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-9.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-9.enemies.1"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "10Lv.92黑暗医生阿鲁巴斯HP.4700Lv.88~94木乃伊*2、腐尸*2、僵尸*5",
-      "type": "floor-battle",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-10.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-10.enemies.1"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "3.战胜第九层BOSS后与士兵基斯（9.6）对话，获得【青铜魔戒】。",
-      "type": "ring-acquisition",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "◆此步若持有【白银魔戒】、【黄金魔戒】或【暗黑魔戒】，需交出后才可获得【青铜魔戒】",
-      "type": "ring-exchange-rule",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.inputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "◆此步无论是否选择获得【青铜魔戒】，都不影响后续【奖品】的获得或兑换",
-      "type": "reward-independence",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "◆【青铜魔戒】：Lv.1戒指、耐久50；攻击-30、防御+30；不可丢地/交易/寄存；装备后获得称号“青铜魔斗士”",
-      "type": "equipment-detail",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "4.战胜第十层BOSS后与士兵索耶（9.6）对话，获得【白银魔戒】。",
-      "type": "ring-acquisition",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "◆此步若持有【青铜魔戒】、【黄金魔戒】或【暗黑魔戒】，需交出后才可获得【白银魔戒】",
-      "type": "ring-exchange-rule",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.inputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "◆此步无论是否选择获得【白银魔戒】，都不影响后续【奖品】的获得或兑换",
-      "type": "reward-independence",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "◆【白银魔戒】：Lv.1戒指、耐久50；攻击+10、防御+10、敏捷+10、精神+10；不可丢地/交易/寄存；装备后获得称号“白银魔斗士”",
-      "type": "equipment-detail",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.1"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "5.前往第十一层与头目（23.5）对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-11"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-11"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "Lv.75暗影（2动），技能：攻击、强力风刃魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-11"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-11.enemies.0"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "Lv.75热砂的欧兹尼克（2动），技能：攻击、阳炎、气功弹、崩击",
-      "type": "battle-enemy",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-11"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-11.enemies.1"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "Lv.75牛鬼（2动），技能：攻击、乾坤一掷、崩击",
-      "type": "battle-enemy",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-11"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-11.enemies.2"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "Lv.75杀熊者欧兹那克（2动），技能：攻击、乾坤一掷、崩击",
-      "type": "battle-enemy",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-11"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-11.enemies.3"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "Lv.75头目（2动），技能：攻击、乾坤一掷、吸血攻击、属性反转",
-      "type": "battle-enemy",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-11"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-11.enemies.4"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "Lv.75海盗*5（1动），技能：攻击、诸刃、崩击",
-      "type": "battle-enemy",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-11"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-11.enemies.5"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "◇打法建议：群攻技能清小怪，从下到上合BOSS",
-      "type": "strategy-note",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-11"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "6.战斗胜利后与士兵卡多（20.16）对话，获得【黄金魔戒】。",
-      "type": "ring-acquisition",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.14.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "◆此步若持有【青铜魔戒】、【白银魔戒】或【暗黑魔戒】，需交出后才可获得【黄金魔戒】",
-      "type": "ring-exchange-rule",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.14.inputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "◆此步无论是否选择获得【黄金魔戒】，都不影响后续【奖品】的获得或兑换",
-      "type": "reward-independence",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "◆【黄金魔戒】：Lv.1戒指、耐久50；攻击+15、防御+15、敏捷+15、精神+15；不可丢地/交易/寄存；装备后获得称号“黄金魔斗士”",
-      "type": "equipment-detail",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.2"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "7.前往第十二层与露比军团（24.19）对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-12"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-12"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "Lv.80哥布林枪手（2动），HP.2500，技能：攻击、战栗袭心、连击",
-      "type": "battle-enemy",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-12.enemies.0"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "Lv.90露比（2动），HP.5000，技能：强力恢复魔法、攻击吸收、攻无、魔套？，超强陨石魔法（剩3个BOSS时追加）、超强混乱魔法（剩3个BOSS时追加）",
-      "type": "battle-enemy",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-12.enemies.1"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "Lv.90佛利波罗（2动），HP.15000，技能：攻击、阳炎、吸血攻击、吸血魔法、攻击反弹、强力冰冻魔法（剩3个BOSS时追加）、强力风刃魔法（剩3个BOSS时追加）、强力即死魔法（我方使用恢复类魔法后追加，不耗魔）",
-      "type": "battle-enemy",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-12.enemies.2"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "Lv.90阿卡斯（2动），HP.15000，技能：攻击、圣盾、吸血攻击、攻击反弹、魔套？、强力陨石魔法、强力火焰魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-12.enemies.3"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "Lv.90最终决战型牛鬼（2动），HP.6500，技能：攻击、乾坤一掷、诸刃、连击、崩击、装备破坏",
-      "type": "battle-enemy",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-12.enemies.4"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "Lv.93~94血腥之刃（1动），HP.2500，技能：攻击、防御",
-      "type": "battle-enemy",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-12.enemies.5"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "◇打法建议：战栗波罗-合枪手-露比-阿卡斯-牛鬼-刀-波罗",
-      "type": "strategy-note",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor-12"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "8.战斗胜利后传送至秘密房间，与士兵强尼（4.4）对话，获得【暗黑魔戒】、称号“终极魔斗士”，任务完结。",
-      "type": "completion-reward",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.16"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.16.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.3"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "◆此步若持有【青铜魔戒】、【白银魔戒】或【黄金魔戒】，需交出后才可获得【暗黑魔戒】",
-      "type": "ring-exchange-rule",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.16"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.16.inputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "◆【暗黑魔戒】只可持有一个，丢弃后士兵强尼对话可再次获得",
-      "type": "holding-limit",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.16"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.0"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "◆【暗黑魔戒】：Lv.8戒指、耐久100；攻击/防御/敏捷/精神+20、必杀/反击/命中/闪躲+10；不可交易/丢地/寄存",
-      "type": "equipment-detail",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.16"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.0"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "小贴士：东门医院旁边的水蓝鼠，可以领取一个口罩，类似之前的SARS退散口罩。不限次数获得。需要把补偿的时间水晶领了之后才能领口罩",
-      "type": "supplemental-acquisition",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        }
+      ]
     },
     {
       "line": 51,
       "text": "◆防ＮＣＰ口罩：Lv.1护身符、耐久140；防御+5、闪躲+3、抗毒+5；数值浮动，不可交易；装备后获得“ＮＣＰ退散”",
-      "type": "equipment-detail",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.4"
+        }
+      ]
     }
   ],
   "verification": {

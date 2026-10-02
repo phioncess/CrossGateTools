@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-52d671c4-7361-4a69-afbd-889a63cc522d",
   "name": "矿工的安全帽",
   "aliases": [
@@ -160,7 +160,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "地下牢房",
+            "coordinate": "7.52",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "step-2",
@@ -201,7 +214,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "法兰城",
+            "coordinate": "61.63",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "step-3",
@@ -278,7 +304,53 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "国营24坑道",
+            "coordinate": "351.145",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "门",
+            "coordinate": "22.20",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "国营第24坑道 地下3楼",
+            "coordinate": "29.3",
+            "sourceLines": [
+              8
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "国营第24坑道 地下3楼",
+            "coordinate": "6.3",
+            "sourceLines": [
+              10
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "step-4",
@@ -355,7 +427,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "法兰城",
+            "coordinate": "61.63",
+            "sourceLines": [
+              12
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "step-5",
@@ -434,7 +519,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "地下牢房",
+            "coordinate": "7.52",
+            "sourceLines": [
+              13
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       }
     ],
     "notes": []
@@ -810,182 +908,504 @@
     {
       "line": 1,
       "text": "1.前往法兰城地下灵堂，进入地下牢房（7.52）与乔尔凯夫（31.20）对话，获得【给朋友的信】。",
-      "type": "step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "2.前往法兰城（61.63）仓库内部与德米特夫（12.9）对话，交出【给朋友的信】获得【矿山钥匙】。",
-      "type": "step",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "3.前往国营24坑道（351.145），持有【矿山钥匙】对话地下2楼（22.20）的门到达门的里侧，",
-      "type": "gate-step",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "再前往地下3楼，使用挖掘技能，获得【玛瑙】、【赤铁矿】、【天青石】各3个。",
-      "type": "gather-summary",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "◆持有【矿山钥匙】才可进入国营24坑道地下3楼",
-      "type": "gate",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "◆挖掘技能地点：",
-      "type": "location-heading",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "⑴【玛瑙】：在国营第24坑道 地下3楼（19.20）的附近使用挖掘技能，挖取3个【玛瑙】。",
-      "type": "gather-location",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.notes.0"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "⑵【赤铁矿】：从国营第24坑道 地下3楼（29.3）的阶梯下去到国营第24坑道 地下4楼，",
-      "type": "route-detail",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "在国营第24坑道 地下4楼（21,16）的附近使用挖掘技能，挖取3个【赤铁矿】。",
-      "type": "gather-location",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.notes.0"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "⑶【天青石】：从国营第24坑道 地下3楼（6.3）的阶梯下去到国营第24坑道 地下4楼，",
-      "type": "route-detail",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "在国营第24坑道 地下4楼（5,3）的附近使用挖掘技能，挖取3个【天青石】。",
-      "type": "gather-location",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.notes.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "4.法兰城（61.63）仓库内部与德米特夫（12.9）对话，交出【矿山钥匙】*1和【玛瑙】*3、【赤铁矿】*3、【天青石】*3，获得【牢房钥匙】。",
-      "type": "exchange-step",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "5.返回法兰城地下灵堂，地下牢房（7.52）与乔尔凯夫（31.20）对话，交出【牢房钥匙】，",
-      "type": "completion-step",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "随机获得【铜】*20、【银】*10、【金】*10、【安全帽】中的一种，任务完结。",
-      "type": "random-reward",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.7"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.8"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.9"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "◆【安全帽】：Lv.2头盔、耐久150；防御+1~3；额外效果：抵挡5次受伤（怀旧服），道具服无效果，其他服未知",
-      "type": "item-version-detail",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.notes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.怀旧服.notes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.其他服.notes.0"
+        }
+      ]
     }
   ],
   "verification": {

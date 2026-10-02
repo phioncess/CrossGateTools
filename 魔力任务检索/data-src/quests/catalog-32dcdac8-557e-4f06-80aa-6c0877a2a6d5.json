@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-32dcdac8-557e-4f06-80aa-6c0877a2a6d5",
   "name": "实验室除虫",
   "aliases": [
@@ -926,410 +926,1050 @@
     {
       "line": 1,
       "text": "1.前往法兰城与工作招募者（93.62）对话，选“是”进入研究所。",
-      "type": "entry-step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "2.拥有Lv.5采集技能的职业在三处对应的地块处可采集到【土块】或【害虫】。",
-      "type": "gathering-rule",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "◆【土块】：20个/组，暂无用处、丢地消失",
-      "type": "item-detail",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "◆【害虫】：999个/组，可交易",
-      "type": "item-detail",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.1"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "3.持有一定数量的【害虫】与工作奖励兑换员（75.41）对话，兑换【奖品】，任务完结。",
-      "type": "exchange-rule",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "◆【奖品】：（2018年版）",
-      "type": "version-heading",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "名称（每组堆叠数量）害虫数量备注",
-      "type": "table-heading",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "奇怪的草药（99）20技能经验+100",
-      "type": "exchange-row",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "坏掉的矿工锄20造型变更为随机哥布林并开启工作时间",
-      "type": "exchange-row",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "十全十美安全帽40可抵挡受伤10次",
-      "type": "exchange-row",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "穴龙设计图A~E，任选其一80活泼的穴龙：地70风30；",
-      "type": "exchange-row",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "38 41 21 16 9；9技能栏；龙系",
-      "type": "pet-detail",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.3"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "大地牛头怪碎片（30）99拥有30个碎片可双击获得一个大地牛头怪精华",
-      "type": "exchange-row",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "历年版本：",
-      "type": "history-heading",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "3.持有40个【害虫】与工作奖励兑换员（75.41）对话，兑换【劳动报酬】，任务完结。",
-      "type": "historical-exchange",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.7"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "◆双击【劳动报酬】可随机获得【奖品】",
-      "type": "container-open",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.8"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "◆【奖品】：（2017年版）",
-      "type": "version-heading",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "名称备注",
-      "type": "table-heading",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "穴龙设计图活泼的穴龙：地70风30；",
-      "type": "reward-row",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0.variants.0"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "38 41 21 16 9；9技能栏；龙系",
-      "type": "pet-detail",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0.variants.0"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "十全十美安全帽Lv.1头盔，耐久200；可抵挡受伤10次",
-      "type": "reward-row",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0.variants.1"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "奇怪的草药技能经验+100",
-      "type": "reward-row",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0.variants.2"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "很奇怪的草药技能经验+200",
-      "type": "reward-row",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0.variants.3"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "坏掉的矿工锄造型变更为随机哥布林并开启工作时间",
-      "type": "reward-row",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0.variants.4"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "大地牛头怪精华获得Lv.1大地牛头怪",
-      "type": "reward-row",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0.variants.5"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "◆【奖品】：（2016年版）",
-      "type": "version-heading",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "名称备注",
-      "type": "table-heading",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "猎豹蜥蜴设计图（A~E），随机改造猎豹蜥蜴 ：火20风80；",
-      "type": "reward-row",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0.variants.0"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "33 43 18 23 8；9技能栏；龙系",
-      "type": "pet-detail",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0.variants.0"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "十全十美安全帽可抵挡受伤10次",
-      "type": "reward-row",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0.variants.1"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "奇怪的草药技能经验+100",
-      "type": "reward-row",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0.variants.2"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "很奇怪的草药技能经验+200",
-      "type": "reward-row",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0.variants.3"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "坏掉的矿工锄造型变更为随机哥布林并开启工作时间",
-      "type": "reward-row",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0.variants.4"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "大地牛头怪精华获得Lv.1大地牛头怪",
-      "type": "reward-row",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0.variants.5"
+        }
+      ]
     }
   ],
   "verification": {

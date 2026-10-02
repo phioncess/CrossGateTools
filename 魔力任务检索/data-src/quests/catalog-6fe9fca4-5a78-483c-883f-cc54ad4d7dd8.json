@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-6fe9fca4-5a78-483c-883f-cc54ad4d7dd8",
   "name": "久违的重逢",
   "aliases": [],
@@ -311,7 +311,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "奇利村民家",
+            "coordinate": "71.63",
+            "sourceLines": [
+              9
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       }
     ],
     "notes": []
@@ -553,122 +566,298 @@
     {
       "line": 1,
       "text": "1.前往法兰城西医院与见习护士米内鲁帕对话，选“是”传送至哈巴鲁东边洞穴地下2楼。",
-      "type": "step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "2.与欧兹那克（17.17）对话（此步可省略）。",
-      "type": "optional-step",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "3.击倒哈巴鲁东边洞穴中遭遇的史莱姆可随机获得【绿色果冻】。搜集9个后与欧兹那克对话，交出【绿色果冻】获得【欧兹那克的战斧】。",
-      "type": "collection-and-exchange",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "4.再与欧兹那克对话选“否”传送回法兰城，与见习护士米内鲁帕对话传送至索奇亚海底洞窟地下2楼。",
-      "type": "choice-step",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "◆若选“是”则与欧兹那克进入战斗，战斗胜利后无奖品，若失败任务亦可继续完成",
-      "type": "optional-battle-note",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-optional-oznak"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-optional-oznak.overview"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "◆BOSS：Lv.120杀熊者欧兹那克，血量约90000；喽啰：Lv.100穴熊*9，血量约13000",
-      "type": "enemy-summary",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-optional-oznak"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-optional-oznak.enemies.enemy-1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-optional-oznak.enemies.enemy-2"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "5.与欧兹尼克（27.21）对话，获得【欧兹尼克的新戒指】。",
-      "type": "step",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "6.返回法兰城西医院与见习护士米内鲁帕对话，交出【欧兹那克的战斧】、【欧兹尼克的新戒指】获得【致母亲的信】。",
-      "type": "step",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "7.前往奇利村民家（71.63）与米内鲁帕的母亲（12.6）对话，交出【致母亲的信】获得【慈母的围巾】、称号“久违的重逢”，任务完结。",
-      "type": "step",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "◆【慈母的围巾】（数值浮动）：Lv.3头带、生命+155、耐久200；不可交易、丢地消失",
-      "type": "reward-detail",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     }
   ],
   "verification": {

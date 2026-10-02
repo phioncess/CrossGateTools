@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-36248880-c7d5-42a1-9458-eaee084117aa",
   "name": "邪灵鸟人",
   "aliases": [
@@ -465,7 +465,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "莎莲娜岛",
+            "coordinate": "151.334",
+            "sourceLines": [
+              29
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       }
     ],
     "notes": []
@@ -851,386 +864,826 @@
     {
       "line": 1,
       "text": "1.前往法兰城里谢里雅堡与赫顿摩尔（34.70）对话，选“是”获得【灵魂晶石】。",
-      "type": "gated-acquisition",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆以下几种情况无法接本任务：",
-      "type": "gate-heading",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "⑴未拥有“开启者”称号时，无法接本任务",
-      "type": "required-title",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "⑵怀旧服：拥有称号“传说中的勇者”时，无法接本任务（道具服、时长服除外）（称号来自“七宗罪7”《传说中的勇者》任务）",
-      "type": "server-title-block",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "⑶拥有【生命的羁绊】、【火焰之羽】、【风之手环】、【晶莹的冰晶】四种道具或兑换过【黑暗之心】时，无法获得【灵魂晶石】",
-      "type": "item-state-block",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "⑷身上同时持有四个不同属性元素之证时无法获取灵魂晶石",
-      "type": "inventory-block",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "⑸身上同时持有两个或以上同属性元素之证时无法获取灵魂晶石（此时可将元素之证丢地或交易给别人）",
-      "type": "inventory-block",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "◇若打算重解本系列任务，建议先获得足够的【元素之证】再完成《传说中的勇者》任务",
-      "type": "series-planning-note",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "2.前往杰诺瓦镇，出镇西门至莎莲娜岛（150.334）处与赫顿的式神对话，进入贝兹雷姆小道。",
-      "type": "maze-entry",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "◆赫顿的式神位于贝兹雷姆神殿附近",
-      "type": "location-note",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "◆贝兹雷姆小道为固定迷宫；魔物为大炸弹、大地翼龙（怀旧服为Lv.40；时长/道具服为Lv.90，有经验可以练级）",
-      "type": "versioned-maze-encounter",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "◆贝兹雷姆小道行走路线：",
-      "type": "route-heading",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "3.通过迷宫抵达色欲之殿，与邪灵鸟人（14.14）对话战斗。",
-      "type": "battle-step",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.evil-birdman"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◆战斗信息：（怀旧服）",
-      "type": "server-battle-heading",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.evil-birdman"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "Lv.50邪灵鸟人，血量约6000，邪魔系，属性：火60风60，不抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.evil-birdman"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.evil-birdman.enemies.0"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "技能：攻击、防御、风刃魔法、超强风刃魔法、超强混乱魔法",
-      "type": "battle-skill",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.evil-birdman"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.evil-birdman.enemies.0"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "◆战斗信息：（时长/道具服）",
-      "type": "server-battle-heading",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.evil-birdman"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "Lv.100邪灵鸟人，血量约13000，邪魔系，属性：火60风60，不抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.evil-birdman"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.evil-birdman.enemies.1"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "技能：攻击、防御、风刃魔法、超强风刃魔法、超强混乱魔法",
-      "type": "battle-skill",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.evil-birdman"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.evil-birdman.enemies.1"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "4.战斗胜利后，调查红色传送石（14.4）进入暗房。",
-      "type": "route-step",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "5.与堕落僧侣梅鲁（11.11）对话进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.fallen-monk-meru"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "◆战斗信息：（怀旧服）",
-      "type": "server-battle-heading",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.fallen-monk-meru"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "Lv.55堕落僧侣梅鲁，血量约10000，邪魔系，属性：全40，不抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.fallen-monk-meru"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.fallen-monk-meru.enemies.0"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "技能：攻击、防御、阳炎、乾坤一掷、冰冻魔法、超强冰冻魔法、补血魔法、恢复魔法",
-      "type": "battle-skill",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.fallen-monk-meru"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.fallen-monk-meru.enemies.0"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "◆战斗信息：（时长/道具服）",
-      "type": "server-battle-heading",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.fallen-monk-meru"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "Lv.105堕落僧侣梅鲁，血量约15000，邪魔系，属性：全40，不抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.fallen-monk-meru"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.fallen-monk-meru.enemies.1"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "技能：攻击、防御、阳炎、乾坤一掷、冰冻魔法、超强冰冻魔法、补血魔法、恢复魔法",
-      "type": "battle-skill",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.fallen-monk-meru"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.fallen-monk-meru.enemies.1"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "6.战斗胜利后与堕落僧侣梅鲁（11.11）对话，交出【灵魂之石】获得四种属性的【元素之证】中的任意一种，任务完结。",
-      "type": "completion-random-exchange",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "◆通过（14.4）处楼梯可传送至莎莲娜岛（151.334）处",
-      "type": "exit-route",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "◆四种属性的【元素之证】：可交易。分别为【水元素之证】,【火元素之证】,【风元素之证】,【地元素之证】",
-      "type": "reward-variants",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "◆任务剧情：参考《七宗罪系列任务剧情对话》",
-      "type": "story-reference",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "relation",
+          "target": "relations.references.2"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "◆BOSS打法：参考《七宗罪系列任务BOSS战打法心得》",
-      "type": "strategy-reference",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "relation",
+          "target": "relations.references.3"
+        }
+      ]
     }
   ],
   "verification": {

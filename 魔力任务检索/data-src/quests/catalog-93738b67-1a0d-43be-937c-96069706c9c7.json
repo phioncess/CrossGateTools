@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-93738b67-1a0d-43be-937c-96069706c9c7",
   "name": "馋嘴的巴特",
   "aliases": [
@@ -823,7 +823,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "供货商",
+            "coordinate": "17.14",
+            "sourceLines": [
+              29
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       }
     ],
     "notes": []
@@ -1262,362 +1275,938 @@
     {
       "line": 1,
       "text": "1.前往法兰城凯蒂夫人店门口与裘瑟斯（195.69）对话。（此步可省略）",
-      "type": "optional-step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "2.前往维诺亚村与研究员巴特（17.33）对话。（此步可省略）",
-      "type": "optional-step",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "3.前往法兰城拿潘食品店（217.53）与粽子贩售商（17.13）对话，可交出1000G购买【肉粽】。",
-      "type": "purchase-step",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.routePoints.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.routePoints.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "4.返回维诺亚村与研究院巴特对话，交出【肉粽】获得【裘瑟斯的信】。",
-      "type": "exchange-step",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "5.返回法兰城凯蒂夫人店门口与裘瑟斯（195.69）对话，交出【裘瑟斯的信】获得【材料需求目录】。",
-      "type": "exchange-step",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.routePoints.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "6.前往亚留特村外寻找随机出现箬竹，持有【材料需求目录】时与之对话，获得【粽叶】。",
-      "type": "held-item-acquisition",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "7.返回法兰城凯蒂夫人店门口与裘瑟斯对话，交出【材料需求目录】、【粽叶】获得【特制的粽子】。",
-      "type": "combined-exchange",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "◆【特制的粽子】登出消失；持有【特制的粽子】时可使用各村落间的传送石",
-      "type": "item-detail",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "8.前往维诺亚村与研究员巴特对话，交出【特制的粽子】获得【研究工具申请表】、【端午龙舟限定版】或【端午香包】。",
-      "type": "combined-reward",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.7"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "◆【端午龙舟限定版】或【端午香包】为随机获得一种，【研究工具申请表】必定获得，皆无法交易",
-      "type": "reward-rule",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "◆【端午龙舟限定版】：Lv.5护身符、攻击/防御/敏捷/回复/必杀/闪躲/反击/命中+1、生命+25、魔力+30、魅力+10、耐久140（数值浮动）；装备后获得称号“端阳幸运星”",
-      "type": "reward-detail",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "◆【端午香包】：Lv.1护身符、毒+1、魅力-3、耐久100；装备后获得称号“童心未泯的人”",
-      "type": "reward-detail",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.1"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "9.返回法兰城凯蒂夫人店门口，持有【研究工具申请表】时与裘瑟斯对话，选2次“是”交出【研究工具申请表】获得【鱼饵】。",
-      "type": "branch-exchange",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.7"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.8"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◆若选“否”则任务完结",
-      "type": "branch-end",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "10.前往维诺亚村外布满青苔的洞窟入口处附近，持有【鱼饵】与捕鱼的少年（348.386）对话，传送至加蒂斯河。",
-      "type": "held-item-teleport",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "◆加蒂斯河为随机迷宫，约8层；魔物为Lv.45以上水龙、蜥蜴斗士",
-      "type": "encounter-area",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "11.通过随机迷宫抵达加蒂斯河最底层，与蛟龙（26.24）对话，无论选“是”或“否”皆会进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.flood-dragon"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "◆BOSS：Lv.60蛟龙，血量约6000；技能：攻击、防御、乾坤一掷、补血魔法、攻击反弹",
-      "type": "battle-enemy",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.flood-dragon"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.flood-dragon.enemies.0"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "12.战斗胜利后与蛟龙（25.24）对话，交出【鱼饵】获得【研究工具】。再次与蛟龙对话，传送至维诺亚村。",
-      "type": "exchange-step",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.9"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.9"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "13.与研究员巴特（17.33）对话，交出【研究工具】获得【端午香包】，任务完结。",
-      "type": "completion-exchange",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.10"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.10"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "◆【端午香包】有两种不同的奖品，设计图类或配方类；设计图类香包双击后随机获得设计图，配方类香包有4点耐久，每次双击减少1点并随机获得配方",
-      "type": "container-types",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "◆奖品明细：",
-      "type": "reward-heading",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "设计图类奖品（随机获得）配方类奖品（随机获得）",
-      "type": "table-heading",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "火焰龟设计图A/B/C/D小枣粽子制作配方（生命+250）",
-      "type": "reward-row",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "猫妖设计图A/B/C豆沙粽子制作配方（魔力+300）",
-      "type": "reward-row",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.1"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "沼泽树精设计图A/B/C/D/E香菇粽子制作配方（增加人物魅力）",
-      "type": "reward-row",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.2"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "漂浮炸弹设计图A/B/C鲜肉粽子制作配方（增加宠物忠诚，但不会超过调教上限）",
-      "type": "reward-row",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.3"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "水蓝鸟魔设计图A/B/C/D/E",
-      "type": "reward-row",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.4"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "◆厨师职业前往法兰城拿潘食品店与供货商对话，选“是”进入仓库；与供货商（17.14）对话可购买制作【粽子】所需的材料，在持有材料的情况下双击对应配方可获得对应的【粽子】；配方只可使用一次，双击后与原材料一同交出",
-      "type": "crafting-rule",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "◆制作【香菇粽子】需额外准备1个【莎莲娜蘑菇】；制造【鲜肉粽子】需额外准备10个【霜降牛肉】",
-      "type": "extra-materials",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.3"
+        }
+      ]
     }
   ],
   "verification": {

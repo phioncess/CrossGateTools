@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-e0d22205-3caa-4f5b-9dc3-4fb5757c9537",
   "name": "异界的魔导士",
   "aliases": [
@@ -709,7 +709,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "客服姐姐",
+            "coordinate": "86.81",
+            "sourceLines": [
+              35
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "hidden-entry",
@@ -811,7 +824,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "抽屉",
+            "coordinate": "14.7",
+            "sourceLines": [
+              52
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "strategy",
@@ -1671,722 +1697,1542 @@
     {
       "line": 1,
       "text": "1.前往法兰城与GM？？的全息影像（85.81）对话，变更场景。",
-      "type": "scene-change",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "2.与GM？？的全息影像对话，选“是”传送至异次元法兰城。",
-      "type": "teleport-step",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "◆异次元法兰城为固定地图，遇敌率较高，可接受宠邮；城中医院不可进入",
-      "type": "map-detail",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "◆异次元法兰城魔物：（无战斗经验，有技能经验）",
-      "type": "experience-rule",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "Lv.60使魔*3，血量约1100；技能：攻击、圣盾、火焰魔法、强力火焰魔法",
-      "type": "encounter-enemy",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "Lv.60小蝙蝠*3，血量约800；技能：攻击、圣盾、连击、诸刃",
-      "type": "encounter-enemy",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "3.寻找异次元法兰城内的5个GM并与之对话，进入战斗。战斗胜利后获得【GM的证明】。",
-      "type": "proof-battle-rule",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "◆【GM的证明】登出/丢地消失，不可交易/宠邮",
-      "type": "proof-properties",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "◆GM位置与推荐行走路线：",
-      "type": "route-heading",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "名称等级血量（约）技能掉落物品",
-      "type": "table-heading",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "GM66664000攻击GM66的证明",
-      "type": "gm-row",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.proof-gm66"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.proof-gm66.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.reward-gm66.enemies.0"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "GM77775000攻击、反击、诸刃GM77的证明",
-      "type": "gm-row",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.proof-gm77"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.proof-gm77.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.reward-gm77.enemies.0"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "GM88887000攻击、连击、乾坤一掷GM88的证明",
-      "type": "gm-row",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.proof-gm88"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.proof-gm88.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.reward-gm88.enemies.0"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "GM99998500攻击、乾坤一掷、乱射GM99的证明",
-      "type": "gm-row",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.proof-gm99"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.proof-gm99.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.reward-gm99.enemies.0"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "GM471009000攻击、强力火焰魔法、超强陨石魔法GM47的证明",
-      "type": "gm-row",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.proof-gm47"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.proof-gm47.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.reward-gm47.enemies.0"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "4.集齐5种【GM的证明】与GM？？的全息影像（85.81）对话，交出【GM的证明】并传送至次元之门。",
-      "type": "proof-exchange",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "5.与异次元魔导士对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dimension-mage"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dimension-mage"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "Lv.100异界魔导士，血量约9000；技能：攻击、四属性（强力、超强）攻击魔法、云群的祈祷",
-      "type": "battle-enemy",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dimension-mage"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dimension-mage.enemies.0"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "Lv.65烈风翼龙*3~6，血量约1300；技能：攻击、防御、连击",
-      "type": "battle-enemy",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dimension-mage"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dimension-mage.enemies.1"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "Lv.65冰原狼*0~2，血量约1300；技能：攻击、防御",
-      "type": "battle-enemy",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dimension-mage"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dimension-mage.enemies.2"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "6.战斗胜利后与异次元魔导士对话，输入“GM的名字”（例如：GM47）传送至对应的GM处。",
-      "type": "gm-selection",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "◆建议队伍输入相同的GM的名字；传送至相应的GM处后需重新组队",
-      "type": "team-advice",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "◆此处若输入“GM39”则进入隐藏支线，具体见本任务支线部分攻略",
-      "type": "hidden-branch-trigger",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "7.与GM对话，进入战斗。战斗胜利后获得【异界水晶碎片】*0~3并传送回法兰城。",
-      "type": "crystal-drop-rule",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "◆【异界水晶碎片】可交易",
-      "type": "item-properties",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "名称等级血量（约）技能掉落物品",
-      "type": "table-heading",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.reward-gm66"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.reward-gm77"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.reward-gm88"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.reward-gm99"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.reward-gm47"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "GM66664000攻击异次元水晶碎片*1",
-      "type": "gm-row",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.reward-gm66"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "GM77775000攻击、反击、诸刃异次元水晶碎片*2",
-      "type": "gm-row",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.reward-gm77"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "GM88887000攻击、连击、乾坤一掷异次元水晶碎片*3",
-      "type": "gm-row",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.reward-gm88"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "GM99998500攻击、乾坤一掷、乱射异次元水晶碎片*4",
-      "type": "gm-row",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.reward-gm99"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "GM471009000攻击、强力火焰魔法、超强陨石魔法异次元水晶碎片*5",
-      "type": "gm-row",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.reward-gm47"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "8.返回异次元法兰城，持有【异次元水晶碎片】与客服姐姐（86.81）对话，兑换【奖品】，任务完结。",
-      "type": "exchange-step",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "◆【奖品】：",
-      "type": "reward-heading",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "名称碎片数量使用效果",
-      "type": "table-heading",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "异界魔导士打卡器（20）1人物造型暂时变更为异界魔导士外观并开启工作时间（造型登出服务器后消失；打卡器可堆叠20个，非兑换20个）",
-      "type": "exchange-row",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "烈风翼龙的蛋40获得Lv.1烈风翼龙",
-      "type": "exchange-row",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "冰原狼的毛50获得Lv.1冰原狼",
-      "type": "exchange-row",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.2"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "异界魔导士的法袍80获得Lv.1异界魔导士",
-      "type": "exchange-row",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.3"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "隐藏支线：",
-      "type": "hidden-heading",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "1.完成本任务主线部分第1至第5步。",
-      "type": "mainline-gate",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "2.战斗胜利后与异次元魔导士对话，输入“GM39”，选“否”传送至GM的修炼山道。",
-      "type": "hidden-entry",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "3.沿道路走至尽头，与EX39对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "◆EX39旁边的客服妹妹可以回复血魔",
-      "type": "facility-note",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ex39"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "Lv.120EX39，血量约130000，属性：火5风5；技能：攻击、乾坤一掷、明镜止水",
-      "type": "battle-enemy",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ex39"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ex39.enemies.0"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "Lv.100量产型异次元魔导士*2~9，血量约13000，不抗咒；技能：攻击、防御、诸刃、崩击",
-      "type": "battle-enemy",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ex39"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ex39.enemies.1"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "4.战斗胜利后，队伍中随机一人获得【异界魔导士的法袍】并传送至小屋。",
-      "type": "random-party-reward",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.10"
+        }
+      ]
     },
     {
       "line": 51,
       "text": "◆【异界魔导士的法袍】：双击后获得Lv.1异界魔导士",
-      "type": "item-use-result",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 52,
       "text": "5.调查抽屉（14.7），选“是”获得【异次元水晶碎片】*15、称号“？？级人物”并传送回法兰城，支线完结。",
-      "type": "drawer-reward",
       "sourceLines": [
         52
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.11"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 53,
       "text": "◆若已拥有称号“？？级人物”，此处不会再获得",
-      "type": "title-repeat-rule",
       "sourceLines": [
         53
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 54,
       "text": "小贴士：",
-      "type": "tips-heading",
       "sourceLines": [
         54
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        }
+      ]
     },
     {
       "line": 55,
       "text": "1.任务主线部分，Lv.100异界魔导士可采用抽魔打法。先将BOSS魔法战栗至100以下，之后合击BOSS，再清理喽啰。",
-      "type": "strategy-note",
       "sourceLines": [
         55
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        }
+      ]
     },
     {
       "line": 56,
       "text": "2.任务主线部分，击倒GM获得【异次元水晶碎片】。",
-      "type": "drop-note",
       "sourceLines": [
         56
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        }
+      ]
     },
     {
       "line": 57,
       "text": "若打算刷碎片，此处建议当BOSS血量较低时，其他队友逃跑只留1名队员击倒BOSS，此法有利于单人获得较多【异界水晶碎片】（根据BOSS掉落总量而定）",
-      "type": "drop-strategy",
       "sourceLines": [
         57
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        }
+      ]
     },
     {
       "line": 58,
       "text": "3.隐藏支线部分，Lv.120EX39可采用抽魔打法。",
-      "type": "strategy-note",
       "sourceLines": [
         58
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ex39"
+        }
+      ]
     },
     {
       "line": 59,
       "text": "推荐使用祈祷技能降低伤害，同时配合石化魔法固定住喽啰。",
-      "type": "strategy-note",
       "sourceLines": [
         59
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ex39"
+        }
+      ]
     },
     {
       "line": 60,
       "text": "战栗BOSS至空魔后，BOSS不再使用乾坤一掷。期间适当使用防御或攻击反弹。",
-      "type": "strategy-note",
       "sourceLines": [
         60
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ex39"
+        }
+      ]
     }
   ],
   "verification": {

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-2f79a4d8-d2a4-4ad5-812c-809bec27957b",
   "name": "城内的地下迷宫",
   "aliases": [
@@ -616,314 +616,654 @@
     {
       "line": 1,
       "text": "1.前往里谢里雅堡，通过（47.85）处楼梯抵达召唤之间。",
-      "type": "route-step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "2.通过（27.8）处门抵达回廊。",
-      "type": "route-step",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "3.根据回廊内黄色箭头提示，通过（23.19）处楼梯抵达灵堂。",
-      "type": "route-step",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "4.清晨或黄昏时与士兵伊岱鲁（9.8）对话，选“是”传送至封印之间。",
-      "type": "timed-teleport",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "◆等级低于Lv.10无法通过",
-      "type": "level-gate",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "5.通过（15.18）处黄色传送石，进入城内的地下迷宫。",
-      "type": "maze-entry",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "◆城内的地下迷宫为随机迷宫，随机8~10层",
-      "type": "maze-detail",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "迷宫刷新时间：2小时（仅供参考），地图大小范围：40*40~60*60",
-      "type": "maze-metadata",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "宝箱数量：4",
-      "type": "treasure-count",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "魔物为Lv9~16的幽灵、漂浮炸弹，最高遇敌数量5",
-      "type": "encounter-area",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "6.寻找迷宫内随机出现的调查员421，持有【蛋包饭】与之对话，交出【蛋包饭】全队获得【红色三棱镜】。",
-      "type": "party-exchange",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "◆全队仅需1个【蛋包饭】（持有一组则收走一组）；保证队内每名成员的物品栏有一个空位",
-      "type": "party-inventory-rule",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "7.通过随机迷宫至底层，通过红色传送石（9.15）进入中央房间，与阴影（9.5）对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-central-room"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-central-room"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "名称数量等级预估血量属性抗咒",
-      "type": "battle-table-heading",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-central-room"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "阴影119850地100○",
-      "type": "battle-enemy",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-central-room"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-central-room.enemies.0"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "技能攻击、防御、陨石魔法、强力陨石魔法、超强陨石魔法、吸血魔法",
-      "type": "battle-skills",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-central-room"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-central-room.enemies.0"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "名称数量等级预估血量属性抗咒",
-      "type": "battle-table-heading",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-central-room"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "幽灵1~216~18400地20水80×",
-      "type": "battle-enemy",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-central-room"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-central-room.enemies.1"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "技能攻击、防御、崩击",
-      "type": "battle-skills",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-central-room"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-central-room.enemies.1"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "名称数量等级预估血量属性抗咒",
-      "type": "battle-table-heading",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-central-room"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "漂浮炸弹1~316~18300地20风80×",
-      "type": "battle-enemy",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-central-room"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-central-room.enemies.2"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "技能攻击、防御、风刃魔法",
-      "type": "battle-skills",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-central-room"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-central-room.enemies.2"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "8.战斗胜利后调查宝箱（5.5），随机获得一种【奖品】并传送至封印之间，任务完结。",
-      "type": "completion-step",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "◆奖品：随机Lv.1~2各色【宝石】、各种【原材料】、各种【装备（耐久不满）】、各种【水晶】、【魔石】、【铜钥匙】、【白钥匙】、【黑钥匙】、【古钱？】、【随机金币】",
-      "type": "reward-pool",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.9"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "◆次日才可以再次重新开始任务",
-      "type": "repeat-gate",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        }
+      ]
     }
   ],
   "verification": {

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-cd47e13f-cab3-4dc5-9a02-a71cb0f7ef90",
   "name": "蜥蜴战士团讨伐",
   "aliases": [
@@ -567,158 +567,380 @@
     {
       "line": 1,
       "text": "1.前往法兰城里谢里雅堡与士兵哈根（28.50）对话。",
-      "type": "step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "2.前往法兰城里谢里雅堡二楼与人事部的卡斯巴尔（58.68）对话，获得【卡斯巴尔的推荐信】。",
-      "type": "step",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "3.前往阿巴尼斯村医院，与队长吉克穆特（16.10）对话。",
-      "type": "step",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "4.出阿巴尼斯村向东至蜥蜴之巢（318.136），与底层的蜥蜴战士团对话进入战斗。",
-      "type": "step",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.lizard-warrior-corps"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.lizard-warrior-corps"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "BOSS：Lv.45蜥蜴战士团（黑壁虎），血量约1500，属性：全30，抗咒；技能：攻击、防御、连击（HP少者）、逃跑（100%触发条件：HP<50%/敌方数量<5/敌方数量<我方）",
-      "type": "battle-enemy",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.lizard-warrior-corps"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.lizard-warrior-corps.enemies.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "喽啰：Lv.45蜥蜴战士团*9，血量约1400，属性：全30，不抗混乱；技能：攻击、防御、连击、逃跑（追加条件：敌方数量<4）",
-      "type": "battle-enemy",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.lizard-warrior-corps"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.lizard-warrior-corps.enemies.1"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "◆10个单位名字一样，若BOSS逃跑则任务失败，需要全体队员逃跑后再挑战一次",
-      "type": "battle-mechanic",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.lizard-warrior-corps"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "5.战斗胜利后，队伍中一人随机获得【团长的锤子】、【闪亮的火腕轮】、【红梳】、【龙卷之戒】中的任意一种。",
-      "type": "random-acquisition",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "◆【闪亮的火腕轮】装备后获得称号“蜥蜴战士团”",
-      "type": "item-effect",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "6.返回阿巴尼斯村医院与队长吉克穆特对话，交出【团长的锤子】获得【吉克穆特的信】。",
-      "type": "step",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "7.返回法兰城里谢里雅堡二楼与人事部的卡斯巴尔对话，交出【吉克穆特的信】获得【感谢状】，任务完结。",
-      "type": "step",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "◆【感谢状】卖店价位600G",
-      "type": "item-detail",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     }
   ],
   "verification": {

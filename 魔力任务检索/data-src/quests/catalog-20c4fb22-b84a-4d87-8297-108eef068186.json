@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-20c4fb22-b84a-4d87-8297-108eef068186",
   "name": "神秘联络员",
   "aliases": [
@@ -236,74 +236,146 @@
     {
       "line": 1,
       "text": "1.前往法兰城安其摩酒吧（102.131），通过（19.6）处进入酒吧里面。",
-      "type": "step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "2.通过（21.1）处进入客房",
-      "type": "step",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "3.与联络员A（8.2）对话，输入“头目万岁”，选“是”交出100G获得【铜钥匙】*10，任务完结。",
-      "type": "step",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "◆【铜钥匙】可开启随机迷宫出出现的普通宝箱",
-      "type": "reward-detail",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "◆宝箱奖品参考《寶箱設定(參考)》《宝箱奖品资料》",
-      "type": "reference",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "◆任务剧情：参考《神秘联络员任务剧情对话》",
-      "type": "reference",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        }
+      ]
     }
   ],
   "verification": {

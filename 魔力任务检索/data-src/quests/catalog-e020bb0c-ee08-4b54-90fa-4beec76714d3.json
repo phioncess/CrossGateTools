@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-e020bb0c-ee08-4b54-90fa-4beec76714d3",
   "name": "深渊",
   "aliases": [
@@ -665,7 +665,31 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "传往地底的龟裂处的位置",
+            "coordinate": "50.32",
+            "sourceLines": [
+              28
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "通往深渊的位置",
+            "coordinate": "14.7",
+            "sourceLines": [
+              28
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "solo-final",
@@ -1199,506 +1223,1086 @@
     {
       "line": 1,
       "text": "◆测试是否已完成《凤鸣之塔》任务方法：",
-      "type": "prerequisite-check-heading",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "前往伊尔村与渔夫欧姆豪克（31.45）对话。",
-      "type": "prerequisite-check",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "已完成《风鸣之塔》任务，对话提示为『什么？你想要这个镜子！？』",
-      "type": "completed-dialogue",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "未完成《风鸣之塔》任务，对话提示为『自从我在还上钓到一个怪东西后就来了一堆讨厌的想抢的人···真是受不了。』",
-      "type": "incomplete-dialogue",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "◆每名队员准备一个【神眼】；可通过击倒角笛大风穴内的水蜘蛛获得，不可交易。参考《没落的村庄》任务。",
-      "type": "party-item-source",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "1.前往杰诺瓦镇，出镇东门至莎莲娜岛（281.370）处与丧尸对话进入战斗。战斗胜利后队伍中一人随机获得【塔比欧的细胞】。",
-      "type": "battle-drop",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.cultivated-zombie"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "◆【塔比欧的细胞】队伍中一人持有即可，不可交易。",
-      "type": "item-scope",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "◆培养型丧尸，等级随机；技能：攻击、防御、诸刃",
-      "type": "battle-enemy",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.cultivated-zombie"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.cultivated-zombie.enemies.0"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "2.前往莎莲娜岛（313.432）处与魔族研究专家帕席对话，选“是”交出【塔比欧的细胞】获得【月之锄头】。",
-      "type": "exchange-step",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "3.前往莎莲娜岛（356~373.345~450）处附近寻找随机出现的黄色传送石，进入后抵达奇怪的坑道。",
-      "type": "maze-entry",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "◆奇怪的坑道为随机迷宫，随机12~16层；迷宫刷新时间：4小时（仅供参考），地图大小范围：50*50~60*60；宝箱数量：7；",
-      "type": "maze-detail",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "魔物为Lv26~31的烈风哥布林、果冻史莱姆、破坏狂，最高遇敌数量8，有战斗经验",
-      "type": "maze-encounter",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "4.寻找迷宫内随机出现的挖掘的迪太，持有【月之锄头】交出后持有者获得【红色三棱镜】。",
-      "type": "exchange-step",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◆只有拥有【月之锄头】会获得【红色三棱镜】，全队只需要一个即可。",
-      "type": "party-scope",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "5.通过随机迷宫，进入红色传送石（10.15），与迪次郎（9.5）对话清除【红色三棱镜】，进入战斗。",
-      "type": "battle-entry",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dijiro"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "◆Lv.39迪次郎，血量约1000；技能：攻击、防御、圣盾",
-      "type": "battle-enemy",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dijiro"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dijiro.enemies.0"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "◆游戏时间一天内只能挑战一次BOSS，如果第二次进入会没收三棱镜并且无法挑战，如需挑战第二次请换线或者等游戏内一天过后",
-      "type": "daily-limit",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dijiro"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "6.战斗胜利后，全队传送至地下水脉。",
-      "type": "teleport-step",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "◆地下水脉，固定地图，魔物：丧尸、食尸鬼、僵尸、木乃伊Lv.28~30，有战斗经验",
-      "type": "encounter-detail",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "Lv.1烈风哥布林，捕捉范围（44~45.55~56）",
-      "type": "capture-detail",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "◆若进入旁边的传送石传出迷宫，需关闭游戏，重新登录后选择其他线路重接",
-      "type": "failure-restart",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "7.队伍中一人可花费30000G向守门的食尸鬼购买【黑暗医师项链】（守门的食尸鬼：想回去吗？ 此时选“是”后出现购买选项），全队通过栅栏。",
-      "type": "purchase-gate",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "◆若拒绝或无钱购买【黑暗医师项链】，则传送至黑暗医生集团总部，与黑暗医生阿鲁巴斯对话传送至莎莲娜岛（281.370）处，魅力减去1点",
-      "type": "failure-route",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "◆若队伍中一人持有【黑暗医生的象征】或【护士帽】，可以替代【黑暗医师项链】。",
-      "type": "alternate-item-gate",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "【黑暗医生的象征】与【护士帽】获得方法参考《诱拐事件》任务；二者皆可交易。",
-      "type": "item-source",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.1"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "◆黑暗医师项链：Lv.1项链、耐久289；可以交易。",
-      "type": "equipment-detail",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "任何职业装备【黑暗医师项链】后，与管理称号的NPC对话可获得称号“黑暗医生公会会员”。",
-      "type": "equipment-title",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "8.通过栅栏后向右走，与凯欧斯威普（47.32）对话，选“是”通过。至（50.32）处传送至地底的龟裂处，通过黄色传送石（14.7）进入深渊。",
-      "type": "abyss-entry",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "◆与凯欧斯威普对话无法通过，则说明未完成《风鸣之塔》任务",
-      "type": "prerequisite-block",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.0"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "◆无法进入深渊：",
-      "type": "inventory-block-heading",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "持有【黑之记忆】、【白之记忆】、【黑之意志】、【白之意志】、【迷惑的意志】中任意一种道具无法进入深渊",
-      "type": "inventory-block",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "◆深渊为随机迷宫，共36层；迷宫刷新时间：4小时（仅供参考），地图大小范围：40*40~60*60；宝箱数量：18；",
-      "type": "maze-detail",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.2"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "魔物为Lv54~63的地龙蜥、火龙蜥、猎豹蜥蜴、蜥蜴斗士，最高遇敌数量7，有战斗经验",
-      "type": "maze-encounter",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.2"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "9.通过随机迷宫抵达黑之祭坛，持有【神眼】调查壁画（20.8），交出【神眼】进入战斗。",
-      "type": "solo-battle-entry",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dragon-messenger"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "◆战斗信息：（BOSS战不可组队，需单挑）",
-      "type": "solo-rule",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dragon-messenger"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "Lv.60龙的使者，血量约6700，邪魔系，属性：全50，不抗咒；技能：攻击、冰冻魔法（伤害固定为1）、强力冰冻魔法（伤害固定为1）",
-      "type": "battle-enemy",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dragon-messenger"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dragon-messenger.enemies.0"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "10.战斗胜利后获得【世界之心】，与龙的使者（15.21）对话，选“是”获得【黑之记忆】并传送回召唤之间，任务完结。",
-      "type": "choice-reward",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.outputs.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "◆【黑之记忆】，用于《黑白龙城》任务。",
-      "type": "future-use",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.1"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "亦可用于特殊情况下返回法兰城用：",
-      "type": "escape-use",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.1"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "双击使用后传送到龙族祭坛，和下面的龙对话传送到询问之地，和上面的龙对话重新获得记忆并返回召唤之间。",
-      "type": "escape-route",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.1"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "◆选“否”不会获得道具，传送回地下水脉，任务完结",
-      "type": "no-item-ending",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "◆任务剧情：参考《龙族的纷争系列任务剧情对话》",
-      "type": "story-reference",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     }
   ],
   "verification": {

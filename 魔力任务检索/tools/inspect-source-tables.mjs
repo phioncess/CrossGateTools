@@ -1,0 +1,13 @@
+import {JSDOM} from 'jsdom';
+import fs from 'node:fs';
+import path from 'node:path';
+import {loadQuestDatabase,projectDir} from './quest-database.mjs';
+const q=Object.values(loadQuestDatabase().quests).find(q=>q.name===process.argv[2]);
+if(!q)throw Error('Unknown quest');
+const response=await fetch(q.source.url,{signal:AbortSignal.timeout(20000)});
+if(!response.ok)throw Error(`HTTP ${response.status}`);
+const dom=new JSDOM(await response.text());
+const tables=[...dom.window.document.querySelectorAll('.mission-content table')].map(table=>[...table.rows].map(row=>[...row.cells].map(cell=>cell.textContent.replace(/\s+/g,' ').trim())));
+const evidence={date:'2026-10-03',questId:q.id,quest:q.name,url:q.source.url,tables};
+fs.writeFileSync(path.join(projectDir,'文档记录',`第19轮-${q.name.replaceAll('/','-')}-原页表格证据.json`),JSON.stringify(evidence,null,2)+'\n');
+console.log(JSON.stringify(evidence,null,2));dom.window.close();

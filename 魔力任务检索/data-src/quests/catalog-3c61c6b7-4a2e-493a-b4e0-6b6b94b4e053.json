@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-3c61c6b7-4a2e-493a-b4e0-6b6b94b4e053",
   "name": "无限试炼之元素",
   "aliases": [
@@ -342,6 +342,28 @@
               "status": "verified",
               "method": "exact-numbered-source-anchor"
             }
+          },
+          {
+            "name": "元素试炼传送员",
+            "coordinate": "25.16",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "通往四属性试练迷宫的位置",
+            "coordinate": "25.9",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
           }
         ]
       },
@@ -455,7 +477,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "荣耀之厅传送者",
+            "coordinate": "52.82",
+            "sourceLines": [
+              8
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       }
     ],
     "notes": []
@@ -546,734 +581,1628 @@
     {
       "line": 1,
       "text": "1.前往法兰城里谢里雅堡与试炼大厅传送者（52.78）对话，传送至试炼大厅。",
-      "type": "route-step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.routePoints.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "2.与元素试炼传送员（25.16）对话，选“是”通过栅栏。",
-      "type": "gate-step",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "3.通过黄色传送石（25.9）进入四属性试练迷宫。",
-      "type": "maze-entry",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "4.一共有5位BOSS，击倒前4位BOSS后可固定得到1个【元素结晶】（试炼奖励兑换用），击倒最后BOSS后可得到2个【元素结晶】。",
-      "type": "boss-reward-rule",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.five-element-bosses"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "◆每个BOSS都有低几率额外掉落1个【元素结晶】",
-      "type": "chance-drop",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.five-element-bosses"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "◆试炼迷宫每日只可传送进入一次",
-      "type": "daily-limit",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "◆【元素结晶】：不可交易，丢地消失，可堆叠数量为999个，用其兑换的奖励道具均为可交易物品",
-      "type": "currency-properties",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "5.前往法兰城里谢里雅堡与荣耀之厅传送者（52.82）对话，传送至荣耀大厅。荣耀大厅内可兑换各种试炼奖品。",
-      "type": "exchange-location",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "◆荣耀大厅可随意进入，奖品查看也不需要条件",
-      "type": "access-rule",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "◆【元素结晶】兑换物品：",
-      "type": "exchange-heading",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "数量奖品明细",
-      "type": "table-heading",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "25宠物设计图（随机获得1张）寒冰翼龙、僵尸、绿色口臭鬼、扫把蝙蝠",
-      "type": "exchange-row",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "25宝石袋Lv.8各色宝石",
-      "type": "exchange-row",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.1"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "30勇气项链Lv.6项链、耐久200；攻击+20、防御+15、",
-      "type": "exchange-row",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.2"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "命中/闪躲+3、生命+100",
-      "type": "equipment-stats",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.2"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "摆摊交易、数值浮动",
-      "type": "trade-rule",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.2"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "30勇气之戒Lv.6戒指、耐久200；攻击+15、防御+13、",
-      "type": "exchange-row",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.3"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "必杀/反击/命中/闪躲+3、生命+50",
-      "type": "equipment-stats",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.3"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "摆摊交易、数值浮动",
-      "type": "trade-rule",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.3"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "30智慧项链Lv.6项链、耐久200；防御+15、精神/回复+3、",
-      "type": "exchange-row",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.4"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "生命/魔力+50、魔攻+30",
-      "type": "equipment-stats",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.4"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "摆摊交易、数值浮动",
-      "type": "trade-rule",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.4"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "30智慧之戒Lv.6戒指、耐久200；防御+11、精神/回复+3、",
-      "type": "exchange-row",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.5"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "生命+25、魔力+50、魔攻+27",
-      "type": "equipment-stats",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.5"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "摆摊交易、数值浮动",
-      "type": "trade-rule",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.5"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "35四属性元素水晶生命+25、魔力+25、耐久150；",
-      "type": "exchange-row",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.6"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "不可交易、丢地消失",
-      "type": "trade-rule",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.6"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "50勇气结晶项链Lv.8项链、耐久250；攻击+30、",
-      "type": "exchange-row",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.7"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "防御+25、命中/闪躲+5、生命+150",
-      "type": "equipment-stats",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.7"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "摆摊交易、数值浮动",
-      "type": "trade-rule",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.7"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "50勇气结晶之戒Lv.8戒指、耐久250；攻击+35、防御+25、",
-      "type": "exchange-row",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.8"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "必杀/反击/命中/闪躲+5、生命+100",
-      "type": "equipment-stats",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.8"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "摆摊交易、数值浮动",
-      "type": "trade-rule",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.8"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "50智慧结晶项链Lv.8项链、耐久250；防御+25、精神/回复+5、",
-      "type": "exchange-row",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.9"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "生命+75、魔力+100、魔攻+45",
-      "type": "equipment-stats",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.9"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "摆摊交易、数值浮动",
-      "type": "trade-rule",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.9"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "50智慧结晶之戒Lv.8戒指、耐久250；防御+25、精神/回复+8、",
-      "type": "exchange-row",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.10"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "生命+50、魔力+75、魔攻+50",
-      "type": "equipment-stats",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.10"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "摆摊交易、数值浮动",
-      "type": "trade-rule",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.10"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "100武圣之魂Lv.8护身符、耐久150；",
-      "type": "exchange-row",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.11"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "攻击+45、必杀+22、抗魔+20",
-      "type": "equipment-stats",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.11"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "摆摊交易、数值浮动",
-      "type": "trade-rule",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.11"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "100精灵之魄Lv.8护身符、耐久150；",
-      "type": "exchange-row",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.12"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "防御+20、敏捷+35、魔攻+30",
-      "type": "equipment-stats",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.12"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "摆摊交易、数值浮动",
-      "type": "trade-rule",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.12"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "120幽冥的精灵之魄Lv.9护身符、耐久150；",
-      "type": "exchange-row",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13.variants.0"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "防御+20、敏捷+35、魔攻+35",
-      "type": "equipment-stats",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13.variants.0"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "摆摊交易",
-      "type": "trade-rule",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13.variants.0"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "装备后超强陨石魔法耗魔减少10%",
-      "type": "equipment-effect",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13.variants.0"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "120幽冥的精灵之魄Lv.9护身符、耐久150；",
-      "type": "exchange-row",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13.variants.1"
+        }
+      ]
     },
     {
       "line": 51,
       "text": "防御+20、敏捷+35、魔攻+35",
-      "type": "equipment-stats",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13.variants.1"
+        }
+      ]
     },
     {
       "line": 52,
       "text": "摆摊交易",
-      "type": "trade-rule",
       "sourceLines": [
         52
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13.variants.1"
+        }
+      ]
     },
     {
       "line": 53,
       "text": "装备后超强冰冻魔法耗魔减少10%",
-      "type": "equipment-effect",
       "sourceLines": [
         53
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13.variants.1"
+        }
+      ]
     },
     {
       "line": 54,
       "text": "120幽冥的精灵之魄Lv.9护身符、耐久150；",
-      "type": "exchange-row",
       "sourceLines": [
         54
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13.variants.2"
+        }
+      ]
     },
     {
       "line": 55,
       "text": "防御+20、敏捷+35、魔攻+35",
-      "type": "equipment-stats",
       "sourceLines": [
         55
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13.variants.2"
+        }
+      ]
     },
     {
       "line": 56,
       "text": "摆摊交易",
-      "type": "trade-rule",
       "sourceLines": [
         56
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13.variants.2"
+        }
+      ]
     },
     {
       "line": 57,
       "text": "装备后超强火焰魔法耗魔减少10%",
-      "type": "equipment-effect",
       "sourceLines": [
         57
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13.variants.2"
+        }
+      ]
     },
     {
       "line": 58,
       "text": "120幽冥的精灵之魄Lv.9护身符、耐久150；",
-      "type": "exchange-row",
       "sourceLines": [
         58
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13.variants.3"
+        }
+      ]
     },
     {
       "line": 59,
       "text": "防御+20、敏捷+35、魔攻+35",
-      "type": "equipment-stats",
       "sourceLines": [
         59
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13.variants.3"
+        }
+      ]
     },
     {
       "line": 60,
       "text": "摆摊交易",
-      "type": "trade-rule",
       "sourceLines": [
         60
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13.variants.3"
+        }
+      ]
     },
     {
       "line": 61,
       "text": "装备后超强风刃魔法耗魔减少10%",
-      "type": "equipment-effect",
       "sourceLines": [
         61
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.13.variants.3"
+        }
+      ]
     }
   ],
   "verification": {

@@ -801,6 +801,27 @@ if (!summerPointsProbability?.includes('概率（%）：16') || summerPointsProb
 if (genericSupplementFields.size) {
   throw new Error(`页面仍使用无语义“补充信息”标签：${[...genericSupplementFields].map(([field, title]) => `${field}（${title}）`).join('、')}`);
 }
+for (const [name,required] of [
+  ['就职仙人',['时长服任务','适用服务器：时长服','每次任务对话后都会强制解散队伍']],
+  ['就职护士',['普通与限时露比卡','不能满足本任务']],
+  ['就职武器/防具类制造师',['募集矿工的洛伊','圣拉鲁卡村（39.70）赛杰利亚酒吧（48.76）','猎人亚烈格尔','伊尔村（48.76）']],
+  ['亚留特的守护',['民家门（48.36）','民家（48.37）']],
+  ['盛夏巡回慰问',['每日次数按完成日期计算']],
+  ['泰格利的烦恼',['适用服务器：怀旧牧羊服、怀旧金牛服','需要拥有“永久的友谊”称号']],
+  ['魔法大学',['香水：深蓝九号','黄色文字','不能使用第5步']],
+  ['开启者',['可选组队准备','50000G','不要求5男5女']],
+  ['月亮俱乐部(修正)',['仙人、侦探是否可参与','可选宝石兑换','红宝石']],
+  ['小岛之谜',['支付800G','拥有“死神”称号']]
+]) {
+  const option=search(name).find(node=>node.textContent.includes(name));option?.click();
+  const text=window.document.querySelector('#questDetail').textContent;
+  for(const value of required)if(!text.includes(value))throw Error(`第19轮资料回归遗漏 ${name}: ${value}`);
+}
+results=search('勇气max');results[0]?.click();
+const courageRecord=Object.values(window.QUEST_DATA.quests).find(q=>q.name==='勇气max');
+const oldBattles=Object.values(courageRecord.versions['through-2023'].tiers['tier-2'].battles);
+if(oldBattles.length!==6||oldBattles.reduce((n,b)=>n+Object.keys(b.enemies).length,0)!==24)throw Error('勇气旧年度战斗数量错误');
+if(!window.document.querySelector('.boss-card').textContent.includes('HP<25%追加；256~512伤害'))throw Error('勇气旧年度技能条件遗漏');
 if (runtimeErrors.length) throw runtimeErrors[0];
 console.log(`DOM verified: ${allQuestIds.length} task pages, remembered dropdown position, canonical aliases, route splitting, step markers, tribute, ice-tree, cattle-field, and pinyin search.`);
 window.close();

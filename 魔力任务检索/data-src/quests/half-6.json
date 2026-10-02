@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "half-6",
   "name": "地狱的回响",
   "aliases": [
@@ -464,7 +464,8 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "text": "仅时长服：完成后可按“死神的降临（半山8）”第一步免费前往小岛学习技能；不属于免费练级路线。"
       }
     ]
   },
@@ -834,290 +835,610 @@
     {
       "line": 1,
       "text": "完成《小岛之迷》任务",
-      "type": "prerequisite",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "拥有“背叛者” 称号",
-      "type": "title-gate",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "1.前往法兰城里谢里雅堡2楼图书馆与阿斯提亚祭司（27.15）对话，选“是”交出1000G获得【锄头】并传送至小岛。",
-      "type": "purchase-and-teleport",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "2.至（64.45）处通过黄色传送石进入通往山顶的路，通过随机迷宫抵达半山腰。",
-      "type": "maze-step",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "3.持有【锄头】调查奇怪的薄冰（81.56），交出【锄头】进入圣山内部，通过红色传送石进入通往地狱的道路。",
-      "type": "item-gated-entry",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "4.通过随机迷宫抵达地狱入口，与濒死的圣鸟子嗣（14.11）对话传送至圣山之巅。",
-      "type": "maze-exit",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "5.与阿鲁卡那斯对话，交出称号“背叛者”获得称号“地狱的回响”并传送回法兰城。",
-      "type": "title-exchange",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "6.返回法兰城里谢里雅堡2楼图书馆，与阿斯提亚祭司（27.15）对话，获得【大天使的呼吸】，任务完结。",
-      "type": "completion-step",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "◆持有【锄头】再次接任务时，需要丢掉【锄头】后再次交出1000G获得【锄头】并传送至小岛。",
-      "type": "inventory-gate",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "◆小岛为固定地图；",
-      "type": "versioned-encounter-heading",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.怀旧服.encounters.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.其他服.encounters.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "魔物为黄蝎、幽灵（怀旧服为Lv.48~52；时长/道具服为Lv.120~122）",
-      "type": "versioned-encounter",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.怀旧服.encounters.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.其他服.encounters.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "◆通往山顶的路为随机迷宫；",
-      "type": "versioned-encounter-heading",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.怀旧服.encounters.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.其他服.encounters.1"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "魔物为托罗帝鸟、岩地跑者、火焰啄木鸟、狂奔鸟（怀旧服为Lv.59~65；时长/道具服为Lv.130~134）",
-      "type": "versioned-encounter",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.怀旧服.encounters.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.其他服.encounters.1"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◆半山腰为固定地图；",
-      "type": "versioned-encounter-heading",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.怀旧服.encounters.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.其他服.encounters.2"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "魔物为（怀旧服Lv.72~74；时长/道具服Lv.142~144）的虎人*2~4、迷你蝙蝠*2、液态史莱姆*1、利牙*1，最高遇敌数量8",
-      "type": "versioned-encounter",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.怀旧服.encounters.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.其他服.encounters.2"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "◆通往地狱的道路为随机迷宫，共36层；",
-      "type": "versioned-encounter-heading",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.怀旧服.encounters.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.其他服.encounters.3"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "魔物为地狱看门犬、地狱妖犬、地狱猎犬、地狱骷髅（怀旧服为Lv.58~67；道具服Lv.122~137；时长服未知）",
-      "type": "versioned-encounter",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.怀旧服.encounters.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.其他服.encounters.3"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "◆拥有称号“地狱的回响”时，亦可前往法兰城西门外与阿鲁卡（398.168）对话，交出800G传送至小岛",
-      "type": "alternate-route",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "◆【大天使的呼吸】：不可交易",
-      "type": "item-detail",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "双击消耗【大天使的呼吸】传送至大天使的所在地，与其对话可回复生命值并召回全部灵魂",
-      "type": "item-use",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "◆任务剧情：参考《半山系列任务剧情对话》",
-      "type": "story-reference",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "◆道具服/时长服烧技能：",
-      "type": "server-note",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.notes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.changes.1"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "完成本任务后无需费用，即可前往小岛烧技能（不能无费用练级）；",
-      "type": "post-completion-access",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.notes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.changes.1"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "前往方法参考《死神的降临》（半山8）任务的第一步。",
-      "type": "route-reference",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.notes.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        }
+      ]
     }
   ],
   "verification": {

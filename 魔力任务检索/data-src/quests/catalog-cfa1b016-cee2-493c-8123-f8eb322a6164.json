@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-cfa1b016-cee2-493c-8123-f8eb322a6164",
   "name": "春节活动",
   "aliases": [
@@ -1040,530 +1040,1094 @@
     {
       "line": 1,
       "text": "奖品路线：",
-      "type": "route-heading",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "1.前往法兰城（75.83）处与赏金猎人绝兹绝拉对话，选“是”获得【红包】。",
-      "type": "item-acquisition",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "2.前往圣拉鲁卡村与海洋猎人莫拉乌（16.40）对话，交出【红包】并传送至芙蕾雅岛（110.144）处。",
-      "type": "exchange-teleport",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "3.通过（101.122）处黄色传送石进入年兽的巢穴。",
-      "type": "maze-entry",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "◆年兽的巢穴为随机迷宫，约10层；魔物为Lv.47~58胖蝙蝠、穴熊；固定4只，每种魔物各2只",
-      "type": "encounter-area",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "4.通过随机迷宫抵达年兽的栖息地，与年兽（27.18）对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "名称数量等级预估血量属性抗咒",
-      "type": "table-heading",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "年兽17011000火9地1未知",
-      "type": "battle-enemy",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast.enemies.0"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "技能攻击、乾坤一掷、阳炎、暗杀、即死魔法、吸血攻击、强力火焰魔法、强力陨石魔法、超强火焰魔法、超强陨石魔法、吸血魔法、攻击反弹",
-      "type": "battle-skill",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast.enemies.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "名称数量等级预估血量属性抗咒",
-      "type": "table-heading",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "旋律影子1654000水10未知",
-      "type": "battle-enemy",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast.enemies.1"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "技能攻击、圣盾、超强冰冻魔法",
-      "type": "battle-skill",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast.enemies.1"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "名称数量等级预估血量属性抗咒",
-      "type": "table-heading",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "幻影1654000火10未知",
-      "type": "battle-enemy",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast.enemies.2"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "技能攻击、圣盾、超强火焰魔法",
-      "type": "battle-skill",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast.enemies.2"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "名称数量等级预估血量属性抗咒",
-      "type": "table-heading",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "暗影1654000风10未知",
-      "type": "battle-enemy",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast.enemies.3"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "技能攻击、圣盾、超强风刃魔法",
-      "type": "battle-skill",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast.enemies.3"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "名称数量等级预估血量属性抗咒",
-      "type": "table-heading",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "阴影1654000地10未知",
-      "type": "battle-enemy",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast.enemies.4"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "技能攻击、圣盾、超强陨石魔法",
-      "type": "battle-skill",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast.enemies.4"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "备注四种影子有时只会出现三种",
-      "type": "spawn-note",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "打法先清理影子，之后合击BOSS",
-      "type": "strategy-note",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.nian-beast"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "5.战斗胜利后与年兽对话，获得【年兽的毛】并传送回法兰城。",
-      "type": "post-battle-reward",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "6.前往法兰城（75.83）处与赏金猎人绝兹绝拉对话，交出【年兽的毛】获得【奖品】，任务完结。",
-      "type": "completion-random-reward",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "◆【奖品】：（随机获得）",
-      "type": "reward-heading",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "名称作用",
-      "type": "table-heading",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "春节点心+200技能经验",
-      "type": "reward-row",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "年兽变身打卡器（可交易）造型变为年兽外形并开启工作时间",
-      "type": "reward-row",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "异界人形糖果（不可交易、丢地消失）称号“赏金猎人”",
-      "type": "reward-row",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "称号路线：",
-      "type": "route-heading",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "1.前往法兰城（75.83）处与赏金猎人绝兹绝拉对话，选“是”获得【红包】。（此步可跳过）",
-      "type": "optional-item-acquisition",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "2.出法兰城西门外至芙蕾雅岛（367.203）处，拥有称号“暗部第七部队成员”与艾谢巴特对话，交出【红包】获得【恐吓信】。",
-      "type": "title-exchange",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "◆未持有【红包】与艾谢巴特对话依然会获得【恐吓信】",
-      "type": "no-input-alternative",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "◆称号“暗部第七部队成员”获得方式参考《秘密组织的邀请》任务",
-      "type": "title-source",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "3.前往圣拉鲁卡村与海洋猎人莫拉乌（16.40）对话，交出【恐吓信】并传送至芙蕾雅岛（110.144）处。",
-      "type": "exchange-teleport",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "4.通过（101.122）处黄色传送石进入年兽的巢穴。",
-      "type": "maze-entry",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "◆年兽的巢穴相关信息与之前一致",
-      "type": "shared-data-reference",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "5.通过随机迷宫抵达年兽的栖息地，与年兽（27.18）对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "◆战斗信息与之前一致",
-      "type": "shared-data-reference",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "6.战斗胜利后与年兽对话，获得【年兽的毛】并传送回法兰城。",
-      "type": "post-battle-reward",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "7.出法兰城西门外至芙蕾雅岛（367.203）处，与艾谢巴特对话，交出【年兽的毛】获得称号“暗部第七部队精英”，任务完结。",
-      "type": "completion-title",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.1"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "◆本路线不可重解",
-      "type": "repeat-restriction",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.1"
+        }
+      ]
     }
   ],
   "verification": {

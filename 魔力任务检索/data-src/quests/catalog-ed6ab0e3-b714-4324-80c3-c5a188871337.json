@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-ed6ab0e3-b714-4324-80c3-c5a188871337",
   "name": "化装舞会的邀请",
   "aliases": [
@@ -426,194 +426,422 @@
     {
       "line": 1,
       "text": "1.前往法兰城，队伍中持有【南瓜头】的队员与改邪归正的巫师（72.131）对话，获得【化装舞会邀请函】。",
-      "type": "step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆【化装舞会邀请函】仅需队伍中一人获得即可，不需要装备",
-      "type": "party-rule",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "◆【南瓜头】获得方式来自于多个临时任务",
-      "type": "item-source",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "2.前往圣拉鲁卡村（36.100），队伍中持有【化装舞会邀请函】的队员与舞会工作人员？对话，交出【化装舞会邀请函】后全队进入栅栏，通过黄色传送石进入墓地山路。",
-      "type": "maze-entry",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "◆墓地山路为随机迷宫，10-15层；魔物为Lv.39~49幽灵、亡灵",
-      "type": "encounter-area",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "3.通过随机迷宫抵达墓地与巫师的爸爸（32.8）对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.wizard-father"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "◆BOSS：Lv.74巫师的爸爸，血量约15000；不抗咒；技能：攻击、防御、乾坤一掷、连击、超强风刃魔法、超强混乱魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.wizard-father"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.wizard-father.enemies.0"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "◆如果卡战斗请回到人物登入界面更新档案到最新",
-      "type": "troubleshooting",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.wizard-father"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "4.战斗胜利后与巫师的爸爸（32.8）对话，获得【奖品】、称号“鬼舞者”并传送回法兰城，任务完结。",
-      "type": "completion-step",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.routePoints.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "◆【奖品】明细：（随机获得）",
-      "type": "reward-heading",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "名称作用",
-      "type": "table-heading",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "『真的』万圣节糖果可以交易；回复约300点魔力，每组可叠加3个",
-      "type": "reward-row",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "南瓜头可以交易；Lv.4头饰、耐久100；防御+4~6、精神+4~6、闪躲+5~7、生命+100、魔力+100、魅力+5；数值浮动",
-      "type": "reward-row",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "南瓜怪变身打卡器可交易，双击变为南瓜收割/汲魂者造型并打卡",
-      "type": "reward-row",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.2"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "南瓜收割者的精华可交易，双击获得Lv.1南瓜收割者",
-      "type": "reward-row",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.3"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "南瓜汲魂者的精华可交易，双击获得Lv.1南瓜汲魂者",
-      "type": "reward-row",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.4"
+        }
+      ]
     }
   ],
   "verification": {

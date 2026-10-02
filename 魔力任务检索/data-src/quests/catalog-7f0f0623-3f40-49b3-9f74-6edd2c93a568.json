@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-7f0f0623-3f40-49b3-9f74-6edd2c93a568",
   "name": "树精长老的末日",
   "aliases": [
@@ -257,7 +257,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "维诺亚村医院",
+            "coordinate": "61.53",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "step-2",
@@ -522,7 +535,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "法兰城凯蒂夫人的店",
+            "coordinate": "196.78",
+            "sourceLines": [
+              26
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "main-completion",
@@ -554,7 +580,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "维诺亚村村长的家",
+            "coordinate": "40.36",
+            "sourceLines": [
+              29
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "branch-appraise",
@@ -1084,434 +1123,994 @@
     {
       "line": 1,
       "text": "1.前往维诺亚村医院（61.53）与佣兵艾里克（7.5）对话，每名队员，选“是”获得【火把】。",
-      "type": "per-member-acquisition",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆如果持有①支线任务获得的【贤者的戒指】、②第四步获得的【艾里克的大剑】、③第五步获得的【生命之花】，无法接到任务，需要扔掉。",
-      "type": "start-item-block",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "2.出维诺亚村向北行走至芙蕾雅岛（370.400）再向北行走至（380.353）处，进入布满青苔的洞窟。",
-      "type": "maze-entry",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "◆布满青苔的洞窟为随机迷宫，约8层；",
-      "type": "maze-detail",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "魔物为Lv.17~19巨蝙蝠（属性：风70火30）、史莱姆（属性：地90风10）",
-      "type": "maze-encounter",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "3.通过随机迷宫抵达叹息之森林，队伍一人与树精长老（29.13）对话，全员交出【火把】进入战斗。",
-      "type": "party-exchange-battle",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.elder-treant"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.elder-treant"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "名称数量行动次数等级预估血量属性种族抗咒",
-      "type": "battle-table-heading",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.elder-treant"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "树精长老12352500地70水30邪魔系〇",
-      "type": "battle-enemy",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.elder-treant"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.elder-treant.enemies.0"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "技能攻击、圣盾、超强陨石魔法、超强冰冻魔法、",
-      "type": "battle-skill",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.elder-treant"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.elder-treant.enemies.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "强力补血魔法（血量<25%时追加）、召唤异型蜂*2或者土蜘蛛*2（喽啰<4只时追加）",
-      "type": "battle-skill",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.elder-treant"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.elder-treant.enemies.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "名称数量行动次数等级预估血量属性种族抗咒",
-      "type": "battle-table-heading",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.elder-treant"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "异型蜂2~3124~26400火50风50昆虫系×",
-      "type": "battle-enemy",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.elder-treant"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.elder-treant.enemies.1"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "技能攻击、攻击（血少者）、诸刃",
-      "type": "battle-skill",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.elder-treant"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.elder-treant.enemies.1"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "名称数量行动次数等级预估血量属性种族抗咒",
-      "type": "battle-table-heading",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.elder-treant"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "土蜘蛛2~3124~26500地100昆虫系×",
-      "type": "battle-enemy",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.elder-treant"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.elder-treant.enemies.2"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "技能攻击、攻击（血多者）、防御、毒性攻击、昏睡攻击",
-      "type": "battle-skill",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.elder-treant"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.elder-treant.enemies.2"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "4.战斗胜利后，转换场景至叹息森林，队伍中随机1人获得【艾里克的大剑】。",
-      "type": "random-party-acquisition",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "◆道具服在战斗胜利后可随机获得【磨刀石】，作用参考《重铸村雨丸》任务",
-      "type": "server-drop",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "5.与年轻树精（26.12）对话，获得【树苗？】。",
-      "type": "main-item-acquisition",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "上一步获得【艾里克的大剑】的队员，可以直接扔掉【艾里克的大剑】，再对话获得【树苗？】。",
-      "type": "sword-holder-route",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "◆获得【艾里克的大剑】时，继续主线任务的方法：",
-      "type": "route-heading",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "⑴可以直接扔掉【艾里克的大剑】，再与下方的年轻树精（26.12）对话，获得【树苗？】，继续主线任务",
-      "type": "main-drop-route",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "⑵持有【艾里克的大剑】时，与上方的年轻树精（32.12）对话，交出【艾里克的大剑】，选择“否”获得【树苗？】，继续主线任务；",
-      "type": "main-exchange-route",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "（如果选“是”获得【剑？】，进入支线任务（鉴定后得到【艾里克的大剑】）。）",
-      "type": "side-route-choice",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "6.前往法兰城凯蒂夫人的店（196.78）与凯蒂夫人（15.12）对话，交出30G将【树苗？】鉴定为【生命之花】。",
-      "type": "appraisal-exchange",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "◆【树苗？】、【生命之花】：可以卖店，卖魔石前一定要仔细检查",
-      "type": "item-warning",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "◆【树苗？】无法交易，所以需要找NPC鉴定或自己拥有鉴定技能",
-      "type": "item-trade-rule",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "7.前往维诺亚村村长的家（40.36）与村长卡丹（16.7）对话，选“是”交出【生命之花】，任务完结。",
-      "type": "main-completion",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.0"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "◆如果无法交出【生命之花】，则说明目前的职业已经交出过",
-      "type": "profession-repeat-block",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.0"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "◆转职后需要重新完成晋阶任务（1~4转，5转只需要1次）；",
-      "type": "rank-repeat-rule",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.0"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "◆生产系通过完成本任务亦可获得一转晋阶资格",
-      "type": "rank-outcome",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.0"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "支线任务：（需要放弃主线任务）",
-      "type": "side-route-heading",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "4.战斗胜利后传送至叹息森林，队伍中随机1人获得【艾里克的大剑】。",
-      "type": "side-route-acquisition",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "5.前往维诺亚村医院与佣兵艾里克对话，交出【艾里克的大剑】获得【贤者的戒指】",
-      "type": "side-completion",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.7"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.7"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "◆【贤者的戒指】：Lv.3戒指、耐久130~150；敏捷+3~5、精神+3~5；不可交易、丢地消失",
-      "type": "equipment-detail",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     }
   ],
   "verification": {

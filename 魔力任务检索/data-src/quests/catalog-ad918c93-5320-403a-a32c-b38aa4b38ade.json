@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-ad918c93-5320-403a-a32c-b38aa4b38ade",
   "name": "挑战星空之塔",
   "aliases": [
@@ -371,7 +371,31 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "星座塔祭司",
+            "coordinate": "190.14",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "楼梯",
+            "coordinate": "7.7",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "stage-1",
@@ -763,7 +787,42 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "合成侍者",
+            "coordinate": "185.14",
+            "sourceLines": [
+              47
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "星座侍者",
+            "coordinate": "187.10",
+            "sourceLines": [
+              47
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "星座侍者",
+            "coordinate": "187.18",
+            "sourceLines": [
+              47
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "fragment-bags",
@@ -836,7 +895,42 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "合成侍者",
+            "coordinate": "185.14",
+            "sourceLines": [
+              47
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "星座侍者",
+            "coordinate": "187.10",
+            "sourceLines": [
+              47
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "星座侍者",
+            "coordinate": "187.18",
+            "sourceLines": [
+              47
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "orb-exchange",
@@ -872,7 +966,42 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "合成侍者",
+            "coordinate": "185.14",
+            "sourceLines": [
+              47
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "星座侍者",
+            "coordinate": "187.10",
+            "sourceLines": [
+              47
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "星座侍者",
+            "coordinate": "187.18",
+            "sourceLines": [
+              47
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       }
     ],
     "notes": []
@@ -1748,722 +1877,1890 @@
     {
       "line": 1,
       "text": "1.前往法兰城与星座塔祭司（156.33）对话，选“是”进入十二星座之塔。",
-      "type": "entry-step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "2.与星座塔祭司（190.14）对话，选“是”传送至十二星座之塔。通过（7.7）处楼梯抵达星座之塔。",
-      "type": "entry-step",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "◆星座之塔为随机迷宫，每12层为一阶；击倒迷宫内魔物可随机获得【星辰粉末】",
-      "type": "maze-rule",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "3.通过随机迷宫抵达每一阶层，与BOSS对话，进入战斗。",
-      "type": "stage-battle-rule",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "◆每阶BOSS名单：",
-      "type": "boss-list-heading",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "第一阶：",
-      "type": "stage-heading",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "Lv.35白羊座侍者，血量约4500；技能：攻击、防御、吸血魔法、超强昏睡魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1.enemies.0"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "Lv.35金牛座战士（寒冰牛头怪）*4，血量约1500；技能：攻击、防御、崩击、乾坤一掷",
-      "type": "battle-enemy",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1.enemies.1"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "第二阶：",
-      "type": "stage-heading",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "Lv.45双子座侍者*2，血量约4500；技能：攻击、连击、乾坤一掷、吸血魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2.enemies.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "Lv.45巨蟹座仆从（水晶螃蟹）*3，血量约1500；技能：攻击、（状态）攻击",
-      "type": "battle-enemy",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2.enemies.1"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "第三阶：",
-      "type": "stage-heading",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-3"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "Lv.55室女座侍者，血量约8000；技能：恢复魔法、强力恢复魔法、酒醉魔法、补血魔法、强力补血魔法、吸血魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-3.enemies.0"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "Lv.55室女座仆从（妖狐）*2，血量约3000；技能：攻击、战栗袭心",
-      "type": "battle-enemy",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-3.enemies.1"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "Lv.55火焰狮仆从（地狱猎犬）*3，血量约2000；技能：攻击、乾坤一掷、超强火焰魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-3.enemies.2"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "第四阶：",
-      "type": "stage-heading",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-4"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "Lv.65天秤座仆从（大炸弹）*2，血量约2000；技能：强力火焰魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-4.enemies.0"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "Lv.65天秤座仆从（漂浮炸弹）*3，血量约2000；技能：强力风刃魔法、自爆（全体伤害）",
-      "type": "battle-enemy",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-4.enemies.1"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "Lv.65天蝎座仆从（杀手蝎）*5，血量约2500；技能：毒性攻击、诸刃、连击",
-      "type": "battle-enemy",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-4.enemies.2"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "第五阶：",
-      "type": "stage-heading",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-5"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "Lv.75射手座侍者，血量约12000；技能：攻击、毒性攻击、乱射、补血魔法、强力（状态）魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-5.enemies.0"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "Lv.75摩羯座仆从（血腥之刃）*5，血量约3000；技能：崩击、吸血攻击、连击",
-      "type": "battle-enemy",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-5.enemies.1"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "第六阶：",
-      "type": "stage-heading",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-6"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "Lv.85宝瓶座仆从（纯白吓人箱）*3，血量约8000；技能：攻击、恢复魔法、攻击吸收、战栗袭心",
-      "type": "battle-enemy",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-6.enemies.0"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "Lv.85双鱼座仆从（地底龟），血量约7500；技能：防御、石化魔法、强力陨石魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-6.enemies.1"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "Lv.85双鱼座仆从（海底龟），血量约7500；技能：攻击、防御、吸血攻击、强力冰冻魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-6.enemies.2"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "Lv.85双鱼座仆从（火焰龟），血量约7500；技能：攻击、防御、崩击、强力火焰魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-6.enemies.3"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "Lv.85双鱼座仆从（硬壳龟），血量约7500；技能：攻击、防御、连击、超强遗忘魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-6.enemies.4"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "4.战斗胜利后进行选择，选“是”获得【星座塔传送券】并传送回法兰城，若选“否”则获得该阶层对应【奖品】并传送回法兰城。",
-      "type": "stage-choice",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "◆双击【星座塔传送券】传送至星座之塔下一阶随机迷宫",
-      "type": "ticket-use",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "◆【奖品】：",
-      "type": "stage-reward-heading",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.5"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "阶层奖品（随机获得）",
-      "type": "table-heading",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.5"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "第一阶鼠王惊奇蛋、变身卡",
-      "type": "stage-pool",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "第二阶Lv.2封印卡（S级）、军用手套、火焰之魂（材料）、誓言之证",
-      "type": "stage-pool",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.3"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "第三阶风龙蜥的甲壳、妖草的血、狂战将军变身卡、德特家的布、猫眼石碎片",
-      "type": "stage-pool",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.4"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "第四阶安全帽（必给）、黑暗之戒、牛鬼变身卡、精灵石的臂环、钢骑之矿、魔族的水晶",
-      "type": "stage-pool",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.5"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "第五阶魔力之泉（必给）、Lv.8各色宝石（除骑士、紫、海洋）",
-      "type": "stage-pool",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4.items.1"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "第六阶黑暗之戒（必给）、变身卡、精灵石臂环、海洋之心、火焰之魂",
-      "type": "stage-pool",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.5.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.5.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.5.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.5.items.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.5.items.4"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "5.通过第六阶后与星座之塔祭司对话，传送至十二星座之塔。",
-      "type": "post-stage-route",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "6.与太阳神使者或月神使者对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.sun-moon"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.sun-moon"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "Lv.100太阳神使者，血量约25000，抗咒；技能：攻击、崩击、魔法吸收、超强火焰魔法（每4回合释放一次）",
-      "type": "battle-enemy",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.sun-moon"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.sun-moon.enemies.0"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "Lv.100月神使者，血量约15000，抗咒；技能：阳炎、乾坤一掷、乱射（每3回合释放一次）、攻击吸收",
-      "type": "battle-enemy",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.sun-moon"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.sun-moon.enemies.1"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "7.战斗胜利后获得【观象者徽章】或【观星者奖章】以及【星象球】并传送回法兰城。",
-      "type": "completion-reward",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.6.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.6.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.6.items.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.7"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.8"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.9"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "◆【观象者徽章】：Lv.10护身符、耐久150；攻击+20、精神+15、回复+15、必杀+10、闪躲+15、魔攻+15、抗魔+15、生命+200、魔力+150；不可交易/寄存、丢地消失；装备后获得称号“观星者”",
-      "type": "equipment-detail",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.6.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "◆【观象者奖章】：Lv.10护身符、耐久150；攻击+20、防御+20、回复+15、必杀+10、反击+10、命中+15、抗魔+30、生命+200、魔力+150；不可交易/寄存、丢地消失；装备后获得称号“观星者”",
-      "type": "equipment-detail",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.6.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "8.前往十二星座之塔，持有一定数量【星辰粉末】与合成侍者（185.14）对话，可兑换【星辰碎片】或【星象球】；持有一定数量【星辰碎片】与星座侍者（187.10）对话，可兑换【奖品】；持有一定数量【星象球】与星座侍者（187.18）对话，可兑换【奖品】，任务完结。",
-      "type": "exchange-overview",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "◆5个【星辰粉末】可兑换1个【星辰碎片】；10个【星辰碎片】可兑换1个【星象球】",
-      "type": "exchange-rate",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.outputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.10"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.11"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "◆【星辰碎片】兑换【奖品】：",
-      "type": "fragment-reward-heading",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.7"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "数量名称奖品（随机获得）",
-      "type": "table-heading",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.7"
+        }
+      ]
     },
     {
       "line": 51,
       "text": "1幸运福袋布斯特药草（+200技能经验）、魔力之泉、小护士",
-      "type": "fragment-exchange-row",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.7.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.12"
+        }
+      ]
     },
     {
       "line": 52,
       "text": "3好运福袋Lv.1血腥之刃、杀龙之刃、火焰之刃、烈风之刃",
-      "type": "fragment-exchange-row",
       "sourceLines": [
         52
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.7.items.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.13"
+        }
+      ]
     },
     {
       "line": 53,
       "text": "5强运福袋Lv.1金怪、银怪、潜盾",
-      "type": "fragment-exchange-row",
       "sourceLines": [
         53
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.7.items.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.14"
+        }
+      ]
     },
     {
       "line": 54,
       "text": "◆【星象球】兑换【奖品】：",
-      "type": "orb-reward-heading",
       "sourceLines": [
         54
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.8"
+        }
+      ]
     },
     {
       "line": 55,
       "text": "数量名称备注",
-      "type": "table-heading",
       "sourceLines": [
         55
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.8"
+        }
+      ]
     },
     {
       "line": 56,
       "text": "1非常优良的骑士宝石Lv.8宝石",
-      "type": "orb-exchange-row",
       "sourceLines": [
         56
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.inputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.8.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        }
+      ]
     },
     {
       "line": 57,
       "text": "1非常优良的紫水晶Lv.8宝石",
-      "type": "orb-exchange-row",
       "sourceLines": [
         57
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.8.items.1"
+        }
+      ]
     },
     {
       "line": 58,
       "text": "2火焰之魂Lv.1护身符、耐久150；必杀+20",
-      "type": "orb-exchange-row",
       "sourceLines": [
         58
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.8.items.2"
+        }
+      ]
     },
     {
       "line": 59,
       "text": "2精灵石臂环Lv.1护身符、耐久150；敏捷+42",
-      "type": "orb-exchange-row",
       "sourceLines": [
         59
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.8.items.3"
+        }
+      ]
     },
     {
       "line": 60,
       "text": "3独角兽精华Lv.1幼生火焰独角兽",
-      "type": "orb-exchange-row",
       "sourceLines": [
         60
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.8.items.4"
+        }
+      ]
     }
   ],
   "verification": {

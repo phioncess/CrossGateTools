@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-6f22cdc0-e503-455b-8da3-fd2f8bc77558",
   "name": "菲鲁瑟团探索计划",
   "aliases": [
@@ -989,7 +989,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "联络员依迪耶特",
+            "coordinate": "166.153",
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "hidden-cave",
@@ -1007,7 +1020,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "诺斯菲拉特芙洛拉",
+            "coordinate": "740.67",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "twelve-bosses",
@@ -1174,7 +1200,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "小石屋",
+            "coordinate": "8.6",
+            "sourceLines": [
+              14
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "mountain-route",
@@ -1195,7 +1234,64 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "楼梯",
+            "coordinate": "11.5",
+            "sourceLines": [
+              15
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "山路三处楼梯",
+            "coordinate": "4.3",
+            "sourceLines": [
+              20
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "山路第2处楼梯",
+            "coordinate": "31.31",
+            "sourceLines": [
+              20
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "山路第3处楼梯",
+            "coordinate": "33.8",
+            "sourceLines": [
+              20
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "诺蔚尔村护士马琳娜",
+            "coordinate": "48.31",
+            "sourceLines": [
+              21
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "report",
@@ -1238,7 +1334,31 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "村长",
+            "coordinate": "65.34",
+            "sourceLines": [
+              22
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "诺斯菲拉特芙洛拉",
+            "coordinate": "740.67",
+            "sourceLines": [
+              23
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "shelter-ring",
@@ -1329,7 +1449,43 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "村长",
+            "coordinate": "65.34",
+            "sourceLines": [
+              28
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "诺斯菲拉特芙洛拉",
+            "coordinate": "740.67",
+            "sourceLines": [
+              32
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            },
+            "context": "此处应与七七对话，不要与芙洛拉对话。"
+          },
+          {
+            "name": "诺蔚尔村护士马琳娜",
+            "coordinate": "48.31",
+            "sourceLines": [
+              34
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       }
     ],
     "notes": []
@@ -2462,2198 +2618,4748 @@
     {
       "line": 1,
       "text": "前置条件：",
-      "type": "requirement",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "拥有“解放者”称号，任务：龙之沙漏系列《失翼之龙》",
-      "type": "requirement",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "并且身上有【贝尼恰斯教团许可】（柯马特依村（柯村）的通行证）：《 踏足诺斯菲拉特》任务。",
-      "type": "requirement",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "1.前往法兰城，与联络员依迪耶特（166.153）对话（可省略）",
-      "type": "flow-step",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "2.前往柯马特依村，与芙莉拉（47.86）对话获得【芙莉拉的介绍信】。",
-      "type": "flow-step",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "◆柯马特依村（柯村）去法：参考《 踏足诺斯菲拉特》任务。",
-      "type": "flow-step",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "3.前往诺斯菲拉特，与芙洛拉（740.67）对话进入藏身地。",
-      "type": "flow-step",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "4.进入黄色水晶，通过随机迷宫，抵达藏身的洞窟。",
-      "type": "flow-step",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "◆藏身的洞窟：随机迷宫，20层，4小时刷新（推测）；",
-      "type": "flow-step",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "魔物：Lv.75扫把蝙蝠、沼泽树精，会魔法、会战栗",
-      "type": "flow-step",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "5.来到底层，战胜12个类似吉拉那种小BOSS后抵达小石屋",
-      "type": "flow-step",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "◆BOSS：星纪、玄枵、娵訾、降娄、大梁、实沈、鹑首、鹑火、鹑尾、寿星、大火、析木；#刷声望#",
-      "type": "flow-step",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "推测血量在1200-1400左右；58-60级，非连续战斗",
-      "type": "flow-step",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◆战斗后与小石屋（8.6）小头目莫莫卡对话选“是”，可以回去重打那12个小BOSS",
-      "type": "flow-step",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "6.由小石屋（11.5）楼梯处进入隐秘的山路",
-      "type": "flow-step",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "◆隐秘的山路：固定地图。",
-      "type": "flow-step",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "魔物：Lv.60，人魔草、穴熊",
-      "type": "flow-step",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "穴熊会诸刃；人魔草会攻击无效、魔法无效，没魔后不动。#烧技能#",
-      "type": "flow-step",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "◆烧技能：10级战栗显示蓝字58，或宠物V级战栗显示蓝字47，人魔草就不会动了。",
-      "type": "flow-step",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "7.依次通过山路三处楼梯（4.3）（31.31）（33.8）抵达诺蔚尔村。",
-      "type": "flow-step",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "◆护士马琳娜位于诺蔚尔村（48.31），回补很近，非资深",
-      "type": "flow-step",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "8.与村长（65.34）对话交出【芙莉拉的介绍信】，获得【调查报告】。",
-      "type": "flow-step",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "和村长再次对话被传送回诺斯菲拉特（740.67）的芙洛拉面前。",
-      "type": "flow-step",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "◆仅限此处，做完整个任务后与村长对话是不会被传送回诺斯菲拉特的）",
-      "type": "flow-step",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "9.返回柯马特依村，与芙莉拉（47.86）对话交出【调查报告】，获得【庇护的戒指】",
-      "type": "flow-step",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "◆庇护的戒指：不能交易；装备后称号“正义的伙伴”。",
-      "type": "flow-step",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "Lv.8，戒指，耐久150；攻击+20、防御+10，闪躲+8、生命+20。",
-      "type": "flow-step",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "10.再次前往诺蔚尔村（重复本任务3~7步骤），与村长（65.34）对话交出【庇护的戒指】，获得【诺蔚尔庇护戒指】，任务完结。",
-      "type": "flow-step",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "◆诺蔚尔庇护戒指：不能交易；装备后称号“静静地守护”",
-      "type": "flow-step",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.1"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "Lv.8，戒指，耐久500；攻击+30、防御+30、敏捷+15，必杀+10、命中+10、闪躲+10、生命+70",
-      "type": "flow-step",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.1"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "◆诺蔚尔庇护戒指，作用：",
-      "type": "flow-step",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "持有时可前往诺斯菲拉特，与偷跑出来的七七（734.51）对话，直接传送到诺蔚尔村。（注意不是对话芙洛拉（740.67））",
-      "type": "flow-step",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "丢掉之后可以重解本任务。",
-      "type": "flow-step",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "◆诺蔚尔村：有护士NPC：护士马琳娜，诺蔚尔村（48.31）",
-      "type": "flow-step",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "◆小贴士",
-      "type": "flow-step",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "第5步的BOSS战信息：（by：Level.1）",
-      "type": "flow-step",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "BOSS技能皆为等级6",
-      "type": "flow-step",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "建议：带血宠空魔打，配合纯攻人戴弓后手（补刀）可秒",
-      "type": "flow-step",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "如果是不死系宠的话，带血宠会好一些吧，如果带不死系攻宠有概率直接打死BOSS。",
-      "type": "flow-step",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "1.等级:58",
-      "type": "boss-stat-block",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.0"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "名称:星纪",
-      "type": "boss-stat-block",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.0"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "种族:人形系",
-      "type": "boss-stat-block",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.0"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "属性:地25水25火25风25",
-      "type": "boss-stat-block",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.0"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "能力(参考)",
-      "type": "boss-stat-block",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.0"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "血量: 1002~ 1302",
-      "type": "boss-stat-block",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.0"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "攻击:173~220",
-      "type": "boss-stat-block",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.0"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "防御: 120~ 160",
-      "type": "boss-stat-block",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.0"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "敏捷: 254~ 309",
-      "type": "boss-stat-block",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.0"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "魔量: 709~976",
-      "type": "boss-stat-block",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.0"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "回复: 148~ 159",
-      "type": "boss-stat-block",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.0"
+        }
+      ]
     },
     {
       "line": 51,
       "text": "精神:93~97",
-      "type": "boss-stat-block",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.0"
+        }
+      ]
     },
     {
       "line": 52,
       "text": "2.等级: 58",
-      "type": "boss-stat-block",
       "sourceLines": [
         52
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.1"
+        }
+      ]
     },
     {
       "line": 53,
       "text": "名称:玄枵",
-      "type": "boss-stat-block",
       "sourceLines": [
         53
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.1"
+        }
+      ]
     },
     {
       "line": 54,
       "text": "种族:人形系",
-      "type": "boss-stat-block",
       "sourceLines": [
         54
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.1"
+        }
+      ]
     },
     {
       "line": 55,
       "text": "属性:地25水25火25风25",
-      "type": "boss-stat-block",
       "sourceLines": [
         55
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.1"
+        }
+      ]
     },
     {
       "line": 56,
       "text": "能力(参考)",
-      "type": "boss-stat-block",
       "sourceLines": [
         56
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.1"
+        }
+      ]
     },
     {
       "line": 57,
       "text": "血量: 1002~ 1302",
-      "type": "boss-stat-block",
       "sourceLines": [
         57
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.1"
+        }
+      ]
     },
     {
       "line": 58,
       "text": "攻击: 173~ 220",
-      "type": "boss-stat-block",
       "sourceLines": [
         58
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.1"
+        }
+      ]
     },
     {
       "line": 59,
       "text": "防御: 120~ 160",
-      "type": "boss-stat-block",
       "sourceLines": [
         59
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.1"
+        }
+      ]
     },
     {
       "line": 60,
       "text": "敏捷: 254~ 309",
-      "type": "boss-stat-block",
       "sourceLines": [
         60
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.1"
+        }
+      ]
     },
     {
       "line": 61,
       "text": "魔量: 709~976",
-      "type": "boss-stat-block",
       "sourceLines": [
         61
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.1"
+        }
+      ]
     },
     {
       "line": 62,
       "text": "回复: 148~ 159",
-      "type": "boss-stat-block",
       "sourceLines": [
         62
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.1"
+        }
+      ]
     },
     {
       "line": 63,
       "text": "精神: 93~ 97",
-      "type": "boss-stat-block",
       "sourceLines": [
         63
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.1"
+        }
+      ]
     },
     {
       "line": 64,
       "text": "3.等级: 58",
-      "type": "boss-stat-block",
       "sourceLines": [
         64
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.2"
+        }
+      ]
     },
     {
       "line": 65,
       "text": "名称:玄枵",
-      "type": "boss-stat-block",
       "sourceLines": [
         65
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.2"
+        }
+      ]
     },
     {
       "line": 66,
       "text": "种族:人形系",
-      "type": "boss-stat-block",
       "sourceLines": [
         66
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.2"
+        }
+      ]
     },
     {
       "line": 67,
       "text": "属性:地25水25火25风25",
-      "type": "boss-stat-block",
       "sourceLines": [
         67
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.2"
+        }
+      ]
     },
     {
       "line": 68,
       "text": "能力(参考)",
-      "type": "boss-stat-block",
       "sourceLines": [
         68
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.2"
+        }
+      ]
     },
     {
       "line": 69,
       "text": "血量: 1002~ 1302",
-      "type": "boss-stat-block",
       "sourceLines": [
         69
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.2"
+        }
+      ]
     },
     {
       "line": 70,
       "text": "攻击: 173~ 220",
-      "type": "boss-stat-block",
       "sourceLines": [
         70
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.2"
+        }
+      ]
     },
     {
       "line": 71,
       "text": "防御: 120~ 160",
-      "type": "boss-stat-block",
       "sourceLines": [
         71
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.2"
+        }
+      ]
     },
     {
       "line": 72,
       "text": "敏捷: 254~ 309",
-      "type": "boss-stat-block",
       "sourceLines": [
         72
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.2"
+        }
+      ]
     },
     {
       "line": 73,
       "text": "魔量: 709~976",
-      "type": "boss-stat-block",
       "sourceLines": [
         73
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.2"
+        }
+      ]
     },
     {
       "line": 74,
       "text": "回复: 148~ 159",
-      "type": "boss-stat-block",
       "sourceLines": [
         74
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.2"
+        }
+      ]
     },
     {
       "line": 75,
       "text": "精神: 93~ 97",
-      "type": "boss-stat-block",
       "sourceLines": [
         75
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.2"
+        }
+      ]
     },
     {
       "line": 76,
       "text": "4.等级:58",
-      "type": "boss-stat-block",
       "sourceLines": [
         76
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.3"
+        }
+      ]
     },
     {
       "line": 77,
       "text": "名称:降娄",
-      "type": "boss-stat-block",
       "sourceLines": [
         77
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.3"
+        }
+      ]
     },
     {
       "line": 78,
       "text": "种族:人形系",
-      "type": "boss-stat-block",
       "sourceLines": [
         78
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.3"
+        }
+      ]
     },
     {
       "line": 79,
       "text": "属性:地25水25火25风25",
-      "type": "boss-stat-block",
       "sourceLines": [
         79
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.3"
+        }
+      ]
     },
     {
       "line": 80,
       "text": "能力(参考)",
-      "type": "boss-stat-block",
       "sourceLines": [
         80
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.3"
+        }
+      ]
     },
     {
       "line": 81,
       "text": "血量: 1002~ 1302",
-      "type": "boss-stat-block",
       "sourceLines": [
         81
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.3"
+        }
+      ]
     },
     {
       "line": 82,
       "text": "攻击: 173~ 220",
-      "type": "boss-stat-block",
       "sourceLines": [
         82
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.3"
+        }
+      ]
     },
     {
       "line": 83,
       "text": "防御: 120~ 160",
-      "type": "boss-stat-block",
       "sourceLines": [
         83
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.3"
+        }
+      ]
     },
     {
       "line": 84,
       "text": "敏捷: 254~ 309",
-      "type": "boss-stat-block",
       "sourceLines": [
         84
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.3"
+        }
+      ]
     },
     {
       "line": 85,
       "text": "魔量: 709~976",
-      "type": "boss-stat-block",
       "sourceLines": [
         85
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.3"
+        }
+      ]
     },
     {
       "line": 86,
       "text": "回复: 148~159",
-      "type": "boss-stat-block",
       "sourceLines": [
         86
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.3"
+        }
+      ]
     },
     {
       "line": 87,
       "text": "精神: 93~97",
-      "type": "boss-stat-block",
       "sourceLines": [
         87
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.3"
+        }
+      ]
     },
     {
       "line": 88,
       "text": "5.等级: 58",
-      "type": "boss-stat-block",
       "sourceLines": [
         88
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.4"
+        }
+      ]
     },
     {
       "line": 89,
       "text": "名称:大梁",
-      "type": "boss-stat-block",
       "sourceLines": [
         89
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.4"
+        }
+      ]
     },
     {
       "line": 90,
       "text": "种族:人形系",
-      "type": "boss-stat-block",
       "sourceLines": [
         90
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.4"
+        }
+      ]
     },
     {
       "line": 91,
       "text": "属性:地25水25火25风25",
-      "type": "boss-stat-block",
       "sourceLines": [
         91
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.4"
+        }
+      ]
     },
     {
       "line": 92,
       "text": "能力(参考)",
-      "type": "boss-stat-block",
       "sourceLines": [
         92
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.4"
+        }
+      ]
     },
     {
       "line": 93,
       "text": "血量: 1002~ 1302",
-      "type": "boss-stat-block",
       "sourceLines": [
         93
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.4"
+        }
+      ]
     },
     {
       "line": 94,
       "text": "攻击: 173~ 220",
-      "type": "boss-stat-block",
       "sourceLines": [
         94
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.4"
+        }
+      ]
     },
     {
       "line": 95,
       "text": "防御: 120~ 160",
-      "type": "boss-stat-block",
       "sourceLines": [
         95
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.4"
+        }
+      ]
     },
     {
       "line": 96,
       "text": "敏捷: 254~ 309",
-      "type": "boss-stat-block",
       "sourceLines": [
         96
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.4"
+        }
+      ]
     },
     {
       "line": 97,
       "text": "魔量: 709~976",
-      "type": "boss-stat-block",
       "sourceLines": [
         97
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.4"
+        }
+      ]
     },
     {
       "line": 98,
       "text": "回复: 148~ 159",
-      "type": "boss-stat-block",
       "sourceLines": [
         98
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.4"
+        }
+      ]
     },
     {
       "line": 99,
       "text": "精神: 93~97",
-      "type": "boss-stat-block",
       "sourceLines": [
         99
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.4"
+        }
+      ]
     },
     {
       "line": 100,
       "text": "6.等级:58",
-      "type": "boss-stat-block",
       "sourceLines": [
         100
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.5"
+        }
+      ]
     },
     {
       "line": 101,
       "text": "名称:实沈",
-      "type": "boss-stat-block",
       "sourceLines": [
         101
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.5"
+        }
+      ]
     },
     {
       "line": 102,
       "text": "种族:人形系",
-      "type": "boss-stat-block",
       "sourceLines": [
         102
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.5"
+        }
+      ]
     },
     {
       "line": 103,
       "text": "属性:地25水25火25风25",
-      "type": "boss-stat-block",
       "sourceLines": [
         103
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.5"
+        }
+      ]
     },
     {
       "line": 104,
       "text": "能力(参考)",
-      "type": "boss-stat-block",
       "sourceLines": [
         104
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.5"
+        }
+      ]
     },
     {
       "line": 105,
       "text": "血量: 1002~ 1302",
-      "type": "boss-stat-block",
       "sourceLines": [
         105
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.5"
+        }
+      ]
     },
     {
       "line": 106,
       "text": "攻击: 173~ 220",
-      "type": "boss-stat-block",
       "sourceLines": [
         106
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.5"
+        }
+      ]
     },
     {
       "line": 107,
       "text": "防御: 120~ 160",
-      "type": "boss-stat-block",
       "sourceLines": [
         107
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.5"
+        }
+      ]
     },
     {
       "line": 108,
       "text": "敏捷: 254~ 309",
-      "type": "boss-stat-block",
       "sourceLines": [
         108
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.5"
+        }
+      ]
     },
     {
       "line": 109,
       "text": "魔量: 709~976",
-      "type": "boss-stat-block",
       "sourceLines": [
         109
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.5"
+        }
+      ]
     },
     {
       "line": 110,
       "text": "回复: 148~ 159",
-      "type": "boss-stat-block",
       "sourceLines": [
         110
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.5"
+        }
+      ]
     },
     {
       "line": 111,
       "text": "精神: 93~97",
-      "type": "boss-stat-block",
       "sourceLines": [
         111
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.5"
+        }
+      ]
     },
     {
       "line": 112,
       "text": "7.等级: 58",
-      "type": "boss-stat-block",
       "sourceLines": [
         112
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.6"
+        }
+      ]
     },
     {
       "line": 113,
       "text": "名称:鸿首",
-      "type": "boss-stat-block",
       "sourceLines": [
         113
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.6"
+        }
+      ]
     },
     {
       "line": 114,
       "text": "种族:人形系",
-      "type": "boss-stat-block",
       "sourceLines": [
         114
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.6"
+        }
+      ]
     },
     {
       "line": 115,
       "text": "属性:地25水25火25风25",
-      "type": "boss-stat-block",
       "sourceLines": [
         115
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.6"
+        }
+      ]
     },
     {
       "line": 116,
       "text": "能力(参考)",
-      "type": "boss-stat-block",
       "sourceLines": [
         116
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.6"
+        }
+      ]
     },
     {
       "line": 117,
       "text": "血量: 1002~ 1302",
-      "type": "boss-stat-block",
       "sourceLines": [
         117
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.6"
+        }
+      ]
     },
     {
       "line": 118,
       "text": "攻击: 173~ 220",
-      "type": "boss-stat-block",
       "sourceLines": [
         118
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.6"
+        }
+      ]
     },
     {
       "line": 119,
       "text": "防御: 120~ 160",
-      "type": "boss-stat-block",
       "sourceLines": [
         119
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.6"
+        }
+      ]
     },
     {
       "line": 120,
       "text": "敏捷: 254~309",
-      "type": "boss-stat-block",
       "sourceLines": [
         120
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.6"
+        }
+      ]
     },
     {
       "line": 121,
       "text": "魔量: 709~976",
-      "type": "boss-stat-block",
       "sourceLines": [
         121
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.6"
+        }
+      ]
     },
     {
       "line": 122,
       "text": "回复: 148~ 159",
-      "type": "boss-stat-block",
       "sourceLines": [
         122
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.6"
+        }
+      ]
     },
     {
       "line": 123,
       "text": "精神: 93~97",
-      "type": "boss-stat-block",
       "sourceLines": [
         123
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.6"
+        }
+      ]
     },
     {
       "line": 124,
       "text": "8.等级:59",
-      "type": "boss-stat-block",
       "sourceLines": [
         124
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.7"
+        }
+      ]
     },
     {
       "line": 125,
       "text": "名称:鸿火",
-      "type": "boss-stat-block",
       "sourceLines": [
         125
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.7"
+        }
+      ]
     },
     {
       "line": 126,
       "text": "种族:人形系",
-      "type": "boss-stat-block",
       "sourceLines": [
         126
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.7"
+        }
+      ]
     },
     {
       "line": 127,
       "text": "属性:地25水25火25风25",
-      "type": "boss-stat-block",
       "sourceLines": [
         127
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.7"
+        }
+      ]
     },
     {
       "line": 128,
       "text": "能力(参考)",
-      "type": "boss-stat-block",
       "sourceLines": [
         128
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.7"
+        }
+      ]
     },
     {
       "line": 129,
       "text": "血量: 1017~ 1323",
-      "type": "boss-stat-block",
       "sourceLines": [
         129
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.7"
+        }
+      ]
     },
     {
       "line": 130,
       "text": "攻击: 176~ 223",
-      "type": "boss-stat-block",
       "sourceLines": [
         130
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.7"
+        }
+      ]
     },
     {
       "line": 131,
       "text": "防御: 121~ 162",
-      "type": "boss-stat-block",
       "sourceLines": [
         131
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.7"
+        }
+      ]
     },
     {
       "line": 132,
       "text": "敏捷: 257~314",
-      "type": "boss-stat-block",
       "sourceLines": [
         132
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.7"
+        }
+      ]
     },
     {
       "line": 133,
       "text": "魔量: 720~ 992",
-      "type": "boss-stat-block",
       "sourceLines": [
         133
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.7"
+        }
+      ]
     },
     {
       "line": 134,
       "text": "回复: 148~ 160",
-      "type": "boss-stat-block",
       "sourceLines": [
         134
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.7"
+        }
+      ]
     },
     {
       "line": 135,
       "text": "精神: 92~97",
-      "type": "boss-stat-block",
       "sourceLines": [
         135
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.7"
+        }
+      ]
     },
     {
       "line": 136,
       "text": "9.等级:59",
-      "type": "boss-stat-block",
       "sourceLines": [
         136
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.8"
+        }
+      ]
     },
     {
       "line": 137,
       "text": "名称:鸿火",
-      "type": "boss-stat-block",
       "sourceLines": [
         137
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.8"
+        }
+      ]
     },
     {
       "line": 138,
       "text": "种族:人形系",
-      "type": "boss-stat-block",
       "sourceLines": [
         138
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.8"
+        }
+      ]
     },
     {
       "line": 139,
       "text": "属性:地25水25火25风25",
-      "type": "boss-stat-block",
       "sourceLines": [
         139
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.8"
+        }
+      ]
     },
     {
       "line": 140,
       "text": "能力(参考)",
-      "type": "boss-stat-block",
       "sourceLines": [
         140
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.8"
+        }
+      ]
     },
     {
       "line": 141,
       "text": "血量: 1017~ 1323",
-      "type": "boss-stat-block",
       "sourceLines": [
         141
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.8"
+        }
+      ]
     },
     {
       "line": 142,
       "text": "攻击: 176~ 223",
-      "type": "boss-stat-block",
       "sourceLines": [
         142
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.8"
+        }
+      ]
     },
     {
       "line": 143,
       "text": "防御: 121~ 162",
-      "type": "boss-stat-block",
       "sourceLines": [
         143
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.8"
+        }
+      ]
     },
     {
       "line": 144,
       "text": "敏捷: 257~314",
-      "type": "boss-stat-block",
       "sourceLines": [
         144
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.8"
+        }
+      ]
     },
     {
       "line": 145,
       "text": "魔量: 720~ 992",
-      "type": "boss-stat-block",
       "sourceLines": [
         145
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.8"
+        }
+      ]
     },
     {
       "line": 146,
       "text": "回复: 148~ 160",
-      "type": "boss-stat-block",
       "sourceLines": [
         146
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.8"
+        }
+      ]
     },
     {
       "line": 147,
       "text": "精神: 92~97",
-      "type": "boss-stat-block",
       "sourceLines": [
         147
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.8"
+        }
+      ]
     },
     {
       "line": 148,
       "text": "10.等级: 59",
-      "type": "boss-stat-block",
       "sourceLines": [
         148
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.9"
+        }
+      ]
     },
     {
       "line": 149,
       "text": "名称:寿星",
-      "type": "boss-stat-block",
       "sourceLines": [
         149
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.9"
+        }
+      ]
     },
     {
       "line": 150,
       "text": "种族:人形系",
-      "type": "boss-stat-block",
       "sourceLines": [
         150
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.9"
+        }
+      ]
     },
     {
       "line": 151,
       "text": "属性:地25水25火25风25",
-      "type": "boss-stat-block",
       "sourceLines": [
         151
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.9"
+        }
+      ]
     },
     {
       "line": 152,
       "text": "能力(参考)",
-      "type": "boss-stat-block",
       "sourceLines": [
         152
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.9"
+        }
+      ]
     },
     {
       "line": 153,
       "text": "血量: 1017~ 1323",
-      "type": "boss-stat-block",
       "sourceLines": [
         153
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.9"
+        }
+      ]
     },
     {
       "line": 154,
       "text": "攻击: 176~ 223",
-      "type": "boss-stat-block",
       "sourceLines": [
         154
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.9"
+        }
+      ]
     },
     {
       "line": 155,
       "text": "防御: 121~ 162",
-      "type": "boss-stat-block",
       "sourceLines": [
         155
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.9"
+        }
+      ]
     },
     {
       "line": 156,
       "text": "敏捷: 257~314",
-      "type": "boss-stat-block",
       "sourceLines": [
         156
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.9"
+        }
+      ]
     },
     {
       "line": 157,
       "text": "魔量: 720~992",
-      "type": "boss-stat-block",
       "sourceLines": [
         157
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.9"
+        }
+      ]
     },
     {
       "line": 158,
       "text": "回复: 148~ 160",
-      "type": "boss-stat-block",
       "sourceLines": [
         158
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.9"
+        }
+      ]
     },
     {
       "line": 159,
       "text": "精神: 92~97",
-      "type": "boss-stat-block",
       "sourceLines": [
         159
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.9"
+        }
+      ]
     },
     {
       "line": 160,
       "text": "11.等级:60",
-      "type": "boss-stat-block",
       "sourceLines": [
         160
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.10"
+        }
+      ]
     },
     {
       "line": 161,
       "text": "名称:大火",
-      "type": "boss-stat-block",
       "sourceLines": [
         161
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.10"
+        }
+      ]
     },
     {
       "line": 162,
       "text": "种族:人形系",
-      "type": "boss-stat-block",
       "sourceLines": [
         162
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.10"
+        }
+      ]
     },
     {
       "line": 163,
       "text": "属性:地25水25火25风25",
-      "type": "boss-stat-block",
       "sourceLines": [
         163
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.10"
+        }
+      ]
     },
     {
       "line": 164,
       "text": "能力(参考)",
-      "type": "boss-stat-block",
       "sourceLines": [
         164
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.10"
+        }
+      ]
     },
     {
       "line": 165,
       "text": "血量: 1033~ 1344",
-      "type": "boss-stat-block",
       "sourceLines": [
         165
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.10"
+        }
+      ]
     },
     {
       "line": 166,
       "text": "攻击: 178~ 226",
-      "type": "boss-stat-block",
       "sourceLines": [
         166
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.10"
+        }
+      ]
     },
     {
       "line": 167,
       "text": "防御: 123~ 165",
-      "type": "boss-stat-block",
       "sourceLines": [
         167
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.10"
+        }
+      ]
     },
     {
       "line": 168,
       "text": "敏捷: 261~319",
-      "type": "boss-stat-block",
       "sourceLines": [
         168
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.10"
+        }
+      ]
     },
     {
       "line": 169,
       "text": "魔量:731~1007",
-      "type": "boss-stat-block",
       "sourceLines": [
         169
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.10"
+        }
+      ]
     },
     {
       "line": 170,
       "text": "回复: 149~ 161",
-      "type": "boss-stat-block",
       "sourceLines": [
         170
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.10"
+        }
+      ]
     },
     {
       "line": 171,
       "text": "精神: 92~97",
-      "type": "boss-stat-block",
       "sourceLines": [
         171
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.10"
+        }
+      ]
     },
     {
       "line": 172,
       "text": "12.等级: 60",
-      "type": "boss-stat-block",
       "sourceLines": [
         172
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.11"
+        }
+      ]
     },
     {
       "line": 173,
       "text": "名称:析木",
-      "type": "boss-stat-block",
       "sourceLines": [
         173
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.11"
+        }
+      ]
     },
     {
       "line": 174,
       "text": "种族:人形系",
-      "type": "boss-stat-block",
       "sourceLines": [
         174
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.11"
+        }
+      ]
     },
     {
       "line": 175,
       "text": "属性:地25水25火25风25",
-      "type": "boss-stat-block",
       "sourceLines": [
         175
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.11"
+        }
+      ]
     },
     {
       "line": 176,
       "text": "能力(参考)",
-      "type": "boss-stat-block",
       "sourceLines": [
         176
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.11"
+        }
+      ]
     },
     {
       "line": 177,
       "text": "血量: 1033~ 1344",
-      "type": "boss-stat-block",
       "sourceLines": [
         177
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.11"
+        }
+      ]
     },
     {
       "line": 178,
       "text": "攻击:178~226",
-      "type": "boss-stat-block",
       "sourceLines": [
         178
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.11"
+        }
+      ]
     },
     {
       "line": 179,
       "text": "防御: 123~ 165",
-      "type": "boss-stat-block",
       "sourceLines": [
         179
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.11"
+        }
+      ]
     },
     {
       "line": 180,
       "text": "敏捷: 261~319",
-      "type": "boss-stat-block",
       "sourceLines": [
         180
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.11"
+        }
+      ]
     },
     {
       "line": 181,
       "text": "魔量: 731~ 1007",
-      "type": "boss-stat-block",
       "sourceLines": [
         181
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.11"
+        }
+      ]
     },
     {
       "line": 182,
       "text": "回复: 149~161",
-      "type": "boss-stat-block",
       "sourceLines": [
         182
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.11"
+        }
+      ]
     },
     {
       "line": 183,
       "text": "精神: 92~ 97",
-      "type": "boss-stat-block",
       "sourceLines": [
         183
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.twelve-bosses.enemies.11"
+        }
+      ]
     }
   ],
   "verification": {

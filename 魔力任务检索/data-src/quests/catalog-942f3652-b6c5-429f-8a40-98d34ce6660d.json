@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-942f3652-b6c5-429f-8a40-98d34ce6660d",
   "name": "没落的村庄",
   "aliases": [
@@ -331,6 +331,18 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
+        }
+      },
+      {
+        "type": "source-notice",
+        "text": "完成风鸣之塔后，可使用阿斯提亚镇传送石进入，不必再找古代人民；离开没落的村庄不会返回古代人民处。",
+        "sourceLines": [
+          15,
+          16
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-source-condition-review"
         }
       }
     ]
@@ -1129,578 +1141,1126 @@
     {
       "line": 1,
       "text": "1.前往奇利村，出村东门前往角笛大风穴（356.334），击倒水蜘蛛后随机获得【神眼】，全队只需一人获得即可。",
-      "type": "chance-item-acquisition",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆若队伍中有鉴定师可无需【神眼】",
-      "type": "profession-bypass",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "◇本任务推荐将近晚上时分出发",
-      "type": "timing-advice",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "◆后续步骤中：",
-      "type": "confiscation-heading",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "除【番茄酱】外，其他料理、血瓶、食材、花朵均会被收走。",
-      "type": "confiscation-rule",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "包括怀旧服的新手卡赠送的回复生命与魔法的药剂。",
-      "type": "confiscation-detail",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "还有道具服的鬼犬普吉。",
-      "type": "server-confiscation-detail",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "怀旧服【魔法涌泉】（魔泉：种类不明）不会被收走；",
-      "type": "confiscation-exception",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "【再生灵（巨）药】（洗点水）不会被收走；",
-      "type": "confiscation-exception",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "◆角笛大风穴为固定迷宫；魔物为Lv.20~22赤目螳螂、水蜘蛛；",
-      "type": "maze-detail",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "赤目螳螂，属性：风60火40，昆虫系；技能：攻击、攻击（血少者）、战栗袭心、阳炎",
-      "type": "encounter-enemy",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "水蜘蛛，属性：水100，昆虫系；技能：攻击、防御、冰冻魔法、强力冰冻魔法",
-      "type": "encounter-enemy",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "2.夜晚，在索奇亚岛（579~633.275~326）（514~566.337~388）（593~653.332~385）范围内寻找随机出现的3个古代人民任意之一并与之对话，选“是”进入没落的村庄。",
-      "type": "night-entry",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◆没落的村庄：",
-      "type": "location-heading",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "完成《风鸣之塔》任务的玩家可利用阿斯提亚镇传送石进入没落的村庄，不需要寻找古代人民；（走法参考《风鸣之塔》任务）",
-      "type": "alternate-entry",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        },
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.5"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "但是注意，进入没落的村庄后再离开，不会传送至古代人民面前。",
-      "type": "return-caveat",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.5"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "◆古代人民出现区域较大且同一时间可能会有3个，可能出现的坐标示意图：",
-      "type": "map-note",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "注意示意图是范围内都可能出现，而不是固定坐标点",
-      "type": "coordinate-warning",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "3.通过（40.39）处楼梯进入连接时空的房间，由持有【神眼】的队员调查连接时空的石盘（12.10），",
-      "type": "gate-step",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "选“是”交出【神眼】，全队传送至帝都阿斯法·地下。",
-      "type": "item-gate",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "◆若队伍中有鉴定师可无需【神眼】，由鉴定师调查后直接通过",
-      "type": "profession-bypass",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "4.与勇者里雍（21.18）对话，选“是”获得【解咒之法】。",
-      "type": "item-acquisition",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "5.与反抗军（35.21）对话，选“是”传送至帝都阿斯法·地下。通过（42.21）处黄色传送石进入罗连斯研究塔。",
-      "type": "tower-entry",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "◆除【番茄酱】外，其他料理、血瓶、食材、花朵均会被收走。",
-      "type": "confiscation-rule",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "包括怀旧服的新手卡赠送的回复生命与魔法的药剂。",
-      "type": "confiscation-detail",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "还有道具服的鬼犬普吉。",
-      "type": "server-confiscation-detail",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "怀旧服【魔法涌泉】（魔泉：种类不明）不会被收走；",
-      "type": "confiscation-exception",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "【再生灵（巨）药】（洗点水）不会被收走；",
-      "type": "confiscation-exception",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "◆可利用宠物邮件将药水寄送给无法接收的玩家该方法，利用宠邮退回的时间差将料理或血瓶带入罗连斯研究塔",
-      "type": "inventory-workaround",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "◆道具服持有【驱魔香】、【诱魔香】时无法通过",
-      "type": "server-held-item-block",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "◆罗连斯研究塔为随机迷宫，共16层；迷宫刷新时间：4小时（仅供参考），",
-      "type": "maze-detail",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "地图大小范围：40*40~80*80；宝箱数量：6",
-      "type": "maze-detail",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "魔物为Lv.21~24骷髅战士、蜥蜴斗士，最高遇敌数量8",
-      "type": "encounter-detail",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "骷髅战士，属性：风70地30，不死系；技能：攻击、防御、攻击（血少者）",
-      "type": "encounter-enemy",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "蜥蜴斗士，属性：水70地30，龙系；技能：攻击、防御、攻击（血少者）、连击",
-      "type": "encounter-enemy",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "6.通过随机迷宫抵达罗连斯研究塔·最上层。解散队伍与巫术师耶卡（25.27）对话，",
-      "type": "party-gate",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "交出【解咒之法】并传送至法尔肯面前，重新组队后与法尔肯（23.20）对话进入战斗。",
-      "type": "battle-entry",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.falcon"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "Lv.50法尔肯，2动，血量约4400~5000，邪魔系，属性：全30，抗咒；技能：攻击、圣盾、攻击反弹、魔法反弹、吸血魔法、",
-      "type": "battle-enemy",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.falcon"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.falcon.enemies.0"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "强力恢复魔法（HP<50%追加）、即死魔法E1（BOSS前面喽啰存在追加；低几率成功）、召唤骷髅战士*5或者蜥蜴斗士*5（BOSS前面喽啰不存在追加）",
-      "type": "conditional-skills",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.falcon"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.falcon.enemies.0"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "Lv.35骷髅战士*∞（被召唤），血量约800，不死系，属性：风70地30，不抗咒；技能：攻击（血少者）、吸血攻击、吸血魔法、圣盾",
-      "type": "summoned-enemy",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.falcon"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.falcon.enemies.1"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "Lv.35蜥蜴斗士*∞（被召唤），血量约800，龙系，属性：水70地30，不抗咒；技能：攻击（血少者）、攻击、防御、连击、崩击",
-      "type": "summoned-enemy",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.falcon"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.falcon.enemies.2"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "◇打法建议：血少的小号比如魔法师躺过，防止被合击或者崩击击飞",
-      "type": "strategy-note",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.falcon"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "7.战斗胜利后，切换场景。调查3处天书习得3种技能（可跳过）。",
-      "type": "optional-skill-heading",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "⑴调查（18.10）处天书，可交出5000G习得技能攻击反弹；",
-      "type": "skill-learning",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "⑵调查（10.3）处天书，可交出5000G习得技能魔法反弹；",
-      "type": "skill-learning",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.1"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "⑶调查（29.8）处天书，可交出10000G习得技能吸血魔法。",
-      "type": "skill-learning",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.2"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "8.调查连接时空的石盘（37.11），选“是”全队传送至索奇亚岛，任务完结。",
-      "type": "completion-teleport",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        }
+      ]
     }
   ],
   "verification": {

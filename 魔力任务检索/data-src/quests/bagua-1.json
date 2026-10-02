@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "bagua-1",
   "name": "亚留特的守护",
   "aliases": [
@@ -298,7 +298,7 @@
       {
         "id": "step-2",
         "order": 2,
-        "text": "右键调查亚留特村民家门（48.36）进入，与塔基（12.10）对话，任意选择后获得【塔基的信】；全队只需一人持有。",
+        "text": "右键调查亚留特村民家门（48.36）进入民家（48.37），与塔基（12.10）对话，任意选择后获得【塔基的信】；全队只需一人持有。",
         "inputs": [],
         "outputs": [
           {
@@ -324,7 +324,8 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": []
       },
       {
         "id": "step-3",
@@ -399,7 +400,64 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "法兰城东门外山男的家",
+            "coordinate": "509.153",
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "法兰城东医院",
+            "coordinate": "221.83",
+            "sourceLines": [
+              15
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "药剂师波罗姆",
+            "coordinate": "16.35",
+            "sourceLines": [
+              15
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "法兰城西医院",
+            "coordinate": "82.83",
+            "sourceLines": [
+              16
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "药剂师帕洛姆",
+            "coordinate": "12.18",
+            "sourceLines": [
+              16
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "step-4",
@@ -428,7 +486,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "亚留特村民家（原攻略位置）",
+            "coordinate": "48.37",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "step-5",
@@ -782,314 +853,638 @@
     {
       "line": 1,
       "text": "队伍一人持有【生命力回复药（75）】*3、【牛奶】*20",
-      "type": "party-material-gate",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "1.出亚留特村东门外（622.133）处与小白对话，获得【一撮红色的犬毛】(所有成员都需要对话获取【一撮红色的犬毛】)。",
-      "type": "party-item-acquisition",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "2.回亚留特村民家（48.37），与塔基（12.10）对话，选择任意选项获得【塔基的信】。",
-      "type": "item-acquisition",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "3.至法兰城东门外山男的家（509.153），队伍一人持有【塔基的信】与山男哈葛利特（9.3）对话，",
-      "type": "party-holder-step",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "队伍一人交出【塔基的信】和【生命力回复药（75）】、【牛奶】各一组，获得【山男的犬类伤药】。",
-      "type": "material-exchange",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "4.回亚留特村民家（48.37），队伍一人与小白（13.9）对话交出【山男的犬类伤药】。",
-      "type": "shared-item-exchange",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "5.与渔夫欧姆豪克（13.9）对话，交出【一撮红色的犬毛】获得【豪克转述的线索】。",
-      "type": "exchange-step",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "6.前往亚留特东边区域（666.130）附近寻找红色水晶，进入流浪狗的聚集地，",
-      "type": "maze-entry",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "到底层到达流浪狗窝点，与艮对话，进入战斗",
-      "type": "battle-step",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gen"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "7.战斗胜利后，与艮对话交出【豪克转述的线索】，获得称号“来自【艮】的认可”，并且单人传送至芙蕾雅（688.188），任务完结。",
-      "type": "completion-step",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "◆民家需右键调查门（48.36）进入",
-      "type": "entry-instruction",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "◆【塔基的信】只需一人持有即可，但【一撮红色的犬毛】需成员均持有",
-      "type": "party-item-rule",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "◆【山男的犬类伤药】只需一人持有即可",
-      "type": "party-item-rule",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◆【生命力回复药（75）】：",
-      "type": "item-source-heading",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "①法兰城东医院（221.83），与药剂师波罗姆（16.35）购买；",
-      "type": "item-source",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "②法兰城西医院（82.83），与药剂师帕洛姆（12.18）购买",
-      "type": "item-source",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "◆【牛奶】：",
-      "type": "item-source-heading",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.1"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "①《哥布林的绿头盔》任务兑换；",
-      "type": "item-source",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.1"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "②狩猎；狩猎点参考百科物品版块",
-      "type": "item-source",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.1"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "◆持有【山男的犬类伤药】或【豪克转述的线索】的角色调查民家才可进入正确地图",
-      "type": "entry-gate",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "◆此步开始所有要打任务的角色都要拿到线索以备后续步骤。",
-      "type": "participant-item-rule",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "◆流浪狗的聚集地为随机迷宫，约12~18层，无宝箱，",
-      "type": "maze-detail",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "魔物：Lv.70被激怒的流浪狗（地狱看门犬），数量：1~4",
-      "type": "encounter-area",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gen"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "LV.95艮之影，血量约20000，邪魔系，全属性30，抗咒；",
-      "type": "boss-enemy",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gen"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gen.enemies.0"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "技能：攻击、圣盾、中毒魔法LV10、超强陨石魔法LV7、战栗袭心LV4、气功弹LV5、乾坤一掷、气功弹EX（魔法值<10%时追加）",
-      "type": "boss-skills",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gen"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gen.enemies.0"
+        }
+      ]
     }
   ],
   "verification": {

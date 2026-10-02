@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-a93ef86f-cb1f-4037-8866-964dadde2852",
   "name": "异次元杀阵",
   "aliases": [
@@ -784,6 +784,28 @@
               "status": "verified",
               "method": "exact-numbered-source-anchor"
             }
+          },
+          {
+            "name": "黄色传送石",
+            "coordinate": "22.16",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "休息室",
+            "coordinate": "26.8",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
           }
         ]
       },
@@ -1218,7 +1240,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "荷特普",
+            "coordinate": "20.13",
+            "sourceLines": [
+              14
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       }
     ],
     "notes": []
@@ -2499,1886 +2534,3924 @@
     {
       "line": 1,
       "text": "1.前往法兰城与奈亚拉（133.155）对话，传送至异次元杀阵。通过黄色传送石（22.16）开始挑战。",
-      "type": "flow-step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.routePoints.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆休息室（26.8）可进行治疗与补给",
-      "type": "flow-step",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "2.通过每9层随机迷宫后会进行BOSS战，获胜后获得通往下一层的【房间钥匙】、【积分点数卡】。",
-      "type": "flow-step",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "双击交出【房间钥匙】即可进行挑战下一阶段。",
-      "type": "flow-step",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "◆【积分点数卡】：不可交易",
-      "type": "flow-step",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "◆各阶段获得【积分点数卡】数量如下：",
-      "type": "flow-step",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "战胜第一层BOSS后获得通往第二层的【房间钥匙】、【积分点数卡】*1",
-      "type": "flow-step",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "战胜第二层BOSS后获得通往第三层的【房间钥匙】、【积分点数卡】*2",
-      "type": "flow-step",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "战胜第三层BOSS后获得通往第四层的【房间钥匙】、【积分点数卡】*3",
-      "type": "flow-step",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "战胜第四层BOSS后获得通往第五层的【房间钥匙】、【积分点数卡】*6",
-      "type": "flow-step",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.7"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.7"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "3.战胜第五层BOSS后获得【爆裂之种】或【悲叹之种】、【积分点数卡】*8、【设计图？】随机一张、称号“绝望的前奏曲”，任务完结。",
-      "type": "flow-step",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.8"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.9"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.10"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.12"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "◆【设计图？】鉴定后随机获得【哥布林设计图】",
-      "type": "flow-step",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.2"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "◆第二次起战胜第五层BOSS后获得【积分点数卡】*8、【哥布林设计图】随机一张",
-      "type": "flow-step",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.11"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◆前往异次元杀阵，持有【积分点数卡】与荷特普（20.13）对话，可兑换【奖品】",
-      "type": "flow-step",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.13"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "◆【奖品】：（皆可交易）",
-      "type": "flow-step",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "名称数量备注",
-      "type": "flow-step",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "再生灵药75双击之后可以重新分配人物点数，请慎重使用",
-      "type": "exchange-detail",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "爆裂之种60Lv.10护身符、耐久100；攻击+26、敏捷+11、回复+15、必杀+13、反击+13、命中+18、生命+200、魔力+150、抗魔+45；",
-      "type": "exchange-detail",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.1"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "数值浮动、可以交易",
-      "type": "exchange-detail",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.1"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "悲叹之种60Lv.10护身符、耐久100；敏捷+11、精神+17、回复+15、必杀+13、闪躲+18、生命+200、魔力+150、魔攻+19、抗魔+25；",
-      "type": "exchange-detail",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.2"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "数值浮动、可以交易",
-      "type": "exchange-detail",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.2"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "爆裂之种护符80",
-      "type": "exchange-detail",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.3"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "Lv.10护身符、耐久150；攻击+30、敏捷+14、回复+18、必杀+15、闪躲+8、反击+15、命中+20、生命+220、魔力+165、抗魔+50；",
-      "type": "exchange-detail",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.3"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "数值浮动、可以交易",
-      "type": "exchange-detail",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.3"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "2020年6月3日新增。数值更新中",
-      "type": "exchange-detail",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.3"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "悲叹之种护符80",
-      "type": "exchange-detail",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.4"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "Lv.10护身符、耐久150；敏捷+14、精神+20、回复+18、必杀+15、闪躲+21、生命+220、魔力+165、魔攻+23、抗魔+30；",
-      "type": "exchange-detail",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.4"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "数值浮动、可以交易",
-      "type": "exchange-detail",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.4"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "2020年6月3日新增。数值更新中",
-      "type": "exchange-detail",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.4"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "Lv.10宝石箱150开启后随机获得一颗Lv.10宝石",
-      "type": "exchange-detail",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.5"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "异次元召唤卷轴300亚成年黄金龙：火30风70；10技能栏；龙系；25 9 13 33 45",
-      "type": "exchange-detail",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.6"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "队伍组合：传咒斧斧斧",
-      "type": "reference",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "打法参考：https://www.bilibili.com/video/BV1Va4y1v77o",
-      "type": "reference",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "视频来源：哔哩哔哩",
-      "type": "reference",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "各层战斗信息：（BOSS战皆为邪魔系；部分关卡随机出现隐藏BOSS）",
-      "type": "version-note",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "2023/2024年版本：BOSS、迷宫魔物，等级有所提升",
-      "type": "version-note",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "◆杀阵1～9层为随机迷宫",
-      "type": "maze-detail",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "魔物：Lv.70强盗；血量≈1600；种族：人形系；属性：火40风60；数量：4～5",
-      "type": "maze-detail",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "◆10层BOSS战信息：",
-      "type": "battle-detail",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "◇打法建议：",
-      "type": "battle-detail",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "建议带纯水水晶，棍子空闲时，可根据自身情况适时给水果蝙蝠套反转。",
-      "type": "battle-detail",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "人物10级战栗被遗弃的水果蝙蝠显示358以内，宠物V级战栗显示292以内。（约5下）",
-      "type": "battle-detail",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "人物10级战栗被遗弃的迷你蝙蝠显示318以内，宠物V级战栗显示260以内。（约6下）",
-      "type": "battle-detail",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "如果有被遗弃的天使蝙蝠，可以先战栗完遗弃的水果蝙蝠跟遗弃的迷你蝙蝠，再清被遗弃的天使蝙蝠。",
-      "type": "battle-detail",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "其他非咒术职业，技能格若有剩余可以学个单体石化魔法，空闲时可以放。",
-      "type": "battle-detail",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "最后逐个击破，天使蝙蝠→扫把蝙蝠→恶魔蝙蝠→小蝙蝠→水果蝙蝠→迷你蝙蝠。",
-      "type": "battle-detail",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "Lv.85被遗弃的小蝙蝠",
-      "type": "battle-detail",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10.enemies.0"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "种族：邪魔系；属性：地30水30火30风30；血量≈17000",
-      "type": "battle-detail",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10.enemies.0"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "技能：攻击、防御、攻击魔法防御、10级单体/强力陨石、冰冻、火焰、风刃（HP1）、诸刃Lv.10、气功弹Lv.10、反击Lv.7",
-      "type": "battle-detail",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10.enemies.0"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "Lv.75被遗弃的水果蝙蝠",
-      "type": "battle-detail",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10.enemies.1"
+        }
+      ]
     },
     {
       "line": 51,
       "text": "种族：邪魔系；属性：地40风60；血量≈9000",
-      "type": "battle-detail",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10.enemies.1"
+        }
+      ]
     },
     {
       "line": 52,
       "text": "技能：超强风刃魔法Lv.9、强力风刃魔法Lv.9（被遗弃的天使蝙蝠在场时追加）",
-      "type": "battle-detail",
       "sourceLines": [
         52
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10.enemies.1"
+        }
+      ]
     },
     {
       "line": 53,
       "text": "Lv.75被遗弃的扫把蝙蝠",
-      "type": "battle-detail",
       "sourceLines": [
         53
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10.enemies.2"
+        }
+      ]
     },
     {
       "line": 54,
       "text": "种族：邪魔系；属性：水60火40；血量≈9000",
-      "type": "battle-detail",
       "sourceLines": [
         54
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10.enemies.2"
+        }
+      ]
     },
     {
       "line": 55,
       "text": "技能：连击V、连击E1、圣盾E1",
-      "type": "battle-detail",
       "sourceLines": [
         55
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10.enemies.2"
+        }
+      ]
     },
     {
       "line": 56,
       "text": "Lv.75被遗弃的迷你蝙蝠",
-      "type": "battle-detail",
       "sourceLines": [
         56
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10.enemies.3"
+        }
+      ]
     },
     {
       "line": 57,
       "text": "种族：邪魔系；属性：火60风40；血量≈9000",
-      "type": "battle-detail",
       "sourceLines": [
         57
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10.enemies.3"
+        }
+      ]
     },
     {
       "line": 58,
       "text": "技能：超强火焰魔法Lv.8、连击E1（被遗弃的天使蝙蝠在场时追加）",
-      "type": "battle-detail",
       "sourceLines": [
         58
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10.enemies.3"
+        }
+      ]
     },
     {
       "line": 59,
       "text": "Lv.75被遗弃的恶魔蝙蝠",
-      "type": "battle-detail",
       "sourceLines": [
         59
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10.enemies.4"
+        }
+      ]
     },
     {
       "line": 60,
       "text": "种族：邪魔系；属性：水80火20；血量≈9000",
-      "type": "battle-detail",
       "sourceLines": [
         60
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10.enemies.4"
+        }
+      ]
     },
     {
       "line": 61,
       "text": "技能：乾坤一掷V、洁净魔法Lv.9、洁净魔法Lv.10",
-      "type": "battle-detail",
       "sourceLines": [
         61
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10.enemies.4"
+        }
+      ]
     },
     {
       "line": 62,
       "text": "Lv.75被遗弃的天使蝙蝠（随机出现）",
-      "type": "battle-detail",
       "sourceLines": [
         62
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10.enemies.5"
+        }
+      ]
     },
     {
       "line": 63,
       "text": "种族：邪魔系；属性：地40风60；血量≈900",
-      "type": "battle-detail",
       "sourceLines": [
         63
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10.enemies.5"
+        }
+      ]
     },
     {
       "line": 64,
       "text": "技能：超强补血魔法Lv.1（对我方释放）",
-      "type": "battle-detail",
       "sourceLines": [
         64
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor10.enemies.5"
+        }
+      ]
     },
     {
       "line": 65,
       "text": "◆杀阵11～19层为随机迷宫",
-      "type": "maze-detail",
       "sourceLines": [
         65
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 66,
       "text": "魔物：Lv.75舔食者；血量≈1600；种族：不死系；属性：火20风80；数量：4～5",
-      "type": "maze-detail",
       "sourceLines": [
         66
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 67,
       "text": "◆20层BOSS战信息：",
-      "type": "battle-detail",
       "sourceLines": [
         67
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20"
+        }
+      ]
     },
     {
       "line": 68,
       "text": "◇打法建议：",
-      "type": "battle-detail",
       "sourceLines": [
         68
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20"
+        }
+      ]
     },
     {
       "line": 69,
       "text": "咒术主攻，巫师传教辅助。咒术毒地精，巫师放超强恢复魔法，传教看情况补血，攻人跟宠物防御。",
-      "type": "battle-detail",
       "sourceLines": [
         69
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20"
+        }
+      ]
     },
     {
       "line": 70,
       "text": "咒术，收宠2动，宠物待命，进入战斗。1动放中毒魔法Lv.10毒地精，2动防御。",
-      "type": "battle-detail",
       "sourceLines": [
         70
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20"
+        }
+      ]
     },
     {
       "line": 71,
       "text": "毒到的那回合起算，到第四回合，1动防御2动中毒魔法Lv.10毒地精，运气好地精头上一直挂着毒。",
-      "type": "battle-detail",
       "sourceLines": [
         71
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20"
+        }
+      ]
     },
     {
       "line": 72,
       "text": "毒中之后咒术放宠出来，队友的宠护卫咒术。",
-      "type": "battle-detail",
       "sourceLines": [
         72
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20"
+        }
+      ]
     },
     {
       "line": 73,
       "text": "换宠的那回合起算，再经过四回合，在第四回合时咒术1动祈祷，攻人1动魔法将地精清掉。",
-      "type": "battle-detail",
       "sourceLines": [
         73
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20"
+        }
+      ]
     },
     {
       "line": 74,
       "text": "扔技能时宠物可以护卫，其他情况防御吧。",
-      "type": "battle-detail",
       "sourceLines": [
         74
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20"
+        }
+      ]
     },
     {
       "line": 75,
       "text": "最后逐个击破，地精→绿帽哥布林→机动铁骑。",
-      "type": "battle-detail",
       "sourceLines": [
         75
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20"
+        }
+      ]
     },
     {
       "line": 76,
       "text": "Lv.86逆袭的绿帽哥布林",
-      "type": "battle-detail",
       "sourceLines": [
         76
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20.enemies.0"
+        }
+      ]
     },
     {
       "line": 77,
       "text": "种族：邪魔系；属性：地35水35火35风35；血量≈17000",
-      "type": "battle-detail",
       "sourceLines": [
         77
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20.enemies.0"
+        }
+      ]
     },
     {
       "line": 78,
       "text": "技能：攻击、气功弹Lv.10、定点移动、魔<20%：大地之怒Lv.7（HP256～324）",
-      "type": "battle-detail",
       "sourceLines": [
         78
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20.enemies.0"
+        }
+      ]
     },
     {
       "line": 79,
       "text": "Lv.86精神错乱的地精",
-      "type": "battle-detail",
       "sourceLines": [
         79
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20.enemies.1"
+        }
+      ]
     },
     {
       "line": 80,
       "text": "种族：邪魔系；属性：地30水30火30风30；血量≈17000",
-      "type": "battle-detail",
       "sourceLines": [
         80
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20.enemies.1"
+        }
+      ]
     },
     {
       "line": 81,
       "text": "技能：诸刃Lv.10、大地的祈祷Lv.3、攻击反弹Lv.10、魔<20%：即死魔法E5（10个单位）",
-      "type": "battle-detail",
       "sourceLines": [
         81
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20.enemies.1"
+        }
+      ]
     },
     {
       "line": 82,
       "text": "Lv.90机动铁骑",
-      "type": "battle-detail",
       "sourceLines": [
         82
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20.enemies.2"
+        }
+      ]
     },
     {
       "line": 83,
       "text": "种族：邪魔系；属性：地30水30火30风30；血量≈32000",
-      "type": "battle-detail",
       "sourceLines": [
         83
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20.enemies.2"
+        }
+      ]
     },
     {
       "line": 84,
       "text": "技能：骑士之誉Lv.10、反击Lv.10、攻击无效Lv.10、魔<20%：超强混乱魔法E2（4次行动）",
-      "type": "battle-detail",
       "sourceLines": [
         84
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor20.enemies.2"
+        }
+      ]
     },
     {
       "line": 85,
       "text": "◆杀阵21～29层为随机迷宫",
-      "type": "maze-detail",
       "sourceLines": [
         85
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.2"
+        }
+      ]
     },
     {
       "line": 86,
       "text": "魔物：Lv.80钢铁猪鬼；血量≈1800；种族：金属系；属性：水80火20；数量：4～5",
-      "type": "maze-detail",
       "sourceLines": [
         86
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.2"
+        }
+      ]
     },
     {
       "line": 87,
       "text": "30层BOSS战信息：",
-      "type": "battle-detail",
       "sourceLines": [
         87
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor30"
+        }
+      ]
     },
     {
       "line": 88,
       "text": "◇打法建议：",
-      "type": "battle-detail",
       "sourceLines": [
         88
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor30"
+        }
+      ]
     },
     {
       "line": 89,
       "text": "冈，魔<20%就会无限追加超强石化魔法，战栗（约3下）就会触发，可根据自身情况选择是否战栗。",
-      "type": "battle-detail",
       "sourceLines": [
         89
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor30"
+        }
+      ]
     },
     {
       "line": 90,
       "text": "冈的残影，人物10级战栗显示56以内，宠物V级战栗显示45以内。（约8下）",
-      "type": "battle-detail",
       "sourceLines": [
         90
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor30"
+        }
+      ]
     },
     {
       "line": 91,
       "text": "如果采用战栗BOSS跟小怪的方式",
-      "type": "battle-detail",
       "sourceLines": [
         91
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor30"
+        }
+      ]
     },
     {
       "line": 92,
       "text": "当BOSS一直放超强石化魔法，小怪不会动时，可以根据自身情况是否咒自己容易中咒的单位。",
-      "type": "battle-detail",
       "sourceLines": [
         92
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor30"
+        }
+      ]
     },
     {
       "line": 93,
       "text": "最后逐个击破，冈→冈的残影。",
-      "type": "battle-detail",
       "sourceLines": [
         93
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor30"
+        }
+      ]
     },
     {
       "line": 94,
       "text": "55面板抗+3级抗体不中咒。",
-      "type": "battle-detail",
       "sourceLines": [
         94
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor30"
+        }
+      ]
     },
     {
       "line": 95,
       "text": "Lv.85冈",
-      "type": "battle-detail",
       "sourceLines": [
         95
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor30"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor30.enemies.0"
+        }
+      ]
     },
     {
       "line": 96,
       "text": "种族：邪魔系；属性：地30水30火30风30；血量≈18000",
-      "type": "battle-detail",
       "sourceLines": [
         96
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor30"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor30.enemies.0"
+        }
+      ]
     },
     {
       "line": 97,
       "text": "技能：诸刃Lv.10（回力标）、乾坤一掷Lv.10（回力标）、魔<20%：超强石化魔法E2（4次行动）",
-      "type": "battle-detail",
       "sourceLines": [
         97
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor30"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor30.enemies.0"
+        }
+      ]
     },
     {
       "line": 98,
       "text": "Lv.83冈的残影*4",
-      "type": "battle-detail",
       "sourceLines": [
         98
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor30"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor30.enemies.1"
+        }
+      ]
     },
     {
       "line": 99,
       "text": "种族：邪魔系；属性：地25水25火25风25；血量≈10000",
-      "type": "battle-detail",
       "sourceLines": [
         99
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor30"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor30.enemies.1"
+        }
+      ]
     },
     {
       "line": 100,
       "text": "技能：诸刃Lv.7（回力标）、乾坤一掷Lv.7（回力标）",
-      "type": "battle-detail",
       "sourceLines": [
         100
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor30"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor30.enemies.1"
+        }
+      ]
     },
     {
       "line": 101,
       "text": "◆杀阵31～39层为随机迷宫",
-      "type": "maze-detail",
       "sourceLines": [
         101
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.3"
+        }
+      ]
     },
     {
       "line": 102,
       "text": "魔物：Lv.85火焰气息；血量≈1600；种族：特殊系；属性：火100；数量：4～5",
-      "type": "maze-detail",
       "sourceLines": [
         102
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.3"
+        }
+      ]
     },
     {
       "line": 103,
       "text": "40层BOSS战信息：",
-      "type": "battle-detail",
       "sourceLines": [
         103
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40"
+        }
+      ]
     },
     {
       "line": 104,
       "text": "◇打法建议：建议战栗打法，战栗顺序按数字排列。",
-      "type": "battle-detail",
       "sourceLines": [
         104
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40"
+        }
+      ]
     },
     {
       "line": 105,
       "text": "1、生无可恋的熔岩，10级战栗显示398以内，宠物V级战栗显示325以内。（约5下）",
-      "type": "battle-detail",
       "sourceLines": [
         105
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40"
+        }
+      ]
     },
     {
       "line": 106,
       "text": "2、独眼的岩怪，10级战栗显示8以内，宠物V级战栗显示6以内。（约8下）",
-      "type": "battle-detail",
       "sourceLines": [
         106
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40"
+        }
+      ]
     },
     {
       "line": 107,
       "text": "3、美容失败的影岩，10级战栗显示80以内，宠物V级战栗显示65以内。（约7下）",
-      "type": "battle-detail",
       "sourceLines": [
         107
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40"
+        }
+      ]
     },
     {
       "line": 108,
       "text": "4、矿山的爆岩，10级战栗显示80以内，宠物V级战栗显示65以内。（约7下）",
-      "type": "battle-detail",
       "sourceLines": [
         108
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40"
+        }
+      ]
     },
     {
       "line": 109,
       "text": "5、然后再回去战栗独眼的岩怪，10级战栗显示8以内，宠物V级战栗显示6以内。（约4下）",
-      "type": "battle-detail",
       "sourceLines": [
         109
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40"
+        }
+      ]
     },
     {
       "line": 110,
       "text": "6、最后逐个击破，矿山的爆岩→美容失败的影岩→生无可恋的熔岩→独眼的岩怪。",
-      "type": "battle-detail",
       "sourceLines": [
         110
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40"
+        }
+      ]
     },
     {
       "line": 111,
       "text": "Lv.97独眼的岩怪",
-      "type": "battle-detail",
       "sourceLines": [
         111
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40.enemies.0"
+        }
+      ]
     },
     {
       "line": 112,
       "text": "种族：邪魔系；属性：地30水30火30风30；血量≈14000",
-      "type": "battle-detail",
       "sourceLines": [
         112
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40.enemies.0"
+        }
+      ]
     },
     {
       "line": 113,
       "text": "技能：陨石魔法Lv.10、强力陨石魔法Lv.10、超强陨石魔法Lv.8、怪<4：即死魔法Lv.9（10个单位）",
-      "type": "battle-detail",
       "sourceLines": [
         113
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40.enemies.0"
+        }
+      ]
     },
     {
       "line": 114,
       "text": "Lv.95生无可恋的熔岩",
-      "type": "battle-detail",
       "sourceLines": [
         114
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40.enemies.1"
+        }
+      ]
     },
     {
       "line": 115,
       "text": "种族：邪魔系；属性：地25水25火25风25；血量≈13000",
-      "type": "battle-detail",
       "sourceLines": [
         115
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40.enemies.1"
+        }
+      ]
     },
     {
       "line": 116,
       "text": "技能：圣盾E1、超强昏睡魔法Lv.10、超强石化魔法Lv.10、超强混乱魔法Lv.10、超强遗忘魔法Lv.10、独眼的岩怪被击倒后：自爆",
-      "type": "battle-detail",
       "sourceLines": [
         116
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40.enemies.1"
+        }
+      ]
     },
     {
       "line": 117,
       "text": "Lv.95美容失败的影岩",
-      "type": "battle-detail",
       "sourceLines": [
         117
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40.enemies.2"
+        }
+      ]
     },
     {
       "line": 118,
       "text": "种族：邪魔系；属性：地25水25火25风25；血量≈15000",
-      "type": "battle-detail",
       "sourceLines": [
         118
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40.enemies.2"
+        }
+      ]
     },
     {
       "line": 119,
       "text": "技能：乾坤一掷Lv.10、石化攻击Lv.9、反击Lv.7、独眼的岩怪被击倒后：自爆",
-      "type": "battle-detail",
       "sourceLines": [
         119
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40.enemies.2"
+        }
+      ]
     },
     {
       "line": 120,
       "text": "Lv.95矿山的爆岩",
-      "type": "battle-detail",
       "sourceLines": [
         120
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40.enemies.3"
+        }
+      ]
     },
     {
       "line": 121,
       "text": "种族：邪魔系；属性：地25水25火25风25；血量≈17000",
-      "type": "battle-detail",
       "sourceLines": [
         121
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40.enemies.3"
+        }
+      ]
     },
     {
       "line": 122,
       "text": "技能：诸刃Lv.10、反击Lv.10、骑士之誉Lv.10、独眼的岩怪被击倒后：自爆",
-      "type": "battle-detail",
       "sourceLines": [
         122
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor40.enemies.3"
+        }
+      ]
     },
     {
       "line": 123,
       "text": "◆杀阵41～49层为随机迷宫",
-      "type": "maze-detail",
       "sourceLines": [
         123
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.4"
+        }
+      ]
     },
     {
       "line": 124,
       "text": "魔物：Lv.90变异丧尸；血量≈1900；种族：不死系；属性：水70火30；数量：4～5",
-      "type": "maze-detail",
       "sourceLines": [
         124
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.4"
+        }
+      ]
     },
     {
       "line": 125,
       "text": "◆50层BOSS战信息：",
-      "type": "battle-detail",
       "sourceLines": [
         125
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        }
+      ]
     },
     {
       "line": 126,
       "text": "◇打法建议：",
-      "type": "battle-detail",
       "sourceLines": [
         126
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        }
+      ]
     },
     {
       "line": 127,
       "text": "建议战栗打法，战栗顺序按数字排列，没有的忽略。",
-      "type": "battle-detail",
       "sourceLines": [
         127
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        }
+      ]
     },
     {
       "line": 128,
       "text": "出现依代的情况可根据自身情况选择是否结束进程。",
-      "type": "battle-detail",
       "sourceLines": [
         128
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        }
+      ]
     },
     {
       "line": 129,
       "text": "1、常规传咒斧斧斧，斧子站1、2、3号位前排，传咒站4、5号位后排。",
-      "type": "battle-detail",
       "sourceLines": [
         129
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        }
+      ]
     },
     {
       "line": 130,
       "text": "2、首饰建议带洗礼+传承，其他武器装备自身情况决定是否带，如9C斧、9C铠等。",
-      "type": "battle-detail",
       "sourceLines": [
         130
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        }
+      ]
     },
     {
       "line": 131,
       "text": "3、激昂的神格里雍，战栗就触发超强混乱魔法。（约3下）",
-      "type": "battle-detail",
       "sourceLines": [
         131
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        }
+      ]
     },
     {
       "line": 132,
       "text": "4、阿夏芙（蓝），10级战栗显示78以内、宠物V级战栗显示63以内。（约8下）",
-      "type": "battle-detail",
       "sourceLines": [
         132
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        }
+      ]
     },
     {
       "line": 133,
       "text": "5、阿夏芙（红），10级战栗显示78以内、宠物V级战栗显示63以内。（约8下）",
-      "type": "battle-detail",
       "sourceLines": [
         133
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        }
+      ]
     },
     {
       "line": 134,
       "text": "6、耶卡，10级战栗显示58以内、宠物V级战栗显示47以内。（约8下）",
-      "type": "battle-detail",
       "sourceLines": [
         134
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        }
+      ]
     },
     {
       "line": 135,
       "text": "7、依代，10级战栗显示28以内、宠物V级战栗显示22以内。（约9下）",
-      "type": "battle-detail",
       "sourceLines": [
         135
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        }
+      ]
     },
     {
       "line": 136,
       "text": "8、最后逐个击破，帕鲁凯斯→依代→阿夏芙→耶卡→激昂的神格里雍。",
-      "type": "battle-detail",
       "sourceLines": [
         136
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        }
+      ]
     },
     {
       "line": 137,
       "text": "9、剩下里雍时，可根据自身情况选择是否换武器或咒自己容易中咒的单位。",
-      "type": "battle-detail",
       "sourceLines": [
         137
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        }
+      ]
     },
     {
       "line": 138,
       "text": "10、55面板抗+3级抗体不中咒。",
-      "type": "battle-detail",
       "sourceLines": [
         138
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        }
+      ]
     },
     {
       "line": 139,
       "text": "Lv.100激昂的神格里雍",
-      "type": "battle-detail",
       "sourceLines": [
         139
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50.enemies.0"
+        }
+      ]
     },
     {
       "line": 140,
       "text": "种族：邪魔系；属性：地30水30火30风30；血量≈49000",
-      "type": "battle-detail",
       "sourceLines": [
         140
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50.enemies.0"
+        }
+      ]
     },
     {
       "line": 141,
       "text": "技能：诸刃Lv.10、气功弹Lv.10、混乱攻击Lv.10、连击E1、魔<20%：超强混乱魔法E2（4次行动）",
-      "type": "battle-detail",
       "sourceLines": [
         141
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50.enemies.0"
+        }
+      ]
     },
     {
       "line": 142,
       "text": "Lv.90帕鲁凯斯",
-      "type": "battle-detail",
       "sourceLines": [
         142
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50.enemies.1"
+        }
+      ]
     },
     {
       "line": 143,
       "text": "种族：邪魔系；属性：地50水50火50风50；血量≈16000",
-      "type": "battle-detail",
       "sourceLines": [
         143
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50.enemies.1"
+        }
+      ]
     },
     {
       "line": 144,
       "text": "技能：攻击、圣盾E1、连击V、连击乱舞、诸刃Lv.10、混乱攻击EX、吸血攻击EX、乾坤一掷ES、除依代外场上BOSS<4：大地之怒E3（HP364～400）",
-      "type": "battle-detail",
       "sourceLines": [
         144
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50.enemies.1"
+        }
+      ]
     },
     {
       "line": 145,
       "text": "Lv.80耶卡",
-      "type": "battle-detail",
       "sourceLines": [
         145
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50.enemies.2"
+        }
+      ]
     },
     {
       "line": 146,
       "text": "种族：邪魔系；属性：地35水35火35风35；血量≈10000",
-      "type": "battle-detail",
       "sourceLines": [
         146
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50.enemies.2"
+        }
+      ]
     },
     {
       "line": 147,
       "text": "技能：攻击、圣盾E1、混乱攻击Lv.6、强力火焰魔法Lv.6、强力陨石魔法Lv.6、攻击反弹Lv.6、攻击无效Lv.6、诸刃EX、首回合：强力恢复魔法Lv.10",
-      "type": "battle-detail",
       "sourceLines": [
         147
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50.enemies.2"
+        }
+      ]
     },
     {
       "line": 148,
       "text": "Lv.70阿夏芙（蓝）",
-      "type": "battle-detail",
       "sourceLines": [
         148
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50.enemies.3"
+        }
+      ]
     },
     {
       "line": 149,
       "text": "种族：邪魔系；属性：地30水30火30风30；血量≈6000",
-      "type": "battle-detail",
       "sourceLines": [
         149
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50.enemies.3"
+        }
+      ]
     },
     {
       "line": 150,
       "text": "技能：攻击、防御、冰冻魔法Lv.8、火焰魔法Lv.8、超强陨石魔法Lv.5、超强风刃魔法Lv.5、攻击反弹Lv.5、攻击吸收Lv.5、攻击无效Lv.5",
-      "type": "battle-detail",
       "sourceLines": [
         150
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50.enemies.3"
+        }
+      ]
     },
     {
       "line": 151,
       "text": "Lv.70阿夏芙（红）",
-      "type": "battle-detail",
       "sourceLines": [
         151
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50.enemies.4"
+        }
+      ]
     },
     {
       "line": 152,
       "text": "种族：邪魔系；属性：地30水30火30风30；血量≈6000",
-      "type": "battle-detail",
       "sourceLines": [
         152
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50.enemies.4"
+        }
+      ]
     },
     {
       "line": 153,
       "text": "技能：攻击、防御、陨石魔法Lv.8、风刃魔法Lv.8、超强冰冻魔法Lv.5、超强火焰魔法Lv.5、魔法反弹Lv.5、魔法吸收Lv.5、魔法无效Lv.5",
-      "type": "battle-detail",
       "sourceLines": [
         153
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50.enemies.4"
+        }
+      ]
     },
     {
       "line": 154,
       "text": "Lv.70依代（随机出现）",
-      "type": "battle-detail",
       "sourceLines": [
         154
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50.enemies.5"
+        }
+      ]
     },
     {
       "line": 155,
       "text": "种族：邪魔系；属性：地30水30火30风30；血量≈10000",
-      "type": "battle-detail",
       "sourceLines": [
         155
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50.enemies.5"
+        }
+      ]
     },
     {
       "line": 156,
       "text": "技能：攻击、防御、气功弹Lv.6、超强陨石魔法Lv.6、超强冰冻魔法Lv.6、超强火焰魔法Lv.6、超强风刃魔法Lv.6、反击Lv.7、乾坤一掷Lv.7",
-      "type": "battle-detail",
       "sourceLines": [
         156
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor50.enemies.5"
+        }
+      ]
     },
     {
       "line": 157,
       "text": "图文版：",
-      "type": "reference",
       "sourceLines": [
         157
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     }
   ],
   "verification": {

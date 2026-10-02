@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "dog-4",
   "name": "蒂娜沉船遗迹",
   "aliases": [
@@ -1189,422 +1189,827 @@
     {
       "line": 1,
       "text": "完成《丧失心智的海盗》任务",
-      "type": "prerequisite",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "拥有“野狼勇士”称号",
-      "type": "title-gate",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "1.前往蒂娜村，出村南门至莎莲娜岛（591.331）处与老渔民对话，选“是”传送至蒂娜海底。",
-      "type": "teleport-step",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "2.通过蒂娜海底抵达沉船，与副手乔治（27.23）对话，获得【黄色三棱石】。",
-      "type": "item-acquisition",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "3.前往蒂娜村外东方调查树木（676.321），进入海盗暗道。",
-      "type": "maze-entry",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "4.通过随机迷宫抵达暗道底层外部，调查门传送至暗道底层内部。",
-      "type": "maze-route",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "5.与海盗？对话进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.pirate-question"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "6.战斗胜利后与贝拉米的舵手对话，获得【奇怪的粘稠物】。",
-      "type": "item-acquisition",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "7.返回法兰城，前往冒险者旅馆1楼与大侦探汉克对话。（此步可跳过）",
-      "type": "optional-step",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "8.前往里谢里雅堡2楼图书馆与元素专家耐罗恩对话，交出【奇怪的粘稠物】获得【粘稠物成份报告】。",
-      "type": "exchange-step",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "9.返回冒险者旅馆1楼与大侦探汉克对话。（此步可跳过）",
-      "type": "optional-step",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "10.前往法兰城（278.82）处与李林对话，交出【粘稠物成份报告】获得【绿色三棱石】。",
-      "type": "exchange-step",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "11.（去之前打卡）前往贝兹雷姆神殿外西方，调查石柱（117.322）进入地狱妖犬的巢穴。",
-      "type": "maze-entry",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "12.通过随机迷宫抵达巢穴的底层，与小沐对话，交出【绿色三棱石】获得【火精灵之石】。",
-      "type": "exchange-step",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "13.返回法兰城（278.82）处与李林对话，交出【火精灵之石】获得【粘稠物分析报告】。",
-      "type": "exchange-step",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "14.前往冒险者旅馆1楼与大侦探汉克对话，交出【粘稠物分析报告】获得【隐身斗篷】。",
-      "type": "exchange-step",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "15.前往蒂娜村外东方调查树木（676.321），进入海盗暗道。",
-      "type": "maze-entry",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "16.通过随机迷宫抵达暗道底层外部，调查门传送至暗道底层内部。",
-      "type": "maze-route",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "17.调查柜子（24.16）传送至暗道底层内部，与米内帕鲁、阿鲁巴斯、小沐任意一人对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.16"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.truth-battle"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "18.战斗胜利后与小沐对话，获得称号“揭开真相之人”，任务完结。",
-      "type": "completion-step",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "◆怀旧牧羊/金牛服任务",
-      "type": "server-scope",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "◆蒂娜海底大致走法：根据地面不一样的颜色，一左一右行走",
-      "type": "route-note",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "◆海盗暗道为随机迷宫，共5层",
-      "type": "maze-detail",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "◆海盗，血量约8000；技能：攻击，防御，诸刃，明镜止水，连击，崩击",
-      "type": "battle-enemy",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.pirate-question"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.pirate-question.enemies.0"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "◆如需砍狗的玩家，只需做到此步即可，可在此步丢弃【黄色三棱石】；",
-      "type": "branch-stop-rule",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.16"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "如果继续任务则切不可丢弃【黄色三棱石】该道具，如已丢弃可以重做1-2步获得【黄色三棱石】",
-      "type": "item-retention-rule",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.16"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "◆地狱妖犬的巢穴即为砍狗练级点，随机迷宫，约8层；魔物为Lv.68~75地狱妖犬、地狱猎犬，固定2只",
-      "type": "encounter-area",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "◆拥有称号“揭开真相之人”时，前往法兰城（278.82）处与李林对话，传送至？？？，可交出20000G学习宠物技能带宠物散步",
-      "type": "post-completion-skill",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": []
     },
     {
       "line": 30,
       "text": "Lv.70小沐，血量约10000；技能：攻击，防御，超强状态魔法、超强魔法、攻击无效",
-      "type": "battle-enemy",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.truth-battle"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.truth-battle.enemies.0"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "Lv.70迷你蝙蝠*2；技能：攻击、防御、诸刃、乾坤、连击",
-      "type": "battle-enemy",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.truth-battle"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.truth-battle.enemies.1"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "Lv.70水蜘蛛*2；技能：攻击、防御、诸刃、乾坤、连击",
-      "type": "battle-enemy",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.truth-battle"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.truth-battle.enemies.2"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "Lv.70史莱姆*2；技能：攻击、防御、诸刃、乾坤、连击",
-      "type": "battle-enemy",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.truth-battle"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.truth-battle.enemies.3"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "Lv.70蜥蜴战士*2；技能：攻击、防御、诸刃、乾坤、连击",
-      "type": "battle-enemy",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.truth-battle"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.truth-battle.enemies.4"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "◇打法建议：人合击喽啰清光，宠战栗小沐至不动",
-      "type": "battle-strategy",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.truth-battle"
+        }
+      ]
     }
   ],
   "verification": {

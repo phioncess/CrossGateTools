@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-3fb3a364-117f-419e-bdea-5bbc1204e18a",
   "name": "登陆北方冰原",
   "aliases": [
@@ -401,7 +401,21 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "通往上山小路的位置",
+            "coordinate": "44.42",
+            "sourceLines": [
+              13,
+              14
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "step-5",
@@ -444,7 +458,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "通往下山小路的位置",
+            "coordinate": "49.32",
+            "sourceLines": [
+              17
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "step-6",
@@ -921,350 +948,712 @@
     {
       "line": 1,
       "text": "1.前往法兰城里谢里雅堡（52.61）处进入名人堂，2楼尽头房间（46.49）与管理官（57.87）对话，交出【队员徽章】获得【冒险队徽章】。",
-      "type": "exchange-step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆金牛服：管理官位于里谢里雅堡中庭；双子服：位于名人堂门口北边。。",
-      "type": "server-location",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "◆若紧接着《受袭的商船》“新村1”任务，需等待约5分钟再与管理员对话",
-      "type": "wait-gate",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "◆【队员徽章】获得方式参考《受袭的商船》“新村1”任务",
-      "type": "item-source",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "2.前往伊尔村港湾管理处与联络小队联络官（20.17）对话，获得【船票】并传送至联合小队战船。",
-      "type": "boarding-step",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "◆若出现无法上船的情况，请检查背包是否已满，或是否已将【队员徽章】换成【冒险队徽章】，",
-      "type": "boarding-troubleshooting",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "◆陪打的号：直接丢弃【队员徽章】即可上船",
-      "type": "companion-route",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "◆如果与NPC而无法进入伊尔村港湾管理处：",
-      "type": "client-troubleshooting",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "请回到人物登入界面更新档案到最新后，关闭所有游戏窗口，再次登入尝试",
-      "type": "client-troubleshooting",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "（NPC对话提示「很抱歉，这里正在施工......请你千万不要靠近。」）",
-      "type": "client-message",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "3.等待约2分钟后与船长（44.25）对话，交出【船票】并被传送至临时屯驻地。",
-      "type": "timed-disembark",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "◆此处若丢弃【船票】则无法下船",
-      "type": "item-retention",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "4.与联合小队副队长（31.60）对话，获得【补给物资】。至（44.42）处进入上山小路。",
-      "type": "item-acquisition",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◆陪打的号：一定要跳过此步对话，直接往北走至（44.42）处进入上山小路；",
-      "type": "companion-warning",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "（若对话为“那么，请一路小心”，此时不要点确定，如果点击确定后直接到达西维尔村）",
-      "type": "companion-warning",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "◆上山小路为随机迷宫，约6层；魔物为Lv.34~38，水蜘蛛、小石像怪；建议水晶：风地",
-      "type": "encounter-area",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "5.通过随机迷宫到达山顶与先遣队员（54.45）对话，交出【补给物资】获得【提神饮料】。向北走至（49.32）处进入下山小路。",
-      "type": "exchange-and-maze",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "◆下山小路为随机迷宫，约6层；魔物为Lv.39~44致命螳螂、液态史莱姆；建议水晶：风地；",
-      "type": "encounter-area",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "若中途遇到迷宫刷新，可直接等到刷新结束自动下山",
-      "type": "refresh-note",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "6.通过随机迷宫至山脚与狂暴的巨人（47.35）对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.raging-giant"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.raging-giant"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "Lv.45银怪，2动，血量约4500；技能：攻击、防御、圣盾、诸刃、强力陨石魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.raging-giant"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.raging-giant.enemies.0"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "7.战斗胜利后与狂暴的巨人对话，交出【提神饮料】获得【大地之心】并传送至山顶。",
-      "type": "exchange-step",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "8.与先遣队员（54.45）对话，交出【大地之心】获得【联络信】，任务完结。",
-      "type": "completion-step",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "◆传送至西维尔村，需要等待2分钟的方法：",
-      "type": "post-completion-heading",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "本任务（“新村2”）完成后，持有【联络信】、【冒险者徽章】可至伊尔村港湾管理处与联络小队联络官（20.17）对话上船，",
-      "type": "post-completion-route",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.6"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "2分钟后与船长对话下船到达临时屯驻地。与联合小队副队长对话，传送至西维尔村",
-      "type": "post-completion-route",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "（【联络信】、【冒险者徽章】不可丢弃，否则此处对话无法抵达西维尔村）",
-      "type": "item-retention",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "◇BOSS打法：参考《新村系列任务自强攻略心得》",
-      "type": "strategy-reference",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     }
   ],
   "verification": {

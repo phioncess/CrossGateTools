@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-ec502b02-f876-4d8b-9ef6-f497de977895",
   "name": "重拾勇气的掘地族",
   "aliases": [
@@ -424,7 +424,31 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "梦境之麦尼村小屋出口",
+            "coordinate": "6.14",
+            "sourceLines": [
+              9
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "黄色传送石",
+            "coordinate": "47.55",
+            "sourceLines": [
+              9
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "step-7",
@@ -500,7 +524,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "梦境之麦尼村小屋",
+            "coordinate": "32.21",
+            "sourceLines": [
+              22
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "step-10",
@@ -836,350 +873,696 @@
     {
       "line": 1,
       "text": "1.前往柯马特依村与掘地族（67.86）对话。",
-      "type": "dialogue-step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆获得【贝尼恰斯教团许可】、抵达柯马特依村的方法参考《踏足诺斯菲拉特》任务",
-      "type": "access-reference",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "2.与阿斯提亚药剂师（68.66）对话，获得【通用语言药水】。",
-      "type": "item-acquisition",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "◆若无法获得通用语言药水，可尝试解散队伍后再与NPC对话，或先去找“老鼠”掘地族对话",
-      "type": "troubleshooting",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "3.与掘地族（67.86）对话，交出【通用语言药水】。",
-      "type": "item-consumption",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "4.与阿斯提亚药剂师（68.66）对话，选“是”交出20朵【蝴蝶花】获得【阿斯提亚试验药】。",
-      "type": "material-exchange",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.routePoints.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "◆【蝴蝶花】每一名队员都需要交",
-      "type": "party-material-rule",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "5.与掘地族（67.86）对话，交出【阿斯提亚试验药】传送至梦境之麦尼村小屋。",
-      "type": "teleport-exchange",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.routePoints.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "6.由（6.14）处离开梦境之麦尼村小屋，通过（47.55）处黄色传送石进入梦境之麦尼洞窟。",
-      "type": "maze-entry",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "◆梦境之麦尼洞窟为随机迷宫，约18层",
-      "type": "maze-detail",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "迷宫内魔物：",
-      "type": "encounter-heading",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "Lv.85~87恶魔蝙蝠*3，技能：攻击、吸血魔法",
-      "type": "enemy-detail",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "Lv.85~87恶梦鼠*3，技能：攻击、圣盾、冰冻魔法、强力冰冻魔法、超强冰冻魔法",
-      "type": "enemy-detail",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "可偷袭，有技能经验，无战斗经验",
-      "type": "experience-rule",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "7.通过随机迷宫至底层，与勇气加持之梦魇（40.38）对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.courage-nightmare"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "◆底层为固定地图，行走路线：",
-      "type": "media-caption",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.courage-nightmare"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.courage-nightmare"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "Lv.95勇气加持之梦魇（2动），血量约18000；",
-      "type": "battle-enemy",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.courage-nightmare"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.courage-nightmare.enemies.0"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "技能：攻击、混乱攻击、连击、吸血攻击、乾坤一掷、诸刃、大地之怒、超强遗忘魔法、大地之怒（MP<20%追加，伤害450，每回合100%使用）",
-      "type": "battle-skill",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.courage-nightmare"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.courage-nightmare.enemies.0"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "8.战斗胜利后与胆怯的梦魇（40.39）对话，获得【「勇气」】并传送至梦境之麦尼村。",
-      "type": "post-battle-item",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "◇建议：陪打的人物不要对话即可登出，否则还需交任务",
-      "type": "companion-warning",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "9.返回梦境之麦尼村小屋（32.21）与掘地族小古（8.7）对话，交出【「勇气」】并传送回柯马特依村。",
-      "type": "exchange-teleport",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "10.前往哥拉尔镇，出西门至库鲁克斯岛（218.432）处与年迈的掘地族对话，进入库鲁克斯地底通道。",
-      "type": "passage-entry",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "◆库鲁克斯地底通道为固定地图，通道狭长，不会遇敌",
-      "type": "passage-detail",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "11.与年轻的掘地族（478.52）对话，获得称号“掘地族的朋友”并传送至雷克塔尔镇门外（590.380）处，任务完结。",
-      "type": "completion-step",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.routePoints.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "◆哥拉尔镇传送至雷克塔尔镇：",
-      "type": "post-completion-heading",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "拥有称号“掘地族的朋友”与哥拉尔镇西门外年迈的掘地族（218.432）对话，可传送至雷克塔尔镇门外（590.380）处",
-      "type": "post-completion-access",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "◆任务剧情：参考《诺斯菲拉特系列任务剧情对话》",
-      "type": "story-reference",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "◆时长服不可重解本任务，否则无法利用通道",
-      "type": "server-repeat-warning",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     }
   ],
   "verification": {

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-b54d3b56-815b-4a22-834d-fd434048082e",
   "name": "隐落之乡",
   "aliases": [
@@ -202,7 +202,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "加纳村外索奇亚绿色水晶",
+            "coordinate": "643.413",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "step-3",
@@ -338,7 +351,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "加纳村外索奇亚绿色水晶",
+            "coordinate": "643.413",
+            "sourceLines": [
+              8
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "step-6",
@@ -788,350 +814,808 @@
     {
       "line": 1,
       "text": "1.前往亚留特村外（608.55）对老爷爷对话，选择“是”， 获得【照片】。",
-      "type": "item-acquisition",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "2.由加纳村外索奇亚（643.413）绿色水晶进入厉鬼的洞窟。",
-      "type": "maze-entry",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "◆厉鬼的洞窟：随机迷宫，共10层",
-      "type": "maze-detail",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "厉鬼的洞窟，迷宫内的魔物：",
-      "type": "encounter-heading",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "怀旧服Lv65、道具服Lv125，幽灵、亡灵，1~9只；会随机遇到徘徊的灵魂 类似狂战",
-      "type": "versioned-encounter",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "3.通过10层迷宫后到达洞窟底层，与洞窟底层（19.10）虚弱的年轻人对话，交出【照片】，获得【家书】。",
-      "type": "exchange-step",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "4.前往亚留特村外（608.55）对老爷爷对话，交出【家书】，获得【红豆馅饼】、【老夫妇的灵魂】。",
-      "type": "combined-acquisition",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "5.再次前往索奇亚（643.413），通过随机迷宫厉鬼的洞窟后。",
-      "type": "repeat-maze",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "与洞窟底层（19.10）虚弱的年轻人对话，交出【红豆馅饼】，获得【游子的灵魂】。",
-      "type": "exchange-step",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "6.前往亚留特村（46.77），与墓对话，交出【游子的灵魂】、【老夫妇的灵魂】，获得【满月的思念】。",
-      "type": "combined-exchange",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "7.双击【满月的思念】，选择“是”，获得随机任务奖励，任务完结。",
-      "type": "container-use",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "◆【满月的思念】：Lv.1、种类不明；可交易",
-      "type": "item-detail",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "◆任务奖励：（可交易）",
-      "type": "reward-heading",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "怀旧服：",
-      "type": "version-heading",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "⑴永远的感恩之花：",
-      "type": "reward-row",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "Lv.7，种类护身符、耐久150；",
-      "type": "reward-detail",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "攻击+30、精神+16~20，昏睡+30、石化+30、混乱+30、遗忘+100；魅力+50；",
-      "type": "reward-detail",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "数值波动，最终数值收集中",
-      "type": "data-note",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "装备后获得称号“地久天长”",
-      "type": "reward-effect",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "⑵桂花月饼：Lv.1，种类食物；恢复魔法值150点",
-      "type": "reward-row",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "⑶蛋黄月饼：Lv.1，种类食物；技能经验上升30点",
-      "type": "reward-row",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "⑷五仁月饼：Lv.1，种类食物；人物魅力值上升5点",
-      "type": "reward-row",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "道具服：",
-      "type": "version-heading",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "⑴永远的感恩之花：",
-      "type": "reward-row",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "Lv.7，种类护身符、耐久150；",
-      "type": "reward-detail",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "攻击+60、敏捷+20、精神+17~19，昏睡+30、石化+30、混乱+30、遗忘+100；生命+100；魅力+50；",
-      "type": "reward-detail",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "数值波动，最终数值收集中",
-      "type": "data-note",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "装备后获得称号“地久天长”",
-      "type": "reward-effect",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "时长服：",
-      "type": "version-heading",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.changes.0"
+        }
+      ]
     }
   ],
   "verification": {

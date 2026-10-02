@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "element-water",
   "name": "水之洞窟",
   "aliases": [
@@ -787,290 +787,693 @@
     {
       "line": 1,
       "text": "等级不低于Lv.60",
-      "type": "requirement",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "1.出维诺亚村往东南方向行走至水之洞窟（429.570），与水精温蒂妮对话进入洞窟，通过（10.8）处黄色传送石进入水之洞窟。",
-      "type": "entry-step",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "2.前往水之洞窟20楼抵达水之洞窟中层。中层共有4颗传送石，除去队伍传送至中层的1颗，在剩余的3颗传送石中寻找正确的1颗。",
-      "type": "portal-search",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "3.通过正确的传送石，30楼抵达水之试炼，与水之斗神对话进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.water-fighting-god"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "4.战斗胜利后传送至充满谜的房间，调查钢琴（7.2）获得【水之乐谱】。",
-      "type": "reward-step",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "5.与水精温蒂妮（9.4）对话，交出【纯水水晶】获得【水精的福袋】。（可跳过）",
-      "type": "optional-exchange",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "6.持有一定数量(0~2)的【水之符】与水精（10.2）对话可兑换对应等级的各色【宝石】1颗并传送出水之洞窟。",
-      "type": "token-exchange",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "7.与水精（11.4）对话直接传送出水之洞窟，任务完结。",
-      "type": "direct-exit",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "◆等级低于Lv.60无法进入，进入后登出才可离开",
-      "type": "gate",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "◆洞窟内魔物：皆为全25属性的Lv.54~61水蓝鸟魔、水晶螃蟹、猫妖；不可封印",
-      "type": "encounter-area",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "◆水之洞窟，1~19楼，2小时重置一次（仅供参考），地图大小范围：40*40~60*60；宝箱数量：10",
-      "type": "maze-detail",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "◆偶尔会出现缺少错误传送石的情况，但大多时候是4颗",
-      "type": "portal-note",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "◆若进入的是错误的传送石，通过后进入水之试炼与水精温蒂妮对话获得【水之符】，再原路返回水之洞窟中层",
-      "type": "wrong-route-reward",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◆3颗传送石通往水之迷宫，21~29楼，1小时重置一次（仅供参考），地图大小范围：40*40~60*60；宝箱数量：5",
-      "type": "maze-detail",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "◆【水精的福袋】：（福袋以及兑换奖品皆可交易）",
-      "type": "item-heading",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "1颗【纯水水晶】可兑换1个【水精的福袋】，兑换次数不限，【纯水水晶】无需满耐久，但人物创建时的初始水晶不可兑换",
-      "type": "exchange-rule",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "【水精的福袋】耐久5点，每使用一次减少1点耐久，使用后随机获得奖品；同时持有2个及以上【水精的福袋】时无法使用",
-      "type": "item-use",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "奖品（随机获得1种）：【沙漠的红星】、【魔族的水晶】、【钢骑之矿】、【魔石】（卖店价587G）、【誓言之证】、【纯水晶】（属性随机）、",
-      "type": "reward-list",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.5"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "【德特家的布】、【重来的种子】（任意一种）、【猫眼石】、Lv.8各种颜色【宝石】（任意一种）",
-      "type": "reward-list",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.9"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "◆【水之符】*0兑换Lv.2~3【宝石】；【水之符】*1兑换Lv.4~7【宝石】；【水之符】*2兑换Lv.5~8【宝石】",
-      "type": "token-table",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.2"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": []
     },
     {
       "line": 22,
       "text": "Lv.80水之斗神（2动），血量约10000，邪魔系，属性：全25，抗性全90； 技能：攻击、反击Lv10、阳炎Lv10、乾坤一掷Lv10、诸刃Lv10、昏睡攻击Lv10、补血魔法Lv10（为我方单位补血）、明镜止水Lv10（血量<25%追加）、气功弹Lv10（血量<25%追加）、连击（我方存在物理制御单位追加）",
-      "type": "battle-enemy",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.water-fighting-god"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.water-fighting-god.enemies.0"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "Lv.71~72水精温蒂妮（2动）*2，血量约6000，特殊系，属性：全25，抗性全90； 技能：攻击、遗忘攻击、强力冰冻魔法、超强中毒魔法、超强混乱魔法、超强补血魔法（为我方单位补血）",
-      "type": "battle-enemy",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.water-fighting-god"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.water-fighting-god.enemies.1"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "Lv.74~76液态史莱姆（2动）*2，血量约9000，属性：全25，抗性全90，防御力1000+； 技能：攻击、混乱攻击、明镜止水、逃跑（血量<25%追加）",
-      "type": "battle-enemy",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.water-fighting-god"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.water-fighting-god.enemies.2"
+        }
+      ]
     }
   ],
   "verification": {

@@ -269,14 +269,15 @@
     {
       "line": 1,
       "text": "无任务型前置",
-      "kind": "requirement",
+      "kind": "note",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "bindings": []
     },
     {
       "line": 2,
@@ -288,7 +289,17 @@
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
@@ -300,7 +311,25 @@
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-1.overview"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-1.enemies.enemy-1"
+        }
+      ]
     },
     {
       "line": 4,
@@ -312,19 +341,55 @@
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "可由队长持戒指调查（9,9）处床，进入小房间阅读日记。",
-      "kind": "flow",
+      "kind": "item",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        }
+      ]
     },
     {
       "line": 6,
@@ -336,7 +401,13 @@
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.notes.0"
+        }
+      ]
     }
   ],
   "verification": {

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-5c652456-ce19-47dc-9a83-24c4f8face22",
   "name": "露比的约会券",
   "aliases": [
@@ -680,254 +680,544 @@
     {
       "line": 1,
       "text": "1.前往圣拉鲁卡村与如花（42.35）对话，选“是”交出100G获得【“究极变小”术】。",
-      "type": "optional-purchase",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆已变身成大地鼠则自动跳过此步",
-      "type": "skip-condition",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "2.双击【“究极变小”术】，交出【“究极变小”术】人物造型变更为大地鼠。",
-      "type": "item-use",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "◆变身前再次与如花对话可反复购买【“究极变小”术】，【“究极变小”术】登出消失",
-      "type": "repeat-purchase-rule",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "3.再次与如花对话，进入废弃的矿坑。通过迷宫前往楼梯（5.30）进入矿坑地下1层。",
-      "type": "maze-entry",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "◆矿坑地下为固定迷宫，共3层",
-      "type": "maze-detail",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "◆魔物为Lv.35~39猫妖、猫人；数量1~6，有战斗经验",
-      "type": "encounter-area",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "4.前往矿坑地下3层与受致命伤的大地鼠对话，获得【与露比约会券】。",
-      "type": "item-acquisition",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "5.前往索奇亚海底洞窟地下2楼，调查可疑的岩石（34.7）进入进入黑色的祈祷。",
-      "type": "route-step",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "◆可由维诺亚村或奇利村出发前往索奇亚海底洞窟",
-      "type": "route-note",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "6.与吉光（26.2）对话，交出【与露比约会券】进入吉光的房间。",
-      "type": "exchange-step",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "7.与露比（12.8）对话，选“是”进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ruby-date"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "◆BOSS：Lv.70露比，2动，血量约4000；技能：攻击、防御、超强冰冻魔法、超强混乱魔法、攻击吸收、攻击反弹、攻击无效、召唤大地鼠（6只）、召唤火焰鼠（6只）",
-      "type": "battle-enemy",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ruby-date"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ruby-date.enemies.0"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◆喽啰：",
-      "type": "battle-heading",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ruby-date"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "Lv.60大地鼠，1动，血量约700；技能：攻击、防御、陨石魔法、强力陨石魔法、超强陨石魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ruby-date"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ruby-date.enemies.1"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "Lv.60火焰鼠，1动，血量约700；技能：攻击、防御、火焰魔法、强力火焰魔法、超强火焰魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ruby-date"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ruby-date.enemies.2"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "8.战斗胜利后随机获得【暴食的罪书】。与露比对话，获得【露比的娃娃胸针】、称号“既要快递也要爱”并传送至黑之祈祷。",
-      "type": "reward-step",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "◆2021年11月3日更新后获得称号变为“既要快递也要爱”，更新之前获得称号为“找个女朋友”",
-      "type": "version-change",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "9.与巫师亚莉安娜（22.16）或巫师玛其（25.16）对话，传送至巫师冯奴的家，与亚莉耶鲁（12.4）对话，任务完结。",
-      "type": "completion-step",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "◆与巫师亚莉安娜或巫师玛其对话不可进入学习攻击吸收、魔法吸收的房间，也不会经过就职巫师的房间，但也要继续与亚莉耶鲁对话，避免卡《就职巫师》任务",
-      "type": "quest-state-warning",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "◆【露比的娃娃胸针】：Lv.5护身符、耐久200；攻击+10、防御+5、敏捷+5、精神+3、回复+3、抗遗忘+10、魅力+10，提升少许偷袭几率，数值固定；装备后与管理称号NPC对话获得称号“与露比约会的人”；不可交易",
-      "type": "reward-detail",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.2"
+        }
+      ]
     }
   ],
   "verification": {

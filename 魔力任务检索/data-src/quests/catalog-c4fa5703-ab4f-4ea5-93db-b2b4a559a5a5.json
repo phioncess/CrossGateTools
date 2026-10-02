@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-c4fa5703-ab4f-4ea5-93db-b2b4a559a5a5",
   "name": "最终净化",
   "aliases": [
@@ -359,7 +359,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "楼梯",
+            "coordinate": "144.93",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "step-5",
@@ -500,7 +513,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "楼梯",
+            "coordinate": "35.83",
+            "sourceLines": [
+              14
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "step-9",
@@ -1276,350 +1302,828 @@
     {
       "line": 1,
       "text": "1.前往炼金之馆2楼与炼金师（70.23）对话，交出【证明信】获得【神圣的宝石】。",
-      "type": "exchange-step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆炼金之馆抵达方式参考《拜访炼金之馆》任务",
-      "type": "route-reference",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "2.前往伊尔村港湾管理处，持有【战舰乘坐信】与战舰舰长（19.11）对话，传送至荒岛探险团营地。",
-      "type": "held-item-teleport",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "◆【战舰乘坐信】获得方式参考《蔓延的邪恶》任务",
-      "type": "item-source",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "3.与炼金师队长（49.54）对话，获得【重要通行证】。",
-      "type": "item-acquisition",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "4.与营地守卫（64.28）对话，传送至无名神殿。通过（144.93）处楼梯进入神殿暗道。",
-      "type": "maze-entry",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "◆神殿暗道为随机迷宫，约5层；魔物为Lv.64~68毒蜘蛛（土蜘蛛）、无名的亡者（僵尸）、狂暴软泥怪（布丁史莱姆）",
-      "type": "encounter-area",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "5.通过随机迷宫抵达无名神殿，与大祭祀之灵（98.60）对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.high-priest-spirit"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.high-priest-spirit"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "Lv.75大祭祀之灵，血量约12000；技能：攻击、防御、吸血魔法、超强石化魔法、攻击反弹",
-      "type": "battle-enemy",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.high-priest-spirit"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.high-priest-spirit.enemies.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "Lv.75血护卫（血骷髅）*4，血量约4500；技能：攻击、防御、攻击反弹、乾坤一掷",
-      "type": "battle-enemy",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.high-priest-spirit"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.high-priest-spirit.enemies.1"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "6.战斗胜利后调查水晶球（98.49），交出【神圣的宝石】获得【净化之尘】并传送至无名的神殿。",
-      "type": "exchange-step",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "7.返回荒岛探险团营地与炼金师队（49.54）长对话，交出【净化之尘】、【重要通行证】获得【定位宝石】。",
-      "type": "combined-exchange",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.routePoints.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "8.与高级炼金师（48.53）对话，选“是”传送至无名神殿。通过（35.83）处楼梯进入神殿暗道。",
-      "type": "maze-entry",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "◆神殿暗道为随机迷宫，约7层；魔物为Lv.69~73追猎者（地狱看门犬）、游荡者（小石像怪）",
-      "type": "encounter-area",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "9.通过随机迷宫抵达无名神殿，与时空之影（98.60）对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.space-time-shadow"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.space-time-shadow"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "Lv.75时空之影，血量约14000；技能：攻击、防御、四属性强力攻击魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.space-time-shadow"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.space-time-shadow.enemies.0"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "Lv.75时空守卫*2，血量约7000；技能：攻击、防御、诸刃、攻击反弹",
-      "type": "battle-enemy",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.space-time-shadow"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.space-time-shadow.enemies.1"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "10.战斗胜利后调查水晶球（98.49），交出【定位宝石】获得【记忆水晶】并传送回无名神殿。",
-      "type": "exchange-step",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "11.前往炼金之馆2楼与管理官（82.10）对话，交出【记忆水晶】获得【炼金大师徽章】、【领取证明】。",
-      "type": "combined-acquisition",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "◆【炼金大师徽章】：Lv.5护身符、耐久150；生命+150、魔力+150、魅力+5；不可交易、丢地消失",
-      "type": "reward-detail",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "◆持有【炼金大师徽章】可进入荒岛探险团营地、炼金之馆、幻境森林",
-      "type": "access-effect",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "◆【战舰乘坐信】、【境界宝石】、【会员徽章】可丢弃",
-      "type": "obsolete-item-note",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "12.前往炼金之馆1楼与守卫者（27.19）对话，进入房间。",
-      "type": "route-step",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "13.与炼金兽合成大师（22.74）对话，选“是”交出【领取证明】获得Lv.1幼生独角兽，任务完结。",
-      "type": "completion-exchange",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.7"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.7"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "◆持有【幻想碎片】*50与炼金兽合成大师（16.70）对话，可兑换Lv.1幼生独角兽",
-      "type": "alternate-exchange",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.8"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.8"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "◆【幻想碎片】获得方式参考《幻境森林》任务",
-      "type": "item-source",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "◆任务剧情：参考《失落的炼金术系列任务剧情对话》",
-      "type": "story-reference",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        }
+      ]
     }
   ],
   "verification": {

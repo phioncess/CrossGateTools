@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "dog-2",
   "name": "泰格利的烦恼",
   "aliases": [
@@ -174,7 +174,8 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "text": "需要拥有“永久的友谊”称号。"
       },
       {
         "type": "held-foods",
@@ -1636,290 +1637,777 @@
     {
       "line": 1,
       "text": "怀旧牧羊/金牛服任务",
-      "type": "server-scope",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "完成《被夺走的贡品》任务",
-      "type": "prerequisite",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "拥有“永久的友谊”称号",
-      "type": "prerequisite",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "持有【青椒肉丝】、【烧鸡】、【汉堡】、【寿喜锅】各一片",
-      "type": "material-requirement",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "1.前往法兰城冒险者旅馆1楼与大侦探汉克（35.41）对话，获得【水质取样器】、【土质取样器】、【植物取样器】。",
-      "type": "acquisition-step",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "2.白天，前往蒂娜村调查（28.49）、（47.31）、（72.42）处，交出【植物取样器】、【水质取样器】、【土质取样器】获得【植物样本】、【水质样本】、【土质样本】。",
-      "type": "timed-sampling",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "3.返回法兰城冒险者旅馆1楼与大侦探汉克对话，交出【水质样本】、【土质样本】、【植物样本】获得【蒂娜村物质样本】。",
-      "type": "exchange-step",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "4.前往圣拉鲁卡村医院外与元素研究者（35.46）对话，交出【蒂娜村物质样本】获得【未知物质样本】。",
-      "type": "exchange-step",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.7"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "5.返回法兰城里谢里雅堡2楼图书馆与元素专家耐罗恩（28.23）对话，交出【未知物质样本】获得【蒂娜村物质报告】。",
-      "type": "exchange-step",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.7"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.8"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "6.前往法兰城冒险者旅馆1楼与大侦探汉克对话，交出【蒂娜村物质报告】获得【汉克的请求】。",
-      "type": "exchange-step",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.8"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.9"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "7.前往法兰城东门与李林（278.82）对话，交出【汉克的请求】获得【李林的回复】。",
-      "type": "exchange-step",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.9"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.10"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "8.返回法兰城冒险者旅馆1楼与大侦探汉克对话，交出【李林的回复】获得【汉克的托付】。",
-      "type": "exchange-step",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.10"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.11"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "9.前往蒂娜村外小屋旁与泰格利（582.258）对话，选“是”交出【汉克的托付】获得【泰格利的菜单】。",
-      "type": "exchange-step",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.11"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.12"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "10.持有【青椒肉丝】、【烧鸡】、【汉堡】、【寿喜锅】各一片时与泰格利对话，交出四种【料理】、【泰格利的菜单】获得【泰格利的请求】。",
-      "type": "food-exchange",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.inputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.inputs.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.inputs.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.12"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.13"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.14"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.15"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.16"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.13"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "11.前往杰诺瓦镇医院2楼与除魔师亨特对话，交出【泰格利的请求】获得【聚灵镜】。",
-      "type": "exchange-step",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.17"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.14"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "12.夜晚，前往蒂娜村，夜晚时在坟墓与幽灵（65.54）对话进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.tina-grave-ghost"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "13.战斗胜利后，解散队伍之后，再调查坟墓（72.52），交出【聚灵镜】获得【泰格利的项链】。",
-      "type": "solo-exchange",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.18"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.15"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "14.返回蒂娜村外小屋旁与泰格利对话，交出【泰格利的项链】获得【泰格利的报告】。",
-      "type": "exchange-step",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.19"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.16"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "15.返回法兰城冒险者旅馆1楼与大侦探汉克对话，交出【泰格利的报告】，任务完结。",
-      "type": "completion-step",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.14.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.20"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "◆已完成过本任务或将【泰格利的项链】丢弃的玩家可直接参与BOSS战，但无法获得后续道具。",
-      "type": "repeat-restriction",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "◆若未解散队伍便调查坟墓，则只有调查坟墓的玩家会获得【泰格利的项链】。",
-      "type": "party-warning",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": []
     },
     {
       "line": 23,
       "text": "Lv.55怨恨的幽灵，血量约13000；技能：攻击、防御、诸刃、乾坤一掷、反击、攻击无效、魔法无效、攻击反弹、魔法反弹、火焰的祈祷、云群的祈祷",
-      "type": "battle-enemy",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.tina-grave-ghost"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.tina-grave-ghost.enemies.0"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "Lv.60血魔*6，血量约2500；技能：攻击、防御、冰冻魔法、强力冰冻魔法、火焰魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.tina-grave-ghost"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.tina-grave-ghost.enemies.1"
+        }
+      ]
     }
   ],
   "verification": {

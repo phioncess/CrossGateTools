@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-32bf2e8e-12b3-4ee4-83cb-dc68c5d4e5fb",
   "name": "积雪的山路",
   "aliases": [
@@ -781,374 +781,848 @@
     {
       "line": 1,
       "text": "1.前往莎莲娜岛（84.193）处，通过黄色传送石进入积雪的山路。",
-      "type": "maze-entry",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆黄色传送石位于阿巴尼斯村外区域",
-      "type": "location-note",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "◆积雪的山路为大约24层的随机迷宫；迷宫刷新时间：4小时；",
-      "type": "maze-detail",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "魔物为Lv.39-42丧尸、地狱妖犬；数量：1~8；掉落【莎莲娜蘑菇】（不可交易）。",
-      "type": "encounter-drop",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "丧尸：不死系，属性：水60火40；技能：攻击、防御、攻击（血少者）",
-      "type": "enemy-detail",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "地狱妖犬：野兽系，属性：风60地40；技能：攻击、防御、攻击（血多者）、诸刃",
-      "type": "enemy-detail",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "2.在雪山之顶遇敌会随机与冰之人魔草进入战斗。",
-      "type": "special-encounter",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ice-human-demon-grass"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "◆雪山之顶：固定地图",
-      "type": "map-note",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "雪山之顶（21~26.14~20）遇到BOSS冰之人魔草的几率较低",
-      "type": "special-encounter-rate",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ice-human-demon-grass"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "魔物（几率较高）：Lv.44~46，数量1~6个，丧尸、地狱妖犬",
-      "type": "ordinary-encounter",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "◆战斗信息：（皆为2动）",
-      "type": "battle-rule",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ice-human-demon-grass"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "Lv.51冰之人魔草，血量约4000，邪魔系，全30，抗咒；（掉落【香水？】）",
-      "type": "battle-enemy",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ice-human-demon-grass"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ice-human-demon-grass.enemies.0"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "技能：攻击、超强中毒魔法、超强混乱魔法、属性反转、海洋的祈祷、自爆攻击（喽啰不在时追加）",
-      "type": "battle-skill",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ice-human-demon-grass"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ice-human-demon-grass.enemies.0"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "Lv.49变种液态史莱姆*3~4，血量约3500，邪魔系，全30，抗咒；（掉落【薄冰的戒指】）",
-      "type": "battle-enemy",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ice-human-demon-grass"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ice-human-demon-grass.enemies.1"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "技能：攻击、诸刃、强力冰冻魔法、攻击吸收、攻击反弹、魔法反弹、自爆（己方全体回复体力；敌方血量<50%）",
-      "type": "battle-skill",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ice-human-demon-grass"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ice-human-demon-grass.enemies.1"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "◆若变态液态史莱姆全部逃走，冰之人魔草会在几回合内自爆，自爆后不会掉落道具",
-      "type": "no-drop-condition",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ice-human-demon-grass"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "3.战斗胜利后，队伍中随机获得【香水？】、【薄冰的戒指】，任务完结。",
-      "type": "battle-reward",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ice-human-demon-grass"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "⑴【香水？】鉴定后为【人魔草之泪】；人魔草之泪：Lv.1、药水；可交易；作用：部分区域遇敌率降低（不确定）",
-      "type": "reward-detail",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "⑵薄冰的戒指：Lv.4、戒指，耐久40~50；精神+8~12；可交易",
-      "type": "reward-detail",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "【莎莲娜蘑菇】支线：",
-      "type": "branch-heading",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "1.击倒迷宫内魔物随机获得【莎莲娜蘑菇】（不可交易）。",
-      "type": "battle-drop",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "2.至山顶的雪山小屋（23.20）与厨师沙杰弗（11.3）对话，交出【莎莲娜蘑菇】获得【宇治金时】或【白熊牛排】。",
-      "type": "branch-exchange",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "◆持有多个【莎莲娜蘑菇】会被全部收走，只换得一个【物品】",
-      "type": "all-held-consumption",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "◆奖励：",
-      "type": "reward-heading",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "⑴【宇治金时】：Lv.5、料理；使用后回复50点魔力；可交易",
-      "type": "reward-detail",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "⑵【白熊牛排】：Lv.10、料理；使用后回复100点魔力；可交易",
-      "type": "reward-detail",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.1"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "【鬼酒】支线：",
-      "type": "branch-heading",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "1.通过《牛鬼讨伐》任务，获得【鬼酒】*6（可交易）。",
-      "type": "item-source",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "2.至山顶的雪山小屋（23.20）与矿工德里拉荷（8.5）对话，交出【鬼酒】*6获得Lv.3~5【紫水晶】。",
-      "type": "branch-exchange",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "小贴士：",
-      "type": "service-heading",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "雪山小屋可以收取宠物邮件，雪山之顶则不能。",
-      "type": "service-note",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     }
   ],
   "verification": {

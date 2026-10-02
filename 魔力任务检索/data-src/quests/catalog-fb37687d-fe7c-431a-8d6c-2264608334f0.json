@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-fb37687d-fe7c-431a-8d6c-2264608334f0",
   "name": "异次元试验场",
   "aliases": [
@@ -1669,434 +1669,1238 @@
     {
       "line": 1,
       "text": "第四&第三次：",
-      "type": "version-heading",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "1.前往法兰城与奈亚拉（133.155）对话进入异次元试验场，通过黄色传送石（22.16）开始挑战。",
-      "type": "entry-step",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "◆休息室（26.8）可进行治疗与补给",
-      "type": "service-note",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "2.通过每9层随机迷宫后会进行BOSS战，获胜后获得通往下一层的【钥匙】、【积分卡】。双击交出钥匙即可进行挑战下一阶段。",
-      "type": "stage-rule",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "◆各阶段获得积分卡数量如下：",
-      "type": "score-heading",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "战胜第一层BOSS后获得通往第二层的【钥匙】、【积分卡】*1",
-      "type": "stage-reward",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "战胜第二层BOSS后获得通往第三层的【钥匙】、【积分卡】*2",
-      "type": "stage-reward",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "战胜第三层BOSS后获得通往第四层的【钥匙】、【积分卡】*3",
-      "type": "stage-reward",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "战胜第四层BOSS后获得通往第五层的【钥匙】、【积分卡】*6",
-      "type": "stage-reward",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "3.战胜第五层BOSS后获得【全视之眼（蓝）】或【全视之眼（红）】、【积分卡】*8、【丧尸设计图】随机一张、称号“深远的黑暗”",
-      "type": "first-clear-reward",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.8"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.9"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.10"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "◆第二次起战胜第五层BOSS后获得【积分卡】*8、【丧尸设计图】随机一张",
-      "type": "repeat-clear-reward",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.11"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "◆【积分卡】可与异次元试验场荷特普（20.13）兑换奖励",
-      "type": "exchange-npc",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "◆兑换奖励所需积分卡如下：",
-      "type": "exchange-heading",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "名称积分卡",
-      "type": "table-heading",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "所需数量备注",
-      "type": "table-heading",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "丧尸设计图包20随机兑换一张丧尸设计图；",
-      "type": "exchange-row",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.13"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "改造后名称为变异丧尸、不死系、9技能栏、水7火3；40 38 17 15 15",
-      "type": "pet-detail",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "宝石箱100获得随机颜色Lv.10宝石（有几率获得Lv.10海洋之心宝石）",
-      "type": "exchange-row",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.14"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "全视之眼",
-      "type": "exchange-row",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.2"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "（红）45适合物理系；攻击+25 敏捷+10 回复+15 必杀+12 反击+12 命中+17",
-      "type": "equipment-detail",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.7"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.15"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "生命+200 魔力+150 抗魔+35；耐久100，10级护身符，不可交易",
-      "type": "equipment-detail",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.2"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "全视之眼",
-      "type": "exchange-row",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.3"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "（蓝）45适合魔法系；敏捷+10 精神+16 回复+15 必杀+12 闪躲+17",
-      "type": "equipment-detail",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.8"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.16"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "生命+200 魔力+150 魔攻+17 抗魔+20；耐久100，10级护身符，不可交易",
-      "type": "equipment-detail",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.3"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "古代的哨子50双击后获得1只Lv.1火焰翼龙；",
-      "type": "exchange-row",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.9"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.17"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "若宠物栏满时，双击后道具消失且不会获得任何宠物",
-      "type": "pet-slot-warning",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.4"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "旧版异次元试验场：",
-      "type": "old-version-heading",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.1"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "第二次：",
-      "type": "version-heading",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.1"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "任务流程与第三次一致，奖品有所改变：",
-      "type": "version-comparison",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.1"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "丧尸设计图部分变为异型蜂设计图；",
-      "type": "reward-change",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.1"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "Lv.9宝石箱变为开启后获得任意颜色Lv.9宝石（有几率获得Lv.9海洋之心宝石），其他【奖品】保持不变。",
-      "type": "reward-change",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.1"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "第一次：",
-      "type": "version-heading",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.2"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "任务流程大致与第三次一致，奖品改变：",
-      "type": "version-comparison",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.2"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "调整层数共7层，最终奖品为【身体的一部分？】、【诺斯菲拉特通行证】、称号“绝影”。",
-      "type": "old-final-reward",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.outputs.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.18"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.19"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.2"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "◆【身体的一部分？】鉴定后可为【豪克爱犬的牙】、【豪克爱犬的毛】、【豪克爱犬的眼】、【豪克爱犬的爪】任意一种",
-      "type": "appraisal-variants",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.14.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.14.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.10"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.20"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.2"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "◆持有【豪克爱犬的牙】、【豪克爱犬的毛】、【豪克爱犬的眼】、【豪克爱犬的爪】与1级地狱妖犬可与裘瑟贝（195、67）兑换1只Lv.1改造地狱妖犬",
-      "type": "pet-exchange",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.15.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.15.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.15.inputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.15.inputs.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.15.inputs.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.15.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.11"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.12"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.13"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.14"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.15"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.21"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.2"
+        }
+      ]
     }
   ],
   "verification": {

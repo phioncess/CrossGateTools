@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-a4d9a5ad-759c-46f4-9df9-b179a20dae99",
   "name": "古钱兑换商",
   "aliases": [
@@ -2361,458 +2361,1694 @@
     {
       "line": 1,
       "text": "1.持有一定数量【阿尔卡迪亚古钱】，前往法兰城（238.64）冒险者旅馆三楼。",
-      "type": "route-step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.routePoints.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "2.与不同NPC兑换：",
-      "type": "exchange-heading",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "①.与装箱服务员（34.4）对话，交出999个【阿尔卡迪亚古钱】获得1个【阿尔卡迪亚千两箱】。",
-      "type": "box-exchange",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "◆【阿尔卡迪亚千两箱】、【阿尔卡迪亚古钱】：堆叠数量：999；皆可交易",
-      "type": "item-detail",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "②.与零钱兑换员（32.3）对话，交出1个【阿尔卡迪亚千两箱】获得999个【阿尔卡迪亚古钱】。",
-      "type": "unbox-exchange",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "③.与古钱交易员（19.4）或古钱大宗交易员（17.4）对话，输入需要兑换的物品名称可兑换奖品。",
-      "type": "named-exchange-rule",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.16"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.19"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.20"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.21"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.22"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.25"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "◆兑换明细：（皆可交易）",
-      "type": "trade-rule",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.16"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.19"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.20"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.21"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.22"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.25"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "数量兑换奖品作用",
-      "type": "table-heading",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.16"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.19"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.20"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.21"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.22"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.25"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "10枚传送石回数票",
-      "type": "exchange-row",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "（怀旧服已关闭）免费使用1次传送石（亚诺曼城除外）；",
-      "type": "closed-status",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "堆叠数量：5",
-      "type": "item-detail",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "30枚美人沙龙回数票提升魅力8点（法兰城美容院（216.124）",
-      "type": "exchange-row",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "与艾丝蒂儿使用）；堆叠数量：5",
-      "type": "item-detail",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "60枚冰块抗混乱+10、耐久100、Lv.1头带",
-      "type": "exchange-row",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "音乐钟抗昏睡+10、耐久100、Lv.1乐器",
-      "type": "exchange-row",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "水龙蜥的鳞片抗石化+10、耐久100、Lv.1乐器",
-      "type": "exchange-row",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "矿泉水抗酒醉+10、耐久100、Lv.1头带",
-      "type": "exchange-row",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.7"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.7"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "日记本抗遗忘+10、耐久100、Lv.1头带",
-      "type": "exchange-row",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.8"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.8"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "毒蛇围巾抗中毒+10、耐久100、Lv.1项链",
-      "type": "exchange-row",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.7"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.9"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.9"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "100枚无形软膏种族变为特殊系；耐久200、Lv.1头带",
-      "type": "exchange-row",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.8"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.10"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.10"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "秋风之竖琴种族变为昆虫系；耐久200、Lv.1乐器",
-      "type": "exchange-row",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.9"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.11"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.11"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "古树的枯叶种族变为植物系；耐久200、Lv.1头带",
-      "type": "exchange-row",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.10"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.12"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.12"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "200枚V颈圈生命+30、耐久100、Lv.1头带",
-      "type": "exchange-row",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.14.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.14.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.14.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.11"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.13"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.13"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "S颈圈攻击+8、耐久100、Lv.1头带",
-      "type": "exchange-row",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.15.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.15.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.15.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.12"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.14"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.14"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "T颈圈防御+8、耐久100、Lv.1头带",
-      "type": "exchange-row",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.16"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.16.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.16.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.16.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.13"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.15"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.15"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "Q颈圈敏捷+8、耐久100、Lv.1头带",
-      "type": "exchange-row",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.14"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.16"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.16"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "M颈圈精神+4、耐久100、Lv.1头带",
-      "type": "exchange-row",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.15"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.17"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.17"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "320枚H软膏命中+8、耐久100、Lv.1头带",
-      "type": "exchange-row",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.19"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.19.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.19.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.19.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.16"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.18"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.18"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "A软膏闪躲+8、耐久100、Lv.1头带",
-      "type": "exchange-row",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.20"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.20.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.20.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.20.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.17"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.19"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.19"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "I软膏必杀+8、耐久100、Lv.1头带",
-      "type": "exchange-row",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.21"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.21.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.21.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.21.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.18"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.20"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.20"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "C软膏反击+8、耐久100、Lv.1头带",
-      "type": "exchange-row",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.22"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.22.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.22.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.22.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.19"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.21"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.21"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "R软膏回复+8、耐久100、Lv.1头带",
-      "type": "exchange-row",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.23"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.20"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.22"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.22"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "3箱银怪Lv.1银怪",
-      "type": "box-exchange-row",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.24.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.24.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.23"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.23"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "盾",
-      "type": "historical-item",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.2"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "（怀旧服曾调整，后关闭）Lv.1盾",
-      "type": "closed-status",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.2"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "10箱金怪Lv.1金怪",
-      "type": "box-exchange-row",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.25"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.25.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.25.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.24"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.24"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "赤目黑熊",
-      "type": "historical-item",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.25"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.3"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "（怀旧服曾调整，后关闭）Lv.1赤目黑熊",
-      "type": "closed-status",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.25"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.3"
+        }
+      ]
     }
   ],
   "verification": {

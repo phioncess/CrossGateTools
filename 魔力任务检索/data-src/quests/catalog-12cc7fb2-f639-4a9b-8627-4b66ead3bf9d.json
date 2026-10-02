@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-12cc7fb2-f639-4a9b-8627-4b66ead3bf9d",
   "name": "就职忍者",
   "aliases": [
@@ -4200,2330 +4200,4764 @@
     {
       "line": 1,
       "text": "1.前往法兰城安其摩酒吧（102.131）与爱说明的汉克（21.9）对话，选“是”。",
-      "type": "flow-step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.2.notes.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆陪打和重解，必须从第一步开始",
-      "type": "flow-step",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.notes.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "◆若与其对话第二次，需选“否”方可继续任务，否则任务中断",
-      "type": "flow-step",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.notes.1"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "◆未到Lv.20的游民、战斗系职业、护士/医生无法接到任务，专属技能未达到3级防修/武修/鉴定/仙人/侦探无法接到任务。",
-      "type": "flow-step",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "requirement",
+          "target": "requirements.text.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "新号可就职生产系以便能接到任务。",
-      "type": "flow-step",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "requirement",
+          "target": "requirements.text.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "◇推荐新号就职猎人职业（参考《就职猎人》任务）：",
-      "type": "flow-step",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "requirement",
+          "target": "requirements.text.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "后续需要前往维诺亚村，未满Lv.20的猎人可以持有【酱油】*20进入并通过维诺亚洞窟到达维诺亚村。",
-      "type": "flow-step",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "requirement",
+          "target": "requirements.text.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "【酱油】可以在伊尔村旧金山酒吧-安娜购买，每个20G。",
-      "type": "flow-step",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "requirement",
+          "target": "requirements.text.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "◆本任务有简易流程，具体步骤见最后简易路线",
-      "type": "flow-step",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "2.前往法兰城科特利亚酒吧（219.136）与爱喝酒的米内萨卡（17.18）对话，输入“亚尔科尔...”。",
-      "type": "flow-step",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.commands.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.2.notes.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "◆注意本任务输入“文字...”中的文字后面跟的是英文的三个点“...”",
-      "type": "flow-step",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.notes.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.notes.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "◆此处爱喝酒的米内萨卡会告知关于厨师亚尔科尔的情报，若没有该内容，请重接任务",
-      "type": "flow-step",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.notes.1"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "3.前往伊尔村旧金山酒吧（32.65）与厨师亚尔科尔（22.3），输入“心美...”选“是”获得【亚尔科尔的纸条】。",
-      "type": "flow-step",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.commands.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◆任务相关【道具】勿丢弃，否则与NPC对话后任务立即中断",
-      "type": "flow-step",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.notes.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.notes.1"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "4.前往法兰城陶欧食品店（72.104）与波罗尼亚（12.11）对话，交出【亚尔科尔的纸条】。",
-      "type": "flow-step",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "5.出法兰城东门前往芙蕾雅岛（531.250）处与陶欧对话，输入“亚尔科尔...”选“是”获得【陶欧食品店精制面包】。",
-      "type": "flow-step",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.commands.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "6.前往伊尔村旧金山酒吧（32.65）与厨师亚尔科尔（22.3）对话，交出【陶欧食品店精制面包】获得【亚尔科尔的点心】。",
-      "type": "flow-step",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "7.返回法兰城别室（196.33）与士兵罗米诺特（9.5）对话，输入“毒...”。",
-      "type": "flow-step",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.commands.0"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "8.前往法兰城里谢里雅堡2楼图书馆（1.74）与迪尔哈特博士（18.29）对话，输入“毒...”选“是”获得【杀人用的毒】。",
-      "type": "flow-step",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.commands.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "9.前往圣拉鲁卡村医院（37.50）与药剂师辛德（11.13）对话，交出【杀人用的毒】。",
-      "type": "flow-step",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "10.返回法兰城里谢里雅堡2楼图书馆（1.74）与迪尔哈特博士（17.29）对话，输入“毒...”再输入“岚...”。（此步可跳过）",
-      "type": "flow-step",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.notes.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.commands.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.commands.1"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "11.前往法兰城别室（196.33）与士兵罗米诺特（9.5）对话，输入“毒...”再输入“岚...”。（此步可跳过）",
-      "type": "flow-step",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.notes.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.commands.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.commands.1"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "12.前往维诺亚村与士兵德雷姆（50.64）对话，输入“心美...”再输入“毒...”。",
-      "type": "flow-step",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.commands.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.commands.1"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "13.前往维诺亚村民家（37.52）与安丹（14.5）对话，输入“心美...”传送至地下室。",
-      "type": "flow-step",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.commands.0"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "14.与受伤的少女（9.10）对话，交出【亚尔科尔的点心】。再与其对话，选“是”。",
-      "type": "flow-step",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "15.出维诺亚村，前往芙蕾雅岛（352.381）处与开拓者安梅尔对话，输入“乌克兰...”传送至对岸。",
-      "type": "flow-step",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.14.commands.0"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "16.前往芙蕾雅岛（354.367）处进入小路。往西北方向行走，通过（46.23）处楼梯抵达忍者的隐居地。",
-      "type": "flow-step",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "17.前往（19.9）处进入忍者之家。",
-      "type": "flow-step",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.16"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "18.从忍者之家到达井（64.38）处，⑴战斗路线、⑵行走路线（推荐），2种方法任选。",
-      "type": "flow-step",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17.notes.0"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "⑴战斗路线：",
-      "type": "flow-step",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17.branchGroups.0"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "①.前往忍者之家与看守的忍者（29.34）对话，随机与三种魔物组合中的一组进行战斗。",
-      "type": "flow-step",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17.branchGroups.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17.branchGroups.0.operations.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.guard-a"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.guard-b"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.guard-c"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "◆组合A：",
-      "type": "battle-detail",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.guard-a"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "Lv.23忍犬（地狱看门犬）*3，血量约600，邪魔系，属性：水60火40，不抗咒；技能：攻击、防御、混乱攻击、昏睡攻击、遗忘攻击、攻击（我方昏睡的单位）",
-      "type": "battle-detail",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.guard-a"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.guard-a.enemies.0"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "Lv.23忍犬（地狱妖犬）*3，血量约600，邪魔系，属性：风60地40，不抗咒；技能：攻击、防御、毒性攻击、石化攻击、酒醉攻击、攻击（我方昏睡的单位）",
-      "type": "battle-detail",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.guard-a"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.guard-a.enemies.1"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "◆组合B：",
-      "type": "battle-detail",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.guard-b"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "Lv.20忍猫（虎人）*4，血量约500，邪魔系，属性：风70地30，不抗咒；技能：攻击、防御、强力风刃魔法、强力中毒魔法、强力混乱魔法、强力石化魔法",
-      "type": "battle-detail",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.guard-b"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.guard-b.enemies.0"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "Lv.20忍猫（猫妖）*4，血量约550，邪魔系，属性：水70火30，不抗咒；技能：攻击、防御、强力冰冻魔法、强力昏睡魔法、强力酒醉魔法、强力遗忘魔法",
-      "type": "battle-detail",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.guard-b"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.guard-b.enemies.1"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "◆组合C：",
-      "type": "battle-detail",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.guard-c"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "Lv.17忍鼠（大地鼠）*5，血量约350，邪魔系，属性：地100，不抗咒；技能：攻击、防御、陨石魔法、强力陨石魔法、超强陨石魔法",
-      "type": "battle-detail",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.guard-c"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.guard-c.enemies.0"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "Lv.17忍鼠（火焰鼠）*5，血量约350，邪魔系，属性：火100，不抗咒；技能：攻击、防御、火焰魔法、强力火焰魔法、超强火焰魔法",
-      "type": "battle-detail",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.guard-c"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.guard-c.enemies.1"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "②.战斗胜利后，传送至（31.34）。然后前往井（63.38）处。",
-      "type": "flow-step",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17.notes.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17.branchGroups.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17.branchGroups.0.operations.1"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "⑵行走路线：（推荐）",
-      "type": "flow-step",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17.branchGroups.1"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "①.根据路线前往（12.19）处，调查（13.19）处选“是”传送至忍者之家2楼。",
-      "type": "flow-step",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17.branchGroups.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17.branchGroups.1.operations.0"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "◆忍者之家行走路线：",
-      "type": "flow-step",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.images.0"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "②.根据路线行走，通过楼梯抵达抵达忍者之家。往东南方向行走传送至忍者屋敷地下1楼。",
-      "type": "flow-step",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17.branchGroups.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17.branchGroups.1.operations.1"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "◆忍者之家2楼，行走路线：",
-      "type": "flow-step",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.images.1"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "③.通过忍者屋敷 地下1楼（49.35）处楼梯返回忍者之家。",
-      "type": "flow-step",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17.branchGroups.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17.branchGroups.1.operations.2"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "◆忍者屋敷 地下1楼，魔物：史莱姆、果冻史莱姆，Lv.16~18",
-      "type": "flow-step",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "④.根据路线前往（63.38）井处。",
-      "type": "flow-step",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17.notes.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17.branchGroups.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17.branchGroups.1.operations.3"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "◆忍者之家行走路线图：",
-      "type": "flow-step",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.images.2"
+        }
+      ]
     },
     {
       "line": 51,
       "text": "19.若职业为士兵、忍者只学习暗杀技能，不完成任务的暗杀技能支线：（就职忍者跳过此步）",
-      "type": "flow-step",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        }
+      ]
     },
     {
       "line": 52,
       "text": "◆暗杀技能学习：限定忍者、士兵职业",
-      "type": "flow-step",
       "sourceLines": [
         52
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        }
+      ]
     },
     {
       "line": 53,
       "text": "⑴钥匙路线：",
-      "type": "flow-step",
       "sourceLines": [
         53
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18.branchGroups.0"
+        }
+      ]
     },
     {
       "line": 54,
       "text": "①.前往忍者屋敷 地下1楼击倒魔物随机获得【房间的钥匙】。",
-      "type": "flow-step",
       "sourceLines": [
         54
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18.branchGroups.0.operations.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 55,
       "text": "②.持有【房间的钥匙】调查忍者之家（71.25）处窗户进入隐藏的道路，通过（8.10）处楼梯进入忍者之家3楼。",
-      "type": "flow-step",
       "sourceLines": [
         55
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18.branchGroups.0.operations.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        }
+      ]
     },
     {
       "line": 56,
       "text": "调查（4.19）处窗进入房间，与黑暗的月影（11.17）对话，可交出5000G习得技能暗杀。",
-      "type": "flow-step",
       "sourceLines": [
         56
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18.branchGroups.0.operations.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18.branchGroups.0.operations.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        }
+      ]
     },
     {
       "line": 57,
       "text": "⑵行走路线：（推荐）",
-      "type": "flow-step",
       "sourceLines": [
         57
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18.branchGroups.1"
+        }
+      ]
     },
     {
       "line": 58,
       "text": "①.前往忍者之家的井边，根据路线行走至（59.5）处调查南面一格位置进入忍者之家内部。",
-      "type": "flow-step",
       "sourceLines": [
         58
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18.branchGroups.1.operations.0"
+        }
+      ]
     },
     {
       "line": 59,
       "text": "根据路线行走至（62.13）处调查东面一格位置进入忍者之家2楼。",
-      "type": "flow-step",
       "sourceLines": [
         59
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18.branchGroups.1.operations.1"
+        }
+      ]
     },
     {
       "line": 60,
       "text": "◆忍者之家行走路线图：",
-      "type": "flow-step",
       "sourceLines": [
         60
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.images.3"
+        }
+      ]
     },
     {
       "line": 61,
       "text": "②.根据路线行走至忍者之家2楼（70.25）处，调查东面一格位置进入忍者之家 隐藏道路。",
-      "type": "flow-step",
       "sourceLines": [
         61
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18.branchGroups.1.operations.2"
+        }
+      ]
     },
     {
       "line": 62,
       "text": "◆忍者之家2楼行走路线图：",
-      "type": "flow-step",
       "sourceLines": [
         62
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.images.5"
+        }
+      ]
     },
     {
       "line": 63,
       "text": "③.根据路线行走至忍者之家3楼。",
-      "type": "flow-step",
       "sourceLines": [
         63
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18.branchGroups.1.operations.3"
+        }
+      ]
     },
     {
       "line": 64,
       "text": "◆忍者之家 隐藏道路，行走路线图：",
-      "type": "flow-step",
       "sourceLines": [
         64
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.images.7"
+        }
+      ]
     },
     {
       "line": 65,
       "text": "④.根据路线至（5.19）处，调查西边一格位置进入忍者之家三楼，",
-      "type": "flow-step",
       "sourceLines": [
         65
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18.branchGroups.1.operations.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18.branchGroups.1.operations.5"
+        }
+      ]
     },
     {
       "line": 66,
       "text": "与黑暗的月影（11.17）对话，可交出5000G习得技能暗杀。",
-      "type": "flow-step",
       "sourceLines": [
         66
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18.branchGroups.1.operations.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18.branchGroups.1.operations.5"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        }
+      ]
     },
     {
       "line": 67,
       "text": "◆忍者之家三楼行走路线：",
-      "type": "flow-step",
       "sourceLines": [
         67
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.images.9"
+        }
+      ]
     },
     {
       "line": 68,
       "text": "20.前往（63.38）处向东方向调查井，选“是”传送至井的底部。",
-      "type": "flow-step",
       "sourceLines": [
         68
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17.notes.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.19"
+        }
+      ]
     },
     {
       "line": 69,
       "text": "21.通过井的底部（7.4）处楼梯抵达通路（1）。通过（22.26）处楼梯抵达通路（2）。通过（5.15）处楼梯抵达乌克兰村。",
-      "type": "flow-step",
       "sourceLines": [
         69
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.20"
+        }
+      ]
     },
     {
       "line": 70,
       "text": "◆通路，魔物：致命螳螂、黄金螃蟹，Lv.18~20",
-      "type": "flow-step",
       "sourceLines": [
         70
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.20"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.2"
+        }
+      ]
     },
     {
       "line": 71,
       "text": "◆井的底部及通路行走路线：",
-      "type": "flow-step",
       "sourceLines": [
         71
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.20"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.images.11"
+        }
+      ]
     },
     {
       "line": 72,
       "text": "22.前往乌克兰（77.47）民家，与罗莱（9.6）对话，输入“毒...”。",
-      "type": "flow-step",
       "sourceLines": [
         72
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.21"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.21.commands.0"
+        }
+      ]
     },
     {
       "line": 73,
       "text": "23.前往乌克兰（69.28）村长的家，通过（16.9）处楼梯抵达族长的家地下室。",
-      "type": "flow-step",
       "sourceLines": [
         73
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.22"
+        }
+      ]
     },
     {
       "line": 74,
       "text": "24.与梅兹（11.11）对话，输入“毒…”并进行选择。（此处选择“否”才可就职忍者）",
-      "type": "flow-step",
       "sourceLines": [
         74
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23.commands.0"
+        }
+      ]
     },
     {
       "line": 75,
       "text": "⑴选择“否”，进入就职忍者路线，继续按25步进行。",
-      "type": "flow-step",
       "sourceLines": [
         75
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23.branchGroups.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23.branchGroups.0.operations.0"
+        }
+      ]
     },
     {
       "line": 76,
       "text": "⑵选择“是”，无法就职忍者。",
-      "type": "flow-step",
       "sourceLines": [
         76
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23.branchGroups.1"
+        }
+      ]
     },
     {
       "line": 77,
       "text": "⒈获得随机一种【奖品】。",
-      "type": "flow-step",
       "sourceLines": [
         77
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23.branchGroups.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23.branchGroups.1.operations.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        }
+      ]
     },
     {
       "line": 78,
       "text": "⒉然后前往维诺亚村民家（37.52）与安丹（14.5）对话。",
-      "type": "flow-step",
       "sourceLines": [
         78
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.23"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23.branchGroups.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23.branchGroups.1.operations.1"
+        }
+      ]
     },
     {
       "line": 79,
       "text": "⒊再前往法兰城安其摩酒吧（102.131）与爱说明的汉克（21.9）对话，任务完结。",
-      "type": "flow-step",
       "sourceLines": [
         79
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.23"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23.branchGroups.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23.branchGroups.1.operations.2"
+        }
+      ]
     },
     {
       "line": 80,
       "text": "◆任务完结后，只要不再找酒吧里的汉克说话。",
-      "type": "flow-step",
       "sourceLines": [
         80
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.sections.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.1.notes.0"
+        }
+      ]
     },
     {
       "line": 81,
       "text": "⒈可与法兰城南门外秋刀奈（409.295）对话，选“是”传送至小路（27.73）处。",
-      "type": "flow-step",
       "sourceLines": [
         81
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.sections.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.1.operations.0"
+        }
+      ]
     },
     {
       "line": 82,
       "text": "⒉通过（46.23）处楼梯抵达忍者的隐居地，按行走或战斗路线最终抵达乌克兰村。",
-      "type": "flow-step",
       "sourceLines": [
         82
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.sections.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.1.operations.0"
+        }
+      ]
     },
     {
       "line": 83,
       "text": "◆【奖品】：",
-      "type": "flow-step",
       "sourceLines": [
         83
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.23"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 84,
       "text": "【岚的药丸】、【岚的戒指】、【岚的耳饰】、【岚的护手】、【岚的念珠】、【岚的传承】、【心头灭却】（等级3）",
-      "type": "flow-step",
       "sourceLines": [
         84
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.23"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.5"
+        }
+      ]
     },
     {
       "line": 85,
       "text": "【奖品】备注说明：【岚的药丸】、【岚的念珠】、【心头灭却】可以用于怀旧服12格技能栏任务《地底世界之暗黑前夕——物资收集》",
-      "type": "flow-step",
       "sourceLines": [
         85
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.23"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 86,
       "text": "25.若选“否”变更场景，与梅兹（11.11）对话，选“是”进入战斗。",
-      "type": "flow-step",
       "sourceLines": [
         86
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.meiz"
+        }
+      ]
     },
     {
       "line": 87,
       "text": "◆变更场景后队伍已解散，需重新组队",
-      "type": "flow-step",
       "sourceLines": [
         87
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.24.notes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.meiz"
+        }
+      ]
     },
     {
       "line": 88,
       "text": "◆战斗信息：（皆为2动）",
-      "type": "battle-detail",
       "sourceLines": [
         88
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.meiz"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.meiz.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.meiz.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.meiz.enemies.2"
+        }
+      ]
     },
     {
       "line": 89,
       "text": "Lv.30梅兹，血量约3000，邪魔系，属性：全30，抗咒；",
-      "type": "battle-detail",
       "sourceLines": [
         89
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.meiz"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.meiz.enemies.0"
+        }
+      ]
     },
     {
       "line": 90,
       "text": "技能：攻击（血少者）、圣盾、阳炎、气功弹、崩击、暗杀、明镜止水（血量<25%追加）、",
-      "type": "battle-detail",
       "sourceLines": [
         90
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.meiz"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.meiz.enemies.0"
+        }
+      ]
     },
     {
       "line": 91,
       "text": "召唤梅兹*3（剑/小刀形态；前排中间不存在敌方时追加）、召唤梅兹*4（剑/小刀形态；后排中间不存在敌方时追加）",
-      "type": "battle-detail",
       "sourceLines": [
         91
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.meiz"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.meiz.enemies.0"
+        }
+      ]
     },
     {
       "line": 92,
       "text": "Lv.30梅兹（武器：剑）*∞，血量约1300，邪魔系，属性：全20，抗咒；技能：攻击（血少者）、攻击、崩击、诸刃、定点移动",
-      "type": "battle-detail",
       "sourceLines": [
         92
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.meiz"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.meiz.enemies.1"
+        }
+      ]
     },
     {
       "line": 93,
       "text": "Lv.30梅兹（武器：小刀）*∞，血量约1300，邪魔系，属性：全20，抗咒；技能：攻击、防御、定点移动",
-      "type": "battle-detail",
       "sourceLines": [
         93
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.meiz"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.meiz.enemies.2"
+        }
+      ]
     },
     {
       "line": 94,
       "text": "◇打法建议：先不要清掉本尊前面的的喽啰，直接合击本尊，战斗时注意本尊的前后换位，击倒本尊后优先清理梅兹（剑）",
-      "type": "flow-step",
       "sourceLines": [
         94
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.meiz"
+        }
+      ]
     },
     {
       "line": 95,
       "text": "◆若战斗失败，可由第24步继续做起",
-      "type": "flow-step",
       "sourceLines": [
         95
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.24.notes.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.meiz"
+        }
+      ]
     },
     {
       "line": 96,
       "text": "26.战斗胜利后与梅兹（11.11）对话，获得【岚之秘传书】。",
-      "type": "flow-step",
       "sourceLines": [
         96
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.25"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.25.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.7"
+        }
+      ]
     },
     {
       "line": 97,
       "text": "◆无需就职忍者的角色可由此接第34步",
-      "type": "flow-step",
       "sourceLines": [
         97
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.25"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.25.notes.0"
+        }
+      ]
     },
     {
       "line": 98,
       "text": "27.通过（7.8）处楼梯返回村长的家，持有【岚之秘传书】与特瓦克（11.6）对话，输入“忍者...”交出【岚之秘传书】获得【忍者推荐信】。",
-      "type": "flow-step",
       "sourceLines": [
         98
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.26"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.26.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.26.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.26.commands.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.8"
+        }
+      ]
     },
     {
       "line": 99,
       "text": "◆族长的家地下室也有特瓦克，但不是与他对话，而是与楼上的特瓦克对话",
-      "type": "flow-step",
       "sourceLines": [
         99
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.26"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.26.notes.0"
+        }
+      ]
     },
     {
       "line": 100,
       "text": "28.前往小助的家（46.22），持有【忍者推荐信】与佐助（7.5）对话，选“是”传送至小助的家。",
-      "type": "flow-step",
       "sourceLines": [
         100
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.27"
+        }
+      ]
     },
     {
       "line": 101,
       "text": "29.与佐助（7.5）对话，选“是”传送至小助的家。",
-      "type": "flow-step",
       "sourceLines": [
         101
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.28"
+        }
+      ]
     },
     {
       "line": 102,
       "text": "30.与佐助（7.5）对话，选“是”传送至小助的家。",
-      "type": "flow-step",
       "sourceLines": [
         102
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.29"
+        }
+      ]
     },
     {
       "line": 103,
       "text": "31.调查展示牌可看到问题（可跳过），再与佐助对话，输入对应答案。",
-      "type": "flow-step",
       "sourceLines": [
         103
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        }
+      ]
     },
     {
       "line": 104,
       "text": "回答正确会变更场景，途中若回答错误需从第一个问题开始回答。",
-      "type": "flow-step",
       "sourceLines": [
         104
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.30.notes.0"
+        }
+      ]
     },
     {
       "line": 105,
       "text": "◆白天与夜晚的问题与答案不同",
-      "type": "flow-step",
       "sourceLines": [
         105
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.30.notes.1"
+        }
+      ]
     },
     {
       "line": 106,
       "text": "◆时间段对应的问题及答案：",
-      "type": "flow-step",
       "sourceLines": [
         106
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        }
+      ]
     },
     {
       "line": 107,
       "text": "白天",
-      "type": "quiz-detail",
       "sourceLines": [
         107
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        }
+      ]
     },
     {
       "line": 108,
       "text": "序号问题答案",
-      "type": "quiz-detail",
       "sourceLines": [
         108
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        }
+      ]
     },
     {
       "line": 109,
       "text": "1谜之鸟.2一直说的是什么水果？柿…",
-      "type": "quiz-detail",
       "sourceLines": [
         109
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.30.commands.0"
+        }
+      ]
     },
     {
       "line": 110,
       "text": "2从里面数来的第一个招牌写了些什么？影…",
-      "type": "quiz-detail",
       "sourceLines": [
         110
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.30.commands.1"
+        }
+      ]
     },
     {
       "line": 111,
       "text": "3宠物哥布林的名字叫什么？松…",
-      "type": "quiz-detail",
       "sourceLines": [
         111
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.30.commands.2"
+        }
+      ]
     },
     {
       "line": 112,
       "text": "4哥布林的头盔是什么颜色？绿…",
-      "type": "quiz-detail",
       "sourceLines": [
         112
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.30.commands.3"
+        }
+      ]
     },
     {
       "line": 113,
       "text": "5有几只刀？五…",
-      "type": "quiz-detail",
       "sourceLines": [
         113
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.30.commands.4"
+        }
+      ]
     },
     {
       "line": 114,
       "text": "6时钟指着哪个时间？子…",
-      "type": "quiz-detail",
       "sourceLines": [
         114
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.30.commands.5"
+        }
+      ]
     },
     {
       "line": 115,
       "text": "7柜子里放了什么？笔…",
-      "type": "quiz-detail",
       "sourceLines": [
         115
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.30.commands.6"
+        }
+      ]
     },
     {
       "line": 116,
       "text": "8地板上总共有几本书？三…",
-      "type": "quiz-detail",
       "sourceLines": [
         116
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.30.commands.7"
+        }
+      ]
     },
     {
       "line": 117,
       "text": "9总共有几颗树？八…",
-      "type": "quiz-detail",
       "sourceLines": [
         117
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.30.commands.8"
+        }
+      ]
     },
     {
       "line": 118,
       "text": "10宠物幽灵的名字叫什么？梅…",
-      "type": "quiz-detail",
       "sourceLines": [
         118
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.30.commands.9"
+        }
+      ]
     },
     {
       "line": 119,
       "text": "夜晚",
-      "type": "quiz-detail",
       "sourceLines": [
         119
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        }
+      ]
     },
     {
       "line": 120,
       "text": "序号问题答案",
-      "type": "quiz-detail",
       "sourceLines": [
         120
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        }
+      ]
     },
     {
       "line": 121,
       "text": "1坐垫总共有几个？十…",
-      "type": "quiz-detail",
       "sourceLines": [
         121
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.30.commands.10"
+        }
+      ]
     },
     {
       "line": 122,
       "text": "2总共有几扇窗户？八…",
-      "type": "quiz-detail",
       "sourceLines": [
         122
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.30.commands.11"
+        }
+      ]
     },
     {
       "line": 123,
       "text": "3供奉声明前的书是什么颜色的？红…",
-      "type": "quiz-detail",
       "sourceLines": [
         123
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.30.commands.12"
+        }
+      ]
     },
     {
       "line": 124,
       "text": "4从最里面开始数来第5个宝箱是什么色的？蓝…",
-      "type": "quiz-detail",
       "sourceLines": [
         124
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.30.commands.13"
+        }
+      ]
     },
     {
       "line": 125,
       "text": "5有放一篮橘子的桌子是前面的还是后面的？后…",
-      "type": "quiz-detail",
       "sourceLines": [
         125
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.30.commands.14"
+        }
+      ]
     },
     {
       "line": 126,
       "text": "6谜之鸟.1一直说的是什么水果？桃…",
-      "type": "quiz-detail",
       "sourceLines": [
         126
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.30.commands.15"
+        }
+      ]
     },
     {
       "line": 127,
       "text": "7正中央写的字是什么？忍…",
-      "type": "quiz-detail",
       "sourceLines": [
         127
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.30.commands.16"
+        }
+      ]
     },
     {
       "line": 128,
       "text": "8草鞋总共有几双？三…",
-      "type": "quiz-detail",
       "sourceLines": [
         128
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.30.commands.17"
+        }
+      ]
     },
     {
       "line": 129,
       "text": "9绿色的桶子是从里面数来的第几个？五…",
-      "type": "quiz-detail",
       "sourceLines": [
         129
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.30.commands.18"
+        }
+      ]
     },
     {
       "line": 130,
       "text": "10墙壁是什么颜色的？白…",
-      "type": "quiz-detail",
       "sourceLines": [
         130
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.30.commands.19"
+        }
+      ]
     },
     {
       "line": 131,
       "text": "32.全部回答正确后传送至小助的家，与忍者公会会长（7.4）对话即可就职忍者。",
-      "type": "flow-step",
       "sourceLines": [
         131
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.31"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.31.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.9"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.0"
+        }
+      ]
     },
     {
       "line": 132,
       "text": "◆提升职业阶段的方法：",
-      "type": "flow-step",
       "sourceLines": [
         132
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.sections.0"
+        }
+      ]
     },
     {
       "line": 133,
       "text": "⒈前往维诺亚村，出村前往芙蕾雅岛（328.451）处，进入又小又暗的洞窟。",
-      "type": "flow-step",
       "sourceLines": [
         133
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.sections.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.0.operations.0"
+        }
+      ]
     },
     {
       "line": 134,
       "text": "⒉与小竹（13.9）对话，输入“竹林山水甲天下”传送至竹的住处。",
-      "type": "flow-step",
       "sourceLines": [
         134
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.sections.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.0.operations.1"
+        }
+      ]
     },
     {
       "line": 135,
       "text": "⒊与竹（16.7）对话，符合晋阶条件时即可晋阶。",
-      "type": "flow-step",
       "sourceLines": [
         135
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.sections.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.0.operations.2"
+        }
+      ]
     },
     {
       "line": 136,
       "text": "33.若要学习暗杀技能，则离开乌克兰村，通过小道（45.43）处回到井的底部，前往（19.12）处进入忍者之家。",
-      "type": "flow-step",
       "sourceLines": [
         136
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.32"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        }
+      ]
     },
     {
       "line": 137,
       "text": "◆暗杀技能学习：限定忍者、士兵职业",
-      "type": "flow-step",
       "sourceLines": [
         137
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.32"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        }
+      ]
     },
     {
       "line": 138,
       "text": "⑴钥匙路线：",
-      "type": "flow-step",
       "sourceLines": [
         138
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.32"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.32.branchGroups.0"
+        }
+      ]
     },
     {
       "line": 139,
       "text": "①.前往忍者屋敷 地下1楼击倒魔物随机获得【房间的钥匙】。",
-      "type": "flow-step",
       "sourceLines": [
         139
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.32"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.32.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.32.branchGroups.0.operations.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.11"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 140,
       "text": "②.持有【房间的钥匙】调查忍者之家（71.25）处窗户进入隐藏的道路，通过（8.10）处楼梯进入忍者之家3楼。",
-      "type": "flow-step",
       "sourceLines": [
         140
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.32"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.32.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.32.branchGroups.0.operations.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.7"
+        }
+      ]
     },
     {
       "line": 141,
       "text": "调查（4.19）处窗进入房间，与黑暗的月影（11.17）对话，可交出5000G习得技能暗杀。",
-      "type": "flow-step",
       "sourceLines": [
         141
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.32"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.32.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.32.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.32.branchGroups.0.operations.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.32.branchGroups.0.operations.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.8"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.10"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        }
+      ]
     },
     {
       "line": 142,
       "text": "⑵行走路线：（推荐）",
-      "type": "flow-step",
       "sourceLines": [
         142
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.32"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.32.branchGroups.1"
+        }
+      ]
     },
     {
       "line": 143,
       "text": "①.前往忍者之家的井边，根据路线行走至（59.5）处调查南面一格位置进入忍者之家内部。",
-      "type": "flow-step",
       "sourceLines": [
         143
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.32"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.32.branchGroups.1.operations.0"
+        }
+      ]
     },
     {
       "line": 144,
       "text": "根据路线行走至（62.13）处调查东面一格位置进入忍者之家2楼。",
-      "type": "flow-step",
       "sourceLines": [
         144
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.32"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.32.branchGroups.1.operations.1"
+        }
+      ]
     },
     {
       "line": 145,
       "text": "◆忍者之家行走路线图：",
-      "type": "flow-step",
       "sourceLines": [
         145
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.32"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.images.4"
+        }
+      ]
     },
     {
       "line": 146,
       "text": "②.根据路线行走至忍者之家2楼（70.25）处，调查东面一格位置进入忍者之家 隐藏道路。",
-      "type": "flow-step",
       "sourceLines": [
         146
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.32"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.32.branchGroups.1.operations.2"
+        }
+      ]
     },
     {
       "line": 147,
       "text": "◆忍者之家2楼行走路线图：",
-      "type": "flow-step",
       "sourceLines": [
         147
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.32"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.images.6"
+        }
+      ]
     },
     {
       "line": 148,
       "text": "③.根据路线行走至忍者之家3楼。",
-      "type": "flow-step",
       "sourceLines": [
         148
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.32"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.32.branchGroups.1.operations.3"
+        }
+      ]
     },
     {
       "line": 149,
       "text": "◆忍者之家 隐藏道路，行走路线图：",
-      "type": "flow-step",
       "sourceLines": [
         149
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.32"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.images.8"
+        }
+      ]
     },
     {
       "line": 150,
       "text": "④.根据路线至（5.19）处，调查西边一格位置进入忍者之家三楼，与黑暗的月影（11.17）对话，可交出5000G习得技能暗杀。",
-      "type": "flow-step",
       "sourceLines": [
         150
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.32"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.32.branchGroups.1.operations.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.32.branchGroups.1.operations.5"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        }
+      ]
     },
     {
       "line": 151,
       "text": "◆忍者之家三楼行走路线：",
-      "type": "flow-step",
       "sourceLines": [
         151
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.32"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.images.10"
+        }
+      ]
     },
     {
       "line": 152,
       "text": "34.前往维诺亚村民家（37.52）与安丹（14.5）对话，交出【岚之秘传书】获得随机一种【奖品】。",
-      "type": "flow-step",
       "sourceLines": [
         152
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.33"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.33.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.33.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.9"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.12"
+        }
+      ]
     },
     {
       "line": 153,
       "text": "◆就职忍者则无法交出【岚之秘传书】，但依然要做最后两步",
-      "type": "flow-step",
       "sourceLines": [
         153
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.33"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.33.notes.0"
+        }
+      ]
     },
     {
       "line": 154,
       "text": "◆【奖品】：",
-      "type": "flow-step",
       "sourceLines": [
         154
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.33"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        }
+      ]
     },
     {
       "line": 155,
       "text": "【岚的药丸】、【岚的戒指】、【岚的耳饰】、【岚的护手】、【岚的念珠】、【岚的传承】、【心头灭却】（等级5）、【心头灭却】（等级7）",
-      "type": "flow-step",
       "sourceLines": [
         155
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.33"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.7"
+        }
+      ]
     },
     {
       "line": 156,
       "text": "【奖品】备注说明：【岚的药丸】、【岚的念珠】、【心头灭却】可以用于怀旧服12格技能栏任务《地底世界之暗黑前夕——物资收集》",
-      "type": "flow-step",
       "sourceLines": [
         156
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.33"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        }
+      ]
     },
     {
       "line": 157,
       "text": "35.返回法兰城，前往大圣堂西侧空地，调查小坟墓（144.18），任务完结。",
-      "type": "flow-step",
       "sourceLines": [
         157
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.34"
+        }
+      ]
     },
     {
       "line": 158,
       "text": "◆任务完结后，只要不再找酒吧里的汉克说话。",
-      "type": "flow-step",
       "sourceLines": [
         158
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.1.notes.0"
+        }
+      ]
     },
     {
       "line": 159,
       "text": "⒈可与法兰城南门外秋刀奈（409.295）对话，选“是”传送至小路（27.73）处，",
-      "type": "flow-step",
       "sourceLines": [
         159
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.1.operations.0"
+        }
+      ]
     },
     {
       "line": 160,
       "text": "⒉通过（46.23）处楼梯抵达忍者的隐居地，按行走或战斗路线最终抵达乌克兰村。",
-      "type": "flow-step",
       "sourceLines": [
         160
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.1.operations.0"
+        }
+      ]
     },
     {
       "line": 161,
       "text": "◆【奖品】说明：（皆可交易）",
-      "type": "flow-step",
       "sourceLines": [
         161
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": []
     },
     {
       "line": 162,
       "text": "名称等级类别耐久能力",
-      "type": "flow-step",
       "sourceLines": [
         162
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": []
     },
     {
       "line": 163,
       "text": "岚的药丸3头带250回复+20",
-      "type": "item-detail",
       "sourceLines": [
         163
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 164,
       "text": "岚的戒指3戒指250种族变为飞行系",
-      "type": "item-detail",
       "sourceLines": [
         164
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.1"
+        }
+      ]
     },
     {
       "line": 165,
       "text": "岚的耳饰3耳环250闪躲+3",
-      "type": "item-detail",
       "sourceLines": [
         165
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.2"
+        }
+      ]
     },
     {
       "line": 166,
       "text": "岚的护手3手环250命中+3",
-      "type": "item-detail",
       "sourceLines": [
         166
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.3"
+        }
+      ]
     },
     {
       "line": 167,
       "text": "岚的念珠3项链250魔力+30",
-      "type": "item-detail",
       "sourceLines": [
         167
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.4"
+        }
+      ]
     },
     {
       "line": 168,
       "text": "岚的传承3护身符250连击耗魔减少25%",
-      "type": "item-detail",
       "sourceLines": [
         168
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.5"
+        }
+      ]
     },
     {
       "line": 169,
       "text": "心头灭却3护身符300抗魔+120",
-      "type": "item-detail",
       "sourceLines": [
         169
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.6"
+        }
+      ]
     },
     {
       "line": 170,
       "text": "（仅忍者可装备）",
-      "type": "item-detail",
       "sourceLines": [
         170
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.6"
+        }
+      ]
     },
     {
       "line": 171,
       "text": "心头灭却5护身符350抗魔+200",
-      "type": "item-detail",
       "sourceLines": [
         171
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.6"
+        }
+      ]
     },
     {
       "line": 172,
       "text": "（仅忍者可装备）",
-      "type": "item-detail",
       "sourceLines": [
         172
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.6"
+        }
+      ]
     },
     {
       "line": 173,
       "text": "心头灭却7护身符400抗魔+280",
-      "type": "item-detail",
       "sourceLines": [
         173
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.7"
+        }
+      ]
     },
     {
       "line": 174,
       "text": "（仅忍者可装备）",
-      "type": "item-detail",
       "sourceLines": [
         174
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.7"
+        }
+      ]
     },
     {
       "line": 175,
       "text": "◆忍者提升职业阶段的方法：",
-      "type": "flow-step",
       "sourceLines": [
         175
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.sections.0"
+        }
+      ]
     },
     {
       "line": 176,
       "text": "⒈前往维诺亚村，出村前往芙蕾雅岛（328.451）处，进入又小又暗的洞窟。",
-      "type": "flow-step",
       "sourceLines": [
         176
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.sections.0"
+        }
+      ]
     },
     {
       "line": 177,
       "text": "⒉与小竹（13.9）对话，输入“竹林山水甲天下”传送至竹的住处。",
-      "type": "flow-step",
       "sourceLines": [
         177
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.sections.0"
+        }
+      ]
     },
     {
       "line": 178,
       "text": "⒊与竹（16.7）对话，符合晋阶条件时即可晋阶。",
-      "type": "flow-step",
       "sourceLines": [
         178
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.sections.0"
+        }
+      ]
     },
     {
       "line": 179,
       "text": "简易路线：",
-      "type": "flow-step",
       "sourceLines": [
         179
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.sections.2"
+        }
+      ]
     },
     {
       "line": 180,
       "text": "1.前往法兰城安其摩酒吧（102.131）与爱说明的汉克（20.9）对话，选“是”。",
-      "type": "flow-step",
       "sourceLines": [
         180
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.sections.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.2.operations.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.2.notes.0"
+        }
+      ]
     },
     {
       "line": 181,
       "text": "2.前往法兰城科特利亚酒吧（219.136）与爱喝酒的米内萨卡（18.17）对话，输入“亚尔科尔...”。",
-      "type": "flow-step",
       "sourceLines": [
         181
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.sections.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.2.operations.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.2.notes.0"
+        }
+      ]
     },
     {
       "line": 182,
       "text": "◆注意本任务输入“文字...”中的文字后面跟的是英文的三个点“...”",
-      "type": "flow-step",
       "sourceLines": [
         182
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.notes.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.2.notes.1"
+        }
+      ]
     },
     {
       "line": 183,
       "text": "3.前往法兰城别室（196.33）与士兵罗米诺特（9.5）对话，输入“毒...”。",
-      "type": "flow-step",
       "sourceLines": [
         183
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.sections.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.2.operations.2"
+        }
+      ]
     },
     {
       "line": 184,
       "text": "4.前往法兰城里谢里雅堡2楼图书馆（1.74）与迪尔哈特博士（18.29）对话，输入“毒...”选“是”获得【杀人用的毒】。",
-      "type": "flow-step",
       "sourceLines": [
         184
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.sections.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.2.operations.3"
+        }
+      ]
     },
     {
       "line": 185,
       "text": "5.前往圣拉鲁卡村医院（37.50）与药剂师辛德（11.13）对话，交出【杀人用的毒】。",
-      "type": "flow-step",
       "sourceLines": [
         185
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.sections.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.2.operations.4"
+        }
+      ]
     },
     {
       "line": 186,
       "text": "6.前往伊尔村旧金山酒吧（32.65）与厨师亚尔科尔（22.3），输入“心美...”选“是”获得【亚尔科尔的纸条】。",
-      "type": "flow-step",
       "sourceLines": [
         186
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.sections.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.2.operations.5"
+        }
+      ]
     },
     {
       "line": 187,
       "text": "7.前往法兰城陶欧食品店（72.104）与波罗尼亚（12.11）对话，交出【亚尔科尔的纸条】。",
-      "type": "flow-step",
       "sourceLines": [
         187
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.sections.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.2.operations.6"
+        }
+      ]
     },
     {
       "line": 188,
       "text": "8.出法兰城东门前往芙蕾雅岛（531.250）处与陶欧对话，输入“亚尔科尔...”选“是”获得【陶欧食品店精制面包】。",
-      "type": "flow-step",
       "sourceLines": [
         188
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.sections.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.2.operations.7"
+        }
+      ]
     },
     {
       "line": 189,
       "text": "9.前往伊尔村旧金山酒吧（32.65）与厨师亚尔科尔（22.3）对话，交出【陶欧食品店精制面包】获得【亚尔科尔的点心】。",
-      "type": "flow-step",
       "sourceLines": [
         189
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.sections.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.2.operations.8"
+        }
+      ]
     },
     {
       "line": 190,
       "text": "10.前往维诺亚村与士兵德雷姆（50.64）对话，输入“心美...”。",
-      "type": "flow-step",
       "sourceLines": [
         190
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.sections.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.2.operations.9"
+        }
+      ]
     },
     {
       "line": 191,
       "text": "11.前往维诺亚村民家（37.52）与安丹（14.5）对话，输入“心美...”传送至地下室。",
-      "type": "flow-step",
       "sourceLines": [
         191
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.sections.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.2.operations.10"
+        }
+      ]
     },
     {
       "line": 192,
       "text": "12.与受伤的少女（9.10）对话，交出【亚尔科尔的点心】。再与其对话，选“是”。",
-      "type": "flow-step",
       "sourceLines": [
         192
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.sections.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.2.operations.11"
+        }
+      ]
     },
     {
       "line": 193,
       "text": "13.出维诺亚村，前往芙蕾雅岛（352.381）处与开拓者安梅尔对话，输入“乌克兰...”传送至对岸。",
-      "type": "flow-step",
       "sourceLines": [
         193
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.sections.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.2.operations.12"
+        }
+      ]
     },
     {
       "line": 194,
       "text": "◆后续步骤从本任务第16步开始",
-      "type": "flow-step",
       "sourceLines": [
         194
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.sections.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.sections.2.notes.2"
+        }
+      ]
     }
   ],
   "verification": {

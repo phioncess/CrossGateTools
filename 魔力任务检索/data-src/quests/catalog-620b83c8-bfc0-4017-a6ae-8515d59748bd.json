@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-620b83c8-bfc0-4017-a6ae-8515d59748bd",
   "name": "地底世界之暗黑前夕——物资收集",
   "aliases": [
@@ -1581,7 +1581,19 @@
             }
           }
         ],
-        "notes": [],
+        "notes": [
+          {
+            "text": "用于兑换味噌汤的宝石鼠残念奖可交易；原攻略标注法兰乐透闪卡每周三18:00～24:00开放。",
+            "sourceLines": [
+              36,
+              37
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-unbound-source-review"
+            }
+          }
+        ],
         "sourceLines": [
           11,
           15,
@@ -1851,7 +1863,8 @@
             "tradeable": false,
             "dropAllowed": false,
             "sourceLines": [
-              42
+              42,
+              14
             ],
             "verification": {
               "status": "verified",
@@ -1877,7 +1890,8 @@
         "sourceLines": [
           11,
           15,
-          42
+          42,
+          14
         ],
         "verification": {
           "status": "verified",
@@ -2485,7 +2499,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "法兰城南门外秋刀奈",
+            "coordinate": "409.295",
+            "sourceLines": [
+              53
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "retry-z",
@@ -4298,938 +4325,2579 @@
     {
       "line": 1,
       "text": "◆必要条件说明：",
-      "type": "requirement-heading",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "“暗部第七部队成员”称号：诺斯菲拉特大陆系列《暗部第七部队成员》任务",
-      "type": "title-source",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "“熟知树海的人”称号： 森罗万象（树海）系列《森罗万象》任务",
-      "type": "title-source",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "“艾尔巴/兰国第二等勋章”称号：兰国/艾国勋章系列《始祖之墓》“二等勋章”任务",
-      "type": "title-source",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "（不需要“五/二等勋章”追加任务）",
-      "type": "requirement-note",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "1.前往维诺亚村旁又小又暗的洞窟（328.451），与鹰眼的莱（25.20）对话，获得【简易搜查计划A】。",
-      "type": "item-acquisition",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "◆持有【地底世界准入证】时，直接从第5步开始做，任务必要条件不可忽略",
-      "type": "shortcut-rule",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.32"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "地底世界准入证：（不可交易）",
-      "type": "item-detail",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.32"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "⑴2018年开放的开拓者新手礼包【开拓者10级礼包】开得",
-      "type": "item-source",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.20"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "⑵2024年开放的心心相印新手包 【11级礼包】开得",
-      "type": "item-source",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.21"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "2.与无限刀流的艾吉（25.21）对话，依序每次交出1个【简易搜查计划】和1个【相应道具】，获得下1个新的【简易搜查计划】。",
-      "type": "sequence-rule",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.routePoints.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.14.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.14.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.15.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.15.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.16"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.16.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.16.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.19"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.19.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.19.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.20"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.20.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.20.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.21"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.21.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.21.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.22"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.22.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.22.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.24.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.24.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.25"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.25.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.25.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.8"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.10"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.12"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.14"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.16"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.18"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.20"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.22"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.24"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.26"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.28"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.30"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.32"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.34"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.36"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.38"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.40"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.42"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.44"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.46"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.48"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.7"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.8"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.9"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.10"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.11"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.12"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.13"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.14"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.15"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.16"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.17"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.18"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.19"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.20"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.21"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.22"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.23"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.24"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.25"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "⑴游侠/忍者、其他职业路线：【简易搜查计划】A~K。",
-      "type": "route-rule",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": []
     },
     {
       "line": 13,
       "text": "⑵①游侠/忍者分支路线；②其他职业路线：【简易搜查计划】L~M。",
-      "type": "branch-rule",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": []
     },
     {
       "line": 14,
       "text": "备注：只有【简易搜查计划Q】的【风鸣之羽】不需要鉴定（【羽？】）。",
-      "type": "identification-rule",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "◆【简易搜查计划】交出顺序、【相应道具】：",
-      "type": "materials-heading",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.16"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.19"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.20"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.21"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.22"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.25"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "A：【神圣之杖】（10A，可用300耐久以上，（300/xxx），来源：玩家制造；可交易）",
-      "type": "material-row",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "B：【灵魂之袍】（可用250耐久以上，（250/xxx），来源：玩家制造；可交易）",
-      "type": "material-row",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "C：【妖精之帽】（可用200耐久以上，（200/xxx），来源：玩家制造；可交易）",
-      "type": "material-row",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "D：【黄金鞋】（100耐久以上，（100/xxx），来源：玩家制造；可交易）",
-      "type": "material-row",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.7"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "E：【宇治金时】（来源：《积雪的山路》任务获得；可交易）",
-      "type": "material-row",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.9"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "F：【人魔草之泪】（来源：《积雪的山路》任务获得；可交易）",
-      "type": "material-row",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.11"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "G：【诅咒的首饰】（来源：《旅馆调查》任务获得；可交易）",
-      "type": "material-row",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.13"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "H：【岚的药丸】（来源：1.《忍者就职》任务获得；可交易。2.《忍者就职》、《地下竞技场》任务巧取梅兹获得，有反馈不行）",
-      "type": "material-row",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.15"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "I：【岚的念珠】（来源：1.《忍者就职》任务获得；可交易。2.《忍者就职》、《地下竞技场》任务巧取梅兹获得，有反馈不行）",
-      "type": "material-row",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.inputs.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.17"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "J：【心头灭却】（任意等级，来源：1.《忍者就职》任务获得；可交易。2.《忍者就职》、《地下竞技场》任务巧取梅兹获得，有反馈不行）",
-      "type": "material-row",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.inputs.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.19"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "K：【黑暗鸟人】（Lv.1，来源：《冰雪的牢城》任务捕捉，冰之洞窟2楼（69.44）附近；可交易）",
-      "type": "material-row",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.notes.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.21"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "◆此时任务按照不同职业进入分支：",
-      "type": "branch-heading",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.26"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "⑴游侠：拥有称号“游侠王”，与鹰眼的莱（25.20）对话交出【黑暗鸟人】，获得“资格”",
-      "type": "branch-step",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.26"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.26.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.50"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "（“游侠王”称号来源：《娜蕾希亚的“邀请”》）",
-      "type": "title-source",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.26"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "⑵忍者：直接与鹰眼的莱（25.20）对话交出【黑暗鸟人】，获得“资格”",
-      "type": "branch-step",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.26"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "◆以上两个职业若把【黑暗鸟人】交给NPC鹰眼的莱，则进入分支路线，获得“资格”；",
-      "type": "branch-result",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.26"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "获得“资格”之后与鹰眼的莱对话获得【绝对耐死】。",
-      "type": "branch-reward",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.26"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.26.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.26"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "◆若把【黑暗鸟人】交给NPC艾吉，则进入正常流程，需和其他职业一样完成后续步骤。",
-      "type": "normal-route-rule",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.26"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "此时若不想按后续的流程走，可把身上的【简易搜查计划】丢弃后与艾吉对话，重新从【简易搜查计划A】开始。",
-      "type": "restart-rule",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.27"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.27.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.27.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.51"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.27"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "⑶其它职业继续交后续材料",
-      "type": "route-continuation",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": []
     },
     {
       "line": 36,
       "text": "L：【味噌汤】（来源：《法兰乐透闪卡》活动中由【宝石鼠残念奖】兑换；不可交易、不可丢地，",
-      "type": "material-row",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.23"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "【宝石鼠残念奖】可交易，每周三18:00至24:00开放）",
-      "type": "material-row-continuation",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.notes.0"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "M：【菲妮斯基】（来源：《猫之铃》任务获得；Lv.20~29【猫妖】兑换；不可交易、不可丢地，【猫妖】可交易）",
-      "type": "material-row",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.inputs.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.7"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.25"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "N：【托德制作的琴】（不可交易、但可以丢地；来源：《流浪乐师托德》任务获得）",
-      "type": "material-row",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.14.inputs.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.8"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.27"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "O：【希望水晶】（不可交易、不可丢地；来源：《春风带来的希望》任务获得）",
-      "type": "material-row",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.15.inputs.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.9"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.29"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "P：【不可思议的腿骨】（来源：《神秘豪宅》任务获得；可交易）",
-      "type": "material-row",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.16"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.16.inputs.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.10"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.31"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "Q：【风鸣之羽】/【羽？】（不可交易、不可丢地；来源：《风鸣之塔》任务获得；无需鉴定；）",
-      "type": "material-row",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17.inputs.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.11"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.33"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "R：【矿泉水】（来源：《古钱兑换商》任务获得；60古钱兑换；可交易）",
-      "type": "material-row",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.18.inputs.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.12"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.35"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "S：【无形软膏】（来源：《古钱兑换商》任务获得；100古钱兑换；可交易）",
-      "type": "material-row",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.19"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.19.inputs.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.13"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.37"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "T：【秋风之竖琴】（来源：《古钱兑换商》任务获得；100古钱兑换；可交易）",
-      "type": "material-row",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.20"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.20.inputs.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.14"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.39"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "U：【古树的枯叶】（来源：《古钱兑换商》任务获得；100古钱兑换；可交易）",
-      "type": "material-row",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.21"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.21.inputs.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.15"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.41"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "V：【未阅读的书】（来源：《赎罪的亡灵》任务获得；可交易）",
-      "type": "material-row",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.22"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.22.inputs.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.16"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.43"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "W：【艾尔卡迪雅银币】（来源：《就职侦探》任务获得；可交易）",
-      "type": "material-row",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.23"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23.inputs.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.17"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.45"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "X：【死神之卵】（来源：《死与新生》任务获得；可交易）",
-      "type": "material-row",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.24.inputs.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.18"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.47"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "Y：【毕克银酸】（来源：《魔族改造计划》任务获得；可交易）",
-      "type": "material-row",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.25"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.25.inputs.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.19"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.49"
+        }
+      ]
     },
     {
       "line": 51,
       "text": "3.持有【简易搜查计划Z】前往小路（《就职忍者》任务），与鹰眼的莱（62.71）对话，选“是”交出【简易搜查计划Z】进行单挑战斗。",
-      "type": "solo-battle-step",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.28"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.28.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.52"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.eagle-eye-lai"
+        }
+      ]
     },
     {
       "line": 52,
       "text": "◆小路达到方法：《就职忍者》做到第16步，",
-      "type": "route-reference",
       "sourceLines": [
         52
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.28"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 53,
       "text": "或者任务完结后，可与法兰城南门外秋刀奈（409.295）对话，“是”传送至。",
-      "type": "route-reference",
       "sourceLines": [
         53
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.28"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 54,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         54
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.28"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.eagle-eye-lai"
+        }
+      ]
     },
     {
       "line": 55,
       "text": "鹰眼的莱（2动），武器：小刀，邪魔系，血量约11000，属性：全25；技能：乾坤一掷、诸刃、阳炎、明镜止水",
-      "type": "battle-enemy",
       "sourceLines": [
         55
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.28"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.eagle-eye-lai"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.eagle-eye-lai.enemies.0"
+        }
+      ]
     },
     {
       "line": 56,
       "text": "◇建议打法：",
-      "type": "strategy-heading",
       "sourceLines": [
         56
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.28"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.eagle-eye-lai"
+        }
+      ]
     },
     {
       "line": 57,
       "text": "①：闪装。",
-      "type": "strategy-row",
       "sourceLines": [
         57
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.28"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.eagle-eye-lai"
+        }
+      ]
     },
     {
       "line": 58,
       "text": "②：抽魔。",
-      "type": "strategy-row",
       "sourceLines": [
         58
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.28"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.eagle-eye-lai"
+        }
+      ]
     },
     {
       "line": 59,
       "text": "宠物5级战栗/人物10级战栗抽到蓝字4以下，BOSS只会阳炎和什么都不做（什么都不做的概率约有7成），",
-      "type": "strategy-detail",
       "sourceLines": [
         59
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.28"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.eagle-eye-lai"
+        }
+      ]
     },
     {
       "line": 60,
       "text": "但BOSS本身闪避较高且会使用阳炎，宠物战栗命中率堪忧，推荐人抽。",
-      "type": "strategy-detail",
       "sourceLines": [
         60
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.28"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.eagle-eye-lai"
+        }
+      ]
     },
     {
       "line": 61,
       "text": "③：硬钢。",
-      "type": "strategy-row",
       "sourceLines": [
         61
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.28"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.eagle-eye-lai"
+        }
+      ]
     },
     {
       "line": 62,
       "text": "④：（不推荐）BOSS可中毒，但极难中毒。",
-      "type": "strategy-row",
       "sourceLines": [
         62
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.28"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.eagle-eye-lai"
+        }
+      ]
     },
     {
       "line": 63,
       "text": "◆若战斗失败，可返回又小又暗的洞窟（328.451），与无限刀流的艾吉（25.21）对话，获得【简易搜查计划Z】后可再次挑战。",
-      "type": "retry-rule",
       "sourceLines": [
         63
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.29"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.29.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.28"
+        }
+      ]
     },
     {
       "line": 64,
       "text": "4.战斗胜利切换地图，与鹰眼的莱（25.20）对话后获得【莱的小刀】传送回芙蕾雅。",
-      "type": "post-battle-reward",
       "sourceLines": [
         64
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.30"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.30.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.29"
+        }
+      ]
     },
     {
       "line": 65,
       "text": "5. 返回又小又暗的洞窟（328.451），与鹰眼的莱（25.20）对话，交出【莱的小刀】或【地底世界准入证】，再次对话获得【绝对耐死】。",
-      "type": "shortcut-exchange",
       "sourceLines": [
         65
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.31"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.31.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.31.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.32"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.32.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.32.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.53"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.54"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.30"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.31"
+        }
+      ]
     },
     {
       "line": 66,
       "text": "◆持有【地底世界准入证】时，可以跳过1~4步骤，交出【地底世界准入证】获得【绝对耐死】。",
-      "type": "shortcut-summary",
       "sourceLines": [
         66
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.32"
+        }
+      ]
     },
     {
       "line": 67,
       "text": "6.前往芙蕾雅（309.346）调查大树洞？？？，选“是”传送至切茜娅（传送时会掉血），与第一部队成员（251.493）对话交出【绝对耐死】获得【奇怪的号角】",
-      "type": "completion-exchange",
       "sourceLines": [
         67
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.33"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.33.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.33.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.55"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.32"
+        }
+      ]
     },
     {
       "line": 68,
       "text": "◆前往大树洞路线（图中红叉部分仅允许拥有【绝对耐死】的玩家或已获取12技能的玩家通过，通过后无法返回）",
-      "type": "route-gate",
       "sourceLines": [
         68
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.33"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 69,
       "text": "◆【奇怪的号角】：双击后技能栏由１１格提升至１２格。",
-      "type": "item-effect",
       "sourceLines": [
         69
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.34"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.34.inputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.56"
+        }
+      ]
     },
     {
       "line": 70,
       "text": "使用条件：完成洗礼5任务《最后的洗礼》后技能栏为１１格时才可以使用。",
-      "type": "item-use-gate",
       "sourceLines": [
         70
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.34"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 71,
       "text": "◆切茜娅内遇到的魔物：（随机1到6只，战斗经验为1）",
-      "type": "encounter-heading",
       "sourceLines": [
         71
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 72,
       "text": "Lv.112尤拉蝙蝠，飞行系，属性：地100；技能：攻击、圣盾、乾坤一掷、诸刃",
-      "type": "enemy-detail",
       "sourceLines": [
         72
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 73,
       "text": "Lv.112修美亚雷，龙系，属性：火100；技能：防御、火焰魔法Lv10、强力火焰魔法Lv10、超强火焰魔法Lv10",
-      "type": "enemy-detail",
       "sourceLines": [
         73
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 74,
       "text": "◆小贴士：",
-      "type": "tips-heading",
       "sourceLines": [
         74
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.35"
+        }
+      ]
     },
     {
       "line": 75,
       "text": "1.在已获取12技能（测试号身上无奇怪的号角）情况下与又小又暗的洞窟里的NPC无限刀流的艾吉对话内容：",
-      "type": "post-completion-state",
       "sourceLines": [
         75
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.35"
+        }
+      ]
     },
     {
       "line": 76,
       "text": "“你已经拥有过去的资格了，接下来请等待中和能量障壁完成”（推测后续任务未开放）",
-      "type": "future-content-note",
       "sourceLines": [
         76
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.35"
+        }
+      ]
     },
     {
       "line": 77,
       "text": "2.在已获取12技能（测试号身上无奇怪的号角）情况下，与上图大叉处NPC特殊暗杀部队精英对话可无限次通过",
-      "type": "post-completion-access",
       "sourceLines": [
         77
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.35"
+        }
+      ]
     },
     {
       "line": 78,
       "text": "图文攻略by Level.1：点击查看",
-      "type": "guide-credit",
       "sourceLines": [
         78
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        }
+      ]
     }
   ],
   "verification": {

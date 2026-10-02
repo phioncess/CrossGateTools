@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-8ab92da5-7d42-443d-8bc6-0f288ff19289",
   "name": "法尔尼亚保卫战",
   "aliases": [
@@ -1256,7 +1256,20 @@
         ]
       }
     ],
-    "notes": []
+    "notes": [
+      {
+        "text": "芙蕾雅岛、索奇亚岛、莎莲娜岛各地区内的顺序可打乱。",
+        "sourceLines": [
+          5,
+          15,
+          20
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-unbound-source-review"
+        }
+      }
+    ]
   },
   "versions": {
     "common": {
@@ -2561,482 +2574,1398 @@
     {
       "line": 1,
       "text": "1.前往法兰城里谢里雅堡调查（29.80）处勇者募集处、悬赏公告栏了解任务情况。（此步可跳过）",
-      "type": "optional-board",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆本任务中战斗皆为连战，每次战斗魔物皆为10只",
-      "type": "battle-global-rule",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "◆芙蕾雅岛魔物为Lv.20、索奇亚岛魔物为Lv.40、莎莲娜岛魔物为Lv.70",
-      "type": "region-level-rule",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "◆本任务中掉落的道具皆可丢地",
-      "type": "drop-rule",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "芙蕾雅岛：（顺序可打乱）",
-      "type": "region-heading",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.notes.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "①.前往伊尔村外与围攻村子的魔物（691.339）对话进入战斗。战斗胜利后随机获得【盗贼之斧】*0~2。",
-      "type": "battle-drop",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.yier"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "◆本次战斗为四连战：树精——黄蜂——史莱姆——盗贼",
-      "type": "battle-sequence",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.yier"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "②.前往圣拉鲁卡村外与围攻村子的魔物（146.225）对话进入战斗。战斗胜利后随机获得【大地鼠之石】*0~2。",
-      "type": "battle-drop",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shaluluka"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "◆本次战斗为四连战：迷你蝙蝠——哥布林——液态史莱姆——大地鼠",
-      "type": "battle-sequence",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shaluluka"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "战斗胜利后随机获得【大地鼠之石】*0~2",
-      "type": "duplicate-drop-note",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shaluluka"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "③.前往亚留特村外与围攻村子的魔物（595.67）对话进入战斗。战斗胜利后随机获得【寒冰】*0~3。",
-      "type": "battle-drop",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.yalute"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "◆本次战斗为四连战：僵尸——腐尸——鸟人——冰冷树精",
-      "type": "battle-sequence",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.yalute"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "④.前往维诺亚村外与围攻村子的魔物（326.517）对话进入战斗。战斗胜利后随机获得【妖草之链】*0~2。",
-      "type": "battle-drop",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.weinuoya"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◆本次战斗为四连战：黄色口臭鬼——虎头蜂——异型蜂——妖草",
-      "type": "battle-sequence",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.weinuoya"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "索奇亚岛：（顺序可打乱）",
-      "type": "region-heading",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.notes.0"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "①.前往奇利村外与围攻村子的魔物（246.331）对话进入战斗。战斗胜利后随机获得【螳螂之心】*0~2。",
-      "type": "battle-drop",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.qili"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "◆本次战斗为六连战：火焰鼠——小恶魔——印第安仙人掌——盗贼——山贼——螳螂",
-      "type": "battle-sequence",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.qili"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "②.前往加纳村外与围攻村子的魔物（719.88）对话进入战斗。战斗胜利后随机获得【沙砾】*0~2。",
-      "type": "battle-drop",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.jiana"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "◆本次战斗为六连战：兔耳仙人掌——武术仙人掌——狠毒鸟人——铁剪螃蟹——黄蝎——蓝蝎",
-      "type": "battle-sequence",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.jiana"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "莎莲娜岛：（顺序可打乱）",
-      "type": "region-heading",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.notes.0"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "①.前往杰诺瓦村外与围攻村子的魔物（215.447）对话进入战斗。战斗胜利后随机获得【妖犬之眼】*0~3。",
-      "type": "battle-drop",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.jienuowa"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "◆本次战斗为五连战：惨败树精——死亡蜂——幻歌妖——风龙蜥——地狱妖犬",
-      "type": "battle-sequence",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.jienuowa"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "②.前往蒂娜村外与围攻村子的魔物（603.320）对话进入战斗。战斗胜利后随机获得【海贼之帽】*0~3。",
-      "type": "battle-drop",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dina"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "◆本次战斗为五连战：血骷髅——死灵——死灰螳螂——死亡树精——海贼",
-      "type": "battle-sequence",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dina"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "③.前往阿巴尼斯村外与围攻村子的魔物（225.138）对话进入战斗。战斗胜利后随机获得【人魔草之心】*0~2。",
-      "type": "battle-drop",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.abanisi"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "◆本次战斗为五连战：北极熊——烈风鸟人——丧尸——地狱妖犬——人魔草",
-      "type": "battle-sequence",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.abanisi"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "2.集齐相应的道具后，前往里谢里雅堡调查勇者募集处，输入对应的语句后兑换【奖品】，任务完结。",
-      "type": "exchange-rule",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "◆【奖品】明细：",
-      "type": "reward-heading",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "收集道具输入语句奖品（随机获得）",
-      "type": "table-heading",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "盗贼之斧大地鼠之石寒冰妖草之链四级支援者曼陀罗草的皮火焰之魂（材料）风龙蜥的甲壳妖草的血",
-      "type": "exchange-row",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.inputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.inputs.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.9"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.10"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.11"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.12"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.13"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "螳螂之心沙砾三级支援者曼陀罗草的皮火焰之魂（材料）风龙蜥的甲壳妖草的血奇怪的壶（B级）",
-      "type": "exchange-row",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.outputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.outputs.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.outputs.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.outputs.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.14"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.15"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.16"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.17"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.18"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.19"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "妖犬之眼海贼之帽人魔草之心二级支援者曼陀罗草的皮火焰之魂（材料）风龙蜥的甲壳妖草的血奇怪的壶（A级）",
-      "type": "exchange-row",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.inputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.outputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.outputs.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.outputs.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.outputs.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.7"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.8"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.20"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.21"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.22"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.23"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.24"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.25"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "盗贼之斧大地鼠之石寒冰妖草之链螳螂之心沙砾妖犬之眼海贼之帽人魔草之心一级支援者曼陀罗草的皮*2火焰之魂（材料）*2风龙蜥的甲壳*2妖草的血*2国王奖章奇怪的壶（S级）",
-      "type": "exchange-row",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.inputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.inputs.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.inputs.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.inputs.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.inputs.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.inputs.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.inputs.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.outputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.outputs.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.outputs.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.outputs.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.outputs.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.5.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.9"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.10"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.11"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.12"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.13"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.14"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.15"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.16"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.17"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.26"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.27"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.28"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.29"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.30"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.31"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.32"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "奇怪的壶（双击后随机获得Lv.1魔物；金牛服与牧羊/双子服奖品不同）",
-      "type": "container-rule",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4.items.2"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "名称奖品",
-      "type": "table-heading",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "奇怪的壶（B级）幽灵、虎头蜂",
-      "type": "container-row",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4.items.0"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "奇怪的壶（A级）赤熊、火龙蜥",
-      "type": "container-row",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4.items.1"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "奇怪的壶（S级）金牛服：烈风哥布林、泰坦巨人、盗贼",
-      "type": "container-row",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4.items.2"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "牧羊/双子服：烈风哥布林设计图（A~E）、泰坦巨人、盗贼",
-      "type": "server-container-row",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4.items.2"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "国王奖章：Lv.4护身符、耐久200；防御+10、精神+3、必杀+3；装备后获得称号“法兰一级支援者”；数值浮动",
-      "type": "equipment-detail",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.5.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     }
   ],
   "verification": {

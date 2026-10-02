@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-7bddefe2-0b6a-420e-8fa5-a47d999ea961",
   "name": "暗殿团队挑战赛",
   "aliases": [
@@ -2384,938 +2384,2554 @@
     {
       "line": 1,
       "text": "1.与法兰城竞技场看守（123.161）对话，选“是”进入竞技场的入口。",
-      "type": "entry-step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "通过（27.15）处进入治愈的广场。与↓地下竞技场↓（26.13）对话，选“是”进入竞技场。",
-      "type": "entry-step",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "2.与神秘人（24.16）对话，交出一定数量魔币，选“是”进入暗殿武道会。",
-      "type": "versioned-entry",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "与各场景内BOSS对话触发战斗，每次胜利后传送到下一层BOSS前。",
-      "type": "battle-progression",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "◆2024版本，怀旧服交出3000G，道具服交出100000G",
-      "type": "versioned-cost",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "BOSS等级有提升，怀旧服Lv.95~120，道具服Lv.130~160",
-      "type": "versioned-level-range",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "种族皆为：邪魔系",
-      "type": "race-rule",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "◆第一层：",
-      "type": "floor-heading",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.0"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "Lv.80 牛鬼，2动，不抗咒，血量约4000，属性：地10水10火10风80，技能：攻击、战栗袭心",
-      "type": "battle-enemy",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.0.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.0.enemies.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "Lv.80 试作型牛鬼，2动，不抗咒，血量约5000，属性：地10水10火10风80，技能：攻击、诸刃、偷钱、状态攻击、吸血攻击",
-      "type": "battle-enemy",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.0.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.0.enemies.1"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "Lv.80 最终决战型牛鬼，2动，不抗咒，血量约5000，属性：地10水10火80风10，技能：攻击、连击",
-      "type": "battle-enemy",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.0.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.0.enemies.2"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "Lv.80 回来报仇的牛鬼，2动，不抗咒，血量约8000，属性：地10水80火10风10，技能：攻击、乾坤一掷、崩击、状态攻击",
-      "type": "battle-enemy",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.0.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.0.enemies.3"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◇打法建议：带宠，有咒可配合石化和毒，逐个击破，报仇→试做→决战→牛鬼",
-      "type": "strategy-note",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.0"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "◆第二层：",
-      "type": "floor-heading",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.1"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "属性皆为：地30水30火30风30",
-      "type": "attribute-rule",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.1"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "Lv.90 佛利波罗（左），2动，不抗咒，血量约8000，技能：攻击、圣盾、超强冰冻魔法、强力即死魔法（我放使用恢复魔法追加）",
-      "type": "battle-enemy",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.1.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.1.enemies.0"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "Lv.90 李贝留斯（中后），2动，不抗咒，血量约8000，技能：攻击、吸血攻击、吸血魔法、遗忘攻击、超强风刃魔法、超强即死魔法（剩下自己石追加）",
-      "type": "battle-enemy",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.1.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.1.enemies.1"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "Lv.90 巴洛斯（中前），2动，不抗咒，血量约8000，技能：攻击、阳炎、超强石化魔法、超强中毒魔法、攻击无效、魔法无效",
-      "type": "battle-enemy",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.1.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.1.enemies.2"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "Lv.90 阿卡斯（右），2动，不抗咒，血量约8000，技能：攻击、吸血魔法、强力陨石魔法、强力火焰魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.1.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.1.enemies.3"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "◇打法建议：不带宠W站位，有咒可配合石化和毒，逐个击破，佛利波罗→巴罗斯→阿卡斯→李贝留斯",
-      "type": "strategy-note",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.1"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "◆第三层：",
-      "type": "floor-heading",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.2"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "属性皆为：地40水40火40风40",
-      "type": "attribute-rule",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.2"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "Lv.100 树精长老（右前），2动，不抗咒，血量约8000，属性：地70水30火20风20，技能：圣盾、强力遗忘、超强陨石魔法、超强火焰魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.2.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.2.enemies.0"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "Lv.100 神兽史雷普尼尔（左前），2动，不抗咒，血量约8000，属性：地35水35火35风35，技能：攻击、诸刃、战栗袭心、混乱攻击、遗忘攻",
-      "type": "battle-enemy",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.2.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.2.enemies.1"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "Lv.100 凯法（右后），2动，不抗咒，血量约8000，属性：地35水35火35风35，技能：攻击、诸刃、连击、吸血攻击、崩击、魔法无效",
-      "type": "battle-enemy",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.2.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.2.enemies.2"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "Lv.100 帕布提斯马（左后），2动，不抗咒，血量约8000，属性：地35水35火35风35，技能：吸血魔法、攻击无效、超强陨石魔法、超强冰冻魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.2.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.2.enemies.3"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "◇打法建议：不带宠W站位，有咒可配合石化和毒，战栗帕布提斯马，然后逐个击破，树精长老→神兽→凯法→帕布提斯马",
-      "type": "strategy-note",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.2"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "◆第四层：",
-      "type": "floor-heading",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.3"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "属性皆为：地40水40火40风40",
-      "type": "attribute-rule",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.3"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "Lv.110 杀熊者欧兹那克，2动，不抗咒，血量约9000，技能：攻击、连击、崩击",
-      "type": "battle-enemy",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.3.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.3.enemies.0"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "Lv.110 热砂的欧兹尼克，2动，不抗咒，血量约9000，技能：攻击、气功弹、状态攻击",
-      "type": "battle-enemy",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.3.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.3.enemies.1"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "Lv.110 露比，2动，不抗咒，血量约13000，技能：圣盾、风刃魔法、强力冰冻魔法、攻击反弹",
-      "type": "battle-enemy",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.3.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.3.enemies.2"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "Lv.110 法尔肯，2动，不抗咒，血量约13000，技能：吸血魔法、攻击反弹、即死魔法（剩下自己石追加）",
-      "type": "battle-enemy",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.3.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.3.enemies.3"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "◇打法建议：不带宠W站位，有咒可配合石化和毒，逐个击破，熊男→热砂→露比→法尔肯",
-      "type": "strategy-note",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.3"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "◆第五层：",
-      "type": "floor-heading",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.4"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "Lv.110 金雄（左），2动，血量约14000，属性：地40水80火40风40，抗咒，技能：攻击",
-      "type": "battle-enemy",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.4.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.4.enemies.0"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "Lv.110 哥布林枪手（中后），2动，血量约14000，属性：地40水40火70风40，抗咒，",
-      "type": "battle-enemy",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.4.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.4.enemies.1"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "技能：攻击、乾坤一掷、迅速果断、吸血魔法、魔法封印、即死魔法（剩下自己石追加）",
-      "type": "battle-skill",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.4.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.4.enemies.1"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "Lv.110 小鬼（中前），2动，血量约12000，属性：地70水40火40风40，抗咒，技能：攻击",
-      "type": "battle-enemy",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.4.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.4.enemies.2"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "Lv.110 石雄（右），2动，血量约14000，属性：地40水80火40风4，抗咒0，技能：攻击",
-      "type": "battle-enemy",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.4.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.4.enemies.3"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "◇打法建议：枪手→其它三个",
-      "type": "strategy-note",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.4"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "◆第六层：",
-      "type": "floor-heading",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "Lv.120 伍那",
-      "type": "battle-enemy",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5.enemies.0"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "种族：邪魔系；属性：地50水50火50风50；血量≈14000；抗咒：有；行动次数：2",
-      "type": "battle-detail",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5.enemies.0"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "技能：攻击、攻击反弹Lv10（大）、攻击无效E1（小）、超强酒醉魔法Lv10",
-      "type": "battle-skill",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5.enemies.0"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "Lv.120 吉拉",
-      "type": "battle-enemy",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5.enemies.1"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "种族：邪魔系；属性：地50水50火50风50；血量≈14000；抗咒：有；行动次数：2",
-      "type": "battle-detail",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5.enemies.1"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "技能：攻击、冰冻魔法Lv8、火焰魔法Lv8、风刃魔法Lv8、强力陨石魔法Lv8",
-      "type": "battle-skill",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5.enemies.1"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "Lv.120 伊鲁玛",
-      "type": "battle-enemy",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5.enemies.2"
+        }
+      ]
     },
     {
       "line": 51,
       "text": "种族：邪魔系；属性：地50水50火50风50；血量≈14000；抗咒：有；行动次数：2",
-      "type": "battle-detail",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5.enemies.2"
+        }
+      ]
     },
     {
       "line": 52,
       "text": "技能：攻击、乾坤一掷Lv4、乱射Lv6、阳炎EX",
-      "type": "battle-skill",
       "sourceLines": [
         52
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5.enemies.2"
+        }
+      ]
     },
     {
       "line": 53,
       "text": "Lv.120 巴雷莉",
-      "type": "battle-enemy",
       "sourceLines": [
         53
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5.enemies.3"
+        }
+      ]
     },
     {
       "line": 54,
       "text": "种族：邪魔系；属性：地50水50火50风50；血量≈14000；抗咒：有；行动次数：2",
-      "type": "battle-detail",
       "sourceLines": [
         54
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5.enemies.3"
+        }
+      ]
     },
     {
       "line": 55,
       "text": "技能：攻击、战栗袭心Lv6、诸刃Lv10、连击EX",
-      "type": "battle-skill",
       "sourceLines": [
         55
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5.enemies.3"
+        }
+      ]
     },
     {
       "line": 56,
       "text": "Lv.120 裁判员",
-      "type": "battle-enemy",
       "sourceLines": [
         56
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5.enemies.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5.enemies.4"
+        }
+      ]
     },
     {
       "line": 57,
       "text": "种族：邪魔系；属性：地60水60火60风60；血量≈18000；抗咒：有；行动次数：2",
-      "type": "battle-detail",
       "sourceLines": [
         57
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5.enemies.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5.enemies.4"
+        }
+      ]
     },
     {
       "line": 58,
       "text": "技能：攻击、连击V、超强陨石魔法Lv8、超强风刃魔法Lv8、乾坤一掷EX、限制超魔后概率使用大地之怒Lv8（256~512）",
-      "type": "battle-skill",
       "sourceLines": [
         58
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5.enemies.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5.enemies.4"
+        }
+      ]
     },
     {
       "line": 59,
       "text": "◇打法建议1：战栗吉拉→战栗伍那→合击巴雷莉→裁判员→伊鲁玛→伍那→吉拉",
-      "type": "strategy-note",
       "sourceLines": [
         59
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5"
+        }
+      ]
     },
     {
       "line": 60,
       "text": "此打法会被裁判乾坤，但不会被大地之怒",
-      "type": "strategy-note",
       "sourceLines": [
         60
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5"
+        }
+      ]
     },
     {
       "line": 61,
       "text": "◇打法建议2：战栗裁判→战栗吉拉→合击巴雷莉→伊鲁玛→伍那→吉拉→裁判员",
-      "type": "strategy-note",
       "sourceLines": [
         61
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5"
+        }
+      ]
     },
     {
       "line": 62,
       "text": "此打法不会被裁判乾坤，但会被大地之怒",
-      "type": "strategy-note",
       "sourceLines": [
         62
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5"
+        }
+      ]
     },
     {
       "line": 63,
       "text": "◇打法建议3：合击裁判→合击吉拉（巴雷莉）→合击巴雷莉（吉拉）→合击伊鲁玛→合击伍那",
-      "type": "strategy-note",
       "sourceLines": [
         63
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.dark-temple-six-floors.rounds.5"
+        }
+      ]
     },
     {
       "line": 64,
       "text": "3.战斗胜利后与神秘人对话，随机获得奖励【圣戒亚维】与【魔戒纳南】之一，并传送至法兰城。",
-      "type": "completion-random-reward",
       "sourceLines": [
         64
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 65,
       "text": "◆奖品详情：（可交易）",
-      "type": "reward-heading",
       "sourceLines": [
         65
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        }
+      ]
     },
     {
       "line": 66,
       "text": "圣戒亚维：",
-      "type": "reward-heading",
       "sourceLines": [
         66
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 67,
       "text": "等级9，耐久200，种类戒指；",
-      "type": "reward-detail",
       "sourceLines": [
         67
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 68,
       "text": "防御+55~61，精神+17~22，回复+17~22，昏睡+20，混乱+20，反击+21~27，闪躲+18~21，",
-      "type": "reward-detail",
       "sourceLines": [
         68
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 69,
       "text": "生命+210~233，魔力+150~171，魔攻+27~51。",
-      "type": "reward-detail",
       "sourceLines": [
         69
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 70,
       "text": "数值浮动；可以交易；",
-      "type": "item-restriction",
       "sourceLines": [
         70
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 71,
       "text": "装备后获得称号“暗殿最强勇者”",
-      "type": "equipment-title",
       "sourceLines": [
         71
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 72,
       "text": "魔戒纳南：",
-      "type": "reward-heading",
       "sourceLines": [
         72
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        }
+      ]
     },
     {
       "line": 73,
       "text": "等级9，耐久200，种类戒指；",
-      "type": "reward-detail",
       "sourceLines": [
         73
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        }
+      ]
     },
     {
       "line": 74,
       "text": "攻击+41~57，敏捷+15~17，昏睡+20，石化+20，必杀+17~21，命中+18~20，闪躲+11~15，",
-      "type": "reward-detail",
       "sourceLines": [
         74
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        }
+      ]
     },
     {
       "line": 75,
       "text": "生命+150~182，抗魔+47~64。",
-      "type": "reward-detail",
       "sourceLines": [
         75
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        }
+      ]
     },
     {
       "line": 76,
       "text": "数值浮动；可以交易；",
-      "type": "item-restriction",
       "sourceLines": [
         76
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        }
+      ]
     },
     {
       "line": 77,
       "text": "装备后获得称号“暗殿最强勇者”",
-      "type": "equipment-title",
       "sourceLines": [
         77
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 78,
       "text": "◇属性来源视频：Level.1《暗殿团队挑战赛》打法及种族属性",
-      "type": "source-reference",
       "sourceLines": [
         78
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     }
   ],
   "verification": {

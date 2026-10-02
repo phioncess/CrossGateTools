@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-9b864ff3-b6e4-4749-9e9f-31afbe452308",
   "name": "2009己丑年春节任务（怀旧版）",
   "aliases": [
@@ -209,110 +209,260 @@
     {
       "line": 1,
       "text": "击倒6个指定BOSS会有一定几率掉落一共7张新年福卡，每张卡上有一个字，7个字凑在一起就是“「魔」「力」「宝」「贝」「贺」「新」「春」”，玩家收集到一定数量后可以前往法兰城旅馆2楼与新年福卡兑奖员兑换奖品。",
-      "type": "collection-and-exchange-overview",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆BOSS名单：",
-      "type": "boss-heading",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "露比（巫师袭击事件）、法尔肯（没落的村庄）、树精长老（树精长老的末日）、试作型牛鬼（捉迷藏的铁人）、改造僵尸（挑战僵尸王）、牛鬼（牛鬼任务）。",
-      "type": "boss-list",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "◆奖品：",
-      "type": "reward-heading",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "①.「魔」「力」「宝」「贝」「贺」「新」「春」各一张：随机一只1级水蓝鼠、杀人螳螂、巨人、虎头蜂",
-      "type": "exchange-recipe",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.3"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "②.「魔」「力」「宝」「贝」+「新」「春」各一张：己丑年特制安全帽、耳环、手镯、护身符其中一个",
-      "type": "exchange-recipe",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.3"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "③.「魔」「力」「宝」「贝」各一张+「贺」「新」「春」中的一张：随机宝石一颗",
-      "type": "exchange-recipe",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "④.「魔」「力」「宝」「贝」各一张：随机“重来的种子”一颗",
-      "type": "exchange-recipe",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.0"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "⑤.「魔」「力」「宝」「贝」中的三个字各一张：随机生命力回复药200一瓶、炒面一个、随机生产系采集品一组",
-      "type": "exchange-recipe",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4.items.2"
+        }
+      ]
     }
   ],
   "verification": {

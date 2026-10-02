@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-2ca5de35-b720-4b20-a022-a0651d1e85de",
   "name": "实验",
   "aliases": [
@@ -668,7 +668,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "通往漆黑的暗道的位置",
+            "coordinate": "22.36",
+            "sourceLines": [
+              26
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "four-chain",
@@ -731,7 +744,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "帕鲁凯斯之影",
+            "coordinate": "23.20",
+            "sourceLines": [
+              30
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "core-reward",
@@ -828,7 +854,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "艾尔菲那斯女王",
+            "coordinate": "58.46",
+            "sourceLines": [
+              79
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       }
     ],
     "notes": []
@@ -2072,986 +2111,2078 @@
     {
       "line": 1,
       "text": "1.前往法兰城里谢里雅堡堡谒见之间与艾尔巴尼亚使者（12.14）对话，选“是”获得【不熄的烛火】。",
-      "type": "item-acquisition",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.routePoints.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆队内成员“兰国/艾尔巴第四等勋章”称号无需统一",
-      "type": "party-title-rule",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "2.持有【魔族的水晶】时双击【不熄的烛火】，选“是”传送至漆黑的房间，同时交出【魔族的水晶】和【不熄的烛火】。",
-      "type": "multi-item-entry",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "◆漆黑的房间不会遭遇魔物",
-      "type": "no-encounter",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "3.前往漆黑的房间中央，调查生锈的烛台传送至异能的磁场。",
-      "type": "route-step",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "◆漆黑的房间行走路线：",
-      "type": "route-map",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "4.与士兵梅伯尔对话，通过传送石进入漆黑的暗道。",
-      "type": "maze-entry",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "◆漆黑的暗道为随机迷宫，约10层；魔物为亡灵、地狱骷髅（怀旧服为Lv.55~67；时长服为Lv.106~115）",
-      "type": "maze-detail",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "◆迷宫内会随机遭遇BOSS战，BOSS为影子，血量约2000",
-      "type": "random-boss",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "5.在迷宫内寻找随机出现的帕鲁凯斯之影并与之对话，进入战斗。",
-      "type": "repeatable-battle",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.palukes-shadow"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "战斗胜利后，队伍中随机一人获得【赝品帕鲁凯斯之斧】。队伍中每名成员都需要获得【赝品帕鲁凯斯之斧】。",
-      "type": "random-team-reward",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.palukes-shadow"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "◆战斗信息（怀旧服）：",
-      "type": "server-heading",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.palukes-shadow"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "Lv.75帕鲁凯斯之影：2动，血量约1200；属性：全属性20；技能：攻击、防御、圣盾、乾坤一掷",
-      "type": "battle-enemy",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.palukes-shadow"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.palukes-shadow.serverVariants.怀旧服.0"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "Lv.69亡灵：血量约900",
-      "type": "battle-enemy",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.palukes-shadow"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.palukes-shadow.serverVariants.怀旧服.1"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "Lv.72地狱骷髅：血量约1200",
-      "type": "battle-enemy",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.palukes-shadow"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.palukes-shadow.serverVariants.怀旧服.2"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "◆战斗信息（时长服）：等级、血量约是怀旧服的2倍",
-      "type": "server-scaling-rule",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.palukes-shadow"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.palukes-shadow.serverVariants.时长服.0"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "6.通过随机迷宫抵达密道底层，与士兵梅伯尔对话，交出【赝品帕鲁凯斯之斧】获得【诡异的生命之光】并传送至哥拉尔镇。",
-      "type": "exchange-step",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "7.前往哥拉尔港口与船员西普对话，交出【诡异的生命之光】，获得【乘船须知】并传送至驶往荒岛的船。",
-      "type": "exchange-step",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "等待5分钟后与士兵梅伯尔对话战斗。",
-      "type": "wait-step",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ship"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "◆战斗信息：（怀旧服）",
-      "type": "server-heading",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ship"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "Lv.80梅伯尔（艾克尼奇美拉），血量约10000；属性：全属性50；技能：攻击、防御、补血魔法、攻击吸收、攻击无效、魔法吸收、魔法无效",
-      "type": "battle-enemy",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ship"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ship.serverVariants.怀旧服.0"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "Lv.70哥拉尔士兵（奇美拉）*5，血量约800；属性：全属性20；技能：攻击、防御,战栗袭心",
-      "type": "battle-enemy",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ship"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ship.serverVariants.怀旧服.1"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "◆战斗信息：（时长服）",
-      "type": "server-heading",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ship"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "Lv.130梅伯尔（艾克尼奇美拉），血量约14000；技能：攻击、防御、补血魔法、攻击吸收、攻击无效、魔法吸收、魔法无效",
-      "type": "battle-enemy",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ship"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ship.serverVariants.时长服.0"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "Lv.120哥拉尔士兵（奇美拉）*5，血量约1400；技能：攻击、防御",
-      "type": "battle-enemy",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ship"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ship.serverVariants.时长服.1"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "8.战斗胜利后与船员西普对话，传送至驶往荒岛的船，通过黄色传送石（22,36）进入漆黑的暗道。",
-      "type": "post-battle-route",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "◆漆黑的暗道为随机迷宫，约19~22层；",
-      "type": "maze-detail",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "魔物为艾德奇美拉（蓝奇美拉:水火50）、依鲁特奇美拉（红奇美拉:火风50）、黑暗僧侣（地风50）、斩首者（地水50）",
-      "type": "encounter-detail",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "怀旧服为Lv.74~76；时长服为Lv.114~122",
-      "type": "server-levels",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "9.通过随机迷宫抵达实验基地，与帕鲁凯斯之影（23.20）对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "◆本次战斗为四连战",
-      "type": "consecutive-rule",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "◆怀旧服战斗信息",
-      "type": "server-heading",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "◆第一战：",
-      "type": "round-heading",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "Lv.85阿夏芙之影（红）*2，血量约6000；属性：全属性30；技能：攻击、防御、诸刃、强力冰冻魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain.serverVariants.怀旧服.0.enemies.0"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "Lv.85阿夏芙之影（蓝）*2，血量约6000；属性：全属性30；技能：攻击、防御、阳炎、强力火焰魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain.serverVariants.怀旧服.0.enemies.1"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "◇战斗建议：逐个击杀即可",
-      "type": "strategy-note",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "◆第二战：",
-      "type": "round-heading",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "Lv.85帕鲁凯斯之影，血量约7000；属性：全属性40；技能：攻击、防御、乾坤一掷、大地之怒（100-120伤害浮动）",
-      "type": "battle-enemy",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain.serverVariants.怀旧服.1.enemies.0"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "Lv.80哥拉尔士兵*3，血量约2000；属性：全属性20；技能：攻击、诸刃、崩击、连击",
-      "type": "battle-enemy",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain.serverVariants.怀旧服.1.enemies.1"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "◇战斗建议：石化魔法定住BOSS，之后逐个击杀喽啰，最后合击BOSS",
-      "type": "strategy-note",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "◆第三战：",
-      "type": "round-heading",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "Lv.83耶卡之影，血量约7000；属性：全属性40；技能：攻击、防御、超强混乱魔法、强力即死魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain.serverVariants.怀旧服.2.enemies.0"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "Lv.81~82亡灵（暗黑僧侣）*3，血量约2000；属性：全属性20；技能：攻击、防御、单体即死（对自己使用）、超强补血魔法（对我方使用）",
-      "type": "battle-enemy",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain.serverVariants.怀旧服.2.enemies.1"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "◇战斗建议：清理BOSS面前喽啰，之后合击BOSS，待己方血量补满后击杀剩余2个喽啰",
-      "type": "strategy-note",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "◆第四战：",
-      "type": "round-heading",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "Lv.90阿夏芙之影（红），血量约10000；属性：全属性40；技能：攻击、防御、超强冰冻魔法、超强风刃魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain.serverVariants.怀旧服.3.enemies.0"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "Lv.90阿夏芙之影（蓝），血量约10000；属性：全属性40；技能：攻击、防御、超强火焰魔法、超强陨石魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain.serverVariants.怀旧服.3.enemies.1"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "Lv.90耶卡之影，血量约11000；属性：全属性40；技能：攻击、防御、单体即死、超强补血魔法、超强恢复魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain.serverVariants.怀旧服.3.enemies.2"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "Lv.90帕鲁凯斯之影，血量约11000；属性：全属性40；技能：攻击、防御、大地之怒（伤害100浮动）、乾坤一掷、超强中毒魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain.serverVariants.怀旧服.3.enemies.3"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "Lv.85恶魔蝙蝠*2，血量约2500；属性：全属性20；技能：攻击、防御、攻击吸收、攻击反弹、魔法吸收、魔法反弹、强力补血魔法、补血魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain.serverVariants.怀旧服.3.enemies.4"
+        }
+      ]
     },
     {
       "line": 51,
       "text": "Lv.85天使蝙蝠*2，血量约2500；属性：全属性20；技能：攻击、防御、攻击吸收、攻击反弹、魔法吸收、魔法反弹、强力补血魔法、补血魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain.serverVariants.怀旧服.3.enemies.5"
+        }
+      ]
     },
     {
       "line": 52,
       "text": "◇战斗建议：",
-      "type": "strategy-heading",
       "sourceLines": [
         52
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        }
+      ]
     },
     {
       "line": 53,
       "text": "先将2只阿夏芙之影的魔抽完，再抽耶卡之影的魔，期间和配合使用石化魔法定住目标便于战栗；",
-      "type": "strategy-note",
       "sourceLines": [
         53
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        }
+      ]
     },
     {
       "line": 54,
       "text": "3只抽完后，依次清理天使蝙蝠和恶魔蝙蝠；",
-      "type": "strategy-note",
       "sourceLines": [
         54
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        }
+      ]
     },
     {
       "line": 55,
       "text": "击杀完后，按帕鲁凯斯之影→耶卡之影→阿夏芙之影的顺序进行合击，期间配合使用中毒魔法",
-      "type": "strategy-note",
       "sourceLines": [
         55
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        }
+      ]
     },
     {
       "line": 56,
       "text": "◆时长服战斗信息",
-      "type": "server-heading",
       "sourceLines": [
         56
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        }
+      ]
     },
     {
       "line": 57,
       "text": "◆第一战：",
-      "type": "round-heading",
       "sourceLines": [
         57
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        }
+      ]
     },
     {
       "line": 58,
       "text": "Lv.135阿夏芙之影（红），血量约8500；技能：攻击、防御、诸刃、强力冰冻魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         58
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain.serverVariants.时长服.0.enemies.0"
+        }
+      ]
     },
     {
       "line": 59,
       "text": "Lv135阿夏芙之影（蓝），血量约8500；技能：攻击、防御、阳炎、强力火焰魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         59
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain.serverVariants.时长服.0.enemies.1"
+        }
+      ]
     },
     {
       "line": 60,
       "text": "◇战斗建议：逐个击杀即可",
-      "type": "strategy-note",
       "sourceLines": [
         60
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        }
+      ]
     },
     {
       "line": 61,
       "text": "◆第二战：",
-      "type": "round-heading",
       "sourceLines": [
         61
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        }
+      ]
     },
     {
       "line": 62,
       "text": "Lv.135帕鲁凯斯之影，血量约11000；技能：大地之怒（200伤害浮动）",
-      "type": "battle-enemy",
       "sourceLines": [
         62
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain.serverVariants.时长服.1.enemies.0"
+        }
+      ]
     },
     {
       "line": 63,
       "text": "Lv.130哥拉尔士兵*3，血量约4000；技能：攻击、诸刃",
-      "type": "battle-enemy",
       "sourceLines": [
         63
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain.serverVariants.时长服.1.enemies.1"
+        }
+      ]
     },
     {
       "line": 64,
       "text": "◇战斗建议：直接合击BOSS，之后逐个击杀喽啰",
-      "type": "strategy-note",
       "sourceLines": [
         64
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        }
+      ]
     },
     {
       "line": 65,
       "text": "◆第三战：",
-      "type": "round-heading",
       "sourceLines": [
         65
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        }
+      ]
     },
     {
       "line": 66,
       "text": "Lv.130耶卡之影，血量约10000；技能：攻击、防御、超强混乱魔法、强力即死魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         66
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain.serverVariants.时长服.2.enemies.0"
+        }
+      ]
     },
     {
       "line": 67,
       "text": "Lv.130亡灵（暗黑僧侣）*3，血量约3500；技能：攻击、防御、单体即死（对自己使用）、超强补血魔法（对我方使用）",
-      "type": "battle-enemy",
       "sourceLines": [
         67
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain.serverVariants.时长服.2.enemies.1"
+        }
+      ]
     },
     {
       "line": 68,
       "text": "◇战斗建议：清理BOSS面前喽啰，之后合击BOSS，待己方血量补满后击杀剩余2个喽啰",
-      "type": "strategy-note",
       "sourceLines": [
         68
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        }
+      ]
     },
     {
       "line": 69,
       "text": "◆第四战：",
-      "type": "round-heading",
       "sourceLines": [
         69
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        }
+      ]
     },
     {
       "line": 70,
       "text": "Lv.140阿夏芙之影（红），血量约16000；技能：攻击、防御、超强冰冻魔法、超强风刃魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         70
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain.serverVariants.时长服.3.enemies.0"
+        }
+      ]
     },
     {
       "line": 71,
       "text": "Lv.140阿夏芙之影（蓝），血量约16000；技能：攻击、防御、超强火焰魔法、超强陨石魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         71
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain.serverVariants.时长服.3.enemies.1"
+        }
+      ]
     },
     {
       "line": 72,
       "text": "Lv.140耶卡之影，血量约15000；技能：攻击、防御、单体即死、超强补血魔法、超强恢复魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         72
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain.serverVariants.时长服.3.enemies.2"
+        }
+      ]
     },
     {
       "line": 73,
       "text": "Lv.140帕鲁凯斯之影，血量约17000；技能：攻击、防御、大地之怒（伤害200浮动）、乾坤一掷、超强中毒魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         73
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain.serverVariants.时长服.3.enemies.3"
+        }
+      ]
     },
     {
       "line": 74,
       "text": "Lv.135恶魔蝙蝠*2，血量约4200；技能：攻击、防御、攻击吸收、攻击反弹、魔法吸收、魔法反弹、强力补血魔法、补血魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         74
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain.serverVariants.时长服.3.enemies.4"
+        }
+      ]
     },
     {
       "line": 75,
       "text": "Lv.135天使蝙蝠*2，血量约4200；技能：攻击、防御、攻击吸收、攻击反弹、魔法吸收、魔法反弹、强力补血魔法、补血魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         75
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain.serverVariants.时长服.3.enemies.5"
+        }
+      ]
     },
     {
       "line": 76,
       "text": "◇战斗建议：",
-      "type": "strategy-heading",
       "sourceLines": [
         76
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        }
+      ]
     },
     {
       "line": 77,
       "text": "W站位优先击杀耶卡，然后按照顺序恶魔蝙蝠&天使蝙蝠→阿夏芙→帕鲁凯斯（注：每回合平均伤害超过1500，血量少于2300不推荐）",
-      "type": "strategy-note",
       "sourceLines": [
         77
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.four-chain"
+        }
+      ]
     },
     {
       "line": 78,
       "text": "10.战斗胜利后调查能力核心，选“是”交出【乘船须知】获得【虚无的生命之光】、【能量结晶】并传送至哥拉尔镇。",
-      "type": "multi-item-reward",
       "sourceLines": [
         78
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        }
+      ]
     },
     {
       "line": 79,
       "text": "11.前往哥拉尔镇白之宫殿谒见之间与艾尔菲那斯女王（58.46）对话，交出【能量结晶】获得【恩谢手环】，任务完结。",
-      "type": "final-exchange",
       "sourceLines": [
         79
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        }
+      ]
     },
     {
       "line": 80,
       "text": "◆【恩谢手环】（怀旧服）：Lv.5手环、耐久50、攻击+10、敏捷+10、精神+5、生命+40、魔力+40；装备后获得称号“心之祝福”；数值浮动",
-      "type": "equipment-detail",
       "sourceLines": [
         80
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 81,
       "text": "◆【恩谢手环】（时长服）：Lv.5手环、耐久50、攻击+10、敏捷+10、精神+5、生命+4、魔力+4；装备后获得称号“心之祝福”；数值浮动",
-      "type": "equipment-detail",
       "sourceLines": [
         81
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 82,
       "text": "◆【虚无的生命之光】为后续任务相关道具，勿丢弃",
-      "type": "future-use",
       "sourceLines": [
         82
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     }
   ],
   "verification": {

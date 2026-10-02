@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-f7ff0287-4444-4433-9896-13a5df7d62ca",
   "name": "就职武器/防具类制造师",
   "aliases": [
@@ -295,7 +295,7 @@
       {
         "id": "gathering-skills",
         "order": 1,
-        "text": "学习伐木体验、挖掘体验、狩猎体验三种技能（游民也可学），分别采集20个孟宗竹、20个铜、20个鹿皮。导师、学习地点和采集点均按原表独立保存。",
+        "text": "分别向对应导师学习伐木体验、挖掘体验、狩猎体验（游民也可学），再到对应采集地点收集孟宗竹、铜、鹿皮各20个。",
         "inputs": [],
         "outputs": [
           {
@@ -347,7 +347,98 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "teachers": [
+          {
+            "skill": "伐木体验",
+            "teacher": "募集樵夫的阿空",
+            "location": "法兰城（195.50）职业介绍所（8.11）",
+            "sourceLines": [
+              2,
+              3,
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-service-decomposition"
+            }
+          },
+          {
+            "skill": "挖掘体验",
+            "teacher": "募集矿工的洛伊",
+            "location": "圣拉鲁卡村（39.70）赛杰利亚酒吧（48.76）",
+            "sourceLines": [
+              2,
+              3,
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-service-decomposition"
+            }
+          },
+          {
+            "skill": "狩猎体验",
+            "teacher": "猎人亚烈格尔",
+            "location": "伊尔村（48.76）",
+            "sourceLines": [
+              2,
+              3,
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-service-decomposition"
+            }
+          }
+        ],
+        "materialSources": [
+          {
+            "item": "孟宗竹",
+            "quantity": 20,
+            "location": "法兰城东门外（483.192）",
+            "skill": "伐木体验",
+            "sourceLines": [
+              2,
+              5,
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-service-decomposition"
+            }
+          },
+          {
+            "item": "铜",
+            "quantity": 20,
+            "location": "国营第24坑道地下1楼",
+            "skill": "挖掘体验",
+            "sourceLines": [
+              2,
+              5,
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-service-decomposition"
+            }
+          },
+          {
+            "item": "鹿皮",
+            "quantity": 20,
+            "location": "伊尔村西北（649.289）",
+            "skill": "狩猎体验",
+            "sourceLines": [
+              2,
+              5,
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-service-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "forge-experience",
@@ -418,7 +509,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "职业介绍所",
+            "coordinate": "9.5",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "recommendation",
@@ -467,12 +571,25 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "法兰城",
+            "coordinate": "238.64",
+            "sourceLines": [
+              9
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "employment",
         "order": 4,
-        "text": "进入圣拉鲁卡村装备品店地下工房，携对应推荐信向职业导师就职，再向对应技能导师学习制造技能。职业导师与技能导师是两张独立映射表，不混为同一NPC。",
+        "text": "进入圣拉鲁卡村装备品店地下工房，携对应推荐信向职业导师就职，再向技能导师学习对应制造技能。",
         "inputs": [
           {
             "item": "武器工推荐信或防具工推荐信",
@@ -758,7 +875,53 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "圣拉鲁卡村装备品店",
+            "coordinate": "26.70",
+            "sourceLines": [
+              10
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "圣拉鲁卡村装备品店（另一位置）",
+            "coordinate": "32.70",
+            "sourceLines": [
+              10
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "装备品店",
+            "coordinate": "14.4",
+            "sourceLines": [
+              10
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "1楼小房间",
+            "coordinate": "9.3",
+            "sourceLines": [
+              10
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       }
     ],
     "notes": []
@@ -954,530 +1117,1250 @@
     {
       "line": 1,
       "text": "1. 学习三种采集体验技能收集材料，游民亦可习得。",
-      "type": "gathering-overview",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "技能伐木体验 挖掘体验狩猎体验",
-      "type": "table-heading",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "所在所坐标法兰城(195.50)职业介绍所(8.11)圣拉鲁卡村(39.70)赛杰利亚酒吧(48.76)伊尔村(48.76)",
-      "type": "table-row",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "NPC募集樵夫的阿空募集矿工的洛伊猎人亚烈格尔",
-      "type": "table-row",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "采集地点东门外(483.192)国营24道坑地下1楼 伊尔村西北(649.289)",
-      "type": "table-row",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "所需物品孟宗竹*20铜*20鹿皮*20",
-      "type": "table-row",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.2"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "2. 法兰城(195.50)→职业介绍所(9.5)→募集打铁工的阿黑，对话，习得锻造体验。",
-      "type": "skill-learning",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.1"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "◆使用技能将材料合成【试炼剑】或【试练衣】，不可交易、丢地不消失、可存银行",
-      "type": "craft-result",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.1"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "3. 法兰城(238.64)→冒险者旅馆(14.6)→好眼力的霍依，对话，交出【试炼剑】或【试练衣】，获得【武器工推荐信】或【防具工推荐信】。",
-      "type": "recommendation-exchange",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "4. 圣拉鲁卡村(26.70)|(32.70)→装备品店(14.4)→1楼小房间(9.3)→地下工房，找对应的师傅就职，再学习技能。",
-      "type": "employment-step",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.1"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.2"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.3"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.4"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.5"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.7"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.8"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.9"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.10"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.11"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.12"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.13"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.14"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "武器类制造职业指导NPC位置",
-      "type": "career-heading",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "铸剑工铸剑工辛拉葛（36.36）",
-      "type": "career-row",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.jobMentors.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.0"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "造斧工造斧师傅哈葛彼特（22.29）",
-      "type": "career-row",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.jobMentors.1"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.1"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "造枪工造枪师傅强米（39.31）",
-      "type": "career-row",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.jobMentors.2"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.2"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "造弓工造弓师傅梅葛拉（25.18）",
-      "type": "career-row",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.jobMentors.3"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.3"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "造杖工造杖师傅希葛斯（38.18）",
-      "type": "career-row",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.jobMentors.4"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.4"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "小刀工造小刀师傅依芙（33.33）",
-      "type": "career-row",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.jobMentors.5"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.5"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "投掷武器工造投掷武器工哈比（33.17）",
-      "type": "career-row",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.jobMentors.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.6"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "防具类制造职业指导NPC位置",
-      "type": "career-heading",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "头盔工制头盔师傅海珊（15.31）",
-      "type": "career-row",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.jobMentors.7"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.7"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "铠甲工制铠甲师傅杨杨（27.31）",
-      "type": "career-row",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.jobMentors.8"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.8"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "制靴工制长靴师傅南罗（17.31）",
-      "type": "career-row",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.jobMentors.9"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.9"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "造盾工造盾师傅索特罗（11.41）",
-      "type": "career-row",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.jobMentors.10"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.10"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "帽子工作帽子师傅澎索那（13.25）",
-      "type": "career-row",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.jobMentors.11"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.11"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "裁缝工作衣服师傅荷米拉（17.18）",
-      "type": "career-row",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.jobMentors.12"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.12"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "长袍工作长袍师傅林浦（17.17）",
-      "type": "career-row",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.jobMentors.13"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.13"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "制鞋工制鞋师奇霍（19.25）",
-      "type": "career-row",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.jobMentors.14"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.14"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "武器类制造技能指导NPC位置",
-      "type": "skill-heading",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "铸剑铸剑名师小村正法兰城西门外（446.101）小村正之洞窟（15.6）",
-      "type": "skill-row",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.skillMentors.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.2"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "造斧造斧工波比尔（24.32）",
-      "type": "skill-row",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.skillMentors.1"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.3"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "造枪造枪工雷厚尔（39.34）",
-      "type": "skill-row",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.skillMentors.2"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.4"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "造弓造弓工飞利欧司（24.15）",
-      "type": "skill-row",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.skillMentors.3"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.5"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "造杖造杖工泛吉翁（37.20）",
-      "type": "skill-row",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.skillMentors.4"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.6"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "造小刀造小刀工奇尔（31.36）",
-      "type": "skill-row",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.skillMentors.5"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.7"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "造投掷武器造投掷武器工修德（31.17）",
-      "type": "skill-row",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.skillMentors.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.8"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "防具类制造技能指导NPC位置",
-      "type": "skill-heading",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "制头盔制头盔工卡法（15.27）",
-      "type": "skill-row",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.skillMentors.7"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.9"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "造铠铠甲名师科比先法兰城南门外（421.308）小备前之洞窟（7.7）",
-      "type": "skill-row",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.skillMentors.8"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.10"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "制靴制长靴工阿姆吉（19.30）",
-      "type": "skill-row",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.skillMentors.9"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.11"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "造盾造盾工葛德（30.31）",
-      "type": "skill-row",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.skillMentors.10"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.12"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "作帽子作帽子工门赛（11.25）",
-      "type": "skill-row",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.skillMentors.11"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.13"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "制衣服作衣服工雅尼达（13.18）",
-      "type": "skill-row",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.skillMentors.12"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.14"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "制长袍作长袍工吉鲁（12.18）",
-      "type": "skill-row",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.skillMentors.13"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.15"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "制鞋制鞋工哥利（23.24）",
-      "type": "skill-row",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.skillMentors.14"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.16"
+        }
+      ]
     }
   ],
   "verification": {

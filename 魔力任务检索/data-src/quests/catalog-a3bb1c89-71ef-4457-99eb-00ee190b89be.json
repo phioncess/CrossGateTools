@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-a3bb1c89-71ef-4457-99eb-00ee190b89be",
   "name": "勇气MAX",
   "aliases": [
@@ -3115,770 +3115,2330 @@
     {
       "line": 1,
       "text": "1.法兰城银行门口招募信息栏调查（233,107），得到【招募信息】（双击可获得消息）。",
-      "type": "item-acquisition",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "2.到勇气训练所（116,119），持有【招募信息】与服务生对话，选择“是”，付1000G进入1阶；选择“否”，付2000G进入2阶 。",
-      "type": "versioned-entry-cost",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "◆无【招募信息】，入1阶、2阶战费为10000G、20000G",
-      "type": "full-entry-cost",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "3.经过六连战，无补给机会，胜利后交出【参加训练证明】，换得奖励并传送回法兰城。",
-      "type": "continuous-battle-reward",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.7"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "奖励：",
-      "type": "reward-heading",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "1阶：天空之枪、帕鲁凯斯之斧、村正、生命力回复药（1000）*3、小护士家庭号*10、翻腾的海洋之心、LV9紫宝石、海贼王变身卡、露比变身卡、佛利波罗变身卡、牛鬼变身卡、纯白吓人箱进化图ABC、龙卷之戒、勾玉戒指、黑暗戒指、十全十美安全帽",
-      "type": "reward-pool",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.9"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.10"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.11"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.12"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.14"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.15"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "2阶：强运袋、天空之枪、帕鲁凯斯之斧、村正、梦幻想签名专辑、LV9紫宝石、技能学习证、金刚不坏安全帽·改、纯白吓人箱进化图DE",
-      "type": "reward-pool",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.8"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "◆双击【强运袋】获得宠物“山飞甲”或“暗黑僧侣”。2020活动任务取消奖励品“王者守护神”。",
-      "type": "container-pet-pool",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.outputs.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.8"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "战斗：六连战，无补给机会",
-      "type": "battle-rule",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "1阶：",
-      "type": "stage-heading",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "第一战——BOSS出自《诅咒的迷宫》任务，双王",
-      "type": "round-heading",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "训练员*上，LV.70，HP 11000，邪魔系，属性：全30，抗咒；技能：防御、反击、连击、诸刃、乾坤一掷、崩击、吸血攻击、魔法无效（间隔2回合、自身）、魔法封印（击倒训练员*下后追加）",
-      "type": "battle-enemy",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.0.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.0.enemies.0"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "训练员*下，LV.70，HP 11000，邪魔系，属性：全30，抗咒；技能：四属性超强攻击魔法、攻击魔法防御、吸血魔法、攻击无效（间隔2回合、自身）、超强即死魔法（击倒训练员*上后追加）",
-      "type": "battle-enemy",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.0.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.0.enemies.1"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◇打法建议：先合下再合上",
-      "type": "strategy-note",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.0"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "第二战——BOSS出自《再生花园》任务，无限刀流艾吉",
-      "type": "round-heading",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.1"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "训练员*上LV.80，HP 11000，人形系，属性：全40，不抗咒；技能：召唤训练员*下LV.55*2（训练员*下LV.55少于4只时）、魔法封印、恢复魔法、诸刃、诸刃",
-      "type": "battle-enemy",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.1.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.1.enemies.0"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "训练员*下LV.55，HP 1500，人形系，属性：全20，不抗咒；技能：自爆（训练员*上死后追加）、跳舞·回复、暗杀、诸刃、连击",
-      "type": "battle-enemy",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.1.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.1.enemies.1"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "◇打法建议：合击本体，后合击分身",
-      "type": "strategy-note",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.1"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "第三战——BOSS出自《路霸阿德基姆》任务，阿德基姆",
-      "type": "round-heading",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.2"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "训练员 LV.70， HP 12000，邪魔系，属性：全40，不抗咒；技能：诸刃、乾坤一掷、混乱攻击、明镜止水（血量少于25%）、魔法反弹、昏睡魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.2.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.2.enemies.0"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "◇打法建议：直接合击BOSS",
-      "type": "strategy-note",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.2"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "第四战——BOSS出自《狮鹫兽捕捉》任务，狮鹫兽",
-      "type": "round-heading",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.3"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "训练员 LV.63*上，HP 10000，飞行系，属性：地80水50火50风50，不抗咒；技能：连击、乾坤一掷、混乱攻击、遗忘攻击、昏睡攻击、陨石魔法、强力陨石魔法、酒醉攻击、明镜止水（血量少于25%）",
-      "type": "battle-enemy",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.3.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.3.enemies.0"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "训练员 LV.52*中，HP 11000，飞行系，属性：地80水50火50风50，不抗咒；技能：连击、乾坤一掷、混乱攻击、昏睡攻击、酒醉攻击、遗忘攻击、陨石魔法、强力陨石魔法、强力石化魔法、超强石化魔法、明镜止水（血量少于50%）",
-      "type": "battle-enemy",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.3.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.3.enemies.1"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "训练员 LV.61*下，HP 10000，飞行系，属性：地80水50火50风50，不抗咒；技能：连击、乾坤一掷、混乱攻击、遗忘攻击、昏睡攻击、陨石魔法、强力陨石魔法、酒醉攻击、明镜止水（血量少于25%）",
-      "type": "battle-enemy",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.3.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.3.enemies.2"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "◇打法建议：建议装备纯风水晶，先合击上小怪，后合击下小怪，最后合击BOSS",
-      "type": "strategy-note",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.3"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "第五战（回力标）——BOSS出自《商队的袭击》任务，兰/艾8-伊瓦希米兹",
-      "type": "round-heading",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.4"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "训练员*上，LV.75，HP 7500，邪魔系，属性：全30，不抗咒；技能：召唤训练员LV.75*2（召唤训练员皆被打倒后）、攻击、圣盾、超强中毒魔法、攻击反弹、魔法反弹、",
-      "type": "battle-enemy",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.4.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.4.enemies.0"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "召唤训练员，LV.75 HP 7500，邪魔系，属性：全30，不抗咒；技能：自爆（训练员*上死后追加）、攻击、阳炎、攻击反弹、魔法反弹",
-      "type": "battle-enemy",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.4.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.4.enemies.1"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "◇打法建议：第一回合合击BOSS，待BOSS召唤后，先合击上分身，并将下分身打掉5000~6000血，之后合击BOSS，最后杀掉下分身",
-      "type": "strategy-note",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.4"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "第六战——BOSS出自《帕鲁凯斯的亡灵》任务，阿夏芙",
-      "type": "round-heading",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.5"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "训练员*上，LV.70~80，HP 6500，邪魔系，属性：全30，抗咒；技能：攻击、防御、攻击魔法防御、攻击吸收、攻击反弹、攻击无效、冰冻魔法、风刃魔法、强力陨石魔法、强力风刃魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.5.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.5.enemies.0"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "训练员*中上，LV.70~80，HP 6000，邪魔系，属性：全30，抗咒；技能：攻击、防御、攻击吸收、攻击反弹、魔法吸收、陨石魔法、强力火焰魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.5.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.5.enemies.1"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "训练员*中下，LV.70~80，HP 6500，邪魔系，属性：全30，抗咒；技能：攻击、防御、攻击吸收、攻击反弹、魔法吸收、强力风刃魔法、超强风刃魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.5.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.5.enemies.2"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "训练员*下，LV.70~80，HP 6500，邪魔系，属性：全30，抗咒；技能：攻击、防御、攻击吸收、攻击反弹、攻击无效、魔法吸收、陨石魔法、风刃魔法、强力火焰魔法、超强冰冻魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.5.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.5.enemies.3"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "◇打法建议：从上到下依次合击",
-      "type": "strategy-note",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-1-six-rounds.rounds.5"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "2阶：",
-      "type": "stage-heading",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "第一战——BOSS出自《返魂之珠》任务",
-      "type": "round-heading",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.0"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "露比，LV81，HP13000 ，2动 ，邪魔系，全30，抗咒；技能：圣盾、强力陨石魔法（喽啰<4时追加）、强力火焰魔法（喽啰<4时追加）、攻击吸收、攻击反弹、攻击无效、魔法反弹、超强混乱魔法（喽啰<4时追加）、强力恢复魔法、连击EX（魔量<5%时）",
-      "type": "battle-enemy",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.0.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.0.enemies.0"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "水果蝙蝠，LV71，HP4500，邪魔系，全25，不抗咒；技能：攻击、乾坤一掷EX、诸刃EX、石化攻击",
-      "type": "battle-enemy",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.0.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.0.enemies.1"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "口袋龙/迷你龙/雏龙/穴龙X8， LV69，HP3500，邪魔系，全25，不抗咒； 技能：10级单魔",
-      "type": "battle-enemy",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.0.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.0.enemies.2"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "◇打法：上宠合击，蝙蝠-露比-小龙，或者蝙蝠-小龙杀一半-露比-小龙，留最后只小龙时，换魔宠，血补满，传教尽量保证不费魔，靠巫师恢复基本足够",
-      "type": "strategy-note",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.0"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "第二战——BOSS出自《沉默之龙》任务",
-      "type": "round-heading",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.1"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "艾儿卡丝，LV80，HP15000，2动，邪魔系，全50，抗咒；技能：攻击、防御、超强火焰/陨石魔法、强力风刃/冰冻魔法、强力昏睡/混乱魔法、超强即死魔法（魔量＜5%，成功率近乎100%）",
-      "type": "battle-enemy",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.1.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.1.enemies.0"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "艾儿卡丝的手下（男）*4，Lv.64~66，HP4000，2动，邪魔系，全25，不抗咒；技能：攻击、诸刃、乾坤一掷、连击、混乱攻击、圣盾、抢钱",
-      "type": "battle-enemy",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.1.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.1.enemies.1"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "艾儿卡丝的手下（女）*4，Lv.64~66，HP4000，2动，邪魔系，全25，不抗咒；技能：攻击、乾坤一掷、气功弹、战栗袭心、防御",
-      "type": "battle-enemy",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.1.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.1.enemies.2"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "◇打法：魔宠强力，人合击，优先杀女的防止战栗，小的死完换宠合击，传教只拉人洁净和扔瓶子，靠巫师恢复和瓶子过",
-      "type": "strategy-note",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.1"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "第三战——BOSS出自《魔龙德拉贡》任务",
-      "type": "round-heading",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.2"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "魔龙德拉贡，LV80， HP12000 ，2动，邪魔系，全50 技能：攻击、防御、圣盾、连击（我方使用战栗袭心后追加）、乾坤一掷、气功弹、火焰魔法、强力火焰魔法、超强火焰魔法、大地之怒",
-      "type": "battle-enemy",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.2.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.2.enemies.0"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "◇打法：上宠合击",
-      "type": "strategy-note",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.2"
+        }
+      ]
     },
     {
       "line": 51,
       "text": "第四战——BOSS出自《森罗万象》任务",
-      "type": "round-heading",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.3"
+        }
+      ]
     },
     {
       "line": 52,
       "text": "土之斗神，地100，邪魔系，LV99，HP15000，2动，抗咒；技能：明镜止水，气功弹，混乱攻击，乾坤，大地之怒，连击，气功弹EX（魔量小于5%）",
-      "type": "battle-enemy",
       "sourceLines": [
         52
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.3.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.3.enemies.0"
+        }
+      ]
     },
     {
       "line": 53,
       "text": "水之斗神，水100，邪魔系，LV99，HP15000，2动，抗咒；技能：明镜止水，石化攻击，吸血攻击，超睡，圣盾，连击，气功弹EX（魔量小于5%）",
-      "type": "battle-enemy",
       "sourceLines": [
         53
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.3.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.3.enemies.1"
+        }
+      ]
     },
     {
       "line": 54,
       "text": "火之斗神，火100，邪魔系，LV99，HP15000，2动，抗咒；技能：明镜止水，乾坤，诸刃，圣盾，大地之怒，炎阳，战栗袭心，气功弹EX（魔量小于5%）",
-      "type": "battle-enemy",
       "sourceLines": [
         54
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.3.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.3.enemies.2"
+        }
+      ]
     },
     {
       "line": 55,
       "text": "风之斗神，风100，邪魔系，LV99，HP15000，2动，抗咒；技能：明镜止水，气功弹，圣盾，混乱攻击，吸血攻击，魔法封印，气功弹EX（魔量小于5%）",
-      "type": "battle-enemy",
       "sourceLines": [
         55
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.3.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.3.enemies.3"
+        }
+      ]
     },
     {
       "line": 56,
       "text": "◇打法：不带宠，风→火→土→水或者火→地→风→水，属反很重要。打法不一自行选择最佳方案",
-      "type": "strategy-note",
       "sourceLines": [
         56
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.3"
+        }
+      ]
     },
     {
       "line": 57,
       "text": "第五战——BOSS出自《牛鬼的逆袭》任务",
-      "type": "round-heading",
       "sourceLines": [
         57
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.4"
+        }
+      ]
     },
     {
       "line": 58,
       "text": "地缚灵罗连斯，LV80，2动，HP8000，水50火50，邪魔系，抗咒； 技能：攻击、暗杀（目标我方人物）、超强即死魔法、崩击Lv10、超强火焰魔法Lv10、超强恢复魔法Lv10、属性反转Lv10、混乱魔法Lv10、超强混乱魔法、召唤亡灵军（男）*2/（女）*2",
-      "type": "battle-enemy",
       "sourceLines": [
         58
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.4.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.4.enemies.0"
+        }
+      ]
     },
     {
       "line": 59,
       "text": "帝国兵的亡灵（男）X2，LV60，2动，HP2600，地50水50，不死系，不抗咒；技能：10级单魔，阳炎",
-      "type": "battle-enemy",
       "sourceLines": [
         59
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.4.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.4.enemies.1"
+        }
+      ]
     },
     {
       "line": 60,
       "text": "帝国兵的亡灵（女）X2，LV60，2动，HP2700，火50风50，不死系，不抗咒；技能：连击·破，毒性攻击，阳炎",
-      "type": "battle-enemy",
       "sourceLines": [
         60
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.4.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.4.enemies.2"
+        }
+      ]
     },
     {
       "line": 61,
       "text": "◇打法：上宠合击，罗连斯-男-女",
-      "type": "strategy-note",
       "sourceLines": [
         61
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.4"
+        }
+      ]
     },
     {
       "line": 62,
       "text": "第六战——BOSS出自《森罗万象》任务",
-      "type": "round-heading",
       "sourceLines": [
         62
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.5"
+        }
+      ]
     },
     {
       "line": 63,
       "text": "人类？，LV120，HP20000，2动，邪魔系，全30，抗咒；技能：攻击、诸刃EX、乾坤一掷ES、混乱攻击、气功弹EX、阳炎EX、战栗袭心、连击、超强混乱魔法、气功弹EX（MP＜5%时）",
-      "type": "battle-enemy",
       "sourceLines": [
         63
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.5.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.5.enemies.0"
+        }
+      ]
     },
     {
       "line": 64,
       "text": "◇打法：上宠合击",
-      "type": "strategy-note",
       "sourceLines": [
         64
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.rounds.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.stage-2-six-rounds.rounds.5"
+        }
+      ]
     }
   ],
   "verification": {

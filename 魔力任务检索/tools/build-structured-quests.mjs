@@ -94,7 +94,11 @@ if (report.errors.length) {
 const presentationCoverage = compilePresentationFacts(database);
 report.presentationCoverage = presentationCoverage;
 writeText(reportPath, `${JSON.stringify(report, null, 2)}\n`);
-writeText(outputPath, `// 自动生成：唯一权威来源为 data-src/database.json 与 data-src/quests/*.json；展示字段由 tools/presentation-facts.mjs 显式编译。\nglobalThis.QUEST_DATA = ${JSON.stringify(database)};\n`);
+// Entity bindings are a build-time evidence index; the reader never consumes them.
+// Keep their full validated form in canonical JSON and the migration report.
+const runtimeDatabase=structuredClone(database);
+for(const quest of Object.values(runtimeDatabase.quests))for(const segment of quest.segments)delete segment.bindings;
+writeText(outputPath, `// 自动生成：唯一权威来源为 data-src/database.json 与 data-src/quests/*.json；展示字段由 tools/presentation-facts.mjs 显式编译；证据绑定留在正式源数据。\nglobalThis.QUEST_DATA = ${JSON.stringify(runtimeDatabase)};\n`);
 console.log(JSON.stringify({
   mode: 'publish-structured-data-only',
   sourcePath: questRecordsDir,

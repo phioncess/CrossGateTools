@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-adf517fe-0e82-41d8-98a2-a6958b08b0b9",
   "name": "春风带来的希望",
   "aliases": [
@@ -704,7 +704,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "亚诺曼城的旅馆",
+            "coordinate": "151.151",
+            "sourceLines": [
+              38
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "appraise-small-badge",
@@ -1476,494 +1489,1228 @@
     {
       "line": 1,
       "text": "1.前往雷欧娜村与军官普林西比（25.50）对话，获得【寿喜锅订单】、【药水订单】。",
-      "type": "grouped-acquisition",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆此步仅二转及以上可接",
-      "type": "promotion-gate",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "◆杰诺姆岛/雷欧娜村抵达方式参考《前往东岛》或《偷闲的船长》任务",
-      "type": "route-reference",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "2.前往杰诺姆岛义勇军前哨战（418.204）与医生戴斯（7.5）对话，交出【寿喜锅订单】、【药水订单】、1组【寿喜锅】、1组【生命回复药（400）】获得【巴克达的情报】。",
-      "type": "combined-exchange",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.routePoints.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "◆【巴克达的情报】亦可在《饕客兄弟》任务中获得；只需队内1人持有即可",
-      "type": "alternate-source",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "◆杰诺姆岛可遇魔物：Lv.30~35水晶螃蟹、曼陀罗草，数量：2~8",
-      "type": "island-encounter",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "◆杰诺姆岛行走路线：",
-      "type": "route-heading",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "3.前往杰诺姆岛（314.166）处，由持有【巴克达的情报】的角色与士兵英特对话，交出【巴克达的情报】进入贝力斯遗迹。通过黄色传送石（9.3）进入贝力斯遗迹地下1楼。",
-      "type": "party-item-entry",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "◆贝力斯遗迹：",
-      "type": "maze-heading",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "随机迷宫，约14~16层。",
-      "type": "maze-detail",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "迷宫刷新时间：8小时。",
-      "type": "maze-refresh",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "魔物为Lv.40~42大蝙蝠、血骷髅，数量：2~10。",
-      "type": "maze-encounter",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "4.通过随机迷宫至魔族军总部，与魔弓巴克达（25.9）对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bakeda-two-rounds"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◆本次战斗为两连战",
-      "type": "consecutive-rule",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bakeda-two-rounds"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "◆第一场战斗信息：",
-      "type": "round-heading",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bakeda-two-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bakeda-two-rounds.rounds.0"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "Lv.49魔弓巴克达（2动），血量约5000，野兽系，属性：地100；技能：攻击、防御、乱射",
-      "type": "battle-enemy",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bakeda-two-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bakeda-two-rounds.rounds.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bakeda-two-rounds.rounds.0.enemies.0"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "Lv.50血骷髅*3（1动），血量约2000，属性：火70风30；技能：攻击、防御、战栗袭心",
-      "type": "battle-enemy",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bakeda-two-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bakeda-two-rounds.rounds.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bakeda-two-rounds.rounds.0.enemies.1"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "Lv.50大蝙蝠*2（1动），血量约2000，属性：地70水30；技能：攻击、防御、吸血攻击、强力补血魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bakeda-two-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bakeda-two-rounds.rounds.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bakeda-two-rounds.rounds.0.enemies.2"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "◆第二场战斗信息：",
-      "type": "round-heading",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bakeda-two-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bakeda-two-rounds.rounds.1"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "Lv.54~59魔弓巴克达（2动），血量7500，野兽系，属性：地100；技能：攻击、防御、乾坤一掷、乱射",
-      "type": "battle-enemy",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bakeda-two-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bakeda-two-rounds.rounds.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bakeda-two-rounds.rounds.1.enemies.0"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "Lv.55血骷髅*5（1动），血量约3000，属性：火70风30；技能：攻击、防御、战栗袭心",
-      "type": "battle-enemy",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bakeda-two-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bakeda-two-rounds.rounds.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bakeda-two-rounds.rounds.1.enemies.1"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "Lv.55大蝙蝠*4（1动），血量约3000，属性：地70水30；技能：攻击、防御、吸血攻击、强力补血魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bakeda-two-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bakeda-two-rounds.rounds.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bakeda-two-rounds.rounds.1.enemies.2"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "◇打法建议：群攻职业开局直接放技能清小怪，非群攻职业直接合击BOSS",
-      "type": "strategy-note",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bakeda-two-rounds"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bakeda-two-rounds.rounds.1"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "5.战斗胜利后随机获得【单手剑？】、【希望水晶】*0~3、【巴克达的签名照】、【魔石】*0~3。",
-      "type": "battle-drop",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "◆【希望水晶】随机为地6水6或风6地6属性；数值为+攻击+防御-敏捷-精神和-攻击-防御+敏捷+精神两种；装备后获得称号“带来希望的人”，不可交易",
-      "type": "equipment-variants",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "◇据贴吧精华帖《水一帖~~~~掉落机制详细解析》-作者黄金史莱姆，总结的掉落分配 ：",
-      "type": "drop-reference",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "① 哪个掉，打死一瞬间给活着的人分配",
-      "type": "drop-mechanic",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "② 按顺序掉，物品满会损失掉落",
-      "type": "drop-mechanic",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "③ 掉不掉，开局确定",
-      "type": "drop-mechanic",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "◆【单手剑？】鉴定后为【铜剑】",
-      "type": "appraisal-result",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.7"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "◆【铜剑】：Lv.1单手剑，耐久300，攻击力+8~12",
-      "type": "equipment-detail",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "6.与魔弓巴克达对话切换场景，与法师葛尔（25.13）对话获得【遗迹的情报】。",
-      "type": "item-acquisition",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.8"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "◆切换场景后可于当前地图内随机遇到固定魔物（此处可烧被动技能）：",
-      "type": "training-encounter-heading",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.2"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "Lv.48~50，血骷髅*1，技能：逃跑",
-      "type": "training-enemy",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.2"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "Lv.48~50，大蝙蝠*1，技能：逃跑",
-      "type": "training-enemy",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.2"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "7.调查传送石（6.29）传送回义勇军前哨战。再与法师葛尔（5.4）对话，交出【遗迹的情报】，获得【摩顿村的情报】，任务完结。",
-      "type": "completion-exchange",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.9"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "【巴克达的签名照】支线：",
-      "type": "side-heading",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "1.前往亚诺曼城的旅馆（151.151）二楼，持有【巴克达的签名照】与妮娜拉（24.26）对话，交出【巴克达的签名照】获得【徽章？】。",
-      "type": "side-exchange",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.7"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.10"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "◆【徽章？】鉴定后为【巴克达后援会荣誉小徽章】；装备后获得称号“巴克达后援会会员”",
-      "type": "appraisal-result",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.8"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.11"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.1"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "2.集齐3个【巴克达后援会荣誉小徽章】与妮娜拉对话，兑换【巴克达后援会荣誉大徽章】，支线完结。",
-      "type": "badge-exchange",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.9"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.12"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "◆【巴克达后援会荣誉大徽章】装备后获得称号“巴克达后援会会长”",
-      "type": "equipment-title",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.2"
+        }
+      ]
     }
   ],
   "verification": {

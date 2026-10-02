@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {loadQuestDatabase,projectDir} from './quest-database.mjs';
-import {compilePresentationFacts} from './presentation-facts.mjs';
+import {compilePresentationFacts,stepSemanticFields} from './presentation-facts.mjs';
 
 // Explicit records only: never scans archives, excluded files, caches, or legacy data.
 const database = loadQuestDatabase();
@@ -21,13 +21,15 @@ for (const quest of Object.values(database.quests)) {
   for (const event of [...(quest.itemEvents?.inputs || []),...(quest.itemEvents?.acquisitions || []),...(quest.rewardEvents || [])]) checkStep(event,'step','item-event');
   for (const version of Object.values(quest.versions || {})) for (const tier of Object.values(version.tiers || {})) for (const entry of [...Object.values(tier.battles || {}),...Object.values(tier.encounters || {})]) checkStep(entry,'triggerStep','battle');
   for (const step of quest.flow.steps) {
-    const semanticKeys = new Set(step.presentationFacts.map(row => row.key));
+    const semanticKeys = new Set([...stepSemanticFields,...step.presentationFacts.map(row => row.key)]);
+    if (step.optional === true && step.branch) semanticKeys.add('optional');
     step.presentationSections.forEach(section => semanticKeys.add(section.key));
     if (semanticKeys.has('rewardEventRefs')) ['rewardEventRef','rewardPool'].forEach(key => semanticKeys.add(key));
     const remaining = Object.keys(step).filter(key => !baseStepKeys.has(key) && !semanticKeys.has(key));
     if (remaining.length) report.genericStepCandidates.push({quest:quest.name,id:quest.id,step:step.id,fields:remaining});
     for (const item of step.outputs) {
-      if (!knownRewards.has(item.item) && Object.keys(item.properties || {}).some(key => valueProperties.has(key))) report.valuableOutputCandidates.push({quest:quest.name,id:quest.id,step:step.id,item:item.item,properties:item.properties,sourceLines:item.sourceLines});
+      const hasValue = Object.entries(item.properties || {}).some(([key,value]) => valueProperties.has(key) && value !== false && value != null && value !== '' && !(key === 'category' && value === '不明'));
+      if (!knownRewards.has(item.item) && hasValue) report.valuableOutputCandidates.push({quest:quest.name,id:quest.id,step:step.id,item:item.item,properties:item.properties,sourceLines:item.sourceLines});
     }
   }
   const groups = new Map();

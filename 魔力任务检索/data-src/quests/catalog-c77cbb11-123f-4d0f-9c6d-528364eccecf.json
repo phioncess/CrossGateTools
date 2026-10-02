@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-c77cbb11-123f-4d0f-9c6d-528364eccecf",
   "name": "永远",
   "aliases": [
@@ -1035,7 +1035,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "凯特",
+            "coordinate": "18.7",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "giant-gate",
@@ -1794,7 +1807,27 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "npcLocations": {
+          "清晨": "164.53",
+          "白昼": "83.139",
+          "黄昏": "162.151",
+          "黑夜": "89.51"
+        },
+        "routePoints": [
+          {
+            "name": "哥拉尔镇崇拜炼金术的女孩",
+            "coordinate": "165.96",
+            "sourceLines": [
+              89,
+              90
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       }
     ],
     "notes": [
@@ -4471,2426 +4504,7398 @@
     {
       "line": 1,
       "text": "1.清晨或白天前往法兰城冒险者旅馆1楼，持有【炽热的生命之光】与赫顿摩尔（17.14）对话，传送至阿斯法地下迷宫。",
-      "type": "route-step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆【炽热的生命之光】获得方式参考《追击》任务",
-      "type": "requirement",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "◆阿斯法地下迷宫为随机迷宫，约14层；",
-      "type": "maze-detail",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "魔物为石怪、冰怪、金怪、银怪（怀旧服等级Lv.74-77；时长服为Lv.121~127）",
-      "type": "maze-detail",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "2.通过随机迷宫抵达阿斯法密室，与凯特（18.7）对话，传送至巨石之牢狱。",
-      "type": "route-step",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "◆巨石之牢狱为随机迷宫，固定两层；",
-      "type": "maze-detail",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "魔物为武装骷髅、大地翼龙（怀旧服为Lv.80；时长服为Lv.130）；击倒魔物随机获得【巨石之证】",
-      "type": "maze-detail",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "◆【巨石之证】可丢地",
-      "type": "requirement",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "3.通过随机迷宫抵达巨石之牢狱底层，队长持有【巨石之证】*10与看守者对话，交出【巨石之证】进入战斗。",
-      "type": "route-step",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "◆战斗信息：（怀旧服）",
-      "type": "battle-detail",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.giant"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "Lv.85死神；血量约8000；属性：地100；技能：攻击、防御、即死魔法、超强陨石魔法、超强石化魔法",
-      "type": "battle-detail",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.giant"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.giant.enemies.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "Lv.80武装骷髅*2；血量约2800；属性：地70风30；技能：攻击、防御、吸血攻击、昏睡攻击",
-      "type": "battle-detail",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.giant"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.giant.enemies.1"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "大地翼龙*2；血量约2800；属性：地100；技能：攻击、防御、毒性攻击、陨石魔法、强力陨石魔法",
-      "type": "battle-detail",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.giant"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.giant.enemies.2"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◆战斗信息：（时长服）",
-      "type": "battle-detail",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.giant"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "Lv135死神，血量约12000；技能：攻击、防御、即死魔法",
-      "type": "battle-detail",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.giant"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.giant.enemies.0"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "Lv.130武装骷髅*2，血量约4500",
-      "type": "battle-detail",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.giant"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.giant.enemies.1"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "Lv.130大地翼龙*2，血量约4500",
-      "type": "battle-detail",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.giant"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.giant.enemies.2"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "4.战斗胜利后进入寒冰之牢狱。",
-      "type": "route-step",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "◆寒冰之牢狱为随机迷宫，固定两层；",
-      "type": "maze-detail",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "魔物为地狱骷髅、寒冰翼龙（怀旧服为Lv.80；时长服为Lv.130）；击倒魔物随机获得【寒冰之证】",
-      "type": "maze-detail",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "◆【寒冰之证】可丢地",
-      "type": "requirement",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "5.通过随机迷宫抵达寒冰之牢狱底层，队长持有【寒冰之证】*10与看守者对话，交出【寒冰之证】进入战斗。",
-      "type": "route-step",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "◆战斗信息：（怀旧服）",
-      "type": "battle-detail",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.ice"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "Lv.85死神；血量约8000属性：水100；技能：攻击、防御、即死魔法、超强冰冻魔法、超强昏睡魔法",
-      "type": "battle-detail",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.ice"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.ice.enemies.0"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "Lv.80地狱骷髅*2；血量约2800属性：地30水70；技能：攻击、防御、吸血攻击、乾坤一掷",
-      "type": "battle-detail",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.ice"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.ice.enemies.1"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "寒冰翼龙*2；血量约2800属性：水100；技能：攻击、防御、混乱攻击、强力昏睡魔法",
-      "type": "battle-detail",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.ice"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.ice.enemies.2"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "◆战斗信息：（时长服）",
-      "type": "battle-detail",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.ice"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.ice"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "Lv135死神，血量约12000；技能：攻击、防御、即死魔法",
-      "type": "battle-detail",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.ice"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.ice"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.ice.enemies.0"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "Lv.130地狱骷髅*2，血量约4500",
-      "type": "battle-detail",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.ice"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.ice"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.ice.enemies.1"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "Lv.130寒冰翼龙*2，血量约4500",
-      "type": "battle-detail",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.ice"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.ice"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.ice.enemies.2"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "◆战斗结束后会出现连战，魔物为海盗骷髅，有几率出现Lv.1海盗骷髅",
-      "type": "battle-detail",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.ice"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.ice.followUpEncounter"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "6.战斗胜利后进入烈焰之牢狱。",
-      "type": "route-step",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "◆烈焰之牢狱为随机迷宫，固定两层；",
-      "type": "maze-detail",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "魔物为血骷髅、火焰翼龙（怀旧服为Lv.80；时长服为Lv.130）；击倒魔物随机获得【烈焰之证】",
-      "type": "maze-detail",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "◆【烈焰之证】可丢地",
-      "type": "requirement",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "7.通过随机迷宫抵达烈焰之牢狱底层，队长持有【烈焰之证】*10与看守者对话，交出【烈焰之证】进入战斗。",
-      "type": "route-step",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "◆战斗信息：（怀旧服）",
-      "type": "battle-detail",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.fire"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "Lv.85死神；血量约8000属性：火100；技能：攻击、防御、即死魔法、超强火焰魔法、超强中毒魔法",
-      "type": "battle-detail",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.fire"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.fire.enemies.0"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "Lv.80血骷髅*2；血量约2800属性：水30火70；技能：攻击、防御、吸血攻击、酒醉攻击",
-      "type": "battle-detail",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.fire"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.fire.enemies.1"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "火焰翼龙*2；血量约2800属性：火100；技能：攻击、防御、混乱攻击、强力中毒魔法",
-      "type": "battle-detail",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.fire"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.fire.enemies.2"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "◆战斗信息：（时长服）",
-      "type": "battle-detail",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.fire"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "Lv135死神，血量约12000；技能：攻击、防御、即死魔法",
-      "type": "battle-detail",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.fire"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.fire.enemies.0"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "Lv.130血骷髅*2，血量约4500",
-      "type": "battle-detail",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.fire"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.fire.enemies.1"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "Lv.130火焰翼龙*2，血量约4500",
-      "type": "battle-detail",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.fire"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.fire.enemies.2"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "8.战斗胜利后进入暴风之牢狱。",
-      "type": "route-step",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "◆暴风之牢狱为随机迷宫，固定两层；",
-      "type": "maze-detail",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "魔物为骷髅战士、烈风翼龙（怀旧服为Lv.80；时长服为Lv.130）；击倒魔物随机获得【暴风之证】",
-      "type": "maze-detail",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "◆【暴风之证】可丢地",
-      "type": "requirement",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "9.通过随机迷宫抵达暴风之牢狱底层，队长持有【暴风之证】*10与看守者对话，交出【暴风之证】进入战斗。",
-      "type": "route-step",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "◆战斗信息：（怀旧服）",
-      "type": "battle-detail",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.wind"
+        }
+      ]
     },
     {
       "line": 51,
       "text": "Lv.85死神；血量约8000属性：风100；技能：攻击、防御、即死魔法、超强风刃魔法、超强酒醉魔法",
-      "type": "battle-detail",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.wind"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.wind.enemies.0"
+        }
+      ]
     },
     {
       "line": 52,
       "text": "Lv.80骷髅战士*2；血量约2800属性：火30风70；技能：攻击、防御、吸血攻击、昏睡攻击",
-      "type": "battle-detail",
       "sourceLines": [
         52
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.wind"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.wind.enemies.1"
+        }
+      ]
     },
     {
       "line": 53,
       "text": "烈风翼龙*2；血量约2800属性：风100；技能：攻击、防御、石化攻击、强力酒醉魔法",
-      "type": "battle-detail",
       "sourceLines": [
         53
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.wind"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.wind.enemies.2"
+        }
+      ]
     },
     {
       "line": 54,
       "text": "◆战斗信息：（时长服）",
-      "type": "battle-detail",
       "sourceLines": [
         54
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.wind"
+        }
+      ]
     },
     {
       "line": 55,
       "text": "Lv135死神，血量约12000；技能：攻击、防御、即死魔法",
-      "type": "battle-detail",
       "sourceLines": [
         55
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.wind"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.wind.enemies.0"
+        }
+      ]
     },
     {
       "line": 56,
       "text": "Lv.130骷髅战士*2，血量约4500",
-      "type": "battle-detail",
       "sourceLines": [
         56
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.wind"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.wind.enemies.1"
+        }
+      ]
     },
     {
       "line": 57,
       "text": "Lv.130烈风翼龙*2，血量约4500",
-      "type": "battle-detail",
       "sourceLines": [
         57
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.wind"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.wind.enemies.2"
+        }
+      ]
     },
     {
       "line": 58,
       "text": "10.战斗胜利后传送至阿斯法地下实验室，调查3个奇怪的石雕中的一个，传送至3个实验室密道中的一个。",
-      "type": "route-step",
       "sourceLines": [
         58
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 59,
       "text": "3个奇怪的石雕分别对应3个实验室密道，顺序随机。",
-      "type": "maze-detail",
       "sourceLines": [
         59
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 60,
       "text": "◆3个实验室密道皆为随机迷宫，约20层；",
-      "type": "maze-detail",
       "sourceLines": [
         60
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 61,
       "text": "魔物为僵尸、丧尸、食尸鬼、腐尸（怀旧服等级Lv.~79；时长服为Lv.125~129）；",
-      "type": "maze-detail",
       "sourceLines": [
         61
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 62,
       "text": "若进入的是错误的迷宫，则需原路返回",
-      "type": "maze-detail",
       "sourceLines": [
         62
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 63,
       "text": "实验室密道（为作区别用数字标示，实际地图无数字提示，每个地图的入口水晶坐标不同，可记录坐标方便分辨）：",
-      "type": "maze-detail",
       "sourceLines": [
         63
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 64,
       "text": "◆此处若遇到迷宫刷新，刷新后直接进水晶后仍为密道N",
-      "type": "maze-detail",
       "sourceLines": [
         64
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.notes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 65,
       "text": "（例如在实验室密道①时遇到刷新，刷新后直接进入水晶仍为新的实验室密道①）",
-      "type": "maze-detail",
       "sourceLines": [
         65
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.notes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 66,
       "text": "◆实验室密道可以采用洗礼5封尘的神庙地图辨识方法，地图编号分别为：",
-      "type": "maze-detail",
       "sourceLines": [
         66
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.notes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 67,
       "text": "57096—通向主线最终BOSS；",
-      "type": "maze-detail",
       "sourceLines": [
         67
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 68,
       "text": "57095—解支线；",
-      "type": "maze-detail",
       "sourceLines": [
         68
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 69,
       "text": "57094—拿【真实之镜】",
-      "type": "maze-detail",
       "sourceLines": [
         69
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 70,
       "text": "实验室密道①——拿【真实之镜】：",
-      "type": "maze-detail",
       "sourceLines": [
         70
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 71,
       "text": "实验室密道①内寻找随机出现的赫顿摩尔并与之对话，获得【真实之镜】；",
-      "type": "route-step",
       "sourceLines": [
         71
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 72,
       "text": "◆获得【真实之镜】后，自动传送出迷宫",
-      "type": "maze-detail",
       "sourceLines": [
         72
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 73,
       "text": "实验室密道②——解支线：",
-      "type": "maze-detail",
       "sourceLines": [
         73
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 74,
       "text": "实验室密道②底层为囚室，为支线任务，需持有【宝藏密匙】才可解支线任务",
-      "type": "requirement",
       "sourceLines": [
         74
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 75,
       "text": "◆【宝藏密匙】获得方式参考《追击》任务支线部分",
-      "type": "requirement",
       "sourceLines": [
         75
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 76,
       "text": "实验室密道③——战主线最终BOSS：",
-      "type": "maze-detail",
       "sourceLines": [
         76
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 77,
       "text": "实验室密道③底层为阿斯法实验室，需持有【真实之镜】才可进入",
-      "type": "requirement",
       "sourceLines": [
         77
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 78,
       "text": "◆【真实之镜】获得方式见实验室密道①",
-      "type": "requirement",
       "sourceLines": [
         78
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 79,
       "text": "【宝藏密匙】支线：",
-      "type": "source-detail",
       "sourceLines": [
         79
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 80,
       "text": "①.全队成员都持有【宝藏密匙】时可单独进入囚室，进入后组队，由队长与被囚禁之人对话，获得【飘渺的生命之光】并传送至囚室。",
-      "type": "route-step",
       "sourceLines": [
         80
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 81,
       "text": "②.队长装备【飘渺的生命之光】与被囚禁之人对话，进入战斗。",
-      "type": "route-step",
       "sourceLines": [
         81
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.branch-five-battles"
+        }
+      ]
     },
     {
       "line": 82,
       "text": "◆本次战斗共5场（非连战），每次战斗结束后可休整。",
-      "type": "battle-detail",
       "sourceLines": [
         82
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.branch-five-battles"
+        }
+      ]
     },
     {
       "line": 83,
       "text": "每次战斗结束后可与被囚禁之人对话传送回第一个囚室，选择重新挑战或放弃挑战。",
-      "type": "battle-detail",
       "sourceLines": [
         83
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.branch-five-battles"
+        }
+      ]
     },
     {
       "line": 84,
       "text": "◆【飘渺的生命之光】耐久为2，注意对其保护",
-      "type": "requirement",
       "sourceLines": [
         84
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.branch-five-battles"
+        }
+      ]
     },
     {
       "line": 85,
       "text": "③.5场战斗结束后队长装备【飘渺的生命之光】与被囚禁之人对话，交出【飘渺的生命之光】全队传送至囚室。",
-      "type": "route-step",
       "sourceLines": [
         85
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.inputs.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.branch-five-battles"
+        }
+      ]
     },
     {
       "line": 86,
       "text": "④.调查亡者之骨，获得【神界秘宝】并传送至阿斯法地下实验室。",
-      "type": "route-step",
       "sourceLines": [
         86
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.outputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 87,
       "text": "⑤.继续完成主线任务，最终战斗胜利后与赫顿摩尔对话，交出【神界秘宝】获得【魂之碎片】*5，支线完结。",
-      "type": "route-step",
       "sourceLines": [
         87
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.15.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.15.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.10"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.11"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 88,
       "text": "◆【魂之碎片】兑换奖励：",
-      "type": "reward-detail",
       "sourceLines": [
         88
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 89,
       "text": "⑴持有【魂之碎片】*10与哥拉尔镇崇拜炼金术的女孩（165.96）对话，随机获得再生灵药、Lv.1翼龙、翼龙设计图A~E",
-      "type": "reward-detail",
       "sourceLines": [
         89
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.15.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.15.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.15.outputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.15.outputs.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.11"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.12"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.13"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.14"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 90,
       "text": "⑵持有【魂之碎片】*50与哥拉尔镇崇拜炼金术的女孩（165.96）对话，获得Lv.1翼龙",
-      "type": "reward-detail",
       "sourceLines": [
         90
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 91,
       "text": "⑶持有【魂之碎片】*100与哥拉尔镇逃出的实验员对话，获得获得【再生灵药】（不可交易）",
-      "type": "reward-detail",
       "sourceLines": [
         91
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 92,
       "text": "◆逃出的实验员位置：",
-      "type": "reward-detail",
       "sourceLines": [
         92
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 93,
       "text": "时间段坐标",
-      "type": "reward-detail",
       "sourceLines": [
         93
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 94,
       "text": "清晨（164.53）",
-      "type": "reward-detail",
       "sourceLines": [
         94
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 95,
       "text": "白昼（83.139）",
-      "type": "reward-detail",
       "sourceLines": [
         95
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 96,
       "text": "黄昏（162.151）",
-      "type": "reward-detail",
       "sourceLines": [
         96
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 97,
       "text": "黑夜（89.51）",
-      "type": "reward-detail",
       "sourceLines": [
         97
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 98,
       "text": "11.通过实验室密道抵达阿斯法实验基地与阿鲁巴斯对话，进入战斗。",
-      "type": "route-step",
       "sourceLines": [
         98
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 99,
       "text": "◆本次战斗为五连战",
-      "type": "battle-detail",
       "sourceLines": [
         99
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 100,
       "text": "◆战斗信息：（怀旧服）",
-      "type": "battle-detail",
       "sourceLines": [
         100
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        }
+      ]
     },
     {
       "line": 101,
       "text": "第一场战斗",
-      "type": "battle-detail",
       "sourceLines": [
         101
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-1"
+        }
+      ]
     },
     {
       "line": 102,
       "text": "阿鲁巴斯",
-      "type": "battle-detail",
       "sourceLines": [
         102
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-1.enemies.0"
+        }
+      ]
     },
     {
       "line": 103,
       "text": "v.90阿鲁巴斯，血量约10000；属性:全属性30",
-      "type": "battle-detail",
       "sourceLines": [
         103
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-1.enemies.0"
+        }
+      ]
     },
     {
       "line": 104,
       "text": "阿鲁巴斯技能：攻击、防御、恢复魔法、单体即死、超强混乱魔法",
-      "type": "battle-detail",
       "sourceLines": [
         104
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-1.enemies.0"
+        }
+      ]
     },
     {
       "line": 105,
       "text": "◇打法：合击即可，注意省魔",
-      "type": "battle-detail",
       "sourceLines": [
         105
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-1"
+        }
+      ]
     },
     {
       "line": 106,
       "text": "第二场战斗",
-      "type": "battle-detail",
       "sourceLines": [
         106
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-2"
+        }
+      ]
     },
     {
       "line": 107,
       "text": "阿鲁巴斯（左）",
-      "type": "battle-detail",
       "sourceLines": [
         107
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-2.enemies.0"
+        }
+      ]
     },
     {
       "line": 108,
       "text": "阿鲁巴斯（中）",
-      "type": "battle-detail",
       "sourceLines": [
         108
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-2.enemies.1"
+        }
+      ]
     },
     {
       "line": 109,
       "text": "阿鲁巴斯（右）",
-      "type": "battle-detail",
       "sourceLines": [
         109
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-2.enemies.2"
+        }
+      ]
     },
     {
       "line": 110,
       "text": "Lv.90阿鲁巴斯*3，血量约10000；属性:全属性30",
-      "type": "battle-detail",
       "sourceLines": [
         110
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-2.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-2.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-2.enemies.2"
+        }
+      ]
     },
     {
       "line": 111,
       "text": "阿鲁巴斯技能（左）：攻击、防御、超强中毒魔法、强力冰冻魔法",
-      "type": "battle-detail",
       "sourceLines": [
         111
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-2.enemies.0"
+        }
+      ]
     },
     {
       "line": 112,
       "text": "阿鲁巴斯技能（中）：攻击、防御、超强睡眠魔法、超强补血魔法",
-      "type": "battle-detail",
       "sourceLines": [
         112
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-2.enemies.1"
+        }
+      ]
     },
     {
       "line": 113,
       "text": "阿鲁巴斯技能（右）：攻击、防御、诸刃、超强混乱魔法",
-      "type": "battle-detail",
       "sourceLines": [
         113
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-2.enemies.2"
+        }
+      ]
     },
     {
       "line": 114,
       "text": "◇打法：按中→左→右的顺序击杀，期间配合中毒、石化魔法，注意省魔",
-      "type": "battle-detail",
       "sourceLines": [
         114
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-2"
+        }
+      ]
     },
     {
       "line": 115,
       "text": "第三场战斗",
-      "type": "battle-detail",
       "sourceLines": [
         115
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3"
+        }
+      ]
     },
     {
       "line": 116,
       "text": "阿鲁巴斯①",
-      "type": "battle-detail",
       "sourceLines": [
         116
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3.enemies.0"
+        }
+      ]
     },
     {
       "line": 117,
       "text": "阿鲁巴斯②",
-      "type": "battle-detail",
       "sourceLines": [
         117
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3.enemies.1"
+        }
+      ]
     },
     {
       "line": 118,
       "text": "阿鲁巴斯③",
-      "type": "battle-detail",
       "sourceLines": [
         118
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3.enemies.2"
+        }
+      ]
     },
     {
       "line": 119,
       "text": "阿鲁巴斯④",
-      "type": "battle-detail",
       "sourceLines": [
         119
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3.enemies.3"
+        }
+      ]
     },
     {
       "line": 120,
       "text": "阿鲁巴斯⑤",
-      "type": "battle-detail",
       "sourceLines": [
         120
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3.enemies.4"
+        }
+      ]
     },
     {
       "line": 121,
       "text": "Lv.90阿鲁巴斯*5，血量约5000；属性:全属性30",
-      "type": "battle-detail",
       "sourceLines": [
         121
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3.enemies.4"
+        }
+      ]
     },
     {
       "line": 122,
       "text": "阿鲁巴斯①技能：攻击、防御、乾坤一掷、超强睡眠魔法",
-      "type": "battle-detail",
       "sourceLines": [
         122
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3.enemies.0"
+        }
+      ]
     },
     {
       "line": 123,
       "text": "阿鲁巴斯②技能：攻击、防御、连击、超强遗忘魔法",
-      "type": "battle-detail",
       "sourceLines": [
         123
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3.enemies.1"
+        }
+      ]
     },
     {
       "line": 124,
       "text": "阿鲁巴斯③技能：攻击、防御、阳炎、超强中毒魔法",
-      "type": "battle-detail",
       "sourceLines": [
         124
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3.enemies.2"
+        }
+      ]
     },
     {
       "line": 125,
       "text": "阿鲁巴斯④技能：攻击、防御、强力冰冻魔法、超强混乱魔法",
-      "type": "battle-detail",
       "sourceLines": [
         125
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3.enemies.3"
+        }
+      ]
     },
     {
       "line": 126,
       "text": "阿鲁巴斯⑤技能：攻击、防御、诸刃、超强酒醉魔法",
-      "type": "battle-detail",
       "sourceLines": [
         126
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3.enemies.4"
+        }
+      ]
     },
     {
       "line": 127,
       "text": "◇打法：逐个击杀即可，注意省魔",
-      "type": "battle-detail",
       "sourceLines": [
         127
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-3"
+        }
+      ]
     },
     {
       "line": 128,
       "text": "第四场战斗",
-      "type": "battle-detail",
       "sourceLines": [
         128
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4"
+        }
+      ]
     },
     {
       "line": 129,
       "text": "阿鲁巴斯①阿鲁巴斯②阿鲁巴斯③阿鲁巴斯④阿鲁巴斯⑤",
-      "type": "battle-detail",
       "sourceLines": [
         129
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.4"
+        }
+      ]
     },
     {
       "line": 130,
       "text": "阿鲁巴斯⑥阿鲁巴斯⑦阿鲁巴斯⑧阿鲁巴斯⑨阿鲁巴斯⑩",
-      "type": "battle-detail",
       "sourceLines": [
         130
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.9"
+        }
+      ]
     },
     {
       "line": 131,
       "text": "Lv.90阿鲁巴斯，血量约3000；属性:全属性30",
-      "type": "battle-detail",
       "sourceLines": [
         131
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.9"
+        }
+      ]
     },
     {
       "line": 132,
       "text": "阿鲁巴斯①技能：攻击、防御、崩击、战栗袭心",
-      "type": "battle-detail",
       "sourceLines": [
         132
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.0"
+        }
+      ]
     },
     {
       "line": 133,
       "text": "阿鲁巴斯②技能：攻击、防御、乾坤一掷",
-      "type": "battle-detail",
       "sourceLines": [
         133
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.1"
+        }
+      ]
     },
     {
       "line": 134,
       "text": "阿鲁巴斯③技能：攻击、防御、混乱攻击、阳炎",
-      "type": "battle-detail",
       "sourceLines": [
         134
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.2"
+        }
+      ]
     },
     {
       "line": 135,
       "text": "阿鲁巴斯④技能：攻击、防御、诸刃、连击",
-      "type": "battle-detail",
       "sourceLines": [
         135
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.3"
+        }
+      ]
     },
     {
       "line": 136,
       "text": "阿鲁巴斯⑤技能：攻击、防御、气功弹",
-      "type": "battle-detail",
       "sourceLines": [
         136
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.4"
+        }
+      ]
     },
     {
       "line": 137,
       "text": "阿鲁巴斯⑥技能：攻击、防御、强力酒醉魔法、强力遗忘魔法、强力睡眠魔法",
-      "type": "battle-detail",
       "sourceLines": [
         137
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.5"
+        }
+      ]
     },
     {
       "line": 138,
       "text": "阿鲁巴斯⑦技能：攻击、防御、补血魔法、强力补血魔法",
-      "type": "battle-detail",
       "sourceLines": [
         138
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.6"
+        }
+      ]
     },
     {
       "line": 139,
       "text": "阿鲁巴斯⑧技能：攻击、防御、火焰魔法、冰冻魔法",
-      "type": "battle-detail",
       "sourceLines": [
         139
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.7"
+        }
+      ]
     },
     {
       "line": 140,
       "text": "阿鲁巴斯⑨技能：攻击、防御、陨石魔法、风刃魔法",
-      "type": "battle-detail",
       "sourceLines": [
         140
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.8"
+        }
+      ]
     },
     {
       "line": 141,
       "text": "阿鲁巴斯⑩技能：攻击、防御、恢复魔法、强力恢复魔法",
-      "type": "battle-detail",
       "sourceLines": [
         141
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4.enemies.9"
+        }
+      ]
     },
     {
       "line": 142,
       "text": "◇打法：优先击杀⑦、⑩、⑥；群攻职业用群攻技能，期间配合使用超强石化魔法",
-      "type": "battle-detail",
       "sourceLines": [
         142
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-4"
+        }
+      ]
     },
     {
       "line": 143,
       "text": "第五场战斗",
-      "type": "battle-detail",
       "sourceLines": [
         143
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-5"
+        }
+      ]
     },
     {
       "line": 144,
       "text": "阿鲁巴斯",
-      "type": "battle-detail",
       "sourceLines": [
         144
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-5.enemies.0"
+        }
+      ]
     },
     {
       "line": 145,
       "text": "Lv.100阿鲁巴斯，血量约20000；属性:全属性30",
-      "type": "battle-detail",
       "sourceLines": [
         145
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-5.enemies.0"
+        }
+      ]
     },
     {
       "line": 146,
       "text": "阿鲁巴斯技能：攻击、防御、超强风刃魔法、超强冰冻魔法、超强酒醉魔法、超强即死魔法",
-      "type": "battle-detail",
       "sourceLines": [
         146
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-5.enemies.0"
+        }
+      ]
     },
     {
       "line": 147,
       "text": "、超强混乱魔法",
-      "type": "battle-detail",
       "sourceLines": [
         147
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-5.enemies.0"
+        }
+      ]
     },
     {
       "line": 148,
       "text": "◇打法：战栗完BOSS魔后合击",
-      "type": "battle-detail",
       "sourceLines": [
         148
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.battles.final-5"
+        }
+      ]
     },
     {
       "line": 149,
       "text": "◆战斗信息：（时长服）",
-      "type": "battle-detail",
       "sourceLines": [
         149
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        }
+      ]
     },
     {
       "line": 150,
       "text": "第一场战斗",
-      "type": "battle-detail",
       "sourceLines": [
         150
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-1-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-1-long.enemies.0"
+        }
+      ]
     },
     {
       "line": 151,
       "text": "阿鲁巴斯",
-      "type": "battle-detail",
       "sourceLines": [
         151
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-1-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-1-long.enemies.0"
+        }
+      ]
     },
     {
       "line": 152,
       "text": "Lv.140阿鲁巴斯，血量约13000",
-      "type": "battle-detail",
       "sourceLines": [
         152
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-1-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-1-long.enemies.0"
+        }
+      ]
     },
     {
       "line": 153,
       "text": "阿鲁巴斯技能：攻击、防御、恢复魔法、单体即死、超强混乱魔法",
-      "type": "battle-detail",
       "sourceLines": [
         153
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-1-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-1-long.enemies.0"
+        }
+      ]
     },
     {
       "line": 154,
       "text": "◇打法：合击即可，注意省魔",
-      "type": "battle-detail",
       "sourceLines": [
         154
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-1-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-1-long.enemies.0"
+        }
+      ]
     },
     {
       "line": 155,
       "text": "第二场战斗",
-      "type": "battle-detail",
       "sourceLines": [
         155
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.2"
+        }
+      ]
     },
     {
       "line": 156,
       "text": "阿鲁巴斯（左）",
-      "type": "battle-detail",
       "sourceLines": [
         156
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.2"
+        }
+      ]
     },
     {
       "line": 157,
       "text": "阿鲁巴斯（中）",
-      "type": "battle-detail",
       "sourceLines": [
         157
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.2"
+        }
+      ]
     },
     {
       "line": 158,
       "text": "阿鲁巴斯（右）",
-      "type": "battle-detail",
       "sourceLines": [
         158
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.2"
+        }
+      ]
     },
     {
       "line": 159,
       "text": "Lv.140阿鲁巴斯*3，血量约10000",
-      "type": "battle-detail",
       "sourceLines": [
         159
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.2"
+        }
+      ]
     },
     {
       "line": 160,
       "text": "阿鲁巴斯技能（左）：攻击、防御、超强中毒魔法、强力冰冻魔法",
-      "type": "battle-detail",
       "sourceLines": [
         160
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.2"
+        }
+      ]
     },
     {
       "line": 161,
       "text": "阿鲁巴斯技能（中）：攻击、防御、超强睡眠魔法、超强补血魔法",
-      "type": "battle-detail",
       "sourceLines": [
         161
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.2"
+        }
+      ]
     },
     {
       "line": 162,
       "text": "阿鲁巴斯技能（右）：攻击、防御、诸刃、不明超強咒術",
-      "type": "battle-detail",
       "sourceLines": [
         162
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.2"
+        }
+      ]
     },
     {
       "line": 163,
       "text": "◇打法：按中→左→右的顺序击杀，注意省魔",
-      "type": "battle-detail",
       "sourceLines": [
         163
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-2-long.enemies.2"
+        }
+      ]
     },
     {
       "line": 164,
       "text": "第三场战斗",
-      "type": "battle-detail",
       "sourceLines": [
         164
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.4"
+        }
+      ]
     },
     {
       "line": 165,
       "text": "阿鲁巴斯①",
-      "type": "battle-detail",
       "sourceLines": [
         165
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.4"
+        }
+      ]
     },
     {
       "line": 166,
       "text": "阿鲁巴斯②",
-      "type": "battle-detail",
       "sourceLines": [
         166
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.4"
+        }
+      ]
     },
     {
       "line": 167,
       "text": "阿鲁巴斯③",
-      "type": "battle-detail",
       "sourceLines": [
         167
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.4"
+        }
+      ]
     },
     {
       "line": 168,
       "text": "阿鲁巴斯④",
-      "type": "battle-detail",
       "sourceLines": [
         168
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.4"
+        }
+      ]
     },
     {
       "line": 169,
       "text": "阿鲁巴斯⑤",
-      "type": "battle-detail",
       "sourceLines": [
         169
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.4"
+        }
+      ]
     },
     {
       "line": 170,
       "text": "Lv.140阿鲁巴斯*5，血量约8000",
-      "type": "battle-detail",
       "sourceLines": [
         170
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.4"
+        }
+      ]
     },
     {
       "line": 171,
       "text": "阿鲁巴斯①技能：攻击、防御、乾坤一掷、超强睡眠魔法",
-      "type": "battle-detail",
       "sourceLines": [
         171
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.4"
+        }
+      ]
     },
     {
       "line": 172,
       "text": "阿鲁巴斯②技能：攻击、防御、连击、超强遗忘魔法",
-      "type": "battle-detail",
       "sourceLines": [
         172
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.4"
+        }
+      ]
     },
     {
       "line": 173,
       "text": "阿鲁巴斯③技能：攻击、防御、超强中毒魔法",
-      "type": "battle-detail",
       "sourceLines": [
         173
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.4"
+        }
+      ]
     },
     {
       "line": 174,
       "text": "阿鲁巴斯④技能：攻击、防御、强力冰冻魔法、超强混乱魔法",
-      "type": "battle-detail",
       "sourceLines": [
         174
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.4"
+        }
+      ]
     },
     {
       "line": 175,
       "text": "阿鲁巴斯⑤技能：攻击、防御、诸刃、超强酒醉魔法",
-      "type": "battle-detail",
       "sourceLines": [
         175
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.4"
+        }
+      ]
     },
     {
       "line": 176,
       "text": "◇打法：④→⑤→②→①→③，可直接集火击杀",
-      "type": "battle-detail",
       "sourceLines": [
         176
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-3-long.enemies.4"
+        }
+      ]
     },
     {
       "line": 177,
       "text": "第四场战斗",
-      "type": "battle-detail",
       "sourceLines": [
         177
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.9"
+        }
+      ]
     },
     {
       "line": 178,
       "text": "阿鲁巴斯①阿鲁巴斯②阿鲁巴斯③阿鲁巴斯④阿鲁巴斯⑤",
-      "type": "battle-detail",
       "sourceLines": [
         178
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.9"
+        }
+      ]
     },
     {
       "line": 179,
       "text": "阿鲁巴斯⑥阿鲁巴斯⑦阿鲁巴斯⑧阿鲁巴斯⑨阿鲁巴斯⑩",
-      "type": "battle-detail",
       "sourceLines": [
         179
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.9"
+        }
+      ]
     },
     {
       "line": 180,
       "text": "Lv.140阿鲁巴斯，血量约4200",
-      "type": "battle-detail",
       "sourceLines": [
         180
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.9"
+        }
+      ]
     },
     {
       "line": 181,
       "text": "阿鲁巴斯①技能：攻击、防御、崩击、战栗袭心",
-      "type": "battle-detail",
       "sourceLines": [
         181
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.9"
+        }
+      ]
     },
     {
       "line": 182,
       "text": "阿鲁巴斯②技能：攻击、防御、乾坤一掷",
-      "type": "battle-detail",
       "sourceLines": [
         182
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.9"
+        }
+      ]
     },
     {
       "line": 183,
       "text": "阿鲁巴斯③技能：攻击、防御、混乱攻击、阳炎",
-      "type": "battle-detail",
       "sourceLines": [
         183
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.9"
+        }
+      ]
     },
     {
       "line": 184,
       "text": "阿鲁巴斯④技能：攻击、防御、诸刃、连击",
-      "type": "battle-detail",
       "sourceLines": [
         184
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.9"
+        }
+      ]
     },
     {
       "line": 185,
       "text": "阿鲁巴斯⑤技能：攻击、防御、气功弹",
-      "type": "battle-detail",
       "sourceLines": [
         185
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.9"
+        }
+      ]
     },
     {
       "line": 186,
       "text": "阿鲁巴斯⑥技能：攻击、防御、强力酒醉魔法、强力遗忘魔法、强力睡眠魔法",
-      "type": "battle-detail",
       "sourceLines": [
         186
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.9"
+        }
+      ]
     },
     {
       "line": 187,
       "text": "阿鲁巴斯⑦技能：攻击、防御、补血魔法、强力补血魔法",
-      "type": "battle-detail",
       "sourceLines": [
         187
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.9"
+        }
+      ]
     },
     {
       "line": 188,
       "text": "阿鲁巴斯⑧技能：攻击、防御、火焰魔法、冰冻魔法",
-      "type": "battle-detail",
       "sourceLines": [
         188
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.9"
+        }
+      ]
     },
     {
       "line": 189,
       "text": "阿鲁巴斯⑨技能：攻击、防御、陨石魔法、风刃魔法",
-      "type": "battle-detail",
       "sourceLines": [
         189
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.9"
+        }
+      ]
     },
     {
       "line": 190,
       "text": "阿鲁巴斯⑩技能：攻击、防御、恢复魔法、强力恢复魔法",
-      "type": "battle-detail",
       "sourceLines": [
         190
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.9"
+        }
+      ]
     },
     {
       "line": 191,
       "text": "◇打法：优先击杀⑦、⑩、⑥；群攻职业用群攻技能，剑士无双最优",
-      "type": "battle-detail",
       "sourceLines": [
         191
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-4-long.enemies.9"
+        }
+      ]
     },
     {
       "line": 192,
       "text": "第五场战斗",
-      "type": "battle-detail",
       "sourceLines": [
         192
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-5-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-5-long.enemies.0"
+        }
+      ]
     },
     {
       "line": 193,
       "text": "阿鲁巴斯",
-      "type": "battle-detail",
       "sourceLines": [
         193
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-5-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-5-long.enemies.0"
+        }
+      ]
     },
     {
       "line": 194,
       "text": "Lv.140阿鲁巴斯，血量约30000",
-      "type": "battle-detail",
       "sourceLines": [
         194
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-5-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-5-long.enemies.0"
+        }
+      ]
     },
     {
       "line": 195,
       "text": "阿鲁巴斯技能：攻击、防御、超强风刃魔法、超强冰冻魔法、超强酒醉魔法、超强即死魔法",
-      "type": "battle-detail",
       "sourceLines": [
         195
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-5-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-5-long.enemies.0"
+        }
+      ]
     },
     {
       "line": 196,
       "text": "◇打法：随意发挥",
-      "type": "battle-detail",
       "sourceLines": [
         196
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-5-long"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.battles.final-5-long.enemies.0"
+        }
+      ]
     },
     {
       "line": 197,
       "text": "12.战斗胜利后与凯特对话，交出【炽热的生命之光】，",
-      "type": "route-step",
       "sourceLines": [
         197
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.inputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 198,
       "text": "怀旧服：获得称号“我们是永远的朋友”并传送回法兰城，任务完结。",
-      "type": "route-step",
       "sourceLines": [
         198
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.7"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 199,
       "text": "时长服：获得【闪耀贝壳】并传送回法兰城，不会获得称号，任务完结。",
-      "type": "route-step",
       "sourceLines": [
         199
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.outputs.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 200,
       "text": "◆拥有“我们是永远的朋友”称号时（即第二次或以上完成本任务）与凯特对话，",
-      "type": "route-step",
       "sourceLines": [
         200
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 201,
       "text": "交出【炽热的生命之光】获得【闪耀贝壳】并传送回法兰城。",
-      "type": "route-step",
       "sourceLines": [
         201
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4.items.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     },
     {
       "line": 202,
       "text": "◆双击【闪耀贝壳】获得Lv.1翼龙或【魂之碎片】*1~5",
-      "type": "route-step",
       "sourceLines": [
         202
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.14.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.14.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.14.outputs.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.9"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.9"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common"
+        }
+      ]
     }
   ],
   "verification": {

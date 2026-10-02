@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "element-fire",
   "name": "炎之洞窟",
   "aliases": [
@@ -1149,554 +1149,1345 @@
     {
       "line": 1,
       "text": "等级不低于Lv.45",
-      "type": "level-gate",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "1.前往维诺亚村，出村至芙蕾雅岛（299.538）处与士兵塔拉帕对话，选“是”进入维诺亚海底洞窟。",
-      "type": "entry-step",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "2.通过维诺亚海底洞窟抵达芙蕾雅岛，前往（260.449）处进入炎之洞窟。",
-      "type": "route-step",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "3.与火精莎拉曼达（13.6）对话，选“是”栅栏。通过（25.4）处黄色传送石进入炎之洞窟。",
-      "type": "maze-entry",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "4.通过随机迷宫抵达炎之洞窟地下16楼，与火精莎拉曼达（23.20）对话，选“是”传送至其他房间。",
-      "type": "maze-route",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "5.与每一个房间的火精莎拉曼达对话，皆选“是”。不断传送直至抵达位于地图东南位置的房间。",
-      "type": "teleport-puzzle",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "6.与火精莎拉曼达（77.84）对话，选“是”传送至炎之回廊。",
-      "type": "teleport-step",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "7.与炎之斗神（42.11）对话，选“是”进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.fire-fighting-god"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "8.战斗胜利后传送至充满谜的房间。调查钢琴（7.2），选“是”获得【炎之乐谱】。",
-      "type": "reward-step",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.fire-fighting-god"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "9.与火精莎拉曼达（9.4）对话，可交出【纯火水晶】获得【火精的福袋】。",
-      "type": "optional-exchange",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "10.与火精莎拉曼达（10.2）对话，根据持有的【炎之符】数量兑换对应等级的各色【宝石】1颗并传送芙蕾雅岛（261.478）处。",
-      "type": "token-gem-exchange",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "11.与火精莎拉曼达（11.4）对话，选“是”传送至芙蕾雅岛（261.478）处，任务完结。",
-      "type": "exit-step",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "【【炎之符】支线】路线1.前往炎之洞窟地下16层，与火精莎拉曼达（23.20）对话，选“是”传送至其他房间。",
-      "type": "branch-step",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "【【炎之符】支线】路线2.与每一个房间的火精莎拉曼达对话，皆选“是”。",
-      "type": "branch-step",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "【【炎之符】支线】路线3.若传送至的房间并非位于地图东南位置且房间内有黄色传送石，则通过黄色传送石抵达炎之洞窟地下1楼。",
-      "type": "branch-route",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "【【炎之符】支线】路线4.通过随机迷宫抵达炎之试炼，与红胄甲（14.33）对话，进入战斗。",
-      "type": "branch-battle",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.red-armored-warrior"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "【【炎之符】支线】路线5.战斗胜利后通过栅栏，与火精莎拉曼达（25.4）对话，获得【炎之符】并传送至炎之洞窟地下16楼，支线完结。",
-      "type": "branch-reward",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.16"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.16.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "◆怀旧服芙蕾雅岛（299.538）处无士兵塔拉帕，可直接进入维诺亚海底洞窟",
-      "type": "versioned-entry",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "◆维诺亚海底洞窟为固定迷宫；魔物为Lv.26~27水龙蜥、蜥蜴战士",
-      "type": "encounter-area",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "◆等级低于Lv.45无法通过火精莎拉曼达，通过火精莎拉曼达后只可登出离开，炎之洞窟内魔物不可封印",
-      "type": "gate-and-exit-rule",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "◆炎之洞窟为随机迷宫，共15层；魔物皆为全25属性的Lv.39~44火焰鼠、迷你蝙蝠、果冻史莱姆",
-      "type": "encounter-area",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "◆炎之洞窟地下16楼为固定迷宫；魔物皆为全25属性的Lv.40~50地狱猎犬、罗刹",
-      "type": "encounter-area",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.2"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "◆若只想获得乐谱，则不要进入黄色传送石",
-      "type": "route-warning",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "◆获取炎之符路线（非获取乐谱路线）：",
-      "type": "branch-heading",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "炎之洞窟地下16楼其中一个房间有黄色传送石，进入后传送到一个新的炎之洞窟，此炎之洞窟为随机迷宫，共10层，通过10层随机迷宫后来到炎之试炼，与红胄甲（14.33）对话进入战斗，战斗胜利后继续向前，与火精莎拉曼达对话获得炎之符，并传送回炎之洞窟地下16楼初始位置。",
-      "type": "branch-summary",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.16"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.3"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "◆红胄甲，血量约3000，没有小怪",
-      "type": "battle-enemy",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.red-armored-warrior"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.red-armored-warrior.enemies.0"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "◆若选“否”则传送回炎之洞窟地下16楼初始位置",
-      "type": "battle-choice",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "◆1颗【纯火水晶】可兑换1个【火精的福袋】，兑换次数不限，【纯火水晶】无需满耐久，但人物创建时的初始水晶不可兑换",
-      "type": "exchange-rule",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "◆【火精的福袋】耐久5点，每使用一次减少1点耐久，使用后随机获得奖品；同时持有2个及以上【火精的福袋】时无法使用",
-      "type": "container-rule",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "◆奖品（随机获得）：",
-      "type": "reward-heading",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "砂漠的红星魔族的水晶",
-      "type": "reward-row",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "钢骑之矿魔石（587G）",
-      "type": "reward-row",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "誓言之证纯水晶（属性随机）",
-      "type": "reward-row",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "德特家的布重来的种子（任意一种）",
-      "type": "reward-row",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "猫眼石Lv.8各色宝石",
-      "type": "reward-row",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "◆【炎之符】获得方式参考本任务支线部分",
-      "type": "item-source",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "◆【炎之符】兑换：",
-      "type": "exchange-heading",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "数量宝石等级",
-      "type": "table-heading",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "0Lv.2~3",
-      "type": "exchange-row",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4.items.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "1Lv.4~7",
-      "type": "exchange-row",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4.items.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "2Lv.5~8",
-      "type": "exchange-row",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4.items.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "◆炎之洞窟为随机迷宫，共10层；魔物皆为全25属性的Lv.45~47火焰鼠、迷你蝙蝠、果冻史莱姆",
-      "type": "branch-encounter",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.3"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "◆Lv.40红胄甲，血量约3000，邪魔系，属性：全25，抗性全80；技能：攻击、防御、乾坤一掷EX（我方血多者）、连击、崩击Lv10、阳炎Lv10、混乱攻击、吸血攻击、反击",
-      "type": "battle-enemy",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.red-armored-warrior"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.red-armored-warrior.enemies.0"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": []
     },
     {
       "line": 45,
       "text": "Lv.55炎之斗神（2动），血量约4500，邪魔系，属性：全25，抗咒；技能：攻击、诸刃、乾坤一掷、昏睡攻击、反击Lv10、阳炎Lv10、补血魔法（为我方单位补血）、明镜止水Lv10（血量<25%追加）、气功弹（血量<25%追加）、连击（我方存在物理制御单位追加）",
-      "type": "battle-enemy",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.fire-fighting-god"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.fire-fighting-god.enemies.0"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "Lv.48火精（2动）*2，血量约2900，特殊系，属性：全25，抗性全90；技能：攻击、石化攻击、超强中毒魔法、超强混乱魔法、超强石化魔法、补血魔法Lv10、强力火焰魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.fire-fighting-god"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.fire-fighting-god.enemies.1"
+        }
+      ]
     }
   ],
   "verification": {

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "half-3",
   "name": "圣鸟之谜",
   "aliases": [
@@ -801,6 +801,37 @@
           "status": "verified",
           "method": "manual-semantic-review"
         }
+      },
+      {
+        "id": "optional-island-pet-magic",
+        "order": 14,
+        "text": "怀旧服可在小岛向爱走丢的普夫学习9级宠物魔法；原攻略此处未列各魔法名称和费用。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "optional": true,
+        "postCompletion": true,
+        "branch": "可选技能与服务",
+        "sourceLines": [
+          15
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-source-service-decomposition"
+        },
+        "routePoints": [
+          {
+            "name": "小岛爱走丢的普夫",
+            "coordinate": "52.74",
+            "sourceLines": [
+              15
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-service-decomposition"
+            }
+          }
+        ]
       }
     ],
     "notes": []
@@ -1378,614 +1409,1388 @@
     {
       "line": 1,
       "text": "完成《亡者之镇》任务",
-      "type": "prerequisite",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "每名队员持有10000G或1片【星鳗饭团】",
-      "type": "party-resource",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "1.前往蒂娜村，出村南门至莎莲娜岛（668.321）处与守信用的水手对话传至小岛。",
-      "type": "teleport-step",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "2.与罗伯尼博士（59.78）对话传送至地下实验室，调查时光机器（19.11）传至过去的瑞娜的家。",
-      "type": "time-travel-step",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "3.与瑞娜（10.13）对话，输入“阿鲁卡那斯”获得【匆忙写下的笔录】并传送回小岛。",
-      "type": "password-acquisition",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.commands.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "4.前往法兰城里谢里雅堡2楼图书馆与博学者（18.19）对话，交出【匆忙写下的笔录】获得【鸟类大全】。",
-      "type": "exchange-step",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "5.前往蒂娜村，出南门至莎莲娜岛（668.321）处与守信用的水手对话传送至小岛。",
-      "type": "teleport-step",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "6.与村民（78.87）对话，交出【鸟类大全】获得【暗号】。",
-      "type": "exchange-step",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "7.每名队员与小岛上的酒吧老板（55.81）处交出10000G购买一个【星鳗饭团】；也可向玩家购买。",
-      "type": "per-member-purchase",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "8.前往小岛（64.46）处通过黄色传送石进入通往山顶的路。",
-      "type": "maze-entry",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "9.通过第一段随机迷宫抵达半山腰，前往半山腰（78.52）处进入通往山顶的路1100M，通过第二段随机迷宫后抵达圣鸟之巢。",
-      "type": "maze-route",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "10.每名队员持有1片【星鳗饭团】与圣鸟的子嗣（14.11）对话，输入“我是来送鳗鱼饭的”交出【星鳗饭团】传送至圣山之巅。",
-      "type": "password-exchange-teleport",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.commands.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "11.与阿鲁卡那斯（23.23）对话进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.arukanas"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "12.战斗胜利后与阿鲁卡那斯对话，交出称号“追查真相中”获得称号“保守秘密的人”、【圣鸟之羽】并传送回小岛，任务完结。",
-      "type": "title-exchange-completion",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.arukanas"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "◇怀旧服9级宠物魔法习得NPC：爱走丢的普夫，位于小岛（52.74）",
-      "type": "service-note",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "◆小岛为固定地图；魔物为黄蝎、幽灵（怀旧服为Lv.48~52；时长/道具服为Lv.120~122）",
-      "type": "versioned-encounter",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.encounters.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "◆若未持有【暗号】，在第10步时与圣鸟的子嗣对话将无效",
-      "type": "held-item-gate",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "◆【星鳗饭团】：Lv.5料理，回复目标魔力值约500点；可以交易",
-      "type": "item-detail",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "◆通往山顶的路为随机迷宫，分两段；",
-      "type": "maze-detail",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.encounters.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "魔物为托罗帝鸟、岩地跑者、火焰啄木鸟、狂奔鸟（怀旧服为Lv.59~65；时长/道具服为Lv.130~134）",
-      "type": "versioned-encounter",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.encounters.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "◆半山腰为固定地图",
-      "type": "map-note",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.encounters.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.encounters.2"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "魔物为（怀旧服Lv.72~74；时长/道具服Lv.142~144）的虎人*2~4、迷你蝙蝠*2、液态史莱姆*1、利牙*1，最高遇敌数量8",
-      "type": "versioned-encounter",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.encounters.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.tiers.common.encounters.2"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "◆此处可以使用宠物邮件",
-      "type": "service-note",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "◆【圣鸟之羽】：",
-      "type": "reward-heading",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "怀旧服：Lv.8项链、耐久100；攻击+25~30、敏捷+10、精神+5、回复+3、必杀+5、命中+10、闪躲+8、生命+20、魔力+20；可以交易、数值浮动",
-      "type": "versioned-reward",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "时长/道具服：Lv.8项链、耐久100；攻击+50、敏捷+30、精神+15、回复+15、必杀+10、命中+30、闪躲+15、生命+100、魔力+150；",
-      "type": "versioned-reward",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.其他服.changes.0"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "可以交易、攻击、回复数值浮动，其余固定",
-      "type": "reward-continuation",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.其他服.changes.0"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "◆战斗胜利后有几率掉落【阿鲁卡那斯的蛋】，经过3天的孵化随机获得Lv.1岩地跑者或Lv.1布雷欧",
-      "type": "battle-drop",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.arukanas"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "（双击【阿鲁卡那斯的蛋】前务必保持宠物栏有空位，否则双击后为空气）",
-      "type": "pet-slot-warning",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "◆任务剧情：参考《半山系列任务剧情对话》",
-      "type": "story-reference",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "◆其它攻略：参考《半山系列任务刷布雷欧蛋&刷圣鸟之羽攻略》",
-      "type": "strategy-reference",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "◆重解",
-      "type": "repeat-heading",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "需要依次把本任务和《彷徨的亡灵》、《亡者之镇》（半山3、1、2）任务完结才可接到任务",
-      "type": "repeat-cycle",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "手动删除称号，亦解决无法接到任务的问题。半山1~3是一个连贯的任务，按顺序完成才能继续。",
-      "type": "series-rule",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "手动删除的称号不会影响任何结果，去“专管称号的阿蒙”（法兰城230.83）再次领取。",
-      "type": "title-recovery",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "俗称任务名称完成后称号变化必要条件",
-      "type": "series-table-heading",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "半山1彷徨的亡灵增加“追查真相中”等级不低于Lv.50",
-      "type": "series-row",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "半山2亡者之镇无变化，“追查真相中”拥有“追查真相中”称号；",
-      "type": "series-row",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "完成《彷徨的亡灵》半山1任务",
-      "type": "series-row-continuation",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "半山3圣鸟之谜增加“保守秘密的人”",
-      "type": "series-row",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.2"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "减少“追查真相中”完成《亡者之镇》半山2任务",
-      "type": "series-row-continuation",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.2"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "半山5小岛之谜增加“背叛者”拥有“保守秘密的人”称号；",
-      "type": "series-row",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "完成《圣鸟之谜》半山3任务",
-      "type": "series-row-continuation",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "◆战斗信息：（怀旧服）",
-      "type": "battle-heading",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": []
     },
     {
       "line": 45,
       "text": "Lv.80阿鲁卡纳斯（2动），血量约15000，邪魔系，属性：火40风60，抗咒；技能：攻击、防御、混乱攻击、乾坤一掷、强力陨石魔法、强力火焰魔法、超强风刃魔法、超强遗忘魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.arukanas"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.arukanas.enemies.0"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "Lv.60阿鲁卡那斯之子（2动），血量约7500，邪魔系，属性：水40火60，不抗咒；技能：攻击、防御、混乱攻击、强力陨石魔法、强力冰冻魔法、超强石化魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.arukanas"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.arukanas.enemies.1"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "◇打法建议：合击先小后大 宠物可以多学习几个攻击，对抗大鸟的超强遗忘魔法。（法兰城冒险者旅馆[216,53] 宠物技能店的佩蒂[30,20]学习）",
-      "type": "battle-strategy",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.arukanas"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "◆战斗信息：（时长/道具服）",
-      "type": "battle-heading",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": []
     },
     {
       "line": 49,
       "text": "Lv.150阿鲁卡纳斯（2动），血量约28000，邪魔系，属性：火40风60，抗咒； 技能：攻击、防御、混乱攻击、乾坤一掷、强力陨石魔法、强力火焰魔法、超强风刃魔法、超强遗忘魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": []
     },
     {
       "line": 50,
       "text": "Lv.130阿鲁卡那斯之子（2动），血量约13000，邪魔系，属性：水40火60，不抗咒； 技能：攻击、防御、混乱攻击、强力陨石魔法、强力冰冻魔法、超强石化魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": []
     },
     {
       "line": 51,
       "text": "◆BOSS打法：参考《半山练级前置任务自强攻略心得》",
-      "type": "battle-strategy",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.arukanas"
+        }
+      ]
     }
   ],
   "verification": {

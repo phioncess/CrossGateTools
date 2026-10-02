@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-93ec8553-3656-44cb-aac6-939b238e2f37",
   "name": "就职矿工",
   "aliases": [
@@ -160,6 +160,39 @@
               "status": "verified",
               "method": "exact-numbered-source-anchor"
             }
+          },
+          {
+            "name": "圣拉鲁卡村赛谢利亚酒吧",
+            "coordinate": "39.70",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "法兰城西门外国营第24坑道",
+            "coordinate": "351.145",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "艾夏岛-武器工房",
+            "coordinate": "144.120",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
           }
         ]
       },
@@ -203,7 +236,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "法兰城毕夫鲁之家",
+            "coordinate": "206.37",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "step-3",
@@ -256,7 +302,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "国营第24号矿坑道",
+            "coordinate": "351.145",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "step-4",
@@ -309,7 +368,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "法兰城凯蒂夫人店",
+            "coordinate": "196.78",
+            "sourceLines": [
+              8
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "step-5",
@@ -361,6 +433,17 @@
             "verification": {
               "status": "verified",
               "method": "exact-numbered-source-anchor"
+            }
+          },
+          {
+            "name": "毕夫鲁之家",
+            "coordinate": "206.37",
+            "sourceLines": [
+              9
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
             }
           }
         ]
@@ -432,7 +515,51 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "圣拉鲁卡村村长的家",
+            "coordinate": "49.81",
+            "sourceLines": [
+              11
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
+      },
+      {
+        "id": "optional-mining-skill",
+        "order": 8,
+        "text": "可前往法兰城基尔的家，向传说的矿工基尔交100G学习【挖掘】。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "optional": true,
+        "postCompletion": true,
+        "branch": "可选技能与服务",
+        "sourceLines": [
+          12
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-source-service-decomposition"
+        },
+        "routePoints": [
+          {
+            "name": "法兰城基尔的家",
+            "coordinate": "200.132",
+            "sourceLines": [
+              12
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-service-decomposition"
+            }
+          }
+        ]
       }
     ],
     "notes": []
@@ -669,158 +796,388 @@
     {
       "line": 1,
       "text": "1.前往圣拉鲁卡村赛谢利亚酒吧（39.70）与募集矿工的洛伊（16.10）习得技能挖矿体验后，",
-      "type": "skill-and-step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.routePoints.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "前往法兰城西门外国营第24坑道（351.145）地下1楼，在任意位置使用挖矿体验，挖掘【铜】（铜矿，非铜条）20个。",
-      "type": "collection-event",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "◆已持有【铜】*20时，此步可跳过",
-      "type": "skip-rule",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "◆学习挖掘体验无需费用，游民亦可习得，占技能栏3格",
-      "type": "skill-detail",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "◆时道服：【铜】可以在艾夏岛-武器工房（144.120）负一层购买到，50G/个。",
-      "type": "alternate-source",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "2.前往法兰城毕夫鲁之家（206.37），持有【铜】*20与那尔薇（8.3）对话，选“是”获得【便当？】。",
-      "type": "step",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "3.返回国营第24号矿坑道（351.145）地下一楼与矿工毕夫鲁（35.7）对话，选“是”交出【便当？】获得【矿石？】、【有关矿石的纸条】。",
-      "type": "step",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "4.前往法兰城凯蒂夫人店（196.78）与鉴定师马尔弗（13.9）对话，选“是”交出【矿石？】、【有关矿石的纸条】获得【给那尔薇的信】。",
-      "type": "step",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "5.前往毕夫鲁之家（206.37）与那尔薇（8.3）对话，选“是”交出【给那尔薇的信】获得【饮料？】。",
-      "type": "step",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.routePoints.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "6.前往国营第24矿坑道地下一楼与矿工毕夫鲁（35.7）对话，选“是”交出【饮料？】获得【矿工推荐信】。",
-      "type": "step",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.routePoints.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "7.前往圣拉鲁卡村村长的家（49.81）2楼与矿工吉拉瓦特（8.4）对话即可就职矿工，任务完结。",
-      "type": "step",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "◆前往法兰城基尔的家（200.132）与传说的矿工基尔对话可学习技能挖掘，费用100G",
-      "type": "skill-learning",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "◆【矿山钥匙】，国营24坑道地下3楼必要物品，获得方法参考《矿工的安全帽》",
-      "type": "item-source",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        }
+      ]
     }
   ],
   "verification": {

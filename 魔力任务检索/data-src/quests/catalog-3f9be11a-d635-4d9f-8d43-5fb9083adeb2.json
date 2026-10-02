@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-3f9be11a-d635-4d9f-8d43-5fb9083adeb2",
   "name": "月亮俱乐部(修正)",
   "aliases": [],
@@ -7,7 +7,7 @@
     "category": "经典任务",
     "level": "10 级",
     "availability": "closed",
-    "summary": "必要条件：本任务未开放，采集地点已开放；本任务未开放",
+    "summary": "必要条件：本任务未开放，采集地点已开放",
     "repeatable": "可重做"
   },
   "source": {
@@ -498,6 +498,17 @@
           "status": "verified",
           "method": "manual-semantic-review"
         }
+      },
+      {
+        "type": "source-notice",
+        "text": "正职以上的生产系、医生、护士可参与；仙人、侦探是否可参与，原攻略未确定。",
+        "sourceLines": [
+          80
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-source-condition-review"
+        }
       }
     ]
   },
@@ -555,7 +566,42 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "冒险者旅馆一楼的楼梯",
+            "coordinate": "43.26",
+            "sourceLines": [
+              19
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "水晶交换所可疑的黑衣男",
+            "coordinate": "15.38",
+            "sourceLines": [
+              19
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "地下通路的带位人员",
+            "coordinate": "6.6",
+            "sourceLines": [
+              20
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "day-1-cards",
@@ -1053,7 +1099,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "荷特尔咖哩店",
+            "coordinate": "49.58",
+            "sourceLines": [
+              49
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "day-3-lily",
@@ -1716,6 +1775,115 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
+        },
+        "routePoints": [
+          {
+            "name": "穿越维诺亚海底洞窟后的平原（猪肉采集附近）",
+            "coordinate": "300.400",
+            "sourceLines": [
+              90
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "摩斯蜥蜴索奇亚",
+            "coordinate": "528.326",
+            "sourceLines": [
+              91
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "井底蛙角笛大风洞",
+            "coordinate": "135.5",
+            "sourceLines": [
+              92
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "恶魔鱼索奇亚",
+            "coordinate": "282.404",
+            "sourceLines": [
+              93
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "恋爱苹果沙莲娜",
+            "coordinate": "267.558",
+            "sourceLines": [
+              95
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "冰冻爱丽丝沙莲娜",
+            "coordinate": "109.170",
+            "sourceLines": [
+              96
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
+      },
+      {
+        "id": "optional-gem-exchange",
+        "order": 26,
+        "text": "原攻略另列：可用石榴石兑换同等级的红宝石；此处未列兑换NPC或具体地点。",
+        "inputs": [
+          {
+            "item": "石榴石",
+            "action": "hand-over",
+            "sourceLines": [
+              14
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-unbound-source-review"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "item": "红宝石",
+            "acquisition": "guaranteed",
+            "sourceLines": [
+              14
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-unbound-source-review"
+            }
+          }
+        ],
+        "notes": [],
+        "optional": true,
+        "branch": "可选宝石兑换",
+        "sourceLines": [
+          14
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-unbound-source-review"
         }
       }
     ],
@@ -1734,7 +1902,8 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "text": "任务可重复进行。漏做某天不会终止，只会整体顺延；第3天需完成全部四条路线，才有原攻略所述第97天四册流行手册与可爱优奈的路径。原攻略未明确每人每次可领几本手册。"
       }
     ]
   },
@@ -2128,6 +2297,20 @@
           "method": "manual-semantic-review"
         },
         "step": "direct-call",
+        "version": "common",
+        "tier": "common"
+      },
+      {
+        "item": "石榴石",
+        "action": "hand-over",
+        "sourceLines": [
+          14
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-unbound-source-review"
+        },
+        "step": "optional-gem-exchange",
         "version": "common",
         "tier": "common"
       }
@@ -2663,6 +2846,20 @@
         "step": "cute-yuna",
         "version": "common",
         "tier": "common"
+      },
+      {
+        "item": "红宝石",
+        "acquisition": "guaranteed",
+        "sourceLines": [
+          14
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-unbound-source-review"
+        },
+        "step": "optional-gem-exchange",
+        "version": "common",
+        "tier": "common"
       }
     ]
   },
@@ -2670,1154 +2867,2421 @@
     {
       "line": 1,
       "text": "职业限定 正职；工作职业称号系列 注1 备注 注2",
-      "type": "metadata",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "必要等级 Lv 1 推荐等级 Lv 10+",
-      "type": "metadata",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "时间限制 最短需经过97天（现实时间） 起始地点 法兰城冒险者旅馆地下的月亮俱乐部",
-      "type": "metadata",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "重复完成 可 头目战 --",
-      "type": "metadata",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.notes.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "1. 厨师：习得5级制作料理『酱油猪骨拉面』。",
-      "type": "reward-summary",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "2. 药剂师：习得4级制作药剂『迷魂药』。",
-      "type": "reward-summary",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.1"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "3. 武 / 防具制作师傅：习得4级制作装备『皇后手镯』。",
-      "type": "reward-summary",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.2"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "4. 采集系：取得能抵挡伤害的物品(30次)。",
-      "type": "reward-summary",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.0"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "5. 武 / 防具修理工、鉴定士：可取得减少专门技能使用魔力10％的物品。",
-      "type": "reward-summary",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.1"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "任务奖赏 6. 医生、护士、仙人、侦探：取得增加专门技能成功率的物品。",
-      "type": "reward-summary",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.2"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "7. 永久称号：『董事长』、『闲人』。",
-      "type": "reward-summary",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.1"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "8. 月之戒指：R1。提升血量28-35；耐久240。",
-      "type": "reward-summary",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "9. Lv1宠物：石怪、优奈、可爱优奈。",
-      "type": "reward-summary",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.2"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "10. 可用石榴石换取同等的红宝石。（减少宝石等级的百分数装备耐久，增加等于宝石等级的回复力）",
-      "type": "reward-summary",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.25"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.4"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "★ 以下的天数均为现实时间；24小时为一天★",
-      "type": "time-rule",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "请严格按照攻略所指示的完成，除非有特别提示，否则请不要漏掉本攻略中任何步骤.在每一天与任一位公关的对话中，只有当他讲完“明天还要再来玩哦”之后才开始计算这一位公关下一天的时间，下次再说就会变换对话内容，时间没有达到，公关就会说重复的话。四个公关是互不相干的四条时间线路，目前资料显示只有在第三天的时候完成全部四个公关的任务才能在第九十七天的时候得到四册流行手册，并能换得Lv1的可爱优奈",
-      "type": "timeline-rule",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.notes.0"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "第1天",
-      "type": "day-heading",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "1.到圣拉鲁卡村找原为黑衣男的杰克(43，55)得知暗号『服务费另计』。",
-      "type": "password-acquisition",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "2.到冒险者旅馆一楼的楼梯(43，26)进入的水晶交换所找可疑的黑衣男(15，38)进入地下通路。",
-      "type": "hidden-passage",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "3.在地下通路的带位人员(6，6)讲出暗号「服务费另计」进入月亮俱乐部。",
-      "type": "password-entry",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "4.与俱乐部内的服务生说话，付出$117的入场费进入俱乐部内，这时可找珍妮用石榴石换取同等的红宝石。(每次进入都可交换，交换与否不影响任务进行)",
-      "type": "entry-and-exchange",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "5.找月亮俱乐部内的肯、百合、圣子及铁虎换取名片，换取时需另支付饮料费用$40G，换取后会被传送出去，需重新进入找下一对象换取，时间不对则无法换取。",
-      "type": "business-card-acquisition",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "换取时间：",
-      "type": "time-heading",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "肯：白天以外",
-      "type": "time-rule",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "百合：黄昏以外",
-      "type": "time-rule",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "圣子：夜晚以外",
-      "type": "time-rule",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "铁虎：清晨以外",
-      "type": "time-rule",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "珍妮： 白天以外的时间会出现（无名片，可以找她用石榴石换红宝石）",
-      "type": "time-rule",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "以下流程中提到找他们中的任何一个都必须以以上的出现时间限制为准。名片为放在道具栏的型态，点二下则发送信件。",
-      "type": "card-rule",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "第2天",
-      "type": "day-heading",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "找月亮俱乐部内的任一公关（肯 、百合 、圣子 、铁虎 四个人中的任何一个，下同）对话，会传送到单独的房间，随机可以遇到优奈(分支任务)或史凯勒，对话后会被传送出去。",
-      "type": "random-encounter",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "找完一位公关后，今天的任务就算完成，但是在第三天的时候只能做你找过的那位公关的任务并得到他的推荐，所以建议今天把四个公关全部找一次",
-      "type": "route-retention-rule",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "把四个公关全部找一次",
-      "type": "route-advice",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "分支任务若随机遇到优奈则可以进行分支任务。第1次：得到「优奈的铃铛」(不可交易或放置地面)。",
-      "type": "branch-reward",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "第2次：若带着优奈的铃会得到「手表？」R4，请你帮忙找人鉴定。",
-      "type": "branch-reward",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "鉴定后得到「ＸＸ士手表」拿到法兰城凯蒂夫人的店找桑丽欧，给她后会得到另一只「ＸＸ士手表」(需鉴定R6)",
-      "type": "appraisal-chain",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "鉴定后得到「Ｘ力士手表」，鉴定完再去找桑丽欧，给她后会得到另一只「Ｘ力士手表」(需鉴定R8)",
-      "type": "appraisal-chain",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.7"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "鉴定后得到「海力士手表」，鉴定完再去找桑丽欧，给她后会得到「海力士鉴定书」",
-      "type": "appraisal-chain",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.8"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "第3次：拿着鉴定好的「海力士鉴定书」与优奈对话，随机得到魔族水晶、德特家的布、誓言之证 、火焰之魂、蔓陀螺皮、风龙蜥的甲壳。注：只有这时才有机会遇到优奈，若能换得「手表？」(就是与4个公关交换名片后的第２次对话中遇到2次)，可将最后完成的「海力士鉴定书」交由其他人物进行换取奖品，若只有得到铃铛，却又想解这个分支任务，便需将所有名片丢弃，重新交换后等次日的机会换取「手表？」，若不想完成该任务，可将铃铛丢弃，并不影响主线任务进行。",
-      "type": "branch-pool",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.9"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "需再次进入，才可与其他公关进行第二次对话，下列职业可以在对应时间与公关的客人进行对话，并以特定物品交换习得技能。",
-      "type": "skill-route-heading",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "1.厨师 ：夜晚，把啤酒给圣子的客人厨师贝格尼斯，习得『酱油猪骨拉面』",
-      "type": "skill-exchange",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "2.药剂师 ：黄昏，把洋芋片给百合的客人暗药剂师拉恩萨，习得『迷魂药』。",
-      "type": "skill-exchange",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.1"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "3.武/防制作师傅：清晨，把千宝路香烟给铁虎的客人装饰士拉美拉，『皇后手镯』。",
-      "type": "skill-exchange",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.2"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "上述啤酒、洋芋片、千宝路香烟或贝纳希可以找店长购买。啤酒 Lv2 魔+40 $400G 洋芋片 Lv2 魔+75 $200G 千宝路香烟 Lv3 魔-4 $260G 贝纳希 Lv10 魔+1000 $30000G",
-      "type": "shop-list",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "第3天（今天的任务全部完成才能在第97天的时候得到四册[流行手册]和可爱优奈哦）",
-      "type": "day-heading",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "由于珍妮是不会给新到俱乐部的客人名片的，所以需要获得其他公关的推荐，要获得其他公关推荐需完成下列条件，可择一路线进行，也可以全部路线都完成。",
-      "type": "route-rule",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "『肯』路线",
-      "type": "route-heading",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "1. 夜晚时找肯说话取得『结婚首饰』。",
-      "type": "item-acquisition",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.10"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "2. 到维诺亚村找在荷特尔咖哩店(49，58)的蜜莉的丈夫，以『结婚首饰』换取『帕拉哥的信』。",
-      "type": "exchange-step",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.7"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.11"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "3. 白天时到月亮俱乐部把帕拉格的信给蜜莉换取『给肯的信』。",
-      "type": "exchange-step",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.8"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.12"
+        }
+      ]
     },
     {
       "line": 51,
       "text": "4. 在白天以外的时间将『给肯的信』给肯，再发信给肯将你推荐给珍妮。",
-      "type": "recommendation-step",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.inputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.9"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.13"
+        }
+      ]
     },
     {
       "line": 52,
       "text": "『百合』路线",
-      "type": "route-heading",
       "sourceLines": [
         52
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        }
+      ]
     },
     {
       "line": 53,
       "text": "在黄昏以外的时间将迷魂药给百合，再发信给百合将你推荐给珍妮。",
-      "type": "recommendation-step",
       "sourceLines": [
         53
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.10"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.14"
+        }
+      ]
     },
     {
       "line": 54,
       "text": "『圣子』路线",
-      "type": "route-heading",
       "sourceLines": [
         54
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        }
+      ]
     },
     {
       "line": 55,
       "text": "在夜晚以外的时间将酱油猪骨拉面给圣子，再发信给圣子将你推荐给珍妮。",
-      "type": "recommendation-step",
       "sourceLines": [
         55
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.11"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.15"
+        }
+      ]
     },
     {
       "line": 56,
       "text": "『铁虎』路线",
-      "type": "route-heading",
       "sourceLines": [
         56
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        }
+      ]
     },
     {
       "line": 57,
       "text": "在清晨以外的时间将皇后手镯给铁虎，再发信给铁虎将你推荐给珍妮。",
-      "type": "recommendation-step",
       "sourceLines": [
         57
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.12"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.16"
+        }
+      ]
     },
     {
       "line": 58,
       "text": "第4天~第5天",
-      "type": "day-range",
       "sourceLines": [
         58
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        }
+      ]
     },
     {
       "line": 59,
       "text": "发信给每个公关的名片，并进入月亮俱乐部找每个公关谈话。",
-      "type": "daily-action",
       "sourceLines": [
         59
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        }
+      ]
     },
     {
       "line": 60,
       "text": "第6天",
-      "type": "day-heading",
       "sourceLines": [
         60
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        }
+      ]
     },
     {
       "line": 61,
       "text": "1.与每个公关对话并在白天以外找珍妮说话取得7日纪念招待状，并传送到贵宾室找珍妮。",
-      "type": "milestone-reward",
       "sourceLines": [
         61
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        }
+      ]
     },
     {
       "line": 62,
       "text": "2.取得月亮俱乐部VIP证，使用后得到永久称号：『董事长』。(若解完第三天的4条线路可以得到4个，使用第一个后可以得到称号，其余三个无作用)",
-      "type": "title-item",
       "sourceLines": [
         62
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.15.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.17"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 63,
       "text": "第7天~第13天",
-      "type": "day-range",
       "sourceLines": [
         63
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.16"
+        }
+      ]
     },
     {
       "line": 64,
       "text": "发信给每个公关的名片，并进入月亮俱乐部找每个公关谈话。",
-      "type": "daily-action",
       "sourceLines": [
         64
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.16"
+        }
+      ]
     },
     {
       "line": 65,
       "text": "第14天",
-      "type": "day-heading",
       "sourceLines": [
         65
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        }
+      ]
     },
     {
       "line": 66,
       "text": "1.与每个公关对话并在白天以外找珍妮说话取得15日记念招待状。",
-      "type": "milestone-reward",
       "sourceLines": [
         66
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        }
+      ]
     },
     {
       "line": 67,
       "text": "2.并传送到贵宾室找珍妮，取得月之戒指。 (若解完第三天的4条线路可以得到4个)",
-      "type": "milestone-reward",
       "sourceLines": [
         67
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.17"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.17.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.18"
+        }
+      ]
     },
     {
       "line": 68,
       "text": "第15天~第27天",
-      "type": "day-range",
       "sourceLines": [
         68
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        }
+      ]
     },
     {
       "line": 69,
       "text": "发信给每个公关的名片，并进入月亮俱乐部找每个公关谈话。",
-      "type": "daily-action",
       "sourceLines": [
         69
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.18"
+        }
+      ]
     },
     {
       "line": 70,
       "text": "第28天",
-      "type": "day-heading",
       "sourceLines": [
         70
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.19"
+        }
+      ]
     },
     {
       "line": 71,
       "text": "1. 与每个公关对话并在白天以外找珍妮说话取得30日记念招待状。",
-      "type": "milestone-reward",
       "sourceLines": [
         71
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.19"
+        }
+      ]
     },
     {
       "line": 72,
       "text": "2. 并传送到贵宾室找珍妮，取得石怪的作成方法。",
-      "type": "method-acquisition",
       "sourceLines": [
         72
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.19"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.19.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.19"
+        }
+      ]
     },
     {
       "line": 73,
       "text": "3. 到魔女之家找马梅达美对话取得 [腐叶土][赤玉土][兽之血][??的碎片] ，接着走到魔女之家中央的魔法阵，使用石怪的作成方法，取得Lv1石怪。",
-      "type": "pet-creation",
       "sourceLines": [
         73
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.19"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.19.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.19.outputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.19.outputs.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.19.outputs.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.19.outputs.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.20"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.21"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.22"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.23"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.24"
+        }
+      ]
     },
     {
       "line": 74,
       "text": "第29天~第96天",
-      "type": "day-range",
       "sourceLines": [
         74
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.20"
+        }
+      ]
     },
     {
       "line": 75,
       "text": "发信给每个公关的名片，并进入月亮俱乐部找每个公关谈话。",
-      "type": "daily-action",
       "sourceLines": [
         75
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.20"
+        }
+      ]
     },
     {
       "line": 76,
       "text": "第97天",
-      "type": "day-heading",
       "sourceLines": [
         76
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.21"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        }
+      ]
     },
     {
       "line": 77,
       "text": "若在第三日有帮忙完成任务，会得到流行手册，与肯取得第Ⅰ册、百合第Ⅱ册、圣子第Ⅲ册、铁虎第Ⅳ册，并传送到贵宾室找珍妮说话，各职业拿到特殊物品，取得Lv1优奈与永久称号：闲人，并交出所有名片，再讲话就可以重新开始。取得四册的流行手册与Lv1优奈，到法兰城的美容院找见习美容师蕾娜换得Lv1可爱优奈。 注3",
-      "type": "completion-reward",
       "sourceLines": [
         77
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.21"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.21.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.21.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.21.inputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.21.inputs.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.21.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.21.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.21.outputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.21.outputs.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.21.outputs.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.21.outputs.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.21.outputs.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.21.outputs.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.22"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.22.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.22.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.22.inputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.22.inputs.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.22.inputs.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.22.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.13"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.14"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.15"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.16"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.17"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.18"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.19"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.20"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.21"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.25"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.26"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.27"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.28"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.29"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.30"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.31"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.32"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.33"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.1"
+        }
+      ]
     },
     {
       "line": 78,
       "text": "有一个女服务生跟你收钱(就是117元的那个)你能直接跟他对话打出npc的名子(如：百合、圣子、铁虎、肯等等，注意：珍妮和优奈和那个怪女如花是不受点名的)这样子你会直接传到那个npc的面前不过会再收点名费用3元",
-      "type": "direct-call",
       "sourceLines": [
         78
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.23"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.23.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.22"
+        }
+      ]
     },
     {
       "line": 79,
       "text": "温馨提示：",
-      "type": "tips-heading",
       "sourceLines": [
         79
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": []
     },
     {
       "line": 80,
       "text": "注1：正职以上的生产系职业以及医生、护士（仙人和侦探是否可以参与任务未知）",
-      "type": "eligibility-note",
       "sourceLines": [
         80
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.6"
+        }
+      ]
     },
     {
       "line": 81,
       "text": "注2：厨师、药剂师、武/防制作师有新技能；NPC名片是道具不需删除名片栏；任务不会因为错过某一天的步骤而导致终止，只会顺延下去",
-      "type": "schedule-note",
       "sourceLines": [
         81
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.notes.0"
+        }
+      ]
     },
     {
       "line": 82,
       "text": "注3：因为不知道这个流行手册到底性质如何，如果是每个人每次任务限拿一本的话……XD，所以还是第三天的时候把任务全部做完，反正没坏处。为了防万一，有条件的可以用4个人物来一起做，最后拿流行手册的时候首先每个人物分别拿一本，再用个人物不和珍妮说话去找另外的公关看看能不能再拿",
-      "type": "source-uncertainty",
       "sourceLines": [
         82
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.notes.0"
+        }
+      ]
     },
     {
       "line": 83,
       "text": "相关物品制作",
-      "type": "crafting-heading",
       "sourceLines": [
         83
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        }
+      ]
     },
     {
       "line": 84,
       "text": "增加技能制作物品名称所需材料",
-      "type": "table-heading",
       "sourceLines": [
         84
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        }
+      ]
     },
     {
       "line": 85,
       "text": "料理酱油猪骨拉面 5级猪肉 20海苔 20酱油 20鸡蛋 20小麦粉 20",
-      "type": "recipe-row",
       "sourceLines": [
         85
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        }
+      ]
     },
     {
       "line": 86,
       "text": "制药恍惚的药 4级恶魔鱼 1井底蛙 1摩斯蜥蜴 1恋爱苹果 20",
-      "type": "recipe-row",
       "sourceLines": [
         86
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.1"
+        }
+      ]
     },
     {
       "line": 87,
       "text": "武器/防具制作皇后腕轮 4级纯银条 5银条 1金条 1冰冻爱丽丝 20钛 20",
-      "type": "recipe-row",
       "sourceLines": [
         87
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.2"
+        }
+      ]
     },
     {
       "line": 88,
       "text": "相关采集",
-      "type": "gathering-heading",
       "sourceLines": [
         88
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        }
+      ]
     },
     {
       "line": 89,
       "text": "情报采集物品名采集地点所需技能等级",
-      "type": "table-heading",
       "sourceLines": [
         89
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        }
+      ]
     },
     {
       "line": 90,
       "text": "猪肉穿越维诺亚海底洞窟的平原（300，400）附近狩猎5级以上取得",
-      "type": "gathering-row",
       "sourceLines": [
         90
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        }
+      ]
     },
     {
       "line": 91,
       "text": "摩斯蜥蜴索奇亚（528，326）附近狩猎4级以上取得",
-      "type": "gathering-row",
       "sourceLines": [
         91
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        }
+      ]
     },
     {
       "line": 92,
       "text": "井底蛙角笛大风洞（135，5）附近狩猎4级以上取得",
-      "type": "gathering-row",
       "sourceLines": [
         92
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        }
+      ]
     },
     {
       "line": 93,
       "text": "恶魔鱼索奇亚（282，404）附近狩猎4级以上取得",
-      "type": "gathering-row",
       "sourceLines": [
         93
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        }
+      ]
     },
     {
       "line": 94,
       "text": "钛矿石维诺亚海底洞窟地下2F全域挖掘5级以上取得",
-      "type": "gathering-row",
       "sourceLines": [
         94
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        }
+      ]
     },
     {
       "line": 95,
       "text": "恋爱苹果沙莲娜（267，558）附近狩猎5级以上取得",
-      "type": "gathering-row",
       "sourceLines": [
         95
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        }
+      ]
     },
     {
       "line": 96,
       "text": "冰冻爱丽丝沙莲娜（109，170）附近伐木5级以上取得",
-      "type": "gathering-row",
       "sourceLines": [
         96
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.24"
+        }
+      ]
     }
   ],
   "verification": {
@@ -4103,6 +5567,39 @@
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
+      }
+    },
+    {
+      "id": "moon-gem-exchange",
+      "version": "common",
+      "tier": "common",
+      "kind": "exchange",
+      "step": "optional-gem-exchange",
+      "items": [
+        {
+          "id": "moon-ruby",
+          "name": "红宝石",
+          "role": "valuable-result",
+          "entityType": "item",
+          "properties": {
+            "use": "镶嵌装备",
+            "effect": "按宝石等级增加回复力，并减少宝石等级对应百分比的装备耐久；原攻略未列具体等级表。"
+          },
+          "sourceLines": [
+            14
+          ],
+          "verification": {
+            "status": "verified",
+            "method": "manual-unbound-source-review"
+          }
+        }
+      ],
+      "sourceLines": [
+        14
+      ],
+      "verification": {
+        "status": "verified",
+        "method": "manual-unbound-source-review"
       }
     }
   ],

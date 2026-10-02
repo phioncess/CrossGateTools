@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-67f0f8c8-1540-432e-a690-3a03b34adf28",
   "name": "秘密组织的邀请",
   "aliases": [
@@ -407,7 +407,53 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "石头（第1处）",
+            "coordinate": "770.82",
+            "sourceLines": [
+              14
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "石头（第2处）",
+            "coordinate": "758.85",
+            "sourceLines": [
+              16
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "树",
+            "coordinate": "732.122",
+            "sourceLines": [
+              18
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "石头（第3处）",
+            "coordinate": "716.92",
+            "sourceLines": [
+              20
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "healer",
@@ -1079,386 +1125,942 @@
     {
       "line": 1,
       "text": "非忍者路线：",
-      "type": "route-heading",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "1.非忍者职业需战胜《地下竞技场》任务的艾谢巴特。（不用打轻量级和羽量级，直接打重量级就行了，具体攻略见https://www.molibaike.com/Article/Detail/7e41fda8-b9ff-45b5-9ed4-a48f4e590fd5）",
-      "type": "route-prerequisite",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "2.前往柯马特依村，夜晚调查草料？（41.61），选“是”传送至诺斯菲拉特。",
-      "type": "night-route-step",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "◆柯马特依村抵达方法参考《踏足诺斯菲拉特》任务",
-      "type": "route-reference",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "◆选“否”进入战斗，挑战Lv.95 铁拳·艾谢巴特（不建议尝试），战斗信息：",
-      "type": "optional-battle-choice",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.optional-iron-fist"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "Lv.95铁拳·艾谢巴特（测试）：HP≈45000，MP≈43000，100闪100命中，二次行动（吃不吃咒未测试）。",
-      "type": "battle-enemy",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.optional-iron-fist"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.optional-iron-fist.enemies.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "技能：明镜止水10（战栗至140魔放不出），气功蛋10（伤害800暴击1000，战栗至70魔放不出），",
-      "type": "battle-skill",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.optional-iron-fist"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.optional-iron-fist.enemies.0"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "奥义连击·舞（血量低于50%追加，伤害400+，不耗魔）",
-      "type": "battle-skill",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.optional-iron-fist"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.optional-iron-fist.enemies.0"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "◆根据魔友热心举证：本任务中所涉及的所有“夜晚”限制，经实则，有可能在某些情况下无效；",
-      "type": "bug-caveat",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.notes.0"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "即白天也能执行相关操作，不确定是什么BUG",
-      "type": "bug-caveat",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.notes.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "3.寻找四名人才训练部队成员并与之对话，进入战斗。战斗胜利后获得相关【胜利证明】。",
-      "type": "four-battle-step",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "◆人才训练部队成员位置：",
-      "type": "location-heading",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "位置（外形）战斗信息掉落物品",
-      "type": "table-heading",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "（770.82）（石头）Lv.79，二动，血量约6000；",
-      "type": "battle-row",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members.battles.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members.battles.0.enemies.0"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "技能：诸刃、连击【胜利证明I】",
-      "type": "battle-row-continuation",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members.battles.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members.battles.0.enemies.0"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "（758.85）（石头）Lv.79，二动，血量约5500；",
-      "type": "battle-row",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members.battles.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members.battles.1.enemies.0"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "技能：乾坤一掷、乱射【胜利证明II】",
-      "type": "battle-row-continuation",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members.battles.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members.battles.1.enemies.0"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "（732.122）（树）Lv.79，二动，血量约7500；",
-      "type": "battle-row",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members.battles.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members.battles.2.enemies.0"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "技能：乾坤一掷、战栗袭心【胜利证明III】",
-      "type": "battle-row-continuation",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members.battles.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members.battles.2.enemies.0"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "（716.92）（石头）Lv.79，二动，血量约6500；",
-      "type": "battle-row",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members.battles.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members.battles.3.enemies.0"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "技能：乾坤一掷、连击、阳炎【胜利证明IV】",
-      "type": "battle-row-continuation",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members.battles.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members.battles.3.enemies.0"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "备注1.人才训练部队成员外形皆非人型",
-      "type": "appearance-note",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "2.与人才训练部队成员对话会解散队伍并进入单人战斗",
-      "type": "solo-battle-rule",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.training-members"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "3.诺斯菲拉特（758.74）处为暗部医疗部队成员；",
-      "type": "service-location",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "可补血魔（非资深）；仅夜晚出现",
-      "type": "night-service",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "4.集齐四张【胜利证明】后前往地图（802.74）处返回正常的柯马特依村（也可登出后重新坐船前往柯马特依村）。",
-      "type": "return-step",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "5.夜晚与草料？（41.61）对话，交出【胜利证明I】、【胜利证明II】、【胜利证明III】、【胜利证明IV】，",
-      "type": "completion-exchange",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.7"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "获得【组织图复刻版】、称号“暗部第七部队成员”，任务完结。",
-      "type": "reward-title",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "◆双击【组织图复刻版】可查看组织详情",
-      "type": "item-use",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "忍者路线：",
-      "type": "route-heading",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "1.前往柯马特依村，夜晚调查草料？（41.61），选“是”，获得【组织图复刻版】、称号“暗部第七部队成员”，任务完结。",
-      "type": "direct-completion",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "◆柯马特依村抵达方法参考《踏足诺斯菲拉特》任务",
-      "type": "route-reference",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        }
+      ]
     }
   ],
   "verification": {

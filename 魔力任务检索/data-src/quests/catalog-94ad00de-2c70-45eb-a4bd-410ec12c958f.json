@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-94ad00de-2c70-45eb-a4bd-410ec12c958f",
   "name": "传说中的勇者",
   "aliases": [
@@ -1422,458 +1422,1110 @@
     {
       "line": 1,
       "text": "1.前往法兰城里谢里雅堡，持有【生命的羁绊】、【风之手环】、【火焰之羽】、【晶莹的冰晶】与赫顿摩尔（34.70）对话（此步可跳过）。",
-      "type": "optional-held-items",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆【生命的羁绊】获得方式参考《贪婪之心》任务",
-      "type": "item-source",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "【风之手环】获得方式参考《色欲的诱惑》任务",
-      "type": "item-source",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "【火焰之羽】获得方式参考《消失的古都》任务",
-      "type": "item-source",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.2"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "【晶莹的冰晶】获得方式参考《隐藏的真相》任务",
-      "type": "item-source",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.3"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "2.前往杰诺瓦镇，出镇西门至莎莲娜岛（150.334）处，",
-      "type": "route-step",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "持有【生命的羁绊】、【风之手环】、【火焰之羽】、【晶莹的冰晶】与赫顿的式神对话，进入贝兹雷姆小道。",
-      "type": "four-item-gate",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "◆贝兹雷姆小道与《邪灵鸟人》任务中地图一致，但需重新读取地图",
-      "type": "map-reference",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "◆贝兹雷姆小道行走路线：",
-      "type": "route-heading",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "3.通过迷宫抵达色欲之殿，通过红色传送石抵达暗房（千万不要点后面的楼梯口会被直接传送出去）。",
-      "type": "route-warning",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "与堕落僧侣梅鲁（11.11）对话，交出【生命的羁绊】、【风之手环】、【火焰之羽】、【晶莹的冰晶】获得【黑暗之心】并传送至莎莲娜岛。",
-      "type": "grouped-exchange",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "4.前往加纳村，出村南门至索奇亚岛（470.380）处。调查黄色水晶石，交出【黑暗之心】进入？？？。",
-      "type": "exchange-entry",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.7"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "5.通过红色传送石（33.20），抵达塌方的洞窟。",
-      "type": "route-step",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◆塌方的洞窟为随机迷宫，约12层；魔物为腐尸、水蜘蛛（怀旧服为Lv.60；时长/道具服为Lv.110）",
-      "type": "versioned-maze",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "6.通过随机迷宫抵达地窖，持有【吉娜的魔法书】与拉斯（20.16）对话，交出【吉娜的魔法书】进入削弱版BOSS战，否则进入普通版BOSS战。",
-      "type": "battle-mode-choice",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "◆【吉娜的魔法书】获得方式参考本任务支线部分",
-      "type": "item-source",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "◆两者区别主要在于削弱版比普通版BOSS的血量减少一半；格拉托尼、拉斯特属性由全40变更为全50",
-      "type": "mode-difference",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final.weakenedVariants.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final.weakenedVariants.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final.weakenedVariants.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final.weakenedVariants.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final.weakenedVariants.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final.weakenedVariants.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final.weakenedVariants.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final.weakenedVariants.7"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "◆（怀旧服）普通版战斗信息：",
-      "type": "server-battle-heading",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "Lv.65格拉托尼，血量约8000，属性：全40，不抗咒；技能：攻击、乾坤一掷、诸刃、阳炎、崩击、连击、毒性攻击、战栗袭心",
-      "type": "battle-enemy",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final.enemies.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final.weakenedVariants.0"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "Lv.65拉斯特，血量约8000，属性：全40，不抗咒；技能：攻击、四属性单体攻击魔法、攻击无效、吸血魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final.enemies.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final.weakenedVariants.1"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "Lv.65拉斯，血量约10000，属性：全50，不抗咒；技能：攻击、防御、混乱攻击、阳炎、恢复魔法、战栗袭心",
-      "type": "battle-enemy",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final.enemies.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final.weakenedVariants.2"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "Lv.65斯洛斯，血量约12000，属性：全50，不抗咒；技能：攻击、防御、圣盾、连击、乾坤一掷、吸血攻击、崩击、石化攻击、阳炎",
-      "type": "battle-enemy",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final.enemies.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final.weakenedVariants.3"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "◆（时长/道具服）普通版战斗信息：",
-      "type": "server-battle-heading",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "Lv.115格拉托尼，血量约17000，属性：全40，不抗咒；技能：攻击、乾坤一掷、诸刃、阳炎、崩击、连击、毒性攻击、战栗袭心",
-      "type": "battle-enemy",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final.enemies.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final.weakenedVariants.4"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "Lv.115拉斯特，血量约17000，属性：全40，不抗咒；技能：攻击、四属性单体攻击魔法、攻击无效、吸血魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final.enemies.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final.weakenedVariants.5"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "Lv.115拉斯，血量约18000，属性：全50，不抗咒；技能：攻击、防御、暗杀、混乱攻击、阳炎、恢复魔法、战栗袭心",
-      "type": "battle-enemy",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final.enemies.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final.weakenedVariants.6"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "Lv.115斯洛斯，血量约20000，属性：全50，不抗咒；技能：攻击、防御、圣盾、连击、乾坤一掷、吸血攻击、崩击、石化攻击、阳炎",
-      "type": "battle-enemy",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final.enemies.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.seven-sins-final.weakenedVariants.7"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "7.战斗胜利后与拉斯对话变更场景。与赫顿摩尔（7.16）对话，获得“传说中的勇者”称号（怀旧服），任务完结。",
-      "type": "versioned-title-completion",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "◆怀旧服：拥有“传说中的勇者”称号时，无法重解《邪灵鸟人》任务",
-      "type": "repeat-block",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "◆时长/道具服：此步不会获得称号",
-      "type": "no-title-version",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "◆任务剧情：参考《七宗罪系列任务剧情对话》",
-      "type": "story-reference",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "◆BOSS打法：参考《七宗罪系列任务BOSS战打法心得》",
-      "type": "strategy-reference",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.2"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "【吉娜的魔法书】支线：",
-      "type": "side-heading",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "1.前往法兰城里谢里雅堡，持有【黑暗之心】与赫顿摩尔（34.70）对话（此步可跳过）。",
-      "type": "optional-side-intro",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "◆【黑暗之心】获得方式参考本任务主线部分",
-      "type": "item-source",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "2.前往流星山丘之顶，队中一人持有【黑暗之心】与巫师小爱（30.25）对话，获得【吉娜的魔法书】，支线完结。",
-      "type": "side-item-acquisition",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "◆流星山丘之顶抵达方式参考《流星山丘》任务",
-      "type": "route-reference",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "◆【吉娜的魔法书】仅需队长持有即可",
-      "type": "leader-item-rule",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     }
   ],
   "verification": {

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-667e6a16-5836-4348-9cde-f333f6f47ea7",
   "name": "就职传教士",
   "aliases": [
@@ -195,6 +195,92 @@
           "status": "verified",
           "method": "manual-semantic-review"
         }
+      },
+      {
+        "id": "optional-healing-skills",
+        "order": 5,
+        "text": "仅限传教士向僧侣特雷因选“是”传入大圣堂里面。向僧侣法马斯交100G可学【补血魔法】；向僧侣菲欧雷交100G可学【强力补血魔法】。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "optional": true,
+        "postCompletion": true,
+        "branch": "可选技能与服务",
+        "sourceLines": [
+          5,
+          6,
+          7
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-source-service-decomposition"
+        },
+        "routePoints": [
+          {
+            "name": "僧侣特雷因（传入）",
+            "coordinate": "14.6",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-service-decomposition"
+            }
+          },
+          {
+            "name": "僧侣法马斯（补血魔法）",
+            "coordinate": "14.10",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-service-decomposition"
+            }
+          },
+          {
+            "name": "僧侣菲欧雷（强力补血魔法）",
+            "coordinate": "19.12",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-service-decomposition"
+            }
+          }
+        ]
+      },
+      {
+        "id": "optional-revive-skill",
+        "order": 6,
+        "text": "亚留特村神官理贾教授【气绝回复】，不限职业。原攻略这一行未列费用。",
+        "inputs": [],
+        "outputs": [],
+        "notes": [],
+        "optional": true,
+        "postCompletion": true,
+        "branch": "可选技能与服务",
+        "sourceLines": [
+          10
+        ],
+        "verification": {
+          "status": "verified",
+          "method": "manual-source-service-decomposition"
+        },
+        "routePoints": [
+          {
+            "name": "亚留特村神官理贾",
+            "coordinate": "42.72",
+            "sourceLines": [
+              10
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "manual-source-service-decomposition"
+            }
+          }
+        ]
       }
     ],
     "notes": []
@@ -258,134 +344,256 @@
     {
       "line": 1,
       "text": "1.前往法兰城（154.29）进入大圣堂的入口，通过（14.7）处抵达礼拜堂。",
-      "type": "step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "2.前往（23.0）处抵达大圣堂里面。",
-      "type": "step",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "3.与作相性测验的托特（16.11）对话，所有选项皆选“是”获得【僧侣适性检查合格证】。",
-      "type": "step",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "4.持有【僧侣适性检查合格证】与大僧侣拉马隆（17.9）即可就职传教士，任务完结。",
-      "type": "step",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "◆仅限传教士职业，与僧侣特雷因（14.6）对话，选“是”传送至大圣堂里面；",
-      "type": "skill-access",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "与僧侣法马斯（14.10）对话，可交出100G学习技能补血魔法；",
-      "type": "skill-learning",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "与僧侣菲欧雷（19.12）对话，可交出100G学习技能强力补血魔法",
-      "type": "skill-learning",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "◆其他技能学习：",
-      "type": "skill-heading",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.2"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.3"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "超强补血魔法习得技能方法参考任务《挑战神兽》，限制1转传教；",
-      "type": "skill-reference",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.2"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "气绝回复学习地点位于亚留特村的神官理贾（42.72），不限职业",
-      "type": "skill-learning",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "◆怀旧服：不限定职业可以使用【技能学习证】，习得教4种得意技，参考《怀旧服【技能学习证】详情》一文",
-      "type": "server-rule",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.4"
+        }
+      ]
     }
   ],
   "verification": {

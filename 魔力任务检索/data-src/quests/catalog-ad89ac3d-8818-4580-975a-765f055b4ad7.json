@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-ad89ac3d-8818-4580-975a-765f055b4ad7",
   "name": "蠢动",
   "aliases": [
@@ -417,7 +417,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "米诺基亚镇民房",
+            "coordinate": "91.148",
+            "sourceLines": [
+              3
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "investigation-skill",
@@ -731,7 +744,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "聚能体",
+            "coordinate": "11.4",
+            "sourceLines": [
+              23
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "pava-battle",
@@ -1861,674 +1887,1522 @@
     {
       "line": 1,
       "text": "1.前往哥拉尔镇，持有【莱诺的感谢信】与卡鲁（131.64）对话。（此步可省略）",
-      "type": "optional-held-item",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆【莱诺的感谢信】获得方式参考《心魔》任务",
-      "type": "item-source",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "2.前往米诺基亚镇民房（91.148）与莱诺对话，交出【莱诺的感谢信】获得【疑犯的特征】。",
-      "type": "exchange-step",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "3.返回法兰城职业公会（73.60）与大侦探汉克（7.11）对话，交出【疑犯的特征】获得【调查的技巧】。",
-      "type": "exchange-step",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.routePoints.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.routePoints.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "4.再次与大侦探汉克（7.11）对话，输入“凯特…”获得【汉克的提示】。",
-      "type": "keyword-acquisition",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.commands.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "5.前往哥拉尔镇与逃出的实验员对话，输入“医生…”交出【汉克的提示】获得【实验员的证明】。",
-      "type": "keyword-exchange",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.commands.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "◆逃出的实验员位置：",
-      "type": "npc-location-heading",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "时间段坐标",
-      "type": "table-heading",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "清晨（164.53）",
-      "type": "npc-location",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "白昼（83.139）",
-      "type": "npc-location",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "黄昏（162.151）",
-      "type": "npc-location",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "黑夜（89.51）",
-      "type": "npc-location",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "6.与卡鲁（131.64）对话，输入“帕瓦…”获得【帕瓦的情报】。",
-      "type": "keyword-acquisition",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.commands.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "7.与士兵梅伯尔（96.211）对话，交出【帕瓦的情报】、【实验员的证明】，强制解散队伍并进入战斗，战斗胜利后获得【揉皱的纸条】。",
-      "type": "party-break-battle",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.routePoints.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.mabel"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "◆若战斗失败，需从本任务第3步开始重解",
-      "type": "failure-reset",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "◆战斗信息：（怀旧服）",
-      "type": "server-heading",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.mabel"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "Lv.75梅伯尔（奇美拉），血量约2000；技能：攻击、防御、崩击、乾坤一掷、中毒魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.mabel"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.mabel.enemies.0"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "◆战斗信息：（时长服）",
-      "type": "server-heading",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.mabel"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "Lv.125梅伯尔（奇美拉），血量约3400；技能：攻击、防御、崩击、乾坤一掷、中毒魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.mabel"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.mabel.enemies.1"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "8.前往库鲁克斯岛（706.706）处，持有【揉皱的纸条】与士兵梅伯尔对话，进入陷阱迷宫。",
-      "type": "held-item-maze-entry",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.6"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "◆库鲁克斯岛（706.706）处靠近魔导研究塔",
-      "type": "location-note",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "◆陷阱迷宫为随机迷宫，约11层；魔物为僵尸、木乃伊、食尸鬼、腐尸、丧尸（怀旧服为Lv.67；时长服为Lv.117~124，无木乃伊）",
-      "type": "versioned-maze",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "9.通过随机迷宫抵达陷阱底层，调查聚能体（11.4），选“是”传送至研究塔密室。",
-      "type": "teleport-step",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "10.与帕瓦对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.pava"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "◆战斗信息：（怀旧服）",
-      "type": "server-heading",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.pava"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "Lv.75帕瓦，血量约12000；属性：全属性30；技能：睡眠魔法（对自己使用）、补血魔法、什么也不做",
-      "type": "battle-enemy",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.pava"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.pava.enemies.0"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "◆战斗信息：（时长服）",
-      "type": "server-heading",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.pava"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "Lv.125帕瓦，血量约22000；技能：睡眠魔法（对自己使用）、补血魔法（单次恢复血量约4400）",
-      "type": "battle-enemy",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.pava"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.pava.enemies.1"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "11.战斗胜利后传送至研究塔密室，与凯特对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-first"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "◆战斗信息：（怀旧服）",
-      "type": "server-heading",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-first"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "Lv.75凯特，血量约15000；属性：全属性30；技能：攻击、乾坤一掷、补血魔法、连击·破、圣盾",
-      "type": "battle-enemy",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-first"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-first.enemies.0"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "◆战斗信息：（时长服）",
-      "type": "server-heading",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-first"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "Lv.125凯特，血量约24000；技能：攻击、乾坤一掷、补血魔法、连击·破",
-      "type": "battle-enemy",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-first"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-first.enemies.1"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "12.战斗胜利后传送至研究塔密室，与凯特对话进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "怀旧服若持有【破邪护符】，队伍中只需一位队员交出【破邪护符】后进入简单版的BOSS战。",
-      "type": "easy-mode-item-gate",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "◆简单版BOSS战喽啰数量为4只，完整版为9只（时长服无法触发简单版）",
-      "type": "version-rule",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "◆战斗信息：（怀旧服）",
-      "type": "server-heading",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "简易版：",
-      "type": "mode-heading",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final.variants.0"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "Lv.80凯特，血量约20000；技能：攻击、乾坤一掷、连击、补血魔法（为我方补血）",
-      "type": "battle-enemy",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final.variants.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final.variants.0.enemies.0"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "Lv.75魅魔（狠毒鸟人）*2；血量约5000；属性：地风50；技能：攻击、魔法吸收、攻击吸收",
-      "type": "battle-enemy",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final.variants.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final.variants.0.enemies.1"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "Lv.75梦魇（幻歌妖）*2；血量约5000；属性：地风50；技能：攻击、魔法反弹、攻击反弹",
-      "type": "battle-enemy",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final.variants.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final.variants.0.enemies.2"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "完整版：（鸟人共9只）",
-      "type": "mode-heading",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final.variants.1"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "Lv.80凯特，血量约20000；技能：攻击、乾坤一掷、连击、补血魔法（为我方补血）、单体即死",
-      "type": "battle-enemy",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final.variants.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final.variants.1.enemies.0"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "Lv.75魅魔（狠毒鸟人），血量约5000；属性：地风50；技能：攻击、魔法吸收、攻击吸收",
-      "type": "battle-enemy",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final.variants.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final.variants.1.enemies.1"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "Lv.75梦魇（幻歌妖），血量约5000；属性：地风50；技能：攻击、魔法反弹、攻击反弹",
-      "type": "battle-enemy",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final.variants.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final.variants.1.enemies.2"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "◇战斗建议（怀旧服）：先清理喽啰，之后合击BOSS，期间配合石化、中毒魔法",
-      "type": "strategy-note",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "◆战斗信息：（时长服）",
-      "type": "server-heading",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final.variants.2"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "Lv.130凯特，血量约26000；技能：攻击、乾坤一掷、连击、补血魔法（为我方补血）",
-      "type": "battle-enemy",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final.variants.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final.variants.2.enemies.0"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "Lv.125魅魔（狠毒鸟人）*2，血量约9000；技能：攻击、魔法吸收、魔法反弹、魔法无效、攻击吸收、攻击反弹、攻击无效",
-      "type": "battle-enemy",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final.variants.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final.variants.2.enemies.1"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "Lv.125梦魇（幻歌妖）*2，血量约9000；技能：攻击、魔法吸收、魔法反弹、魔法无效、攻击吸收、攻击反弹、攻击无效",
-      "type": "battle-enemy",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final.variants.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final.variants.2.enemies.2"
+        }
+      ]
     },
     {
       "line": 51,
       "text": "◇战斗建议（时长服）：先清理喽啰，之后合击BOSS，注意喽啰的攻击反弹",
-      "type": "strategy-note",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kate-final.variants.2"
+        }
+      ]
     },
     {
       "line": 52,
       "text": "13.战斗胜利后传送至研究塔密室，与凯特对话，交出【揉皱的纸条】获得【凯特的臂环】并传送至库鲁克斯岛。",
-      "type": "exchange-reward",
       "sourceLines": [
         52
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.8"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        }
+      ]
     },
     {
       "line": 53,
       "text": "14.返回法兰城职业公会（73.60）与大侦探汉克（7.11）对话，交出【调查的技巧】获得【大侦探怀表】，任务完结。",
-      "type": "completion-exchange",
       "sourceLines": [
         53
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.9"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.7"
+        }
+      ]
     },
     {
       "line": 54,
       "text": "◆【凯特的臂环】为后续任务相关道具，勿丢弃",
-      "type": "future-use",
       "sourceLines": [
         54
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 55,
       "text": "◆【大侦探怀表】（怀旧服）：Lv.5护身符、耐久30、所有抗性+10、增加偷袭率；装备后获得称号“真相追查者”",
-      "type": "equipment-detail",
       "sourceLines": [
         55
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 56,
       "text": "◆【大侦探怀表】（时长服）：Lv.5护身符、耐久30、所有抗性+10；增加偷袭率（根据等级差效果升降）；装备后获得称号“真相追查者”",
-      "type": "equipment-detail",
       "sourceLines": [
         56
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     }
   ],
   "verification": {

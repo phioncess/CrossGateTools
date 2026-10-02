@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-c64f5650-8f7f-48af-ac5e-46f99d4c9fcf",
   "name": "出来度假的狂战将军——浅海区",
   "aliases": [
@@ -583,182 +583,412 @@
     {
       "line": 1,
       "text": "1.前往法兰城里谢里雅堡与法兰骑士塞尔彼高（45.57）对话，选“是”获得【来自加纳村的情报】。",
-      "type": "step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "2.前往加纳村，出村南门调查索奇亚岛（682.292）处，进入狂战将军私人度假胜地。",
-      "type": "route-step",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "◆狂战将军私人度假胜地为固定迷宫，共5层；魔物为Lv.80~82度假中的杀手蝎，血量约1600；度假中的木乃伊，血量约2000；魔物数量随机2~8只，BOSS战背景，无偷袭、被偷袭，有战斗经验",
-      "type": "encounter-area",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "3.在固定迷宫第5层中（有鲨鱼挡路那层）击倒随机出现的狂战将军，队中随机1人获得【狂战将军的腕轮】。",
-      "type": "battle-reward",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.vacationing-general"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "◆此处获得的【狂战将军的腕轮】不可交易，丢地消失",
-      "type": "process-item-detail",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "◆战斗胜利后随即掉落【魔族的水晶】、【宝石？】",
-      "type": "battle-drop",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "◆【宝石？】鉴定后获得【砂漠红星】",
-      "type": "appraisal",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.vacationing-general"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "Lv.85~89狂战将军？，血量约17000；技能：乾坤一掷、防御、圣盾、即死魔法、经验抽取",
-      "type": "battle-enemy",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.vacationing-general"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.vacationing-general.enemies.0"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "Lv.80~82度假中的杀手蝎*3~4，血量约1600；技能：攻击、防御、吸血魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.vacationing-general"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.vacationing-general.enemies.1"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "Lv.80~82度假中的木乃伊*4，血量约2000；技能：攻击、防御、遗忘攻击",
-      "type": "battle-enemy",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.vacationing-general"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.vacationing-general.enemies.2"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "◆战斗建议：佩戴风地或纯地水晶，先清理喽啰再合击BOSS",
-      "type": "battle-advice",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.vacationing-general"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "4.返回法兰城里谢里雅堡与法兰骑士塞尔彼高（45.57）对话，选“是”交出【狂战将军的腕轮】获得【狂战将军的腕轮】、称号“破浪者”，任务完结。",
-      "type": "completion-step",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.routePoints.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◆此处获得的【狂战将军的腕轮】：Lv.9手环、耐久200；攻击+30、防御+8、精神+7、混乱+10、必杀+11、命中+12、魔攻+12；装备后提升幸运值、偷袭率；可交易、寄存、数值浮动",
-      "type": "reward-detail",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "◆装备【狂战将军的腕轮】与管理称号的NPC对话，获得称号“狂战将军（伪）”",
-      "type": "equipment-title",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.1"
+        }
+      ]
     }
   ],
   "verification": {

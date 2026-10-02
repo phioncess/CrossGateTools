@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-87ed579c-3fba-4516-91f9-4614862b5f36",
   "name": "龙之穴",
   "aliases": [
@@ -278,86 +278,168 @@
     {
       "line": 1,
       "text": "1.前往雪山之顶，至（41.8）处进入永久冻土，与“离”（10.21）对话，进入永久冻土地下。",
-      "type": "step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "※无需世界之心，需要有“来自【震】的挑战” 称号，是和鸡对话，不是人魔草。",
-      "type": "requirement-and-clarification",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "2.通过 21.8 传送石迷宫进入青龙居所。",
-      "type": "step",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "◆永久冻土 迷宫总36层，55-63级 水龙蜥、蜥蜴战士、风龙蜥、蜥蜴武士",
-      "type": "encounter-area",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "3.通过永久冻土，进入 青龙居所，与青龙护卫（24.22）对话进入战斗",
-      "type": "battle-trigger",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-1.overview"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "◆青龙护卫：数量1-2；LV.90；HP 22000；属性：全30；技能：混乱攻击E1，吸血攻击（500血），诛刃V、战栗袭心LV.10、圣盾、混乱魔法。",
-      "type": "enemy",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-1.enemies.enemy-1"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "4.战斗胜利之后，与 震（24.22）对话，得到称号“青龙的邀约”，任务结束。",
-      "type": "step",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     }
   ],
   "verification": {

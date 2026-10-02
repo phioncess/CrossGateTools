@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-bcc94b0f-9a8b-4db9-9474-721a63062023",
   "name": "白之意志、黑之意志",
   "aliases": [
@@ -492,7 +492,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "黑龙的使徒",
+            "coordinate": "24.14",
+            "sourceLines": [
+              8
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "black-wilderness",
@@ -524,7 +537,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "漆黑的荒野",
+            "coordinate": "48.42",
+            "sourceLines": [
+              18
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "white-solo-choice",
@@ -586,7 +612,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "迷惘的龙",
+            "coordinate": "73.20",
+            "sourceLines": [
+              19
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "white-reward",
@@ -641,7 +680,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "白龙的使者",
+            "coordinate": "20.12",
+            "sourceLines": [
+              26
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "black-entry-battle",
@@ -665,7 +717,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "白龙的使徒",
+            "coordinate": "24.22",
+            "sourceLines": [
+              31
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "four-shadows",
@@ -748,7 +813,53 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "阴霾之影石碑",
+            "coordinate": "75.18",
+            "sourceLines": [
+              40
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "阴霾之影石碑",
+            "coordinate": "23.19",
+            "sourceLines": [
+              40
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "阴霾之影石碑",
+            "coordinate": "26.77",
+            "sourceLines": [
+              40
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "阴霾之影石碑",
+            "coordinate": "84.74",
+            "sourceLines": [
+              40
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "order-key",
@@ -860,7 +971,31 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "纯白的雪原",
+            "coordinate": "52.50",
+            "sourceLines": [
+              58
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "迷惘的龙",
+            "coordinate": "73.20",
+            "sourceLines": [
+              59
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "black-reward",
@@ -915,7 +1050,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "黑龙的使徒",
+            "coordinate": "20.12",
+            "sourceLines": [
+              65
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       }
     ],
     "notes": []
@@ -1715,806 +1863,1740 @@
     {
       "line": 1,
       "text": "拥有“解放者”称号、持有【白之约束】或【黑之约束】与对应的龙的使者对话，根据所持道具进入不同路线：",
-      "type": "route-gate",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆【白之约束】、【黑之约束】获得方式参考《抉择之刻》任务",
-      "type": "item-source",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "◆【世界之心】获得方式参考《深渊》任务",
-      "type": "item-source",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.1"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "◆“解放者”称号获得方式参考《失翼之龙》任务",
-      "type": "title-source",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.2"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "◆任务剧情：参考《黑与白的漩涡系列任务剧情对话》",
-      "type": "story-reference",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "【白之约束】路线：",
-      "type": "route-heading",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "1.前往阿巴尼斯村，出村至莎莲娜岛（335.132）处，拥有“解放者”称号、持有【世界之心】、【白之约束】与龙的使者对话，传送至纯白之间。",
-      "type": "route-entry",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "2.与黑龙的使徒（24.14）对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-apostle"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "◆战斗信息：（怀旧服）",
-      "type": "server-heading",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-apostle"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "Lv.99黑龙的使者，血量约10000，属性：全30，抗咒；技能：攻击、混乱攻击、暗杀、乾坤一掷、气功弹、超强火焰魔法、强力混乱魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-apostle"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-apostle.serverVariants.怀旧服.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "Lv.90黑龙族*2~4，血量约8000，属性：火100，不抗咒；技能：攻击、连击、乾坤一掷、火焰魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-apostle"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-apostle.serverVariants.怀旧服.1"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "◆战斗信息：（道具服）",
-      "type": "server-heading",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-apostle"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "Lv.159黑龙的使者，血量约16000，属性：全30，抗咒；技能：攻击、混乱攻击、暗杀、乾坤一掷、气功弹、超强火焰魔法、强力混乱魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-apostle"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "Lv.150黑龙族*2~4，血量约12000，属性：火100，不抗咒；技能：攻击、连击、乾坤一掷、火焰魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-apostle"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "3.战斗胜利后与黑龙的使徒对话，传送至漆黑的荒野。",
-      "type": "post-battle-route",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "◆漆黑的荒野为固定迷宫；魔物为大地翼龙、火焰翼龙、寒冰翼龙、烈风翼龙（怀旧服为Lv.87；道具服为Lv.147）；每次战斗固定4只；有战斗经验",
-      "type": "encounter-detail",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "◆击倒魔物后随机获得【漆黑之鳞】",
-      "type": "chance-drop",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "4.集齐20片【漆黑之麟】，前往漆黑的荒野（48.42）处，通过红色传送石抵达黑龙之祭坛。",
-      "type": "collection-gate",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "5.与迷惘的龙（73.20）对话，选“是”交出【漆黑之麟】并解散队伍进入战斗。",
-      "type": "solo-battle-step",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-route-lost-dragon"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "◆此处如果选“否”，交出【白之约束】，获得【黑之约束】并传送回法兰城，然后从本任务【黑之约束】路线第一步重新开始任务。",
-      "type": "route-switch",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "◆本次战斗为单人战斗",
-      "type": "solo-rule",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-route-lost-dragon"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "◆战斗信息：（怀旧服）",
-      "type": "server-heading",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-route-lost-dragon"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "Lv.75迷惘的龙，血量约6000，龙系，属性：风100，不抗咒；技能：攻击、强力风刃魔法（固定伤害为1）",
-      "type": "battle-enemy",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-route-lost-dragon"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-route-lost-dragon.serverVariants.怀旧服.0"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "◆战斗信息：（道具服）",
-      "type": "server-heading",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-route-lost-dragon"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "Lv.135迷惘的龙，血量约10000，龙系，属性：风100，不抗咒；技能：攻击、强力风刃魔法（固定伤害为1）",
-      "type": "battle-enemy",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-route-lost-dragon"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "6.战斗胜利后传送至螺旋之塔·塔顶，与白龙的使者（20.12）对话，交出【白之约束】获得【白之意志的传承】、【纯白耳饰】并传送回法兰城，任务完结。",
-      "type": "quest-reward",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "◆【白之意志的传承】为后续任务相关道具，勿丢弃",
-      "type": "future-use",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "◆【纯白耳饰】：Lv.8耳环、耐久200；攻击+20、防御+17、敏捷+10、精神+11、必杀+4、反击+4、命中+4、闪躲+4、生命+95、魔力+105；数值浮动、可以交易",
-      "type": "equipment-detail",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "【黑之约束】路线：",
-      "type": "route-heading",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "1.前往蒂娜村，出村至莎莲娜岛（449.334）处，拥有“解放者”称号、持有【世界之心】、【黑之约束】与龙的使者对话，传送至漆黑之间。",
-      "type": "route-entry",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "2.与白龙的使徒（24.22）对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-apostle"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "◆战斗信息：（怀旧服）",
-      "type": "server-heading",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-apostle"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "Lv.99白龙的使者，血量约10000，属性：全30；技能：攻击、防御、诸刃、补血魔法、超强风刃魔法、强力石化魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-apostle"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-apostle.serverVariants.怀旧服.0"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "Lv.90白龙族*2~4，血量约8000，属性：水100；技能：攻击、防御、诸刃、阳炎、冰冻魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-apostle"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-apostle.serverVariants.怀旧服.1"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "◆战斗信息：（道具服）",
-      "type": "server-heading",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-apostle"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "Lv.159白龙的使者，血量约16000，属性：全30；技能：攻击、防御、诸刃、补血魔法、超强风刃魔法、强力石化魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-apostle"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "Lv.150白龙族*2~4，血量约12000，属性：水100；技能：攻击、防御、诸刃、阳炎、冰冻魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-apostle"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "3.战斗胜利后与白龙的使者对话，传送至纯白的雪原。",
-      "type": "post-battle-route",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "◆纯白的雪原为固定迷宫；魔物为大地翼龙、火焰翼龙、寒冰翼龙、烈风翼龙（怀旧服为Lv.87；道具服为Lv.147）；每次战斗固定4只，有战斗经验",
-      "type": "encounter-detail",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "4.调查位于（75.18）、（23.19）、（26.77）、（84.74）处石碑，进入阴霾之影。",
-      "type": "multi-site-step",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "◆调查石碑无先后顺序；四处石碑都要调查，并击倒迷宫底层的BOSS获得相关【道具】",
-      "type": "order-rule",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "◆阴霾之影为随机迷宫，共3层",
-      "type": "maze-detail",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.2"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "5.通过随机迷宫抵达虚无之墓，与？？？对话进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-bosses"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "◆战斗信息：（怀旧服）",
-      "type": "server-heading",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-bosses"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "Lv.89？？？，血量约9000；技能：攻击、对应四属性（单体、超强）攻击魔法、气功弹",
-      "type": "battle-enemy",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-bosses.serverVariants.怀旧服.0"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "Lv.87大地翼龙，血量约2000，属性：地100；技能：攻击、圣盾、阳炎",
-      "type": "battle-enemy",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-bosses.serverVariants.怀旧服.1"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "Lv.87火焰翼龙，血量约2000，属性：火100；技能：攻击、圣盾、阳炎",
-      "type": "battle-enemy",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-bosses.serverVariants.怀旧服.2"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "Lv.87寒冰翼龙，血量约2000，属性：水100；技能：攻击、圣盾、阳炎",
-      "type": "battle-enemy",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-bosses.serverVariants.怀旧服.3"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "Lv.87烈风翼龙，血量约2000，属性：风100；技能：攻击、圣盾、阳炎",
-      "type": "battle-enemy",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-bosses"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-bosses.serverVariants.怀旧服.4"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "◆战斗信息：（道具服）",
-      "type": "server-heading",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-bosses"
+        }
+      ]
     },
     {
       "line": 51,
       "text": "Lv.159？？？，血量约14000；技能：攻击、对应四属性（单体、超强）攻击魔法、气功弹",
-      "type": "battle-enemy",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-bosses"
+        }
+      ]
     },
     {
       "line": 52,
       "text": "Lv.147大地翼龙，血量约3000，属性：地100；技能：攻击、圣盾、阳炎",
-      "type": "battle-enemy",
       "sourceLines": [
         52
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-bosses"
+        }
+      ]
     },
     {
       "line": 53,
       "text": "Lv.147火焰翼龙，血量约3000，属性：火100；技能：攻击、圣盾、阳炎",
-      "type": "battle-enemy",
       "sourceLines": [
         53
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-bosses"
+        }
+      ]
     },
     {
       "line": 54,
       "text": "Lv.147寒冰翼龙，血量约3000，属性：水100；技能：攻击、圣盾、阳炎",
-      "type": "battle-enemy",
       "sourceLines": [
         54
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-bosses"
+        }
+      ]
     },
     {
       "line": 55,
       "text": "Lv.147烈风翼龙，血量约3000，属性：风100；技能：攻击、圣盾、阳炎",
-      "type": "battle-enemy",
       "sourceLines": [
         55
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-bosses"
+        }
+      ]
     },
     {
       "line": 56,
       "text": "6.战斗胜利后，分别获得【纯白的羽毛】、【纯白的手镯】、【纯白的金属】、【纯白的证明】并传送至纯白的雪原。",
-      "type": "multi-item-reward",
       "sourceLines": [
         56
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.shadow-bosses"
+        }
+      ]
     },
     {
       "line": 57,
       "text": "7.集齐四种【道具】后双击【纯白的证明】，交出【纯白的羽毛】、【纯白的手镯】、【纯白的金属】、【纯白的证明】获得【秩序之匙】。",
-      "type": "transformation-step",
       "sourceLines": [
         57
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.8"
+        }
+      ]
     },
     {
       "line": 58,
       "text": "8.前往纯白的雪原（52.50）处，通过蓝色传送石抵达漆黑的祭坛。",
-      "type": "route-step",
       "sourceLines": [
         58
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        }
+      ]
     },
     {
       "line": 59,
       "text": "9.与迷惘的龙（73.20）对话，选“是”交出【秩序之匙】并解散队伍进入战斗。",
-      "type": "solo-battle-step",
       "sourceLines": [
         59
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-route-lost-dragon"
+        }
+      ]
     },
     {
       "line": 60,
       "text": "◆本次战斗为单人战斗",
-      "type": "solo-rule",
       "sourceLines": [
         60
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-route-lost-dragon"
+        }
+      ]
     },
     {
       "line": 61,
       "text": "◆战斗信息：（怀旧服）",
-      "type": "server-heading",
       "sourceLines": [
         61
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-route-lost-dragon"
+        }
+      ]
     },
     {
       "line": 62,
       "text": "Lv.75迷惘的龙，血量约6000，龙系，属性：风100，不抗咒；技能：攻击、强力风刃魔法（固定伤害为1）",
-      "type": "battle-enemy",
       "sourceLines": [
         62
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-route-lost-dragon"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-route-lost-dragon.serverVariants.怀旧服.0"
+        }
+      ]
     },
     {
       "line": 63,
       "text": "◆战斗信息：（道具服）",
-      "type": "server-heading",
       "sourceLines": [
         63
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-route-lost-dragon"
+        }
+      ]
     },
     {
       "line": 64,
       "text": "Lv.135迷惘的龙，血量约10000，龙系，属性：风100，不抗咒；技能：攻击、强力风刃魔法（固定伤害为1）",
-      "type": "battle-enemy",
       "sourceLines": [
         64
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-route-lost-dragon"
+        }
+      ]
     },
     {
       "line": 65,
       "text": "10.战斗胜利后传送至螺旋之塔·底层，与黑龙的使徒（20.12）对话，交出【黑之约束】获得【黑之意志的传承】、【漆黑之环】并传送回法兰城，任务完结。",
-      "type": "quest-reward",
       "sourceLines": [
         65
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.outputs.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.8"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.9"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.10"
+        }
+      ]
     },
     {
       "line": 66,
       "text": "◆【黑之意志的传承】为后续任务相关道具，勿丢弃",
-      "type": "future-use",
       "sourceLines": [
         66
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 67,
       "text": "◆【漆黑之环】：Lv.8手环、耐久200；攻击+25、防御+13、敏捷+10、必杀+6、命中+6、生命+100、魔力+95；数值浮动、可以交易",
-      "type": "equipment-detail",
       "sourceLines": [
         67
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.1"
+        }
+      ]
     }
   ],
   "verification": {

@@ -114,6 +114,16 @@ export function compilePresentationFacts(database) {
   const questByName = new Map(Object.values(database.quests).map(quest => [quest.name,quest.id]));
   for (const quest of Object.values(database.quests)) {
     let changed = false;
+    quest.presentation ||= {};
+    quest.presentation.requirementTexts = (quest.requirements?.conditions || [])
+      .filter(condition => ['server-scope','server','server-and-event-availability'].includes(condition.type) && Array.isArray(condition.servers))
+      .map(condition => `${condition.version ? `${condition.version}：` : ''}适用服务器：${condition.servers.join('、')}`);
+    for (const condition of quest.requirements?.conditions || []) {
+      if (condition.text) continue;
+      if (condition.type === 'title' && condition.title && !quest.metadata?.summary?.includes(condition.title)) quest.presentation.requirementTexts.push(`需要称号：${condition.title}`);
+      if (['completed-quest','quest-completion'].includes(condition.type) && condition.quest && !quest.metadata?.summary?.includes(condition.quest)) quest.presentation.requirementTexts.push(`需要完成任务：${condition.quest}`);
+      if (condition.type === 'balanced-gender-party' && condition.rule) quest.presentation.requirementTexts.push(`组队要求：${condition.rule}`);
+    }
     for (const event of quest.rewardEvents || []) {
       event.presentationFacts = rewardEventFacts(event,quest);
       stats.rewardEventFactRows += event.presentationFacts.length;
@@ -394,7 +404,7 @@ export function rewardEventFacts(event,quest) {
   return rows;
 }
 
-const stepCollectionTitles = {
+export const stepCollectionTitles = {
   recipe:'制作配方', recipes:'制作配方', gathering:'材料采集地点', dailySchedule:'每日所需材料', confirmationPoints:'答题确认地点', quizBank:'问答题库',
   teachers:'技能导师', mentors:'职业导师', jobMentors:'就职导师', skillMentors:'技能导师', strongStatusTeachers:'强力状态魔法导师', resistanceBooks:'抗性书籍位置',
   floorRecords:'逐层战斗资料', petRecipes:'宠物取得配方', seedRecipes:'种子配方与效果', versionPools:'分版本钱箱规则', offers:'历次上架记录',
@@ -422,8 +432,8 @@ export function stepSourceSections(step,quest) {
     let rows;
     if (key === 'quizBank') rows = value.map(([question,answer]) => ({label:question,text:`答案：${answer}`}));
     else if (key === 'exchangeMap') rows = value.map(([item,place,npc]) => ({label:item,text:`地点：${place}；NPC：${npc}`}));
-    else if (key === 'npcLocations') rows = Object.entries(value).map(([time,coordinate]) => ({label:time,text:coordinate}));
-    else if (key === 'routePoints') rows = value.map(point => ({label:point.name,text:`坐标：（${point.coordinate}）`}));
+    else if (key === 'npcLocations') rows = Object.entries(value).map(([time,coordinate]) => ({label:time,text:/^\d+\.\d+$/.test(coordinate) ? `坐标：（${coordinate}）` : coordinate}));
+    else if (key === 'routePoints') rows = value.map(point => ({label:point.name,text:`坐标：（${point.coordinate}）${point.context ? `；${point.context}` : ''}`}));
     else if (key === 'floorRecords') rows = value.map(floor => ({label:`第${floor.floor}层`,text:floor.summary}));
     else rows = (Array.isArray(value) ? value : [value]).map((entry,index) => {
       const labelKey = ['item','skill','career','book','teacher','mentor','npc','name','location','stage','day'].find(field => typeof entry[field] === 'string' || typeof entry[field] === 'number');

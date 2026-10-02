@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-16012775-139d-4da6-8d06-4300f555f399",
   "name": "镇抚四方",
   "aliases": [
@@ -775,218 +775,518 @@
     {
       "line": 1,
       "text": "1.前往维诺亚村与中元祭祀巫女（30.77）对话，获得【镇抚符文】并传入四精界。",
-      "type": "entry-step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "【风水之精】路线：",
-      "type": "route-heading",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "①.与风水精界鬼卒对话，进入8层迷宫。",
-      "type": "maze-entry",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "◆迷宫为随机迷宫；魔物Lv.43~45为火源之精（大炸弹）、水源之精（液态史莱姆）、风源之精（烈风翼龙）、地源之精（地龙蜥）",
-      "type": "encounter-area",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "②.通过随机迷宫进入底部与躁动的风精或躁动的水精对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.wind-water-spirit"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "◆BOSS：Lv.60 躁动的风精，血量约6500，不抗咒；技能：攻击、防御、强力风刃魔法、气功弹、魔法吸收、",
-      "type": "battle-enemy",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.wind-water-spirit"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.wind-water-spirit.enemies.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "◆BOSS：Lv.60 躁动的水精，血量约6500，不抗咒；技能：攻击、防御、强力冰冻魔法、回复魔法、补血魔法、",
-      "type": "battle-enemy",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.wind-water-spirit"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.wind-water-spirit.enemies.1"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "◆喽啰：Lv.50*4，地精之源（血量1600）、水精之源（血量2000）、火精之源（血量1000）、风精之源（血量2000）",
-      "type": "battle-enemy",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.wind-water-spirit"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.wind-water-spirit.enemies.2"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "③.战斗胜利后获得【风水之精】并传回四精界。",
-      "type": "route-reward",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "【地火之精】路线：",
-      "type": "route-heading",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "①.与地火精界鬼卒对话，进入8层迷宫。",
-      "type": "maze-entry",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "②.通过随机迷宫进入底部与躁动的地精或躁动的火精对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.earth-fire-spirit"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "◆BOSS：Lv.60 躁动的地精，血量约6500，不抗咒；技能：攻击、防御、强力陨石魔法、攻击吸收、单体石化",
-      "type": "battle-enemy",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.earth-fire-spirit"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.earth-fire-spirit.enemies.0"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◆BOSS：Lv.60 躁动的火精，血量约6500，不抗咒；技能：攻击、防御、强力火焰魔法、战栗袭心",
-      "type": "battle-enemy",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.earth-fire-spirit"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.earth-fire-spirit.enemies.1"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "◆喽啰：Lv.50*4，地精之源（血量1600）、水精之源（血量2000）、火精之源（血量1000）、风精之源（血量2000）",
-      "type": "battle-enemy",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.earth-fire-spirit"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.earth-fire-spirit.enemies.2"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "③.战斗胜利后获得【地火之精】并传回四精界。",
-      "type": "route-reward",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "2.持有【镇抚符文】、【风水之精】、【地火之精】与祭祀巫女（26 .24）对话，交出【镇抚符文】、【风水之精】、【地火之精】获得【四精魔石】、称号“四精镇抚使”，任务完结。",
-      "type": "completion-step",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "◆持有【四精魔石】（可交易）和任意等级风精或者火精至四精界与祭祀巫女对话，交出【四精魔石】与风精或火精，获得Lv.1改造风精或改造火精",
-      "type": "post-quest-exchange",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        }
+      ]
     }
   ],
   "verification": {

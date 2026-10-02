@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-deebc7b2-2b3e-48f6-8f80-4bf96e1c8906",
   "name": "暗黑骑士",
   "aliases": [
@@ -344,98 +344,226 @@
     {
       "line": 1,
       "text": "1.前往法兰城大圣堂（154.29）地下仓库，职业为近卫骑士且拥有“死神”称号与快被净化的黑魂（37.26）对话，选“是”获得【暗黑之枪】并传送至法兰城（193.191）处。",
-      "type": "step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.routePoints.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆地下仓库走法：进入大圣堂至大圣堂的入口，至（5.14）进入通往地下楼梯的房间，通过（16.13）处楼梯进入地下仓库",
-      "type": "route",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.notes.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "◆“死神”称号获得方式参考《死与新生》任务",
-      "type": "reference",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "2.持有【暗黑之枪】与塞西尔.哈威（195.191）对话，选“是”交出【暗黑之枪】获得称号“暗黑骑士”并传送至？？？。",
-      "type": "step",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "◆获得称号“暗黑骑士”后职业依然为骑士，装备/技能上限不变",
-      "type": "title-detail",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.notes.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "◆“暗黑骑士”称号仅限近卫骑士拥有，若后续转职为其他职业，“暗黑骑士”称号同步失去。",
-      "type": "title-restriction",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.notes.1"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "◆离开？？？后，若想重新学习技能，可前往法兰城（193.191）处与塞西尔.哈威对话，可再次进入？？？",
-      "type": "reentry-note",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.notes.0"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "3.与克莱斯（24.22）对话，可交出10000G学习技能吸血攻击；与阿基斯（26.19）对话，可交出5000G学习技能暗黑骑士之力，任务完结。",
-      "type": "skill-learning",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.serviceOptions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.serviceOptions.1"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.1"
+        }
+      ]
     }
   ],
   "verification": {

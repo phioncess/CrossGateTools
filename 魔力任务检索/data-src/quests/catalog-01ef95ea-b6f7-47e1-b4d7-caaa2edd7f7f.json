@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-01ef95ea-b6f7-47e1-b4d7-caaa2edd7f7f",
   "name": "贪婪之心",
   "aliases": [
@@ -429,7 +429,31 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "士兵布鲁",
+            "coordinate": "35.68",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "指挥官莱伊",
+            "coordinate": "9.7",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "green-cave",
@@ -516,7 +540,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "葛罗姆",
+            "coordinate": "14.8",
+            "sourceLines": [
+              19
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "life-bond",
@@ -559,7 +596,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "侍女蒂雅",
+            "coordinate": "18.10",
+            "sourceLines": [
+              36
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "references",
@@ -665,7 +715,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "侍女蒂雅",
+            "coordinate": "18.9",
+            "sourceLines": [
+              44
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "green-heart-use",
@@ -798,7 +861,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "芙蕾雅岛",
+            "coordinate": "541.40",
+            "sourceLines": [
+              47
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "sage-stone",
@@ -868,7 +944,42 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "亚留特村南希家",
+            "coordinate": "34.54",
+            "sourceLines": [
+              53
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "南希的大哥",
+            "coordinate": "8.4",
+            "sourceLines": [
+              53
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "台座",
+            "coordinate": "256.110",
+            "sourceLines": [
+              56
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "career-exclusive",
@@ -1817,722 +1928,1570 @@
     {
       "line": 1,
       "text": "1.前往法兰城里谢里雅堡与士兵布鲁（35.68）对话，选“是”进入魔族讨伐指挥部。（此步可跳过）",
-      "type": "optional-start",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "2.与指挥官莱伊（9.7）对话。（此步可跳过）",
-      "type": "optional-dialogue",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "◆本任务含有两条支线：【职业专属】支线、【翠绿之心】支线",
-      "type": "sidequest-summary",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "◆支线任务攻略参考本任务最后支线任务部分",
-      "type": "sidequest-note",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "3.前往亚留特村，出村东门至芙蕾雅岛（628.133）处。",
-      "type": "route-step",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "4.持有【地元素之证】调查绿色水晶石，传送至翠绿洞窟。",
-      "type": "held-item-teleport",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "◆【地元素之证】：获得方式参考《邪灵鸟人》“七宗罪1”任务；可交易",
-      "type": "item-source",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.0"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "◆翠绿洞窟为固定迷宫；",
-      "type": "fixed-maze",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "魔物为大地鼠、螳螂、小恶魔、顽皮炸弹、死灵（怀旧服为Lv.48~51；时长、道具服为Lv.98~101）",
-      "type": "versioned-encounter",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "◆翠绿洞窟行走路线：",
-      "type": "route-heading",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "5.与洞窟守护者（98.26）对话，选“否”进入战斗。",
-      "type": "choice-battle",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.earth-guardian"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "◆战斗信息：（怀旧服）",
-      "type": "server-heading",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.earth-guardian"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "Lv.60守护者，血量约7000，邪魔系，属性：地70水30火30风30，不抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.earth-guardian"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.earth-guardian.enemies.0"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "技能：攻击、防御、陨石魔法、强力陨石魔法、超强遗忘魔法",
-      "type": "battle-skills",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.earth-guardian"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.earth-guardian.enemies.0"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "◆战斗信息：（时长/道具服）",
-      "type": "server-heading",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.earth-guardian"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "Lv.110守护者，血量约12000，邪魔系，属性：地70水30火30风30，不抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.earth-guardian"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.earth-guardian.enemies.1"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "技能：攻击、防御、陨石魔法、强力陨石魔法、超强遗忘魔法",
-      "type": "battle-skills",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.earth-guardian"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.earth-guardian.enemies.1"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "6.战斗胜利后，继续前行。",
-      "type": "post-battle-route",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "7.通过迷宫抵达翠绿洞窟顶层，与葛罗姆（14.8）对话进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "◆战斗信息：（怀旧服）",
-      "type": "server-heading",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "Lv.65葛罗姆，血量约10000，邪魔系，属性：地70水30火30风30，不抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom.enemies.0"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "技能：攻击、防御、陨石魔法、超强陨石魔法、吸血魔法",
-      "type": "battle-skills",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom.enemies.0"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "Lv.60守护者*3，血量约7000，邪魔系，属性：地70水30火30风30，不抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom.enemies.1"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "技能：攻击、防御、乾坤一掷、崩击、强力混乱魔法、超强昏睡魔法",
-      "type": "battle-skills",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom.enemies.1"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "Lv.60顽皮炸弹*3，血量约5000，邪魔系，属性：地70水30火30风30，不抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom.enemies.2"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "技能：攻击、防御、陨石魔法、圣盾",
-      "type": "battle-skills",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom.enemies.2"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "◆战斗信息：（时长/道具服）",
-      "type": "server-heading",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "Lv.115葛罗姆，血量约15000，邪魔系，属性：地70水30火30风30，不抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom.enemies.3"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "技能：攻击、防御、陨石魔法、超强陨石魔法、吸血魔法",
-      "type": "battle-skills",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom.enemies.3"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "Lv.110守护者*3，血量约12000，邪魔系，属性：地70水30火30风30，不抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom.enemies.4"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "技能：攻击、防御、乾坤一掷、崩击、强力混乱魔法、超强昏睡魔法",
-      "type": "battle-skills",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom.enemies.4"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "Lv.110顽皮炸弹*3，血量约10000，邪魔系，属性：地70水30火30风30，不抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom.enemies.5"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "技能：攻击、防御、陨石魔法、圣盾",
-      "type": "battle-skills",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.grom.enemies.5"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "8.战斗胜利后与葛罗姆对话，交出【地元素之证】获得【生命的羁绊】。",
-      "type": "completion-exchange",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "◆【生命的羁绊】为后续任务所需道具，勿丢弃",
-      "type": "future-use",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "9.与侍女蒂雅（18.10）对话，传送回法兰城，任务完结。",
-      "type": "completion-teleport",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "◆任务剧情：参考《七宗罪系列任务剧情对话》",
-      "type": "story-reference",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "◆BOSS打法：参考《七宗罪系列任务BOSS战打法心得》",
-      "type": "strategy-reference",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "【翠绿之心】支线：",
-      "type": "branch-heading",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "1.完成《树精长老的末日》任务，获得【树苗？】。",
-      "type": "branch-prerequisite",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.1"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "2.完成本任务至第6步。",
-      "type": "mainline-gate",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "3.战斗胜利后，持有【树苗？】与守护者（98.15）对话，交出【树苗？】获得【生命之戒】。",
-      "type": "exchange-step",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "4.继续完成本任务至第8步。",
-      "type": "mainline-gate",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "5.持有【生命之戒】与侍女蒂雅（18.9）对话，交出【生命之戒】获得【翠绿之心】，支线完结。",
-      "type": "exchange-step",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "◆【翠绿之心】：开启后随机遭遇Lv.1沼泽树精、小恶魔、翠绿菇或顽皮炸弹；若在野外洞窟内开启，遭遇魔物等级会提高。",
-      "type": "random-encounter-item",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "【职业专属】支线：",
-      "type": "branch-heading",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "1.前往亚留特，出村北门至芙蕾雅岛（541.40）处附近，寻找随机出现的黄色传送石。",
-      "type": "random-portal",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "2.通过黄色传送石抵达奇怪的洞窟，寻找迷宫内随机出现的无照护士米内鲁帕并与之对话，获得【实验药】。",
-      "type": "item-acquisition",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "◆奇怪的洞窟为随机迷宫；魔物为Lv.16~19腐尸、僵尸、地狱看门犬",
-      "type": "maze-detail",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "3.寻找奇怪的洞窟内随机出现的人类？并与之对话，进入战斗。战斗胜利后获得【遗物「丝巾」】。",
-      "type": "battle-item-acquisition",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.outputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.human-unknown"
+        }
+      ]
     },
     {
       "line": 51,
       "text": "◆【遗物「丝巾」】每名队员都需持有；建议此步先解散队伍，分别同时与之对话进入战斗",
-      "type": "per-member-rule",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.human-unknown"
+        }
+      ]
     },
     {
       "line": 52,
       "text": "◆人类？每10分钟刷新一次，【遗物「丝巾」】可反复获得",
-      "type": "refresh-rule",
       "sourceLines": [
         52
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.human-unknown"
+        }
+      ]
     },
     {
       "line": 53,
       "text": "4.前往亚留特村南希家（34.54）与南希的大哥（8.4）对话，交出【遗物「丝巾」】获得【贤者之石】。",
-      "type": "exchange-step",
       "sourceLines": [
         53
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.9"
+        }
+      ]
     },
     {
       "line": 54,
       "text": "5.完成本任务主线部分至第6步。",
-      "type": "mainline-gate",
       "sourceLines": [
         54
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        }
+      ]
     },
     {
       "line": 55,
       "text": "6.战斗胜利后继续前行至第⑧张地图。",
-      "type": "route-step",
       "sourceLines": [
         55
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        }
+      ]
     },
     {
       "line": 56,
       "text": "7.调查台座（256.110），选“是”交出【贤者之石】获得【破碎的石像】。",
-      "type": "exchange-step",
       "sourceLines": [
         56
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.10"
+        }
+      ]
     },
     {
       "line": 57,
       "text": "8.完成本任务主线部分第8步。",
-      "type": "mainline-gate",
       "sourceLines": [
         57
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        }
+      ]
     },
     {
       "line": 58,
       "text": "9.战斗胜利后，先将【地元素之证】丢在地上，再与葛罗姆对话，交出【破碎的石像】获得【职业专属】（医生/护士/忍者/士兵；随机一种），支线完结。",
-      "type": "career-reward",
       "sourceLines": [
         58
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.7"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.8"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.11"
+        }
+      ]
     },
     {
       "line": 59,
       "text": "◆各【职业专属】能力可参考《职业专属能力表》文章",
-      "type": "stats-reference",
       "sourceLines": [
         59
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.2"
+        }
+      ]
     },
     {
       "line": 60,
       "text": "◆持有【生命的羁绊】与葛罗姆对话无法获得【职业专属】",
-      "type": "held-item-block",
       "sourceLines": [
         60
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        }
+      ]
     }
   ],
   "verification": {

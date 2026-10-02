@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-569560a0-ef63-4b86-8435-08a5716afcf8",
   "name": "闪耀者、引导者",
   "aliases": [
@@ -612,7 +612,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "白龙之长",
+            "coordinate": "22.29",
+            "sourceLines": [
+              21
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "white-scale",
@@ -655,7 +668,31 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "门",
+            "coordinate": "10.29",
+            "sourceLines": [
+              37
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "白龙之长",
+            "coordinate": "18.11",
+            "sourceLines": [
+              38
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "white-completion",
@@ -699,7 +736,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "迷惘之龙",
+            "coordinate": "18.11",
+            "sourceLines": [
+              40
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "black-entry",
@@ -826,7 +876,31 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "门",
+            "coordinate": "10.29",
+            "sourceLines": [
+              71
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "黑龙之长",
+            "coordinate": "18.11",
+            "sourceLines": [
+              72
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "black-completion",
@@ -870,7 +944,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "迷惘之龙",
+            "coordinate": "18.11",
+            "sourceLines": [
+              74
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       }
     ],
     "notes": []
@@ -1381,926 +1468,1928 @@
     {
       "line": 1,
       "text": "0.拥有“闪耀者”或“引导者”称号、持有【白之意志的传承】或【黑之意志的传承】，与对应的龙的使者对话，根据所持道具进入不同路线：",
-      "type": "route-gate",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆必要条件：",
-      "type": "requirements-heading",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "⑴“闪耀者”或“引导者”称号获得方式参考《黑白龙城》（龙族的纷争4）任务",
-      "type": "title-source",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "⑵【白之意志的传承】或【黑之意志的传承】获得方式参考《白之意志、黑之意志》（黑与白的漩涡3）任务",
-      "type": "item-source",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.1"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "⑶【世界之心】获得方式参考《深渊》（龙族的纷争1）任务",
-      "type": "item-source",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.2"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "◆刷【白龙之鳞】或者【黑龙之鳞】：",
-      "type": "farming-heading",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "⑴如果为了刷【白龙之鳞】，则黑与白的漩涡1~4（《消亡之地》、《抉择之刻》、《白之意志、黑之意志》、《闪耀者、引导者》）皆选白色路线",
-      "type": "white-farming-rule",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "⑵如果为了刷【黑龙之鳞】，则黑与白的漩涡1~4（《消亡之地》、《抉择之刻》、《白之意志、黑之意志》、《闪耀者、引导者》）皆选黑色路线",
-      "type": "black-farming-rule",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "⑶如果二者皆刷，则2种路线皆做，不冲突",
-      "type": "both-routes-rule",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "⑷拿到黑龙鳞后，直接登，不交任务就可以一直做黑与白的漩涡4，也就是不做攻略里的第7步。",
-      "type": "repeat-farming-rule",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "【白之意志的传承】路线：",
-      "type": "route-heading",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "1.前往阿巴尼斯村，出村前往莎莲娜岛（334.132）处，拥有“闪耀者”或“引导者”称号、【世界之心】、【白之意志的传承】与龙的使者对话，传送至螺旋之塔。",
-      "type": "route-entry",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "◆队伍中成员“闪耀者”与“引导者”称号无需统一",
-      "type": "party-title-rule",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◆螺旋之塔为固定地图，共4层；魔物为恶魔蝙蝠（怀旧服为Lv.90，道具服为Lv.150）",
-      "type": "encounter-detail",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "◆螺旋之塔行走路线：",
-      "type": "route-map",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "2.战胜螺旋之塔各层BOSS，抵达螺旋之塔中层。",
-      "type": "floor-battles",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-dragon-floors"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "◆战斗信息：（怀旧服）",
-      "type": "server-heading",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-dragon-floors"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "Lv.100黑龙族*4~10（2动），血量约12000，属性：火50风50，不抗咒；技能：乾坤一掷、连击、火焰魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-dragon-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-dragon-floors.serverVariants.怀旧服.0"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "◆战斗信息：（道具服）",
-      "type": "server-heading",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-dragon-floors"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "Lv.160黑龙族*4~10（2动），血量约20000，属性：火50风50，不抗咒；技能：乾坤一掷、连击、火焰魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-dragon-floors"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "3.与白龙之长（22.29）对话，选“是”进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-route-elders"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "◆注意队内每名成员物品栏留空，否则战斗后可能无法获得【白色囚室的钥匙】",
-      "type": "inventory-warning",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "◆此战为二连战",
-      "type": "consecutive-rule",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-route-elders"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "◆第一战战斗信息：（怀旧服）",
-      "type": "server-round-heading",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-route-elders"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "Lv.108黑龙之长（2动），血量约18000，属性：地30风70，抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-route-elders"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-route-elders.serverVariants.怀旧服.0"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "技能：乾坤一掷、崩击、反击、魔法封印、混乱攻击、大地之怒、明镜止水、连击（使用制御魔法后追加）",
-      "type": "battle-skills",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-route-elders"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-route-elders.serverVariants.怀旧服.0"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "◆第二战战斗信息：（怀旧服）",
-      "type": "server-round-heading",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-route-elders"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "Lv.108白龙之长（2动），血量约18000，属性：地30风70，抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-route-elders"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-route-elders.serverVariants.怀旧服.1"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "技能：乾坤一掷、崩击、反击、魔法封印、混乱攻击、大地之怒、明镜止水、连击（使用制御魔法后追加）",
-      "type": "battle-skills",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-route-elders"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-route-elders.serverVariants.怀旧服.1"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "◆第一战战斗信息：（道具服）",
-      "type": "server-round-heading",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-route-elders"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "Lv.160黑龙之长（2动），血量约28000，属性：地30风70，抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-route-elders"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "技能：乾坤一掷、崩击、反击、魔法封印、混乱攻击、大地之怒、明镜止水、连击（使用制御魔法后追加）",
-      "type": "battle-skills",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-route-elders"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "◆第二战战斗信息：（道具服）",
-      "type": "server-round-heading",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-route-elders"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "Lv.160白龙之长（2动），血量约28000，属性：地30风70，抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-route-elders"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "技能：乾坤一掷、崩击、反击、魔法封印、混乱攻击、大地之怒、明镜止水、连击（使用制御魔法后追加）",
-      "type": "battle-skills",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-route-elders"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "4.战斗胜利后，队伍内随机一名成员获得【白色囚室的钥匙】。",
-      "type": "random-team-reward",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "5.调查（10.29）处门，选“是”交出【白色囚室的钥匙】进入白之囚室。",
-      "type": "key-gate",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "6.与白龙之长（18.11）对话，获得【白龙之鳞】并传送至交错之间。",
-      "type": "scale-reward",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "◆【白龙之鳞】：Lv.10宝石；添加入武器或防具效果为：攻击+10、命中+9、反击+1、耐久-20%",
-      "type": "gem-properties",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "7.与迷惘之龙（18.11）对话，交出【白之意志的传承】获得【秩序之珠】并传送回法兰城，任务完结。",
-      "type": "final-exchange",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "◆注意物品栏留空，否则直接传送回法兰城，不会获得【秩序之珠】",
-      "type": "inventory-warning",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "◇【秩序之珠】猜测为后续任务所需道具，勿丢弃（易玩通目前没有更新后续）",
-      "type": "future-use-uncertain",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "◆完成本任务后无法再去砍龙练级点；若需砍龙，必须重解之前系列任务",
-      "type": "training-lockout",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "【黑之意志的传承】路线：",
-      "type": "route-heading",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "1.前往蒂娜村，出村前往莎莲娜岛（449.334）处，拥有“闪耀者”或“引导者”称号、【世界之心】、【黑之意志的传承】与龙的使者对话，传送至螺旋之塔。",
-      "type": "route-entry",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "◆队伍中成员“闪耀者”与“引导者”称号无需统一",
-      "type": "party-title-rule",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "◆螺旋之塔为固定地图，共4层；魔物为天使蝙蝠（怀旧服为Lv.90，道具服为Lv.150）",
-      "type": "encounter-detail",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "◆三层需经楼梯至BOSS处",
-      "type": "route-note",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "◆螺旋之塔行走路线：",
-      "type": "route-map",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "2.战胜螺旋之塔各层BOSS，抵达螺旋之塔中层。",
-      "type": "floor-battles",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-dragon-floors"
+        }
+      ]
     },
     {
       "line": 51,
       "text": "◆战斗信息：（怀旧服）",
-      "type": "server-heading",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-dragon-floors"
+        }
+      ]
     },
     {
       "line": 52,
       "text": "Lv.100白龙族*4~10（2动），血量约12000，属性：水50火50，不抗咒；技能：诸刃、阳炎、冰冻魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         52
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-dragon-floors"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-dragon-floors.serverVariants.怀旧服.0"
+        }
+      ]
     },
     {
       "line": 53,
       "text": "◆战斗信息：（道具服）",
-      "type": "server-heading",
       "sourceLines": [
         53
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-dragon-floors"
+        }
+      ]
     },
     {
       "line": 54,
       "text": "Lv.160白龙族*4~10（2动），血量约20000，属性：水50火50，不抗咒；技能：诸刃、阳炎、冰冻魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         54
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.white-dragon-floors"
+        }
+      ]
     },
     {
       "line": 55,
       "text": "3.与黑龙之长对话，选“是”进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         55
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-route-elders"
+        }
+      ]
     },
     {
       "line": 56,
       "text": "◆注意队内每名成员物品栏留空，否则战斗后可能无法获得【黑色囚室的钥匙】",
-      "type": "inventory-warning",
       "sourceLines": [
         56
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        }
+      ]
     },
     {
       "line": 57,
       "text": "◆此战为二连战",
-      "type": "consecutive-rule",
       "sourceLines": [
         57
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-route-elders"
+        }
+      ]
     },
     {
       "line": 58,
       "text": "◆第一战战斗信息：（怀旧服）",
-      "type": "server-round-heading",
       "sourceLines": [
         58
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-route-elders"
+        }
+      ]
     },
     {
       "line": 59,
       "text": "Lv.108白龙之长（2动），血量约18000，属性：地30风70，抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         59
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-route-elders"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-route-elders.serverVariants.怀旧服.0"
+        }
+      ]
     },
     {
       "line": 60,
       "text": "技能：乾坤一掷、崩击、反击、魔法封印、混乱攻击、大地之怒、明镜止水、连击（使用制御魔法后追加）",
-      "type": "battle-skills",
       "sourceLines": [
         60
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-route-elders"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-route-elders.serverVariants.怀旧服.0"
+        }
+      ]
     },
     {
       "line": 61,
       "text": "◆第二战战斗信息：（怀旧服）",
-      "type": "server-round-heading",
       "sourceLines": [
         61
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-route-elders"
+        }
+      ]
     },
     {
       "line": 62,
       "text": "Lv.108黑龙之长（2动），血量约18000，属性：地30风70，抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         62
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-route-elders"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-route-elders.serverVariants.怀旧服.1"
+        }
+      ]
     },
     {
       "line": 63,
       "text": "技能：乾坤一掷、崩击、反击、魔法封印、混乱攻击、大地之怒、明镜止水、连击（使用制御魔法后追加）",
-      "type": "battle-skills",
       "sourceLines": [
         63
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-route-elders"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-route-elders.serverVariants.怀旧服.1"
+        }
+      ]
     },
     {
       "line": 64,
       "text": "◆第一战战斗信息：（道具服）",
-      "type": "server-round-heading",
       "sourceLines": [
         64
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-route-elders"
+        }
+      ]
     },
     {
       "line": 65,
       "text": "Lv.160白龙之长（2动），血量约28000，属性：地30风70，抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         65
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-route-elders"
+        }
+      ]
     },
     {
       "line": 66,
       "text": "技能：乾坤一掷、崩击、反击、魔法封印、混乱攻击、大地之怒、明镜止水、连击（使用制御魔法后追加）",
-      "type": "battle-skills",
       "sourceLines": [
         66
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-route-elders"
+        }
+      ]
     },
     {
       "line": 67,
       "text": "◆第二战战斗信息：（道具服）",
-      "type": "server-round-heading",
       "sourceLines": [
         67
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-route-elders"
+        }
+      ]
     },
     {
       "line": 68,
       "text": "Lv.160黑龙之长（2动），血量约28000，属性：地30风70，抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         68
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-route-elders"
+        }
+      ]
     },
     {
       "line": 69,
       "text": "技能：乾坤一掷、崩击、反击、魔法封印、混乱攻击、大地之怒、明镜止水、连击（使用制御魔法后追加）",
-      "type": "battle-skills",
       "sourceLines": [
         69
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.black-route-elders"
+        }
+      ]
     },
     {
       "line": 70,
       "text": "4.战斗胜利后，队伍内随机一名成员获得【黑色囚室的钥匙】。",
-      "type": "random-team-reward",
       "sourceLines": [
         70
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 71,
       "text": "5.调查（10.29）处门，选“是”交出【黑色囚室的钥匙】进入白之囚室。",
-      "type": "key-gate",
       "sourceLines": [
         71
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        }
+      ]
     },
     {
       "line": 72,
       "text": "6.与黑龙之长（18.11）对话，获得【黑龙之鳞】并传送至交错之间。",
-      "type": "scale-reward",
       "sourceLines": [
         72
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        }
+      ]
     },
     {
       "line": 73,
       "text": "◆【黑龙之鳞】：Lv.10宝石；添加入武器或防具效果为：攻击+10、闪躲+9、必杀+1、耐久-20%",
-      "type": "gem-properties",
       "sourceLines": [
         73
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 74,
       "text": "7.与迷惘之龙（18.11）对话，交出【黑之意志的传承】获得【混沌之珠】并传送回法兰城，任务完结。",
-      "type": "final-exchange",
       "sourceLines": [
         74
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        }
+      ]
     },
     {
       "line": 75,
       "text": "◆注意物品栏留空，否则直接传送回法兰城，不会获得【混沌之珠】",
-      "type": "inventory-warning",
       "sourceLines": [
         75
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.0"
+        }
+      ]
     },
     {
       "line": 76,
       "text": "◆【混沌之珠】猜测为后续任务所需道具，勿丢弃（易玩通目前没有更新后续）",
-      "type": "future-use-uncertain",
       "sourceLines": [
         76
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.0"
+        }
+      ]
     },
     {
       "line": 77,
       "text": "◆完成本任务后无法再去砍龙练级点；若需砍龙，必须重解之前系列任务",
-      "type": "training-lockout",
       "sourceLines": [
         77
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        }
+      ]
     }
   ],
   "verification": {

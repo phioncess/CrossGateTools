@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-bf432e23-fca2-43c5-965f-d0fe3390d5aa",
   "name": "兰国的遗产",
   "aliases": [
@@ -1082,1034 +1082,2042 @@
     {
       "line": 1,
       "text": "1.前往米诺基亚镇，出镇东门绕过山脉至库鲁克斯岛（591.840）处。",
-      "type": "route-step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆本任务为怀旧服专属，道具服【9C装备的配方】、【9C装备核心材料】需通过道具商城购买",
-      "type": "server-rule",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "2.队伍中拥有称号“暗部第七部队成员”的队员与无限刀流的艾吉（591.840）对话，选“是”全队传送至暗部临时据点。",
-      "type": "title-teleport",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "◆称号“暗部第七部队成员”获得方式参考《秘密组织的邀请》任务",
-      "type": "title-source",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "3.符合条件的生产系或战斗系职业与鹰眼的莱（9.11）对话，强制解散队伍并传送至暗部临时据点。",
-      "type": "career-gate-step",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "◆进入条件：",
-      "type": "gate-heading",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "职业条件",
-      "type": "table-heading",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "生产系职业达到神匠阶段且本职业技能达到9级",
-      "type": "career-gate",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "战斗系",
-      "type": "career-heading",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "（包括医生、护士）拥有“兰国第二等勋章”、“暗部第七部队成员”称号",
-      "type": "career-gate",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "拥有“艾尔巴第二等勋章”、“暗部第七部队成员”称号",
-      "type": "career-gate",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "◆暗部临时据点为随机迷宫，约10层；魔物为Lv.29~33情报收集部队成员、资金运转部队成员；",
-      "type": "maze-detail",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "击倒资金运转部队成员随机获得【偷来的资金】",
-      "type": "battle-drop",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "资金运转部队成员，人形系，属性：地90风10；技能：攻击、防御、混乱攻击、偷钱",
-      "type": "enemy-detail",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "情报收集部队成员（小刀），龙系，属性：地70风30；技能：防御、乾坤一掷",
-      "type": "enemy-detail",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "◆【偷来的资金】为后续步骤所需道具，需要收集10个；不可交易、丢地消失",
-      "type": "item-restriction",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "4.队伍中任意一名队员收集10个【偷来的资金】；通过随机迷宫抵达暗部临时据点深处，根据职业进行后续步骤。",
-      "type": "collection-step",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "战斗系：",
-      "type": "branch-heading",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "5.队伍中任意一名队员持有10个【偷来的资金】与恶即斩的克罗卡涅（25.12）对话，选“是”交出【偷来的资金】*10，进入战斗。",
-      "type": "battle-exchange",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kurokane"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kurokane"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "Lv.105恶即斩的克罗卡涅（2动），血量约30000，邪魔系，属性：全30；",
-      "type": "battle-enemy",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kurokane"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kurokane.enemies.0"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "技能：攻击、连击EX、圣盾、乾坤一掷、迅速果断、戒骄戒躁、崩击、恢复魔法、魔法封印、大地之怒、召唤暗部第二部队成员（每次4人）",
-      "type": "battle-skill",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kurokane"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kurokane.enemies.0"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "Lv.97暗部第二部队成员，血量约7000，邪魔系，属性：全25；技能：攻击、诸刃、乾坤一掷、迅速果断、战栗袭心",
-      "type": "battle-enemy",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kurokane"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kurokane.enemies.1"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "◇打法推荐：点击查看《图文版打法 by：Level.1》",
-      "type": "strategy-reference",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.kurokane"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "6.战斗胜利后，队伍成员随机获得【9C装备核心材料】*0~3、【阿夏芙之杖】、【单手剑？】，任务完结。",
-      "type": "battle-reward",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.17"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.18"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "◆【阿夏芙之杖】（地/风/火/水四种类型）：（可交易）",
-      "type": "reward-heading",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.17"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "Lv8杖、耐久300；攻击+10、精神+55、魔力+50、魔攻+290；地/风/火/水属性+1，超强陨石/风刃/火焰/冰冻魔法耗魔减少10%；",
-      "type": "reward-detail",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.17"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "（同时佩戴对应纯水晶时，无法达到11格对应属性，依然为10格对应属性）",
-      "type": "equipment-note",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.17"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "◆【单手剑？】鉴定后为【村正】：Lv.8剑、耐久300；攻击+240；奥义•连击耗魔减少100%",
-      "type": "reward-detail",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.18"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "◆此时队伍内其他持有10个【偷来的资金】的队员与恶即斩的克罗卡涅对话，可再次进入战斗",
-      "type": "repeat-battle",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "◆【9C装备核心材料】：",
-      "type": "core-heading",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "生锈的很厉害的剑生锈的很厉害的斧",
-      "type": "core-row",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "生锈的很厉害的枪生锈的很厉害的弓",
-      "type": "core-row",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.3"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "生锈的很厉害的杖生锈的很厉害的小刀",
-      "type": "core-row",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.5"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "生锈的很厉害的投掷武器生锈的很厉害的头盔",
-      "type": "core-row",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.7"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "生锈的很厉害的铠甲生锈的很厉害的盾",
-      "type": "core-row",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.9"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "生锈的很严重的靴磨损的很厉害的帽子",
-      "type": "core-row",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.10"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.11"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "磨损的很厉害的衣服磨损的很厉害的袍",
-      "type": "core-row",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.12"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.13"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "磨的很厉害的鞋混浊的水",
-      "type": "core-row",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.14"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.15"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "土龙",
-      "type": "core-row",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.16"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "生产系：",
-      "type": "branch-heading",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "5.持有10个【偷来的资金】与魔鬼嗅觉的杰卡（24.14）对话，选“是”，",
-      "type": "recipe-learning",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "习得本职业对应【9C装备的配方】、称号“兰国遗产继承者”并传送至库鲁克斯岛，任务完结。",
-      "type": "production-completion",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "◆【9C装备的配方】：",
-      "type": "recipe-heading",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "职业9C装备",
-      "type": "table-heading",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "铸剑工草薙剑",
-      "type": "recipe-row",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "造枪工圣杯之枪",
-      "type": "recipe-row",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.1"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "造斧工暗黑之斧",
-      "type": "recipe-row",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.2"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "造弓工天狼星",
-      "type": "recipe-row",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.3"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "造杖工CEN-1088Prototype",
-      "type": "recipe-row",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.4"
+        }
+      ]
     },
     {
       "line": 51,
       "text": "小刀工亚尔提小刀",
-      "type": "recipe-row",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.5"
+        }
+      ]
     },
     {
       "line": 52,
       "text": "投掷武器工佛利波罗",
-      "type": "recipe-row",
       "sourceLines": [
         52
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.6"
+        }
+      ]
     },
     {
       "line": 53,
       "text": "头盔工依古诺头盔",
-      "type": "recipe-row",
       "sourceLines": [
         53
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.7"
+        }
+      ]
     },
     {
       "line": 54,
       "text": "铠甲工PRAHS-08ZM",
-      "type": "recipe-row",
       "sourceLines": [
         54
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.8"
+        }
+      ]
     },
     {
       "line": 55,
       "text": "制靴工精制长靴",
-      "type": "recipe-row",
       "sourceLines": [
         55
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.9"
+        }
+      ]
     },
     {
       "line": 56,
       "text": "造盾工血腥王之盾",
-      "type": "recipe-row",
       "sourceLines": [
         56
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.10"
+        }
+      ]
     },
     {
       "line": 57,
       "text": "帽子工荷莱松之帽",
-      "type": "recipe-row",
       "sourceLines": [
         57
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.11"
+        }
+      ]
     },
     {
       "line": 58,
       "text": "裁缝工女战神的裤子",
-      "type": "recipe-row",
       "sourceLines": [
         58
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.12"
+        }
+      ]
     },
     {
       "line": 59,
       "text": "长袍工能源之袍",
-      "type": "recipe-row",
       "sourceLines": [
         59
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.13"
+        }
+      ]
     },
     {
       "line": 60,
       "text": "制鞋工灵隼之足",
-      "type": "recipe-row",
       "sourceLines": [
         60
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.14"
+        }
+      ]
     },
     {
       "line": 61,
       "text": "厨师土龙锅",
-      "type": "recipe-row",
       "sourceLines": [
         61
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.15"
+        }
+      ]
     },
     {
       "line": 62,
       "text": "造药师奇异香",
-      "type": "recipe-row",
       "sourceLines": [
         62
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.16"
+        }
+      ]
     },
     {
       "line": 63,
       "text": "备注：各装备所需材料及具体数值，请至攻略区生产资料版块查看（后续探索完成后更新）",
-      "type": "production-note",
       "sourceLines": [
         63
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        }
+      ]
     },
     {
       "line": 64,
       "text": "◆【9C装备的配方】：（临时查看用，详细数据请查看《9C装备资料集合（欢迎带图补充）》）",
-      "type": "detail-reference",
       "sourceLines": [
         64
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        }
+      ]
     },
     {
       "line": 65,
       "text": "名称类别能力（装备数值浮动）",
-      "type": "table-heading",
       "sourceLines": [
         65
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 66,
       "text": "草薙剑单手剑攻击+235~275 混乱+20~25 命中+10~15 耐久300",
-      "type": "equipment-row",
       "sourceLines": [
         66
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        }
+      ]
     },
     {
       "line": 67,
       "text": "圣杯之枪枪攻击+190~210 反击+9 命中+5~10 耐久300",
-      "type": "equipment-row",
       "sourceLines": [
         67
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.1"
+        }
+      ]
     },
     {
       "line": 68,
       "text": "诸刃耗魔减少50%",
-      "type": "equipment-effect",
       "sourceLines": [
         68
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.1"
+        }
+      ]
     },
     {
       "line": 69,
       "text": "暗黑之斧双手斧攻击+231~255 防御-20 敏捷-15~20 毒+10 混乱+10 必杀+22~25 反击+5 耐久300",
-      "type": "equipment-row",
       "sourceLines": [
         69
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.2"
+        }
+      ]
     },
     {
       "line": 70,
       "text": "天狼星弓攻击+197~209 必杀+4~6 命中+1~2 耐久200",
-      "type": "equipment-row",
       "sourceLines": [
         70
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.3"
+        }
+      ]
     },
     {
       "line": 71,
       "text": "阳炎耗魔减少100%",
-      "type": "equipment-effect",
       "sourceLines": [
         71
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.3"
+        }
+      ]
     },
     {
       "line": 72,
       "text": "CEN-1088Prototype杖攻击+90 防御+5 精神+45 石化+6~10 必杀+3~5 魔攻+286 耐久200",
-      "type": "equipment-row",
       "sourceLines": [
         72
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.4"
+        }
+      ]
     },
     {
       "line": 73,
       "text": "亚尔提小刀小刀攻击+60 必杀+45~50 命中+8~10 闪躲+8~10 耐久300",
-      "type": "equipment-row",
       "sourceLines": [
         73
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.5"
+        }
+      ]
     },
     {
       "line": 74,
       "text": "佛利波罗回力镖攻击+222~245 精神+20 毒+20 遗忘+20 命中+5~7 耐久300",
-      "type": "equipment-row",
       "sourceLines": [
         74
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.6"
+        }
+      ]
     },
     {
       "line": 75,
       "text": "依古诺头盔头盔防御+135~170 命中+1 生命+50~99 抗魔+40~55 耐久200",
-      "type": "equipment-effect",
       "sourceLines": [
         75
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.7"
+        }
+      ]
     },
     {
       "line": 76,
       "text": "暗黑骑士之力耗魔减少50%",
-      "type": "equipment-row",
       "sourceLines": [
         76
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.7"
+        }
+      ]
     },
     {
       "line": 77,
       "text": "PRAHS-08ZM铠甲防御+201~250 毒+15 昏睡+15 石化+15 混乱+15 必杀+3~5 闪躲-3~5 抗魔+60~70 耐久200",
-      "type": "equipment-effect",
       "sourceLines": [
         77
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.8"
+        }
+      ]
     },
     {
       "line": 78,
       "text": "暗黑骑士之力耗魔减少50%",
-      "type": "equipment-row",
       "sourceLines": [
         78
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.8"
+        }
+      ]
     },
     {
       "line": 79,
       "text": "精制长靴靴防御+110~150 命中+20 魔力+130 抗魔+35~45 耐久200",
-      "type": "equipment-row",
       "sourceLines": [
         79
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.9"
+        }
+      ]
     },
     {
       "line": 80,
       "text": "血腥王之盾盾攻击+20~30 防御+100~120 必杀+5 命中+2 抗魔+105~125 ;耐久200",
-      "type": "equipment-row",
       "sourceLines": [
         80
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.10"
+        }
+      ]
     },
     {
       "line": 81,
       "text": "荷莱松之帽帽子防御+54~67 精神+5~10 毒+50 混乱+10 命中+5~5 耐久200",
-      "type": "equipment-row",
       "sourceLines": [
         81
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.11"
+        }
+      ]
     },
     {
       "line": 82,
       "text": "女战神的裤子衣服攻击+20~25 防御+1 敏捷+10 命中+3 闪躲+15 耐久200",
-      "type": "equipment-row",
       "sourceLines": [
         82
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.12"
+        }
+      ]
     },
     {
       "line": 83,
       "text": "能源之袍长袍防御+85~100 敏捷+20 魔力+450~500 耐久200",
-      "type": "equipment-row",
       "sourceLines": [
         83
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.13"
+        }
+      ]
     },
     {
       "line": 84,
       "text": "灵隼之足鞋防御+23~30 敏捷+45 魔力+50~80 耐久+200",
-      "type": "equipment-row",
       "sourceLines": [
         84
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.14"
+        }
+      ]
     },
     {
       "line": 85,
       "text": "土龙锅料理容易亲近度+20",
-      "type": "equipment-row",
       "sourceLines": [
         85
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.15"
+        }
+      ]
     },
     {
       "line": 86,
       "text": "奇异香药增加遇敌率（部分区域可以使用）",
-      "type": "equipment-row",
       "sourceLines": [
         86
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.16"
+        }
+      ]
     }
   ],
   "verification": {

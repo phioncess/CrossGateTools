@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-1f1ed448-5d92-428a-aaf4-84e39d7450f1",
   "name": "百人道场",
   "aliases": [
@@ -1054,7 +1054,53 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "竞技场看守",
+            "coordinate": "123.161",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "通往治愈的广场的位置",
+            "coordinate": "27.14",
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "↓百人道场↓",
+            "coordinate": "26.28",
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "道场负责人",
+            "coordinate": "16.23",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "floors-1-90",
@@ -3046,7 +3092,31 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "法兰城",
+            "coordinate": "141.148",
+            "sourceLines": [
+              9
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "百人道场大厅助手（水晶）",
+            "coordinate": "28.29",
+            "sourceLines": [
+              11
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "floor-91-95",
@@ -3431,7 +3501,42 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "百人道场大厅助手（水晶）",
+            "coordinate": "28.29",
+            "sourceLines": [
+              11
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "助手（元素轮盘）",
+            "coordinate": "28.16",
+            "sourceLines": [
+              25
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "兜售轮盘的人",
+            "coordinate": "9.18",
+            "sourceLines": [
+              26
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "final-gate",
@@ -3560,7 +3665,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "NPC",
+            "coordinate": "41.7",
+            "sourceLines": [
+              72
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "element-exchange",
@@ -3609,7 +3727,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "百人道场大厅助手（兑奖）",
+            "coordinate": "23.24",
+            "sourceLines": [
+              82
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       }
     ],
     "notes": []
@@ -4213,2390 +4344,4760 @@
     {
       "line": 1,
       "text": "1.前往法兰城与竞技场看守（123.161）对话，选“是”进入竞技场的入口。",
-      "type": "flow-step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆《百人道场》是BOSS战而且是BOSS。但前几层等级太低，高等级人物刷不到声望。声望公式见《声望理论》。",
-      "type": "flow-step",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "◆《百人道场》关闭时期，可以正常兑换奖品。",
-      "type": "flow-step",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "2.通过（27.14）处，抵达治愈的广场。调查↓百人道场↓（26.28），选“是”传送至百人道场大厅。",
-      "type": "flow-step",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "3.与道场负责人（16.23）对话，开始挑战。",
-      "type": "flow-step",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "◆挑战规则：",
-      "type": "flow-step",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "①.道场共100层，战胜每层BOSS后进入下一层。",
-      "type": "flow-step",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "◆战斗胜利后会随机掉落【魔族的水晶】；可以使用宠物邮件。",
-      "type": "flow-step",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "②.每通过10层可与百人道场工作人员对话，获得【道场记忆】、任意属性【元素碎片】并传送至法兰城（141.148）处",
-      "type": "flow-step",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "◆【元素碎片】说明：",
-      "type": "flow-step",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "持有4个同属性的【元素碎片】可与百人道场大厅助手（水晶）（28.29）对话，合成1个同属性【元素水晶】（请保证物品栏有2个空格）。",
-      "type": "flow-step",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "【元素水晶】不可叠加；可交易、宠邮、丢地。",
-      "type": "flow-step",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "【元素碎片】可叠加（每组4个）；可交易、宠邮、丢地。",
-      "type": "flow-step",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "③.双击【道场记忆】，选“是”传送至下一层继续开始挑战",
-      "type": "flow-step",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "4.通过95层抵达中继点，获得传送至96层的【道场记忆】并传送回法兰城。",
-      "type": "flow-step",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "◆此层不会获得【元素碎片】",
-      "type": "flow-step",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "5.通过99层抵达中继点，获得1个【乐园的镜子】、1个【元素碎片】。",
-      "type": "flow-step",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "◆【乐园的镜子】：不可交易",
-      "type": "flow-step",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "6.持有【乐园的镜子】与四属性的【元素轮盘】时，双击【乐园的镜子】交出【元素轮盘（极）】（四属性的【元素轮盘】）获得【轮盘】并传送至最终道场（第100层）。",
-      "type": "flow-step",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.9"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "◆小贴士：",
-      "type": "flow-step",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "⑴【元素轮盘（极）】（四属性的【元素轮盘】）：无耐久数值要求。",
-      "type": "flow-step",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "⑵《百人道场》关闭时期，可以正常传送至最终道场、兑换奖品。",
-      "type": "flow-step",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "◆四属性的【元素轮盘】：可交易。",
-      "type": "flow-step",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "获得方法：通过1个【轮盘】镶嵌4种不同属性的【元素水晶】获得；",
-      "type": "flow-step",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "镶嵌场所位于百人道场大厅，与助手（元素轮盘）（28.16）对话进行镶嵌",
-      "type": "flow-step",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "◆【轮盘】：可在百人道场大厅向兜售轮盘的人（9.18）购买，10000G/个；",
-      "type": "flow-step",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.7"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "【轮盘】：Lv.1不明，耐久150~200；可以交易",
-      "type": "flow-step",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "◆四属性的【元素轮盘】属性：",
-      "type": "flow-step",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "【轮盘】不可镶嵌同样属性的【元素水晶】；",
-      "type": "flow-step",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "【轮盘】可以镶嵌不同【元素水晶】，增加相应的数值，",
-      "type": "flow-step",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "【元素水晶】增加数值：",
-      "type": "flow-step",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "（轮盘镶嵌明细：水晶镶嵌数越多，轮盘属性越好，同属性水晶只可镶嵌一次）。",
-      "type": "flow-step",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "元素水晶能力数值（1/2/3/4个水晶时）",
-      "type": "flow-step",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "地防御+30/35/40/45",
-      "type": "flow-step",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "水抗魔、精神+35/40/45/50、+2/3/4/5",
-      "type": "flow-step",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "风敏捷+25/30/35/40",
-      "type": "flow-step",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "火攻击+35/40/45/50",
-      "type": "flow-step",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "变动",
-      "type": "flow-step",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "2023年4月7日后，",
-      "type": "flow-step",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "四属性的【元素轮盘】变更为【元素轮盘（极）】攻击+50、防御+45、敏捷+40、精神+5、回复+5、",
-      "type": "flow-step",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "必杀+15、命中+10、闪躲+10、抗魔+50",
-      "type": "flow-step",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "◆2023年4月7日后，四属性的【元素轮盘】变更为【元素轮盘（极）】。",
-      "type": "flow-step",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "【元素轮盘（极）】：",
-      "type": "flow-step",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "Lv10护身符、耐久150~200；攻击+50、防御+45、敏捷+40、精神+5、回复+5、必杀+15、命中+10、闪躲+10、抗魔+50；可交易。",
-      "type": "flow-step",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "◆一属性的【元素轮盘】装备后获得称号“见习元素使”；",
-      "type": "flow-step",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "二属性的【元素轮盘】装备后获得称号“元素使”；",
-      "type": "flow-step",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "三属性的【元素轮盘】装备后获得称号“风水士”；",
-      "type": "flow-step",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "四属性的【元素轮盘】装备后获得称号“元素支配者”。",
-      "type": "flow-step",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "7.与BOSS对话，进入战斗。",
-      "type": "flow-step",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "◆此战为两连战；皆为邪魔系",
-      "type": "flow-step",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first"
+        }
+      ]
     },
     {
       "line": 51,
       "text": "◆第一场战斗信息：（皆为2动）（由玩家Level.1提供）",
-      "type": "flow-step",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first"
+        }
+      ]
     },
     {
       "line": 52,
       "text": "百人道场（100层），两连战第一场",
-      "type": "flow-step",
       "sourceLines": [
         52
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first"
+        }
+      ]
     },
     {
       "line": 53,
       "text": "名称预估血量属性种族抗咒",
-      "type": "battle-detail",
       "sourceLines": [
         53
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first"
+        }
+      ]
     },
     {
       "line": 54,
       "text": "螳螂18000全50邪魔系抗",
-      "type": "battle-detail",
       "sourceLines": [
         54
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first.enemies.0"
+        }
+      ]
     },
     {
       "line": 55,
       "text": "技能攻击、乾坤一掷EX、反击Lv10、混乱攻击Lv10、酒醉攻击Ⅴ、魔法防御Lv4、",
-      "type": "battle-detail",
       "sourceLines": [
         55
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first.enemies.0"
+        }
+      ]
     },
     {
       "line": 56,
       "text": "连击·破Lv5（使用物理制御技追加）、大地之怒Lv8（HP<25%追加；256~512伤害）",
-      "type": "battle-detail",
       "sourceLines": [
         56
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first.enemies.0"
+        }
+      ]
     },
     {
       "line": 57,
       "text": "使魔8000全50邪魔系不抗",
-      "type": "battle-detail",
       "sourceLines": [
         57
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first.enemies.1"
+        }
+      ]
     },
     {
       "line": 58,
       "text": "技能强力冰冻/风刃魔法Lv6、超强陨石/火焰魔法Lv10、强力昏睡/混乱魔法Lv6、",
-      "type": "battle-detail",
       "sourceLines": [
         58
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first.enemies.1"
+        }
+      ]
     },
     {
       "line": 59,
       "text": "超强补血魔法Lv7（目标我方）、防御（魔法封印时）、即死魔法E5（超强；MP<5%）",
-      "type": "battle-detail",
       "sourceLines": [
         59
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first.enemies.1"
+        }
+      ]
     },
     {
       "line": 60,
       "text": "黄蜂8000水90火10邪魔系不抗",
-      "type": "battle-detail",
       "sourceLines": [
         60
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first.enemies.2"
+        }
+      ]
     },
     {
       "line": 61,
       "text": "技能攻击、乾坤一掷EX、吸血攻击Lv10、战栗袭心Lv10、崩击Lv10、连击Ⅴ、",
-      "type": "battle-detail",
       "sourceLines": [
         61
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first.enemies.2"
+        }
+      ]
     },
     {
       "line": 62,
       "text": "超强恢复魔法Lv7（目标我方）",
-      "type": "battle-detail",
       "sourceLines": [
         62
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first.enemies.2"
+        }
+      ]
     },
     {
       "line": 63,
       "text": "水龙蜥10000水70火30邪魔系不抗",
-      "type": "battle-detail",
       "sourceLines": [
         63
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first.enemies.3"
+        }
+      ]
     },
     {
       "line": 64,
       "text": "技能攻击、强力陨石/冰冻/火焰/风刃魔法Lv4、明镜止水Lv10（间隔2回合：几率使用；第1回合）、",
-      "type": "battle-detail",
       "sourceLines": [
         64
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first.enemies.3"
+        }
+      ]
     },
     {
       "line": 65,
       "text": "超强恢复魔法Lv7（目标我方）、暗杀E3（HP<25%）",
-      "type": "battle-detail",
       "sourceLines": [
         65
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first.enemies.3"
+        }
+      ]
     },
     {
       "line": 66,
       "text": "小蝙蝠8000地80水20邪魔系不抗",
-      "type": "battle-detail",
       "sourceLines": [
         66
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first.enemies.4"
+        }
+      ]
     },
     {
       "line": 67,
       "text": "技能攻击、乾坤一掷EX、崩击Lv10、阳炎Lv10、连击Ⅴ、吸血攻击Ⅴ、混乱攻击E1、",
-      "type": "battle-detail",
       "sourceLines": [
         67
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first.enemies.4"
+        }
+      ]
     },
     {
       "line": 68,
       "text": "洁净魔法Lv7（目标我方）",
-      "type": "battle-detail",
       "sourceLines": [
         68
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first.enemies.4"
+        }
+      ]
     },
     {
       "line": 69,
       "text": "备注：等级Lv.100~120随机；皆为2次行动",
-      "type": "flow-step",
       "sourceLines": [
         69
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-first"
+        }
+      ]
     },
     {
       "line": 70,
       "text": "◆第二场战斗信息：",
-      "type": "flow-step",
       "sourceLines": [
         70
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-second"
+        }
+      ]
     },
     {
       "line": 71,
       "text": "Lv.100大鳄，种族：邪魔系；属性：地100；血量≈2000",
-      "type": "flow-step",
       "sourceLines": [
         71
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-second"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.floor100-second.enemies.0"
+        }
+      ]
     },
     {
       "line": 72,
       "text": "8.战斗胜利后传送至最终道场通过。与NPC（41.7）对话，交出【轮盘】获得【王者守护神】并传送回法兰城，任务完结。",
-      "type": "flow-step",
       "sourceLines": [
         72
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.10"
+        }
+      ]
     },
     {
       "line": 73,
       "text": "◆【王者守护神】：Lv10护身符、耐久100；增加偷袭率，装备后获得称号“王者之风”；可以交易",
-      "type": "flow-step",
       "sourceLines": [
         73
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.1"
+        }
+      ]
     },
     {
       "line": 74,
       "text": "◆偷袭率可以参考 《偷袭率设定（参考）》一文；“卡双偷”可以参考 《“卡双偷”心得分享》一文",
-      "type": "flow-step",
       "sourceLines": [
         74
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        }
+      ]
     },
     {
       "line": 75,
       "text": "◆2025版奖励：无变动",
-      "type": "flow-step",
       "sourceLines": [
         75
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.1"
+        }
+      ]
     },
     {
       "line": 76,
       "text": "◆变更记录：",
-      "type": "flow-step",
       "sourceLines": [
         76
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.2"
+        }
+      ]
     },
     {
       "line": 77,
       "text": "2023版的变动：",
-      "type": "flow-step",
       "sourceLines": [
         77
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.2"
+        }
+      ]
     },
     {
       "line": 78,
       "text": "92层，改为恶即斩的克罗卡涅（《兰国的遗产》任务）",
-      "type": "flow-step",
       "sourceLines": [
         78
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "relation",
+          "target": "relations.references.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.2"
+        }
+      ]
     },
     {
       "line": 79,
       "text": "96层，改为芒（半山9《死与新生》任务 ）",
-      "type": "flow-step",
       "sourceLines": [
         79
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "relation",
+          "target": "relations.references.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.2"
+        }
+      ]
     },
     {
       "line": 80,
       "text": "98层，改为EX39（《异界的魔导士》任务）",
-      "type": "flow-step",
       "sourceLines": [
         80
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "relation",
+          "target": "relations.references.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.2"
+        }
+      ]
     },
     {
       "line": 81,
       "text": "元素兑换-支线：",
-      "type": "flow-step",
       "sourceLines": [
         81
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        }
+      ]
     },
     {
       "line": 82,
       "text": "◆持有【元素碎片】/【元素水晶】与百人道场大厅助手（兑奖）（23.24）对话，输入奖项的名称进行兑换",
-      "type": "flow-step",
       "sourceLines": [
         82
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.11"
+        }
+      ]
     },
     {
       "line": 83,
       "text": "【元素碎片/水晶】兑换【奖品】明细：",
-      "type": "flow-step",
       "sourceLines": [
         83
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        }
+      ]
     },
     {
       "line": 84,
       "text": "奖项数量奖品（随机一种）",
-      "type": "flow-step",
       "sourceLines": [
         84
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        }
+      ]
     },
     {
       "line": 85,
       "text": "E1个元素碎片火焰鼠/大地鼠/宝石鼠闪卡*2、鼠王惊奇蛋",
-      "type": "flow-step",
       "sourceLines": [
         85
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.0"
+        }
+      ]
     },
     {
       "line": 86,
       "text": "D2个不同属性元素碎片哥拉尔镇/阿凯鲁法村传送券、六种鼠娃娃",
-      "type": "flow-step",
       "sourceLines": [
         86
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.1"
+        }
+      ]
     },
     {
       "line": 87,
       "text": "C1个元素水晶誓言之证、火焰之魂（材料）、德特家的布、曼陀罗草的皮、风龙蜥的甲壳、妖草的血、钢骑之矿、魔族的水晶",
-      "type": "flow-step",
       "sourceLines": [
         87
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.2"
+        }
+      ]
     },
     {
       "line": 88,
       "text": "B4个不同属性元素碎片勾玉的戒指、黑暗之戒、建木之戒、圣甲虫之戒、十全十美安全帽",
-      "type": "flow-step",
       "sourceLines": [
         88
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.3"
+        }
+      ]
     },
     {
       "line": 89,
       "text": "A4个不同属性元素水晶璀璨的精灵石臂环、翻腾的海洋之心、燃烧的火焰之魂、武圣的臂环、金刚不坏安全帽·改",
-      "type": "flow-step",
       "sourceLines": [
         89
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.4"
+        }
+      ]
     },
     {
       "line": 90,
       "text": "◆百人道场第1至99层BOSS名单：",
-      "type": "flow-step",
       "sourceLines": [
         90
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 91,
       "text": "第1-10层：",
-      "type": "floor-band-heading",
       "sourceLines": [
         91
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 92,
       "text": "01.Lv.10芙蕾雅番茄精灵，血量约350",
-      "type": "floor-roster",
       "sourceLines": [
         92
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.0"
+        }
+      ]
     },
     {
       "line": 93,
       "text": "02.Lv.10圣诞精灵，血量约200",
-      "type": "floor-roster",
       "sourceLines": [
         93
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.1"
+        }
+      ]
     },
     {
       "line": 94,
       "text": "03.Lv.10牧羊神使化身，血量约350",
-      "type": "floor-roster",
       "sourceLines": [
         94
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.2"
+        }
+      ]
     },
     {
       "line": 95,
       "text": "04.Lv.10金牛神使化身，血量约200",
-      "type": "floor-roster",
       "sourceLines": [
         95
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.3"
+        }
+      ]
     },
     {
       "line": 96,
       "text": "05.Lv.10约格（蓝犹大），血量约200",
-      "type": "floor-roster",
       "sourceLines": [
         96
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.4"
+        }
+      ]
     },
     {
       "line": 97,
       "text": "06.Lv.15夏拉拉导士（烈风牛头怪），血量约800",
-      "type": "floor-roster",
       "sourceLines": [
         97
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.5"
+        }
+      ]
     },
     {
       "line": 98,
       "text": "07.Lv.15夏拉拉导士（火焰巨龙），血量约800",
-      "type": "floor-roster",
       "sourceLines": [
         98
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.6"
+        }
+      ]
     },
     {
       "line": 99,
       "text": "08.Lv.15夏拉拉导士（水蓝鼠），血量约800",
-      "type": "floor-roster",
       "sourceLines": [
         99
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.7"
+        }
+      ]
     },
     {
       "line": 100,
       "text": "09.Lv.20拳击企鹅，血量约1100",
-      "type": "floor-roster",
       "sourceLines": [
         100
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.8"
+        }
+      ]
     },
     {
       "line": 101,
       "text": "10.Lv.20幼生独角兽，血量约1000、Lv.15幼生火焰独角兽*2，血量约550",
-      "type": "floor-roster",
       "sourceLines": [
         101
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.9"
+        }
+      ]
     },
     {
       "line": 102,
       "text": "第11-20层：",
-      "type": "floor-band-heading",
       "sourceLines": [
         102
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 103,
       "text": "11.Lv.23吉拉，血量约500",
-      "type": "floor-roster",
       "sourceLines": [
         103
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.10"
+        }
+      ]
     },
     {
       "line": 104,
       "text": "12.Lv.26巴雷莉，血量约650、Lv.23土蜘蛛，血量约500",
-      "type": "floor-roster",
       "sourceLines": [
         104
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.11"
+        }
+      ]
     },
     {
       "line": 105,
       "text": "13.Lv.29伊鲁玛，血量约650、Lv.25梅鲁耶路（水果蝙蝠），血量约400",
-      "type": "floor-roster",
       "sourceLines": [
         105
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.12"
+        }
+      ]
     },
     {
       "line": 106,
       "text": "14.Lv.32伊佐塔，血量约850、Lv.28地龙蜥，血量约650",
-      "type": "floor-roster",
       "sourceLines": [
         106
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.13"
+        }
+      ]
     },
     {
       "line": 107,
       "text": "15.Lv.35伍那，血量约1150、Lv.30地狱妖犬，血量约600",
-      "type": "floor-roster",
       "sourceLines": [
         107
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.14"
+        }
+      ]
     },
     {
       "line": 108,
       "text": "16.Lv.38伊诺克，血量约1650",
-      "type": "floor-roster",
       "sourceLines": [
         108
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.15"
+        }
+      ]
     },
     {
       "line": 109,
       "text": "17.Lv.38莱欧尼尔，血量约1650",
-      "type": "floor-roster",
       "sourceLines": [
         109
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.16"
+        }
+      ]
     },
     {
       "line": 110,
       "text": "18.Lv.41石雄，血量约1550",
-      "type": "floor-roster",
       "sourceLines": [
         110
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.17"
+        }
+      ]
     },
     {
       "line": 111,
       "text": "19.Lv.41金雄，血量约1800",
-      "type": "floor-roster",
       "sourceLines": [
         111
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.18"
+        }
+      ]
     },
     {
       "line": 112,
       "text": "20.Lv.30牛鬼，血量约1700",
-      "type": "floor-roster",
       "sourceLines": [
         112
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.19"
+        }
+      ]
     },
     {
       "line": 113,
       "text": "第21-30层：",
-      "type": "floor-band-heading",
       "sourceLines": [
         113
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 114,
       "text": "21.Lv.25亡灵骑士*3，血量约900",
-      "type": "floor-roster",
       "sourceLines": [
         114
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.20"
+        }
+      ]
     },
     {
       "line": 115,
       "text": "22.Lv.25杀熊者欧兹那克，血量约1300、Lv.20穴熊*9，血量约750",
-      "type": "floor-roster",
       "sourceLines": [
         115
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.21"
+        }
+      ]
     },
     {
       "line": 116,
       "text": "23.Lv.40热砂的欧兹尼克，血量约2500",
-      "type": "floor-roster",
       "sourceLines": [
         116
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.22"
+        }
+      ]
     },
     {
       "line": 117,
       "text": "24.Lv.50九尾灵狐，血量约2300",
-      "type": "floor-roster",
       "sourceLines": [
         117
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.23"
+        }
+      ]
     },
     {
       "line": 118,
       "text": "25.Lv.57阴影，血量约2300",
-      "type": "floor-roster",
       "sourceLines": [
         118
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.24"
+        }
+      ]
     },
     {
       "line": 119,
       "text": "26.Lv.56幻影，血量约2000",
-      "type": "floor-roster",
       "sourceLines": [
         119
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.25"
+        }
+      ]
     },
     {
       "line": 120,
       "text": "27.Lv.58暗影，血量约2100",
-      "type": "floor-roster",
       "sourceLines": [
         120
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.26"
+        }
+      ]
     },
     {
       "line": 121,
       "text": "28.Lv.56旋律影子，血量约2100",
-      "type": "floor-roster",
       "sourceLines": [
         121
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.27"
+        }
+      ]
     },
     {
       "line": 122,
       "text": "29.Lv.50法尔肯，血量约4600",
-      "type": "floor-roster",
       "sourceLines": [
         122
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.28"
+        }
+      ]
     },
     {
       "line": 123,
       "text": "30.Lv.57阴影，血量约2200、Lv.56幻影，血量约2200、Lv.58暗影，血量约2200、Lv.56旋律影子，血量约2200",
-      "type": "floor-roster",
       "sourceLines": [
         123
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.29"
+        }
+      ]
     },
     {
       "line": 124,
       "text": "第30-40层：",
-      "type": "floor-band-heading",
       "sourceLines": [
         124
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 125,
       "text": "31.Lv.40奇奇（猪鬼），血量约3700",
-      "type": "floor-roster",
       "sourceLines": [
         125
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.30"
+        }
+      ]
     },
     {
       "line": 126,
       "text": "32.Lv.30梅兹，血量约2700",
-      "type": "floor-roster",
       "sourceLines": [
         126
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.31"
+        }
+      ]
     },
     {
       "line": 127,
       "text": "33.Lv.44淡黄训练员，血量约6500",
-      "type": "floor-roster",
       "sourceLines": [
         127
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.32"
+        }
+      ]
     },
     {
       "line": 128,
       "text": "34.Lv.44真红淑女，血量约6000",
-      "type": "floor-roster",
       "sourceLines": [
         128
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.33"
+        }
+      ]
     },
     {
       "line": 129,
       "text": "35.Lv.44水蓝教练，血量约8300",
-      "type": "floor-roster",
       "sourceLines": [
         129
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.34"
+        }
+      ]
     },
     {
       "line": 130,
       "text": "36.Lv.44绿先生（可以带宠打），血量约7200",
-      "type": "floor-roster",
       "sourceLines": [
         130
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.35"
+        }
+      ]
     },
     {
       "line": 131,
       "text": "37.Lv.50露比，血量约3000",
-      "type": "floor-roster",
       "sourceLines": [
         131
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.36"
+        }
+      ]
     },
     {
       "line": 132,
       "text": "38.Lv.40试作型牛鬼，血量约2700",
-      "type": "floor-roster",
       "sourceLines": [
         132
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.37"
+        }
+      ]
     },
     {
       "line": 133,
       "text": "39.Lv.75彼特，血量约3800",
-      "type": "floor-roster",
       "sourceLines": [
         133
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.38"
+        }
+      ]
     },
     {
       "line": 134,
       "text": "40.Lv.45最终决战型牛鬼，血量约3500",
-      "type": "floor-roster",
       "sourceLines": [
         134
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.39"
+        }
+      ]
     },
     {
       "line": 135,
       "text": "第41-50层：",
-      "type": "floor-band-heading",
       "sourceLines": [
         135
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 136,
       "text": "41.Lv.35长老树精，血量约2000、Lv.24~26异形蜂、土蜘蛛*N，血量约400",
-      "type": "floor-roster",
       "sourceLines": [
         136
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.40"
+        }
+      ]
     },
     {
       "line": 137,
       "text": "42.Lv.50神兽史雷普尼尔（队伍可超过2人），血量约4500",
-      "type": "floor-roster",
       "sourceLines": [
         137
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.41"
+        }
+      ]
     },
     {
       "line": 138,
       "text": "43.Lv.40狂战将军，血量约4500",
-      "type": "floor-roster",
       "sourceLines": [
         138
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.42"
+        }
+      ]
     },
     {
       "line": 139,
       "text": "44.Lv.65犹大，血量约7000、Lv.50火焰之刃*2，血量约500、武装骷髅*3，血量约500、亡灵*2，血量约500、冰怪*2，血量约600",
-      "type": "floor-roster",
       "sourceLines": [
         139
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.43"
+        }
+      ]
     },
     {
       "line": 140,
       "text": "45.Lv.65纳帕（召唤Lv.40大地翼龙），血量约6000",
-      "type": "floor-roster",
       "sourceLines": [
         140
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.44"
+        }
+      ]
     },
     {
       "line": 141,
       "text": "46.Lv.65德尔麦，血量约7000",
-      "type": "floor-roster",
       "sourceLines": [
         141
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.45"
+        }
+      ]
     },
     {
       "line": 142,
       "text": "47.Lv.65瑟贝塔，血量约8000",
-      "type": "floor-roster",
       "sourceLines": [
         142
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.46"
+        }
+      ]
     },
     {
       "line": 143,
       "text": "48.Lv.65亚尔法，血量约7500",
-      "type": "floor-roster",
       "sourceLines": [
         143
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.47"
+        }
+      ]
     },
     {
       "line": 144,
       "text": "49.Lv.65马帝亚，血量约9000",
-      "type": "floor-roster",
       "sourceLines": [
         144
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.48"
+        }
+      ]
     },
     {
       "line": 145,
       "text": "50.Lv.70凯法，血量约11000、帕布提斯马，血量约11000",
-      "type": "floor-roster",
       "sourceLines": [
         145
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.49"
+        }
+      ]
     },
     {
       "line": 146,
       "text": "第51-60层：",
-      "type": "floor-band-heading",
       "sourceLines": [
         146
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 147,
       "text": "51.Lv.51善（马斯少爷），血量约5500",
-      "type": "floor-roster",
       "sourceLines": [
         147
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.50"
+        }
+      ]
     },
     {
       "line": 148,
       "text": "52.Lv.53恶（马斯少爷），血量约5500",
-      "type": "floor-roster",
       "sourceLines": [
         148
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.51"
+        }
+      ]
     },
     {
       "line": 149,
       "text": "53.Lv.50古德奈司魔王，血量约7000",
-      "type": "floor-roster",
       "sourceLines": [
         149
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.52"
+        }
+      ]
     },
     {
       "line": 150,
       "text": "54.Lv.49巴克达魔王（变身前），血量约6000",
-      "type": "floor-roster",
       "sourceLines": [
         150
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.53"
+        }
+      ]
     },
     {
       "line": 151,
       "text": "55.Lv.59巴克达（变身后），血量约7000",
-      "type": "floor-roster",
       "sourceLines": [
         151
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.54"
+        }
+      ]
     },
     {
       "line": 152,
       "text": "56.Lv.35猪老大、Lv.25山桃盗贼团*3（BOSS被击倒后逃跑）",
-      "type": "floor-roster",
       "sourceLines": [
         152
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.55"
+        }
+      ]
     },
     {
       "line": 153,
       "text": "57.Lv.80无限刀流的艾吉，血量约10000（召唤刃A、刃B；会自爆给对方加血）",
-      "type": "floor-roster",
       "sourceLines": [
         153
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.56"
+        }
+      ]
     },
     {
       "line": 154,
       "text": "58.Lv.70阿德基姆，血量约10000",
-      "type": "floor-roster",
       "sourceLines": [
         154
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.57"
+        }
+      ]
     },
     {
       "line": 155,
       "text": "59.Lv.50死亡狮鹫兽，血量约10000；Lv.45狮鹫兽*2，血量约7000",
-      "type": "floor-roster",
       "sourceLines": [
         155
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.58"
+        }
+      ]
     },
     {
       "line": 156,
       "text": "60.Lv.60头目，血量约7000",
-      "type": "floor-roster",
       "sourceLines": [
         156
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.59"
+        }
+      ]
     },
     {
       "line": 157,
       "text": "第61-70层：",
-      "type": "floor-band-heading",
       "sourceLines": [
         157
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 158,
       "text": "61.Lv.40土之斗神，血量约1600、Lv.15地精*2，血量约600",
-      "type": "floor-roster",
       "sourceLines": [
         158
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.60"
+        }
+      ]
     },
     {
       "line": 159,
       "text": "62.Lv.50风之斗神，血量约4400、Lv.30风精、Lv.35风精，血量约1800",
-      "type": "floor-roster",
       "sourceLines": [
         159
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.61"
+        }
+      ]
     },
     {
       "line": 160,
       "text": "63.Lv.55炎之斗神，血量约5500、Lv.48火精*2，血量约2800",
-      "type": "floor-roster",
       "sourceLines": [
         160
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.62"
+        }
+      ]
     },
     {
       "line": 161,
       "text": "64.Lv.80水之斗神，血量约11000、Lv.74~75液态史莱姆*2，血量约9000、Lv.71~72水精，血量约5800",
-      "type": "floor-roster",
       "sourceLines": [
         161
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.63"
+        }
+      ]
     },
     {
       "line": 162,
       "text": "65.Lv.70依代（大），血量约9500",
-      "type": "floor-roster",
       "sourceLines": [
         162
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.64"
+        }
+      ]
     },
     {
       "line": 163,
       "text": "66.Lv.70露比，血量约4500、召唤大地鼠、火焰鼠",
-      "type": "floor-roster",
       "sourceLines": [
         163
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.65"
+        }
+      ]
     },
     {
       "line": 164,
       "text": "67.Lv.76杰特，血量约9500",
-      "type": "floor-roster",
       "sourceLines": [
         164
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.66"
+        }
+      ]
     },
     {
       "line": 165,
       "text": "68.Lv.73龙的使者（火焰翼龙），血量约9200",
-      "type": "floor-roster",
       "sourceLines": [
         165
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.67"
+        }
+      ]
     },
     {
       "line": 166,
       "text": "69.Lv.80围巾兔，血量约3500",
-      "type": "floor-roster",
       "sourceLines": [
         166
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.68"
+        }
+      ]
     },
     {
       "line": 167,
       "text": "70.Lv.99恶魔吓人箱，血量约7500",
-      "type": "floor-roster",
       "sourceLines": [
         167
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.69"
+        }
+      ]
     },
     {
       "line": 168,
       "text": "第71-80层：",
-      "type": "floor-band-heading",
       "sourceLines": [
         168
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 169,
       "text": "71.Lv.75伊瓦希米滋、召唤2个分身",
-      "type": "floor-roster",
       "sourceLines": [
         169
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.70"
+        }
+      ]
     },
     {
       "line": 170,
       "text": "72.Lv.60海贼德奇",
-      "type": "floor-roster",
       "sourceLines": [
         170
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.71"
+        }
+      ]
     },
     {
       "line": 171,
       "text": "73.Lv.70头目、Lv.50~55手下*1~9",
-      "type": "floor-roster",
       "sourceLines": [
         171
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.72"
+        }
+      ]
     },
     {
       "line": 172,
       "text": "74.Lv.81露比、Lv.67口袋龙*2、Lv.67雏龙*2、Lv.67穴龙*2、Lv.67迷你龙*2、Lv.71水果蝙蝠",
-      "type": "floor-roster",
       "sourceLines": [
         172
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.73"
+        }
+      ]
     },
     {
       "line": 173,
       "text": "75.Lv.65山吹",
-      "type": "floor-roster",
       "sourceLines": [
         173
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.74"
+        }
+      ]
     },
     {
       "line": 174,
       "text": "76.Lv.75喷火兽盖美拉、Lv.50改造僵尸*4",
-      "type": "floor-roster",
       "sourceLines": [
         174
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.75"
+        }
+      ]
     },
     {
       "line": 175,
       "text": "77.Lv.78米特拉将军、Lv.65匍匐冒出的阴影*8",
-      "type": "floor-roster",
       "sourceLines": [
         175
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.76"
+        }
+      ]
     },
     {
       "line": 176,
       "text": "78.Lv.68奇美拉",
-      "type": "floor-roster",
       "sourceLines": [
         176
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.77"
+        }
+      ]
     },
     {
       "line": 177,
       "text": "79.Lv.70阿夏芙*4（布雷欧*2、变种狮鹫兽*2）",
-      "type": "floor-roster",
       "sourceLines": [
         177
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.78"
+        }
+      ]
     },
     {
       "line": 178,
       "text": "80.Lv.83黑暗医生阿鲁巴斯、Lv.70黄奇美拉、Lv.70蓝奇美拉、Lv.65山吹、Lv.65小梅、Lv.65小豆、Lv.65小樱",
-      "type": "floor-roster",
       "sourceLines": [
         178
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.79"
+        }
+      ]
     },
     {
       "line": 179,
       "text": "第81-90层：",
-      "type": "floor-band-heading",
       "sourceLines": [
         179
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 180,
       "text": "81.Lv.80艾尔卡丝（团长）、手下*8",
-      "type": "floor-roster",
       "sourceLines": [
         180
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.80"
+        }
+      ]
     },
     {
       "line": 181,
       "text": "82.Lv.89白银之骑士豪尔、Lv.81猎人、剑士、熊美、魔术师、传教、小乌",
-      "type": "floor-roster",
       "sourceLines": [
         181
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.81"
+        }
+      ]
     },
     {
       "line": 182,
       "text": "83.Lv.90受诅咒者、Lv.75独角兽*4",
-      "type": "floor-roster",
       "sourceLines": [
         182
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.82"
+        }
+      ]
     },
     {
       "line": 183,
       "text": "84.Lv.90受诅咒者、Lv.75天马*4",
-      "type": "floor-roster",
       "sourceLines": [
         183
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.83"
+        }
+      ]
     },
     {
       "line": 184,
       "text": "85.Lv.90受诅咒者、Lv.75山飞甲*4",
-      "type": "floor-roster",
       "sourceLines": [
         184
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.84"
+        }
+      ]
     },
     {
       "line": 185,
       "text": "86.Lv.95红龙诺利、Lv.80火焰翼龙*4",
-      "type": "floor-roster",
       "sourceLines": [
         185
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.85"
+        }
+      ]
     },
     {
       "line": 186,
       "text": "87.Lv.95蓝龙艾汀、Lv.80单眼巨人*4",
-      "type": "floor-roster",
       "sourceLines": [
         186
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.86"
+        }
+      ]
     },
     {
       "line": 187,
       "text": "88.Lv.95绿龙杜瓦",
-      "type": "floor-roster",
       "sourceLines": [
         187
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.87"
+        }
+      ]
     },
     {
       "line": 188,
       "text": "89.Lv.85鸟人酋长",
-      "type": "floor-roster",
       "sourceLines": [
         188
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.88"
+        }
+      ]
     },
     {
       "line": 189,
       "text": "90.Lv.80魔龙德拉贡（黑龙）",
-      "type": "floor-roster",
       "sourceLines": [
         189
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.floorRecords.89"
+        }
+      ]
     },
     {
       "line": 190,
       "text": "第91-99层：",
-      "type": "floor-band-heading",
       "sourceLines": [
         190
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 191,
       "text": "91.Lv.99四斗神，出自《森罗万象》任务",
-      "type": "floor-roster",
       "sourceLines": [
         191
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.floorRecords.0"
+        }
+      ]
     },
     {
       "line": 192,
       "text": "92.Lv.105恶即斩的克罗卡涅，出自9C《兰国的遗产》任务；概率掉落兔子精华（2023之前版本为Lv.99海神，出自《时波之祠》任务）",
-      "type": "floor-roster",
       "sourceLines": [
         192
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.floorRecords.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.2"
+        }
+      ]
     },
     {
       "line": 193,
       "text": "93.Lv.90帕鲁凯斯，出自《帕鲁凯斯的亡灵》任务",
-      "type": "floor-roster",
       "sourceLines": [
         193
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.floorRecords.2"
+        }
+      ]
     },
     {
       "line": 194,
       "text": "94.Lv.90李贝留斯、Lv.80阿卡斯、Lv.80佛利波罗、Lv.80巴洛斯，出自《六曜之塔》任务",
-      "type": "floor-roster",
       "sourceLines": [
         194
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.floorRecords.3"
+        }
+      ]
     },
     {
       "line": 195,
       "text": "95.Lv.100里雍，出自《失翼之龙》任务",
-      "type": "floor-roster",
       "sourceLines": [
         195
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.floorRecords.4"
+        }
+      ]
     },
     {
       "line": 196,
       "text": "96.Lv.100芒，出自半山9《死与新生》任务（2023之前为Lv.99人类？，出自《森罗万象》任务）",
-      "type": "floor-roster",
       "sourceLines": [
         196
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.floorRecords.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.2"
+        }
+      ]
     },
     {
       "line": 197,
       "text": "97.Lv.79牛鬼公主，出自《牛鬼的逆袭》任务",
-      "type": "floor-roster",
       "sourceLines": [
         197
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.floorRecords.1"
+        }
+      ]
     },
     {
       "line": 198,
       "text": "98.Lv.120，EX39，出自《异界的魔导士》任务（2023之前版本为Lv.80地缚灵罗连斯，出自《牛鬼的逆袭》任务）",
-      "type": "floor-roster",
       "sourceLines": [
         198
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.floorRecords.2"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.2"
+        }
+      ]
     },
     {
       "line": 199,
       "text": "99.Lv.87回来报仇的牛鬼，出自《牛鬼的逆袭》任务",
-      "type": "floor-roster",
       "sourceLines": [
         199
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.floorRecords.3"
+        }
+      ]
     }
   ],
   "verification": {

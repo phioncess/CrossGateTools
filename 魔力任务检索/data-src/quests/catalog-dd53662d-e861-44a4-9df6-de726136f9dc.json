@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-dd53662d-e861-44a4-9df6-de726136f9dc",
   "name": "牛鬼讨伐",
   "aliases": [
@@ -350,7 +350,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "伊尔村泰勒的家",
+            "coordinate": "35.42",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "cave-entry",
@@ -794,7 +807,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "伊尔村泰勒的家",
+            "coordinate": "35.42",
+            "sourceLines": [
+              47
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "story-reference",
@@ -1463,602 +1489,1274 @@
     {
       "line": 1,
       "text": "1.前往伊尔村泰勒的家（35.42）与旅行商人泰勒（15.6）对话，选“是”接受委托。（此步可省略）",
-      "type": "optional-start",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "2.夜晚或黄昏，前往芙蕾雅岛（665.184）处进入牛鬼的洞穴。",
-      "type": "time-gated-entry",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "◆白天进入该处为洞窟",
-      "type": "daytime-difference",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "3.与金雄（15.18）对话，进入战斗。（此步可省略）",
-      "type": "optional-battle",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.jinxiong"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "Lv.27金雄，血量约800，人形系，属性：水70火30，不抗咒；技能：攻击、防御、连击",
-      "type": "battle-enemy",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.jinxiong"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.jinxiong.enemies.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "Lv.13~15小鬼*1~5，血量约400，人形系，属性：地70水30，不抗咒；技能：攻击、防御、什么都不做、逃跑（只剩一只小鬼时追加）",
-      "type": "battle-enemy",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.jinxiong"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.jinxiong.enemies.1"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "4.通过（16.10）处黄色传送石抵达牛鬼的洞窟。",
-      "type": "maze-entry",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "◆牛鬼的洞窟为随机迷宫，共16层",
-      "type": "maze-detail",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "迷宫刷新时间：4小时（仅供参考），地图大小范围：30*30~100*100",
-      "type": "maze-detail",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "宝箱数量：8",
-      "type": "maze-detail",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "魔物为Lv9~14的土蜘蛛、哥布林、盗贼、红帽哥布林，最高遇敌数量5",
-      "type": "encounter-detail",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "5.在牛鬼的洞窟，收集【酒？】或【牛鬼杀】其一。",
-      "type": "route-item-goal",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◆【酒？】或【牛鬼杀】获得方法：",
-      "type": "acquisition-heading",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "①.寻找迷宫中随机出现的冒险者金德其并与之对话，选“是”获得【酒？】或【牛鬼杀】",
-      "type": "random-acquisition",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "◆持有【康正的背包】时与之对话无法获得【酒？】或【牛鬼杀】",
-      "type": "held-item-block",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "②.寻找迷宫中随机出现的小鬼并与之对话，进入战斗；战斗胜利后随机获得【康正的背包】；",
-      "type": "battle-drop-route",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.backpack-goblin"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "寻找迷宫中随机出现的冒险者康正并与之对话，选“是”交出【康正的背包】获得【酒？】或【牛鬼杀】",
-      "type": "exchange-route",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "◆牛鬼的洞窟中有多个小鬼，仅有一个击倒后可获得【康正的背包】",
-      "type": "correct-npc-note",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.backpack-goblin"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "Lv.10~14小鬼，血量约300，属性：地70水30，人形系；技能：攻击、防御、逃跑、什么都不做",
-      "type": "battle-enemy",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.backpack-goblin"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.backpack-goblin.enemies.0"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "6.通过随机迷宫抵达宝物库，队伍中一人与看守的星雄对话（25.33），选“是”交出【酒？】或【牛鬼杀】全队通过栅栏。",
-      "type": "alternative-item-gate",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "◆持有【鬼酒】与看守的星雄对话无法通过",
-      "type": "held-item-block",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "7.与旅行商人浦部（34.19）对话，获得【给泰勒的信】。（此步可省略，但无法兑换【弓？】）",
-      "type": "optional-item-acquisition",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "◆持有【牛鬼杀1.5】时，与之对话无法获得【给泰勒的信】",
-      "type": "held-item-block",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "8.与冒险者赖光（30.20）对话，获得【牛鬼杀1.5】。（此步可省略）",
-      "type": "optional-item-acquisition",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "◆持有【给泰勒的信】时，与之对话无法获得【牛鬼杀1.5】",
-      "type": "held-item-block",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "9.与鬼犬（27.14）对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ghost-dog-chain"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "◆本次战斗为二连战",
-      "type": "consecutive-battle-rule",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ghost-dog-chain"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "◆第一战战斗信息：",
-      "type": "round-heading",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ghost-dog-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ghost-dog-chain.rounds.0"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "Lv.23鬼犬，血量约800，野兽系，属性：水60火40，不抗咒；技能：攻击、防御、阳炎",
-      "type": "battle-enemy",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ghost-dog-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ghost-dog-chain.rounds.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ghost-dog-chain.rounds.0.enemies.0"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "◆第二战战斗信息：",
-      "type": "round-heading",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ghost-dog-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ghost-dog-chain.rounds.1"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "Lv.1盗贼/红帽哥布林/土蜘蛛，1~5只，血量约100；技能：攻击、防御；",
-      "type": "battle-enemy",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ghost-dog-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ghost-dog-chain.rounds.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ghost-dog-chain.rounds.1.enemies.0"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "红帽哥布林/土蜘蛛，可以封印",
-      "type": "capture-note",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ghost-dog-chain"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ghost-dog-chain.rounds.1"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "10.战胜鬼犬后，场景切换到鬼犬的后面。",
-      "type": "post-battle-scene",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "◆此时依然可以与鬼犬（27.14）对话触发战斗，不限次数",
-      "type": "repeatable-battle",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "11.通过（27.5）处楼梯下楼，抵达牛鬼的洞穴。",
-      "type": "route-step",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "12.与牛鬼（16.19）或石雄（15.18）对话，进入战斗。",
-      "type": "boss-battle-step",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ox-demon"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "Lv.30牛鬼，血量约1800，2动，邪魔系，属性：全30；技能：攻击、防御、乾坤一掷、崩击、破坏攻击（血量<25%时追加）",
-      "type": "battle-enemy",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ox-demon"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ox-demon.enemies.0"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "Lv.25石雄，2动，血量约800，人形系，属性：水70火30，不抗咒；技能：攻击、防御、连击",
-      "type": "battle-enemy",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ox-demon"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ox-demon.enemies.1"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "Lv.13~15小鬼*1~4，血量约400，人形系，属性：地70水30，不抗咒；技能：攻击、防御、什么都不做、逃跑（只剩一只小鬼时追加）",
-      "type": "battle-enemy",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ox-demon"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ox-demon.enemies.2"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "13.战斗胜利后传送至芙蕾雅岛（665.184）处，随机获得【鬼酒】、【牛鬼杀】，队伍中随机一人获得【头盔？】。",
-      "type": "random-rewards",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.outputs.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.7"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.8"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.9"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "◆【鬼酒】可用于《积雪的山路》支线任务中兑换Lv.3~5【紫水晶】；可交易",
-      "type": "future-use",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "【牛鬼杀】：Lv.1、食物；不可交易",
-      "type": "item-detail",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "◆【头盔？】鉴定后为【赖光的头盔】，为《牛鬼的逆袭》任务所需道具",
-      "type": "identification-detail",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "【赖光的头盔】：Lv.2、头盔，耐久300~350；防御+14~18、敏捷-2~-1、闪躲-2~-1、魅力+1~2；装备后获得称号“牛鬼讨伐者”；可以交易",
-      "type": "equipment-detail",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "14.返回伊尔村泰勒的家（35.42）与旅行商人泰勒对话，交出【给泰勒的信】获得【弓？】，任务完结。",
-      "type": "optional-exchange",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.14.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.14.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.10"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "◆【弓？】鉴定后为【破魔弓】",
-      "type": "identification-detail",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "【破魔弓】：Lv.1、弓，耐久250；攻击+9~11；可以交易",
-      "type": "equipment-detail",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "◆任务剧情：参考《牛鬼讨伐任务剧情对话》",
-      "type": "story-reference",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.15"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.2"
+        }
+      ]
     }
   ],
   "verification": {

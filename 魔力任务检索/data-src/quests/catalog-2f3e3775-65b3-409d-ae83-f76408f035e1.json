@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-2f3e3775-65b3-409d-ae83-f76408f035e1",
   "name": "最后的真相",
   "aliases": [
@@ -773,7 +773,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "通往遗迹的位置",
+            "coordinate": "503.370",
+            "sourceLines": [
+              12
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "seven-gates",
@@ -854,7 +867,86 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "遗迹1楼",
+            "coordinate": "33.26",
+            "sourceLines": [
+              28
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "遗迹地下1楼",
+            "coordinate": "25.29",
+            "sourceLines": [
+              34
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "遗迹地下2楼",
+            "coordinate": "18.45",
+            "sourceLines": [
+              40
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "遗迹地下3楼",
+            "coordinate": "45.16",
+            "sourceLines": [
+              46
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "遗迹地下5楼",
+            "coordinate": "18.2",
+            "sourceLines": [
+              52
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "遗迹地下6楼",
+            "coordinate": "30.8",
+            "sourceLines": [
+              58
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "遗迹地下7楼",
+            "coordinate": "70.38",
+            "sourceLines": [
+              64
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "ruby-choice",
@@ -946,7 +1038,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "遗迹最下层",
+            "coordinate": "120.60",
+            "sourceLines": [
+              71
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "first-medal",
@@ -978,7 +1083,53 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "露比",
+            "coordinate": "30.4",
+            "sourceLines": [
+              92
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "荷特普",
+            "coordinate": "319.136",
+            "sourceLines": [
+              93
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "遗迹最下层",
+            "coordinate": "130.60",
+            "sourceLines": [
+              94
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "米内葛尔岛",
+            "coordinate": "468.381",
+            "sourceLines": [
+              95
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "mother-love-egg",
@@ -1043,7 +1194,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "大地鼠神像",
+            "coordinate": "221.60",
+            "sourceLines": [
+              96
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       }
     ],
     "notes": []
@@ -1994,1250 +2158,2726 @@
     {
       "line": 1,
       "text": "1.持有【隶属的项链】前往米内葛尔岛（464.381）处调查被诅咒的古木切换场景。",
-      "type": "item-gate",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆【隶属的项链】获得方式参考《始祖之墓》“二等勋章”任务（追加部分）",
-      "type": "item-source",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "◇前往米内葛尔岛（464.381）路线：",
-      "type": "travel-heading",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "⑴如果从阿凯鲁法村出发，需经过南恰拉山通道并通过阿德基姆。",
-      "type": "travel-route",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "通过阿德基姆方法：需要击败阿德基姆，或者队伍中需有队员持有【大地的结晶】。",
-      "type": "route-gate",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "⑵如果从坎那贝拉村出发，需经过海峡通道。",
-      "type": "route-route",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "备注：【大地的结晶】获得方式和海峡通道开通条件参考《路霸阿德基姆》任务。",
-      "type": "reference",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "◆地下遗迹为随机迷宫，共12层",
-      "type": "maze-detail",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "迷宫刷新时间：2.5小时（仅供参考），地图大小范围：60*60~80*80",
-      "type": "maze-refresh",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "宝箱数量：6",
-      "type": "chest-detail",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "魔物为Lv45~49的粉红菇、山贼，最高遇敌数量2~7",
-      "type": "encounter-detail",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "2.调查遗迹入口（503.370）进入遗迹。",
-      "type": "route-step",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "队伍中一人持有相对应的【罪书】与遗迹地下每层守门者对话进入战斗，胜利后可通过继续前进。",
-      "type": "gate-rule",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◆遗迹：固定迷宫；魔物：Lv.75大地鼠、宝石鼠、恶梦鼠、火焰鼠",
-      "type": "encounter-detail",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "◆【罪书】：",
-      "type": "item-heading",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "⒈只需放在物品栏内即可，无需装备，对话后亦可保留，不会交出",
-      "type": "item-lifecycle",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "⒉若没有持有对应的【罪书】与守门者对话，会传送回遗迹入口",
-      "type": "missing-item-result",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "⒊每层守门者对应的【罪书】：（可交易）",
-      "type": "item-table-heading",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "门所需罪书来源任务（不能巧取）",
-      "type": "table-heading",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "一傲慢的罪书《哥拉尔的晚宴》",
-      "type": "table-row",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "二嫉妒的罪书《魔族改造计划》",
-      "type": "table-row",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.1"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "三暴食的罪书《冰雪的牢城》",
-      "type": "table-row",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.2"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "四色欲的罪书《返魂之珠》",
-      "type": "table-row",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.3"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "五怠惰的罪书《就职巫师》",
-      "type": "table-row",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.4"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "六贪欲的罪书《改造僵尸》",
-      "type": "table-row",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.5"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "七愤怒的罪书《诱拐事件》",
-      "type": "table-row",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.6"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "◆每层守门者战斗信息：",
-      "type": "battle-overview",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "一，傲慢的守门者，遗迹1楼（33.26）",
-      "type": "gate-heading",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-pride"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "Lv.85傲慢的守门者，2动，血量约13700~15300，邪魔系，属性：全40，抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-pride"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-pride.enemies.0"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "技能：攻击（血少者）、攻击、诸刃EX（没有物理制御技能的单位）、乾坤一掷（有物理制御技能的单位）、",
-      "type": "battle-skills",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-pride"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-pride.enemies.0"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "阳炎EX、反击EX、陨石魔法Lv.8、火焰魔法Lv.8、大地之怒、超强即死魔法（魔量<5%时）",
-      "type": "battle-skills",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-pride"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-pride.enemies.0"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "Lv.80地狱猎犬*4，2动，血量约4600~5300，邪魔系，属性：全30，不抗毒；",
-      "type": "battle-enemy",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-pride"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-pride.enemies.1"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "技能：攻击（血少者）、攻击、连击EX2、火焰魔法Lv.5、明镜止水-Ⅲ",
-      "type": "battle-skills",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-pride"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-pride.enemies.1"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "二，嫉妒的守门者，遗迹地下1楼（25.29）",
-      "type": "gate-heading",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-envy"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "Lv.86嫉妒的守门者，2动，血量约13700~15300，邪魔系，属性：全40，抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-envy"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-envy.enemies.0"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "技能：攻击（血少者）、攻击、乾坤一掷EX（没有物理制御技能的单位）、诸刃Lv.3（没有物理制御技能的单位）、",
-      "type": "battle-skills",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-envy"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-envy.enemies.0"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "毒性攻击EX、混乱攻击EX、冰冻魔法Lv.8、风刃魔法Lv.8、大地之怒、超强即死魔法（魔量<5%时）",
-      "type": "battle-skills",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-envy"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-envy.enemies.0"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "Lv.80水龙蜥*4，2动，血量约4700~5500，邪魔系，属性：全30，不抗酒醉；",
-      "type": "battle-enemy",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-envy"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-envy.enemies.1"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "技能：攻击（血少者）、攻击、诸刃-Ⅲ、反击-Ⅳ、护卫Lv.10（敌方血多者）、明镜止水-Ⅲ",
-      "type": "battle-skills",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-envy"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-envy.enemies.1"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "三，暴食的守门者，遗迹地下2楼（18.45）",
-      "type": "gate-heading",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-gluttony"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "Lv.87暴食的守门者，2动，血量约13900~15600，邪魔系，属性：全40，抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-gluttony"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-gluttony.enemies.0"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "技能：攻击（血少者）、攻击、诸刃EX（没有物理制御技能的单位）、乾坤一掷Lv.3（没有物理制御技能的单位）、",
-      "type": "battle-skills",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-gluttony"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-gluttony.enemies.0"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "强力陨石魔法、强力火焰魔法、超强陨石魔法、超强石化魔法、超强中毒魔法、大地之怒、超强即死魔法（魔量<5%时）",
-      "type": "battle-skills",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-gluttony"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-gluttony.enemies.0"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "Lv.80半兽人*4，2动，血量约4700~5400，邪魔系，属性：全30，不抗石化；",
-      "type": "battle-enemy",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-gluttony"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-gluttony.enemies.1"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "技能：攻击（血少者）、攻击、乾坤一掷-Ⅳ、遗忘攻击、圣盾、自爆（敌方任意单位<25%追加）",
-      "type": "battle-skills",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-gluttony"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-gluttony.enemies.1"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "四，色欲的守门者，遗迹地下3楼（45.16）",
-      "type": "gate-heading",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-lust"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "Lv.88色欲的守门者，2动，血量约14000~15700，邪魔系，属性：全40，抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-lust"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-lust.enemies.0"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "技能：攻击（血少者）、攻击、乾坤一掷EX（没有物理制御技能的单位）、诸刃Lv.3（没有物理制御技能的单位）、",
-      "type": "battle-skills",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-lust"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-lust.enemies.0"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "风刃魔法、强力冰冻魔法、超强混乱魔法、超强遗忘魔法、大地之怒、超强即死魔法（魔量<5%时）",
-      "type": "battle-skills",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-lust"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-lust.enemies.0"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "Lv.80红蝎*4，2动，血量约4500~5200，邪魔系，属性：全30，不抗混乱；",
-      "type": "battle-enemy",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-lust"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-lust.enemies.1"
+        }
+      ]
     },
     {
       "line": 51,
       "text": "技能：攻击（血少者）、攻击、诸刃-Ⅲ、护卫、毒性攻击EX、明镜止水-Ⅲ",
-      "type": "battle-skills",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-lust"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-lust.enemies.1"
+        }
+      ]
     },
     {
       "line": 52,
       "text": "五，怠惰的守门者，遗迹地下5楼（18.2）",
-      "type": "gate-heading",
       "sourceLines": [
         52
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-sloth"
+        }
+      ]
     },
     {
       "line": 53,
       "text": "Lv.89怠惰的守门者，2动，血量约141000~15800，邪魔系，属性：全40，抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         53
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-sloth"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-sloth.enemies.0"
+        }
+      ]
     },
     {
       "line": 54,
       "text": "技能：攻击（血少者）、攻击、乾坤一掷ES（没有物理制御技能的单位）、诸刃ES（没有物理制御技能的单位）、",
-      "type": "battle-skills",
       "sourceLines": [
         54
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-sloth"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-sloth.enemies.0"
+        }
+      ]
     },
     {
       "line": 55,
       "text": "超强陨石魔法、超强火焰魔法、强力中毒魔法、超强遗忘魔法、大地之怒、超强即死魔法（魔量<5%时）",
-      "type": "battle-skills",
       "sourceLines": [
         55
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-sloth"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-sloth.enemies.0"
+        }
+      ]
     },
     {
       "line": 56,
       "text": "Lv.80赤木黑熊*4，2动，血量约4500~5300，邪魔系，属性：全30，不抗昏睡；",
-      "type": "battle-enemy",
       "sourceLines": [
         56
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-sloth"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-sloth.enemies.1"
+        }
+      ]
     },
     {
       "line": 57,
       "text": "技能：攻击（血少者）、攻击、诸刃-Ⅳ、阳炎EX、乾坤一掷-Ⅳ、明镜止水-Ⅲ、逃跑（血量<25%时）",
-      "type": "battle-skills",
       "sourceLines": [
         57
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-sloth"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-sloth.enemies.1"
+        }
+      ]
     },
     {
       "line": 58,
       "text": "六，贪欲的守门者，遗迹地下6楼（30.8）",
-      "type": "gate-heading",
       "sourceLines": [
         58
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-greed"
+        }
+      ]
     },
     {
       "line": 59,
       "text": "Lv.90贪欲的守门者，2动，血量约143000~16000，邪魔系，属性：全40，抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         59
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-greed"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-greed.enemies.0"
+        }
+      ]
     },
     {
       "line": 60,
       "text": "技能：攻击（血少者）、攻击、乾坤一掷ES（没有物理制御技能的单位）、诸刃ES（没有物理制御技能的单位）、",
-      "type": "battle-skills",
       "sourceLines": [
         60
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-greed"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-greed.enemies.0"
+        }
+      ]
     },
     {
       "line": 61,
       "text": "超强冰冻魔法、超强风刃魔法、强力混乱魔法、强力石化魔法、大地之怒、超强即死魔法（魔量<5%时）",
-      "type": "battle-skills",
       "sourceLines": [
         61
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-greed"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-greed.enemies.0"
+        }
+      ]
     },
     {
       "line": 62,
       "text": "Lv.80妖狐*4，2动，血量约4500~5300，邪魔系，属性：全30，不抗遗忘；",
-      "type": "battle-enemy",
       "sourceLines": [
         62
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-greed"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-greed.enemies.1"
+        }
+      ]
     },
     {
       "line": 63,
       "text": "技能：攻击（血少者）、混乱攻击EX、陨石魔法、强力火焰魔法、攻击反弹、魔法反弹",
-      "type": "battle-skills",
       "sourceLines": [
         63
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-greed"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-greed.enemies.1"
+        }
+      ]
     },
     {
       "line": 64,
       "text": "七，愤怒的守门者，遗迹地下7楼（70.38）",
-      "type": "gate-heading",
       "sourceLines": [
         64
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-wrath"
+        }
+      ]
     },
     {
       "line": 65,
       "text": "Lv.91愤怒的守门者，2动，血量约144000~16100，邪魔系，属性：全40，抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         65
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-wrath"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-wrath.enemies.0"
+        }
+      ]
     },
     {
       "line": 66,
       "text": "技能：攻击（血少者）、攻击、乾坤一掷ES（没有物理制御技能的单位）、诸刃ES（没有物理制御技能的单位）、",
-      "type": "battle-skills",
       "sourceLines": [
         66
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-wrath"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-wrath.enemies.0"
+        }
+      ]
     },
     {
       "line": 67,
       "text": "强力冰冻魔法Lv.7、强力陨石魔法Lv.7、强力风刃魔法Lv.10、强力火焰魔法Lv.10、大地之怒、超强即死魔法（魔量<5%时）",
-      "type": "battle-skills",
       "sourceLines": [
         67
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-wrath"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-wrath.enemies.0"
+        }
+      ]
     },
     {
       "line": 68,
       "text": "Lv.80独角兽*4，2动，血量约4700~5500，邪魔系，属性：全30，抗性全90；",
-      "type": "battle-enemy",
       "sourceLines": [
         68
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-wrath"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-wrath.enemies.1"
+        }
+      ]
     },
     {
       "line": 69,
       "text": "技能：攻击（血少者）、攻击、连击EX2、乾坤一掷、圣盾、吸血魔法",
-      "type": "battle-skills",
       "sourceLines": [
         69
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-wrath"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.gate-wrath.enemies.1"
+        }
+      ]
     },
     {
       "line": 70,
       "text": "◆遗迹行走路线：",
-      "type": "route-map",
       "sourceLines": [
         70
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 71,
       "text": "3.通过各层后到达遗迹最下层（120.60）与露比对话，选“是”或“否”，切换场景，再次对话进入战斗。",
-      "type": "branch-choice",
       "sourceLines": [
         71
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 72,
       "text": "⑴选“是”，与阿尔卡迪亚进入战斗：",
-      "type": "branch-option",
       "sourceLines": [
         72
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.arcadia"
+        }
+      ]
     },
     {
       "line": 73,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         73
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.arcadia"
+        }
+      ]
     },
     {
       "line": 74,
       "text": "Lv.100阿尔卡迪亚，2动，血量约15300~17300，邪魔系，属性：全40，抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         74
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.arcadia"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.arcadia.enemies.0"
+        }
+      ]
     },
     {
       "line": 75,
       "text": "技能：攻击（没有物理制御技能的单位）、强力恢复魔法Lv.10（单次恢复约1600血）、冰冻魔法Lv.10、风刃魔法Lv.10、",
-      "type": "battle-skills",
       "sourceLines": [
         75
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.arcadia"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.arcadia.enemies.0"
+        }
+      ]
     },
     {
       "line": 76,
       "text": "连击EX2（有魔法制御技能的单位）、强力陨石魔法Lv.10（血量<50%追加）、超强陨石魔法Lv.10（血量<50%追加）、",
-      "type": "battle-skills",
       "sourceLines": [
         76
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.arcadia"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.arcadia.enemies.0"
+        }
+      ]
     },
     {
       "line": 77,
       "text": "强力火焰魔法Lv.10（血量<25%追加）、超强混乱魔法EX（血量<25%追加）、超强即死魔法（魔量<5%时）",
-      "type": "battle-skills",
       "sourceLines": [
         77
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.arcadia"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.arcadia.enemies.0"
+        }
+      ]
     },
     {
       "line": 78,
       "text": "Lv85鼠王*4，2动，血量约5300~6200，邪魔系，属性：全30，抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         78
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.arcadia"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.arcadia.enemies.1"
+        }
+      ]
     },
     {
       "line": 79,
       "text": "技能：攻击、连击EX2、圣盾、气功弹、明镜止水、强力陨石魔法、强力冰冻魔法、强力火焰魔法、强力风刃魔法",
-      "type": "battle-skills",
       "sourceLines": [
         79
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.arcadia"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.arcadia.enemies.1"
+        }
+      ]
     },
     {
       "line": 80,
       "text": "◆怀旧服：战斗胜利后，有几率掉落【灵魂之石「蓝」】、【灵魂之石「紫」】（可交易），",
-      "type": "chance-drop",
       "sourceLines": [
         80
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 81,
       "text": "可用于《寻找失踪的阿尔卡迪亚》任务中，最终奖品中有Lv.1【女王之刃】（“剑露比”）",
-      "type": "future-use",
       "sourceLines": [
         81
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        }
+      ]
     },
     {
       "line": 82,
       "text": "⑵选“否”，与露比进入战斗：",
-      "type": "branch-option",
       "sourceLines": [
         82
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ruby"
+        }
+      ]
     },
     {
       "line": 83,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         83
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ruby"
+        }
+      ]
     },
     {
       "line": 84,
       "text": "Lv.85露比，2动，血量约12800~14400，邪魔系，属性：全40，抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         84
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ruby"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ruby.enemies.0"
+        }
+      ]
     },
     {
       "line": 85,
       "text": "技能：攻击（没有物理制御技能的单位）、强力恢复魔法Lv.7（单次恢复约800血）、冰冻魔法Lv.7、风刃魔法Lv.7、",
-      "type": "battle-skills",
       "sourceLines": [
         85
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ruby"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ruby.enemies.0"
+        }
+      ]
     },
     {
       "line": 86,
       "text": "连击EX2（有魔法制御技能的单位）、强力陨石魔法Lv.7（血量<50%追加）、超强陨石魔法Lv.7（血量<50%追加）、",
-      "type": "battle-skills",
       "sourceLines": [
         86
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ruby"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ruby.enemies.0"
+        }
+      ]
     },
     {
       "line": 87,
       "text": "强力火焰魔法Lv.7（血量<25%追加）、超强火焰魔法Lv.7（血量<25%追加）、超强即死魔法（魔量<5%时）",
-      "type": "battle-skills",
       "sourceLines": [
         87
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ruby"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ruby.enemies.0"
+        }
+      ]
     },
     {
       "line": 88,
       "text": "Lv.75水蓝鼠*4，2动，血量约4300~5000，邪魔系，属性：全30，抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         88
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ruby"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ruby.enemies.1"
+        }
+      ]
     },
     {
       "line": 89,
       "text": "技能：攻击、连击EX2、圣盾、气功弹、明镜止水、强力陨石魔法、强力冰冻魔法、强力火焰魔法、强力风刃魔法",
-      "type": "battle-skills",
       "sourceLines": [
         89
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ruby"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.ruby.enemies.1"
+        }
+      ]
     },
     {
       "line": 90,
       "text": "◆怀旧服：战斗胜利后，有几率掉落【灵魂之石「绿」】、【灵魂之石「青」】（可交易），",
-      "type": "chance-drop",
       "sourceLines": [
         90
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.3"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 91,
       "text": "可用于《寻找失踪的阿尔卡迪亚》任务中，最终奖品中有Lv.1【女王之刃】（“剑露比”）",
-      "type": "future-use",
       "sourceLines": [
         91
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.1"
+        }
+      ]
     },
     {
       "line": 92,
       "text": "4.战斗胜利后与露比（30.4）对话传送至？？？。",
-      "type": "branch-result",
       "sourceLines": [
         92
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 93,
       "text": "与荷特普（319.136）对话后获得称号“艾尔巴第一等勋章”或“兰国第一等勋章”，根据第三步的选择进行传送：",
-      "type": "title-reward",
       "sourceLines": [
         93
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 94,
       "text": "⑴击倒阿尔卡迪亚会传送至遗迹最下层（130.60），接第5步。",
-      "type": "branch-result",
       "sourceLines": [
         94
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 95,
       "text": "⑵击倒露比会传送至米内葛尔岛（468.381），任务完结。",
-      "type": "branch-result",
       "sourceLines": [
         95
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 96,
       "text": "5.遗迹最下层调查大地鼠神像（221.60），进行选择，",
-      "type": "statue-choice",
       "sourceLines": [
         96
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        }
+      ]
     },
     {
       "line": 97,
       "text": "①选“是”，",
-      "type": "statue-option",
       "sourceLines": [
         97
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        }
+      ]
     },
     {
       "line": 98,
       "text": "⒈艾尔巴路线：交出“艾尔巴第一~八等勋章”称号，获得【母爱之卵】（绿）并传送出遗迹，任务完结。",
-      "type": "title-exchange",
       "sourceLines": [
         98
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        }
+      ]
     },
     {
       "line": 99,
       "text": "⒉兰国路线：交出“兰国第一~八等勋章”称号，获得【母爱之卵】（红）并传送出遗迹，任务完结。",
-      "type": "title-exchange",
       "sourceLines": [
         99
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        }
+      ]
     },
     {
       "line": 100,
       "text": "◆奖品信息：",
-      "type": "reward-heading",
       "sourceLines": [
         100
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        }
+      ]
     },
     {
       "line": 101,
       "text": "艾尔巴勋章兑换的【母爱之卵】（绿）：双击后可获得Lv.1天马或独角兽",
-      "type": "reward-detail",
       "sourceLines": [
         101
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        }
+      ]
     },
     {
       "line": 102,
       "text": "兰国勋章兑换的【母爱之卵】（红）：双击后可获得Lv.1镰刀魔或斩首者",
-      "type": "reward-detail",
       "sourceLines": [
         102
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.1"
+        }
+      ]
     },
     {
       "line": 103,
       "text": "【母爱之卵】（绿）/（红）：Lv.1不明，可交易",
-      "type": "item-detail",
       "sourceLines": [
         103
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.1"
+        }
+      ]
     },
     {
       "line": 104,
       "text": "②选“否”保留称号，传送至遗迹外，任务完结",
-      "type": "statue-option",
       "sourceLines": [
         104
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        }
+      ]
     }
   ],
   "verification": {

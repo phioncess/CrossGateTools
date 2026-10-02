@@ -1,3 +1,4 @@
+import {stepSemanticFields,stepCollectionTitles} from './presentation-facts.mjs';
 export const QUEST_SCHEMA_V3 = 3;
 
 const questKeys = new Set([
@@ -7,9 +8,12 @@ const questKeys = new Set([
 ]);
 const stepKeys = new Set([
   'id', 'order', 'text', 'inputs', 'outputs', 'notes', 'sourceLines', 'verification',
-  'route', 'branch', 'commands', 'operations', 'afterOperations', 'branchGroups'
+  'route', 'branch', 'commands', 'operations', 'afterOperations', 'branchGroups',
+  'choices', 'quiz', 'battleRef', 'battleRefs', 'allowsIntermediateOutputThenInput',
+  'exchangeRecipe', 'interaction', 'failureBattleRef',
+  ...stepSemanticFields, ...Object.keys(stepCollectionTitles)
 ]);
-const segmentKeys = new Set(['line', 'text', 'kind', 'sourceLines', 'verification']);
+const segmentKeys = new Set(['line', 'text', 'kind', 'bindings', 'version', 'tier', 'sourceLines', 'verification']);
 const segmentKinds = new Set(['requirement', 'flow', 'battle', 'reward', 'item', 'relation', 'note', 'media']);
 
 function unknownKeys(value, allowed) {
@@ -44,6 +48,15 @@ export function validateQuestV3(quest) {
     if (!Number.isInteger(step.order) || !step.text) throw new Error(`${quest.name}：步骤 ${step.id} 缺少顺序或正文`);
     stepIds.add(step.id);
     assertEvidence(quest, step, `步骤 ${step.id}`);
+    for (const point of step.routePoints || []) {
+      if (!point.name || !/^\d+\.\d+$/.test(point.coordinate)) throw new Error(`${quest.name}：步骤 ${step.id} 位置不完整`);
+      assertEvidence(quest,point,`${step.id} 位置 ${point.name}`);
+      const supported=point.sourceLines.some(line=>{
+        const text=quest.source.rawLines.find(row=>row.line===line)?.text || '';
+        return [...text.matchAll(/[（(]\s*(\d+)[.,，]\s*(\d+)\s*[）)]/g)].some(match=>`${Number(match[1])}.${Number(match[2])}`===point.coordinate);
+      });
+      if (!supported) throw new Error(`${quest.name}：位置 ${point.name} 坐标缺少指定来源行支持`);
+    }
     for (const field of ['commands', 'operations', 'afterOperations']) {
       if (step[field] != null && !Array.isArray(step[field])) throw new Error(`${quest.name}：${field} 必须为数组`);
       for (const entry of step[field] || []) {
@@ -59,6 +72,11 @@ export function validateQuestV3(quest) {
     const extraSegmentKeys = unknownKeys(segment, segmentKeys);
     if (extraSegmentKeys.length) throw new Error(`${quest.name}：原文行 ${segment.line} 出现旧分类字段 ${extraSegmentKeys.join('、')}`);
     if (!segmentKinds.has(segment.kind)) throw new Error(`${quest.name}：原文行 ${segment.line} 使用未登记类别 ${segment.kind}`);
+    for (const binding of segment.bindings || []) {
+      if (!segmentKinds.has(binding.kind) || typeof binding.target !== 'string' || !binding.target) throw new Error(`${quest.name}：原文行 ${segment.line} 绑定不完整`);
+      const target = binding.target.split('.').reduce((value,key) => value?.[key],quest);
+      if (!target || !target.sourceLines?.includes(segment.line)) throw new Error(`${quest.name}：原文行 ${segment.line} 绑定无有效证据 ${binding.target}`);
+    }
     if (segmentLines.has(segment.line)) throw new Error(`${quest.name}：原文行 ${segment.line} 重复分类`);
     segmentLines.add(segment.line);
     assertEvidence(quest, segment, `原文行 ${segment.line}`);

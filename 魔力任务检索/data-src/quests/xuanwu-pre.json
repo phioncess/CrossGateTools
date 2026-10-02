@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "xuanwu-pre",
   "name": "奇利的诱拐事件",
   "aliases": [
@@ -570,278 +570,536 @@
     {
       "line": 1,
       "text": "完成《维诺亚牛的守护》",
-      "type": "prerequisite",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "拥有称号“来自【坤】的训示”",
-      "type": "title-gate",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "黄昏，夜晚，清晨",
-      "type": "time-gate",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "1.黄昏、夜晚、清晨时分，前往奇利村，村长家旁与坤（49.54）对话，传送至民家。",
-      "type": "teleport-step",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "2.在民家与黑暗医生阿鲁巴斯（12.7）对话，得到【奇怪的小刀】，同时切换场景。",
-      "type": "item-acquisition",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "3.与坤（12.10）对话，传回至奇利村。",
-      "type": "teleport-step",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "4.夜晚清晨，出奇利村北门到索奇亚（216.222）与守门的腐尸对话，交出【奇怪的小刀】并传送到森林小路。",
-      "type": "timed-exchange",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "5.小路西南方（8.38）进入阿鲁巴斯的洞窟。",
-      "type": "maze-entry",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "6.通过迷宫到达阿鲁巴斯的研究所，与黑暗医生阿鲁巴斯（48.46）对话进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas-and-final-ogre"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "黑暗医生阿鲁巴斯（2动）：LV.95，HP：5500，技能：超强石化魔法、超强中毒魔法、强力回复魔法E1、",
-      "type": "battle-enemy",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas-and-final-ogre"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas-and-final-ogre.enemies.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "圣盾E1、吸血魔法、召唤魔法（单位少于5时，召唤4个腐尸或僵尸）",
-      "type": "battle-enemy-continuation",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas-and-final-ogre"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas-and-final-ogre.enemies.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "最终决战型牛鬼（2动）：LV.90，HP： 6500，技能：乾坤一掷、诸刃、连击、崩击、明镜止水、反击、圣盾、装备破坏",
-      "type": "battle-enemy",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas-and-final-ogre"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas-and-final-ogre.enemies.1"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "僵尸（1动）：LV.73，HP：1500，技能：攻击、防御、诸刃、吸血攻击、自爆攻击（血量＜50%）",
-      "type": "battle-enemy",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas-and-final-ogre"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas-and-final-ogre.enemies.2"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "腐尸（1动）：LV.73，HP：1500，技能：攻击、防御、酒醉攻击、自爆攻击（我方有满血单位）",
-      "type": "battle-enemy",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas-and-final-ogre"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas-and-final-ogre.enemies.3"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "小怪数量随机",
-      "type": "battle-rule",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas-and-final-ogre"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "7.战斗胜利之后，与坤对话，得到称号“玄武的邀约”，任务结束。",
-      "type": "completion-step",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "◆阿鲁巴斯的洞窟：约21~26层，2小时刷新；",
-      "type": "maze-detail",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "魔物：LV.59-64，数量：1~7，僵尸、腐尸、食尸鬼；有战斗经验、技能经验。",
-      "type": "encounter-area",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "◇迷宫层数多、单层面积大、遇敌率高，务必带足补给，并卡好迷宫刷新时间，以免中途被送出。",
-      "type": "maze-warning",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "◇建议打法：",
-      "type": "strategy-heading",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas-and-final-ogre"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "人物高级且有群攻可以不动脑子全杀，其余单点打牛鬼；",
-      "type": "strategy-note",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas-and-final-ogre"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "人物可不带宠以减少被石化回合；",
-      "type": "strategy-note",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas-and-final-ogre"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "人物低级的话，进入战斗前建议不要满血（可使用风水盘等首饰稍微加一下上限但一定不要满血），不带宠（怕宠NO多打死了小怪）进入战斗后打小怪剩4只（最好剩不要克制自己属性的小怪。如果打僵尸打半血它会自己自爆，腐尸若我方有单位满血则会自爆，注意控制数量）-然后打牛鬼-最后打2684（BY小道）",
-      "type": "strategy-note",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas-and-final-ogre"
+        }
+      ]
     }
   ],
   "verification": {

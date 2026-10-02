@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-8f2baf07-5822-446b-a9c1-97a1c65add07",
   "name": "就职格斗士",
   "aliases": [
@@ -367,7 +367,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "索奇亚狮子之穴",
+            "coordinate": "380.324",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "pale-trainer",
@@ -481,7 +494,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "绿先生",
+            "coordinate": "25.25",
+            "sourceLines": [
+              13
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "recommendation",
@@ -509,7 +535,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "绿先生",
+            "coordinate": "13.15",
+            "sourceLines": [
+              19
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "employment",
@@ -578,6 +617,17 @@
               "status": "verified",
               "method": "exact-numbered-source-anchor"
             }
+          },
+          {
+            "name": "斗士姆特",
+            "coordinate": "20.14",
+            "sourceLines": [
+              21
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
           }
         ]
       },
@@ -599,7 +649,54 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "法兰城竞技场",
+            "coordinate": "123.161",
+            "sourceLines": [
+              22
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "竞技场→竞技场的入口",
+            "coordinate": "15.6",
+            "sourceLines": [
+              22
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "竞技场",
+            "coordinate": "15.56",
+            "sourceLines": [
+              22
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "狮子之穴大厅引导的狮子",
+            "coordinate": "23.23",
+            "sourceLines": [
+              23,
+              24
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "travel-tips",
@@ -660,7 +757,53 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "索奇亚狮子之穴",
+            "coordinate": "380.324",
+            "sourceLines": [
+              39
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "心之房",
+            "coordinate": "22.4",
+            "sourceLines": [
+              40
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "医务室",
+            "coordinate": "15.25",
+            "sourceLines": [
+              41
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "专属医生德拉斯克",
+            "coordinate": "37.9",
+            "sourceLines": [
+              43
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "medical-shop",
@@ -714,7 +857,31 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "专属药剂师希诺普",
+            "coordinate": "17.8",
+            "sourceLines": [
+              45
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "专属厨师马可",
+            "coordinate": "26.11",
+            "sourceLines": [
+              51
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "limited-oyakodon",
@@ -1104,674 +1271,1250 @@
     {
       "line": 1,
       "text": "1.前往索奇亚狮子之穴（380.324），与柜台小姐真奈美（23.33）对话，交出44G进入心之房。",
-      "type": "currency-entry",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◇建议：⑴狮子之穴位于角笛大风穴加纳侧出口处附近，建议从奇利村出发。",
-      "type": "route-advice",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "⑵带够魔币（4400G学习技能混乱攻击）。",
-      "type": "currency-advice",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "2.与淡黄训练员（29.21）对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.routePoints.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.pale-trainer"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "◆Lv.44淡黄训练员，2动，血量约6000，邪魔系，风70火30，抗咒；技能：阳炎Lv10、风刃魔法Lv5、四属性超强攻击魔法Lv3",
-      "type": "battle-enemy",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.pale-trainer"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.pale-trainer.enemies.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "3.战斗胜利后传送至技之房，与真红淑女（29.21）对话进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.routePoints.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.crimson-lady"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "◆Lv.44真红淑女，2动，血量约6000，邪魔系，火70水30，抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.crimson-lady"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.crimson-lady.enemies.0"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "技能：气功弹Lv7、阳炎Lv10、混乱攻击Lv10、诸刃Lv7、乾坤一掷Lv7、崩击Lv9、火焰的祈祷Lv10、属性反转Lv10、",
-      "type": "battle-skills",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.crimson-lady"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.crimson-lady.enemies.0"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "连击·舞（对我方有物理制御技能的单位释放，几率95%）、明镜止水（MP<50%追加）",
-      "type": "conditional-skills",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.crimson-lady"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.crimson-lady.enemies.0"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "4.战斗胜利后传送至体之房，与水蓝教练（29.21）对话进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.routePoints.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.blue-coach"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "◆Lv.44水蓝教练，2动，血量约8000，邪魔系，水70地30，抗咒，该BOSS反击率非常高；",
-      "type": "battle-enemy",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.blue-coach"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.blue-coach.enemies.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "技能：攻击、睡眠攻击Lv10、明镜止水Lv2（HP<25%追加）",
-      "type": "battle-skills",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.blue-coach"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.blue-coach.enemies.0"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "5.战斗胜利后传送至六角型擂台，与绿先生（25.25）对话进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.green-master"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◇此战勿携带宠物",
-      "type": "pet-warning",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "◆Lv.44绿先生，2动，血量约9000，邪魔系，地70风30，抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.green-master"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.green-master.enemies.0"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "技能：阳炎Lv10、乾坤一掷Lv10、诸刃Lv10、反击Lv10、昏睡攻击Lv10（我方血量>25%追加）、",
-      "type": "battle-skills",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.green-master"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.green-master.enemies.0"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "明镜止水Lv10（血量<25%追加）、气功弹Lv4（血量<25%追加）、补血魔法Lv6（我方血量<25%追加，对我方血量少的单位释放）、",
-      "type": "conditional-skills",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.green-master"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.green-master.enemies.0"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "连击•破（对我方身上有物理制御技能的单位释放，几率99%）、大地之怒Lv9（我方携带宠物时追加，几率99%）",
-      "type": "conditional-skills",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.green-master"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.green-master.enemies.0"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "6.战斗胜利后，进入师范的房间与绿先生（13.15）对话，获得【格斗家推荐信】。",
-      "type": "item-acquisition",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "7.与格斗家马辛（20.16）对话即可就职格斗士。",
-      "type": "career-employment",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.routePoints.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.0"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "与斗士姆特（20.14）对话，交出4400G学习技能混乱攻击，任务完结。",
-      "type": "skill-learning",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.0"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "◆气功弹技能学习地点：位于法兰城（123.161）竞技场→竞技场的入口（15.6）→竞技场（15.56）哈德",
-      "type": "skill-location",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "◆就职格斗士后，只需与狮子之穴大厅引导的狮子（23.23）对话即可传送进师范的房间",
-      "type": "post-career-shortcut",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "◆若需提升职业阶段，只需与狮子之穴大厅引导的狮子（23.23）对话即可传送进师范的房间",
-      "type": "promotion-shortcut",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "◆小贴士1：",
-      "type": "tips-heading",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "⒈格斗士得意技：混乱攻击、战栗袭心、明镜止水、崩击、护卫、反击。不含气功弹",
-      "type": "favored-skills",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.1"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "⒉晋阶技能：混乱攻击",
-      "type": "promotion-skill",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.skills.1"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "◆小贴士2",
-      "type": "tips-heading",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "索奇亚到达方法",
-      "type": "travel-heading",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "怀旧服未到Lv.20可向玩家购买：",
-      "type": "low-level-route",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "⑴【流星山丘传送券】（全队；参考《流星山丘（上山）》地图下山到达奇利村）、",
-      "type": "route-item",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "⑵【维诺亚传送券】（单人；参考《索奇亚海底洞窟》地图到达奇利村）、",
-      "type": "route-item",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "⑶【奇利村传送券】（单人）到达奇利村",
-      "type": "route-item",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "未到Lv.20亦可先就职猎人（参考《就职猎人》），",
-      "type": "career-route",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "伊尔村旧金山酒吧-安娜购买一组酱油的方法通过维诺亚洞窟，",
-      "type": "route-method",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "无需【欧兹尼克的戒指】通过索奇亚海底洞窟到达奇利村；",
-      "type": "route-bypass",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "生产系转职战斗系会损失已得声望，累积的每日可得声望不受影响",
-      "type": "reputation-warning",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "支线：",
-      "type": "sidequest-heading",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "1.前往索奇亚狮子之穴（380.324），与柜台小姐真奈美（23.33）对话，交出44G进入心之房。",
-      "type": "currency-entry",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "2.与心之房（22.4）引导的狮子对话，选择“是”进入医务室。",
-      "type": "sidequest-route",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "3.进入之后与医务室（15.25）引导的狮子对话，选“是”传送至索奇亚狮子之穴大厅。",
-      "type": "sidequest-route",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "◆医务室此处NPC：有医生、贩卖血瓶和料理：",
-      "type": "facility-heading",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "⑴医生NPC：专属医生德拉斯克（37.9）",
-      "type": "doctor",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "⑵贩卖血瓶和料理NPC：",
-      "type": "shop-heading",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "专属药剂师希诺普（17.8）价格/个",
-      "type": "shop-npc",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "生命力回复药（100）600G",
-      "type": "shop-item",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "生命力回复药（150）900G",
-      "type": "shop-item",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "生命力回复药（200）1200G",
-      "type": "shop-item",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "生命力回复药（250）1500G",
-      "type": "shop-item",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "生命力回复药（300）1800G",
-      "type": "shop-item",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        }
+      ]
     },
     {
       "line": 51,
       "text": "专属厨师马可（26.11）价格/个",
-      "type": "shop-npc",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        }
+      ]
     },
     {
       "line": 52,
       "text": "面包600G",
-      "type": "shop-item",
       "sourceLines": [
         52
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        }
+      ]
     },
     {
       "line": 53,
       "text": "法国面包1200G",
-      "type": "shop-item",
       "sourceLines": [
         53
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        }
+      ]
     },
     {
       "line": 54,
       "text": "◆怀旧服：",
-      "type": "server-heading",
       "sourceLines": [
         54
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        }
+      ]
     },
     {
       "line": 55,
       "text": "2024.03.28更新：",
-      "type": "version-heading",
       "sourceLines": [
         55
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        }
+      ]
     },
     {
       "line": 56,
       "text": "地图“狮子之穴”增加限时NPC，贩卖道具“亲子丼”；7200 价格/个",
-      "type": "limited-shop-item",
       "sourceLines": [
         56
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     }
   ],
   "verification": {

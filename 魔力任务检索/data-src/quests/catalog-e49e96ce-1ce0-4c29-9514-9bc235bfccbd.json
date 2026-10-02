@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-e49e96ce-1ce0-4c29-9514-9bc235bfccbd",
   "name": "商队的袭击",
   "aliases": [
@@ -415,7 +415,53 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "通往阿凯鲁法城的位置",
+            "coordinate": "183.104",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "楼梯",
+            "coordinate": "25.11",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "督府执政官室",
+            "coordinate": "42.26",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "罗山督府执政官",
+            "coordinate": "16.8",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "bandit-hunt",
@@ -508,7 +554,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "米内葛尔岛",
+            "coordinate": "280.181",
+            "sourceLines": [
+              14
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "route-to-bandits",
@@ -582,7 +641,31 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "通往街道旁的小路的位置",
+            "coordinate": "402.242",
+            "sourceLines": [
+              25
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "米瓦希米滋",
+            "coordinate": "21.14",
+            "sourceLines": [
+              26
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "iwashimizu-battle",
@@ -744,7 +827,31 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "督府执政官室",
+            "coordinate": "42.26",
+            "sourceLines": [
+              48
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "罗山督府执政官",
+            "coordinate": "16.8",
+            "sourceLines": [
+              48
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "cleanup",
@@ -780,7 +887,8 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "text": "完成任务后可丢弃豪华的戒指（伪）、豪华的头巾、缓慢的小刀、超级内裤。"
       }
     ]
   },
@@ -1291,674 +1399,1378 @@
     {
       "line": 1,
       "text": "1.前往阿凯鲁法村（183.104）进入阿凯鲁法城，通过（25.11）处楼梯抵达阿凯鲁法城2楼。",
-      "type": "route-step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "2.前往督府执政官室（42.26），每名队员与罗山督府执政官（16.8）对话，选“是”、“是”，获得【豪华的戒指（伪）】。",
-      "type": "per-member-acquisition",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "◆若丢弃或损坏【豪华的戒指（伪）】，与罗山督府执政官对话可再次获得",
-      "type": "reacquisition-rule",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "3.前往米内葛尔岛（279~337.148~215）处附近击倒随机出现的三种山贼，",
-      "type": "encounter-area",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "战斗胜利随机获得【豪华的头巾】、【缓慢的小刀】、【超级内裤】，队伍中一名队员获得一种山贼道具即可。",
-      "type": "chance-drop-rule",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "◇前往米内葛尔岛（279~337.148~215）路线：",
-      "type": "route-heading",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "⑴如果从阿凯鲁法村出发，需经过南恰拉山通道并通过阿德基姆。",
-      "type": "route-option",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "通过阿德基姆方法：需要击败阿德基姆，或者队伍中需有队员持有【大地的结晶】。",
-      "type": "route-gate",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "⑵如果从坎那贝拉村出发，需经过海峡通道。",
-      "type": "route-option",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "备注：【大地的结晶】获得方式和海峡通道开通条件参考《路霸阿德基姆》任务。",
-      "type": "route-reference",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "◆【豪华的戒指（伪）】不一定需要装备，物品栏中存在即可遇到山贼。",
-      "type": "held-item-encounter",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "【豪华的戒指（伪）】：Lv.1，戒指，耐久25；攻击+1；不可交易。",
-      "type": "equipment-detail",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "◆三种【山贼道具】皆为Lv.1护身符；获得任意一种即可，只需一名队员获得即可。",
-      "type": "party-item-rule",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◇推荐在米内葛尔岛（280.181）附近遇敌，据说遇敌率高，如图：",
-      "type": "encounter-advice",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "◆战斗信息：（皆为2动）",
-      "type": "battle-heading",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "Lv.50山贼杨恰那，武器：剑，血量约3300，邪魔系，属性：水50火50，邪魔系，不抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bandit-yangchana"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bandit-yangchana.enemies.0"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "技能：防御、酒醉攻击、连击、抢钱攻击、逃跑（血量小于25%追加）；",
-      "type": "battle-skills",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bandit-yangchana"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bandit-yangchana.enemies.0"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "掉落【豪华的头巾】（Lv.1、护身符，防御+1，耐久1）",
-      "type": "battle-drop",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bandit-yangchana"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bandit-yangchana.enemies.0"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "Lv.50山贼娜娜尔，武器：小刀，血量约2700，邪魔系，属性：水70地30，邪魔系，不抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bandit-nanaer"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bandit-nanaer.enemies.0"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "技能：攻击、防御、毒性攻击、逃跑（血量小于50%追加）；",
-      "type": "battle-skills",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bandit-nanaer"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bandit-nanaer.enemies.0"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "掉落【缓慢的小刀】（Lv.1、护身符，攻击+20，耐久1）",
-      "type": "battle-drop",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bandit-nanaer"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bandit-nanaer.enemies.0"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "Lv.50山贼伊欧那，武器：杖，血量约2500，邪魔系，属性：地50风50，邪魔系，不抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bandit-yiona"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bandit-yiona.enemies.0"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "技能：防御、吸血魔法、强力昏睡魔法、抢钱攻击、逃跑（血量小于25%追加）；",
-      "type": "battle-skills",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bandit-yiona"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bandit-yiona.enemies.0"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "掉落【超级内裤】（Lv.1、护身符，防御+75、魅力-50，耐久1）",
-      "type": "battle-drop",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bandit-yiona"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.bandit-yiona.enemies.0"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "4.前往米内葛尔岛（402.242）处进入街道旁的小路。",
-      "type": "boss-route",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "夜晚，全队持有【豪华的戒指（伪）】（不需装备），队伍中一人装备【山贼道具】的队员与米瓦希米滋（21.14）对话，进入战斗。",
-      "type": "boss-entry-gate",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.iwashimizu"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "（武器皆为 回力镖）",
-      "type": "weapon-note",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.iwashimizu"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "真身（站位中间）：",
-      "type": "boss-role-heading",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.iwashimizu"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "Lv.75伊瓦希米滋，2动，血量约6000~7000，邪魔系，属性：全30，不抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.iwashimizu"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.iwashimizu.enemies.0"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "技能：攻击（我方血少者）、圣盾、阳炎、超强中毒魔法、攻击反弹、",
-      "type": "battle-skills",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.iwashimizu"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.iwashimizu.enemies.0"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "召唤伊瓦希米兹（分身）*2（仅当场上没有分身时召唤，且为大概率召唤而非100%召唤）",
-      "type": "conditional-summon",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.iwashimizu"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.iwashimizu.enemies.0"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "召唤的分身：",
-      "type": "summon-heading",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.iwashimizu"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "Lv.75伊瓦希米滋（分身）*2，2动，血量约6000~7000，邪魔系，属性：全30，不抗咒；",
-      "type": "battle-enemy",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.iwashimizu"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.iwashimizu.enemies.1"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "技能：攻击（我方血少者）、攻击、阳炎、超强中毒魔法、魔法反弹、自爆（击倒伊瓦希米兹（真身）后追加）",
-      "type": "battle-skills",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.iwashimizu"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.iwashimizu.enemies.1"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "◇战斗建议：",
-      "type": "strategy-heading",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.iwashimizu"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "自爆的伤害与敌人的血量成正比，一定要削弱分身的血量之后再击倒本体，并且至少留下一个分身。",
-      "type": "strategy-note",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.iwashimizu"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "建议收宠2动，采取前2后3站位，生存力低的队员站前排。",
-      "type": "strategy-note",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.iwashimizu"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "在BOSS召唤分身前合击BOSS；召唤分身后，先集中击倒一个分身，之后合击另外一个，",
-      "type": "strategy-note",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.iwashimizu"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "此时计算好分身的剩余血量（血量有浮动，预留一定的血量），待另一个分身血量消耗到一定程度后开始合击BOSS，击倒BOSS后再合击分身。",
-      "type": "strategy-note",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.iwashimizu"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "5.战斗胜利后，再与伊瓦希米滋对话，进行选择兰国或者艾尔巴路线。",
-      "type": "route-choice",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "兰国第八等勋章路线：",
-      "type": "route-heading",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "⑴选“是”获得称号“兰国第八等勋章”、【凯力夏的首饰】，任务完结。",
-      "type": "branch-reward",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "◆如果持有称号“艾尔巴第八~一等勋章”其中任意一种，则会全部消失。",
-      "type": "title-exclusivity",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "◆凯力夏的首饰：Lv.3、项链、耐久80；攻击力+12~13，防御+5~6；可以交易，不可卖店；无关联任务，可以丢弃。",
-      "type": "equipment-detail",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "艾尔巴第八等勋章路线：",
-      "type": "route-heading",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "⑴选“否”获得【森之月石】。",
-      "type": "branch-item",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "⑵返回督府执政官室（42.26），背包留足600G金币空余后，再与罗山督府执政官（16.8）对话，",
-      "type": "currency-capacity",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "交出【森之月石】，获得称号“艾尔巴第八等勋章”、金币600G、【精灵石的耳环】，任务完结。",
-      "type": "completion-exchange",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.7"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.1"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "◆如果持有的金币过多无法收下，即任务失败。",
-      "type": "failure-condition",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        }
+      ]
     },
     {
       "line": 51,
       "text": "◆如果持有称号“兰国第八~一等勋章”其中任意一种，则会全部消失。",
-      "type": "title-exclusivity",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.1"
+        }
+      ]
     },
     {
       "line": 52,
       "text": "◆精灵石的耳环：Lv.3、耐久80；攻击力+5~6，防御+12~13；可以交易，不可卖店；无关联任务，可以丢弃。",
-      "type": "equipment-detail",
       "sourceLines": [
         52
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 53,
       "text": "◆任务完结后，【豪华的戒指（伪）】、【豪华的头巾】、【缓慢的小刀】、【超级内裤】皆可丢弃。",
-      "type": "cleanup-note",
       "sourceLines": [
         53
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.notes.0"
+        }
+      ]
     },
     {
       "line": 54,
       "text": "◆小贴士：",
-      "type": "tips-heading",
       "sourceLines": [
         54
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        }
+      ]
     },
     {
       "line": 55,
       "text": "“兰国第八~一等勋章”、“艾尔巴第八~一等勋章”，2种系列称号只能保留其一，艾尔巴路线较短。",
-      "type": "series-exclusivity",
       "sourceLines": [
         55
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        }
+      ]
     },
     {
       "line": 56,
       "text": "艾尔巴路线最终可获得Lv.1天马或独角兽，兰国路线最终可获得Lv.1镰刀魔或斩首者。",
-      "type": "future-series-reward",
       "sourceLines": [
         56
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        }
+      ]
     }
   ],
   "verification": {

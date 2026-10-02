@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-5a598468-a710-474d-b19d-1e9aff14ad37",
   "name": "最后的洗礼",
   "aliases": [
@@ -473,6 +473,17 @@
               "status": "verified",
               "method": "exact-numbered-source-anchor"
             }
+          },
+          {
+            "name": "黄色传送石",
+            "coordinate": "35.30",
+            "sourceLines": [
+              2
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
           }
         ]
       },
@@ -493,7 +504,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "门",
+            "coordinate": "80.80",
+            "sourceLines": [
+              7
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "random-boss",
@@ -1522,842 +1546,1770 @@
     {
       "line": 1,
       "text": "1.前往魔法大学实验室（133.49）与魔法大学校长（22.12）对话，传送至尘封的神庙①。",
-      "type": "entry-step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.routePoints.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "由（35.30）处黄色传送石进入神庙的迷路，通过10层随机迷宫后至尘封的神庙②。",
-      "type": "maze-step",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "◆神庙的迷路：随机迷宫，共10层。",
-      "type": "maze-detail",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "神庙的迷路魔物：",
-      "type": "encounter-heading",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "Lv.95大角羊（寒冰牛头怪），2动，数量0~1，技能：攻击、防御、乾坤一掷、崩击、装备破坏",
-      "type": "encounter-detail",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "Lv.95莉迪雅（烈风牛头怪），2动，数量0~1，技能：攻击、防御、四属性强力攻击魔法、装备破坏",
-      "type": "encounter-detail",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "2.尘封的神庙②，前往门（80.80）前，由持有【龙神之戒】的队员调查门，随机传送至尘封的神庙③。",
-      "type": "random-door",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "◆进门以前必须组队，否则会进到不同的地图，切记！",
-      "type": "party-rule",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "◆【龙神之戒】获得方式参考《龙之试炼》洗礼4任务",
-      "type": "item-source",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.0"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "◆3张地图布局一致但BOSS所处的位置不同；快速鉴别方法见攻略最后鉴别方法。登出回城才能重新改变随机种类。",
-      "type": "random-map-rule",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "◆尘封的神庙③为固定迷宫（随机三选一）；魔物与神庙的迷路相同。",
-      "type": "encounter-detail",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "3.与随机三选一出现的BOSS对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "◆战斗信息：（魔物皆为2次行动）",
-      "type": "battle-rule",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "黑龙路线：",
-      "type": "route-heading",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "奇美拉（绿）",
-      "type": "formation-row",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "古尔迪亚",
-      "type": "formation-row",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "奇美拉（蓝）",
-      "type": "formation-row",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "奇美拉（黑）",
-      "type": "formation-row",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "奇美拉（红）",
-      "type": "formation-row",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "奇美拉（黄）",
-      "type": "formation-row",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "Lv.120古尔迪亚，血量约17000；技能：乾坤一掷、四属性超强攻击魔法、超强中毒魔法、大地之怒",
-      "type": "battle-enemy",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss.randomOneOf.黑龙路线.enemies.0"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "Lv.95奇美拉（绿/蓝/黑/红/黄），血量约10000；攻击、防御、乾坤一掷、战栗袭心、连击、圣盾",
-      "type": "battle-enemy",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss.randomOneOf.黑龙路线.enemies.1"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "◇打法建议：",
-      "type": "strategy-heading",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "1.带宠打法：宠物战栗BOSS魔至200以下不用超魔法、10以下不用乾坤，",
-      "type": "strategy-note",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "抽干后逐个击倒喽啰，最后合击BOSS；此打法适合配合传教补血与祈祷",
-      "type": "strategy-note",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "2.2动打法：不带宠2动，直接合击BOSS后清理喽啰；此打法适合配合巫师恢复、血瓶、闪装、祈祷",
-      "type": "strategy-note",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "奥尔曼路线：",
-      "type": "route-heading",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "Lv.120奥尔曼，血量约17000；技能：攻击、防御、诸刃、乾坤一掷、连击·舞、补血魔法、明镜止水",
-      "type": "battle-enemy",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss.randomOneOf.奥尔曼路线.enemies.0"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "Lv.95斗神（绿），纯地属性，血量约12000；技能：攻击、防御、气功弹（魔量<5%后一直使用）、连击、圣盾、混乱攻击、明镜、大地之怒",
-      "type": "battle-enemy",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss.randomOneOf.奥尔曼路线.enemies.1"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "Lv.95斗神（红），纯火属性，血量约12000；技能：攻击、防御、气功弹（魔量<5%后一直使用）、阳炎、吸血攻击、诸刃、战栗袭心、圣盾、明镜止水、大地之怒",
-      "type": "battle-enemy",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss.randomOneOf.奥尔曼路线.enemies.2"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "Lv.95斗神（黄），纯风属性，血量约12000；技能：攻击、防御、气功弹（魔量<5%后一直使用）、连击、大地之怒、混乱攻击、连击·舞、魔法封印",
-      "type": "battle-enemy",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss.randomOneOf.奥尔曼路线.enemies.3"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "Lv.95斗神（蓝），纯水属性，血量约12000；技能：攻击、防御、气功弹（魔量<5%后一直使用）、圣盾、超强昏睡魔法、石化攻击、吸血攻击、连击·破、诸刃",
-      "type": "battle-enemy",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss.randomOneOf.奥尔曼路线.enemies.4"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "◇打法建议：",
-      "type": "strategy-heading",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "1.建议先按黄→红→绿→蓝顺序清理喽啰，之后合击BOSS；魔法封印期间可以利用防御来减少损伤",
-      "type": "strategy-note",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "2.输出高的队伍可以先杀 红绿→黄→蓝，如果白银一直给蓝色补血，可以考虑将白银战栗成木桩",
-      "type": "strategy-note",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "里雍路线：",
-      "type": "route-heading",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "Lv.120里雍（黑），血量约20000；技能：攻击、防御、乾坤一掷、诸刃、四属性（强力、超强）攻击魔法、连击（被战栗袭心后追加）、混乱攻击",
-      "type": "battle-enemy",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss.randomOneOf.里雍路线.enemies.0"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "Lv.95里雍（黄），全属性，血量约12000；技能：攻击、防御、战栗袭心、风属性魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss.randomOneOf.里雍路线.enemies.1"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "Lv.95里雍（红），全属性，血量约12000；技能：攻击、防御、明镜止水、火属性魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss.randomOneOf.里雍路线.enemies.2"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "Lv.95里雍（绿），全属性，血量约12000；技能：攻击、防御、诸刃、地属性魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss.randomOneOf.里雍路线.enemies.3"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "Lv.95里雍（蓝），全属性，血量约12000；技能：攻击、防御、诸刃、乾坤一掷、水属性魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss.randomOneOf.里雍路线.enemies.4"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "◇打法建议：",
-      "type": "strategy-heading",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "1.此战建议使用祈祷魔法减少伤害；按黄→绿→蓝→BOSS→红，或黄→BOSS→绿→蓝→红进行合击；若里雍（红）一直明镜可战栗",
-      "type": "strategy-note",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "2.战栗打法：带宠先战栗黄，然后再其他三个颜色，可以优先考虑克制己方的属性，然后4小怪成木桩后直接合击BOSS再打小怪",
-      "type": "strategy-note",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.random-final-boss"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "4.战斗胜利后传送至萨蒂神殿遗迹底层，与魔法大学校长对话，",
-      "type": "post-battle",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "选“是”交出10W魔币、称号“爱情捍卫者”、“法兰城义勇军”、“龙族守护者”获得【技能栏增长卡Lv.1】并传送至召唤之间，任务完结。",
-      "type": "first-clear-exchange",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "◆【技能栏增长卡Lv.1】：双击使用后，人物技能栏增加到11个；不可交易",
-      "type": "item-use",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "◆若与魔法大学校长对话选“否”或魔币不足10W：",
-      "type": "failure-branch",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "则保留称号获得【试炼通过证明】并传送至召唤之间。",
-      "type": "proof-reward",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "之后可凭【试炼通过证明】再去魔法大学实验室（133.49）与魔法大学校长对话，即可重新达到第4步的任务状态",
-      "type": "proof-reentry",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 51,
       "text": "二周目：",
-      "type": "repeat-heading",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 52,
       "text": "第二次完成本任务后与魔法大学校长对话，",
-      "type": "repeat-rule",
       "sourceLines": [
         52
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 53,
       "text": "①.选“是”：",
-      "type": "choice-heading",
       "sourceLines": [
         53
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 54,
       "text": "交出称号“爱情捍卫者”、“法兰城义勇军”、“龙族守护者”，获得【洗礼的项链】，并传送至召唤之间。",
-      "type": "repeat-exchange",
       "sourceLines": [
         54
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 55,
       "text": "◆【洗礼的项链】：可以交易；",
-      "type": "equipment-trade",
       "sourceLines": [
         55
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 56,
       "text": "Lv.10项链、耐久300；",
-      "type": "equipment-detail",
       "sourceLines": [
         56
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 57,
       "text": "攻击+50、防御+40、敏捷+30、回复+20、抗毒/昏睡/石化/酒醉/混乱/遗忘+20、",
-      "type": "equipment-stats",
       "sourceLines": [
         57
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 58,
       "text": "必杀+10、反击+15、命中+15、闪躲+15、生命+100、魔力+50",
-      "type": "equipment-stats",
       "sourceLines": [
         58
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 59,
       "text": "②.选“否”：",
-      "type": "choice-heading",
       "sourceLines": [
         59
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 60,
       "text": "则保留称号获得【试炼通过证明】并传送至召唤之间。",
-      "type": "proof-reward",
       "sourceLines": [
         60
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 61,
       "text": "◆【试炼通过证明】：不可交易；",
-      "type": "proof-properties",
       "sourceLines": [
         61
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 62,
       "text": "持有【试炼通过证明】前往魔法大学实验室，与魔法大学校长对话，未获得【技能卡增长格Lv.1】的玩家可进行选择：",
-      "type": "proof-choice",
       "sourceLines": [
         62
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        }
+      ]
     },
     {
       "line": 63,
       "text": "⑴选“是”：",
-      "type": "choice-heading",
       "sourceLines": [
         63
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 64,
       "text": "1.未获得【技能卡增长格Lv.1】交出10W魔币获得【技能卡增长格Lv.1】。",
-      "type": "conditional-reward",
       "sourceLines": [
         64
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.7"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        }
+      ]
     },
     {
       "line": 65,
       "text": "2.已获得【技能卡增长格Lv.1】的玩家获得【洗礼的项链】。",
-      "type": "conditional-reward",
       "sourceLines": [
         65
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        }
+      ]
     },
     {
       "line": 66,
       "text": "⑵选“否”或魔币不足10W，则继续保留称号。",
-      "type": "failure-branch",
       "sourceLines": [
         66
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        }
+      ]
     },
     {
       "line": 67,
       "text": "鉴别方法：",
-      "type": "map-identification-heading",
       "sourceLines": [
         67
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 68,
       "text": "【龙神之戒】的队员调查门进入尘封的神庙③后，打开魔力宝贝安装文件夹内“map”文件夹，查看“0”文件夹内地图编号，",
-      "type": "map-identification",
       "sourceLines": [
         68
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 69,
       "text": "选择“查看→详细信息”查看方式，点击2次“修改日期”对文件进行倒序排列，查看最近的文件编号。",
-      "type": "map-identification",
       "sourceLines": [
         69
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 70,
       "text": "57302表示进入的地图为奥尔曼、57303表示进入的地图为黑龙、57304表示进入的地图为里雍。",
-      "type": "map-id-map",
       "sourceLines": [
         70
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     }
   ],
   "verification": {

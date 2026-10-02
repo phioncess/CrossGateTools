@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "element-earth",
   "name": "土之洞窟",
   "aliases": [
@@ -559,218 +559,497 @@
     {
       "line": 1,
       "text": "等级不低于Lv.15",
-      "type": "requirement",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "1.出法兰城东门往伊尔村方向行走，通过途径的桥后至芙蕾雅岛（583.172）处进入土之洞窟入口。与地精（13.4）对话进入土之洞窟。",
-      "type": "entry-step",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "2.根据行走路线通过土之洞窟到达底层。",
-      "type": "route-step",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "3.通过土之洞窟进入底层，与土之斗神（73.6）对话进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.earth-fighting-god"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "4.战斗胜利后，调查钢琴（7.2）获得【土之乐谱】。",
-      "type": "reward-step",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "5.与地精（9.4）对话可交出【纯地水晶】获得【地精的福袋】。（可跳过）",
-      "type": "optional-exchange",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "6.与地精（10.2）对话可随机获得Lv.1~8各种颜色宝石任意1颗并传送出土之洞窟，任务完结。",
-      "type": "random-reward-exit",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "◆等级低于Lv.15无法进入；进入后只可登出离开",
-      "type": "gate",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "◆洞窟内魔物：皆为全25属性的Lv.13~ Lv.16小恶魔、妖草、顽皮炸弹；不可封印",
-      "type": "encounter-area",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "◆土之洞窟行走路线（Step14后需经过一段随机迷宫，约3层）：",
-      "type": "media-caption",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.media.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "◆1颗【纯地水晶】可兑换1个【地精的福袋】，兑换次数不限，【纯地水晶】无需满耐久，但人物创建时的初始水晶不可兑换",
-      "type": "exchange-rule",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "◆【地精的福袋】：可交易；耐久5点，每使用一次减少1点耐久，使用后随机获得奖品；同时持有2个及以上【地精的福袋】时无法使用。",
-      "type": "item-use",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "奖品（随机获得1种）：【沙漠的红星】、【魔族的水晶】、【钢骑之矿】、【誓言之证】、【纯水晶】（属性随机）、【德特家的布】、",
-      "type": "reward-list",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.5"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "【重来的种子】（任意一种）、【猫眼石】、Lv.8各种颜色【宝石】（任意一种）、【魔石】（卖店价587G）",
-      "type": "reward-list",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.9"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "◆若与地精（11.4）对话直接传送出土之洞窟。",
-      "type": "alternate-exit",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": []
     },
     {
       "line": 17,
       "text": "Lv.20土之斗神，2动，血量约1000，邪魔系，属性：全25，抗性全80；技能：攻击、昏睡攻击、乾坤一掷、诸刃、阳炎、反击、 补血魔法（为我方单位补血）、明镜止水（血量<25%追加）、气功弹（血量<25%追加）、连击（我方存在物理制御单位追加）",
-      "type": "battle-enemy",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.earth-fighting-god"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.earth-fighting-god.enemies.0"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "Lv.15地精*2，2动，血量约600，特殊系，属性：全25，抗性全90；技能：攻击、石化攻击、强力陨石魔法、超强混乱魔法、超强遗忘魔法、超强中毒魔法、超强补血魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.earth-fighting-god"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.earth-fighting-god.enemies.1"
+        }
+      ]
     }
   ],
   "verification": {

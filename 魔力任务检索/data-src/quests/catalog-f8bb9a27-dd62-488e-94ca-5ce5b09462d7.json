@@ -216,7 +216,17 @@
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
@@ -228,7 +238,17 @@
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-sequence-1"
+        }
+      ]
     },
     {
       "line": 3,
@@ -240,19 +260,63 @@
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-sequence-1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-sequence-1.overview"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-sequence-1.enemies.enemy-1"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "3.战斗胜利后，与受伤的管理员（19.17）对话，获得【时间水晶Lv.4】、称号“心胸广阔的人”，任务完结。",
-      "kind": "flow",
+      "kind": "reward",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 5,
@@ -264,7 +328,17 @@
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "bindings": [
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     }
   ],
   "verification": {

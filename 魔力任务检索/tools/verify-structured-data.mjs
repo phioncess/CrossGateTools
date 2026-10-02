@@ -177,7 +177,7 @@ for (const quest of quests.filter(entry => entry.verification?.status === 'verif
 
 const courage = data.quests['catalog-0504a6b1-500a-47a0-982a-70a6b36cca6b'];
 if (!courage || courage.name !== '勇气max') fail('未找到“勇气max”结构化记录');
-if (courage.schemaVersion !== 2) fail('勇气max 尚未迁移到逐行语义核验模型');
+if (![2,3].includes(courage.schemaVersion)) fail('勇气max 尚未迁移到逐行语义核验模型');
 if (courage.verification?.status !== 'verified') fail('勇气max 尚未完成全文核验');
 
 const courage2026Pool = courage.rewardEvents?.find(event => event.id === 'reward-2026-tier2-pool');

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-da9f2c12-c130-444f-bfd7-1f65c039dc0b",
   "name": "任务与收集的考验",
   "aliases": [
@@ -1652,578 +1652,1358 @@
     {
       "line": 1,
       "text": "1.前往法兰城（86.81）处与蒙面的男子对话，选“是”获得【任务说明】。",
-      "type": "item-acquisition",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆【任务说明】每日只可获得1次，丢弃后无法再次获得；每日0点后重置",
-      "type": "daily-limit",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "2.根据【任务说明】的要求，完成任务考验或收集考验，获得【完成证明】。",
-      "type": "challenge-choice",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "◆持有【完成证明】与蒙面的男子对话，获得称号“资金运转部队后备”",
-      "type": "title-reward",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "◆任务考验：前往相关任务地图，持有【任务说明】与黑色忍者形象NPC对话，交出【任务说明】获得【完成证明】",
-      "type": "task-challenge-rule",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "◆黑色忍者形象NPC外观：",
-      "type": "npc-appearance",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "◆任务考验列表：",
-      "type": "task-list-heading",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "任务名称本站攻略NPC位置NPC名称备注",
-      "type": "table-heading",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "土之洞窟《土之洞窟》充满谜的房间（11.8）资金运转部队184需要击杀BOSS",
-      "type": "task-row",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.challengeOptions.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "杀熊者的传说《海底洞窟》欧兹那克的小房间（4.4）资金运转部队179需持有【欧兹那克的戒指】",
-      "type": "task-row",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.challengeOptions.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "改造僵尸《改造僵尸》阿鲁巴斯研究所（18.14）资金运转部队143需要击杀BOSS",
-      "type": "task-row",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.challengeOptions.2"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.2"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "旅馆调查《旅馆调查》腐朽的祠堂（19.12）资金运转部队195无需击杀BOSS",
-      "type": "task-row",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.challengeOptions.3"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.3"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "牛鬼讨伐《牛鬼讨伐》牛鬼的洞穴（19.13）资金运转部队166无需击杀BOSS；只需击杀鬼犬",
-      "type": "task-row",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.challengeOptions.4"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.4"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "奇利村之巫师袭击事件《就职巫师》黑之祈祷（23.21）资金运转部队095需要击杀BOSS",
-      "type": "task-row",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.challengeOptions.5"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.5"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "鲶鱼洞窟《鲶鱼洞窟》鲶鱼洞窟的地底湖（46.24）资金运转部队126无需进入大鲶鱼身体",
-      "type": "task-row",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.challengeOptions.6"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.6"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "流星山丘《流星山丘》流星山丘250公尺（33.20）资金运转部队139——",
-      "type": "task-row",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.challengeOptions.7"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.7"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "月光花园《月光花园》地下密室（43.24）资金运转部队110无需击杀BOSS",
-      "type": "task-row",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.challengeOptions.8"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.8"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "蜥蜴战士团讨伐《蜥蜴战士团讨伐》蜥蜴之巢地下11楼（14.7）资金运转部队074无需击杀BOSS",
-      "type": "task-row",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.challengeOptions.9"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.9"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "挑战神兽《挑战神兽》咒缚之帐（20.8）资金运转部队081需要击杀BOSS",
-      "type": "task-row",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.challengeOptions.10"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.10"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "积雪的山路《积雪的山路》雪山之顶（16.24）资金运转部队066无需击杀BOSS",
-      "type": "task-row",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.challengeOptions.11"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.11"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "海贼指挥部《海贼指挥部》海贼指挥部（8.7）资金运转部队052无需击杀BOSS",
-      "type": "task-row",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.challengeOptions.12"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.12"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "◆收集考验：前往法兰城（87.81）处，持有所需收集【道具】、【任务说明】与蒙面的物资收集员对话，交出【道具】、【任务说明】获得【完成证明】",
-      "type": "collection-challenge-rule",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "◆收集考验列表：",
-      "type": "collection-list-heading",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "收集物品名称获得方式",
-      "type": "table-heading",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "生命回复药（200）玩家制作",
-      "type": "collection-row",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.challengeOptions.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "水龙蜥的卡片击倒或巧取自索奇亚海底洞窟的水龙蜥",
-      "type": "collection-row",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.challengeOptions.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.1"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "红头盔击倒法兰城南门外靠近山附近，或东门外山男的家门口农田内的红帽哥布林",
-      "type": "collection-row",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.challengeOptions.2"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.2"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "丝巾击倒奇怪的洞窟随机出现的人类？；参考《改造僵尸》任务",
-      "type": "collection-row",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.challengeOptions.3"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.3"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "妖草的血击倒土之洞窟内或维诺亚洞窟靠近维诺亚村一侧外的妖草",
-      "type": "collection-row",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.challengeOptions.4"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.4"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "神眼击倒角笛大风穴的水蜘蛛",
-      "type": "collection-row",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.challengeOptions.5"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.5"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "砂漠的红星《砂漠之祠》任务奖品；开启四属性精灵福袋随机获得",
-      "type": "collection-row",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.challengeOptions.6"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.6"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "天使的画具《月光花园》任务奖品",
-      "type": "collection-row",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.challengeOptions.7"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.7"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "法国面包玩家制作",
-      "type": "collection-row",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.challengeOptions.8"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.8"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "螳螂的卡片击倒或巧取自索奇亚岛奇利村外的螳螂",
-      "type": "collection-row",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.challengeOptions.9"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.9"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "曼陀罗草的皮击倒杰诺瓦镇外的蔓陀罗草",
-      "type": "collection-row",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.challengeOptions.10"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.10"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "烈风鸟人的卡片击倒或巧取自阿巴尼斯村外的烈风鸟人",
-      "type": "collection-row",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.challengeOptions.11"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.11"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "任意等级地狱妖犬捕捉莎莲娜岛贝兹雷姆神殿外区域地狱妖犬",
-      "type": "collection-row",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.challengeOptions.12"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.12"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "风龙蜥的甲壳击倒杰诺瓦镇外的风龙蜥",
-      "type": "collection-row",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.challengeOptions.13"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.13"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "梦幻头巾《梦幻头巾》任务奖品",
-      "type": "collection-row",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.challengeOptions.14"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.14"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "◆【完成证明】不可丢地/交易/寄存/摆摊；可叠加",
-      "type": "item-restriction",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "3.前往法兰城，集齐一定数量的【完成证明】与资金运转部队003（85.81）对话，可兑换奖品，任务完结。",
-      "type": "exchange-step",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.7"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "◆任务已关闭，兑换【奖品】的NPC暂不关闭",
-      "type": "closed-status",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.notes.0"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "◆【奖品】详情：",
-      "type": "reward-heading",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "名称所需数量（个）作用备注",
-      "type": "table-heading",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "坏掉的苦无（20）5双击后开启工作时间兑换后可获得20个",
-      "type": "reward-row",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "偷偷采来的花10Lv.6头饰、耐久350；攻击+18、防御+8、敏捷+8、精神+6、石化+15、混乱+15、必杀+12、命中+12、魅力+50、魔攻+8、抗魔+45装备后显示外观；装备后与管理称号的NPC对话，获得称号“采花大盗”",
-      "type": "reward-row",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.1"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "闪光飞鹰之羽25获得Lv.1闪光飞鹰飞行系；8技能栏；水50风50；22 35 13 48 7",
-      "type": "reward-row",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.2.items.0"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "再生灵药30重置人物点数不可交易、丢地消失",
-      "type": "reward-row",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.3.items.0"
+        }
+      ]
     }
   ],
   "verification": {

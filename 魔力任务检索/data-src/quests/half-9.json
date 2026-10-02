@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "half-9",
   "name": "死与新生",
   "aliases": [
@@ -1574,830 +1574,1811 @@
     {
       "line": 1,
       "text": "完成《死神的降临》任务",
-      "type": "prerequisite",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "持有【冥界之雨】",
-      "type": "held-item-gate",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "时长服暂未开放",
-      "type": "server-availability",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.changes.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "1.双击【冥界之雨】传送至冥界（里）。调查死亡石碑（377.422）传送至冥界之森。",
-      "type": "item-use-teleport",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "2.通过冥界之森抵达死神的陷阱。",
-      "type": "route-step",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "3.调查死神的点火台（5.11）获得【冥炎的火把】，双击【冥炎的火把】略微点亮地图。",
-      "type": "item-acquisition-use",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "4.行走至（20.10）处，持有【冥炎的火把】与死神的仆从对话，进入战斗。",
-      "type": "held-item-battle",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.death-servant"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "5.战斗胜利后传送至冥界（里）。调查（216.356）处进入死神的摇篮。",
-      "type": "post-battle-route",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "6.与芒（49.6）对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.mang"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "7.战斗胜利后传送至？？？与荷特普（22.19）对话，交出【冥界之雨】获得【饥饿的死神之卵】。",
-      "type": "completion-exchange",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "失去之前半山系列任务中获得的所有称号，获得称号“死神”并传送回召唤之间，任务完结。",
-      "type": "title-replacement",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "1.主线任务完结获得【饥饿的死神之卵】之后，双击【饥饿的死神之卵】传送至？？？。",
-      "type": "branch-entry",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "与荷特普对话传送至冥界之森。",
-      "type": "branch-teleport",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "2.在冥界之森击倒魔物（游荡之魂），战斗结束后掉落【哭泣的灵魂】",
-      "type": "battle-drop",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "3.根据不同服务器，收集不同数量的【哭泣的灵魂】：",
-      "type": "versioned-collection-heading",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "⑴怀旧服：",
-      "type": "version-heading",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "①.累积两次持有【饥饿的死神之卵】、【哭泣的灵魂】（100个）与荷特普对话，交出【哭泣的灵魂】传送回召唤之间。",
-      "type": "batch-exchange",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.inputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "②.第三次持有【饥饿的死神之卵】与【哭泣的灵魂】（100个）与荷特普对话，交出【哭泣的灵魂】、【饥饿的死神之卵】，获得【死神之卵】，支线完结。",
-      "type": "final-batch-exchange",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11.outputs.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.7"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.8"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "◆【冥界之雨】获得方式参考《死神的降临》任务",
-      "type": "item-source",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "relation",
+          "target": "relations.itemSources.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "◆冥界（里）为固定地图；",
-      "type": "map-heading",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "魔物为武装骷髅（不死系；怀旧服为Lv.96；时长/道具服为Lv.146）",
-      "type": "versioned-encounter",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.encounters.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.changes.0"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "◆冥界（里）行走路线：",
-      "type": "route-caption",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "◆冥界之森为固定地图；",
-      "type": "map-heading",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "魔物为绝望的无辜者之魂（怀旧服为Lv.98；时长、道具服为Lv.148；邪魔系，属性：全25）",
-      "type": "versioned-encounter",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.encounters.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.changes.0"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "◆冥界之森行走路线：往任一方向走走皆可，理论上往右走路程最短",
-      "type": "route-note",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "◆若未获得【冥炎的火把】，在第4步时与死神的仆从对话将被传送回地图的起点",
-      "type": "held-item-gate",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.death-servant"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "◆死神的陷阱为固定地图",
-      "type": "map-heading",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.encounters.2"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "死神的陷阱魔物：皆为邪魔系",
-      "type": "encounter-heading",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.encounters.2"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "尸体切割者（怀旧服为Lv.99，HP:4500；时长/道具服Lv.149），属性：地100；技能：攻击、防御、诸刃、超强陨石魔法",
-      "type": "versioned-enemy",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.encounters.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.changes.0"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "灵魂收割者（怀旧服为Lv.99，HP:3000；时长/道具服Lv.149），属性：火100；技能：攻击、防御、乾坤一掷、超强火焰魔法",
-      "type": "versioned-enemy",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.encounters.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.changes.0"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "◆死神的陷阱行走路线（方式一）：（附文字说明）",
-      "type": "route-heading",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "东走1步→北走2步→东走2步→北走1步→西北走2步→北走1步→东北走1步→东南走1步→东走2步→南走2步→东走2步→东北走3步→",
-      "type": "route-directions",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "东南走2步→西南走6步→西北走1步→西走2步→南走4步→东走6步→东南走1步→东走2步→东南走1步→东北走2步→西北走2步→西南走1步→",
-      "type": "route-directions",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "西北走1步→西走2步→东北走3步→北走1步→东北走2步→东走1步→东南走1步→西南走2步→南走1步→东南走1步→东北走2步→东走1步",
-      "type": "route-directions",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "◆死神的陷阱行走路线优化版（方式二）",
-      "type": "route-heading",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "魔物为武装骷髅（怀旧服为Lv.96；时长/道具服Lv.149）",
-      "type": "versioned-encounter",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.encounters.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.changes.0"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "◆冥界（里）行走路线 ：",
-      "type": "route-caption",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "◆死神的摇篮行走路线：",
-      "type": "route-caption",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "◆2019.08.28怀旧服新增巧取道具参考《半山9死神巧取物品》一文",
-      "type": "strategy-reference",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "①冥界处刑者，不死系，9技能栏，10风纯属性。能力21倍率",
-      "type": "pet-reference",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "血37 攻47 防15 敏17 魔10，综合126档",
-      "type": "pet-reference",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "②冥界审判者，不死系，9技能栏，风8地2属性。能力倍率21",
-      "type": "pet-reference",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "体30 攻9 防17 敏23 魔47，综合126档",
-      "type": "pet-reference",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.14"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "◆拥有称号“死神”时，亦可前往法兰城西门外与阿鲁卡（398.168）对话，交出800G传送至小岛",
-      "type": "title-shortcut",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.13"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.13.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "◆任务剧情：参考《半山系列任务剧情对话》",
-      "type": "story-reference",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "支线-【饥饿的死神之卵】孵化：",
-      "type": "branch-heading",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.encounters.3"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "魔物为游荡之魂（怀旧服为Lv.44；时长、道具服为Lv.114）；",
-      "type": "versioned-encounter",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.encounters.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.其他服.changes.0"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "怀旧服：Lv. 44游荡之魂，血量约1000，不死系，属性：全25；技能： 攻击、防御、乾坤一掷、攻击吸收、魔法吸收",
-      "type": "enemy-detail",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.tiers.common.encounters.3"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "◆【哭泣的灵魂】：可叠加；不可丢地、交易、存银行、宠邮",
-      "type": "item-restriction",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "◆【死神之卵】：可交易",
-      "type": "item-detail",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 51,
       "text": "双击【死神之卵】获得Lv.1冥界死神；注意宠物栏留空",
-      "type": "pet-use",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.12.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.9"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 52,
       "text": "◆怀旧服【哭泣的灵魂】的交纳：",
-      "type": "batch-heading",
       "sourceLines": [
         52
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        }
+      ]
     },
     {
       "line": 53,
       "text": "⒜以批次区分，每个批次交出【哭泣的灵魂】需间隔1天时间，以0点为分界线，共需交纳3个批次才可获得【死神之卵】。",
-      "type": "batch-rule",
       "sourceLines": [
         53
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        }
+      ]
     },
     {
       "line": 54,
       "text": "⒝每个批次交出的【哭泣的灵魂】为不同产物，只可与当批次的【哭泣的灵魂】叠加，且不可用于下一个批次的交纳。",
-      "type": "batch-rule",
       "sourceLines": [
         54
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        }
+      ]
     },
     {
       "line": 55,
       "text": "⒞每个批次传送到的冥界之森并非同一地图。",
-      "type": "batch-rule",
       "sourceLines": [
         55
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.11"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.怀旧服.changes.0"
+        }
+      ]
     },
     {
       "line": 56,
       "text": "⑵道具服：",
-      "type": "version-heading",
       "sourceLines": [
         56
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": []
     },
     {
       "line": 57,
       "text": "①.收集100个【哭泣的灵魂】。",
-      "type": "collection-step",
       "sourceLines": [
         57
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": []
     },
     {
       "line": 58,
       "text": "②.持有100个【哭泣的灵魂】、【饥饿的死神之卵】与荷特普对话，交出【哭泣的灵魂】、【饥饿的死神之卵】获得【死神之卵】，支线完结。",
-      "type": "exchange-step",
       "sourceLines": [
         58
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": []
     },
     {
       "line": 59,
       "text": "◆战斗信息：",
-      "type": "battle-heading",
       "sourceLines": [
         59
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": []
     },
     {
       "line": 60,
       "text": "Lv.100死神的仆从，血量约10000（道具服血量约16000），邪魔系，属性：全25；技能：攻击、防御、超强即死魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         60
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.death-servant"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.death-servant.enemies.0"
+        }
+      ]
     },
     {
       "line": 61,
       "text": "◆战斗信息：（怀旧服）皆为邪魔系",
-      "type": "battle-heading",
       "sourceLines": [
         61
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": []
     },
     {
       "line": 62,
       "text": "Lv.100芒，血量约45000，属性：全30；技能：攻击、防御、诸刃、崩击、连击、气功弹、即死魔法、魔法封印、昏睡攻击、超强遗忘魔法、骑士之誉",
-      "type": "battle-enemy",
       "sourceLines": [
         62
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.mang"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.mang.enemies.0"
+        }
+      ]
     },
     {
       "line": 63,
       "text": "Lv.80瑞纳？*1，血量约13000，属性：地30水70；技能：攻击、防御、四属性强力攻击魔法、圣盾、暗杀、洁净（全体）、定点移动",
-      "type": "battle-enemy",
       "sourceLines": [
         63
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.mang"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.mang.enemies.1"
+        }
+      ]
     },
     {
       "line": 64,
       "text": "Lv.80瑞纳？*6，血量约6000，属性：地30水70；技能：防御、四属性强力攻击魔法、圣盾、洁净（全体）、定点移动",
-      "type": "battle-enemy",
       "sourceLines": [
         64
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.mang"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.mang.enemies.2"
+        }
+      ]
     },
     {
       "line": 65,
       "text": "◆战斗信息：（时长/道具服）皆为邪魔系",
-      "type": "battle-heading",
       "sourceLines": [
         65
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": []
     },
     {
       "line": 66,
       "text": "Lv.150芒，血量约60000，属性：全30；技能：攻击、防御、诸刃、崩击、连击、气功弹、即死魔法、魔法封印、昏睡攻击、超强遗忘魔法、骑士之誉",
-      "type": "battle-enemy",
       "sourceLines": [
         66
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": []
     },
     {
       "line": 67,
       "text": "Lv.135瑞纳？*2，血量约18000，属性：地30水70；技能：攻击、防御、四属性强力攻击魔法、圣盾、暗杀、洁净（全体）、定点移动",
-      "type": "battle-enemy",
       "sourceLines": [
         67
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": []
     },
     {
       "line": 68,
       "text": "Lv.140瑞纳？*5，血量约10000，属性：地30水70；技能：防御、四属性强力攻击魔法、圣盾、洁净（全体）、定点移动",
-      "type": "battle-enemy",
       "sourceLines": [
         68
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "note",
+      "bindings": []
     },
     {
       "line": 69,
       "text": "◆BOSS打法：参考《半山8、半山9任务攻略、技巧与心得》",
-      "type": "battle-strategy",
       "sourceLines": [
         69
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.mang"
+        }
+      ]
     }
   ],
   "verification": {

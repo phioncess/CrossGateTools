@@ -509,6 +509,7 @@ function structuredStepActions(step) {
 function structuredGuide(record) {
   const conditions = [
     ...structuredTextList(record.requirements?.text),
+    ...(record.presentation?.requirementTexts || []),
     ...structuredTextList(record.requirements?.conditions)
   ].filter((item, index, list) => list.indexOf(item) === index);
   return {

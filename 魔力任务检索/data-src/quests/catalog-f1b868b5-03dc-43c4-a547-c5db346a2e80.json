@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-f1b868b5-03dc-43c4-a547-c5db346a2e80",
   "name": "追击",
   "aliases": [
@@ -486,7 +486,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "士兵长克鲁斯",
+            "coordinate": "19.18",
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "deep-cave",
@@ -2301,698 +2314,1678 @@
     {
       "line": 1,
       "text": "1.前往法兰城与凯特（137.122）对话，交出【凯特的臂环】获得【暗医的行踪】。",
-      "type": "exchange-step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆【凯特的臂环】获得方式参考《蠢动》任务",
-      "type": "item-source",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.prerequisites.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "2.前往法兰城里谢里雅堡谒见之间与王妃对话，交出【暗医的行踪】获得【勘察许可】。",
-      "type": "exchange-step",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "3.前往没落的村庄与士兵长克鲁斯（19.18）对话，进入流沙洞窟。",
-      "type": "maze-entry",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "◆没落的村庄抵达方式参考《毁灭的村庄》任务",
-      "type": "route-reference",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "◆完成《风鸣之塔》任务的玩家可利用阿斯提亚镇传送石进入没落的村庄",
-      "type": "alternate-route",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.1"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "◆流沙洞窟为随机迷宫，约10层；魔物为骷髅战士、武装骷髅、土蜘蛛、风蜘蛛（怀旧服等级69~70；时长服为Lv.117~120，有战斗经验）",
-      "type": "versioned-maze",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "4.通过随机迷宫抵达流沙洞窟秘道，与士兵库克对话，选“是”交出500G通过栅栏，进入流沙洞窟深处。",
-      "type": "currency-gate",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "◆每名队员都需要交出500G才可通过栅栏",
-      "type": "per-member-gate",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "◆流沙洞窟深处为随机迷宫，约10层；魔物为地狱骷髅、血骷髅、利牙、牙骨（怀旧服等级69~73；时长服为Lv.119~123，有战斗经验）",
-      "type": "versioned-maze",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "note",
+          "target": "sourceSupplements.areas.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.1"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "士兵长支线：",
-      "type": "sidequest-heading",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "①.职业为士兵长的玩家与士兵库克对话，进入流沙洞窟密道。",
-      "type": "career-gate",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "◆流沙洞窟密道为随机迷宫",
-      "type": "maze-detail",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "②.通过随机迷宫抵达流沙洞窟密室，调查古代的雕像，交出【黑暗之戒】获得【古旧的钥匙】并传送至流沙洞窟深处。",
-      "type": "exchange-step",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "③.完成主线任务后，前往哥拉尔镇。持有【古旧的钥匙】与逃出的实验员对话，交出【古旧的钥匙】获得【炼金凭证】。",
-      "type": "timed-exchange",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "◆逃出的实验员位置：",
-      "type": "npc-location-heading",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "时间段坐标",
-      "type": "table-heading",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "清晨（164.53）",
-      "type": "npc-location",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "白昼（83.139）",
-      "type": "npc-location",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "黄昏（162.151）",
-      "type": "npc-location",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "黑夜（89.51）",
-      "type": "npc-location",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "⑤.现实时间2小时后与逃出的实验员对话，交出【炼金凭证】获得【宝藏密匙】，支线完结。",
-      "type": "timed-exchange",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.outputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "◆【宝藏密匙】为《永远》任务支线部分相关道具",
-      "type": "future-use",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.2"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "⑤.现实时间2小时后与逃出的实验员对话，交出【炼金凭证】获得【宝藏密匙】，支线完结。",
-      "type": "duplicate-source",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "◆【宝藏密匙】为《永远》任务支线部分相关道具",
-      "type": "duplicate-source",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "relation",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.2"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "5.通过随机迷宫抵达流沙洞窟底层，与阿鲁巴斯对话，传送至罪之间。",
-      "type": "teleport-step",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "6.与改造火焰牛头怪对话，进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.fire-minotaur"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "◆战斗信息：（怀旧服）",
-      "type": "server-heading",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.fire-minotaur"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "Lv.85改造火焰牛鬼，血量约15000；属性：地20水20火100风20；技能：攻击、防御、恢复魔法（每跳约2000+）、超强陨石魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.fire-minotaur"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.fire-minotaur.enemies.0"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "◇战斗建议（怀旧服）：先战栗完BOSS的魔，再合击，期间配合石化、中毒魔法",
-      "type": "strategy-note",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.fire-minotaur"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "◆战斗信息：（时长服）",
-      "type": "server-heading",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.fire-minotaur"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "Lv.135改造火焰牛鬼，血量约22000；技能：攻击、防御、超强陨石魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.fire-minotaur"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.fire-minotaur.enemies.1"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "7.战斗胜利后与阿鲁巴斯对话进入战斗。",
-      "type": "battle-step",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "◆战斗信息：（怀旧服）",
-      "type": "server-heading",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "Lv.90阿鲁巴斯，血量约20000；属性：全属性50；技能：攻击、防御、超强恢复魔法、超强混乱魔法、超强酒醉魔法、单体即死",
-      "type": "battle-enemy",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas.enemies.0"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "Lv.85改造大地牛头怪，血量约15000；属性：地100水20火20风20；技能：攻击、防御、补血魔法、恢复魔法、超强陨石魔法、诸刃",
-      "type": "battle-enemy",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas.enemies.1"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "Lv.85改造寒冰牛头怪，血量约15000；属性：地20水100火20风20；技能：攻击、防御、补血魔法、恢复魔法、超强冰冻魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas.enemies.2"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "Lv.85改造火焰牛头怪，血量约15000；属性：地20水20火100风20；技能：攻击、防御、补血魔法、恢复魔法、超强火焰魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas.enemies.3"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "Lv.85改造烈风牛头怪，血量约15000；属性：地20水20火20风100；技能：攻击、防御、补血魔法、恢复魔法、超强风刃魔法、连击",
-      "type": "battle-enemy",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas.enemies.4"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "Lv.80改造僵尸*5，血量约4500；属性：全属性30；技能：攻击、防御、自爆（全体伤害）、明镜止水",
-      "type": "battle-enemy",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas.enemies.5"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "◇战斗建议（怀旧服）：",
-      "type": "strategy-heading",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas.strategies.0"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "先战栗完阿鲁巴斯的魔，再战栗完四只牛的魔，",
-      "type": "strategy-note",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas.strategies.0"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "之后按1只改造僵尸→1只牛的前后顺序进行击杀，最后合击阿鲁巴斯。",
-      "type": "strategy-note",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas.strategies.0"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "战栗期间配合石化魔法，击杀期间配合中毒魔法",
-      "type": "strategy-note",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas.strategies.0"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "◆战斗信息：（时长服）",
-      "type": "server-heading",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "Lv.140阿鲁巴斯，血量约30000；技能：攻击、防御、超强恢复魔法、超强混乱魔法、超强酒醉魔法、单体即死",
-      "type": "battle-enemy",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas.enemies.6"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "Lv.135改造大地牛头怪，血量约22000；技能：攻击、防御、补血魔法、恢复魔法、超强陨石魔法、诸刃",
-      "type": "battle-enemy",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas.enemies.7"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "Lv.135改造寒冰牛头怪，血量约22000；技能：攻击、防御、补血魔法、恢复魔法、超强冰冻魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas.enemies.8"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "Lv.135改造火焰牛头怪，血量约22000；技能：攻击、防御、补血魔法、恢复魔法、超强火焰魔法",
-      "type": "battle-enemy",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas.enemies.9"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "Lv.135改造烈风牛头怪，血量约22000；技能：攻击、防御、补血魔法、恢复魔法、超强风刃魔法、连击",
-      "type": "battle-enemy",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas.enemies.10"
+        }
+      ]
     },
     {
       "line": 51,
       "text": "Lv.130改造僵尸*5，血量约6200；技能：攻击、防御、自爆（全体伤害）、明镜止水",
-      "type": "battle-enemy",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas.enemies.11"
+        }
+      ]
     },
     {
       "line": 52,
       "text": "◇战斗建议（时长服）：按照阿鲁巴斯→改造僵尸→火牛→冰牛→地牛→风牛顺序击杀；注意洁净混乱和酒醉状态",
-      "type": "strategy-note",
       "sourceLines": [
         52
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.alubas.strategies.1"
+        }
+      ]
     },
     {
       "line": 53,
       "text": "8.战斗胜利后与阿鲁巴斯对话，交出【勘察许可】获得【诡异的细胞】并传送至索奇亚岛。",
-      "type": "exchange-reward",
       "sourceLines": [
         53
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.8"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.8.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.5"
+        }
+      ]
     },
     {
       "line": 54,
       "text": "9.返回法兰城与凯特（137.122）对话，交出【诡异的细胞】获得【羁绊之石】、【炽热的生命之光】，任务完结。",
-      "type": "completion-exchange",
       "sourceLines": [
         54
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9.outputs.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.7"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.7"
+        }
+      ]
     },
     {
       "line": 55,
       "text": "◆【炽热的生命之光】为后续任务相关道具，勿丢弃",
-      "type": "future-use",
       "sourceLines": [
         55
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "relation",
+          "target": "relations.references.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        }
+      ]
     },
     {
       "line": 56,
       "text": "◆【羁绊之石】：耐久20，每次使用减少1点耐久；",
-      "type": "item-detail",
       "sourceLines": [
         56
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        }
+      ]
     },
     {
       "line": 57,
       "text": "双击后传送至神秘的小房间，与神秘箱对话，交出1只Lv.宠物、2000魔币，可获得一只全新的同种Lv.1宠物",
-      "type": "pet-exchange",
       "sourceLines": [
         57
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.inputs.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.8"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.8"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.9"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.10"
+        }
+      ]
     },
     {
       "line": 58,
       "text": "【羁绊之石】兑换宠物明细：亡灵、杀人蜂、蜥蜴斗士、布丁史莱姆、地狱妖犬、海蝙蝠、翠绿菇、火焰之刃、钢鬼",
-      "type": "eligible-species",
       "sourceLines": [
         58
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.9"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.10.outputs.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.1.items.8"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.8"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.9"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.10"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.11"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.12"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.13"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.14"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.15"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.16"
+        }
+      ]
     }
   ],
   "verification": {

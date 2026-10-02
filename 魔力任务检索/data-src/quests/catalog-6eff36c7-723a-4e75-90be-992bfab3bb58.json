@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-6eff36c7-723a-4e75-90be-992bfab3bb58",
   "name": "周期性贩卖设计图NPC",
   "aliases": [
@@ -670,7 +670,42 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "法兰城冒险者旅馆",
+            "coordinate": "238.64",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "楼梯",
+            "coordinate": "43.26",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          },
+          {
+            "name": "黑衣男",
+            "coordinate": "15.37",
+            "sourceLines": [
+              1
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "password",
@@ -695,6 +730,19 @@
             "verification": {
               "status": "verified",
               "method": "source-action-review"
+            }
+          }
+        ],
+        "routePoints": [
+          {
+            "name": "招待人员",
+            "coordinate": "6.6",
+            "sourceLines": [
+              4
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
             }
           }
         ]
@@ -2497,7 +2545,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "地下黑市",
+            "coordinate": "37.12",
+            "sourceLines": [
+              5
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "modify",
@@ -2554,7 +2615,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "法兰城",
+            "coordinate": "195.67",
+            "sourceLines": [
+              6
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       }
     ],
     "notes": []
@@ -4293,1622 +4367,4392 @@
     {
       "line": 1,
       "text": "1.进入法兰城冒险者旅馆（238.64），通过（43.26）处楼梯进入水晶交换所与黑衣男（15.37）对话，进入地下通路。",
-      "type": "route-step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆平常可以随意进入地下通路。",
-      "type": "route-step",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "例外：但在《法兰城地下黑市》任务开放期间，需持有【GM的手机v2】或交出【手机配件A/B/C/D】才可进入地下通路。",
-      "type": "route-step",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "2.与招待人员（6.6）对话，输入“黑市万岁”进入地下黑市。",
-      "type": "route-step",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.commands.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "3.地下黑市（37.12）贫穷的神秘商人，周期性贩卖设计图：【某设计图】或者【某改造道具】。",
-      "type": "route-step",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "4.改造宠物地点：法兰城（195.67）裘瑟贝。携带一套【设计图】和Lv.1未改造的宠物，兑换一只Lv.1改造好的宠物。",
-      "type": "route-step",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "◆未改造的宠物（俗称“尸体”）：",
-      "type": "route-step",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "如果不存在Lv.1的宠物时，可以用任意等级。",
-      "type": "route-step",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "存在Lv.1的宠物时，也有可以用任意等级的特例，比如镰刀魔（改造后为死亡收割者）可以用任意等级。",
-      "type": "route-step",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "◆小心买到已经改造后的宠物（“尸体”）！",
-      "type": "route-step",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "◆每次只开放最新的一种或者多种宠物的【某设计图】贩卖",
-      "type": "route-step",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "◆【设计图】变更记录：",
-      "type": "route-step",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "（定档：官论id：刘茜美子，Hsyu、，皮卡丘，①個擁抱）",
-      "type": "route-step",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "2026.07.29",
-      "type": "release-date",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "【神盾设计图】，A~E，每张100000G。",
-      "type": "design-offer",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "◆改造神盾：金属系，属性：风8火2，技能栏9。档数暂定：23 8 28 20 46，总档125",
-      "type": "pet-result",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.0"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "2026.05.27",
-      "type": "release-date",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "【海底龟设计图】，A~D，每张125000G。",
-      "type": "design-offer",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.1"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "◆苏卡达龟：野兽系，地3水7，技能栏9。档数暂定：40 43 17 16 9，总档125",
-      "type": "pet-result",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.1"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.1"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "2026.03.25",
-      "type": "release-date",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "【烟雾设计图】，A~D，每张125000G。",
-      "type": "design-offer",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.2"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "◆湿气：特殊系，水8火2，技能栏9。档数暂定：23 13 7 40 42，总档125",
-      "type": "pet-result",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.2"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "更正数据",
-      "type": "correction-or-restriction",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.2"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.2"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "2026.01.21",
-      "type": "release-date",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "【赤熊设计图】，A~D，每张125000G。",
-      "type": "design-offer",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.3"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "◆枫焰熊：野兽系，6火4风，技能栏9。档数暂定：39 41 19 17 9，总档125",
-      "type": "pet-result",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.3"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "修正+3命中",
-      "type": "correction-or-restriction",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.3"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.3"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "2025.11.26",
-      "type": "release-date",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "【死亡树精设计图】，A~D，每张125000G。",
-      "type": "design-offer",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.4"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "◆山化树精：植物系，8地2水，技能栏10。档数暂定：16 8 31 26 44，总档125",
-      "type": "pet-result",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.4"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.4"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "2025.09.29#限时返场#",
-      "type": "release-date",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "【镰刀魔设计图】。A~E，每张100000G。",
-      "type": "design-offer",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.5"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "◆死亡收割者：不死系，地8水2，技能栏10；体37 攻46 防18 敏16 魔9，总档126，能力倍率21",
-      "type": "pet-result",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.5"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "尸体可用任意等级镰刀魔",
-      "type": "correction-or-restriction",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.5"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "【火焰舞者设计图】。A~E，每张100000G。",
-      "type": "design-offer",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.6"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "◆见习裁判：植物系，火8风2，技能栏9；体37 攻32 防35 敏13 魔8，总档125",
-      "type": "pet-result",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.6"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "修正+10命中",
-      "type": "correction-or-restriction",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.6"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.6"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.6"
+        }
+      ]
     },
     {
       "line": 38,
       "text": "2025.07.30",
-      "type": "release-date",
       "sourceLines": [
         38
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 39,
       "text": "【杀龙之刃设计图】，A~D，每张125000G。",
-      "type": "design-offer",
       "sourceLines": [
         39
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.7"
+        }
+      ]
     },
     {
       "line": 40,
       "text": "◆灭龙大剑：金属系，水7地3，技能栏9；体19 攻44 防30 敏15 魔17，总档125；档数暂定",
-      "type": "pet-result",
       "sourceLines": [
         40
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.7"
+        }
+      ]
     },
     {
       "line": 41,
       "text": "修正+3命中",
-      "type": "correction-or-restriction",
       "sourceLines": [
         41
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.7"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.7"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.7"
+        }
+      ]
     },
     {
       "line": 42,
       "text": "2025.05.28",
-      "type": "release-date",
       "sourceLines": [
         42
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 43,
       "text": "【风龙蜥设计图】，A~E。",
-      "type": "design-offer",
       "sourceLines": [
         43
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.8"
+        }
+      ]
     },
     {
       "line": 44,
       "text": "◆改造风龙蜥：龙系，风6火4，技能栏9；体40 攻30 防35 敏9 魔11，总档125；档数暂定",
-      "type": "pet-result",
       "sourceLines": [
         44
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.8"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.8"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.8"
+        }
+      ]
     },
     {
       "line": 45,
       "text": "2025.03.19",
-      "type": "release-date",
       "sourceLines": [
         45
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 46,
       "text": "【幻歌妖设计图】，A~D。",
-      "type": "design-offer",
       "sourceLines": [
         46
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.9"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.9"
+        }
+      ]
     },
     {
       "line": 47,
       "text": "◆改造幻歌妖：人形系，地2水8，技能栏9；体20 攻12 防15 敏39 魔39，总档125",
-      "type": "pet-result",
       "sourceLines": [
         47
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.9"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.9"
+        }
+      ]
     },
     {
       "line": 48,
       "text": "档数暂定",
-      "type": "correction-or-restriction",
       "sourceLines": [
         48
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.9"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.9"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.9"
+        }
+      ]
     },
     {
       "line": 49,
       "text": "2025.01.02",
-      "type": "release-date",
       "sourceLines": [
         49
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 50,
       "text": "【宝贝炸弹设计图】，A~D。",
-      "type": "design-offer",
       "sourceLines": [
         50
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.10"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.10"
+        }
+      ]
     },
     {
       "line": 51,
       "text": "◆葡萄爆弹：飞行系，地2水8，技能栏9；体26 攻9 防25 敏24 魔41，总档125",
-      "type": "pet-result",
       "sourceLines": [
         51
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.10"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.10"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.10"
+        }
+      ]
     },
     {
       "line": 52,
       "text": "2024.10.23",
-      "type": "release-date",
       "sourceLines": [
         52
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 53,
       "text": "【海蝙蝠设计图】，A~D。",
-      "type": "design-offer",
       "sourceLines": [
         53
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.11"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.11"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.11"
+        }
+      ]
     },
     {
       "line": 54,
       "text": "◆树栖蝙蝠：飞行系，地8水2，技能栏9；体27 攻10 防9 敏38 魔41，总档125",
-      "type": "pet-result",
       "sourceLines": [
         54
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.11"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.11"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.11"
+        }
+      ]
     },
     {
       "line": 55,
       "text": "2024.08.07",
-      "type": "release-date",
       "sourceLines": [
         55
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        }
+      ]
     },
     {
       "line": 56,
       "text": "【北极熊设计图】，A~D。",
-      "type": "design-offer",
       "sourceLines": [
         56
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.12"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.12"
+        }
+      ]
     },
     {
       "line": 57,
       "text": "◆西波尔冰熊：野兽系，地3水7，技能栏9；体35 攻42 防21 敏17 魔10，总档125",
-      "type": "pet-result",
       "sourceLines": [
         57
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.12"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.12"
+        }
+      ]
     },
     {
       "line": 58,
       "text": "修正+3必杀",
-      "type": "correction-or-restriction",
       "sourceLines": [
         58
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.12"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.12"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.12"
+        }
+      ]
     },
     {
       "line": 59,
       "text": "2024.03.20-",
-      "type": "release-date",
       "sourceLines": [
         59
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.13"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.13"
+        }
+      ]
     },
     {
       "line": 60,
       "text": "◆棕静螳螂：昆虫系，水3火7，技能栏9。血20 攻42 防17 敏37 魔9，总档125",
-      "type": "pet-result",
       "sourceLines": [
         60
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.13"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.13"
+        }
+      ]
     },
     {
       "line": 61,
       "text": "修正+3命中",
-      "type": "correction-or-restriction",
       "sourceLines": [
         61
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.13"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.13"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.13"
+        }
+      ]
     },
     {
       "line": 62,
       "text": "2023.11.08-2024.03.20改图返场",
-      "type": "release-date",
       "sourceLines": [
         62
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.14"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.15"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.16"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.14"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.15"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.16"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.14"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.15"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.16"
+        }
+      ]
     },
     {
       "line": 63,
       "text": "◆见习裁判：植物系，火8风2，技能栏9；体37 攻32 防35 敏13 魔8，总档125",
-      "type": "pet-result",
       "sourceLines": [
         63
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.14"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.14"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.14"
+        }
+      ]
     },
     {
       "line": 64,
       "text": "修正+10命中",
-      "type": "correction-or-restriction",
       "sourceLines": [
         64
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.14"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.14"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.14"
+        }
+      ]
     },
     {
       "line": 65,
       "text": "◆觉醒亚特拉斯巨神：人形系，火10，技能栏9；体37力40 防22 敏14 魔12，总档125",
-      "type": "pet-result",
       "sourceLines": [
         65
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.15"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.15"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.15"
+        }
+      ]
     },
     {
       "line": 66,
       "text": "◆改造强盾：金属系，水7火3。技能栏9；体23 攻5 防50 敏8 魔39，总档125",
-      "type": "pet-result",
       "sourceLines": [
         66
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.16"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.16"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.16"
+        }
+      ]
     },
     {
       "line": 67,
       "text": "2023.9.6【红蝎设计图】。A~E，每张100000G。",
-      "type": "release-date",
       "sourceLines": [
         67
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.17"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.17"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.17"
+        }
+      ]
     },
     {
       "line": 68,
       "text": "◆红木蝎：昆虫系，火6风4，技能栏9；体19 攻9 防42 敏17 魔38，总档125，能力倍率20",
-      "type": "pet-result",
       "sourceLines": [
         68
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.17"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.17"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.17"
+        }
+      ]
     },
     {
       "line": 69,
       "text": "2023.7.5【迷你石像怪设计图】。A~D，每张125000G。",
-      "type": "release-date",
       "sourceLines": [
         69
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.18"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.18"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.18"
+        }
+      ]
     },
     {
       "line": 70,
       "text": "◆威雷使魔：飞行系，火5风5，技能栏9；体23 攻10 防9 敏35 魔48，总档125，能力倍率20",
-      "type": "pet-result",
       "sourceLines": [
         70
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.18"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.18"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.18"
+        }
+      ]
     },
     {
       "line": 71,
       "text": "2023.4.20#限时返场#",
-      "type": "release-date",
       "sourceLines": [
         71
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.19"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.20"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.21"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.19"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.20"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.21"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.19"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.20"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.21"
+        }
+      ]
     },
     {
       "line": 72,
       "text": "①【粉红菇设计图】A~D，每张120000G。",
-      "type": "design-offer",
       "sourceLines": [
         72
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.19"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.19"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.19"
+        }
+      ]
     },
     {
       "line": 73,
       "text": "◆红椎菌菇：植物系，火7水3，技能栏9；体36 力6 防16 敏21 魔46，总档125",
-      "type": "pet-result",
       "sourceLines": [
         73
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.19"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.19"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.19"
+        }
+      ]
     },
     {
       "line": 74,
       "text": "②【亡灵设计图】A~E，每张100000G",
-      "type": "design-offer",
       "sourceLines": [
         74
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.20"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.20"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.20"
+        }
+      ]
     },
     {
       "line": 75,
       "text": "◆灵风：不死系，风7火3，技能栏9；体26力10 防19 敏24 魔46，总档125",
-      "type": "pet-result",
       "sourceLines": [
         75
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.20"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.20"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.20"
+        }
+      ]
     },
     {
       "line": 76,
       "text": "③【猪鬼设计图】*A~E，每张100000G。",
-      "type": "design-offer",
       "sourceLines": [
         76
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.21"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.21"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.21"
+        }
+      ]
     },
     {
       "line": 77,
       "text": "◆钢铁猪鬼：人形系，水8火2，技能栏8；体41 力39 防14 敏16 魔15，总档125",
-      "type": "pet-result",
       "sourceLines": [
         77
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.21"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.21"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.21"
+        }
+      ]
     },
     {
       "line": 78,
       "text": "2023.2.22【烈风之刃设计图】。A~E，每张100000G。",
-      "type": "design-offer",
       "sourceLines": [
         78
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.22"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.22"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.22"
+        }
+      ]
     },
     {
       "line": 79,
       "text": "◆风雷霜刃：金属系，地2风8，技能栏9；体33 攻48 防12 敏22 魔10，总档125，能力倍率20",
-      "type": "pet-result",
       "sourceLines": [
         79
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.22"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.22"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.22"
+        }
+      ]
     },
     {
       "line": 80,
       "text": "2022.12.21【幽灵设计图】。A~E，每张100000G。",
-      "type": "design-offer",
       "sourceLines": [
         80
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.23"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.23"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.23"
+        }
+      ]
     },
     {
       "line": 81,
       "text": "◆幽冥之灵：不死系，地2水8，技能栏10；体27 攻9 防22 敏20 魔47，总档125，能力倍率20",
-      "type": "pet-result",
       "sourceLines": [
         81
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.23"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.23"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.23"
+        }
+      ]
     },
     {
       "line": 82,
       "text": "尸体只可用Lv.1幽灵（高级幽灵交图不给宠？）",
-      "type": "correction-or-restriction",
       "sourceLines": [
         82
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.23"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.23"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.23"
+        }
+      ]
     },
     {
       "line": 83,
       "text": "2022.10.19【镰刀魔设计图】。A~E，每张100000G。",
-      "type": "design-offer",
       "sourceLines": [
         83
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.24"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.24"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.24"
+        }
+      ]
     },
     {
       "line": 84,
       "text": "◆死亡收割者：不死系，地8水2，技能栏10；体37 攻46 防18 敏16 魔9，总档126，能力倍率21",
-      "type": "pet-result",
       "sourceLines": [
         84
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.24"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.24"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.24"
+        }
+      ]
     },
     {
       "line": 85,
       "text": "尸体可用任意等级镰刀魔",
-      "type": "correction-or-restriction",
       "sourceLines": [
         85
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.24"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.24"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.24"
+        }
+      ]
     },
     {
       "line": 86,
       "text": "2022.8.10【布雷欧设计图】。A~E，每张100000G。",
-      "type": "design-offer",
       "sourceLines": [
         86
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.25"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.25"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.25"
+        }
+      ]
     },
     {
       "line": 87,
       "text": "◆变种布雷欧：飞行系，水3火7，技能栏9；体26 攻30 防14 敏49 魔6，总档125",
-      "type": "pet-result",
       "sourceLines": [
         87
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.25"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.25"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.25"
+        }
+      ]
     },
     {
       "line": 88,
       "text": "修正+5命中",
-      "type": "correction-or-restriction",
       "sourceLines": [
         88
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.25"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.25"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.25"
+        }
+      ]
     },
     {
       "line": 89,
       "text": "2022.6.22#限时返场#",
-      "type": "release-date",
       "sourceLines": [
         89
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.26"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.27"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.28"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.26"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.27"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.28"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.26"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.27"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.28"
+        }
+      ]
     },
     {
       "line": 90,
       "text": "①【粉红菇设计图】A~D，每张120000G。",
-      "type": "design-offer",
       "sourceLines": [
         90
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.26"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.26"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.26"
+        }
+      ]
     },
     {
       "line": 91,
       "text": "◆红椎菌菇：植物系，火7水3，技能栏9；体36 力6 防16 敏21 魔46，总档125",
-      "type": "pet-result",
       "sourceLines": [
         91
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.26"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.26"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.26"
+        }
+      ]
     },
     {
       "line": 92,
       "text": "②【星菇设计图】A~E，每张100000G。",
-      "type": "design-offer",
       "sourceLines": [
         92
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.27"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.27"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.27"
+        }
+      ]
     },
     {
       "line": 93,
       "text": "◆星耀星菇：植物系，风7火3，技能栏9；体40 力5 防12 敏19 魔49，总档125",
-      "type": "pet-result",
       "sourceLines": [
         93
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.27"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.27"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.27"
+        }
+      ]
     },
     {
       "line": 94,
       "text": "③【巨人设计图】*A~E，每张100000G。",
-      "type": "design-offer",
       "sourceLines": [
         94
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.28"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.28"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.28"
+        }
+      ]
     },
     {
       "line": 95,
       "text": "◆改造巨人：人形系，地6水4，技能栏9；体34 力46 防10 敏23 魔12，总档125",
-      "type": "pet-result",
       "sourceLines": [
         95
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.28"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.28"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.28"
+        }
+      ]
     },
     {
       "line": 96,
       "text": "修正：命中+10，反击-10。自带技能：气功弹Ⅱ（1~2个气功弹，耗魔45）",
-      "type": "correction-or-restriction",
       "sourceLines": [
         96
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.28"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.28"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.28"
+        }
+      ]
     },
     {
       "line": 97,
       "text": "2022.4.20【强盾设计图】。A~E，每张100000G。",
-      "type": "design-offer",
       "sourceLines": [
         97
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.29"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.29"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.29"
+        }
+      ]
     },
     {
       "line": 98,
       "text": "◆改造强盾：金属系，水7火3。技能栏9；体23 攻5 防50 敏8 魔39，总档125",
-      "type": "pet-result",
       "sourceLines": [
         98
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.29"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.29"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.29"
+        }
+      ]
     },
     {
       "line": 99,
       "text": "2022.2.23【火焰舞者设计图】。A~E，每张100000G。",
-      "type": "design-offer",
       "sourceLines": [
         99
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.30"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.30"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.30"
+        }
+      ]
     },
     {
       "line": 100,
       "text": "◆见习裁判：植物系，火8风2，技能栏9；体37 攻32 防35 敏13 魔8，总档125",
-      "type": "pet-result",
       "sourceLines": [
         100
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.30"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.30"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.30"
+        }
+      ]
     },
     {
       "line": 101,
       "text": "修正+10命中",
-      "type": "correction-or-restriction",
       "sourceLines": [
         101
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.30"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.30"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.30"
+        }
+      ]
     },
     {
       "line": 102,
       "text": "2021.12.29【颚牙设计图】A~D，每张120000G。",
-      "type": "design-offer",
       "sourceLines": [
         102
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.31"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.31"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.31"
+        }
+      ]
     },
     {
       "line": 103,
       "text": "◆改造颚牙：不死系，地8水2，技能栏8；体32 力46 防17 敏18 魔12，总档125",
-      "type": "pet-result",
       "sourceLines": [
         103
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.31"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.31"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.31"
+        }
+      ]
     },
     {
       "line": 104,
       "text": "2021.10.20【铁剪螃蟹设计图】A~E，每张100000G。",
-      "type": "design-offer",
       "sourceLines": [
         104
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.32"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.32"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.32"
+        }
+      ]
     },
     {
       "line": 105,
       "text": "◆钢钳螃蟹：金属系，地8风2，技能栏9；体25 力48 防23 敏21 魔8，总档125",
-      "type": "pet-result",
       "sourceLines": [
         105
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.32"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.32"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.32"
+        }
+      ]
     },
     {
       "line": 106,
       "text": "修正：命中+5",
-      "type": "correction-or-restriction",
       "sourceLines": [
         106
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.32"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.32"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.32"
+        }
+      ]
     },
     {
       "line": 107,
       "text": "2021.08.25【丸子炸弹设计图】A~E，每张100000G。",
-      "type": "design-offer",
       "sourceLines": [
         107
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.33"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.33"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.33"
+        }
+      ]
     },
     {
       "line": 108,
       "text": "◆改造丸子炸弹：特殊系，地3风7，技能栏9；体20 攻15 防15 敏28 魔47，总档125",
-      "type": "pet-result",
       "sourceLines": [
         108
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.33"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.33"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.33"
+        }
+      ]
     },
     {
       "line": 109,
       "text": "2021.06.23【星菇设计图】A~E，每张100000G。",
-      "type": "design-offer",
       "sourceLines": [
         109
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.34"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.34"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.34"
+        }
+      ]
     },
     {
       "line": 110,
       "text": "◆星耀星菇：植物系，风7火3，技能栏9；体40 力5 防12 敏19 魔49，总档125",
-      "type": "pet-result",
       "sourceLines": [
         110
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.34"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.34"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.34"
+        }
+      ]
     },
     {
       "line": 111,
       "text": "2021.04.28【巨人设计图】*A~E，每张100000G。",
-      "type": "design-offer",
       "sourceLines": [
         111
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.35"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.35"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.35"
+        }
+      ]
     },
     {
       "line": 112,
       "text": "◆改造巨人：人形系，地6水4，技能栏9；体34 力46 防10 敏23 魔12，总档125",
-      "type": "pet-result",
       "sourceLines": [
         112
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.35"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.35"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.35"
+        }
+      ]
     },
     {
       "line": 113,
       "text": "修正：命中+10，反击-10。自带技能：气功弹Ⅱ（1~2个气功弹，耗魔45）",
-      "type": "correction-or-restriction",
       "sourceLines": [
         113
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.35"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.35"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.35"
+        }
+      ]
     },
     {
       "line": 114,
       "text": "2021.02.24【粉红菇设计图】A~D，每张120000G。可用任意等级粉红菇的BUG已经修复",
-      "type": "design-offer",
       "sourceLines": [
         114
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.36"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.36"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.36"
+        }
+      ]
     },
     {
       "line": 115,
       "text": "◆红椎菌菇：植物系，火7水3，技能栏9；体36 力6 防16 敏21 魔46，总档125",
-      "type": "pet-result",
       "sourceLines": [
         115
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.36"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.36"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.36"
+        }
+      ]
     },
     {
       "line": 116,
       "text": "2020.12.16【布丁史莱姆强化石】，350000G。",
-      "type": "design-offer",
       "sourceLines": [
         116
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.37"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.37"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.37"
+        }
+      ]
     },
     {
       "line": 117,
       "text": "◆交叉反击之史莱姆：特殊系，风9火1，技能栏9；体41 力34 防31 敏9 魔10，总档125",
-      "type": "pet-result",
       "sourceLines": [
         117
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.37"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.37"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.37"
+        }
+      ]
     },
     {
       "line": 118,
       "text": "修正：命中+20，反击+60，闪躲-80。怀旧服版本跟道具服不同，总档多5",
-      "type": "correction-or-restriction",
       "sourceLines": [
         118
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.37"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.37"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.37"
+        }
+      ]
     },
     {
       "line": 119,
       "text": "2020.10.21【改造血魔设计图】A~D，每张100000G。",
-      "type": "design-offer",
       "sourceLines": [
         119
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.38"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.38"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.38"
+        }
+      ]
     },
     {
       "line": 120,
       "text": "◆改造血魔：飞行系，火9水1，技能栏10；体20 力49 防11 敏37 魔8，总档125",
-      "type": "pet-result",
       "sourceLines": [
         120
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.38"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.38"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.38"
+        }
+      ]
     },
     {
       "line": 121,
       "text": "2020.08.19【武术仙人掌设计图】A~D，每张100000G。",
-      "type": "design-offer",
       "sourceLines": [
         121
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.39"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.39"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.39"
+        }
+      ]
     },
     {
       "line": 122,
       "text": "◆功夫仙人掌：植物系，地7水3，技能栏8；体23 力46 防19 敏23 魔14，总档125",
-      "type": "pet-result",
       "sourceLines": [
         122
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.39"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.39"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.39"
+        }
+      ]
     },
     {
       "line": 123,
       "text": "修正：命中+10",
-      "type": "correction-or-restriction",
       "sourceLines": [
         123
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.39"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.39"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.39"
+        }
+      ]
     },
     {
       "line": 124,
       "text": "2020.06.24【翠绿菇设计图】A~E，每张100000G。（与之前的《翠绿礼包》活动相同）",
-      "type": "design-offer",
       "sourceLines": [
         124
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.40"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.40"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.40"
+        }
+      ]
     },
     {
       "line": 125,
       "text": "◆波尔卡舞蹈菇：植物系，地5风5，技能栏9；体37 力9 防15 敏17 魔47，总档125",
-      "type": "pet-result",
       "sourceLines": [
         125
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.40"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.40"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.40"
+        }
+      ]
     },
     {
       "line": 126,
       "text": "2020.04.22【火焰鼠设计图】A~D（红），每张100000G。（不同于之前的【火焰鼠设计图】（黄））",
-      "type": "design-offer",
       "sourceLines": [
         126
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.41"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.41"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.41"
+        }
+      ]
     },
     {
       "line": 127,
       "text": "◆火焰鼠王子：野兽系，火6水4，技能栏9；体21 力5 防33 敏23 魔43，总档125",
-      "type": "pet-result",
       "sourceLines": [
         127
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.41"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.41"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.41"
+        }
+      ]
     },
     {
       "line": 128,
       "text": "2020.02.19【锹型虫设计图】A~D，每张100000G",
-      "type": "design-offer",
       "sourceLines": [
         128
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.42"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.42"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.42"
+        }
+      ]
     },
     {
       "line": 129,
       "text": "◆改造锹型虫：昆虫系，火9风1，技能栏7；体12 力42 防29 敏34 魔8，总档125；和时道服一致",
-      "type": "pet-result",
       "sourceLines": [
         129
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.42"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.42"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.42"
+        }
+      ]
     },
     {
       "line": 130,
       "text": "2019.11.20【黄蝎设计图】A~C，每张120000G",
-      "type": "design-offer",
       "sourceLines": [
         130
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.43"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.43"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.43"
+        }
+      ]
     },
     {
       "line": 131,
       "text": "◆朗格多克蝎：昆虫系，风6地4，技能栏9；体20 力10 防43 敏12 魔40，总档125",
-      "type": "pet-result",
       "sourceLines": [
         131
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.43"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.43"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.43"
+        }
+      ]
     },
     {
       "line": 132,
       "text": "2019.09.03【亡灵设计图】A~E，每张100000G",
-      "type": "design-offer",
       "sourceLines": [
         132
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.44"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.44"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.44"
+        }
+      ]
     },
     {
       "line": 133,
       "text": "◆灵风：不死系，风7火3，技能栏9；体26力10 防19 敏24 魔46，总档125",
-      "type": "pet-result",
       "sourceLines": [
         133
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.44"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.44"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.44"
+        }
+      ]
     },
     {
       "line": 134,
       "text": "2019.07.03【亚特拉斯巨神设计图】A~E，每张100000G",
-      "type": "design-offer",
       "sourceLines": [
         134
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.45"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.45"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.45"
+        }
+      ]
     },
     {
       "line": 135,
       "text": "◆觉醒亚特拉斯巨神：人形系，火10，技能栏9；体37力40 防22 敏14 魔12，总档125",
-      "type": "pet-result",
       "sourceLines": [
         135
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.offers.45"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.45"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.changes.45"
+        }
+      ]
     }
   ],
   "verification": {

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-a9a88c4a-2de8-4100-b795-22864d494eda",
   "name": "就职其他战斗系职业",
   "aliases": [
@@ -432,7 +432,20 @@
         "verification": {
           "status": "verified",
           "method": "manual-semantic-review"
-        }
+        },
+        "routePoints": [
+          {
+            "name": "法兰城城东医院",
+            "coordinate": "221.83",
+            "sourceLines": [
+              13
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
+            }
+          }
+        ]
       },
       {
         "id": "pass",
@@ -747,6 +760,19 @@
             "verification": {
               "status": "verified",
               "method": "source-action-review"
+            }
+          }
+        ],
+        "routePoints": [
+          {
+            "name": "魔术师法兰城西门外魔女之家",
+            "coordinate": "301.146",
+            "sourceLines": [
+              33
+            ],
+            "verification": {
+              "status": "verified",
+              "method": "reviewed-source-location-decomposition"
             }
           }
         ]
@@ -1080,446 +1106,1040 @@
     {
       "line": 1,
       "text": "1.与法兰城平民武器贩售处（150.122）对话，购买就职职业对应的武器。",
-      "type": "weapon-purchase",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "◆转职：不需装备对应武器，跳过这步骤",
-      "type": "transfer-skip",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "◆职业与对应武器：（怀旧服平民武器，不可以交易）",
-      "type": "weapon-table-heading",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "职业武器价格",
-      "type": "table-heading",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "剑士平民剑400G",
-      "type": "weapon-row",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0.variants.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0.variants.0"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "战斧斗士平民斧600G",
-      "type": "weapon-row",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0.variants.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0.variants.1"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "骑士平民枪600G",
-      "type": "weapon-row",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0.variants.2"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0.variants.2"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "弓箭手平民弓400G",
-      "type": "weapon-row",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0.variants.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0.variants.3"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "饲养师平民回力标700G",
-      "type": "weapon-row",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0.variants.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0.variants.4"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "驯兽师平民小刀400G",
-      "type": "weapon-row",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0.variants.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0.variants.5"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "魔术师平民杖400G",
-      "type": "weapon-row",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0.variants.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0.variants.6"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "◆装备正确武器类型即可就职对应职业，非必须装备平民武器",
-      "type": "weapon-type-rule",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        }
+      ]
     },
     {
       "line": 13,
       "text": "2.前往法兰城城东医院（221.83）与药剂师波洛姆（16.35）对话，购买1瓶【止痛药（特价品）】。",
-      "type": "item-purchase",
       "sourceLines": [
         13
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 14,
       "text": "◆【止痛药（特价品）】：3G/瓶，不可交易",
-      "type": "item-detail",
       "sourceLines": [
         14
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        }
+      ]
     },
     {
       "line": 15,
       "text": "3.前往法兰城职业公会（73.60）与安布伦（10.6）对话，选“是”交出【止痛药（特价品）】获得【试炼洞穴通行证】。",
-      "type": "exchange-step",
       "sourceLines": [
         15
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 16,
       "text": "4.前往法兰城西门外国营第24坑道（351.145）。",
-      "type": "route-step",
       "sourceLines": [
         16
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 17,
       "text": "持有【试炼洞穴通行证】与哈鲁迪亚（9.14）对话通过栅栏，至（9.5）处下楼进入试炼之洞窟。",
-      "type": "held-item-gate",
       "sourceLines": [
         17
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        }
+      ]
     },
     {
       "line": 18,
       "text": "◆持有【试炼洞穴通行证】与法拉米亚（7.5）对话，选“确定”交出【试炼洞穴通行证】并被传送至栅栏外",
-      "type": "abort-exchange",
       "sourceLines": [
         18
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.4.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        }
+      ]
     },
     {
       "line": 19,
       "text": "◆试炼之洞窟：固定迷宫，共5层；魔物为Lv.3~5 大蝙蝠、火蜘蛛",
-      "type": "maze-detail",
       "sourceLines": [
         19
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.encounters.0"
+        }
+      ]
     },
     {
       "line": 20,
       "text": "试炼之洞窟，行走路线：",
-      "type": "route-heading",
       "sourceLines": [
         20
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        }
+      ]
     },
     {
       "line": 21,
       "text": "5.通过迷宫抵达试炼之洞窟大厅，",
-      "type": "route-step",
       "sourceLines": [
         21
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 22,
       "text": "⑴就职路线：装备对应武器，与波罗米亚（23.15）对话，交出【试炼洞穴通行证】，获得与武器相对应的【职业推荐信】。",
-      "type": "employment-letter",
       "sourceLines": [
         22
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.4"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.5"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        }
+      ]
     },
     {
       "line": 23,
       "text": "⑵转职路线：不需装备对应武器，与亚伦（24.12）对话，输入相关职业名称（仅限本任务内包含的职业），",
-      "type": "transfer-letter",
       "sourceLines": [
         23
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 24,
       "text": "交出【试炼洞穴通行证】，可获得相对应的【职业推荐信】",
-      "type": "transfer-letter",
       "sourceLines": [
         24
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.6"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.4"
+        }
+      ]
     },
     {
       "line": 25,
       "text": "◆若物品栏内已有本任务获得的某一职业的【职业推荐信】，则不可重复获得【职业推荐信】",
-      "type": "duplicate-letter-block",
       "sourceLines": [
         25
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "requirement",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.6"
+        }
+      ]
     },
     {
       "line": 26,
       "text": "6.返回法兰城与相关职业就职人员对话，就职成功，任务完结。",
-      "type": "career-completion",
       "sourceLines": [
         26
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.7"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.1"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.2"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.3"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.4"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.5"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.6"
+        }
+      ]
     },
     {
       "line": 27,
       "text": "◆职业导师位置：",
-      "type": "mentor-heading",
       "sourceLines": [
         27
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        }
+      ]
     },
     {
       "line": 28,
       "text": "职业地点导师",
-      "type": "table-heading",
       "sourceLines": [
         28
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        }
+      ]
     },
     {
       "line": 29,
       "text": "剑士法兰城竞技场（123.161）剑士长迪索尔（18.10）",
-      "type": "mentor-row",
       "sourceLines": [
         29
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.mentors.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.0"
+        }
+      ]
     },
     {
       "line": 30,
       "text": "骑士法兰城里谢里雅堡2楼客房（67.71）骑士团长亚涅特（11.4）",
-      "type": "mentor-row",
       "sourceLines": [
         30
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.mentors.2"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.2"
+        }
+      ]
     },
     {
       "line": 31,
       "text": "战斧斗士法兰城竞技场（123.161）后台（35.8）超级斗士欧雷葛诺（20.22）",
-      "type": "mentor-row",
       "sourceLines": [
         31
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.mentors.1"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.1"
+        }
+      ]
     },
     {
       "line": 32,
       "text": "弓箭手法兰城弓箭手公会（190.133）弓箭手拉美莉诺（6.4）",
-      "type": "mentor-row",
       "sourceLines": [
         32
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.mentors.3"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.3"
+        }
+      ]
     },
     {
       "line": 33,
       "text": "魔术师法兰城西门外魔女之家（301.146）",
-      "type": "mentor-row",
       "sourceLines": [
         33
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.mentors.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.6"
+        }
+      ]
     },
     {
       "line": 34,
       "text": "注：夜晚调查魔女之家外神木（随机坐标），",
-      "type": "magic-entry-note",
       "sourceLines": [
         34
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.mentors.6"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.6"
+        }
+      ]
     },
     {
       "line": 35,
       "text": "选“是”，之后输入“魔术”进入魔女之家狄尔西雅达美（19.13）",
-      "type": "magic-password",
       "sourceLines": [
         35
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "requirement",
+          "target": "requirements.conditions.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.mentors.6"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.commands.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.6"
+        }
+      ]
     },
     {
       "line": 36,
       "text": "驯兽师法兰城职业工会（73.60）驯兽师方席（13.8）",
-      "type": "mentor-row",
       "sourceLines": [
         36
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.mentors.5"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.5"
+        }
+      ]
     },
     {
       "line": 37,
       "text": "饲养师法兰城饲养师之家（122.36）饲养师那可利（13.9）",
-      "type": "mentor-row",
       "sourceLines": [
         37
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.7"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.7.mentors.4"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.careers.4"
+        }
+      ]
     }
   ],
   "verification": {

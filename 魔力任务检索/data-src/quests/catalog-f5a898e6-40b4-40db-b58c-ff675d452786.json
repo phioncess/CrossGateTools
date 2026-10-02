@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "catalog-f5a898e6-40b4-40db-b58c-ff675d452786",
   "name": "欧兹那克的“月饼节”",
   "aliases": [
@@ -628,146 +628,402 @@
     {
       "line": 1,
       "text": "1.前往圣拉鲁卡村与向恩（30.53）对话，选“是”获得【鬼的标志（新）】。",
-      "type": "step",
       "sourceLines": [
         1
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.start"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.0.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.0"
+        }
+      ]
     },
     {
       "line": 2,
       "text": "2.找齐藏在村子里的4个孩子，获得相应的【证明】。再与向恩对话，得知有3种月饼可供选择。",
-      "type": "collection-event",
       "sourceLines": [
         2
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.1.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.1"
+        }
+      ]
     },
     {
       "line": 3,
       "text": "3.输入“莲蓉月饼”、“五仁月饼”或“熊肉月饼”后会得到相应的【月饼】，同时交出之前获得的道具。",
-      "type": "route-selection",
       "sourceLines": [
         3
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.inputs.1"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.outputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.2.commands.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.1"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.2"
+        }
+      ]
     },
     {
       "line": 4,
       "text": "◆五仁月饼路线建议Lv.45以上并组队；熊肉月饼路线建议Lv.95级以上并组队",
-      "type": "route-advice",
       "sourceLines": [
         4
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "flow",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.2"
+        }
+      ]
     },
     {
       "line": 5,
       "text": "4.持有任意一种月饼再与向恩对话，传送至哈巴鲁东边洞穴地下2楼",
-      "type": "step",
       "sourceLines": [
         5
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "item",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.3"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.3.inputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.2"
+        }
+      ]
     },
     {
       "line": 6,
       "text": "5持有【月饼】与欧兹那克对话，进入战斗。",
-      "type": "battle-trigger",
       "sourceLines": [
         6
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-lotus"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-lotus.overview"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-lotus.enemies.enemy-1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-five-nut"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-bear-meat"
+        }
+      ]
     },
     {
       "line": 7,
       "text": "6战斗胜利后与欧兹那克对话，获得对应【奖品】并传送回法兰城，任务完结。",
-      "type": "step",
       "sourceLines": [
         7
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.inputs.0"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5.outputs.0"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.inputs.3"
+        },
+        {
+          "kind": "item",
+          "target": "itemEvents.acquisitions.3"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-lotus"
+        }
+      ]
     },
     {
       "line": 8,
       "text": "◆【月饼】对应的情况：",
-      "type": "route-heading",
       "sourceLines": [
         8
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-lotus"
+        }
+      ]
     },
     {
       "line": 9,
       "text": "①.交出【莲蓉月饼】会获得【莲蓉蛋黄月饼】",
-      "type": "route-reward",
       "sourceLines": [
         9
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-lotus"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-lotus.overview"
+        }
+      ]
     },
     {
       "line": 10,
       "text": "②.交出【五仁月饼】进入Lv40BOSS战，胜利后会获得【斧形饰物】",
-      "type": "route-battle-reward",
       "sourceLines": [
         10
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-five-nut"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-five-nut.overview"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-five-nut.enemies.enemy-1"
+        }
+      ]
     },
     {
       "line": 11,
       "text": "③.交出【熊肉月饼】进入Lv120BOSS战，胜利后会获得永久称号【？？级人物】",
-      "type": "route-battle-title",
       "sourceLines": [
         11
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "battle",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.4"
+        },
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.0"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-bear-meat"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-bear-meat.overview"
+        },
+        {
+          "kind": "battle",
+          "target": "versions.common.tiers.common.battles.battle-bear-meat.enemies.enemy-1"
+        }
+      ]
     },
     {
       "line": 12,
       "text": "◆【斧形饰物】（不可交易、宠邮、丢地、叠加、存银行）：Lv.5护身符、攻击+20~+23、防御-7、敏捷-5、精神+5、魔攻+10、闪躲+5、必杀+8、抗魔+20、魅力-10、耐久150~200、装备后获得称号：战斧斗士(伪)",
-      "type": "reward-detail",
       "sourceLines": [
         12
       ],
       "verification": {
         "status": "verified",
         "method": "manual-semantic-review"
-      }
+      },
+      "kind": "reward",
+      "bindings": [
+        {
+          "kind": "flow",
+          "target": "flow.steps.5"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0"
+        },
+        {
+          "kind": "reward",
+          "target": "rewardEvents.0.items.1"
+        },
+        {
+          "kind": "reward",
+          "target": "outcomes.titles.1"
+        }
+      ]
     }
   ],
   "verification": {
