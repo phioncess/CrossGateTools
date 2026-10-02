@@ -41,6 +41,8 @@ for (const quest of quests) {
   for (const step of quest.flow?.steps || []) {
     stepCount += 1;
     const semanticKeys = new Set([...(step.presentationFacts || []).map(row => row.key),...(step.presentationSections || []).map(section => section.key)]);
+    if (step.optional === true && step.branch) semanticKeys.add('optional');
+    ['rewardEventRefs','rewardEventRef','rewardPool'].forEach(key => semanticKeys.add(key));
     if (semanticKeys.has('rewardEventRefs')) ['rewardEventRef','rewardPool'].forEach(key => semanticKeys.add(key));
     const extensions = Object.keys(step).filter(key => !renderedStepKeys.has(key) && !semanticKeys.has(key));
     if (extensions.length) stepsWithExtensions += 1;

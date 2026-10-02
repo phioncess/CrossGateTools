@@ -589,6 +589,8 @@ for (const questId of allQuestIds) {
   const coreStepFields = new Set(['id','order','text','route','branch','notes','inputs','outputs','choices','quiz','commands','operations','branchGroups','afterOperations','battleRef','battleRefs','allowsIntermediateOutputThenInput','sourceLines','verification','presentationFacts','presentationInteractions','presentationSections','equipmentRefs','duplicateSourceLines']);
   structuredRecord.flow.steps.forEach((step, stepIndex) => {
     const renderedSupplementFields = new Set([...renderedSteps[stepIndex].querySelectorAll('[data-source-field], [data-fact-key], [data-step-field]')].map(node => node.dataset.sourceField || node.dataset.factKey || node.dataset.stepField));
+    ['rewardEventRefs','rewardEventRef','rewardPool'].forEach(key => renderedSupplementFields.add(key));
+    if (renderedSteps[stepIndex].querySelector('[data-fact-key="rewardEventRefs"]')) throw new Error(`流程重复展开奖励奖池: ${title}/${step.id}`);
     if (step.optional === true && step.branch) {
       if (renderedSteps[stepIndex].closest('.step-route')?.querySelector('h4')?.textContent !== step.branch) throw new Error(`可选支线分组标题遗漏: ${title}/${step.id}`);
       renderedSupplementFields.add('optional');

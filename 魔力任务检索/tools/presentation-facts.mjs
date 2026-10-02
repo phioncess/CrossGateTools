@@ -137,7 +137,7 @@ export function compilePresentationFacts(database) {
       stats.stepSections += step.presentationSections.length;
       const fields = new Set([...coreStepFields,...step.presentationFacts.map(row => row.key),...step.presentationSections.map(section => section.key)]);
       if (step.optional === true && step.branch) fields.add('optional');
-      if (fields.has('rewardEventRefs')) ['rewardEventRef','rewardPool'].forEach(key => fields.add(key));
+      ['rewardEventRefs','rewardEventRef','rewardPool'].forEach(key => fields.add(key));
       const missing = Object.keys(step).filter(key => !fields.has(key));
       if (missing.length) throw new Error(`${quest.name}/${step.id} 未定义流程字段展示：${missing.join('、')}`);
       stats.interactionRows += step.presentationInteractions.length;
@@ -176,10 +176,7 @@ export function stepPresentationFacts(step, quest) {
     rows.push({key,label,text});
   }
   const rewardRefs = [...(step.rewardEventRefs || []), ...[step.rewardEventRef,step.rewardPool].filter(Boolean)];
-  if (rewardRefs.length) {
-    const names = rewardRefs.flatMap(ref => (quest.rewardEvents || []).filter(event => event.id === ref).flatMap(event => event.items.map(item => item.name)));
-    if (names.length) rows.push({key:'rewardEventRefs',label:'取得结果资料',text:[...new Set(names)].join('、')});
-  }
+  // Reward references connect this step to the acquisition section; do not repeat its entire item pool here.
   if (Array.isArray(step.sequence)) {
     const names = step.sequence.map(ref => quest.flow.steps.find(entry => entry.id === ref)).filter(Boolean).map(entry => `第${entry.order}步`);
     if (names.length) rows.push({key:'sequence',label:'执行顺序',text:names.join(' → ')});

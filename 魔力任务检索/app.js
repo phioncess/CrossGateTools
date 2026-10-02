@@ -1254,10 +1254,10 @@ function renderQuest(quest, updateHash = true) {
     <section class="chain-card">
       <div class="section-title"><span>系列任务</span><small>${quest.stageLabel ? `当前 ${quest.stageLabel}` : (quest.order ? `第 ${quest.order} 项` : `第 ${index + 1} 项`)} · 已收录 ${series.length} 项</small></div>
       <div class="chain-track">${series.map(item => `<button type="button" data-quest-id="${item.id}" class="chain-node ${item.id === quest.id ? 'current' : ''} ${item.optional ? 'optional' : ''}" title="${item.optional ? '支线／可选' : item.name}"><span>${item.stageLabel || item.order}</span><b>${item.name}</b><small>${item.prerequisites.length ? `前置 ${item.prerequisites.length} 项` : '未记录直接前置'}</small></button>`).join('')}</div>
-      <div class="chain-neighbors">
+      ${seriesPrevious.length || seriesNext.length ? `<div class="chain-neighbors">
         <div class="chain-direction"><b>直接前置</b><div class="chain-relation-list">${seriesPrevious.length ? seriesPrevious.map(item => relationButton(item.id, '← 前置')).join('') : '<div class="chain-edge">未记录本系列直接前置</div>'}</div></div>
         <div class="chain-direction"><b>直接后续</b><div class="chain-relation-list">${seriesNext.length ? seriesNext.map(item => relationButton(item.id, '后续 →')).join('') : '<div class="chain-edge">未记录本系列直接后续</div>'}</div></div>
-      </div>
+      </div>` : '<p class="chain-hint">当前任务未记录本系列直接前后置。</p>'}
       <p class="chain-hint">关系线严格依据任务前置生成；同阶段任务可能并行，编号相邻不代表互为前置。虚线节点表示支线或材料任务。</p>
     </section>` : '';
   const seriesPreviousIds = new Set(seriesPrevious.map(item => item.id));
