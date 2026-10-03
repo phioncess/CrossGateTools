@@ -276,7 +276,7 @@ function renderStepQuiz(quiz) {
   return `<div class="step-quiz">${[['day','白天'],['night','夜晚']].map(([key,label]) => {
     const rows = quiz[key];
     if (!Array.isArray(rows) || !rows.length) return '';
-    return `<section><h4>${label}题库</h4><div class="quiz-table-scroll"><table><thead><tr><th>序号</th><th>问题</th><th>答案</th></tr></thead><tbody>${rows.map(([question,answer], index) => `<tr><td>${index + 1}</td><td>${formatTaskText(question)}</td><td>${formatTaskText(answer)}</td></tr>`).join('')}</tbody></table></div></section>`;
+    return `<section><h4>${label}题库</h4><div class="quiz-table-scroll"><table><thead><tr><th>序号</th><th>问题</th><th>答案</th></tr></thead><tbody>${rows.map(([question,answer], index) => `<tr><td data-label="序号">${index + 1}</td><td data-label="问题">${formatTaskText(question)}</td><td data-label="答案">${formatTaskText(answer)}</td></tr>`).join('')}</tbody></table></div></section>`;
   }).join('')}</div>`;
 }
 
