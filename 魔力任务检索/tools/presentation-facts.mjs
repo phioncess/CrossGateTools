@@ -159,7 +159,7 @@ export function compilePresentationFacts(database) {
   }
   return stats;
 }
-const coreStepFields = new Set('id order text route branch notes inputs outputs choices quiz commands operations branchGroups afterOperations battleRef battleRefs allowsIntermediateOutputThenInput sourceLines verification presentationFacts presentationInteractions presentationSections equipmentRefs duplicateSourceLines'.split(' '));
+const coreStepFields = new Set('id order text route branch optional notes inputs outputs choices quiz commands operations branchGroups afterOperations battleRef battleRefs allowsIntermediateOutputThenInput sourceLines verification presentationFacts presentationInteractions presentationSections equipmentRefs duplicateSourceLines'.split(' '));
 
 const stepLabels = {
   optional:'此步可选', referenceOnly:'仅供参考', repeatable:'可重复进行', postCompletion:'完成任务后进行', alternateRoute:'替代路线', alternateEnding:'另一结局', alternate:'替代办法',
@@ -180,7 +180,7 @@ export function stepPresentationFacts(step, quest) {
   const rows = [];
   for (const [key, label] of Object.entries(stepLabels)) {
     if (step[key] == null || step[key] === '') continue;
-    if (key === 'optional' && step.optional === true && step.branch) continue;
+    if (key === 'optional' && typeof step.optional === 'boolean') continue;
     let text = factText(step[key], stepNestedLabels);
     if (key === 'condition' && /^level>=\d+$/.test(text)) text = `等级不低于${text.slice(7)}`;
     rows.push({key,label:typeof step[key] === 'boolean' && step[key] === true ? '' : label,text:typeof step[key] === 'boolean' && step[key] === true ? label : text});

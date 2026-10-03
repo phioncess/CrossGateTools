@@ -445,6 +445,16 @@ if (!glassEarringCard || !['未鉴定名称 【耳饰？】', '等级 1', '种�
   throw new Error('霞之洞窟没有按鉴定前后名称及完整属性展示玻璃耳环');
 }
 
+results = search('沉睡的精灵');
+results.find(option => option.dataset.questId === 'catalog-1f6ad2e5-f69c-4f3f-aeb3-3424bcbc2237')?.click();
+const sleepingRewards = window.document.querySelector('.rewards-card')?.textContent || '';
+if (!['安提史利普', '安提肯飞斯', '铜剑', '流程第 10 步', '流程第 12 步'].every(text => sleepingRewards.includes(text))) throw new Error('沉睡的精灵怀旧服掉落与来源步骤缺失');
+if (['菲尼纳斯', '达克纳力', '明确记录', '原攻略', '不可用服务器', '矿石？（善）', '矿石？（恶）'].some(text => sleepingRewards.includes(text))) throw new Error('沉睡的精灵奖励混入其他服、虚构物品名或内部文案');
+const sleepingRecord = window.QUEST_DATA.quests['catalog-1f6ad2e5-f69c-4f3f-aeb3-3424bcbc2237'];
+const sleepingOptionalMarkers = [...window.document.querySelectorAll('.quest-steps .step-actions .step-item-action')].filter(node => node.textContent === '此步可选');
+if (sleepingOptionalMarkers.length !== 2 || sleepingRecord.flow.steps.some(step => step.presentationFacts?.some(fact => fact.key === 'optional'))) throw new Error('沉睡的精灵可选步骤没有以前置标志呈现或仍重复说明');
+if (sleepingRecord.flow.steps.some(step => /时长服|其他服务器|原攻略|来源明确/.test(step.text)) || sleepingRecord.itemEvents.acquisitions.some(event => /恒常变化|元素力量|万物之源|理性主义|哲学|菲尼纳斯|达克纳力/.test(event.item))) throw new Error('沉睡的精灵怀旧服流程仍产生无法获得的物品');
+
 results = search('追击');
 results.find(option => option.dataset.questId === 'catalog-f1b868b5-03dc-43c4-a547-c5db346a2e80')?.click();
 const pursuitFightTitles = [...window.document.querySelectorAll('.boss-heading h4')].map(node => node.textContent.trim());
@@ -588,6 +598,7 @@ for (const questId of allQuestIds) {
   if (!renderedSteps.length) throw new Error(`任务没有流程步骤: ${title}`);
   if (renderedSteps.length !== structuredRecord.flow.steps.length) throw new Error(`结构化流程步骤数量不一致: ${title}`);
   const coreStepFields = new Set(['id','order','text','route','branch','notes','inputs','outputs','choices','quiz','commands','operations','branchGroups','afterOperations','battleRef','battleRefs','allowsIntermediateOutputThenInput','sourceLines','verification','presentationFacts','presentationInteractions','presentationSections','equipmentRefs','duplicateSourceLines']);
+  if ([...window.document.querySelectorAll('.semantic-table th')].some(node => node.textContent.trim() === '资料与规则')) throw new Error('通用资料与规则表头残留: ' + title);
   structuredRecord.flow.steps.forEach((step, stepIndex) => {
     const renderedSupplementFields = new Set([...renderedSteps[stepIndex].querySelectorAll('[data-source-field], [data-fact-key], [data-step-field]')].map(node => node.dataset.sourceField || node.dataset.factKey || node.dataset.stepField));
     ['rewardEventRefs','rewardEventRef','rewardPool'].forEach(key => renderedSupplementFields.add(key));
@@ -608,6 +619,11 @@ for (const questId of allQuestIds) {
       for (const row of section.rows || []) if (!node.textContent.includes(row.label) || !node.textContent.includes(row.text)) throw new Error(`流程表格资料遗漏: ${title} -> ${step.id}.${section.key}`);
     }
     const actionLabels = [...renderedSteps[stepIndex].querySelectorAll('.step-actions .step-item-action')].map(node => node.textContent);
+    if (typeof step.optional === 'boolean') {
+      if ((step.optional === true && !step.branch) !== actionLabels.includes('此步可选')) throw new Error('可选标志与结构字段不一致: ' + title + '/' + step.id);
+      if (renderedSteps[stepIndex].querySelector('[data-fact-key="optional"]')) throw new Error('可选标志重复为说明块: ' + title + '/' + step.id);
+      renderedSupplementFields.add('optional');
+    }
     if (Boolean(step.commands?.length) !== actionLabels.includes('输入文字')) throw new Error(`输入文字标签与数据不一致: ${title} / ${step.id}`);
     const operations = [...renderedSteps[stepIndex].querySelectorAll('.step-operations > li')];
     if (operations.length !== (step.operations || []).length + (step.afterOperations || []).length + (step.branchGroups || []).reduce((sum, group) => sum + group.operations.length, 0)) throw new Error(`操作列表遗漏: ${title} / ${step.id}`);
